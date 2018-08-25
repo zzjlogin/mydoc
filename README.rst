@@ -1,8 +1,11 @@
-**************************
-Read the Docs Sphinx Theme
-**************************
+==========
+这个文档相关
+==========
+----
 
-The ``sphinx_rtd_theme`` is a sphinx_ theme designed to look modern and be mobile-friendly.
-This theme is primarily focused to be used on readthedocs.org_ but can work with your
-own sphinx projects. To read more and see a working demo_ head over to readthedocs.org_.
+环境准备
+--------
 
+1.Python2.7.13 虚拟环境(virtualenv)
+
+Windows Python虚拟环境安装：
