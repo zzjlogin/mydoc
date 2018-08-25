@@ -101,25 +101,5 @@ Windows Python虚拟环境创建：
     source files. Use the Makefile to build the docs, like so:
        make builder
     where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
-----
 
-配置：
------------
-
-**修改文件source/conf.py，把**
-.. code-block:: python
-
-    原来内容：html_theme = 'alabaster'
-    换成新的主题：html_theme = 'sphinx_rtd_theme'
-----
-
-文档创建和生成html文件：
--------------------
-* 创建rst文件
-    rst文件即：reStructuredText
-
-    在source目录下创建文件后缀为rst的文件。然后按照对应的rst语法填写内容即可。
-
-* 生成html文件：
-    在source的上一级目录打开cmd。然后输入命令：`make html`
 
