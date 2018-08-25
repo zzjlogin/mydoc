@@ -23,7 +23,6 @@ Windows Python虚拟环境创建：
 -------------
 
 .. code-block:: bash
-    :linenos:
     :emphasize-lines: 1,10
 
     (venv) E:\LocalCode\python\mydoc>sphinx-quickstart
