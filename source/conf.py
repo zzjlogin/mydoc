@@ -28,6 +28,10 @@ version = u''
 # The full version, including alpha/beta/rc tags
 release = u'1.0'
 
+#
+html_show_sphinx = False
+html_show_copyright = False
+
 
 # -- General configuration ---------------------------------------------------
 
