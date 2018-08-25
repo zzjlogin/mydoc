@@ -25,7 +25,7 @@ Windows Python虚拟环境创建：
 .. code-block:: bash
 
 
-(venv) E:\LocalCode\python\mydoc>sphinx-quickstart
+    **(venv) E:\LocalCode\python\mydoc>sphinx-quickstart**
     Welcome to the Sphinx 1.7.6 quickstart utility.
 
     Please enter values for the following settings (just press Enter to
