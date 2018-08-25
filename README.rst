@@ -25,7 +25,7 @@ Windows Python虚拟环境创建：
 .. code-block:: bash
 
 
-    **(venv) E:\LocalCode\python\mydoc>sphinx-quickstart**
+    (venv) E:\LocalCode\python\mydoc>sphinx-quickstart
     Welcome to the Sphinx 1.7.6 quickstart utility.
 
     Please enter values for the following settings (just press Enter to
@@ -36,7 +36,7 @@ Windows Python虚拟环境创建：
     You have two options for placing the build directory for Sphinx output.
     Either, you use a directory "_build" within the root path, or you separate
     "source" and "build" directories within the root path.
-    > Separate source and build directories (y/n) [n]: **y**
+    > Separate source and build directories (y/n) [n]: y
 
     Inside the root directory, two more directories will be created; "_templates"
     for custom HTML templates and "_static" for custom stylesheets and other static
