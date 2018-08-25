@@ -5,5 +5,5 @@
 
 `参考`_
 
-.. _参考: .install.rst
+.. _参考: install.rst
 
