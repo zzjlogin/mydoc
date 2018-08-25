@@ -37,7 +37,7 @@ Windows Python虚拟环境创建：
     You have two options for placing the build directory for Sphinx output.
     Either, you use a directory "_build" within the root path, or you separate
     "source" and "build" directories within the root path.
-    > Separate source and build directories (y/n) [n]: y
+    > Separate source and build directories (y/n) [n]: y <--这个选项勾选后可以生成source目录。否则在根目录生成源文件
 
     Inside the root directory, two more directories will be created; "_templates"
     for custom HTML templates and "_static" for custom stylesheets and other static
@@ -45,9 +45,9 @@ Windows Python虚拟环境创建：
     > Name prefix for templates and static dir [_]:
 
     The project name will occur in several places in the built documentation.
-    > Project name: mydoc
-    > Author name(s): zzjlogin
-    > Project release []: 1.0
+    > Project name: mydoc       <----工程名字
+    > Author name(s): zzjlogin  <----文档作者名字
+    > Project release []: 1.0   <----文档显示版本信息
 
     If the documents are to be written in a language other than English,
     you can select a language here by its language code. Sphinx will then
@@ -55,7 +55,7 @@ Windows Python虚拟环境创建：
 
     For a list of supported codes, see
     http://sphinx-doc.org/config.html#confval-language.
-    > Project language [en]: **zh_CN**
+    > Project language [en]: zh_CN  <----选择语言。默认英语，设置zh_CN中文。但是现在还不支持。可以这样配置方便以后升级
 
     The file name suffix for source files. Commonly, this is either ".txt"
     or ".rst".  Only files with this suffix are considered documents.
@@ -126,3 +126,7 @@ Windows Python虚拟环境创建：
 
 * 生成html文件：
     在source的上一级目录打开cmd。然后输入命令：`make html`
+
+
+
+
