@@ -1,5 +1,5 @@
-我的文档库
-============
+张志佳的技术文档
+================
 
 .. toctree::
    :maxdepth: 2
@@ -47,4 +47,27 @@
    
    MachineLearning/*
    
+.. toctree::
+   :glob:
+   :numbered:
+   :hidden:
+   :maxdepth: 2
+   :caption: 工具和开源项目:
    
+   ToolsOpenSource/*
+   
+.. toctree::
+   :glob:
+   :numbered:
+   :hidden:
+   :maxdepth: 2
+   :caption: 其他杂项:
+   
+   Others/*
+   
+   
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   
+   AboutMe

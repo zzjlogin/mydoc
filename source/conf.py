@@ -19,19 +19,22 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'mydoc'
-copyright = u'2018, zzjlogin'
+project = u'张志佳的技术文档'
+copyright = u'2018, 张志佳'
 author = u'zzjlogin'
 
 # The short X.Y version
-version = u''
+from datetime import date
+
+#version = u'2018.8'
+version = str(date.today())
 # The full version, including alpha/beta/rc tags
 release = u'1.0'
 
 #
 html_show_sphinx = False
-html_show_copyright = False
-
+html_show_copyright = True
+html_show_sourcelink = False
 
 # -- General configuration ---------------------------------------------------
 
@@ -62,8 +65,8 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = u'zh_CN'
-
+#language = u'zh_CN'
+language = u'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
@@ -81,8 +84,11 @@ pygments_style = 'sphinx'
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
 
+
+
 #setting the homepage logo
-html_logo = './logo-wordmark-light.svg'
+#html_logo = './logo.png'
+html_logo = './images/logo-wordmark-light.svg'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
