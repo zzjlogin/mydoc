@@ -1,0 +1,1144 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.1.3.1. 基础语法 &mdash; 张志佳的技术文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../search.html" />
+    <link rel="next" title="1.1.3.3. 高级语法" href="2.advance.html" />
+    <link rel="prev" title="1.1.3. reST语法介绍" href="../3.grammar.html" /> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> 张志佳的技术文档
+          
+
+          
+            
+            <img src="../../../../_static/logo-wordmark-light.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018-08-27
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">编程学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Program/1.Python.html">1. Python学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/01环境准备.html">1.1. 环境准备</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/01环境准备.html#python">1.1.1. 安装python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/01环境准备.html#ipython">1.1.2. ipython的安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/01环境准备.html#id2">1.1.3. ipython测试</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/02内建函数.html">1.2. 内建函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#id2">1.2.1. 常用内置函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#abs-x">1.2.1.1. abs(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#all-iterable">1.2.1.2. all(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#any-iterable">1.2.1.3. any(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#bool-x">1.2.1.4. bool(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#callable-object">1.2.1.5. callable(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#chr-i">1.2.1.6. chr(i)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#classmethod">1.2.1.7. classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#delattr-object-name">1.2.1.8. delattr(object,name)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#dict-kwarg">1.2.1.9. dict(**kwarg)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#dir-x">1.2.1.10. dir(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#enumerate-iterable-start-0">1.2.1.11. enumerate(iterable, start=0)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#eval-expression-globals-none-locals-none">1.2.1.12. eval(expression, globals=None, locals=None)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#float-x">1.2.1.13. float(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#getattr-object-name-default">1.2.1.14. getattr(object, name[, default])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#hasattr-object-name">1.2.1.15. hasattr(object, name)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#hex-x">1.2.1.16. hex(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#input-prompt">1.2.1.17. input(prompt)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#isinstance-object-classinfo">1.2.1.18. isinstance(object,classinfo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#issubclass-class-classinfo">1.2.1.19. issubclass(class, classinfo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#iter-object-sentinel">1.2.1.20. iter(object[, sentinel])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#len-x">1.2.1.21. len(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none">1.2.1.22. open(file, mode=’r’, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#powpow-x-y-z">1.2.1.23. powpow(x, y[, z])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#range-start-stop-step">1.2.1.24. range(start,stop,step)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#repr-object">1.2.1.25. repr(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#reversed-seq">1.2.1.26. reversed(seq)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#round-number-ndigits">1.2.1.27. round(number[, ndigits])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#setattr-object-name-value">1.2.1.28. setattr(object,name,value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#class-slice-start-stop-step">1.2.1.29. class slice(start, stop[, step])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#sorted-iterable-key-none-reverse-false">1.2.1.30. sorted(iterable, *, key=None, reverse=False)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#staticmethod">1.2.1.31. &#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#sum-iterable-start">1.2.1.32. sum(iterable[, start])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#super-type-object-or-type">1.2.1.33. super([type[, object-or-type]])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#tuple-iterable">1.2.1.34. tuple(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#type-object">1.2.1.35. type(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/02内建函数.html#zip-iterables">1.2.1.36. zip(*iterables)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/03内置常量.html">1.3. 内置常量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/04内置类型.html">1.4. 内置类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#id2">1.4.1. 真值测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#boolean">1.4.2. boolean操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#id3">1.4.3. 比较操作符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#int-float-complex">1.4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#list-tuple-range">1.4.5. 数据类型 list, tuple, range</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#list">1.4.5.1. list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#tuples">1.4.5.2. Tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#ranges">1.4.5.3. Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#text-sequence-type-str">1.4.5.4. Text Sequence Type - str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#string-methods">1.4.5.5. String Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#printf">1.4.5.6. printf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">1.4.6. Binary Sequence Types — bytes, bytearray, memoryview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#bytes">1.4.6.1. bytes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#bytearray">1.4.6.2. bytearray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#memoryview">1.4.6.3. memoryview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#set-types-set-frozenset">1.4.7. Set Types — set, frozenset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/04内置类型.html#mapping-types-dict">1.4.7.1. Mapping Types — dict</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/05内置异常.html">1.5. 内置异常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/06文本处理.html">1.6. 文本处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#string">1.6.1. string</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id2">1.6.1.1. string常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id3">1.6.1.2. 格式化样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id4">1.6.1.3. 模板字符串</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#re">1.6.2. re</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id5">1.6.2.1. 模块内容</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id6">1.6.2.2. 正则表达式对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#id7">1.6.2.3. 匹配对象</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#difflib">1.6.3. difflib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#textwrap">1.6.4. textwrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#unicodedata">1.6.5. unicodedata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#stringprep">1.6.6. stringprep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#readline">1.6.7. readline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/06文本处理.html#rlcompleter">1.6.8. rlcompleter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/07二进制处理.html">1.7. 二进制处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/07二进制处理.html#struct">1.7.1. struct</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/07二进制处理.html#id2">1.7.1.1. 主要函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/07二进制处理.html#codecs">1.7.2. codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/08数据类型.html">1.8. 数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#datetime">1.8.1. datetime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#timedelta">1.8.1.1. timedelta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#date">1.8.1.2. date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#id2">1.8.1.3. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#time">1.8.1.4. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#id3">1.8.1.5. 格式控制</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#calendar">1.8.2. calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#collectons">1.8.3. collectons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#chainmap">1.8.3.1. ChainMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#counter">1.8.3.2. Counter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#deque">1.8.3.3. deque</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#defaultdict">1.8.3.4. defaultdict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#namedtuple">1.8.3.5. namedtuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#ordereddict">1.8.3.6. OrderedDict</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#collections-abc">1.8.4. collections.abc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#heapq">1.8.5. heapq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#bisect">1.8.6. bisect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#array">1.8.7. array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#weakref">1.8.8. weakref</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#types">1.8.9. types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#copy">1.8.10. copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#pprint">1.8.11. pprint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#reprlib">1.8.12. reprlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#enum">1.8.13. enum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#intenum">1.8.13.1. IntEnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#intflag">1.8.13.2. IntFlag</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/08数据类型.html#flag">1.8.14. Flag</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/09数值模块.html">1.9. 数值模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#numbers">1.9.1. numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#math">1.9.2. math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#cmath">1.9.3. cmath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#decimal">1.9.4. decimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#fractions">1.9.5. fractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#random">1.9.6. random</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/09数值模块.html#statistics">1.9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/10函数式编程模块.html">1.10. 函数式编程模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/10函数式编程模块.html#itertools">1.10.1. itertools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/10函数式编程模块.html#functools">1.10.2. functools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/10函数式编程模块.html#operator">1.10.3. operator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html">1.11. 文件和目录访问</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#pathlib">1.11.1. pathlib</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#id2">1.11.1.1. 基本使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#pure">1.11.1.2. pure路径</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#concrete">1.11.1.3. Concrete路径</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#os-path">1.11.2. os.path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#fileinput">1.11.3. fileinput</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#stat">1.11.4. stat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#filecmp">1.11.5. filecmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#tempfile">1.11.6. tempfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#glob">1.11.7. glob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#fnmatch">1.11.8. fnmatch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#linecache">1.11.9. linecache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#shutil">1.11.10. shutil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/11文件和目录访问.html#macpath">1.11.11. macpath</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html">1.12. 数据持久化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#pickle">1.12.1. pickle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#copyreg">1.12.2. copyreg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#shelve">1.12.3. shelve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#marshal">1.12.4. marshal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#dbm">1.12.5. dbm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/12数据持久化.html#sqllite">1.12.6. sqllite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html">1.13. 数据压缩和归档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#zlib">1.13.1. zlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#gzip">1.13.2. gzip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#bz2">1.13.3. bz2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#lzma">1.13.4. lzma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#zipfile">1.13.5. zipfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/13数据压缩和归档.html#tarfile">1.13.6. tarfile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/14文件格式.html">1.14. 文件格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#csv">1.14.1. csv</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#csv-writer-csvfile-dialect-excel-fmtparams">1.14.1.1. csv.writer(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#csv-reader-csvfile-dialect-excel-fmtparams">1.14.1.2. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#csv-dictwriter-f-fieldnames-restval-extrasaction-raise-dialect-excel-args-kwds">1.14.1.3. csv.DictWriter(f, fieldnames, restval=’‘, extrasaction=’raise’, dialect=’excel’, *args, **kwds)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#id2">1.14.1.4. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#configparser">1.14.2. configparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#netrc">1.14.3. netrc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#xdrlib">1.14.4. xdrlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/14文件格式.html#plistlib">1.14.5. plistlib</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/15加密服务.html">1.15. 加密服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/15加密服务.html#hashlib">1.15.1. hashlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/15加密服务.html#hmac">1.15.2. hmac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/15加密服务.html#secrets">1.15.3. secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/16通用操作系统服务.html">1.16. 通用操作系统服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.1通用操作系统服务.html">1.16.1. os</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.1通用操作系统服务.html#id1">1.16.1.1. 文件名，命令行参数，环境变量</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.2通用操作系统服务.html">1.16.2. io</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.2通用操作系统服务.html#id1">1.16.2.1. io入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.2通用操作系统服务.html#id2">1.16.2.2. 主要先关类和主要方法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.3通用操作系统服务.html">1.16.3. time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html">1.16.4. argparse</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#id1">1.16.4.1. 快速入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#argumentparser">1.16.4.2. ArgumentParser 对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#add-argument">1.16.4.3. add_argument() 方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#parse-args">1.16.4.4. parse_args() 方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#id3">1.16.4.5. 其他功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.4通用操作系统服务.html#id8">1.16.4.6. 案例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.5通用操作系统服务.html">1.16.5. getopt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.5通用操作系统服务.html#id1">1.16.5.1. 快速入门样例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html">1.16.6. logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#logging-logger">1.16.6.1. logging.Logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#logging-handler">1.16.6.2. logging.Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#logging-formatter">1.16.6.3. logging.Formatter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#logging-filter">1.16.6.4. logging.Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#logging-logrecord">1.16.6.5. logging.LogRecord</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.6通用操作系统服务.html#id1">1.16.6.6. 简单使用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.7通用操作系统服务.html">1.16.7. logging.Config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.7通用操作系统服务.html#logging-config-dictconfig">1.16.7.1. logging.config.dictConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.7通用操作系统服务.html#logging-config-fileconfig">1.16.7.2. logging.config.fileConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.7通用操作系统服务.html#logging-config-listen">1.16.7.3. logging.config.listen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.7通用操作系统服务.html#id1">1.16.7.4. 字典配置细节</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html">1.16.8. logging.Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#logging-streamhandler">1.16.8.1. logging.StreamHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#logging-filehandler">1.16.8.2. logging.FileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#logging-nullhandler">1.16.8.3. logging.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#watchedfilehandler">1.16.8.4. WatchedFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#baserotatinghandler">1.16.8.5. BaseRotatingHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#rotatingfilehandler">1.16.8.6. RotatingFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#timedrotatingfilehandler">1.16.8.7. TimedRotatingFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#sockethandler">1.16.8.8. SocketHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#datagramhandler">1.16.8.9. DatagramHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#sysloghandler">1.16.8.10. SysLogHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#nteventloghandler">1.16.8.11. NTEventLogHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#smtphandler">1.16.8.12. SMTPHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#logging-handlers-bufferinghandler">1.16.8.13. logging.handlers.BufferingHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#logging-handlers-memoryhandler">1.16.8.14. logging.handlers.MemoryHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#httphandler">1.16.8.15. HTTPHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.8通用操作系统服务.html#queuehandler">1.16.8.16. QueueHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/16通用操作系统/16.9通用操作系统服务.html">1.16.9. getpass</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/17并发执行.html">1.17. 并发执行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading">1.17.1. threading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-thread">1.17.1.1. threading.Thread</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-lock">1.17.1.2. threading.Lock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-rlock">1.17.1.3. threading.RLock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-condition">1.17.1.4. threading.Condition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-event">1.17.1.5. threading.Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-timer">1.17.1.6. threading.Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#threading-barrier">1.17.1.7. threading.Barrier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#multiprocessing">1.17.2. multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#multiprocessing-process">1.17.3. multiprocessing.Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#id2">1.17.4. multiprocessing.Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#multiprocessing-queue">1.17.5. multiprocessing.Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#id3">1.17.6. multiprocessing.Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#multiprocessing-joinablequeue">1.17.7. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#multiprocessing-connection-connection">1.17.8. multiprocessing.connection.Connection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#id4">1.17.8.1. 共享对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Program/Python/17并发执行.html#id5">1.17.8.2. 进程管理者</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/18进程通信和网络.html">1.18. 进程通信和网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/19网络数据处理.html">1.19. 网络数据处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Python/20结构化文本文档处理工具.html">1.20. 结构化文本文档处理工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Program/2.Algorithm.html">2. 算法学习(Algorithm)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Program/Algorithm/CCFexam.html">2.1. CCF考试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Program/Algorithm/ccf/201803-1.html">2.1.1. 201803-1 跳一跳</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">网络学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Network/1.NetworkTheory.html">1. 理论学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Network/2.HuaWei.html">2. 华为</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Network/3.H3C.html">3. H3C(华三/新华三)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Network/4.CISCO.html">4. 思科(CISCO)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">服务器学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/1.AboutAndClass.html">1. 服务器相关常识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/2.Linux.html">2. Linux 服务器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/3.Unix.html">3. Unix 和类Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/4.Windows.html">4. Windows 服务器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/5.Optimization.html">5. 服务器优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Server/6.FAQ.html">6. 常见问题及解决(FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">大数据/数据库:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Data/1.html">1. 我的文档库123</a></li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../MachineLearning/base.html">1. 机器学习入门</a></li>
+</ul>
+<p class="caption"><span class="caption-text">工具和开源项目:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../1.Tools.html">1. 常用工具汇总</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../1.rST.html">1.1. reStructuredText相关</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../1.index.html">1.1.1. rST简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2.install.html">1.1.2. index</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../3.grammar.html">1.1.3. reST语法介绍</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">1.1.3.1. 基础语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">1.1.3.2. 这是1级标题演示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2.advance.html">1.1.3.3. 高级语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3.linkTosphinx.html">1.1.3.4. sphinx tootree</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../4.toOthers.html">1.1.4. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5.API.html">1.1.5. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../6.rstTools.html">1.1.6. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../7.addFunctions.html">1.1.7. index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2.OpenSource.html">2. 关注的开源项目</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他杂项:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Others/1.html">1. 我的文档库123</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../AboutMe.html">关于我</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">张志佳的技术文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../1.Tools.html">1. 常用工具汇总</a> &raquo;</li>
+        
+          <li><a href="../../1.rST.html">1.1. reStructuredText相关</a> &raquo;</li>
+        
+          <li><a href="../3.grammar.html">1.1.3. reST语法介绍</a> &raquo;</li>
+        
+      <li>1.1.3.1. 基础语法</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="2.advance.html" class="btn btn-neutral float-right" title="1.1.3.3. 高级语法" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../3.grammar.html" class="btn btn-neutral" title="1.1.3. reST语法介绍" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1.1.3.1. 基础语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>1.1.3.1.1. 标题学习<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在文本下一行（或上一行）添加至少与文本长度同宽的符号，即可以使文本成为标题。但并没有规定某一个级别的标题必须用什么字符，可以参考python文档的一些约定:</p>
+<p>文档树元素：章节、标题</p>
+<p>章节通过其标题识别，在标题文本下使用下划线进行标记或下划线和匹配的上划线。下划线/上划线是单个重复的标点字符，从左边第一列开始最少到与文档标题右边对齐。具体来说，一个下划线/上划线字符可以是任何非字母打印7位ASCII字符 <a class="footnote-reference" href="#id4" id="id3">[1]</a> 。当使用上划线时，上划线的长度与使用的字符必须与下划线相同。可以有任意数字级别的章节标题，但某些输出格式可能有限制（HTML只有6级标题）。</p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><p class="first">下面是有效的章节标题装饰字符:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! &quot; # $ % &amp; &#39; ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~
+</pre></div>
+</div>
+<p>有一些字符比其他字符更适用，建议使用它们:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>= - ` : . &#39; &quot; ~ ^ _ * + #
+</pre></div>
+</div>
+</td></tr>
+</tbody>
+</table>
+<p>相比强加一个固定数字和顺序的章节标题装饰风格，其执行的顺序是碰到每个标题的先后顺序。碰到的第一种类型是最外层标题（如HTML H1），第二种类型则成为子标题，第三种将成为子子标题，以此类推。</p>
+<p><strong>样例展示：</strong></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id5">
+<h1>1.1.3.2. 这是1级标题演示<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id6">
+<h2>1.1.3.2.1. 这是3级标题演示<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>1.1.3.2.1.1. 这是4级标题演示<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id8">
+<h4>1.1.3.2.1.1.1. 这是5级标题演示<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id9">
+<h5>1.1.3.2.1.1.1.1. 这是6级标题演示<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h5>
+<div class="section" id="id10">
+<h6>1.1.3.2.1.1.1.1.1. 章节标题<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h6>
+<div class="section" id="id11">
+<h7>1.1.3.2.1.1.1.1.1.1. 章节标题<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h7>
+<div class="section" id="id12">
+<h8>1.1.3.2.1.1.1.1.1.1.1. 章节标题<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h8>
+<div class="section" id="id13">
+<h9>1.1.3.2.1.1.1.1.1.1.1.1. 章节标题<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h9>
+<div class="section" id="id14">
+<h10>1.1.3.2.1.1.1.1.1.1.1.1.1. 章节标题<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h10>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">下面的标题顺序和上面显示的测试样例顺序一致。经测试是哪个标记放在最前面哪个就是一级标题。所以，在同一个项目中自己可以根据习惯定义哪个是一级标题。但是建议一个项目中的标题顺序使用相同的。这样方便查阅。</p>
+</div>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========
+章节标题
+========
+
+--------
+章节标题
+--------
+
+章节标题
+========
+
+章节标题
+--------
+
+章节标题
+````````
+
+章节标题
+&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+
+章节标题
+........
+
+章节标题
+~~~~~~~~
+
+章节标题
+********
+
+章节标题
+++++++++
+
+章节标题
+^^^^^^^^
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id15">
+<h2>1.1.3.2.2. 段落学习<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<p>我把一些rST的模块整理到了这个段落学习阶段。方便掌握。</p>
+<p><strong>段落学习分为以下4部分：</strong></p>
+<ol class="arabic simple">
+<li>空格、缩进、空行使用</li>
+<li>段落</li>
+<li>缩进、空行</li>
+<li>过渡</li>
+</ol>
+<hr class="docutils" />
+<div class="section" id="id16">
+<h3>1.1.3.2.2.1. 空格、缩进、空行学习<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>段落是被空行分割的文字片段，左侧必须对齐（<strong>没有空格，或者有相同多的空格</strong>）。<strong>缩进的段落被视为引文</strong>。</li>
+<li>空格进行缩进 ，但tab也可以使用。tab会转换为空格。tab会停在每个第八列。其他空白字符（form feeds [chr(12)] and vertical tabs [chr(11)]）会在处理前转为单个空格。</li>
+<li>rST中如果想手动换行。需要换行后再空一行才能实现转换的HTML换行功能。</li>
+</ul>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>展示换行功能</p>
+<p>这一行上面空了一行。现在换行成功。</p>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>展示换行功能
+
+这一行上面空了一行。现在换行成功。
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id17">
+<h3>1.1.3.2.2.2. 段落学习<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>这里的段落不再是没有规则的顶头写，然后一段一段中间空一行的段落。而是单独的一种段落格式。</p>
+<p>段落包含没有任何标记指向其他正文元素的左对齐文本块。使用空行分隔段落及其他正文元素。段落可以包含 行内标记 。</p>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>这一第一段落。这个段落也不是很大。但是也不小。这里面也可以有其他格式。</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first">段落样例，显示列表</p>
+<ul class="last simple">
+<li>无序列表</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+------------------------------------------------------------------------------------------+
+| 这一第一段落。这个段落也不是很大。但是也不小。这里面也可以有其他格式。                         |
+|                                                                                          |
++------------------------------------------------------------------------------------------+
+
++------------------------------+
+| 段落样例，显示列表            |
+| - 无序列表                   |
++------------------------------+
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id18">
+<h3>1.1.3.2.2.3. 缩进、空行<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<p>缩进是用来表示引用块、定义（在定义列表项中）和本地嵌套内容的唯一重要标示:</p>
+<ul class="simple">
+<li>列表项内容（列表项多行内容和一个列表项中多个正文元素包括嵌套列表）</li>
+<li>文本块的内容</li>
+<li>显式标记块的内容</li>
+<li>任何文本的缩进少于当前级别，会结束当前级别的缩进</li>
+</ul>
+<p>因为所有的缩进都是重要的标志，因此缩进的级别应当一致。</p>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>这是一个顶级段落。</p>
+<blockquote>
+<div><p>本段落属于一级引用块。</p>
+<p>一级引用块的第二段。</p>
+<p>一级引用第三段。这三段的缩进都是相同的。</p>
+</div></blockquote>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这是一个顶级段落。
+
+    该段落属于一级引用块。
+
+    一级引用块的第二段。
+
+    一级引用第三段。这三段的缩进都是相同的。
+
+也可以有以下理解：
++------------------------------+
+|顶级/上一级段落                |
++------------------------------+
+    | 这是缩进的段落，上面空一行  |
+    | - 无序列表                |
+    +--------------------------+
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id19">
+<h3>1.1.3.2.2.4. 过渡<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<p><strong>文档元素：过渡</strong></p>
+<p>取代小标题，段落之间的额外空间或类型装饰符可用来标记文本分隔或主 题或重点的改变。</p>
+<p>(The Chicago Manual of Style, 14th edition, section 1.80)</p>
+<p>过渡常见于小说，作为一个跨越一行或多行的间隙，有或没有类似于一行星号的类型装饰符。过渡分隔其他正文元素。过渡不应开始或结束一个章节或文档，两个过渡也不应该直接相邻。过渡标记的语法是一排**至少4个重复的标点符号**。该语法与章节标题下划线一样。<strong>过渡标记前后需要空行</strong>。</p>
+<p>不像章节标题下划线，章节标题不需要体系结构。建议使用同一种风格。处理系统可以以任何其希望的方式在输出中渲染过渡。如，HTML中的&lt;hr&gt;输出是一种明显的选择。</p>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>段落一，下面有横线，这个横线就是过渡。</p>
+<hr class="docutils" />
+<p>段落二，上面有横线，这个横线使得段落一和段落二分割明显。</p>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>段落一，下面有横线，这个横线就是过渡。
+
+----
+
+段落二，上面有横线，这个横线使得段落一和段落二分割明显。
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id20">
+<h2>1.1.3.2.3. 列表学习<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<p><strong>列表分为以下几种：</strong></p>
+<ol class="arabic simple">
+<li>无序列表</li>
+<li>有序列表</li>
+<li>定义列表</li>
+<li>字段列表</li>
+</ol>
+<p>以上三种列表的列表项正文必须与bullet缩进左对齐。文本紧接在bullet分隔符之后。简单理解就是相同级别的序号前面的引导字符要缩进相同。</p>
+<div class="section" id="id21">
+<h3>1.1.3.2.3.1. 无序列表<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<p>以一个 “*”, “+”, “-“开头，后面根一个空格的文本块是一个无序列表项。</p>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>样例1：</p>
+<ul class="simple">
+<li>这是无序列表1</li>
+<li><dl class="first docutils">
+<dt>这是无序列表2</dt>
+<dd><ul class="first last">
+<li>这是子序列1</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>这是无序列表</li>
+</ul>
+<p>样例2：</p>
+<ul class="simple">
+<li>这是无序列表1</li>
+<li><dl class="first docutils">
+<dt>这是无序列表2</dt>
+<dd><ol class="first last arabic">
+<li>这是子序列1</li>
+<li>子序列2</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>这是无序列表</li>
+</ul>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>样例1：
+
+- 这是无序列表1
+- 这是无序列表2
+    - 这是子序列1
+-这是无序列表
+
+样例2：
+
+- 这是无序列表1
+- 这是无序列表2
+    1. 这是子序列1
+    #. 子序列2
+-这是无序列表
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id22">
+<h3>1.1.3.2.3.2. 有序列表<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<p>有序列表与无序列表类似，但是用序号而非圆点。序号包含有序成员和格式，之后跟着空格。以下有序序列可以识别:</p>
+<ul class="simple">
+<li>任意数字：1 2 3 … (无上限)</li>
+<li>大写字母：A B C … Z</li>
+<li>小写字母：a b c … z</li>
+<li>大写罗马数字：I II III IV … MMMMCMXCIX(4999)</li>
+<li>小写罗马数字：i ii iii iv … mmmmcmxcix(4999)</li>
+<li>另外，自动编号符”#”可以用于自动编号列表。自动编号列表可以以显示的编号开始设置序列。完整的自动有序列表使用以1开始的任意数字(自动有序列表为 Docutils 0.3.8新增)</li>
+</ul>
+<p>以下格式可以识别：</p>
+<ul class="simple">
+<li>以点为后缀：”1.” “A.” “a.” “I.” “i.”</li>
+<li>以括号包围：”(1)” “(A)” “(a)” “(I)” “(i)”</li>
+<li>以右括号为后缀：”1)” “A)” “a)” “I)” “i)”</li>
+<li>解析一个有序列表时碰到下列情况，会开始一个新列表：</li>
+<li>碰到与当前列表序号的类型和格式不一致的序号（如，”1.”和”a.”分属两个列表）</li>
+<li>序号不在序列内有序（如，”1”、”3”产生连个独立的列表）</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p>建议使用1 (“1”, “A”, “a”, “I”, or “i”)作为第一个列表项的序号。当然以其他的数字开始也会被识别，但输出格式可能不支持。任何不以传统的1开始的列表都会生成一个一级[info]系统信息。</p>
+<p class="last">使用罗马数字的列表必须以”I/i”或一个多字符值如”II”或”XV”开始。任何其他单字符罗马数字（”V”, “X”, “L”, “C”, “D”, “M”）会被解释为一个字母而非罗马数字。 同样，使用字母开始的列表不能使用”I/i”，因为其会被识别为罗马数字1。</p>
+</div>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>样例1：</p>
+<ol class="arabic simple">
+<li>这是无序列表1</li>
+<li><dl class="first docutils">
+<dt>这是无序列表2</dt>
+<dd><ol class="first last lowerroman">
+<li>这是子序列1</li>
+<li>子序列2</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>这是无序列表</li>
+</ol>
+<p>样例2：</p>
+<ol class="upperalpha simple">
+<li>这是无序列表1</li>
+<li><dl class="first docutils">
+<dt>这是无序列表2</dt>
+<dd><ol class="first last loweralpha">
+<li>这是子序列1</li>
+<li>子序列2</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>这是无序列表</li>
+</ol>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>样例1：
+
+1. 这是无序列表1
+#. 这是无序列表2
+    i. 这是子序列1
+    #. 子序列2
+#. 这是无序列表
+
+样例2：
+
+A. 这是无序列表1
+#. 这是无序列表2
+    a. 这是子序列1
+    #. 子序列2
+#. 这是无序列表
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id23">
+<h3>1.1.3.2.3.3. 定义列表<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+<p>每个定义列表项包含一个术语、可选的分类器和一个定义i。术语是一个简单的一行单词或句子。可选的分类器与术语在同一行，跟在它后面。每个分类器跟在一个行内”:”(空格冒号空格)之后。定义是一个块通，过缩进与术语联系，可以包含多个段落和其他正文元素。术语与定义块之间不允许有空格（这区分了定义列表与 引用块 ）。定义列表第一行之前和最后一行之后需要空行，中间的列表项是否空行是可选的。</p>
+<p>行内标记在术语行被解析，在分类器分隔符(”:”)被识别之前。分隔符仅在出现在任何行内标记之外时被识别。</p>
+<p>定义列表可用于多种用途，包括:</p>
+<ul class="simple">
+<li>作为一个字典或术语表。术语是单词本身，分类细可用于根据用途分类术语（动词、名词等等），定义跟在后面。</li>
+<li>用于描述程序变量。术语是变量名，分类器用于区分变量类型（字符串、整形等等），定义描述变量在程序中的用法。定义列表的该用途支持分类器语法 Grouch ，一种描述和执行Python对象约束的系统。</li>
+</ul>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<dl class="docutils">
+<dt>术语 1</dt>
+<dd>定义 1.</dd>
+<dt>术语 2</dt>
+<dd><p class="first">定义 2, 段落 1.</p>
+<p class="last">定义 2, 段落 2.</p>
+</dd>
+<dt>术语 3 <span class="classifier-delimiter">:</span> <span class="classifier">分类器</span></dt>
+<dd>定义 3.</dd>
+<dt>术语 4 <span class="classifier-delimiter">:</span> <span class="classifier">分类器 1</span> <span class="classifier-delimiter">:</span> <span class="classifier">分类器 2</span></dt>
+<dd>定义 4.</dd>
+</dl>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">术语</span> <span class="mi">1</span>
+    <span class="n">定义</span> <span class="mf">1.</span>
+
+<span class="n">术语</span> <span class="mi">2</span>
+    <span class="n">定义</span> <span class="mi">2</span><span class="p">,</span> <span class="n">段落</span> <span class="mf">1.</span>
+
+    <span class="n">定义</span> <span class="mi">2</span><span class="p">,</span> <span class="n">段落</span> <span class="mf">2.</span>
+
+<span class="n">术语</span> <span class="mi">3</span> <span class="p">:</span> <span class="n">分类器</span>
+    <span class="n">定义</span> <span class="mf">3.</span>
+
+<span class="n">术语</span> <span class="mi">4</span> <span class="p">:</span> <span class="n">分类器</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">分类器</span> <span class="mi">2</span>
+    <span class="n">定义</span> <span class="mf">4.</span>
+
+<span class="n">语法图</span><span class="p">:</span>
+
+<span class="o">+----------------------------+</span>
+<span class="o">|</span> <span class="n">term</span> <span class="p">[</span> <span class="s2">&quot; : &quot;</span> <span class="n">classifier</span> <span class="p">]</span><span class="o">*</span> <span class="o">|</span>
+<span class="o">+--+-------------------------+--+</span>
+    <span class="o">|</span> <span class="n">definition</span>                 <span class="o">|</span>
+    <span class="o">|</span> <span class="p">(</span><span class="n">body</span> <span class="n">elements</span><span class="p">)</span><span class="o">+</span>           <span class="o">|</span>
+    <span class="o">+----------------------------+</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id24">
+<h3>1.1.3.2.3.4. 字段列表<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+<p>字段列表作为扩展语法的一部分被使用，如 指令 的选项或等待进一步处理的类数据库记录。它们也被用于两列类列表结构类似于数据库记录（标签和数据对）。reStructuredText应用可以在特定上下文中识别字段名和变形字段或字段正文。例如，阅读下面的 目录字段 或 指令 中的 “图片“和”元” 指令 .</p>
+<p>字段列表会映射字段名到字段正文，仿照 RFC822 头。一个字段名可以包含任何字符，但字段名中的冒号(”:”)必须使用反斜杠转义。行内标记被解析为字段名。在进一步处理或传输时，字段名大小写敏感。字段名. 字段名与一个单独的冒号前后缀一起构成字段标记。字段表及之后跟空格和字段正文。字段正文可以包含多个正文元素，缩进到字段标记处。字段名标记之后的第一行决定字段正文的缩进。</p>
+<p>一个多单词字段名中的单个词的解释是应用程序。该应用程序可以为该字段名指定一个语法。例如，第二个单词及其后面的单词可以被视为“参数”，引用短语可以被视为一个单一的参数，并可能会增加直接支持“键=值”的语法。</p>
+<p>除了潜在的可能导致误解的标准 RFC822 标题不能用于这种构造是因为它们模糊不清。以一个单词后面跟一个冒号开始一行是一种通用的书写文本。然而，在定义良好的上下文如当一个字段列表总是在文档的开头（PEPS和电子邮件）时，标准RFC822头可以使用。</p>
+<p>当一个字段列表是文档的第一个非注释元素时(只在文档标题之后，如果有)，它可以从字段转换为文档目录数据。这个目录数据对应一本书的封面，如标题页和版权页。</p>
+<p>特定的注册过的字段名(见下表)会被识别并转换为对应的文档树元素，大部分会变为”docinfo”元素的子元素。对于这些字段，没有顺序要求，但它们会被重新组织以适应文档的结构。 除非另有说明，每一个目录元素的字段正文只能包含一个段落。字段正文会被 RCS关键字 检查和清理。任何不能识别的字段会被作为通用字段保留在docinfo元素中。</p>
+<p>注册过的目录字段名和它们对应的文档树元素如下:</p>
+<ul class="simple">
+<li>字段名 “Author”: 作者元素</li>
+<li>“Authors”: 作者.</li>
+<li>“Organization”: 组织.</li>
+<li>“Contact”: 联系方式.</li>
+<li>“Address”: 地址.</li>
+<li>“Version”: 版本.</li>
+<li>“Status”: 状态.</li>
+<li>“Date”: 日期.</li>
+<li>“Copyright”: 版权.</li>
+<li>“Dedication”: 主题.</li>
+<li>“Abstract”: 主题.</li>
+<li>“Authors”字段可以包含: 一个包含作者列表（冒号或逗号分隔）的段落；或一个无序列表，其每个元素包含一个单独的段落每作者。首先检查”;”，因此”Doe, Jane; Doe, John”是可以的。如果单个饼子包含逗号，使用分号结束它: ”:Authors: Doe, Jane;”。</li>
+</ul>
+<p>“Address”字段用于多行邮件地址。新行和空格会被保留。</p>
+<p>“Dedication”和”Abstract”字段可以包含任意正文元素。每种一个。它们会称为紧跟在docinfo元素之后的使用”Dedication”或”Abstract”标题（或语言相等）的主题元素。</p>
+<p>这个字段名到元素的映射可以替换为其他语言。详见 文档信息转换 实现文档。</p>
+<p>未注册/通用字段可以包含一个或多个段落或任意正文元素。</p>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body"><p class="first">2001-08-16</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Version:</th><td class="field-body"><p class="first">1</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body"><ul class="first simple">
+<li>Me</li>
+<li>Myself</li>
+<li>I</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Indentation:</th><td class="field-body"><p class="first">因为字段标记可能很长，字段正文的第二行
+及随后的行不必与第一行对齐，但必须缩进到字段名标记
+处，且它们应当互相对齐。</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Parameter i:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:Date: 2001-08-16
+:Version: 1
+:Authors: - Me
+          - Myself
+          - I
+:Indentation: 因为字段标记可能很长，字段正文的第二行
+    及随后的行不必与第一行对齐，但必须缩进到字段名标记
+    处，且它们应当互相对齐。
+:Parameter i: integer
+
+语法图(简化):
+
++--------------------+----------------------+
+| &quot;:&quot; field name &quot;:&quot; | field body           |
++-------+------------+                      |
+        | (body elements)+                  |
+        +-----------------------------------+
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id25">
+<h2>1.1.3.2.4. 文本块学习<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>样例1：</p>
+<p>这是正常段落，后面是文板块。:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这是文本块。
+</pre></div>
+</div>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这是正常段落，后面是文板块。::
+
+    这是文本块。
+
+也可以有以下理解：
++-----------------------------------------------------+
+|段落文本，后面需要添加英文两个连续冒号::                 |
++-----------------------------------------------------+
+    | 与上面一行之间空一行。然后按照这个缩进。            |
+    | 这就是文板块                                      |
+    +--------------------------------------------------+
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id26">
+<h2>1.1.3.2.5. 字体相关学习<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h2>
+<p><strong>常见可以设置种类有：</strong></p>
+<ol class="arabic simple">
+<li>粗体</li>
+<li>斜体</li>
+</ol>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>样例：</p>
+<p><strong>粗体</strong></p>
+<p><em>斜体</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">1旁边按键字符</span></code></p>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**粗体**
+
+*斜体*
+
+``1旁边按键字符``
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2.advance.html" class="btn btn-neutral float-right" title="1.1.3.3. 高级语法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../3.grammar.html" class="btn btn-neutral" title="1.1.3. reST语法介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, 张志佳.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.0',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

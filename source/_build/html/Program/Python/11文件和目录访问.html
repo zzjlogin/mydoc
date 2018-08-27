@@ -1,0 +1,1077 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.11. 文件和目录访问 &mdash; 张志佳的技术文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="1.12. 数据持久化" href="12数据持久化.html" />
+    <link rel="prev" title="1.10. 函数式编程模块" href="10函数式编程模块.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 张志佳的技术文档
+          
+
+          
+            
+            <img src="../../_static/logo-wordmark-light.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018-08-27
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">编程学习:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../1.Python.html">1. Python学习</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01环境准备.html">1.1. 环境准备</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01环境准备.html#python">1.1.1. 安装python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01环境准备.html#ipython">1.1.2. ipython的安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01环境准备.html#id2">1.1.3. ipython测试</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02内建函数.html">1.2. 内建函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html#id2">1.2.1. 常用内置函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#abs-x">1.2.1.1. abs(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#all-iterable">1.2.1.2. all(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#any-iterable">1.2.1.3. any(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#bool-x">1.2.1.4. bool(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#callable-object">1.2.1.5. callable(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#chr-i">1.2.1.6. chr(i)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#classmethod">1.2.1.7. classmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#delattr-object-name">1.2.1.8. delattr(object,name)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#dict-kwarg">1.2.1.9. dict(**kwarg)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#dir-x">1.2.1.10. dir(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#enumerate-iterable-start-0">1.2.1.11. enumerate(iterable, start=0)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#eval-expression-globals-none-locals-none">1.2.1.12. eval(expression, globals=None, locals=None)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#float-x">1.2.1.13. float(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#getattr-object-name-default">1.2.1.14. getattr(object, name[, default])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#hasattr-object-name">1.2.1.15. hasattr(object, name)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#hex-x">1.2.1.16. hex(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#input-prompt">1.2.1.17. input(prompt)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#isinstance-object-classinfo">1.2.1.18. isinstance(object,classinfo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#issubclass-class-classinfo">1.2.1.19. issubclass(class, classinfo)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#iter-object-sentinel">1.2.1.20. iter(object[, sentinel])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#len-x">1.2.1.21. len(x)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#open-file-mode-r-buffering-1-encoding-none-errors-none-newline-none-closefd-true-opener-none">1.2.1.22. open(file, mode=’r’, buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#powpow-x-y-z">1.2.1.23. powpow(x, y[, z])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#range-start-stop-step">1.2.1.24. range(start,stop,step)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#repr-object">1.2.1.25. repr(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#reversed-seq">1.2.1.26. reversed(seq)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#round-number-ndigits">1.2.1.27. round(number[, ndigits])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#setattr-object-name-value">1.2.1.28. setattr(object,name,value)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#class-slice-start-stop-step">1.2.1.29. class slice(start, stop[, step])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#sorted-iterable-key-none-reverse-false">1.2.1.30. sorted(iterable, *, key=None, reverse=False)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#staticmethod">1.2.1.31. &#64;staticmethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#sum-iterable-start">1.2.1.32. sum(iterable[, start])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#super-type-object-or-type">1.2.1.33. super([type[, object-or-type]])</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#tuple-iterable">1.2.1.34. tuple(iterable)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#type-object">1.2.1.35. type(object)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#zip-iterables">1.2.1.36. zip(*iterables)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03内置常量.html">1.3. 内置常量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04内置类型.html">1.4. 内置类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#id2">1.4.1. 真值测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#boolean">1.4.2. boolean操作符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#id3">1.4.3. 比较操作符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#int-float-complex">1.4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#list-tuple-range">1.4.5. 数据类型 list, tuple, range</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#list">1.4.5.1. list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#tuples">1.4.5.2. Tuples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#ranges">1.4.5.3. Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#text-sequence-type-str">1.4.5.4. Text Sequence Type - str</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#string-methods">1.4.5.5. String Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#printf">1.4.5.6. printf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">1.4.6. Binary Sequence Types — bytes, bytearray, memoryview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#bytes">1.4.6.1. bytes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#bytearray">1.4.6.2. bytearray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#memoryview">1.4.6.3. memoryview</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html#set-types-set-frozenset">1.4.7. Set Types — set, frozenset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#mapping-types-dict">1.4.7.1. Mapping Types — dict</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="05内置异常.html">1.5. 内置异常</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06文本处理.html">1.6. 文本处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#string">1.6.1. string</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id2">1.6.1.1. string常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id3">1.6.1.2. 格式化样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id4">1.6.1.3. 模板字符串</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#re">1.6.2. re</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id5">1.6.2.1. 模块内容</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id6">1.6.2.2. 正则表达式对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#id7">1.6.2.3. 匹配对象</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#difflib">1.6.3. difflib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#textwrap">1.6.4. textwrap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#unicodedata">1.6.5. unicodedata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#stringprep">1.6.6. stringprep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#readline">1.6.7. readline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html#rlcompleter">1.6.8. rlcompleter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="07二进制处理.html">1.7. 二进制处理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="07二进制处理.html#struct">1.7.1. struct</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="07二进制处理.html#id2">1.7.1.1. 主要函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="07二进制处理.html#codecs">1.7.2. codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="08数据类型.html">1.8. 数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#datetime">1.8.1. datetime</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#timedelta">1.8.1.1. timedelta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#date">1.8.1.2. date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#id2">1.8.1.3. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#time">1.8.1.4. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#id3">1.8.1.5. 格式控制</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#calendar">1.8.2. calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#collectons">1.8.3. collectons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#chainmap">1.8.3.1. ChainMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#counter">1.8.3.2. Counter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#deque">1.8.3.3. deque</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#defaultdict">1.8.3.4. defaultdict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#namedtuple">1.8.3.5. namedtuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#ordereddict">1.8.3.6. OrderedDict</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#collections-abc">1.8.4. collections.abc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#heapq">1.8.5. heapq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#bisect">1.8.6. bisect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#array">1.8.7. array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#weakref">1.8.8. weakref</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#types">1.8.9. types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#copy">1.8.10. copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#pprint">1.8.11. pprint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#reprlib">1.8.12. reprlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#enum">1.8.13. enum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#intenum">1.8.13.1. IntEnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html#intflag">1.8.13.2. IntFlag</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="08数据类型.html#flag">1.8.14. Flag</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09数值模块.html">1.9. 数值模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#numbers">1.9.1. numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#math">1.9.2. math</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#cmath">1.9.3. cmath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#decimal">1.9.4. decimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#fractions">1.9.5. fractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#random">1.9.6. random</a></li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html#statistics">1.9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="10函数式编程模块.html">1.10. 函数式编程模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="10函数式编程模块.html#itertools">1.10.1. itertools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10函数式编程模块.html#functools">1.10.2. functools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="10函数式编程模块.html#operator">1.10.3. operator</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.11. 文件和目录访问</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pathlib">1.11.1. pathlib</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.11.1.1. 基本使用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pure">1.11.1.2. pure路径</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#concrete">1.11.1.3. Concrete路径</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#os-path">1.11.2. os.path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fileinput">1.11.3. fileinput</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stat">1.11.4. stat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filecmp">1.11.5. filecmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tempfile">1.11.6. tempfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glob">1.11.7. glob</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fnmatch">1.11.8. fnmatch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linecache">1.11.9. linecache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shutil">1.11.10. shutil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macpath">1.11.11. macpath</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="12数据持久化.html">1.12. 数据持久化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#pickle">1.12.1. pickle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#copyreg">1.12.2. copyreg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#shelve">1.12.3. shelve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#marshal">1.12.4. marshal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#dbm">1.12.5. dbm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html#sqllite">1.12.6. sqllite</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="13数据压缩和归档.html">1.13. 数据压缩和归档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#zlib">1.13.1. zlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#gzip">1.13.2. gzip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#bz2">1.13.3. bz2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#lzma">1.13.4. lzma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#zipfile">1.13.5. zipfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html#tarfile">1.13.6. tarfile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="14文件格式.html">1.14. 文件格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#csv">1.14.1. csv</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#csv-writer-csvfile-dialect-excel-fmtparams">1.14.1.1. csv.writer(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#csv-reader-csvfile-dialect-excel-fmtparams">1.14.1.2. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#csv-dictwriter-f-fieldnames-restval-extrasaction-raise-dialect-excel-args-kwds">1.14.1.3. csv.DictWriter(f, fieldnames, restval=’‘, extrasaction=’raise’, dialect=’excel’, *args, **kwds)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#id2">1.14.1.4. csv.reader(csvfile, dialect=’excel’, **fmtparams)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#configparser">1.14.2. configparser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#netrc">1.14.3. netrc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#xdrlib">1.14.4. xdrlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html#plistlib">1.14.5. plistlib</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15加密服务.html">1.15. 加密服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15加密服务.html#hashlib">1.15.1. hashlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15加密服务.html#hmac">1.15.2. hmac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15加密服务.html#secrets">1.15.3. secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="16通用操作系统服务.html">1.16. 通用操作系统服务</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.1通用操作系统服务.html">1.16.1. os</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.1通用操作系统服务.html#id1">1.16.1.1. 文件名，命令行参数，环境变量</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.2通用操作系统服务.html">1.16.2. io</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.2通用操作系统服务.html#id1">1.16.2.1. io入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.2通用操作系统服务.html#id2">1.16.2.2. 主要先关类和主要方法</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.3通用操作系统服务.html">1.16.3. time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html">1.16.4. argparse</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#id1">1.16.4.1. 快速入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#argumentparser">1.16.4.2. ArgumentParser 对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#add-argument">1.16.4.3. add_argument() 方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#parse-args">1.16.4.4. parse_args() 方法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#id3">1.16.4.5. 其他功能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html#id8">1.16.4.6. 案例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.5通用操作系统服务.html">1.16.5. getopt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.5通用操作系统服务.html#id1">1.16.5.1. 快速入门样例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html">1.16.6. logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#logging-logger">1.16.6.1. logging.Logger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#logging-handler">1.16.6.2. logging.Handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#logging-formatter">1.16.6.3. logging.Formatter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#logging-filter">1.16.6.4. logging.Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#logging-logrecord">1.16.6.5. logging.LogRecord</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html#id1">1.16.6.6. 简单使用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html">1.16.7. logging.Config</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html#logging-config-dictconfig">1.16.7.1. logging.config.dictConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html#logging-config-fileconfig">1.16.7.2. logging.config.fileConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html#logging-config-listen">1.16.7.3. logging.config.listen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html#id1">1.16.7.4. 字典配置细节</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html">1.16.8. logging.Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#logging-streamhandler">1.16.8.1. logging.StreamHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#logging-filehandler">1.16.8.2. logging.FileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#logging-nullhandler">1.16.8.3. logging.NullHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#watchedfilehandler">1.16.8.4. WatchedFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#baserotatinghandler">1.16.8.5. BaseRotatingHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#rotatingfilehandler">1.16.8.6. RotatingFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#timedrotatingfilehandler">1.16.8.7. TimedRotatingFileHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#sockethandler">1.16.8.8. SocketHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#datagramhandler">1.16.8.9. DatagramHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#sysloghandler">1.16.8.10. SysLogHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#nteventloghandler">1.16.8.11. NTEventLogHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#smtphandler">1.16.8.12. SMTPHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#logging-handlers-bufferinghandler">1.16.8.13. logging.handlers.BufferingHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#logging-handlers-memoryhandler">1.16.8.14. logging.handlers.MemoryHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#httphandler">1.16.8.15. HTTPHandler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html#queuehandler">1.16.8.16. QueueHandler</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统/16.9通用操作系统服务.html">1.16.9. getpass</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="17并发执行.html">1.17. 并发执行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#threading">1.17.1. threading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-thread">1.17.1.1. threading.Thread</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-lock">1.17.1.2. threading.Lock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-rlock">1.17.1.3. threading.RLock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-condition">1.17.1.4. threading.Condition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-event">1.17.1.5. threading.Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-timer">1.17.1.6. threading.Timer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading-barrier">1.17.1.7. threading.Barrier</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#multiprocessing">1.17.2. multiprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#multiprocessing-process">1.17.3. multiprocessing.Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#id2">1.17.4. multiprocessing.Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#multiprocessing-queue">1.17.5. multiprocessing.Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#id3">1.17.6. multiprocessing.Queue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#multiprocessing-joinablequeue">1.17.7. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html#multiprocessing-connection-connection">1.17.8. multiprocessing.connection.Connection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#id4">1.17.8.1. 共享对象</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#id5">1.17.8.2. 进程管理者</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="18进程通信和网络.html">1.18. 进程通信和网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="19网络数据处理.html">1.19. 网络数据处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20结构化文本文档处理工具.html">1.20. 结构化文本文档处理工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2.Algorithm.html">2. 算法学习(Algorithm)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Algorithm/CCFexam.html">2.1. CCF考试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Algorithm/ccf/201803-1.html">2.1.1. 201803-1 跳一跳</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">网络学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Network/1.NetworkTheory.html">1. 理论学习</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Network/2.HuaWei.html">2. 华为</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Network/3.H3C.html">3. H3C(华三/新华三)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Network/4.CISCO.html">4. 思科(CISCO)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">服务器学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/1.AboutAndClass.html">1. 服务器相关常识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/2.Linux.html">2. Linux 服务器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/3.Unix.html">3. Unix 和类Unix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/4.Windows.html">4. Windows 服务器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/5.Optimization.html">5. 服务器优化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server/6.FAQ.html">6. 常见问题及解决(FAQ)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">大数据/数据库:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Data/1.html">1. 我的文档库123</a></li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../MachineLearning/base.html">1. 机器学习入门</a></li>
+</ul>
+<p class="caption"><span class="caption-text">工具和开源项目:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolsOpenSource/1.Tools.html">1. 常用工具汇总</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ToolsOpenSource/Tools/1.rST.html">1.1. reStructuredText相关</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/1.index.html">1.1.1. rST简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/2.install.html">1.1.2. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/3.grammar.html">1.1.3. reST语法介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/grammar/1.base.html">1.1.3.1. 基础语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/grammar/1.base.html#id3">1.1.3.2. 这是1级标题演示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/grammar/2.advance.html">1.1.3.3. 高级语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/grammar/3.linkTosphinx.html">1.1.3.4. sphinx tootree</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/4.toOthers.html">1.1.4. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/5.API.html">1.1.5. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/6.rstTools.html">1.1.6. index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/7.addFunctions.html">1.1.7. index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolsOpenSource/2.OpenSource.html">2. 关注的开源项目</a></li>
+</ul>
+<p class="caption"><span class="caption-text">其他杂项:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Others/1.html">1. 我的文档库123</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../AboutMe.html">关于我</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">张志佳的技术文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../1.Python.html">1. Python学习</a> &raquo;</li>
+        
+      <li>1.11. 文件和目录访问</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="12数据持久化.html" class="btn btn-neutral float-right" title="1.12. 数据持久化" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="10函数式编程模块.html" class="btn btn-neutral" title="1.10. 函数式编程模块" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1.11. 文件和目录访问<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这个模块提供了代表文件系统路径的类，其语义适用于不同的操作系统。</p>
+<p>文件类继承图</p>
+<img alt="../../_images/pathlib-inheritance.png" src="../../_images/pathlib-inheritance.png" />
+<div class="section" id="pathlib">
+<h2>1.11.1. pathlib<a class="headerlink" href="#pathlib" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>1.11.1.1. 基本使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下的所有文件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+<span class="p">[</span><span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;.vscode&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;node_modules&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;public&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;scaffolds&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;themes&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;tmp&#39;</span><span class="p">)]</span>
+
+<span class="c1"># 所有特定的文件,glob使用通配功能，递归需要**</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*.rst&quot;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">7</span><span class="p">]:</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;source/_posts/CA服务器的搭建.rst&#39;</span><span class="p">),</span>
+<span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;source/_posts/mariadb多实例的三种实现.rst&#39;</span><span class="p">),</span>
+
+<span class="c1"># 导航目录</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;/etc&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;/etc&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">q</span> <span class="o">=</span> <span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;init.d&#39;</span> <span class="o">/</span> <span class="s1">&#39;reboot&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">q</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;/etc/init.d/reboot&#39;</span><span class="p">)</span>
+
+<span class="c1"># 基础文件判断</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">q</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">q</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">q</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pure">
+<h3>1.11.1.2. pure路径<a class="headerlink" href="#pure" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 路径整合</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PurePath</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;some/path&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;foo/some/path/bar&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="nb">str</span><span class="p">(</span><span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;some/path&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="s1">&#39;foo</span><span class="se">\\</span><span class="s1">some</span><span class="se">\\</span><span class="s1">path</span><span class="se">\\</span><span class="s1">bar&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;some/path&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="s1">&#39;foo</span><span class="se">\\</span><span class="s1">some</span><span class="se">\\</span><span class="s1">path</span><span class="se">\\</span><span class="s1">bar&#39;</span>
+
+<span class="c1"># 路径判断，window是不区分大小写的，linux区分大小写（更准确的说应该是文件系统）</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span>  <span class="n">PurePosixPath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">PurePosixPath</span><span class="p">(</span><span class="s1">&#39;FOO&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;FOO&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="c1"># 文件系统路径</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;some/path&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">))</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="s1">&#39;foo</span><span class="se">\\</span><span class="s1">some</span><span class="se">\\</span><span class="s1">path</span><span class="se">\\</span><span class="s1">bar&#39;</span>
+
+<span class="c1"># 路径拆分</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;c:/Program Files/&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">parts</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;c:</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Program Files&#39;</span><span class="p">)</span>
+
+<span class="c1"># 驱动盘</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">drive</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="s1">&#39;c:&#39;</span>
+
+<span class="c1"># 根</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">root</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span>
+
+<span class="c1"># 锚定</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">anchor</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;c:</span><span class="se">\\</span><span class="s1">&#39;</span>
+
+<span class="c1">#父目录</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">parents</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">42</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">PureWindowsPath</span><span class="o">.</span><span class="n">parents</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">PureWindowsPath</span><span class="p">(</span><span class="s1">&#39;c:/&#39;</span><span class="p">)</span>
+
+<span class="c1"># 文件名</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="s1">&#39;Program Files&#39;</span>
+
+<span class="c1"># 没有扩展的名字a.tar 得到a</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">stem</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="s1">&#39;Program Files&#39;</span>
+
+<span class="c1"># url路径</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">as_uri</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="s1">&#39;file:///c:/Program</span><span class="si">%20F</span><span class="s1">iles&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="concrete">
+<h3>1.11.1.3. Concrete路径<a class="headerlink" href="#concrete" title="永久链接至标题">¶</a></h3>
+<p>在原有PurePath的基础上又提供了对路径对象执行系统调用的方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 当前目录，current workspace directory</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;E:/ZhaojiediProject/github/My_Aliyun_Hexo_Blog/hexo&#39;</span><span class="p">)</span>
+
+<span class="c1"># 当前用户的家目录</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;C:/Users/Administrator&#39;</span><span class="p">)</span>
+
+<span class="c1"># 目录是否存在</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="c1"># 其他方法</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span>
+        <span class="n">absolute</span><span class="p">()</span>        <span class="n">chmod</span><span class="p">()</span>           <span class="n">expanduser</span><span class="p">()</span>      <span class="n">is_absolute</span><span class="p">()</span>     <span class="n">is_fifo</span><span class="p">()</span>
+        <span class="n">anchor</span>            <span class="n">cwd</span><span class="p">()</span>             <span class="n">glob</span><span class="p">()</span>            <span class="n">is_block_device</span><span class="p">()</span> <span class="n">is_file</span><span class="p">()</span>
+        <span class="n">as_posix</span><span class="p">()</span>        <span class="n">drive</span>             <span class="n">group</span><span class="p">()</span>           <span class="n">is_char_device</span><span class="p">()</span>  <span class="n">is_reserved</span><span class="p">()</span>     <span class="o">&gt;</span>
+        <span class="n">as_uri</span><span class="p">()</span>          <span class="n">exists</span><span class="p">()</span>          <span class="n">home</span><span class="p">()</span>            <span class="n">is_dir</span><span class="p">()</span>          <span class="n">is_socket</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="os-path">
+<h2>1.11.2. os.path<a class="headerlink" href="#os-path" title="永久链接至标题">¶</a></h2>
+<p>这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
+os.path.basename(path)                      基名
+os.path.commonpath(paths)                   公共路径
+os.path.commonprefix(list)                  公共前缀
+os.path.dirname(path)                       目录名
+os.path.exists(path)                        存在判断
+os.path.lexists(path)                       链接文件存在判断
+os.path.expanduser(path)                    解析~这里路径
+os.path.expandvars(path)                    解析变量
+os.path.getatime(path)                      atime
+os.path.getmtime(path)                      mtime
+os.path.getctime(path)                      ctime
+os.path.getsize(path)                       文件大小
+os.path.isabs(path)                         判断绝对路径
+os.path.isfile(path)                        判断是否是文件
+os.path.isdir(path)                         判断是否是目录
+os.path.islink(path)                        判断是否是链接文件
+os.path.ismount(path)                       判断是否是一个挂载点
+os.path.join(path, *paths)                  合并路径
+os.path.normcase(path)                      忽略大小写路径
+os.path.normpath(path)                      A//B, A/B/, A/./B and A/foo/../B all become A/B
+os.path.realpath(path)                      相对路径
+os.path.relpath(path, start=os.curdir)      相对路径
+os.path.samefile(path1, path2)              相同文件
+os.path.sameopenfile(fp1, fp2)              相同文件描述符
+os.path.samestat(stat1, stat2)              相同stat信息
+os.path.split(path)                         路径分割
+os.path.splitdrive(path)                    分割驱动盘
+os.path.splitext(path)                      扩展，用于提取不带扩展的文件名字
+</pre></div>
+</div>
+</div>
+<div class="section" id="fileinput">
+<h2>1.11.3. fileinput<a class="headerlink" href="#fileinput" title="永久链接至标题">¶</a></h2>
+<p>该模块实现了一个辅助类和函数，可以在标准输入或文件列表上快速编写循环。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fileinput</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stat">
+<h2>1.11.4. stat<a class="headerlink" href="#stat" title="永久链接至标题">¶</a></h2>
+<p>stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
+stat.S_ISCHR(mode)              字符设备
+stat.S_ISBLK(mode)              块设备
+stat.S_ISREG(mode)              普通文件
+stat.S_ISFIFO(mode)             管道文件
+stat.S_ISLNK(mode)              连接文件
+stat.S_ISSOCK(mode)             socket文件
+stat.S_ISDOOR(mode)             不清楚这个
+stat.S_ISPORT(mode)             时间端口
+stat.S_ISWHT(mode)              不清楚
+stat.S_IMODE(mode)              mode信息，可以后续使用so.chmod
+stat.S_IFMT(mode)
+stat.filemode(mode)             转化为string格式的-rwxrwxrwx
+stat.ST_MODE                    inode包括mode
+stat.ST_INO                     inode号码
+stat.ST_DEV
+stat.ST_NLINK                   inode的连接个数
+stat.ST_UID                     所有者
+stat.ST_GID                     所属组
+stat.ST_SIZE                    大小
+stat.ST_ATIME                   atime
+stat.ST_MTIME                   mtime
+stat.ST_CTIME                   ctime
+stat.S_IFSOCK                   socket
+stat.S_IFLNK                    符号连接
+stat.S_IFREG                    普通文件
+stat.S_IFBLK                    块设备
+stat.S_IFDIR                    目录
+stat.S_IFCHR                    字符
+stat.S_IFIFO                    管道
+stat.S_IFDOOR
+stat.S_IFPORT
+stat.S_IFWHT
+stat.S_ISUID                    uid
+stat.S_ISGID                    gid
+stat.S_ISVTX
+stat.S_IRWXU                    对于所有者的掩码
+stat.S_IRUSR                    所有者是否有读权限
+stat.S_IWUSR                    所有者是否有写权限
+stat.S_IXUSR                    所有者是否有执行权限
+stat.S_IRWXG                    组的掩码
+stat.S_IRGRP                    组能读文件
+stat.S_IWGRP                    组能写文件
+stat.S_IXGRP                    组能执行文件
+stat.S_IRWXO                    其他用户的掩码
+stat.S_IROTH                    其他读
+stat.S_IWOTH                    其他写
+stat.S_IXOTH                    其他执行
+stat.S_ENFMT
+stat.S_IREAD
+stat.S_IWRITE
+stat.S_IEXEC
+stat.UF_NODUMP
+stat.UF_IMMUTABLE
+stat.UF_APPEND
+stat.UF_OPAQUE
+stat.UF_NOUNLINK
+stat.UF_COMPRESSED
+stat.UF_HIDDEN
+stat.SF_ARCHIVED
+stat.SF_IMMUTABLE
+stat.SF_APPEND
+stat.SF_NOUNLINK
+stat.SF_SNAPSHOT
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">mode</span> <span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_ISDIR</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filecmp">
+<h2>1.11.5. filecmp<a class="headerlink" href="#filecmp" title="永久链接至标题">¶</a></h2>
+<p>这个目录定义了一些文件和目录比较的功能。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>report()                    报告比较信息
+report_partial_closure()    报告包括自路径
+report_full_closure()       公共子目录的比较
+left                        第一个比较的目录a
+right                       第二个比较的目录b
+left_list                   目录a,隐藏文件被忽略
+right_list                  右侧b,
+common                      公共的文件和目录
+left_only                   只在a目录里面存在的文件和目录
+right_only                  只在b目录里面存在的文件和目录
+common_dirs                 目录a和目录b公共的目录
+common_files                目录a和目录b公共的文件
+common_funny
+same_files                  相同的文件
+diff_files                  不同的文件
+funny_files
+subdirs
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件比较的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">filecmp</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">filecmp</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="s2">&quot;a.txt&quot;</span><span class="p">,</span><span class="s2">&quot;b.txt&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>下面的代码在linux测试的。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@centos-7 tmp<span class="o">]</span><span class="c1"># tree</span>
+.
+├── dir1
+│   ├── sub1
+│   │   └── a.txt
+│   ├── sub2
+│   └── sub3
+└── dir2
+    ├── sub1
+    │   └── aa.txt
+    ├── sub2
+    └── sub4
+<span class="o">[</span>root@centos-7 tmp<span class="o">]</span><span class="c1"># bpython</span>
+bpython version <span class="m">0</span>.16 on top of Python <span class="m">2</span>.7.5 /usr/bin/python
+&gt;&gt;&gt; import filecmp
+&gt;&gt;&gt; filecmp.dircmp<span class="o">(</span><span class="s2">&quot;dir1&quot;</span>,<span class="s2">&quot;dir2&quot;</span><span class="o">)</span>
+&lt;filecmp.dircmp instance at 0x1799a28&gt;
+&gt;&gt;&gt; <span class="nv">info</span> <span class="o">=</span> filecmp.dircmp<span class="o">(</span><span class="s2">&quot;dir1&quot;</span>,<span class="s2">&quot;dir2&quot;</span><span class="o">)</span>
+&gt;&gt;&gt; info.left
+<span class="s1">&#39;dir1&#39;</span>
+&gt;&gt;&gt; info.right
+<span class="s1">&#39;dir2&#39;</span>
+&gt;&gt;&gt; info.report
+&lt;bound method dircmp.report of &lt;filecmp.dircmp instance at 0x1799a70&gt;&gt;
+&gt;&gt;&gt; info.report<span class="o">()</span>
+diff dir1 dir2
+Only in dir1 : <span class="o">[</span><span class="s1">&#39;sub3&#39;</span><span class="o">]</span>
+Only in dir2 : <span class="o">[</span><span class="s1">&#39;sub4&#39;</span><span class="o">]</span>
+Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;</span>, <span class="s1">&#39;sub2&#39;</span><span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tempfile">
+<h2>1.11.6. tempfile<a class="headerlink" href="#tempfile" title="永久链接至标题">¶</a></h2>
+<p>从名字上就知道这个是临时文件相关的。</p>
+<p>比较简单，直接上个例子吧。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用临时文件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">fp</span> <span class="o">=</span><span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryFile</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;my name is zhaojiedi&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">20</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">0</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;my name is zhaojiedi&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 直接创建一个临时文件，可以后续使用open打开，在删除这个文件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">b</span><span class="o">=</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mktemp</span><span class="p">(</span><span class="s2">&quot;a.txt&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">b</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">ADMINI~1</span><span class="se">\\</span><span class="s1">AppData</span><span class="se">\\</span><span class="s1">Local</span><span class="se">\\</span><span class="s1">Temp</span><span class="se">\\</span><span class="s1">tmpsf5u5xiua.txt&#39;</span>
+
+<span class="c1"># 创建有名字的临时文件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">name</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">ADMINI~1</span><span class="se">\\</span><span class="s1">AppData</span><span class="se">\\</span><span class="s1">Local</span><span class="se">\\</span><span class="s1">Temp</span><span class="se">\\</span><span class="s1">tmp8gj9s2o_&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="mi">4</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="c1"># 这个地方unlink下，他就被删除了</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="glob">
+<h2>1.11.7. glob<a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
+<p>提供通配功能去查找文件的。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;backup.zip&#39;</span><span class="p">]</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*.txt&quot;</span><span class="p">,</span><span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;sub/3.txt&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fnmatch">
+<h2>1.11.8. fnmatch<a class="headerlink" href="#fnmatch" title="永久链接至标题">¶</a></h2>
+<p>此模块提供对Unix shell风格通配符的支持，这与正则表达式（在re模块中记录）不同。</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">模式</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>*</td>
+<td>任何的</td>
+</tr>
+<tr class="row-odd"><td>?</td>
+<td>单个字符</td>
+</tr>
+<tr class="row-even"><td>[seq]</td>
+<td>集合里面的任何一个</td>
+</tr>
+<tr class="row-odd"><td>[^seq]</td>
+<td>除了集合的任何一个</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 找到当前目录下的所有txt文件</span>
+<span class="kn">import</span> <span class="nn">fnmatch</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatch</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;*.txt&#39;</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linecache">
+<h2>1.11.9. linecache<a class="headerlink" href="#linecache" title="永久链接至标题">¶</a></h2>
+<p>linecache模块允许从Python源文件中获取任何行，同时尝试使用缓存进行内部优化，这是
+一种从单个文件中读取多行的常见情况。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">linecache</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">linecache</span><span class="o">.</span><span class="n">getline</span><span class="p">(</span><span class="n">linecache</span><span class="o">.</span><span class="vm">__file__</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;import functools</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shutil">
+<h2>1.11.10. shutil<a class="headerlink" href="#shutil" title="永久链接至标题">¶</a></h2>
+<p>这个模块提供高级别的文件操作，比较递归copy文件等。</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>shutil.copyfile(src, dst, *, follow_symlinks=True)                          复制文件
+shutil.copymode(src, dst, *, follow_symlinks=True)                          复制mode
+shutil.copystat(src, dst, *, follow_symlinks=True)                          复制stat的atime,ctime,mtime信息
+shutil.copy(src, dst, *, follow_symlinks=True)                              复制文件，支持目录的
+shutil.copy2(src, dst, *, follow_symlinks=True)                             相比copy保留文件元数据信息
+shutil.ignore_patterns(*patterns)
+shutil.rmtree(path, ignore_errors=False, onerror=None)                      删除目录
+shutil.move(src, dst, copy_function=copy2)                                  移动文件或者目录
+shutil.disk_usage(path)                                                     磁盘使用情况
+shutil.chown(path, user=None, group=None)                                   改变所有者，可以改组
+shutil.which(cmd, mode=os.F_OK | os.X_OK, path=None)                        命令的路径
+shutil.get_archive_formats()                                                获取归档格式
+shutil.register_archive_format(name, function[, extra_args[, description]]) 注册归档格式
+shutil.unregister_archive_format(name)                                      取消归档格式
+shutil.unpack_archive(filename[, extract_dir[, format]])                    解压归档
+shutil.unregister_unpack_format(name)                                       取消加压格式
+shutil.get_terminal_size(fallback=(columns, lines))                         获取终端大小
+</pre></div>
+</div>
+<p>使用样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 复制src到dst目录，处理*.pyc和tmp*文件</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span> <span class="n">ignore_patterns</span>
+<span class="n">copytree</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="n">ignore_patterns</span><span class="p">(</span><span class="s1">&#39;*.pyc&#39;</span><span class="p">,</span> <span class="s1">&#39;tmp*&#39;</span><span class="p">))</span>
+
+<span class="c1"># 压缩文件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">make_archive</span><span class="p">(</span><span class="s2">&quot;帮助文档&quot;</span><span class="p">,</span><span class="s2">&quot;gztar&quot;</span><span class="p">,</span><span class="s2">&quot;E:</span><span class="se">\\</span><span class="s2">帮助文档&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Administrator</span><span class="se">\\</span><span class="s1">帮助文档.tar.gz&#39;</span>
+<span class="c1"># 解压文件，可以不用指定格式，它内部自动根据扩展名字识别的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">unpack_archive</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">unpack_archive</span><span class="p">(</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Administrator</span><span class="se">\\</span><span class="s1">帮助文档.tar.gz&#39;</span><span class="p">,</span><span class="s2">&quot;d:</span><span class="se">\\</span><span class="s2">test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="macpath">
+<h2>1.11.11. macpath<a class="headerlink" href="#macpath" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="12数据持久化.html" class="btn btn-neutral float-right" title="1.12. 数据持久化" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="10函数式编程模块.html" class="btn btn-neutral" title="1.10. 函数式编程模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, 张志佳.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
