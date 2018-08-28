@@ -2,6 +2,7 @@
 高级语法
 ==========
 
+
 表格学习
 ===============
 表格主要包括：
@@ -184,15 +185,111 @@ __ ../../dev/rst/alternatives.html#list-driven-tables
 ===============
 
 
-显示标记学习
+脚注引用学习
 ===============
 
-引用学习
-===============
+脚注
+-----------
+
+脚注分为按照默认顺序的脚注和指定顺序的脚注。
+
+**样例展示：**
+
+----
+
+[1]_ 是指向脚注1的引用，[2]_ 是指向脚注2的引用
+
+.. [#] 这是脚注 1.
+.. [#] 这是脚注 2.
+.. [#] 这是脚注 3.
+
+[#]_ 这是指向脚注3的引用
 
 
-超链接学习
+**上面换行功能实现方法，以下是rST源码显示样例**::
+
+    [1]_ 是指向脚注1的引用，[#]_ 是指向脚注2的引用
+
+    .. [#] 这是脚注 1.
+    .. [#] 这是脚注 2.
+    .. [#] 这是脚注 3.
+
+    [#]_ 这是指向脚注3的引用
+
+
+链接和学习
 ===============
+
+链接分为显式链接、隐式链接、间接链接
+
+显示链接
+--------
+
+
+**样例展示：**
+
+----
+
+显示链接测试百度链接：baidu_biaoqian_。
+
+.. _baidu_biaoqian: https://www.baidu.com
+
+**上面换行功能实现方法，以下是rST源码显示样例**::
+
+    显示链接测试百度链接：baidu_biaoqian_。
+
+    .. _baidu_biaoqian: https://www.baidu.com
+
+    实际等效于HTML的：
+    显示链接测试百度链接：<a href="https://www.baidu.com">baidu_biaoqian</a>。
+
+隐式链接
+--------
+
+.. __: anonymous-hyperlink-target-link-block
+
+上面是隐式超链接
+
+
+
+想要学习 `我最喜欢的编程语言`_ ?
+
+.. _我最喜欢的编程语言: http://www.python.org
+
+
+- `A HYPERLINK`_
+- `a    hyperlink`_
+- `A
+  Hyperlink`_
+
+
+
+内部超链接目标可以是链式的。多个临近的内部超链接目标全
+部指向同一个元素::
+
+.. _target1:
+.. _target2:
+    目标"target1"和"target2"是同义词；它们同时指向这一段。
+
+如果元素所"指向"的是一个扩展超链接目标(其行块中有一个URI。
+见#2)从扩展超链接目标传播到内部超链接目标，它们全都会"指向"
+同一个URI。没必要重复一个URI。例如，下面三个超链接目标指向
+同一个URI::
+
+    .. _Python DOC-SIG mailing list archive:
+    .. _archive:
+    .. _Doc-SIG: http://mail.python.org/pipermail/doc-sig/
+
+
+.. _topics-youindex_name:
+
+这个ref就是引用本项目的其他文档的连接的，需要在一个文档的顶部设置.. _topics-youindex_name:,
+
+:ref:`topics-youindex_name`。
+
+
+
+
 
 
 
