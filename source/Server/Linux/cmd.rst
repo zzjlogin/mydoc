@@ -6,6 +6,6 @@ Linux命令汇总
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+   :numbered:
    
    cmd/*

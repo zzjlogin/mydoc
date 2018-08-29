@@ -6,7 +6,6 @@
 .. toctree::
    :maxdepth: 2
    :glob:
-   :numbered:
 
    Program/Python
    Program/Algorithm

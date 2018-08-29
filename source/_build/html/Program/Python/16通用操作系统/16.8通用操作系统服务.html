@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.16.8. logging.Handlers &mdash; 张志佳的技术文档 1.0 文档</title>
+  <title>logging.Handlers &mdash; 张志佳的技术文档 1.0 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="1.16.9. getpass" href="16.9通用操作系统服务.html" />
-    <link rel="prev" title="1.16.7. logging.Config" href="16.7通用操作系统服务.html" /> 
+    <link rel="next" title="getpass" href="16.9通用操作系统服务.html" />
+    <link rel="prev" title="logging.Config" href="16.7通用操作系统服务.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -87,157 +87,157 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Program.html">编程语言学习</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">1. Python学习</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../01环境准备.html">1.1. 环境准备</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#python">1.1.1. 安装python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#ipython">1.1.2. ipython的安装</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#id2">1.1.3. ipython测试</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../01环境准备.html">环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#python">安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#ipython">ipython的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#id2">ipython测试</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../02内建函数.html">1.2. 内建函数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../02内建函数.html#id2">1.2.1. 常用内置函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02内建函数.html">内建函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02内建函数.html#id2">常用内置函数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../03内置常量.html">1.3. 内置常量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04内置类型.html">1.4. 内置类型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id2">1.4.1. 真值测试</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#boolean">1.4.2. boolean操作符</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id3">1.4.3. 比较操作符号</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#int-float-complex">1.4.4. 数据类型int,float,complex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#list-tuple-range">1.4.5. 数据类型 list, tuple, range</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">1.4.6. Binary Sequence Types — bytes, bytearray, memoryview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#set-types-set-frozenset">1.4.7. Set Types — set, frozenset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03内置常量.html">内置常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04内置类型.html">内置类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id2">真值测试</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#boolean">boolean操作符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id3">比较操作符号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#int-float-complex">数据类型int,float,complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#list-tuple-range">数据类型 list, tuple, range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">Binary Sequence Types — bytes, bytearray, memoryview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#set-types-set-frozenset">Set Types — set, frozenset</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../05内置异常.html">1.5. 内置异常</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06文本处理.html">1.6. 文本处理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#string">1.6.1. string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#re">1.6.2. re</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#difflib">1.6.3. difflib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#textwrap">1.6.4. textwrap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#unicodedata">1.6.5. unicodedata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#stringprep">1.6.6. stringprep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#readline">1.6.7. readline</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#rlcompleter">1.6.8. rlcompleter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05内置异常.html">内置异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06文本处理.html">文本处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#string">string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#re">re</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#difflib">difflib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#textwrap">textwrap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#unicodedata">unicodedata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#stringprep">stringprep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#readline">readline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#rlcompleter">rlcompleter</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../07二进制处理.html">1.7. 二进制处理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#struct">1.7.1. struct</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#codecs">1.7.2. codecs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07二进制处理.html">二进制处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#struct">struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#codecs">codecs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../08数据类型.html">1.8. 数据类型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#datetime">1.8.1. datetime</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#calendar">1.8.2. calendar</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collectons">1.8.3. collectons</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collections-abc">1.8.4. collections.abc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#heapq">1.8.5. heapq</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#bisect">1.8.6. bisect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#array">1.8.7. array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#weakref">1.8.8. weakref</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#types">1.8.9. types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#copy">1.8.10. copy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#pprint">1.8.11. pprint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#reprlib">1.8.12. reprlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#enum">1.8.13. enum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#flag">1.8.14. Flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08数据类型.html">数据类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#datetime">datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#calendar">calendar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collectons">collectons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collections-abc">collections.abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#heapq">heapq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#bisect">bisect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#array">array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#weakref">weakref</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#types">types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#copy">copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#pprint">pprint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#reprlib">reprlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#enum">enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#flag">Flag</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../09数值模块.html">1.9. 数值模块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#numbers">1.9.1. numbers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#math">1.9.2. math</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#cmath">1.9.3. cmath</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#decimal">1.9.4. decimal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#fractions">1.9.5. fractions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#random">1.9.6. random</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#statistics">1.9.7. statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09数值模块.html">数值模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#numbers">numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#math">math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#cmath">cmath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#decimal">decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#fractions">fractions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#random">random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#statistics">statistics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../10函数式编程模块.html">1.10. 函数式编程模块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#itertools">1.10.1. itertools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#functools">1.10.2. functools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#operator">1.10.3. operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../10函数式编程模块.html">函数式编程模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#itertools">itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#functools">functools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#operator">operator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../11文件和目录访问.html">1.11. 文件和目录访问</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#pathlib">1.11.1. pathlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#os-path">1.11.2. os.path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fileinput">1.11.3. fileinput</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#stat">1.11.4. stat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#filecmp">1.11.5. filecmp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#tempfile">1.11.6. tempfile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#glob">1.11.7. glob</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fnmatch">1.11.8. fnmatch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#linecache">1.11.9. linecache</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#shutil">1.11.10. shutil</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#macpath">1.11.11. macpath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../11文件和目录访问.html">文件和目录访问</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#pathlib">pathlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#os-path">os.path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fileinput">fileinput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#stat">stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#filecmp">filecmp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#tempfile">tempfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#glob">glob</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fnmatch">fnmatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#linecache">linecache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#shutil">shutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#macpath">macpath</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../12数据持久化.html">1.12. 数据持久化</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#pickle">1.12.1. pickle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#copyreg">1.12.2. copyreg</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#shelve">1.12.3. shelve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#marshal">1.12.4. marshal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#dbm">1.12.5. dbm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#sqllite">1.12.6. sqllite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../12数据持久化.html">数据持久化</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#pickle">pickle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#copyreg">copyreg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#shelve">shelve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#marshal">marshal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#dbm">dbm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#sqllite">sqllite</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../13数据压缩和归档.html">1.13. 数据压缩和归档</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zlib">1.13.1. zlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#gzip">1.13.2. gzip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#bz2">1.13.3. bz2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#lzma">1.13.4. lzma</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zipfile">1.13.5. zipfile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#tarfile">1.13.6. tarfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../13数据压缩和归档.html">数据压缩和归档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zlib">zlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#gzip">gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#bz2">bz2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#lzma">lzma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zipfile">zipfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#tarfile">tarfile</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../14文件格式.html">1.14. 文件格式</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#csv">1.14.1. csv</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#configparser">1.14.2. configparser</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#netrc">1.14.3. netrc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#xdrlib">1.14.4. xdrlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#plistlib">1.14.5. plistlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../14文件格式.html">文件格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#csv">csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#configparser">configparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#netrc">netrc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#xdrlib">xdrlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#plistlib">plistlib</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../15加密服务.html">1.15. 加密服务</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hashlib">1.15.1. hashlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hmac">1.15.2. hmac</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#secrets">1.15.3. secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../15加密服务.html">加密服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hashlib">hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hmac">hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#secrets">secrets</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="reference internal" href="../16通用操作系统服务.html">1.16. 通用操作系统服务</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="16.1通用操作系统服务.html">1.16.1. os</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.2通用操作系统服务.html">1.16.2. io</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.3通用操作系统服务.html">1.16.3. time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.4通用操作系统服务.html">1.16.4. argparse</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.5通用操作系统服务.html">1.16.5. getopt</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.6通用操作系统服务.html">1.16.6. logging</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.7通用操作系统服务.html">1.16.7. logging.Config</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">1.16.8. logging.Handlers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.9通用操作系统服务.html">1.16.9. getpass</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../16通用操作系统服务.html">通用操作系统服务</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="16.1通用操作系统服务.html">os</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.2通用操作系统服务.html">io</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.3通用操作系统服务.html">time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.4通用操作系统服务.html">argparse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.5通用操作系统服务.html">getopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.6通用操作系统服务.html">logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.7通用操作系统服务.html">logging.Config</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">logging.Handlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.9通用操作系统服务.html">getpass</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../17并发执行.html">1.17. 并发执行</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#threading">1.17.1. threading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing">1.17.2. multiprocessing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-process">1.17.3. multiprocessing.Process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id2">1.17.4. multiprocessing.Process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-queue">1.17.5. multiprocessing.Queue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id3">1.17.6. multiprocessing.Queue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-joinablequeue">1.17.7. multiprocessing.JoinableQueue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-connection-connection">1.17.8. multiprocessing.connection.Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../17并发执行.html">并发执行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#threading">threading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing">multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-process">multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id2">multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-queue">multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id3">multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-joinablequeue">multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-connection-connection">multiprocessing.connection.Connection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../18进程通信和网络.html">1.18. 进程通信和网络</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../19网络数据处理.html">1.19. 网络数据处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../20结构化文本文档处理工具.html">1.20. 结构化文本文档处理工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../18进程通信和网络.html">进程通信和网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../19网络数据处理.html">网络数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../20结构化文本文档处理工具.html">结构化文本文档处理工具</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../Algorithm.html">2. 算法学习(Algorithm)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../Algorithm/CCFexam.html">2.1. CCF考试</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-1.html">2.1.1. 2017031-分蛋糕</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-2.html">2.1.2. 2017032-学生排队</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201803-1.html">2.1.3. 2018031-跳一跳</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Algorithm.html">算法学习(Algorithm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Algorithm/CCFexam.html">CCF考试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-1.html">2017031-分蛋糕</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-2.html">2017032-学生排队</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201803-1.html">2018031-跳一跳</a></li>
 </ul>
 </li>
 </ul>
@@ -245,54 +245,54 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Network.html">计算机网络学习</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/1.NetworkTheory.html">1. 理论学习</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/2.HuaWei.html">2. 华为</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/3.H3C.html">3. H3C(华三/新华三)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/4.CISCO.html">4. 思科(CISCO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/1.NetworkTheory.html">理论学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/2.HuaWei.html">华为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/3.H3C.html">H3C(华三/新华三)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/4.CISCO.html">思科(CISCO)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Server.html">服务器相关学习</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/1.AboutAndClass.html">1. 服务器相关常识</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/2.Linux.html">2. Linux 服务器</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../Server/Linux/cmd.html">2.1. Linux命令汇总</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/zip.html">2.1.1. 1&nbsp;&nbsp;&nbsp;zip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/1.AboutAndClass.html">服务器相关常识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/2.Linux.html">Linux 服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Server/Linux/cmd.html">Linux命令汇总</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/zip.html">1. 1&nbsp;&nbsp;&nbsp;zip</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/3.Unix.html">3. Unix 和类Unix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/4.Windows.html">4. Windows 服务器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/5.Optimization.html">5. 服务器优化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Server/6.FAQ.html">6. 常见问题及解决(FAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/3.Unix.html">Unix 和类Unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/4.Windows.html">Windows 服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/5.Optimization.html">服务器优化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/6.FAQ.html">常见问题及解决(FAQ)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Data.html">数据相关/大数据</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Data/1.html">1. 我的文档库123</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Data/1.html">我的文档库123</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning.html">机器学习</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/base.html">1. 机器学习入门</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/base.html">机器学习入门</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ToolsOpenSource.html">工具和开源项目</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/1.Tools.html">1. 常用工具汇总</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/1.rST.html">1.1. 用reStructuredText实践</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">1.1.1. rST简介</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">1.1.2. reST安装及环境配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">1.1.3. reST语法介绍</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">1.1.4. 格式转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">1.1.5. 文档API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">1.1.6. reST工具</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">1.1.7. 其他</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/1.rST.html">用reStructuredText实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">rST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">reST安装及环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">reST语法介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">其他</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/2.OpenSource.html">2. 关注的开源项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Others.html">其他杂项</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Others/1.html">1. 我的文档库123</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Others/1.html">我的文档库123</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../AboutMe.html">关于我</a></li>
@@ -343,11 +343,11 @@
         
           <li><a href="../../../Program.html">编程语言学习</a> &raquo;</li>
         
-          <li><a href="../../Python.html">1. Python学习</a> &raquo;</li>
+          <li><a href="../../Python.html">Python学习</a> &raquo;</li>
         
-          <li><a href="../16通用操作系统服务.html">1.16. 通用操作系统服务</a> &raquo;</li>
+          <li><a href="../16通用操作系统服务.html">通用操作系统服务</a> &raquo;</li>
         
-      <li>1.16.8. logging.Handlers</li>
+      <li>logging.Handlers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -361,10 +361,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="1.16.9. getpass" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="getpass" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="1.16.7. logging.Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="logging.Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -374,26 +374,26 @@
            <div itemprop="articleBody">
             
   <div class="section" id="logging-handlers">
-<h1>1.16.8. logging.Handlers<a class="headerlink" href="#logging-handlers" title="永久链接至标题">¶</a></h1>
+<h1>logging.Handlers<a class="headerlink" href="#logging-handlers" title="永久链接至标题">¶</a></h1>
 <p>这个模块主要提供有用的处理程序， 比如StreamHandler，FileHandler和NullHandler。</p>
 <div class="section" id="logging-streamhandler">
-<h2>1.16.8.1. logging.StreamHandler<a class="headerlink" href="#logging-streamhandler" title="永久链接至标题">¶</a></h2>
+<h2>logging.StreamHandler<a class="headerlink" href="#logging-streamhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个流handler对象使用， 如果没有指定，使用sys.stderrr将会使用。</p>
 </div>
 <div class="section" id="logging-filehandler">
-<h2>1.16.8.2. logging.FileHandler<a class="headerlink" href="#logging-filehandler" title="永久链接至标题">¶</a></h2>
+<h2>logging.FileHandler<a class="headerlink" href="#logging-filehandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个文件Handler对象使用， 打开特定的文件， 追加记录。</p>
 </div>
 <div class="section" id="logging-nullhandler">
-<h2>1.16.8.3. logging.NullHandler<a class="headerlink" href="#logging-nullhandler" title="永久链接至标题">¶</a></h2>
+<h2>logging.NullHandler<a class="headerlink" href="#logging-nullhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个空的Handler对象使用，不会做格式话和输出。</p>
 </div>
 <div class="section" id="watchedfilehandler">
-<h2>1.16.8.4. WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是FileHandler的子类</p>
 </div>
 <div class="section" id="baserotatinghandler">
-<h2>1.16.8.5. BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="永久链接至标题">¶</a></h2>
+<h2>BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供日志滚动功能。</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>namer: 如果此属性设置为可调用，则rotation_filename（）方法委托给此可调用对象。
 rotator: 如果此属性设置为可调用的，则rotate方法委托给此可调用对象。
@@ -401,47 +401,47 @@ rotator: 如果此属性设置为可调用的，则rotate方法委托给此可�
 </div>
 </div>
 <div class="section" id="rotatingfilehandler">
-<h2>1.16.8.6. RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是BaseRotatingHandler的子类，提供文件的滚动功能。</p>
 </div>
 <div class="section" id="timedrotatingfilehandler">
-<h2>1.16.8.7. TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是BaseRotatingHandler的子类，提供基于时间的滚动功能。</p>
 </div>
 <div class="section" id="sockethandler">
-<h2>1.16.8.8. SocketHandler<a class="headerlink" href="#sockethandler" title="永久链接至标题">¶</a></h2>
+<h2>SocketHandler<a class="headerlink" href="#sockethandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志输出到远程主机的功能，使用tcp socket。</p>
 </div>
 <div class="section" id="datagramhandler">
-<h2>1.16.8.9. DatagramHandler<a class="headerlink" href="#datagramhandler" title="永久链接至标题">¶</a></h2>
+<h2>DatagramHandler<a class="headerlink" href="#datagramhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供发送日志输出到远程主机的功能功能，使用udp。</p>
 </div>
 <div class="section" id="sysloghandler">
-<h2>1.16.8.10. SysLogHandler<a class="headerlink" href="#sysloghandler" title="永久链接至标题">¶</a></h2>
+<h2>SysLogHandler<a class="headerlink" href="#sysloghandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志信息到远程或者本地的syslog去。</p>
 </div>
 <div class="section" id="nteventloghandler">
-<h2>1.16.8.11. NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="永久链接至标题">¶</a></h2>
+<h2>NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志信息到windows主机上面，使用的时候确保win32扩展安装。</p>
 </div>
 <div class="section" id="smtphandler">
-<h2>1.16.8.12. SMTPHandler<a class="headerlink" href="#smtphandler" title="永久链接至标题">¶</a></h2>
+<h2>SMTPHandler<a class="headerlink" href="#smtphandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志信息发送到一个邮箱的功能。</p>
 </div>
 <div class="section" id="logging-handlers-bufferinghandler">
-<h2>1.16.8.13. logging.handlers.BufferingHandler<a class="headerlink" href="#logging-handlers-bufferinghandler" title="永久链接至标题">¶</a></h2>
+<h2>logging.handlers.BufferingHandler<a class="headerlink" href="#logging-handlers-bufferinghandler" title="永久链接至标题">¶</a></h2>
 <p>提供缓存日志记录到内存buffer中去。</p>
 </div>
 <div class="section" id="logging-handlers-memoryhandler">
-<h2>1.16.8.14. logging.handlers.MemoryHandler<a class="headerlink" href="#logging-handlers-memoryhandler" title="永久链接至标题">¶</a></h2>
+<h2>logging.handlers.MemoryHandler<a class="headerlink" href="#logging-handlers-memoryhandler" title="永久链接至标题">¶</a></h2>
 <p>提供缓存日志记录到内存中去。</p>
 </div>
 <div class="section" id="httphandler">
-<h2>1.16.8.15. HTTPHandler<a class="headerlink" href="#httphandler" title="永久链接至标题">¶</a></h2>
+<h2>HTTPHandler<a class="headerlink" href="#httphandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志发送到一个web server去， 使用get或者post方法。</p>
 </div>
 <div class="section" id="queuehandler">
-<h2>1.16.8.16. QueueHandler<a class="headerlink" href="#queuehandler" title="永久链接至标题">¶</a></h2>
+<h2>QueueHandler<a class="headerlink" href="#queuehandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志发送到一个队列的功能</p>
 </div>
 </div>
@@ -454,10 +454,10 @@ rotator: 如果此属性设置为可调用的，则rotate方法委托给此可�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="1.16.9. getpass" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="getpass" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="1.16.7. logging.Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="logging.Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
