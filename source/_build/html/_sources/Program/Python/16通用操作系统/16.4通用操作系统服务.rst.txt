@@ -3,21 +3,21 @@ argparse
 argparse模块可以轻松编写用户友好的命令行界面。 该程序定义了它需要的参数，argparse将找出如何解析
 sys.argv中的那些参数。 argparse模块还会自动生成帮助和用法消息，并在用户给出程序无效参数时发出错误。
 
-快速入门样例
+快速入门demo
 ----------------------------------------------------
 
 代码： 
 
-.. literalinclude:: /样例/argparse样例/00-入门.py
+.. literalinclude:: /demo/argparse/00-base.py
    :encoding: utf-8
    :language: python
    
 
-调用样例
+调用demo
 
 .. code-block:: bash 
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI ...... (master)
     $ python 00-入门.py  -h
     usage: 00-入门.py [-h] [--sum] N [N ...]
 
@@ -30,11 +30,11 @@ sys.argv中的那些参数。 argparse模块还会自动生成帮助和用法消
     -h, --help  show this help message and exit
     --sum       sum the integers (default: find the max)
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI ...... (master)
     $ python 00-入门.py  1 2 3 4
     4
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ...... (master)
     $ python 00-入门.py  --sum 1 2 3 4
     10
 
@@ -61,9 +61,9 @@ prog
 
 功能： 设置程序的名字，默认程序名字是sys.argv[0]。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/01-prog.py
+.. literalinclude:: /demo/argparse/class/01-prog.py
    :language: python 
    :encoding: utf-8
    
@@ -72,7 +72,7 @@ prog
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 01-prog.py  -h
     usage: mytest [-h] [--foo FOO]
 
@@ -88,9 +88,9 @@ usage
 
 功能： 获取或者程序的usage信息，不建议修改，这个程序会自动生成。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/02-usage.py
+.. literalinclude:: /demo/argparse/class/02-usage.py
    :language: python 
    :encoding: utf-8
    
@@ -99,7 +99,7 @@ usage
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 02-usage.py
     usage: mytest2 [-h] [--src SRC] [-t T]
     ========================================
@@ -112,9 +112,9 @@ description
 
 功能： 在usage和具体参数的中间显示这个信息，用于解释这个命令的功能
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/04-description.py
+.. literalinclude:: /demo/argparse/class/04-description.py
    :language: python 
    :encoding: utf-8
    
@@ -123,7 +123,7 @@ description
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 04-description.py
     usage: 04-description.py [-h]
     ========================================
@@ -140,9 +140,9 @@ epilog
 
 功能： 在帮助信息的最下面提示信息。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/05-epilog.py
+.. literalinclude:: /demo/argparse/class/05-epilog.py
    :language: python 
    :encoding: utf-8
    
@@ -151,7 +151,7 @@ epilog
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 05-epilog.py
     usage: 05-epilog.py [-h]
 
@@ -168,9 +168,9 @@ parents
 
 功能： 设置解析的父亲。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/06-parents.py
+.. literalinclude:: /demo/argparse/class/06-parents.py
    :language: python 
    :encoding: utf-8
    
@@ -179,7 +179,7 @@ parents
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 06-parents.py
     parent的使用帮助
 
@@ -210,9 +210,9 @@ formatter_class
 
 功能： 设置解析帮助信息的类
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/07-formatter_class.py
+.. literalinclude:: /demo/argparse/class/07-formatter_class.py
    :language: python 
    :encoding: utf-8
    
@@ -221,7 +221,7 @@ formatter_class
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 07-formatter_class.py
 
     默认(argparse.ArgumentDefaultsHelpFormatter)的格式化输出
@@ -286,9 +286,9 @@ prefix_char
 
 功能： 设置参数的前缀字符
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/08-prefix_char.py
+.. literalinclude:: /demo/argparse/class/08-prefix_char.py
    :language: python 
    :encoding: utf-8
    
@@ -297,7 +297,7 @@ prefix_char
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 08-prefix_char.py /f
     usage: 08-prefix_char.py [-h] [+f F] [++bar BAR]
 
@@ -314,9 +314,9 @@ fromfile_prefix_chars
 
 功能： 从文件读取参数的前缀
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/09-fromfile_prefix_chars.py
+.. literalinclude:: /demo/argparse/class/09-fromfile_prefix_chars.py
    :language: python 
    :encoding: utf-8
    
@@ -325,7 +325,7 @@ fromfile_prefix_chars
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 09-fromfile_prefix_chars.py
     Namespace(f='foo')
     Namespace(f='bar')
@@ -337,9 +337,9 @@ default
 
 功能： 设置默认值
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/10-default.py
+.. literalinclude:: /demo/argparse/class/10-default.py
    :language: python 
    :encoding: utf-8
    
@@ -348,7 +348,7 @@ default
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 10-default.py
     Namespace(bar='BAR', foo='1')
     Namespace()
@@ -363,9 +363,9 @@ allow_abbrev
 
 功能： 这个就是长选项的简写开启不开启的问题了。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/11-allow_abbrev.py
+.. literalinclude:: /demo/argparse/class/11-allow_abbrev.py
    :language: python 
    :encoding: utf-8
    
@@ -374,7 +374,7 @@ allow_abbrev
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 11-allow_abbrev.py
 
     允许简写的
@@ -391,9 +391,9 @@ conflict_handler
 
 功能： 这个就是长选项的简写开启不开启的问题了。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/12-conflict_handler.py
+.. literalinclude:: /demo/argparse/class/12-conflict_handler.py
    :language: python 
    :encoding: utf-8
    
@@ -402,7 +402,7 @@ conflict_handler
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 12-conflict_handler.py
     解决冲突的方式结果
     usage: PROG [-h] [-f FOO] [--foo FOO]
@@ -435,9 +435,9 @@ add_help
 
 功能： 这个就是长选项的简写开启不开启的问题了。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/类的/13-add_help.py
+.. literalinclude:: /demo/argparse/class/13-add_help.py
    :language: python 
    :encoding: utf-8
    
@@ -446,7 +446,7 @@ add_help
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 .......... (master)
     $ python 13-add_help.py
 
     有帮助的输出结果
@@ -489,9 +489,9 @@ name
 
 功能： 设置选项名字的
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/01-name.py
+.. literalinclude:: /demo/argparse/方法的/01-name.py
    :language: python 
    :encoding: utf-8
    
@@ -500,7 +500,7 @@ name
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 01-name.py
     Namespace(bar='BAR', foo='FOO')
     BAR
@@ -510,9 +510,9 @@ action
 
 功能： 设置选项名字的
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/02-action.py
+.. literalinclude:: /demo/argparse/方法的/02-action.py
    :language: python 
    :encoding: utf-8
    
@@ -521,7 +521,7 @@ action
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 02-action.py
     ##################################测试默认值(store)##################################
     Namespace(foo='1')
@@ -549,9 +549,9 @@ nargs
 - \* 使用任意个
 - argparse.REMAINDER 剩余的所有
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/03-nargs.py
+.. literalinclude:: /demo/argparse/方法的/03-nargs.py
    :language: python 
    :encoding: utf-8
    
@@ -560,7 +560,7 @@ nargs
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 03-nargs.py
     Namespace(bar=['c'], foo=['a', 'b'])
     Namespace(bar='XX', foo='YY')
@@ -586,9 +586,9 @@ default
 
 功能： 设置默认值的,如果没有指定的话，
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/04-default.py
+.. literalinclude:: /demo/argparse/方法的/04-default.py
    :language: python 
    :encoding: utf-8
    
@@ -597,7 +597,7 @@ default
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 04-default.py
     Namespace(length=10, width=10.5)
 
@@ -606,9 +606,9 @@ type
 
 功能： 指定选项值的类型，默认是string的。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/05-type.py
+.. literalinclude:: /demo/argparse/方法的/05-type.py
    :language: python 
    :encoding: utf-8
    
@@ -617,7 +617,7 @@ type
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 05-type.py
     Namespace(bar=<_io.TextIOWrapper name='temp.txt' mode='r' encoding='cp936'>, foo=2)
     Namespace(bar=<_io.TextIOWrapper name='out.txt' mode='w' encoding='cp936'>)
@@ -631,9 +631,9 @@ choices
 
 功能： 提供可选值
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/06-choices.py
+.. literalinclude:: /demo/argparse/方法的/06-choices.py
    :language: python 
    :encoding: utf-8
    
@@ -642,7 +642,7 @@ choices
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 06-choices.py
     Namespace(move='rock')
     usage: game.py [-h] {rock,paper,scissors}
@@ -653,9 +653,9 @@ required
 
 功能： 强制性设置
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/07-required.py
+.. literalinclude:: /demo/argparse/方法的/07-required.py
    :language: python 
    :encoding: utf-8
    
@@ -664,7 +664,7 @@ required
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 07-required.py
     Namespace(foo='BAR')
     usage: 07-required.py [-h] --foo FOO
@@ -675,9 +675,9 @@ help
 
 功能： 提供帮助信息
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/08-help.py
+.. literalinclude:: /demo/argparse/方法的/08-help.py
    :language: python 
    :encoding: utf-8
    
@@ -686,7 +686,7 @@ help
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 08-help.py
     usage: frobble [-h] [bar]
 
@@ -701,9 +701,9 @@ metavar
 
 功能： 提供元数据信息
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/09-metavar.py
+.. literalinclude:: /demo/argparse/方法的/09-metavar.py
    :language: python 
    :encoding: utf-8
    
@@ -712,7 +712,7 @@ metavar
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 09-metavar.py
     usage: PROG [-h] [-x X X] [--foo east west south north]
 
@@ -729,9 +729,9 @@ dest
 
 功能： 设置特定选项的创建的属性名字
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/10-dest.py
+.. literalinclude:: /demo/argparse/方法的/10-dest.py
    :language: python 
    :encoding: utf-8
    
@@ -740,7 +740,7 @@ dest
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 10-dest.py
     Namespace(bar='XXX')
     Namespace(foo='XXX')
@@ -753,9 +753,9 @@ ArgumentParser.parse_args(args=None, namespace=None)
 
 功能： 解析参数列表
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/方法的/11-parse_args.py
+.. literalinclude:: /demo/argparse/方法的/11-parse_args.py
    :language: python 
    :encoding: utf-8
    
@@ -764,7 +764,7 @@ ArgumentParser.parse_args(args=None, namespace=None)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 (master)
     $ python 11-parse_args.py
     Namespace(foo=None, x='X')
     Namespace(foo='FOO', x=None)
@@ -792,9 +792,9 @@ ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, a
 
 功能： 解析参数列表
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/其他的/01-子命令.py
+.. literalinclude:: /demo/argparse/其他的/01-子命令.py
    :language: python 
    :encoding: utf-8
    
@@ -803,7 +803,7 @@ ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, a
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 (master)
     $ python 01-子命令.py
     Namespace(bar=12, foo=False)
     Namespace(baz='Z', foo=True)
@@ -815,9 +815,9 @@ ArgumentParser.add_argument_group(title=None, description=None)
 
 功能： 添加参数组，有些命令会有多种使用方式。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/其他的/02-group.py
+.. literalinclude:: /demo/argparse/其他的/02-group.py
    :language: python 
    :encoding: utf-8
    
@@ -826,7 +826,7 @@ ArgumentParser.add_argument_group(title=None, description=None)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 (master)
     $ python 02-group.py
     usage: PROG [--bar BAR] foo
 
@@ -847,9 +847,9 @@ ArgumentParser.add_mutually_exclusive_group(required=False)
 
 功能： 添加参数组，这个组在使用命令的时候必须指定
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/其他的/03-mutually_group.py
+.. literalinclude:: /demo/argparse/其他的/03-mutually_group.py
    :language: python 
    :encoding: utf-8
    
@@ -858,7 +858,7 @@ ArgumentParser.add_mutually_exclusive_group(required=False)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 (master)
     $ python 03-mutually_group.py
     usage: PROG [-h] (--foo | --bar)
     PROG: error: one of the arguments --foo --bar is required
@@ -870,9 +870,9 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 功能： 添加参数组，这个组在使用命令的时候必须指定
 
-样例代码maek
+demo代码maek
 
-.. literalinclude:: /样例/argparse样例/其他的/04-set_default.py
+.. literalinclude:: /demo/argparse/其他的/04-set_default.py
    :language: python 
    :encoding: utf-8
    
@@ -881,7 +881,7 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 (master)
     $ python 04-set_default.py
     42
     Namespace(bar=42, baz='badger', foo=736)
@@ -896,9 +896,9 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 要求： 写一个类似编译的源码的解析脚本，提供make clean,make ,make install等调用。
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/案例的/make.py
+.. literalinclude:: /demo/argparse/案例的/make.py
    :language: python 
    :encoding: utf-8
    
@@ -907,7 +907,7 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py  --help
     usage: make.py [-h] [{install,clean}]
 
@@ -919,22 +919,22 @@ ArgumentParser.set_defaults(\*\*kwargs)
     optional arguments:
     -h, --help       show this help message and exit
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py
     start make
     end make
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py install
     start make install
     end make install
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py clean
     start make clean
     end make clean
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py test
     usage: make.py [-h] [{install,clean}]
     make.py: error: argument do: invalid choice: 'test' (choose from 'install', 'clean')
@@ -953,9 +953,9 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 这个相对比较复杂
 
-样例代码
+demo代码
 
-.. literalinclude:: /样例/argparse样例/案例的/make.py
+.. literalinclude:: /demo/argparse/案例的/make.py
    :language: python 
    :encoding: utf-8
    
@@ -964,7 +964,7 @@ ArgumentParser.set_defaults(\*\*kwargs)
 
 .. code-block:: bash
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py  --help
     usage: make.py [-h] [{install,clean}]
 
@@ -976,22 +976,22 @@ ArgumentParser.set_defaults(\*\*kwargs)
     optional arguments:
     -h, --help       show this help message and exit
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py
     start make
     end make
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py install
     start make install
     end make install
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py clean
     start make clean
     end make clean
 
-    Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 (master)
+    Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 (master)
     $ python make.py test
     usage: make.py [-h] [{install,clean}]
     make.py: error: argument do: invalid choice: 'test' (choose from 'install', 'clean')

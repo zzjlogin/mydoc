@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>基础语法 &mdash; 张志佳的技术文档 1.0 文档</title>
+  <title>3.1. 基础语法 &mdash; 张志佳的技术文档 1.0 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="高级语法" href="2.advance.html" />
-    <link rel="prev" title="reST语法介绍" href="../3.grammar.html" /> 
+    <link rel="next" title="3.2. 1   高级语法" href="2.advance.html" />
+    <link rel="prev" title="3. reST语法介绍" href="../3.grammar.html" /> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
@@ -438,13 +438,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../ToolsOpenSource.html">工具和开源项目</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../../1.Tools.html">常用工具汇总</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../../1.rST.html">用reStructuredText实践</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../1.index.html">rST简介</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../2.install.html">reST安装及环境配置</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../3.grammar.html">reST语法介绍</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../4.toOthers.html">格式转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../5.API.html">文档API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../6.rstTools.html">reST工具</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../7.addFunctions.html">其他</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.index.html">1. rST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2.install.html">2. reST安装及环境配置</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../3.grammar.html">3. reST语法介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.toOthers.html">4. 格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5.API.html">5. 文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../6.rstTools.html">6. reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../7.addFunctions.html">7. 其他</a></li>
 </ul>
 </li>
 </ul>
@@ -508,9 +508,9 @@
         
           <li><a href="../../1.rST.html">用reStructuredText实践</a> &raquo;</li>
         
-          <li><a href="../3.grammar.html">reST语法介绍</a> &raquo;</li>
+          <li><a href="../3.grammar.html">3. reST语法介绍</a> &raquo;</li>
         
-      <li>基础语法</li>
+      <li>3.1. 基础语法</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -524,10 +524,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="2.advance.html" class="btn btn-neutral float-right" title="高级语法" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="2.advance.html" class="btn btn-neutral float-right" title="3.2. 1   高级语法" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../3.grammar.html" class="btn btn-neutral" title="reST语法介绍" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../3.grammar.html" class="btn btn-neutral" title="3. reST语法介绍" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -537,9 +537,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>基础语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>3.1. 基础语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id2">
-<h2>标题学习<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.1.1. 标题学习<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在文本下一行（或上一行）添加至少与文本长度同宽的符号，即可以使文本成为标题。但并没有规定某一个级别的标题必须用什么字符，可以参考python文档的一些约定:</p>
 <p>文档树元素：章节、标题</p>
 <p>章节通过其标题识别，在标题文本下使用下划线进行标记或下划线和匹配的上划线。下划线/上划线是单个重复的标点字符，从左边第一列开始最少到与文档标题右边对齐。具体来说，一个下划线/上划线字符可以是任何非字母打印7位ASCII字符 <a class="footnote-reference" href="#id4" id="id3">[1]</a> 。当使用上划线时，上划线的长度与使用的字符必须与下划线相同。可以有任意数字级别的章节标题，但某些输出格式可能有限制（HTML只有6级标题）。</p>
@@ -607,18 +607,19 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id5">
-<h2>段落学习<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>3.1.2. 段落学习<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>我把一些rST的模块整理到了这个段落学习阶段。方便掌握。</p>
 <p><strong>段落学习分为以下4部分：</strong></p>
 <ol class="arabic simple">
 <li>空格、缩进、空行使用</li>
 <li>段落</li>
-<li>缩进、空行</li>
 <li>过渡</li>
+<li>评论</li>
+<li>注释</li>
 </ol>
 <hr class="docutils" />
 <div class="section" id="id6">
-<h3>空格、缩进、空行学习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3>3.1.2.1. 空格学习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>段落是被空行分割的文字片段，左侧必须对齐（<strong>没有空格，或者有相同多的空格</strong>）。<strong>缩进的段落被视为引文</strong>。</li>
 <li>空格进行缩进 ，但tab也可以使用。tab会转换为空格。tab会停在每个第八列。其他空白字符（form feeds [chr(12)] and vertical tabs [chr(11)]）会在处理前转为单个空格。</li>
@@ -637,7 +638,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id7">
-<h3>段落学习<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h3>3.1.2.2. 段落学习<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>这里的段落不再是没有规则的顶头写，然后一段一段中间空一行的段落。而是单独的一种段落格式。</p>
 <p>段落包含没有任何标记指向其他正文元素的左对齐文本块。使用空行分隔段落及其他正文元素。段落可以包含 行内标记 。</p>
 <p><strong>样例展示：</strong></p>
@@ -679,7 +680,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id8">
-<h3>缩进、空行<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3>3.1.2.3. 缩进<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>缩进是用来表示引用块、定义（在定义列表项中）和本地嵌套内容的唯一重要标示:</p>
 <ul class="simple">
 <li>列表项内容（列表项多行内容和一个列表项中多个正文元素包括嵌套列表）</li>
@@ -717,7 +718,43 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="id9">
-<h3>过渡<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>3.1.2.4. 评论<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<blockquote>
+<div><p>这整个缩进块都是
+一个评论.</p>
+<p>仍是一个评论.</p>
+</div></blockquote>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>
+
+    <span class="n">这整个缩进块都是</span>
+    <span class="n">一个评论</span><span class="o">.</span>
+
+    <span class="n">仍是一个评论</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id10">
+<h3>3.1.2.5. 注释<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p><strong>样例展示：</strong></p>
+<hr class="docutils" />
+<p>下面有5行注释内容，没有显示</p>
+<p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>下面有5行注释内容，没有显示
+
+..
+    这整个缩进块都是
+    一个评论.
+
+    仍是一个评论.
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>3.1.2.6. 过渡<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p><strong>文档元素：过渡</strong></p>
 <p>取代小标题，段落之间的额外空间或类型装饰符可用来标记文本分隔或主 题或重点的改变。</p>
 <p>(The Chicago Manual of Style, 14th edition, section 1.80)</p>
@@ -739,8 +776,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id10">
-<h2>列表学习<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id12">
+<h2>3.1.3. 列表学习<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 <p><strong>列表分为以下几种：</strong></p>
 <ol class="arabic simple">
 <li>无序列表</li>
@@ -749,8 +786,8 @@
 <li>字段列表</li>
 </ol>
 <p>以上三种列表的列表项正文必须与bullet缩进左对齐。文本紧接在bullet分隔符之后。简单理解就是相同级别的序号前面的引导字符要缩进相同。</p>
-<div class="section" id="id11">
-<h3>无序列表<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id13">
+<h3>3.1.3.1. 无序列表<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>以一个 “*”, “+”, “-“开头，后面根一个空格的文本块是一个无序列表项。</p>
 <p><strong>样例展示：</strong></p>
 <hr class="docutils" />
@@ -800,8 +837,8 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id12">
-<h3>有序列表<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id14">
+<h3>3.1.3.2. 有序列表<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <p>有序列表与无序列表类似，但是用序号而非圆点。序号包含有序成员和格式，之后跟着空格。以下有序序列可以识别:</p>
 <ul class="simple">
 <li>任意数字：1 2 3 … (无上限)</li>
@@ -875,8 +912,8 @@ A. 这是无序列表1
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id13">
-<h3>定义列表<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id15">
+<h3>3.1.3.3. 定义列表<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <p>每个定义列表项包含一个术语、可选的分类器和一个定义i。术语是一个简单的一行单词或句子。可选的分类器与术语在同一行，跟在它后面。每个分类器跟在一个行内”:”(空格冒号空格)之后。定义是一个块通，过缩进与术语联系，可以包含多个段落和其他正文元素。术语与定义块之间不允许有空格（这区分了定义列表与 引用块 ）。定义列表第一行之前和最后一行之后需要空行，中间的列表项是否空行是可选的。</p>
 <p>行内标记在术语行被解析，在分类器分隔符(”:”)被识别之前。分隔符仅在出现在任何行内标记之外时被识别。</p>
 <p>定义列表可用于多种用途，包括:</p>
@@ -925,8 +962,8 @@ A. 这是无序列表1
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id14">
-<h3>字段列表<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id16">
+<h3>3.1.3.4. 字段列表<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <p>字段列表作为扩展语法的一部分被使用，如 指令 的选项或等待进一步处理的类数据库记录。它们也被用于两列类列表结构类似于数据库记录（标签和数据对）。reStructuredText应用可以在特定上下文中识别字段名和变形字段或字段正文。例如，阅读下面的 目录字段 或 指令 中的 “图片“和”元” 指令 .</p>
 <p>字段列表会映射字段名到字段正文，仿照 RFC822 头。一个字段名可以包含任何字符，但字段名中的冒号(”:”)必须使用反斜杠转义。行内标记被解析为字段名。在进一步处理或传输时，字段名大小写敏感。字段名. 字段名与一个单独的冒号前后缀一起构成字段标记。字段表及之后跟空格和字段正文。字段正文可以包含多个正文元素，缩进到字段标记处。字段名标记之后的第一行决定字段正文的缩进。</p>
 <p>一个多单词字段名中的单个词的解释是应用程序。该应用程序可以为该字段名指定一个语法。例如，第二个单词及其后面的单词可以被视为“参数”，引用短语可以被视为一个单一的参数，并可能会增加直接支持“键=值”的语法。</p>
@@ -1004,8 +1041,8 @@ A. 这是无序列表1
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id15">
-<h2>文本块学习<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id17">
+<h2>3.1.4. 文本块学习<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
 <p><strong>样例展示：</strong></p>
 <hr class="docutils" />
 <p>样例1：</p>
@@ -1029,12 +1066,14 @@ A. 这是无序列表1
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id16">
-<h2>字体相关学习<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id18">
+<h2>3.1.5. 字体相关学习<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
 <p><strong>常见可以设置种类有：</strong></p>
 <ol class="arabic simple">
 <li>粗体</li>
 <li>斜体</li>
+<li>加红</li>
+<li>类似标题</li>
 </ol>
 <p><strong>样例展示：</strong></p>
 <hr class="docutils" />
@@ -1042,12 +1081,15 @@ A. 这是无序列表1
 <p><strong>粗体</strong></p>
 <p><em>斜体</em></p>
 <p><code class="docutils literal notranslate"><span class="pre">1旁边按键字符</span></code></p>
+<p class="rubric">这是rubric格式</p>
 <p><strong>上面换行功能实现方法，以下是rST源码显示样例</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>**粗体**
 
 *斜体*
 
 ``1旁边按键字符``
+
+.. rubric:: 这是rubric格式
 </pre></div>
 </div>
 </div>
@@ -1061,10 +1103,10 @@ A. 这是无序列表1
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="2.advance.html" class="btn btn-neutral float-right" title="高级语法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="2.advance.html" class="btn btn-neutral float-right" title="3.2. 1   高级语法" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../3.grammar.html" class="btn btn-neutral" title="reST语法介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../3.grammar.html" class="btn btn-neutral" title="3. reST语法介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

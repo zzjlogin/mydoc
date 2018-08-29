@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>argparse &mdash; 张志佳的技术文档 1.0 文档</title>
+  <title>16.4. argparse &mdash; 张志佳的技术文档 1.0 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="getopt" href="16.5通用操作系统服务.html" />
-    <link rel="prev" title="time" href="16.3通用操作系统服务.html" /> 
+    <link rel="next" title="16.5. getopt" href="16.5通用操作系统服务.html" />
+    <link rel="prev" title="16.3. time" href="16.3通用操作系统服务.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -88,149 +88,149 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Program.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../01环境准备.html">环境准备</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#python">安装python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#ipython">ipython的安装</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#id2">ipython测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01环境准备.html">1. 环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#python">1.1. 安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#ipython">1.2. ipython的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html#id2">1.3. ipython测试</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../02内建函数.html">内建函数</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../02内建函数.html#id2">常用内置函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02内建函数.html">2. 内建函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../02内建函数.html#id2">2.1. 常用内置函数</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../03内置常量.html">内置常量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../04内置类型.html">内置类型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id2">真值测试</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#boolean">boolean操作符</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id3">比较操作符号</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#int-float-complex">数据类型int,float,complex</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#list-tuple-range">数据类型 list, tuple, range</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">Binary Sequence Types — bytes, bytearray, memoryview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#set-types-set-frozenset">Set Types — set, frozenset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04内置类型.html">4. 内置类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id2">4.1. 真值测试</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#boolean">4.2. boolean操作符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#id3">4.3. 比较操作符号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#int-float-complex">4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#list-tuple-range">4.5. 数据类型 list, tuple, range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">4.6. Binary Sequence Types — bytes, bytearray, memoryview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html#set-types-set-frozenset">4.7. Set Types — set, frozenset</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../05内置异常.html">内置异常</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../06文本处理.html">文本处理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#string">string</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#re">re</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#difflib">difflib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#textwrap">textwrap</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#unicodedata">unicodedata</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#stringprep">stringprep</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#readline">readline</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#rlcompleter">rlcompleter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05内置异常.html">5. 内置异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06文本处理.html">6. 文本处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#string">6.1. string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#re">6.2. re</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#difflib">6.3. difflib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#textwrap">6.4. textwrap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#unicodedata">6.5. unicodedata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#stringprep">6.6. stringprep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#readline">6.7. readline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06文本处理.html#rlcompleter">6.8. rlcompleter</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../07二进制处理.html">二进制处理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#struct">struct</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#codecs">codecs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07二进制处理.html">7. 二进制处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#struct">7.1. struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html#codecs">7.2. codecs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../08数据类型.html">数据类型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#datetime">datetime</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#calendar">calendar</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collectons">collectons</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collections-abc">collections.abc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#heapq">heapq</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#bisect">bisect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#array">array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#weakref">weakref</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#types">types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#copy">copy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#pprint">pprint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#reprlib">reprlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#enum">enum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#flag">Flag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08数据类型.html">8. 数据类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#datetime">8.1. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#calendar">8.2. calendar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collectons">8.3. collectons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#collections-abc">8.4. collections.abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#heapq">8.5. heapq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#bisect">8.6. bisect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#array">8.7. array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#weakref">8.8. weakref</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#types">8.9. types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#copy">8.10. copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#pprint">8.11. pprint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#reprlib">8.12. reprlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#enum">8.13. enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html#flag">8.14. Flag</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../09数值模块.html">数值模块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#numbers">numbers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#math">math</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#cmath">cmath</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#decimal">decimal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#fractions">fractions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#random">random</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#statistics">statistics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09数值模块.html">9. 数值模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#numbers">9.1. numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#math">9.2. math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#cmath">9.3. cmath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#decimal">9.4. decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#fractions">9.5. fractions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#random">9.6. random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html#statistics">9.7. statistics</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../10函数式编程模块.html">函数式编程模块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#itertools">itertools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#functools">functools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#operator">operator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../10函数式编程模块.html">10. 函数式编程模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#itertools">10.1. itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#functools">10.2. functools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html#operator">10.3. operator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../11文件和目录访问.html">文件和目录访问</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#pathlib">pathlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#os-path">os.path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fileinput">fileinput</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#stat">stat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#filecmp">filecmp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#tempfile">tempfile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#glob">glob</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fnmatch">fnmatch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#linecache">linecache</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#shutil">shutil</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#macpath">macpath</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../11文件和目录访问.html">11. 文件和目录访问</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#pathlib">11.1. pathlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#os-path">11.2. os.path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fileinput">11.3. fileinput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#stat">11.4. stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#filecmp">11.5. filecmp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#tempfile">11.6. tempfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#glob">11.7. glob</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#fnmatch">11.8. fnmatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#linecache">11.9. linecache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#shutil">11.10. shutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html#macpath">11.11. macpath</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../12数据持久化.html">数据持久化</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#pickle">pickle</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#copyreg">copyreg</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#shelve">shelve</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#marshal">marshal</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#dbm">dbm</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#sqllite">sqllite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../12数据持久化.html">12. 数据持久化</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#pickle">12.1. pickle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#copyreg">12.2. copyreg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#shelve">12.3. shelve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#marshal">12.4. marshal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#dbm">12.5. dbm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html#sqllite">12.6. sqllite</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../13数据压缩和归档.html">数据压缩和归档</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zlib">zlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#gzip">gzip</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#bz2">bz2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#lzma">lzma</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zipfile">zipfile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#tarfile">tarfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../13数据压缩和归档.html">13. 数据压缩和归档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zlib">13.1. zlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#gzip">13.2. gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#bz2">13.3. bz2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#lzma">13.4. lzma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#zipfile">13.5. zipfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html#tarfile">13.6. tarfile</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../14文件格式.html">文件格式</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#csv">csv</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#configparser">configparser</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#netrc">netrc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#xdrlib">xdrlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#plistlib">plistlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../14文件格式.html">14. 文件格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#csv">14.1. csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#configparser">14.2. configparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#netrc">14.3. netrc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#xdrlib">14.4. xdrlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html#plistlib">14.5. plistlib</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../15加密服务.html">加密服务</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hashlib">hashlib</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hmac">hmac</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#secrets">secrets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../15加密服务.html">15. 加密服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hashlib">15.1. hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#hmac">15.2. hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html#secrets">15.3. secrets</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="reference internal" href="../16通用操作系统服务.html">通用操作系统服务</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="16.1通用操作系统服务.html">os</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.2通用操作系统服务.html">io</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.3通用操作系统服务.html">time</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">argparse</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.5通用操作系统服务.html">getopt</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.6通用操作系统服务.html">logging</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.7通用操作系统服务.html">logging.Config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.8通用操作系统服务.html">logging.Handlers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16.9通用操作系统服务.html">getpass</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../16通用操作系统服务.html">16. 通用操作系统服务</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="16.1通用操作系统服务.html">16.1. os</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.2通用操作系统服务.html">16.2. io</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.3通用操作系统服务.html">16.3. time</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">16.4. argparse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.5通用操作系统服务.html">16.5. getopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.6通用操作系统服务.html">16.6. logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.7通用操作系统服务.html">16.7. logging.Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.8通用操作系统服务.html">16.8. logging.Handlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16.9通用操作系统服务.html">16.9. getpass</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../17并发执行.html">并发执行</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#threading">threading</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing">multiprocessing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-process">multiprocessing.Process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id2">multiprocessing.Process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-queue">multiprocessing.Queue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id3">multiprocessing.Queue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-joinablequeue">multiprocessing.JoinableQueue</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-connection-connection">multiprocessing.connection.Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../17并发执行.html">17. 并发执行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#threading">17.1. threading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing">17.2. multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-process">17.3. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id2">17.4. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-queue">17.5. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#id3">17.6. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-joinablequeue">17.7. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html#multiprocessing-connection-connection">17.8. multiprocessing.connection.Connection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../18进程通信和网络.html">进程通信和网络</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../19网络数据处理.html">网络数据处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../20结构化文本文档处理工具.html">结构化文本文档处理工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../18进程通信和网络.html">18. 进程通信和网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../19网络数据处理.html">19. 网络数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../Algorithm.html">算法学习(Algorithm)</a><ul>
@@ -438,13 +438,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../ToolsOpenSource.html">工具和开源项目</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/1.rST.html">用reStructuredText实践</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">rST简介</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">reST安装及环境配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">reST语法介绍</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">格式转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">文档API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">reST工具</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">其他</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">1. rST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">4. 格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">5. 文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">6. reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">7. 其他</a></li>
 </ul>
 </li>
 </ul>
@@ -506,9 +506,9 @@
         
           <li><a href="../../Python.html">Python学习</a> &raquo;</li>
         
-          <li><a href="../16通用操作系统服务.html">通用操作系统服务</a> &raquo;</li>
+          <li><a href="../16通用操作系统服务.html">16. 通用操作系统服务</a> &raquo;</li>
         
-      <li>argparse</li>
+      <li>16.4. argparse</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -522,10 +522,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="16.5通用操作系统服务.html" class="btn btn-neutral float-right" title="getopt" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.5通用操作系统服务.html" class="btn btn-neutral float-right" title="16.5. getopt" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral" title="time" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.3通用操作系统服务.html" class="btn btn-neutral" title="16.3. time" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -535,11 +535,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="argparse">
-<h1>argparse<a class="headerlink" href="#argparse" title="永久链接至标题">¶</a></h1>
+<h1>16.4. argparse<a class="headerlink" href="#argparse" title="永久链接至标题">¶</a></h1>
 <p>argparse模块可以轻松编写用户友好的命令行界面。 该程序定义了它需要的参数，argparse将找出如何解析
 sys.argv中的那些参数。 argparse模块还会自动生成帮助和用法消息，并在用户给出程序无效参数时发出错误。</p>
-<div class="section" id="id1">
-<h2>快速入门样例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="demo">
+<h2>16.4.1. 快速入门demo<a class="headerlink" href="#demo" title="永久链接至标题">¶</a></h2>
 <p>代码：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
@@ -554,8 +554,8 @@ sys.argv中的那些参数。 argparse模块还会自动生成帮助和用法消
 <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">integers</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>调用样例</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<p>调用demo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI ...... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">00</span>-入门.py  -h
 usage: <span class="m">00</span>-入门.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--sum<span class="o">]</span> N <span class="o">[</span>N ...<span class="o">]</span>
 
@@ -568,18 +568,18 @@ optional arguments:
 -h, --help  show this <span class="nb">help</span> message and <span class="nb">exit</span>
 --sum       sum the integers <span class="o">(</span>default: find the max<span class="o">)</span>
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI ...... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">00</span>-入门.py  <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 <span class="m">4</span>
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ...... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">00</span>-入门.py  --sum <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 <span class="m">10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="argumentparser">
-<h2>ArgumentParser 对象<a class="headerlink" href="#argumentparser" title="永久链接至标题">¶</a></h2>
+<h2>16.4.2. ArgumentParser 对象<a class="headerlink" href="#argumentparser" title="永久链接至标题">¶</a></h2>
 <p>class argparse.ArgumentParser(prog=None, usage=None, description=None, epilog=None, parents=[], formatter_class=argparse.HelpFormatter,
 prefix_chars=’-‘, fromfile_prefix_chars=None, argument_default=None, conflict_handler=’error’, add_help=True, allow_abbrev=True)</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -612,9 +612,9 @@ prefix_chars=’-‘, fromfile_prefix_chars=None, argument_default=None, conflic
 </tbody>
 </table>
 <div class="section" id="prog">
-<h3>prog<a class="headerlink" href="#prog" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.1. prog<a class="headerlink" href="#prog" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置程序的名字，默认程序名字是sys.argv[0]。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s2">&quot;mytest&quot;</span><span class="p">)</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--foo&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;foo help&#39;</span><span class="p">)</span>
@@ -622,7 +622,7 @@ prefix_chars=’-‘, fromfile_prefix_chars=None, argument_default=None, conflic
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">01</span>-prog.py  -h
 usage: mytest <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--foo FOO<span class="o">]</span>
 
@@ -634,9 +634,9 @@ optional arguments:
 <p>可以看出来我们修改prog之后，usage提示信息就会显示我们修改的，默认是sys.argv[0]的值。</p>
 </div>
 <div class="section" id="usage">
-<h3>usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.2. usage<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h3>
 <p>功能： 获取或者程序的usage信息，不建议修改，这个程序会自动生成。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s2">&quot;mytest2&quot;</span><span class="p">)</span>
@@ -648,7 +648,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">02</span>-usage.py
 usage: mytest2 <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--src SRC<span class="o">]</span> <span class="o">[</span>-t T<span class="o">]</span>
 <span class="o">========================================</span>
@@ -657,9 +657,9 @@ usage: mytest2 <span class="o">[</span>-h<span class="o">]</span> <span class="o
 <p>usage信息默认就是横线上面的那一行内容，我们可以自己自定义这个。</p>
 </div>
 <div class="section" id="description">
-<h3>description<a class="headerlink" href="#description" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.3. description<a class="headerlink" href="#description" title="永久链接至标题">¶</a></h3>
 <p>功能： 在usage和具体参数的中间显示这个信息，用于解释这个命令的功能</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;啥也不做&quot;</span><span class="p">)</span>
@@ -670,7 +670,7 @@ usage: mytest2 <span class="o">[</span>-h<span class="o">]</span> <span class="o
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">04</span>-description.py
 usage: <span class="m">04</span>-description.py <span class="o">[</span>-h<span class="o">]</span>
 <span class="o">========================================</span>
@@ -684,9 +684,9 @@ optional arguments:
 </div>
 </div>
 <div class="section" id="epilog">
-<h3>epilog<a class="headerlink" href="#epilog" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.4. epilog<a class="headerlink" href="#epilog" title="永久链接至标题">¶</a></h3>
 <p>功能： 在帮助信息的最下面提示信息。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span> 
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;测试下epilog&quot;</span><span class="p">,</span><span class="n">epilog</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;这个已经过期了，建议改用ip命令&quot;</span><span class="p">)</span>
@@ -695,7 +695,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">05</span>-epilog.py
 usage: <span class="m">05</span>-epilog.py <span class="o">[</span>-h<span class="o">]</span>
 
@@ -709,9 +709,9 @@ optional arguments:
 </div>
 </div>
 <div class="section" id="parents">
-<h3>parents<a class="headerlink" href="#parents" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.5. parents<a class="headerlink" href="#parents" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置解析的父亲。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parent_parser</span><span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">add_help</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -736,7 +736,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">06</span>-parents.py
 parent的使用帮助
 
@@ -764,9 +764,9 @@ optional arguments:
 </div>
 </div>
 <div class="section" id="formatter-class">
-<h3>formatter_class<a class="headerlink" href="#formatter-class" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.6. formatter_class<a class="headerlink" href="#formatter-class" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置解析帮助信息的类</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span>  <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
@@ -794,7 +794,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">07</span>-formatter_class.py
 
 默认<span class="o">(</span>argparse.ArgumentDefaultsHelpFormatter<span class="o">)</span>的格式化输出
@@ -853,9 +853,9 @@ optional arguments:
 </ul>
 </div>
 <div class="section" id="prefix-char">
-<h3>prefix_char<a class="headerlink" href="#prefix-char" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.7. prefix_char<a class="headerlink" href="#prefix-char" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置参数的前缀字符</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prefix_chars</span><span class="o">=</span><span class="s1">&#39;-+&#39;</span><span class="p">)</span>
@@ -869,7 +869,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">08</span>-prefix_char.py /f
 usage: <span class="m">08</span>-prefix_char.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>+f F<span class="o">]</span> <span class="o">[</span>++bar BAR<span class="o">]</span>
 
@@ -882,9 +882,9 @@ optional arguments:
 <p>linux环境的命令基本都是“-”作为前缀的，这也是prefix_char的默认值，window命令基本都是”/” 。</p>
 </div>
 <div class="section" id="fromfile-prefix-chars">
-<h3>fromfile_prefix_chars<a class="headerlink" href="#fromfile-prefix-chars" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.8. fromfile_prefix_chars<a class="headerlink" href="#fromfile-prefix-chars" title="永久链接至标题">¶</a></h3>
 <p>功能： 从文件读取参数的前缀</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;args.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
@@ -898,7 +898,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">09</span>-fromfile_prefix_chars.py
 Namespace<span class="o">(</span><span class="nv">f</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="o">)</span>
 Namespace<span class="o">(</span><span class="nv">f</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="o">)</span>
@@ -907,9 +907,9 @@ Namespace<span class="o">(</span><span class="nv">f</span><span class="o">=</spa
 <p>可以看出来，文件中指定值覆盖了前面的值。 后面的会覆盖前面的值。</p>
 </div>
 <div class="section" id="default">
-<h3>default<a class="headerlink" href="#default" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.9. default<a class="headerlink" href="#default" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置默认值</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">argument_default</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">SUPPRESS</span><span class="p">)</span>
@@ -927,7 +927,7 @@ Namespace<span class="o">(</span><span class="nv">f</span><span class="o">=</spa
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">10</span>-default.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="s1">&#39;BAR&#39;</span>, <span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="o">)</span>
 Namespace<span class="o">()</span>
@@ -938,9 +938,9 @@ Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</s
 <p>这个可以看出来，默认即使这个选项没有指定也会创建出来这个属性，但是我们指定下为argument_default=argparse.SUPPRESS就不会创建属性了</p>
 </div>
 <div class="section" id="allow-abbrev">
-<h3>allow_abbrev<a class="headerlink" href="#allow-abbrev" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.10. allow_abbrev<a class="headerlink" href="#allow-abbrev" title="永久链接至标题">¶</a></h3>
 <p>功能： 这个就是长选项的简写开启不开启的问题了。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">,</span> <span class="n">allow_abbrev</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -956,7 +956,7 @@ Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</s
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">11</span>-allow_abbrev.py
 
 允许简写的
@@ -971,9 +971,9 @@ PROG: error: unrecognized arguments: --foon
 </div>
 </div>
 <div class="section" id="conflict-handler">
-<h3>conflict_handler<a class="headerlink" href="#conflict-handler" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.11. conflict_handler<a class="headerlink" href="#conflict-handler" title="永久链接至标题">¶</a></h3>
 <p>功能： 这个就是长选项的简写开启不开启的问题了。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">,</span> <span class="n">conflict_handler</span><span class="o">=</span><span class="s1">&#39;resolve&#39;</span><span class="p">)</span>
@@ -990,7 +990,7 @@ PROG: error: unrecognized arguments: --foon
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">12</span>-conflict_handler.py
 解决冲突的方式结果
 usage: PROG <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-f FOO<span class="o">]</span> <span class="o">[</span>--foo FOO<span class="o">]</span>
@@ -1020,9 +1020,9 @@ argparse.ArgumentError: argument --foo: conflicting option string: --foo
 </div>
 </div>
 <div class="section" id="add-help">
-<h3>add_help<a class="headerlink" href="#add-help" title="永久链接至标题">¶</a></h3>
+<h3>16.4.2.12. add_help<a class="headerlink" href="#add-help" title="永久链接至标题">¶</a></h3>
 <p>功能： 这个就是长选项的简写开启不开启的问题了。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1038,7 +1038,7 @@ argparse.ArgumentError: argument --foo: conflicting option string: --foo
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 .......... <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">13</span>-add_help.py
 
 有帮助的输出结果
@@ -1061,7 +1061,7 @@ optional arguments:
 </div>
 </div>
 <div class="section" id="add-argument">
-<h2>add_argument() 方法<a class="headerlink" href="#add-argument" title="永久链接至标题">¶</a></h2>
+<h2>16.4.3. add_argument() 方法<a class="headerlink" href="#add-argument" title="永久链接至标题">¶</a></h2>
 <p>ArgumentParser.add_argument(name or flags…[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1092,9 +1092,9 @@ optional arguments:
 </tbody>
 </table>
 <div class="section" id="name">
-<h3>name<a class="headerlink" href="#name" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.1. name<a class="headerlink" href="#name" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置选项名字的</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">)</span>
@@ -1107,7 +1107,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">01</span>-name.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="s1">&#39;BAR&#39;</span>, <span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;FOO&#39;</span><span class="o">)</span>
 BAR
@@ -1115,9 +1115,9 @@ BAR
 </div>
 </div>
 <div class="section" id="action">
-<h3>action<a class="headerlink" href="#action" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.2. action<a class="headerlink" href="#action" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置选项名字的</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="k">def</span> <span class="nf">print_line</span><span class="p">(</span><span class="n">content</span><span class="p">):</span>
@@ -1184,7 +1184,7 @@ BAR
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">02</span>-action.py
 <span class="c1">##################################测试默认值(store)##################################</span>
 Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="o">)</span>
@@ -1204,7 +1204,7 @@ PROG <span class="m">2</span>.0
 </div>
 </div>
 <div class="section" id="nargs">
-<h3>nargs<a class="headerlink" href="#nargs" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.3. nargs<a class="headerlink" href="#nargs" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置指定选项使用的参数个数，按照正则的去理解它。</p>
 <ul class="simple">
 <li>N 使用特定个数</li>
@@ -1213,7 +1213,7 @@ PROG <span class="m">2</span>.0
 <li>* 使用任意个</li>
 <li>argparse.REMAINDER 剩余的所有</li>
 </ul>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -1266,7 +1266,7 @@ PROG <span class="m">2</span>.0
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">03</span>-nargs.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=[</span><span class="s1">&#39;c&#39;</span><span class="o">]</span>, <span class="nv">foo</span><span class="o">=[</span><span class="s1">&#39;a&#39;</span>, <span class="s1">&#39;b&#39;</span><span class="o">])</span>
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="s1">&#39;XX&#39;</span>, <span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;YY&#39;</span><span class="o">)</span>
@@ -1282,14 +1282,14 @@ PROG: error: the following arguments are required: foo
 </div>
 </div>
 <div class="section" id="const">
-<h3>const<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.4. const<a class="headerlink" href="#const" title="永久链接至标题">¶</a></h3>
 <p>功能： 常量</p>
 <p>使用参考上面的action即可。</p>
 </div>
-<div class="section" id="id2">
-<h3>default<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id1">
+<h3>16.4.3.5. default<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置默认值的,如果没有指定的话，</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1300,16 +1300,16 @@ PROG: error: the following arguments are required: foo
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">04</span>-default.py
 Namespace<span class="o">(</span><span class="nv">length</span><span class="o">=</span><span class="m">10</span>, <span class="nv">width</span><span class="o">=</span><span class="m">10</span>.5<span class="o">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="type">
-<h3>type<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.6. type<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h3>
 <p>功能： 指定选项值的类型，默认是string的。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
@@ -1344,7 +1344,7 @@ Namespace<span class="o">(</span><span class="nv">length</span><span class="o">=
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">05</span>-type.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span>&lt;_io.TextIOWrapper <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;temp.txt&#39;</span> <span class="nv">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="nv">encoding</span><span class="o">=</span><span class="s1">&#39;cp936&#39;</span>&gt;, <span class="nv">foo</span><span class="o">=</span><span class="m">2</span><span class="o">)</span>
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span>&lt;_io.TextIOWrapper <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;out.txt&#39;</span> <span class="nv">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span> <span class="nv">encoding</span><span class="o">=</span><span class="s1">&#39;cp936&#39;</span>&gt;<span class="o">)</span>
@@ -1355,9 +1355,9 @@ PROG: error: argument foo: <span class="s1">&#39;7&#39;</span> is not a perfect 
 </div>
 </div>
 <div class="section" id="choices">
-<h3>choices<a class="headerlink" href="#choices" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.7. choices<a class="headerlink" href="#choices" title="永久链接至标题">¶</a></h3>
 <p>功能： 提供可选值</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;game.py&#39;</span><span class="p">)</span>
@@ -1370,7 +1370,7 @@ PROG: error: argument foo: <span class="s1">&#39;7&#39;</span> is not a perfect 
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">06</span>-choices.py
 Namespace<span class="o">(</span><span class="nv">move</span><span class="o">=</span><span class="s1">&#39;rock&#39;</span><span class="o">)</span>
 usage: game.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">{</span>rock,paper,scissors<span class="o">}</span>
@@ -1379,9 +1379,9 @@ game.py: error: argument move: invalid choice: <span class="s1">&#39;fire&#39;</
 </div>
 </div>
 <div class="section" id="required">
-<h3>required<a class="headerlink" href="#required" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.8. required<a class="headerlink" href="#required" title="永久链接至标题">¶</a></h3>
 <p>功能： 强制性设置</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1394,7 +1394,7 @@ game.py: error: argument move: invalid choice: <span class="s1">&#39;fire&#39;</
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">07</span>-required.py
 Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;BAR&#39;</span><span class="o">)</span>
 usage: <span class="m">07</span>-required.py <span class="o">[</span>-h<span class="o">]</span> --foo FOO
@@ -1403,9 +1403,9 @@ usage: <span class="m">07</span>-required.py <span class="o">[</span>-h<span cla
 </div>
 </div>
 <div class="section" id="help">
-<h3>help<a class="headerlink" href="#help" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.9. help<a class="headerlink" href="#help" title="永久链接至标题">¶</a></h3>
 <p>功能： 提供帮助信息</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;frobble&#39;</span><span class="p">)</span>
@@ -1414,7 +1414,7 @@ usage: <span class="m">07</span>-required.py <span class="o">[</span>-h<span cla
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">08</span>-help.py
 usage: frobble <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>bar<span class="o">]</span>
 
@@ -1427,9 +1427,9 @@ optional arguments:
 </div>
 </div>
 <div class="section" id="metavar">
-<h3>metavar<a class="headerlink" href="#metavar" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.10. metavar<a class="headerlink" href="#metavar" title="永久链接至标题">¶</a></h3>
 <p>功能： 提供元数据信息</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">)</span>
@@ -1439,7 +1439,7 @@ optional arguments:
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">09</span>-metavar.py
 usage: PROG <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-x X X<span class="o">]</span> <span class="o">[</span>--foo east west south north<span class="o">]</span>
 
@@ -1456,9 +1456,9 @@ None
 </div>
 </div>
 <div class="section" id="dest">
-<h3>dest<a class="headerlink" href="#dest" title="永久链接至标题">¶</a></h3>
+<h3>16.4.3.11. dest<a class="headerlink" href="#dest" title="永久链接至标题">¶</a></h3>
 <p>功能： 设置特定选项的创建的属性名字</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1472,7 +1472,7 @@ None
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">10</span>-dest.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="s1">&#39;XXX&#39;</span><span class="o">)</span>
 Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;XXX&#39;</span><span class="o">)</span>
@@ -1481,10 +1481,10 @@ Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</s
 </div>
 </div>
 <div class="section" id="parse-args">
-<h2>parse_args() 方法<a class="headerlink" href="#parse-args" title="永久链接至标题">¶</a></h2>
+<h2>16.4.4. parse_args() 方法<a class="headerlink" href="#parse-args" title="永久链接至标题">¶</a></h2>
 <p>ArgumentParser.parse_args(args=None, namespace=None)</p>
 <p>功能： 解析参数列表</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">)</span>
@@ -1526,7 +1526,7 @@ Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</s
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/方法的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../方法的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">11</span>-parse_args.py
 Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</span>None, <span class="nv">x</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="o">)</span>
 Namespace<span class="o">(</span><span class="nv">foo</span><span class="o">=</span><span class="s1">&#39;FOO&#39;</span>, <span class="nv">x</span><span class="o">=</span>None<span class="o">)</span>
@@ -1537,10 +1537,10 @@ BAR
 </pre></div>
 </div>
 </div>
+<div class="section" id="id2">
+<h2>16.4.5. 其他功能<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id3">
-<h2>其他功能<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id4">
-<h3>子命令<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h3>16.4.5.1. 子命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>ArgumentParser.add_subparsers([title][, description][, prog][, parser_class][, action]
 [, option_string][, dest][, help][, metavar])</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1566,7 +1566,7 @@ BAR
 </tbody>
 </table>
 <p>功能： 解析参数列表</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">)</span>
 <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--foo&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;foo help&#39;</span><span class="p">)</span>
@@ -1591,7 +1591,7 @@ BAR
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">01</span>-子命令.py
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="m">12</span>, <span class="nv">foo</span><span class="o">=</span>False<span class="o">)</span>
 Namespace<span class="o">(</span><span class="nv">baz</span><span class="o">=</span><span class="s1">&#39;Z&#39;</span>, <span class="nv">foo</span><span class="o">=</span>True<span class="o">)</span>
@@ -1599,11 +1599,11 @@ Namespace<span class="o">(</span><span class="nv">baz</span><span class="o">=</s
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3>参数组<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h3>16.4.5.2. 参数组<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>ArgumentParser.add_argument_group(title=None, description=None)</p>
 <p>功能： 添加参数组，有些命令会有多种使用方式。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">,</span> <span class="n">add_help</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -1615,7 +1615,7 @@ Namespace<span class="o">(</span><span class="nv">baz</span><span class="o">=</s
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">02</span>-group.py
 usage: PROG <span class="o">[</span>--bar BAR<span class="o">]</span> foo
 
@@ -1631,11 +1631,11 @@ group2 description
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>强制组<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id5">
+<h3>16.4.5.3. 强制组<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>ArgumentParser.add_mutually_exclusive_group(required=False)</p>
 <p>功能： 添加参数组，这个组在使用命令的时候必须指定</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s1">&#39;PROG&#39;</span><span class="p">)</span>
@@ -1646,18 +1646,18 @@ group2 description
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">03</span>-mutually_group.py
 usage: PROG <span class="o">[</span>-h<span class="o">]</span> <span class="o">(</span>--foo <span class="p">|</span> --bar<span class="o">)</span>
 PROG: error: one of the arguments --foo --bar is required
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>设置默认值<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id6">
+<h3>16.4.5.4. 设置默认值<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>ArgumentParser.set_defaults(**kwargs)</p>
 <p>功能： 添加参数组，这个组在使用命令的时候必须指定</p>
-<p>样例代码maek</p>
+<p>demo代码maek</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
@@ -1668,7 +1668,7 @@ PROG: error: one of the arguments --foo --bar is required
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/其他的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../其他的 <span class="o">(</span>master<span class="o">)</span>
 $ python <span class="m">04</span>-set_default.py
 <span class="m">42</span>
 Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</span><span class="m">42</span>, <span class="nv">baz</span><span class="o">=</span><span class="s1">&#39;badger&#39;</span>, <span class="nv">foo</span><span class="o">=</span><span class="m">736</span><span class="o">)</span>
@@ -1676,12 +1676,12 @@ Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</s
 </div>
 </div>
 </div>
+<div class="section" id="id7">
+<h2>16.4.6. 案例<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id8">
-<h2>案例<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id9">
-<h3>案例1<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<h3>16.4.6.1. 案例1<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>要求： 写一个类似编译的源码的解析脚本，提供make clean,make ,make install等调用。</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -1722,7 +1722,7 @@ Namespace<span class="o">(</span><span class="nv">bar</span><span class="o">=</s
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py  --help
 usage: make.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[{</span>install,clean<span class="o">}]</span>
 
@@ -1734,35 +1734,35 @@ positional arguments:
 optional arguments:
 -h, --help       show this <span class="nb">help</span> message and <span class="nb">exit</span>
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py
 start make
 end make
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py install
 start make install
 end make install
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py clean
 start make clean
 end make clean
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py <span class="nb">test</span>
 usage: make.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[{</span>install,clean<span class="o">}]</span>
 make.py: error: argument <span class="k">do</span>: invalid choice: <span class="s1">&#39;test&#39;</span> <span class="o">(</span>choose from <span class="s1">&#39;install&#39;</span>, <span class="s1">&#39;clean&#39;</span><span class="o">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h3>案例2<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id9">
+<h3>16.4.6.2. 案例2<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>要求： 写一个简单版本的防火墙命令实现</p>
 <p>在写之前，需要熟悉下 <a class="reference external" href="https://linux.die.net/man/8/iptables">iptables</a> 的使用。</p>
 <p>分析：</p>
 <p>这个相对比较复杂</p>
-<p>样例代码</p>
+<p>demo代码</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
@@ -1803,7 +1803,7 @@ make.py: error: argument <span class="k">do</span>: invalid choice: <span class=
 </pre></div>
 </div>
 <p>终端测试</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py  --help
 usage: make.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[{</span>install,clean<span class="o">}]</span>
 
@@ -1815,22 +1815,22 @@ positional arguments:
 optional arguments:
 -h, --help       show this <span class="nb">help</span> message and <span class="nb">exit</span>
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py
 start make
 end make
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py install
 start make install
 end make install
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py clean
 start make clean
 end make clean
 
-Administrator@DESKTOP-31DI5AI MINGW64 /e/ZhaojiediProject/github/My_Study_Python/source/样例/argparse样例/案例的 <span class="o">(</span>master<span class="o">)</span>
+Administrator@DESKTOP-31DI5AI MINGW64 ........../案例的 <span class="o">(</span>master<span class="o">)</span>
 $ python make.py <span class="nb">test</span>
 usage: make.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[{</span>install,clean<span class="o">}]</span>
 make.py: error: argument <span class="k">do</span>: invalid choice: <span class="s1">&#39;test&#39;</span> <span class="o">(</span>choose from <span class="s1">&#39;install&#39;</span>, <span class="s1">&#39;clean&#39;</span><span class="o">)</span>
@@ -1848,10 +1848,10 @@ make.py: error: argument <span class="k">do</span>: invalid choice: <span class=
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="16.5通用操作系统服务.html" class="btn btn-neutral float-right" title="getopt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.5通用操作系统服务.html" class="btn btn-neutral float-right" title="16.5. getopt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.3通用操作系统服务.html" class="btn btn-neutral" title="time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.3通用操作系统服务.html" class="btn btn-neutral" title="16.3. time" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

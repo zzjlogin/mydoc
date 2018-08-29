@@ -4,7 +4,7 @@ Linux命令汇总
 =========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :numbered:
    
