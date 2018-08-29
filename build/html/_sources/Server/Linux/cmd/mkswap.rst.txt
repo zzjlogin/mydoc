@@ -1,0 +1,41 @@
+.. _mkswap-cmd:
+
+===================
+mkswap
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _mkswap-format:
+
+命令格式
+=============
+
+.. _mkswap-user:
+
+所属用户
+=============
+
+.. _mkswap-guid:
+
+使用指导
+=============
+
+.. _mkswap-args:
+
+参数：
+=============
+
+.. _mkswap-instance:
+
+参考实例：
+=============
+
+.. _mkswap-relevant:
+
+相关命令：
+=============

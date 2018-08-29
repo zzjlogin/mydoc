@@ -1,0 +1,41 @@
+.. _printf-cmd:
+
+===================
+printf
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _printf-format:
+
+命令格式
+=============
+
+.. _printf-user:
+
+所属用户
+=============
+
+.. _printf-guid:
+
+使用指导
+=============
+
+.. _printf-args:
+
+参数：
+=============
+
+.. _printf-instance:
+
+参考实例：
+=============
+
+.. _printf-relevant:
+
+相关命令：
+=============

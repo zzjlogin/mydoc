@@ -1,0 +1,41 @@
+.. _telnet-cmd:
+
+===================
+telnet
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _telnet-format:
+
+命令格式
+=============
+
+.. _telnet-user:
+
+所属用户
+=============
+
+.. _telnet-guid:
+
+使用指导
+=============
+
+.. _telnet-args:
+
+参数：
+=============
+
+.. _telnet-instance:
+
+参考实例：
+=============
+
+.. _telnet-relevant:
+
+相关命令：
+=============

@@ -1,0 +1,41 @@
+.. _fdisk-cmd:
+
+===================
+fdisk
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _fdisk-format:
+
+命令格式
+=============
+
+.. _fdisk-user:
+
+所属用户
+=============
+
+.. _fdisk-guid:
+
+使用指导
+=============
+
+.. _fdisk-args:
+
+参数：
+=============
+
+.. _fdisk-instance:
+
+参考实例：
+=============
+
+.. _fdisk-relevant:
+
+相关命令：
+=============

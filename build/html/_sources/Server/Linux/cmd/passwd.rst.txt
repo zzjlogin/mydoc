@@ -1,0 +1,41 @@
+.. _passwd-cmd:
+
+===================
+passwd
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _passwd-format:
+
+命令格式
+=============
+
+.. _passwd-user:
+
+所属用户
+=============
+
+.. _passwd-guid:
+
+使用指导
+=============
+
+.. _passwd-args:
+
+参数：
+=============
+
+.. _passwd-instance:
+
+参考实例：
+=============
+
+.. _passwd-relevant:
+
+相关命令：
+=============
