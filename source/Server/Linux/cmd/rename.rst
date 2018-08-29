@@ -1,0 +1,41 @@
+.. _rename-cmd:
+
+===================
+rename
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _rename-format:
+
+命令格式
+=============
+
+.. _rename-user:
+
+所属用户
+=============
+
+.. _rename-guid:
+
+使用指导
+=============
+
+.. _rename-args:
+
+参数：
+=============
+
+.. _rename-instance:
+
+参考实例：
+=============
+
+.. _rename-relevant:
+
+相关命令：
+=============

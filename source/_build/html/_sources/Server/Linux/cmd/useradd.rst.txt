@@ -1,0 +1,41 @@
+.. _useradd-cmd:
+
+===================
+useradd
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _useradd-format:
+
+命令格式
+=============
+
+.. _useradd-user:
+
+所属用户
+=============
+
+.. _useradd-guid:
+
+使用指导
+=============
+
+.. _useradd-args:
+
+参数：
+=============
+
+.. _useradd-instance:
+
+参考实例：
+=============
+
+.. _useradd-relevant:
+
+相关命令：
+=============

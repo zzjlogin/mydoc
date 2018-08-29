@@ -1,0 +1,41 @@
+.. _ltrace-cmd:
+
+===================
+ltrace
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _ltrace-format:
+
+命令格式
+=============
+
+.. _ltrace-user:
+
+所属用户
+=============
+
+.. _ltrace-guid:
+
+使用指导
+=============
+
+.. _ltrace-args:
+
+参数：
+=============
+
+.. _ltrace-instance:
+
+参考实例：
+=============
+
+.. _ltrace-relevant:
+
+相关命令：
+=============

@@ -1,0 +1,41 @@
+.. _uname-cmd:
+
+===================
+uname
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _uname-format:
+
+命令格式
+=============
+
+.. _uname-user:
+
+所属用户
+=============
+
+.. _uname-guid:
+
+使用指导
+=============
+
+.. _uname-args:
+
+参数：
+=============
+
+.. _uname-instance:
+
+参考实例：
+=============
+
+.. _uname-relevant:
+
+相关命令：
+=============

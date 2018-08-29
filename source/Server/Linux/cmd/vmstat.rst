@@ -1,0 +1,41 @@
+.. _vmstat-cmd:
+
+===================
+vmstat
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _vmstat-format:
+
+命令格式
+=============
+
+.. _vmstat-user:
+
+所属用户
+=============
+
+.. _vmstat-guid:
+
+使用指导
+=============
+
+.. _vmstat-args:
+
+参数：
+=============
+
+.. _vmstat-instance:
+
+参考实例：
+=============
+
+.. _vmstat-relevant:
+
+相关命令：
+=============

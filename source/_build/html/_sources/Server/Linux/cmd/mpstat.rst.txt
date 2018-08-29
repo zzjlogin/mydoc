@@ -1,0 +1,41 @@
+.. _mpstat-cmd:
+
+===================
+mpstat
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _mpstat-format:
+
+命令格式
+=============
+
+.. _mpstat-user:
+
+所属用户
+=============
+
+.. _mpstat-guid:
+
+使用指导
+=============
+
+.. _mpstat-args:
+
+参数：
+=============
+
+.. _mpstat-instance:
+
+参考实例：
+=============
+
+.. _mpstat-relevant:
+
+相关命令：
+=============

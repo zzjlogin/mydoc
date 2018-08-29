@@ -1,0 +1,41 @@
+.. _hostname-cmd:
+
+===================
+hostname
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _hostname-format:
+
+命令格式
+=============
+
+.. _hostname-user:
+
+所属用户
+=============
+
+.. _hostname-guid:
+
+使用指导
+=============
+
+.. _hostname-args:
+
+参数：
+=============
+
+.. _hostname-instance:
+
+参考实例：
+=============
+
+.. _hostname-relevant:
+
+相关命令：
+=============

@@ -1,0 +1,41 @@
+.. _strace-cmd:
+
+===================
+strace
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _strace-format:
+
+命令格式
+=============
+
+.. _strace-user:
+
+所属用户
+=============
+
+.. _strace-guid:
+
+使用指导
+=============
+
+.. _strace-args:
+
+参数：
+=============
+
+.. _strace-instance:
+
+参考实例：
+=============
+
+.. _strace-relevant:
+
+相关命令：
+=============

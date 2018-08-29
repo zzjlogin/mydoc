@@ -1,0 +1,41 @@
+.. _logout-cmd:
+
+===================
+logout
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _logout-format:
+
+命令格式
+=============
+
+.. _logout-user:
+
+所属用户
+=============
+
+.. _logout-guid:
+
+使用指导
+=============
+
+.. _logout-args:
+
+参数：
+=============
+
+.. _logout-instance:
+
+参考实例：
+=============
+
+.. _logout-relevant:
+
+相关命令：
+=============
