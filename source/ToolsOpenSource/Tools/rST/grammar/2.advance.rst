@@ -122,6 +122,8 @@ CSV 表格
        crunchy, now would it?"
        "Gannet Ripple", 1.99, "On a stick!"
 
+----
+
 
 支持单元格内的块标记和行内标记。单元格内的行结束符能被识别
 
@@ -950,22 +952,19 @@ ref建议使用标准reStructuredText链接到部分（例如），因为它跨�
 
 \:envvar:
 ----------------
+参考：[directive-envvar]_
 
 环境变量。生成索引条目。还会生成匹配envvar指令的链接（如果存在）。
 
-..note::
-
-    参考：http://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-envvar
+.. [directive-envvar] http://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#directive-envvar
 
 
 \:token:
 ----------------
-
+参考：[directive-productionlist]_
 语法标记的名称（用于在productionlist指令之间创建链接 ）。
 
-..note::
-
-    参考：http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-productionlist
+.. [directive-productionlist] http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-productionlist
 
 
 \:keyword:
@@ -1085,12 +1084,10 @@ Usenet新闻组的名称。
 对Internet请求注释的引用。这会生成适当的索引条目。生成文本“RFC 编号 ”; 在HTML输出中，此文本是指向指定RFC的联机副本的超链接。您可以通过说明链接到特定部分:rfc:`number#anchor`。
 
 .. note::
-
+    
     请注意，成外部链接,包含超链接没有特殊角色，因为您可以使用标准reST标记来实现此目的。
 
 
-
-- 链接到隐藏 `哈哈 <2.advance.html#A-Hyperlink>`_
 
 .. [code] https://zh-sphinx-doc.readthedocs.io/en/latest/markup/code.html
 .. [角色参考] http://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role
