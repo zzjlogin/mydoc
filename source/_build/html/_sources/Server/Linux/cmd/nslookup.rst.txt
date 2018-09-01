@@ -1,0 +1,41 @@
+.. _nslookup-cmd:
+
+===================
+nslookup
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _nslookup-format:
+
+命令格式
+=============
+
+.. _nslookup-user:
+
+所属用户
+=============
+
+.. _nslookup-guid:
+
+使用指导
+=============
+
+.. _nslookup-args:
+
+参数：
+=============
+
+.. _nslookup-instance:
+
+参考实例：
+=============
+
+.. _nslookup-relevant:
+
+相关命令：
+=============

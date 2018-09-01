@@ -1,0 +1,214 @@
+文件格式
+=============================
+
+csv
+-------------------------------------------
+csv是逗号分割的文件，使用比较广泛。
+
+
+
+
+csv.writer(csvfile, dialect='excel', \*\*fmtparams)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python 
+
+    In [59]: import csv
+
+    In [60]: with open("eggs.csv",'w',newline='') as f:
+        ...:     fw=csv.writer(f,delimiter=' ',quotechar='!',quoting=csv.QUOTE_MINIMAL)
+        ...:     fw.writerow([1,2,3,4])
+        ...:     fw.writerow([2,3,4,5])
+        ...:
+
+csv.reader(csvfile, dialect='excel', \*\*fmtparams)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python 
+
+    In [61]: import csv
+
+    In [62]: with open('eggs.csv',newline='') as f:
+        ...:     fr=csv.reader(f,delimiter=' ',quotechar='|')
+        ...:     for row in fr:
+        ...:         print(','.join(row))
+        ...:
+    1,2,3,4
+    2,3,4,5
+
+csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel', \*args, \*\*kwds)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    In [63]: import csv
+        ...:
+        ...: with open('names.csv', 'w', newline='') as csvfile:
+        ...:     fieldnames = ['first_name', 'last_name']
+        ...:     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        ...:
+        ...:     writer.writeheader()
+        ...:     writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
+        ...:     writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
+        ...:     writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+
+csv.reader(csvfile, dialect='excel', \*\*fmtparams)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    In [64]: import csv
+
+    In [65]: with open('names.csv', newline='') as csvfile:
+        ...:     reader = csv.DictReader(csvfile)
+        ...:     for row in reader:
+        ...:         print(row['first_name'], row['last_name'])
+        ...:
+    Baked Beans
+    Lovely Spam
+    Wonderful Spam
+
+configparser
+----------------------------------------------------------------------------------------------------
+提供ini风跟配置文件的解析，window下的大量配置文件都是使用的ini风格， 还有linux下的yum仓库或者mysql数据库配置文件等等。
+
+
+ini风格的样例： 
+
+.. code-block:: ini
+
+    [DEFAULT]
+    ServerAliveInterval = 45
+    Compression = yes
+    CompressionLevel = 9
+    ForwardX11 = yes
+
+    [bitbucket.org]
+    User = hg
+
+    [topsecret.server.com]
+    Port = 50022
+    ForwardX11 = no
+
+怎么生成上面的配置文件呢？
+
+.. code-block:: python 
+
+    In [66]: import configparser
+
+    In [67]: import configparser
+        ...: config = configparser.ConfigParser()
+        ...: config['DEFAULT'] = {'ServerAliveInterval': '45',
+        ...:                      'Compression': 'yes',
+        ...:                      'CompressionLevel': '9'}
+        ...: config['bitbucket.org'] = {}
+        ...: config['bitbucket.org']['User'] = 'hg'
+        ...: config['topsecret.server.com'] = {}
+        ...: topsecret = config['topsecret.server.com']
+        ...: topsecret['Port'] = '50022'     # mutates the parser
+        ...: topsecret['ForwardX11'] = 'no'  # same here
+        ...: config['DEFAULT']['ForwardX11'] = 'yes'
+        ...: with open('example.ini', 'w') as configfile:
+        ...:     config.write(configfile)
+
+上面的代码就可以生成ini的配置文件了，下面是读取解析
+
+.. code-block:: python 
+
+In [68]: import configparser
+
+In [69]: config = configparser.ConfigParser()
+
+In [70]: config.sections()
+Out[70]: []
+
+# 读取配置文件
+In [71]: config.read('example.ini')
+Out[71]: ['example.ini']
+
+In [72]: config.sections()
+Out[72]: ['bitbucket.org', 'topsecret.server.com']
+
+In [73]: 'bitbucket.org' in config
+Out[73]: True
+
+In [75]: config['DEFAULT']['Compression']
+Out[75]: 'yes'
+
+In [76]: config.getboolean('DEFAULT','Compression')
+Out[76]: True
+
+# 指定默认值
+In [77]: topsecret.getboolean('BatchMode', fallback=True)
+Out[77]: True
+
+
+比较通用的一个样例： 
+
+.. code-block:: python 
+
+    import configparser
+
+    config = configparser.RawConfigParser()
+
+    # Please note that using RawConfigParser's set functions, you can assign
+    # non-string values to keys internally, but will receive an error when
+    # attempting to write to a file or when you get it in non-raw mode. Setting
+    # values using the mapping protocol or ConfigParser's set() does not allow
+    # such assignments to take place.
+    config.add_section('Section1')
+    config.set('Section1', 'an_int', '15')
+    config.set('Section1', 'a_bool', 'true')
+    config.set('Section1', 'a_float', '3.1415')
+    config.set('Section1', 'baz', 'fun')
+    config.set('Section1', 'bar', 'Python')
+    config.set('Section1', 'foo', '%(bar)s is %(baz)s!')
+
+    # Writing our configuration file to 'example.cfg'
+    with open('example.cfg', 'w') as configfile:
+        config.write(configfile)
+
+netrc
+----------------------------------------------------------------------------------------------------
+提供netrc文件的解析能力
+
+xdrlib
+----------------------------------------------------------------------------------------------------
+支持外部数据表示标准,提供encode和decode xdr数据。
+
+样例： 
+
+.. code-block:: python 
+
+    import xdrlib
+    p = xdrlib.Packer()
+    try:
+        p.pack_double(8.01)
+    except xdrlib.ConversionError as instance:
+        print('packing the double failed:', instance.msg)
+
+plistlib
+----------------------------------------------------------------------------------------------------
+用于读写主要由Mac OS X使用的“属性列表”文件，并支持二进制文件和XML plist文件。
+
+主要的方法是dumps,dump,load,loads,writePlist,readPlist方法。
+
+.. code-block:: python 
+
+    pl = dict(
+        aString = "Doodah",
+        aList = ["A", "B", 12, 32.1, [1, 2, 3]],
+        aFloat = 0.1,
+        anInt = 728,
+        aDict = dict(
+            anotherString = "<hello & hi there!>",
+            aThirdString = "M\xe4ssig, Ma\xdf",
+            aTrueValue = True,
+            aFalseValue = False,
+        ),
+        someData = b"<binary gunk>",
+        someMoreData = b"<lots of binary gunk>" * 10,
+        aDate = datetime.datetime.fromtimestamp(time.mktime(time.gmtime())),
+    )
+    with open(fileName, 'wb') as fp:
+        dump(pl, fp)

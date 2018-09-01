@@ -1,0 +1,41 @@
+.. _paste-cmd:
+
+===================
+paste
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _paste-format:
+
+命令格式
+=============
+
+.. _paste-user:
+
+所属用户
+=============
+
+.. _paste-guid:
+
+使用指导
+=============
+
+.. _paste-args:
+
+参数：
+=============
+
+.. _paste-instance:
+
+参考实例：
+=============
+
+.. _paste-relevant:
+
+相关命令：
+=============

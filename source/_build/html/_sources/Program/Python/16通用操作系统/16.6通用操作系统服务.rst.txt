@@ -1,0 +1,116 @@
+logging
+=====================================================
+logging提供实现了可扩展的日志系统。
+
+logging.Logger
+----------------------------------------------------
+
+.. code-block:: text
+
+    propagate: 如果此属性的计算结果为true，除了附加到此记录器的任何处理程序外，记录到此记录程序的事件将传递给更高级别（祖先）记录程序的处理程序。
+    setLevel: 设置日志级别
+    isEnabledFor:指示是否将由此记录器处理严重性级别为lvl的消息。 此方法首先检查由logging.disable（lvl）设置的模块级别级别，然后检查记录器的有效级别
+    getEffectiveLevel: 获取当前日志级别
+    getChild: 根据后缀确定，返回日志器
+    debug: 输出debug信息
+    info: 输出info信息
+    warning:输出警告信息
+    error:输出error信息
+    critical：输出critical级别信息
+    log: 输出指定级别的信息
+    exception:输出异常信息
+    addFilter: 添加过滤器
+    filter: 应用过滤器
+    addHandler: 添加处理方法
+    removeHandler: 移除handler
+    findCaller: 找到调用者源文件名字和行号
+    handler: 处理记录
+    makeRecode: 工厂方法
+    hasHandlers: 是否有Handler
+
+日志级别
+
+.. csv-table:: 
+   :header: "级别","数值","描述"
+   :widths: 15,20,20
+
+    "CRITICAL","50","严重"
+    "ERROR","40","错误"
+    "WARNING","30","警告"
+    "INFO","20","信息"
+    "DEBUG","10","调试"
+    "NOTSET","0","不设置"
+
+logging.Handler
+--------------------------------------------
+
+.. code-block:: text 
+
+    __init__:   初始化
+    createLock: 初始化线程锁
+    acquire:    需要使用createLock创建线程锁
+    release:    释放
+    setLevel：  设置级别
+    setFormatter: 设置格式
+    addFilter:  添加过滤器
+    removeFilter: 移除过滤器
+    filter: 应用过滤器
+    flush: 确保日志记录输出被刷新
+    close: 关闭
+    handler: 根据可能已添加到处理程序的过滤器，有条件地发出指定的日志记录
+    hanglerError: 错误
+    format: 对记录进行格式
+    emit: 做任何事情来实际记录指定的日志记录。 此版本旨在由子类实现，因此引发NotImplementedError。
+
+logging.Formatter
+--------------------------------------------
+
+.. code-block:: text 
+
+    format: 格式化记录
+    formatTime: 格式化记录使用特定的日期格式
+    formatException: 格式化异常信息
+    formatStack: 格式化堆栈信息
+
+logging.Filter
+--------------------------------------------
+
+.. code-block:: text 
+
+    filter: 过滤特定日志
+
+logging.LogRecord
+--------------------------------------------
+
+.. code-block:: text 
+
+    这个对象接受很多参数，如下
+    name:   名字
+    level:  日志级别
+    pathname: 路径名
+    lineno:     行号
+    msg:        消息内容
+    args：      参数信息
+    exc_info:   异常信息
+    func:       调用的方法
+    sinfo:      堆栈信息
+
+日志记录属性
+
+.. csv-table::  csv
+   :header: "属性","格式","描述"
+     
+简单使用
+---------------------------------------------
+
+.. code-block:: python 
+
+    In [1]: import logging
+
+    In [2]: FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
+    ...: logging.basicConfig(format=FORMAT)
+    ...: d = {'clientip': '192.168.0.1', 'user': 'zhaojiedi'}
+    ...: logger = logging.getLogger('tcpserver')
+    ...: logger.warning('Protocol problem: %s', 'connection reset', extra=d)
+    ...:
+    2018-05-13 13:59:54,626 192.168.0.1 zhaojiedi  Protocol problem: connection reset

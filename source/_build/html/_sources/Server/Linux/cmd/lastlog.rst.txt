@@ -1,0 +1,41 @@
+.. _lastlog-cmd:
+
+===================
+lastlog
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _lastlog-format:
+
+命令格式
+=============
+
+.. _lastlog-user:
+
+所属用户
+=============
+
+.. _lastlog-guid:
+
+使用指导
+=============
+
+.. _lastlog-args:
+
+参数：
+=============
+
+.. _lastlog-instance:
+
+参考实例：
+=============
+
+.. _lastlog-relevant:
+
+相关命令：
+=============

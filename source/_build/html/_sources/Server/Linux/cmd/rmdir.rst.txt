@@ -1,0 +1,41 @@
+.. _rmdir-cmd:
+
+===================
+rmdir
+===================
+
+:Date: 
+
+
+.. contents::
+.. section-numbering::
+
+.. _rmdir-format:
+
+命令格式
+=============
+
+.. _rmdir-user:
+
+所属用户
+=============
+
+.. _rmdir-guid:
+
+使用指导
+=============
+
+.. _rmdir-args:
+
+参数：
+=============
+
+.. _rmdir-instance:
+
+参考实例：
+=============
+
+.. _rmdir-relevant:
+
+相关命令：
+=============
