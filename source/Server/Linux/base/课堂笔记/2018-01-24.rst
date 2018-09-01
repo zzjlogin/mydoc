@@ -1,0 +1,47 @@
+2018-01-24
+======================
+
+上节课回顾
+----------------------------
+
+::
+
+    mysql多实例
+    连接
+     
+
+本节内容
+----------------------------
+
+::
+
+  show processlist
+
+  socket: ip+port
+
+  sock_stream
+  sock_dgram
+  sock_raw
+
+  hyper text transfer protocol
+
+  mime: multipurepose internet mail extension 
+
+  mailcap：/etc/mime.types
+
+  curl http://192.168.46.7/index.html -I
+  
+  url: uniform resorce locator 
+  urn uniform resource name
+
+  pv访问量
+  uv独立访客
+
+  ServerRoot
+
+
+  http -t
+
+  httpd-tools
+
+  ab -c 2000 -n 10000 http://www.baidu.com

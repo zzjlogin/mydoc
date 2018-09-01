@@ -1,41 +1,40 @@
-.. _zip-cmd:
+.. _xxxx-cmd:
 
 ===================
-zip
+xxxx
 ===================
 
 :Date: 2018-08-29
 
 
 .. contents::
-.. section-numbering::
 
-.. _zip-format:
+.. _xxxx-format:
 
 命令格式
 =============
 
-.. _zip-user:
+.. _xxxx-user:
 
 所属用户
 =============
 
-.. _zip-guid:
+.. _xxxx-guid:
 
 使用指导
 =============
 
-.. _zip-args:
+.. _xxxx-args:
 
 参数：
 =============
 
-.. _zip-instance:
+.. _xxxx-instance:
 
 参考实例：
 =============
 
-.. _zip-relevant:
+.. _xxxx-relevant:
 
 相关命令：
 =============

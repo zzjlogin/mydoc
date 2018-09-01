@@ -1,0 +1,162 @@
+2017-12-28-练习selinux
+====================================
+
+练习1-selinux
+---------------------------------------
+
+
+2、使用restore修复selinux
+
+.. code-block:: bash
+
+	[root@centos74 html]$ ll -Z index.html 
+	-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+	[root@centos74 html]$ cp index.html  /root
+	[root@centos74 html]$ ll -Z /root/index.html index.html 
+	-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+	-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 /root/index.html
+	[root@centos74 html]$ mv /root/index.html  .
+	mv: overwrite ‘./index.html’? y
+	[root@centos74 html]$ ll -Z
+	-rw-r--r--. root root unconfined_u:object_r:admin_home_t:s0 index.html
+	[root@centos74 html]$ restorecon -R  /var/www/html/
+	[root@centos74 html]$ ll -Z
+	-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+
+3、查看semanager由那个包提供 ，并查看默认的安全上下文，添加安全上下文，删除安全上下文
+
+.. code-block:: bash
+
+	[root@centos74 html]$ which semanage
+	/usr/sbin/semanage
+	[root@centos74 html]$ rpm -qf /usr/sbin/semanage
+	policycoreutils-python-2.5-17.1.el7.x86_64
+	[root@centos74 html]$ semanage fcontext -l 
+	[root@centos74 app]$ semanage fcontext -a -t httpd_sys_content_t '/app(/.*)?'
+	[root@centos74 app]$ touch /app/11.txt
+	[root@centos74 app]$ restorecon -Rv /app
+	[root@centos74 app]$ ll -Z 11.txt 
+	-rw-r--r--. root root unconfined_u:object_r:httpd_sys_content_t:s0 11.txt
+
+4、添加ssh的监听端口20022，并测试
+
+.. code-block:: bash
+
+	[root@centos74 app]$ vim /etc/ssh/ssh_config 
+	[root@centos74 app]$ cat /etc/ssh/ssh_config  |grep Port
+	Port 22
+	Port 20022
+	[root@centos74 app]$ systemctl restart sshd
+	[root@centos74 app]$ netstat -tunlp |grep sshd
+	tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      6252/sshd           
+	tcp6       0      0 :::22                   :::*                    LISTEN      6252/sshd  
+
+	[root@centos74 app]$ semanage port -l |grep ssh
+	ssh_port_t                     tcp      22
+	[root@centos74 app]$ semanage port -a -t ssh_port_t -p tcp 20002
+	[root@centos74 app]$ semanage port -l |grep ssh
+	ssh_port_t                     tcp      20002, 22
+
+	[root@centos74 app]$ setenforce 0
+	[root@centos74 app]$ systemctl status sshd.service
+	● sshd.service - OpenSSH server daemon
+	Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
+	Active: active (running) since Thu 2017-12-28 12:31:56 CST; 8s ago
+		Docs: man:sshd(8)
+			man:sshd_config(5)
+	Main PID: 6598 (sshd)
+	CGroup: /system.slice/sshd.service
+			└─6598 /usr/sbin/sshd -D
+
+	Dec 28 12:31:56 centos74.magedu.com systemd[1]: Starting OpenSSH server daemon...
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on 0.0.0.0 port 20022.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on :: port 20022.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on 0.0.0.0 port 22.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on :: port 22.
+	Dec 28 12:31:56 centos74.magedu.com systemd[1]: Started OpenSSH server daemon.
+	[root@centos74 app]$ setenforce 1
+	[root@centos74 app]$ systemctl status sshd.service 
+	● sshd.service - OpenSSH server daemon
+	Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
+	Active: active (running) since Thu 2017-12-28 12:31:56 CST; 36s ago
+		Docs: man:sshd(8)
+			man:sshd_config(5)
+	Main PID: 6598 (sshd)
+	CGroup: /system.slice/sshd.service
+			└─6598 /usr/sbin/sshd -D
+
+	Dec 28 12:31:56 centos74.magedu.com systemd[1]: Starting OpenSSH server daemon...
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on 0.0.0.0 port 20022.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on :: port 20022.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on 0.0.0.0 port 22.
+	Dec 28 12:31:56 centos74.magedu.com sshd[6598]: Server listening on :: port 22.
+	Dec 28 12:31:56 centos74.magedu.com systemd[1]: Started OpenSSH server daemon.
+		
+	[root@centos74 app]$ netstat -tunlp  |grep ssh
+	tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      6598/sshd           
+	tcp        0      0 0.0.0.0:20022           0.0.0.0:*               LISTEN      6598/sshd           
+	tcp6       0      0 :::22                   :::*                    LISTEN      6598/sshd           
+	tcp6       0      0 :::20022                :::*                    LISTEN      6598/sshd   
+
+
+6、修改selinux的布尔值
+
+.. code-block:: bash
+
+	[root@centos74 app]$ semanage boolean  -l |grep ftp |grep write
+	tftp_anon_write                (off  ,  off)  Allow tftp to anon write
+	ftpd_anon_write                (off  ,  off)  Allow ftpd to anon write
+	[root@centos74 app]$ setsebool  ftpd_anon_write=1 -P
+
+7、编写一个脚本完成selinux各个状态切换的脚本
+
+.. code-block:: bash
+
+	#!/bin/bash
+	#================================================
+	#FileName   :set_selinux.sh
+	#Author     :zhaojiedi
+	#Description:
+	#DateTime   :2017-12-28 13:39:06
+	#Version    :V1.0
+	#Other      :
+	#================================================
+
+	# show current status 
+	has_disabled=0
+	#sestatus | grep -q "disabled"
+	current_status=`sed -rn '/^SELINUX/s@^SELINUX=(.*)@\1@p' /etc/sysconfig/selinux`
+
+	if [ "$current_status" -eq "disabled" ] ; then
+			has_disabled=1
+	else
+			has_disabled=0
+	fi
+
+
+	# case 
+
+	case $1 in
+	enforcing)
+			setenforce 1
+			sed -i 's@SELINUX=.*@SELINUX=enforcing@' /etc/sysconfig/selinux
+			;;
+	permissive)
+			setenforce 0
+			sed -i 's@SELINUX=.*@SELINUX=permissive@' /etc/sysconfig/selinux
+			;;
+	disabled)
+			setenforce 0
+			has_disabled=1
+			sed -i 's@SELINUX=.*@SELINUX=disabled@' /etc/sysconfig/selinux
+			;;
+	*)
+			echo "Usage: set_selinux [ enforcing | permissive | disabled ]"
+			exit 1
+			;;
+	esac
+
+	if [ "$has_disabled" -eq 1 ] ; then
+			echo -e "\033[31myou need to reboot \033[0m"
+	fi
+

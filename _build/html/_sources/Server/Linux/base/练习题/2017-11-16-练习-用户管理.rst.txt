@@ -1,0 +1,233 @@
+2017-11-16-练习-用户管理
+=================================
+
+练习1-useradd,usermod
+----------------------
+
+1、创建用户gentoo，附加组为distro和linux,默认shell为/bin/csh,注释信息"gentoo distribution"  
+
+.. code-block:: bash
+
+    [root@centos6 ~]# useradd -G distro,linux -s /bin/csh -c "gentoo distribution" gentoo
+
+
+练习2-恢复用户家目录
+---------------------
+
+1、创建好的用户wang,用户家目录被删除的，如何还原。 
+
+模拟一个破坏环境 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# useradd wang                          #创建用户
+    [root@centos6 ~]# echo "oracle" | passwd --stdin wang   #设置密码
+    Changing password for user wang. 
+    passwd: all authentication tokens updated successfully.
+    [root@centos6 ~]# rm -rf /home/wang                     #模拟恶意删除家目录
+    [root@centos6 ~]# ll /home/wang                         #查看
+    ls: cannot access /home/wang: No such file or directory
+    [root@centos6 home]# su - test01                        #切换到普通用户
+    [test01@centos6 ~]$ su - wang                           #从普通用户切换到wang
+    Password: 
+    su: warning: cannot change directory to /home/wang: No such file or directory
+    -bash-4.1$                                                #这里家目录没有就是-bash-4.1的样子了。
+
+修复过程 
+
+.. code-block:: bash
+
+    [root@centos6 home]# cp -r /etc/skel /home/wang   #复制模板文件夹
+    [root@centos6 home]# ll
+    total 28
+    drwx------.  5 git       git       4096 Nov  9 23:51 git
+    drwx------.  4 nginx     nginx     4096 Nov 11 15:39 nginx
+    drwx------.  4 test      test      4096 Nov 11 15:04 test
+    drwx------.  4 test01    test01    4096 Nov 11 15:04 test01
+    drwx------.  4 test03    test03    4096 Nov 11 15:33 test03
+    drwxr-xr-x.  4 root      root      4096 Nov 11 16:05 wang
+    drwx------. 25 zhaojiedi zhaojiedi 4096 Nov 11 15:03 zhaojiedi
+    [root@centos6 home]# chown -R  wang:wang wang #修改所有者和组
+    [root@centos6 home]# chmod  700 wang        #修改权限700
+    [root@centos6 home]# ll                       #检查下权限和所有者
+    total 28
+    drwx------.  5 git       git       4096 Nov  9 23:51 git
+    drwx------.  4 nginx     nginx     4096 Nov 11 15:39 nginx
+    drwx------.  4 test      test      4096 Nov 11 15:04 test
+    drwx------.  4 test01    test01    4096 Nov 11 15:04 test01
+    drwx------.  4 test03    test03    4096 Nov 11 15:33 test03
+    drwx------.  4 wang      wang      4096 Nov 11 16:05 wang
+    drwx------. 25 zhaojiedi zhaojiedi 4096 Nov 11 15:03 zhaojiedi
+    [root@centos6 home]# su - test01             #切换到普通用户
+    [test01@centos6 ~]$ su - wang                #切换到wang用户
+    Password: 
+    [wang@centos6 ~]$ l.                         #查看文件
+    .  ..  .bash_logout  .bash_profile  .bashrc  .emacs  .gnome2  .mozilla
+
+练习3-useradd,passwd
+----------------------------
+
+1 、创建用户gentoo ，附加组为bin 和root ，默认shell为 为/bin/csh ，注释信息为"Gentoo Distribution" 
+
+.. code-block:: bash
+
+    [root@centos6 home]# useradd -G bin,root -s /bin/csh -c "Gentoo Distribution" gentoo
+
+2 、创建下面的用户、组和组成员关系如下：
+
+* 名字为admins  的组
+* 用户natasha ，使用admins  作为附属组
+* 用户harry ，也使用admins  作为附属组
+* 用户sarah ，不可交互登录系统，且不是admins  的成员，
+* natasha ，harry ，sarah 密码都是centos  
+
+.. code-block:: bash
+
+    [root@centos6 home]# groupadd admins
+    [root@centos6 home]# useradd -G admins natasha
+    [root@centos6 home]# useradd -G admins harry
+    [root@centos6 home]# useradd -s /sbin/nologin 
+    [root@centos6 home]# useradd -s /sbin/nologin sarah
+    [root@centos6 home]# echo "centos" | passwd --stdin natasha
+    Changing password for user natasha.
+    passwd: all authentication tokens updated successfully.
+    [root@centos6 home]# echo "centos" | passwd --stdin harry
+    Changing password for user harry.
+    passwd: all authentication tokens updated successfully.
+    [root@centos6 home]# echo "centos" | passwd --stdin sarah
+    Changing password for user sarah.
+    passwd: all authentication tokens updated successfully.
+
+练习4-批量添加用户和修改密码
+-------------------------------
+批量添加用户 
+
+.. code-block:: bash
+
+    [root@centos6 home]# echo user{00..10} |tr " " "\n"   |xargs -L  1  useradd  #cent6创建11个用户
+    [root@centos6 ~]# tail -n 11 /etc/passwd >>need_to_add_users.txt             #cent6把/etc/passwd后面的11行数据到文件中
+    [root@centos6 ~]# sz need_to_add_users.txt    #在cent6使用sz上传文件
+    [root@centos7 ~]# rz                          #cent7 接受这个文件
+    [root@centos7 ~]# newusers  < need_to_add_users.txt #批量添加
+    [root@centos7 ~]# tail -n 11 /etc/passwd
+    user00:x:607:608::/home/user00:/bin/bash
+    user01:x:608:609::/home/user01:/bin/bash
+    user02:x:609:610::/home/user02:/bin/bash
+    user03:x:610:611::/home/user03:/bin/bash
+    user04:x:611:612::/home/user04:/bin/bash
+    user05:x:612:613::/home/user05:/bin/bash
+    user06:x:613:614::/home/user06:/bin/bash
+    user07:x:614:615::/home/user07:/bin/bash
+    user08:x:615:616::/home/user08:/bin/bash
+    user09:x:616:617::/home/user09:/bin/bash
+    user10:x:617:618::/home/user10:/bin/bash
+    [root@centos7 ~]# id user01
+    uid=608(user01) gid=609(user01) groups=609(user01)
+
+
+批量改密码 
+
+.. code-block:: bash
+
+    [root@centos7 ~]# nano all_pass.txt #编辑一个密码文件
+    [root@centos7 ~]# cat all_pass.txt  #查看
+    user00:oracle
+    user01:oracle
+    user02:oracle
+    user03:oracle
+    user04:oracle
+    user05:oracle
+    user06:oracle
+    user07:oracle
+    user08:oracle
+    user09:oracle
+    user10:oracle
+    [root@centos7 ~]# cat all_pass.txt  | chpasswd #批量修改密码
+
+
+练习5-权限判断
+---------------------
+
+1 、当用户xiaoming 对/testdir  目录无执行权限时，意味着无法做哪些操作？ 
+
+.. code-block:: bash
+
+    无法进入目录
+
+2 、当用户xiaoqiang 对/testdir  目录无读权限时，意味着无法做哪些操作？ 
+
+.. code-block:: bash
+    
+    无法查看目录下的文件
+    
+3 、当用户wangcai  对/testdir  目录无写权限时，该目录下的只读文件file1 是否可修改和删除？ 
+
+.. code-block:: bash
+
+    不可修改，无法删除
+
+4 、当用户wangcai  对/testdir  目录有写和执行权限时，该目录下的只读文件file1 是否可修改和删除？ 
+
+.. code-block:: bash
+
+    不可修改，但是可以删除
+
+5 、复制/etc/fstab 文件到/var/tmp 下，设置文件所有者为wangcai 读写权限，所属组为sysadmins 组有读写权限，其他人无权限 
+
+.. code-block:: bash
+
+    [root@centos7 app]$ chown wangcai:sysadmins /var/tmp/fstab 
+    [root@centos7 app]$ chmod 660 /var/tmp/fstab 
+
+
+练习6-getfacl,setfacl,chmod
+----------------------------------------
+
+1 、在/testdir/dir 里创建的新文件自动属于g1 组，组g2 的成员如：alice 能对这些新文件有读写权限，组g3的成员如：tom 只能对新文件有读权限，其它用户（不属于g1,g2,g3 ）不能访问这个文件夹。
+
+分析下题目
+
+* 1）创建一个目录
+* 2）自动属于g1组，这个应该设置gid,且组名为g1
+* 3)alice 在g2组，需要先创建用户，读写权限
+* 4）tome在g3组， 需要创建用户，有读权限
+* 5）其他用户无权限     
+
+
+.. code-block:: bash
+
+    [root@centos6 ~]# mkdir /testdir/dir -pv
+    mkdir: created directory'/testdir'
+    mkdir: created directory '/testdir/dir'
+    [root@centos6 ~]# groupadd g1
+    [root@centos6 ~]# chgrp  g1 /testdir/dir/
+    [root@centos6 ~]# chmod g+s /testdir/dir/
+    [root@centos6 ~]# cd /testdir/dir/
+    [root@centos6 dir]# touch a.txt
+    [root@centos6 dir]# ll
+    total 0
+    -rw-r--r--. 1 root g1 0 Nov 13 01:44 a.txt
+    [root@centos6 dir]# groupadd g2
+    [root@centos6 dir]# useradd alice -G g2
+    [root@centos6 dir]# setfacl -m "g:g2:rw" -R /testdir/dir/
+    [root@centos6 dir]# groupadd g3
+    [root@centos6 dir]# useradd tom -G g3
+    [root@centos6 dir]# setfacl -m "g:g3:r" -R /testdir/dir/
+    [root@centos6 dir]# ll
+    total 0
+    -rw-r--r--. 1 root g1 0 Nov 13 01:44 a.txt
+    [root@centos6 dir]# chmod o-rx /testdir/dir/ -R
+    [root@centos6 dir]# setfacl -m "d:o::---" -R /testdir/dir/
+
+2 、备份/testdir/dir 里所有文件的ACL 权限到/root/acl.txt 中，清除/testdir/dir 中所有ACL 权限，最后还原ACL  
+
+.. code-block:: bash
+
+    [root@centos6 dir]# getfacl /testdir/dir -R >/root/acl.txt
+    getfacl: Removing leading '/' from absolute path names
+    [root@centos6 dir]# cd /testdir/
+    [root@centos6 testdir]# getfacl -R dir > /root/acl.txt
+    [root@centos6 testdir]# setfacl -R -b dir                        # -b ==--remove-all
+    [root@centos6 testdir]# setfacl --restore /root/acl.txt
+    [root@centos6 testdir]# getfacl -R dir
+

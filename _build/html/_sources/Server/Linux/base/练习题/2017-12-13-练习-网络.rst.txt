@@ -1,0 +1,118 @@
+2017-12-13-练习-网络
+==============================
+
+练习1-子网划分
+------------------------------------
+1、10.0.0.0/8划分32个子网，计算最大子网的的网络id,最大子网的可用ip范围 
+
+.. code-block:: text
+    
+    1.分析32个子网，需要5位借位
+        10.00000 000.0.0
+    2.最大的子网为
+        10.11111000.0.0/13即10.248.0.0/13
+    3.ip范围为
+        10.248.0.1-10.255.255.254
+
+练习2-网卡重命名
+---------------------------------------------
+1、 重名了centos6的网络名字为ens33
+
+.. code-block:: bash
+
+    [root@centos6 ~]$ ifconfig eth0
+    eth0      Link encap:Ethernet  HWaddr 00:0C:29:42:6E:19  
+            inet addr:172.18.1.159  Bcast:172.18.255.255  Mask:255.255.0.0
+            inet6 addr: fe80::20c:29ff:fe42:6e19/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:589 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:87 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:44342 (43.3 KiB)  TX bytes:11667 (11.3 KiB)
+
+    [root@centos6 ~]$ vim /etc/udev/rules.d/70-persistent-net.rules 
+    [root@centos6 ~]$ cdnet
+    [root@centos6 network-scripts]$ ll
+    total 224
+    -rw-r--r--. 1 root root   319 Nov  9 16:17 ifcfg-eth0
+    -rw-r--r--. 1 root root   254 Jan 18  2017 ifcfg-lo
+    lrwxrwxrwx. 1 root root    20 Nov  9 21:47 ifdown -> ../../../sbin/ifdown
+    -rwxr-xr-x. 1 root root   627 Jan 18  2017 ifdown-bnep
+    -rwxr-xr-x. 1 root root  5891 Jan 18  2017 ifdown-eth
+    -rwxr-xr-x. 1 root root  6195 Mar 23  2017 ifdown-ib
+    -rwxr-xr-x. 1 root root   781 Jan 18  2017 ifdown-ippp
+    -rwxr-xr-x. 1 root root  4168 Jan 18  2017 ifdown-ipv6
+    lrwxrwxrwx. 1 root root    11 Nov  9 21:47 ifdown-isdn -> ifdown-ippp
+    -rwxr-xr-x. 1 root root  1617 Jan 18  2017 ifdown-post
+    -rwxr-xr-x. 1 root root  1064 Jan 18  2017 ifdown-ppp
+    -rwxr-xr-x. 1 root root   835 Jan 18  2017 ifdown-routes
+    -rwxr-xr-x. 1 root root  1465 Jan 18  2017 ifdown-sit
+    -rwxr-xr-x. 1 root root  1434 Jan 18  2017 ifdown-tunnel
+    lrwxrwxrwx. 1 root root    18 Nov  9 21:47 ifup -> ../../../sbin/ifup
+    -rwxr-xr-x. 1 root root 13226 Oct  4 10:26 ifup-aliases
+    -rwxr-xr-x. 1 root root   859 Jan 18  2017 ifup-bnep
+    -rwxr-xr-x. 1 root root 12119 Oct  4 10:26 ifup-eth
+    -rwxr-xr-x. 1 root root 11339 Mar 23  2017 ifup-ib
+    -rwxr-xr-x. 1 root root 11971 Jan 18  2017 ifup-ippp
+    -rwxr-xr-x. 1 root root 10490 Jan 18  2017 ifup-ipv6
+    lrwxrwxrwx. 1 root root     9 Nov  9 21:47 ifup-isdn -> ifup-ippp
+    -rwxr-xr-x. 1 root root   727 Jan 18  2017 ifup-plip
+    -rwxr-xr-x. 1 root root   954 Jan 18  2017 ifup-plusb
+    -rwxr-xr-x. 1 root root  2527 Jan 18  2017 ifup-post
+    -rwxr-xr-x. 1 root root  4154 Jan 18  2017 ifup-ppp
+    -rwxr-xr-x. 1 root root  1925 Jan 18  2017 ifup-routes
+    -rwxr-xr-x. 1 root root  3289 Jan 18  2017 ifup-sit
+    -rwxr-xr-x. 1 root root  2563 Jan 18  2017 ifup-tunnel
+    -rwxr-xr-x. 1 root root  4011 Jan 18  2017 ifup-wireless
+    -rwxr-xr-x. 1 root root  4623 Jan 18  2017 init.ipv6-global
+    -rwxr-xr-x. 1 root root  1219 Jan 18  2017 net.hotplug
+    -rw-r--r--. 1 root root 15360 Oct  4 10:26 network-functions
+    -rw-r--r--. 1 root root 29857 Jan 18  2017 network-functions-ipv6
+    [root@centos6 network-scripts]$ mv ifcfg-eth0 ifcfg-ens33
+    [root@centos6 network-scripts]$ sed -i 's@eth0@ens33@g' ifcfg-ens33 
+    [root@centos6 network-scripts]$ cat ifcfg-ens33 
+    DEVICE=ens33
+    TYPE=Ethernet
+    UUID=78658f7b-18ae-4581-a5b1-50acd8983e99
+    ONBOOT=yes
+    NM_CONTROLLED=yes
+    BOOTPROTO=dhcp
+    #BOOTPROTO=static
+
+    #IPADDR=192.168.27.129
+    #NETMASK=255.255.255.0
+    #GATEWAY=192.168.27.1
+
+    HWADDR=00:0C:29:42:6E:19
+    DEFROUTE=yes
+    PEERDNS=yes
+    PEERROUTES=yes
+    IPV4_FAILURE_FATAL=yes
+    IPV6INIT=no
+    NAME="System ens33"
+    [root@centos6 network-scripts]$ (modprobe -r e1000; modprobe e1000)
+    [root@centos6 network-scripts]$ ifconfig ens33
+    ens33     Link encap:Ethernet  HWaddr 00:0C:29:42:6E:19  
+            inet addr:172.18.1.159  Bcast:172.18.255.255  Mask:255.255.0.0
+            inet6 addr: fe80::20c:29ff:fe42:6e19/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:464 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:46 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:33301 (32.5 KiB)  TX bytes:6186 (6.0 KiB)
+
+
+练习3-路由配置
+------------------------------------------
+1、3个路由器，2个主机，确保各个ip之间都是互通的。 
+
+.. code-block:: bash
+
+    1.绘图分析网络
+    2.5个机器，每个机器根据情况设置网卡个数，并设置网络区域，其中3个充当路由器
+    3.禁用所有防火墙和selinux。并启用路由器的转发功能
+    4.设置ip
+    5.根据网络设置路由
+    6.测试
+
+

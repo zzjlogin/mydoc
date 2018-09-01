@@ -1,0 +1,41 @@
+.. _nginx:
+
+2018-03-11-练习nginx.rst
+====================================
+
+练习1-nginx
+-------------------------------------------------------
+
+1、nginx虚拟主机配置
+
+虚拟主机配置_ 
+
+.. _虚拟主机配置: http://services.linuxpanda.tech/WEB/nginx/03-nginx%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F.html#nginx
+
+2、实现lnmp，提供多个虚拟主机http, 提供wordpress, 提供pma
+
+
+练习2-nginx
+-------------------------------------------------
+
+.. code-block:: text 
+
+1、nginx--> AMPs（wordpress）
+2、nginx--> FPMs（wordpress）
+3、自定义错误404和5xx错误页，文本静态内容传输压缩
+4、实现动静分离：动态资源存储一组服务器、图片资源存在一组服务器、静态的文本类资源存储在一组服务器
+    nginx-->images servers ( imgs.magedu.com）
+    location ~* \.(jpg|png|gif|jpeg)$ {
+    ...
+    }
+    nginx-->dynamic content servers (shop.magedu.com)
+    location ~* \.php$ {
+    ...
+    }
+
+
+实验：rewrite 实现http跳转到https
+
+实验：防盗链
+
+实验：动静分离

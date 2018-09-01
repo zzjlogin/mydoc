@@ -1,0 +1,63 @@
+2018-01-15
+======================
+
+上节课回顾
+----------------------------
+
+::
+
+    setup 包含主机信息
+
+    tags
+    notify
+
+
+本节内容
+----------------------------
+
+::
+   
+    ansible-playbook -e pkname=vsftpd
+
+    vars
+
+    定义主机的时候定义变量
+
+    j2 文件使用setup里面的变量
+
+    when: ansible_distribution_major_version=="6"
+
+    with_items:
+       - item1
+         item2
+    
+    hping3
+
+    {% for i in list %}
+    {% endfor %}
+
+    {%if i is undefined %}
+    {%endif%}
+
+    tags: [ 'nginx' , 'web' ]
+
+    memcached : 11211 端口
+
+    dns: domain name service 
+    dns: 53端口。
+
+    fqdn: www.baidu.com  full q domain name 
+    www: 主机名或者别名
+    baidu.com 域名
+    url : 统一资源定位符
+
+    正向： fqdn->ip 
+    反向： ip->fqdn
+
+    nis: 
+    
+    bind
+    isc
+    
+
+

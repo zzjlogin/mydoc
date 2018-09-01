@@ -1,0 +1,59 @@
+2017-12-14
+============================
+
+上节课回顾
+----------------------------
+
+::
+
+    主机数量计算
+    划分子网的网段数量计算
+    网络id计算
+    CIDR计算
+
+    超网的合并方式
+
+    dhcp
+        discover
+        offer
+        request
+        ack
+
+    ip addr ,link 
+    ifconfig 
+    route -n 
+    ip neigh
+
+    rip
+    ospf
+    bgp
+    eigrp
+
+
+本节内容
+----------------------------
+
+::
+
+    chkconfig NetworkManager off
+    service NetworkManager stop
+
+    MACADDR
+    HWADDR
+    DOMAIN
+    
+
+    修改dns和host文件的优先级
+    nsswitch
+
+    nmtui 
+    nmcli
+    nm:NetworkManager
+
+    网卡别名不支持动态获取
+
+    mtr
+    traceroute
+    tracepath
+    
+    /usr/share/doc/initscripts-9.49.39/sysconfig.txt

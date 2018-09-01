@@ -1,0 +1,253 @@
+2017-12-03-练习-高级磁盘管理
+==============================================
+
+练习1-LVM
+------------------------------------------------
+
+
+.. code-block:: bash
+
+    1、创建一个至少有两个PV组成的大小为20G的名为testvg的VG；要求PE大小为16MB, 而后在卷组中创建大小为5G的逻辑卷testlv；挂载至/users目录
+    2、 新建用户archlinux，要求其家目录为/users/archlinux，而后su切换至archlinux用户，复制/etc/pam.d目录至自己的家目录
+    3、扩展testlv至7G，要求archlinux用户的文件不能丢失
+    4、收缩testlv至3G，要求archlinux用户的文件不能丢失
+    5、对testlv创建快照，并尝试基于快照备份数据，验证快照的功能
+
+具体参考地址如下 ： LVM的使用_.
+
+..  _LVM的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_042_lvm.html
+
+练习2-raid
+------------------------------------------------------------------
+具体参考地址如下 ： raid的使用_.
+
+..  _raid的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_041_raid.html
+
+练习3-quota
+----------------------------------------------------------------------
+具体参考地址如下 ： quota的使用_.
+
+..  _quota的使用: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_040_quota.html
+
+
+练习3-raid
+----------------------------------------------------------------------
+
+.. code-block:: text
+
+要求： 
+1、创建一个10g的raid1
+2、创建一个可用空间为10g的raid5设备，要求其chunk大小为256k,文件系统为ext4,开机可自动挂载到/backup目录，
+支持acl功能，有一个空闲盘。
+
+要求1： 
+
+.. code-block:: text 
+
+    [root@centos-155 ~]# yum install mdadm
+    [root@centos-155 ~]# fdisk  /dev/sdb
+    Welcome to fdisk (util-linux 2.23.2).
+
+    Changes will remain in memory only, until you decide to write them.
+    Be careful before using the write command.
+
+
+    Command (m for help): n 
+    Partition type:
+    p   primary (0 primary, 0 extended, 4 free)
+    e   extended
+    Select (default p): p
+    Partition number (1-4, default 1): 
+    First sector (2048-41943039, default 2048): 
+    Using default value 2048
+    Last sector, +sectors or +size{K,M,G} (2048-41943039, default 41943039): +1G 
+    Partition 1 of type Linux and of size 1 GiB is set
+
+    Command (m for help): n
+    Partition type:
+    p   primary (1 primary, 0 extended, 3 free)
+    e   extended
+    Select (default p): p
+    Partition number (2-4, default 2): 
+    First sector (2099200-41943039, default 2099200): 
+    Using default value 2099200
+    Last sector, +sectors or +size{K,M,G} (2099200-41943039, default 41943039): +1G
+    Partition 2 of type Linux and of size 1 GiB is set
+
+    Command (m for help): p
+
+    Disk /dev/sdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk label type: dos
+    Disk identifier: 0x489a4915
+
+    Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1            2048     2099199     1048576   83  Linux
+    /dev/sdb2         2099200     4196351     1048576   83  Linux
+
+    Command (m for help): t
+    Partition number (1,2, default 2): 
+    Hex code (type L to list all codes): l
+
+    0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris        
+    1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-
+    2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+    3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden C:  c6  DRDOS/sec (FAT-
+    4  FAT16 <32M      40  Venix 80286     85  Linux extended  c7  Syrinx         
+    5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data    
+    6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .
+    7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility   
+    8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt         
+    9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access     
+    a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        
+    b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      
+    c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi eb  BeOS fs        
+    e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT            
+    f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/
+    10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC b
+    11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor      
+    12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f4  SpeedStor      
+    14  Hidden FAT16 <3 61  SpeedStor       ab  Darwin boot     f2  DOS secondary  
+    16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS    
+    17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE 
+    18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fd  Linux raid auto
+    1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fe  LANstep        
+    1c  Hidden W95 FAT3 75  PC/IX           be  Solaris boot    ff  BBT            
+    1e  Hidden W95 FAT1 80  Old Minix      
+    Hex code (type L to list all codes): fd
+    Changed type of partition 'Linux' to 'Linux raid autodetect'
+
+    Command (m for help): t
+    Partition number (1,2, default 2): 1
+    Hex code (type L to list all codes): fd
+    Changed type of partition 'Linux' to 'Linux raid autodetect'
+
+    Command (m for help): p
+
+    Disk /dev/sdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
+    Units = sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disk label type: dos
+    Disk identifier: 0x489a4915
+
+    Device Boot      Start         End      Blocks   Id  System
+    /dev/sdb1            2048     2099199     1048576   fd  Linux raid autodetect
+    /dev/sdb2         2099200     4196351     1048576   fd  Linux raid autodetect
+
+    Command (m for help): w
+    The partition table has been altered!
+
+    Calling ioctl() to re-read partition table.
+    Syncing disks.
+
+    [root@centos-155 ~]# mdadm -C /dev/md0 -a yes -l 1 -n 2 /dev/sdb1 /dev/sdb2
+
+要求2 ： 
+
+.. code-block:: bash
+
+    # 创建raid
+    [root@centos-155 ~]# mdadm -C /dev/md1 -a yes -c 256 -l 5 -n 2 /dev/sdb5 /dev/sdb6 -x 1 /dev/sdb7
+    # 导出配置
+    [root@centos-155 ~]# mdadm -Ds > /etc/mdadm.conf
+    # 格式化
+    [root@centos-155 ~]# mkfs.ext4 /dev/md1 
+    # 启用acl
+    [root@centos-155 ~]# tune2fs -o +acl /dev/md1
+    tune2fs 1.42.9 (28-Dec-2013)
+    # 创建挂载目录
+    [root@centos-155 ~]# mkdir /backup
+    # 挂载
+    [root@centos-155 ~]# mount /dev/md1 /backup
+    [root@centos-155 ~]# cd /backup
+    # 测试acl
+    [root@centos-155 backup]# touch a.txt 
+    [root@centos-155 backup]# getfacl a.txt
+    # file: a.txt
+    # owner: root
+    # group: root
+    user::rw-
+    group::r--
+    other::r--
+    [root@centos-155 backup]# setfacl -m "u:zhao:rwx" a.txt
+    [root@centos-155 backup]# su - zhao
+    [zhao@centos-155 ~]$ cat /backup/a.txt 
+    [root@centos-155 /]# vim /etc/fstab
+    /dev/md1                  /backup               ext4    acl             0  0 
+    # 测试备用盘情况
+    [root@centos-155 backup]# mdadm -D /dev/md1
+    /dev/md1:
+            Version : 1.2
+        Creation Time : Sat Feb 10 17:45:54 2018
+            Raid Level : raid5
+            Array Size : 5238784 (5.00 GiB 5.36 GB)
+        Used Dev Size : 5238784 (5.00 GiB 5.36 GB)
+        Raid Devices : 2
+        Total Devices : 3
+        Persistence : Superblock is persistent
+
+        Update Time : Sat Feb 10 18:00:52 2018
+                State : clean 
+        Active Devices : 2
+    Working Devices : 3
+        Failed Devices : 0
+        Spare Devices : 1
+
+                Layout : left-symmetric
+            Chunk Size : 256K
+
+    Consistency Policy : resync
+
+                Name : centos-155:1  (local to host centos-155)
+                UUID : 5d7284f1:8e854b7f:66a789ce:33565d50
+                Events : 18
+
+        Number   Major   Minor   RaidDevice State
+        0       8       21        0      active sync   /dev/sdb5
+        3       8       22        1      active sync   /dev/sdb6
+
+        2       8       23        -      spare   /dev/sdb7
+
+        (/dev/sdb5) is listed
+    [root@centos-155 backup]# mdadm /dev/md1 -f /dev/sdb5
+    mdadm: set /dev/sdb5 faulty in /dev/md1
+
+    [root@centos-155 backup]# mdadm -D /dev/md1
+    /dev/md1:
+            Version : 1.2
+        Creation Time : Sat Feb 10 17:45:54 2018
+            Raid Level : raid5
+            Array Size : 5238784 (5.00 GiB 5.36 GB)
+        Used Dev Size : 5238784 (5.00 GiB 5.36 GB)
+        Raid Devices : 2
+        Total Devices : 3
+        Persistence : Superblock is persistent
+
+        Update Time : Sat Feb 10 18:08:36 2018
+                State : clean, degraded, recovering 
+        Active Devices : 1
+    Working Devices : 2
+        Failed Devices : 1
+        Spare Devices : 1
+
+                Layout : left-symmetric
+            Chunk Size : 256K
+
+    Consistency Policy : resync
+
+        Rebuild Status : 53% complete
+
+                Name : centos-155:1  (local to host centos-155)
+                UUID : 5d7284f1:8e854b7f:66a789ce:33565d50
+                Events : 28
+
+        Number   Major   Minor   RaidDevice State
+        2       8       23        0      spare rebuilding   /dev/sdb7
+        3       8       22        1      active sync   /dev/sdb6
+
+        0       8       21        -      faulty   /dev/sdb5
+
+

@@ -1,0 +1,276 @@
+.. _iptables:
+
+2018-03-01-练习防火墙
+====================================
+
+练习1-防火墙入门练习
+-------------------------------------------------------
+
+要求如下： 
+
+.. code-block:: text 
+
+    说明：以下练习INPUT和OUTPUT默认策略均为DROP
+    1、限制本地主机的web服务器在周一不允许访问；新请求的速率不能超过100个每秒；web服务器包含了admin字符串的页面
+    不允许访问；web服务器仅允许响应报文离开本机
+    2、在工作时间，即周一到周五的8:30-18:00，开放本机的ftp服务给172.16.0.0网络中的主机访问；数据下载请求的次数
+    每分钟不得超过5个
+    3、开放本机的ssh服务给172.16.x.1-172.16.x.100中的主机，x为你的学号，新请求建立的速率一分钟不得超过2个；仅
+    允许响应报文通过其服务端口离开本机
+    4、拒绝TCP标志位全部为1及全部为0的报文访问本机；
+    5、允许本机ping别的主机；但不开放别的主机ping本机
+
+
+.. code-block:: bash 
+
+    # 特殊，我这里使用xshell远程，考虑到后面需要设置默认为drop，所以需要放行下192.168.46.1的所有
+    [root@centos-151 ~]# iptables -A INPUT -s 192.168.46.1/32 -j ACCEPT
+    [root@centos-151 ~]# iptables -A OUTPUT -d 192.168.46.1/32 -j ACCEPT
+    [root@centos-151 ~]# iptables -P INPUT DROP
+    [root@centos-151 ~]# iptables -P INPUT DROP
+
+    # 第一条
+    [root@centos-151 ~]# iptables -A INPUT -d 192.168.46.151 -p tcp --dport 80 -m state --state  NEW  -m limit --limit 100/second  -m time ! --weekdays 1 -j ACCEP
+    [root@centos-151 ~]# iptables -A INPUT -d 192.168.46.151 -p tcp --dport 80 -m state --state ESTABLISHED  -j ACCEPT
+    [root@centos-151 ~]# iptables -A OUTPUT -s 192.168.46.151 -p tcp --sport 80 -m string --algo bm ! --string "admin" -j ACCEPT
+    # 第二条
+    [root@centos-151 ~]# iptables -A INPUT -s 192.168.46.0/24 -d 192.168.46.151 -p tcp --dport 21 -m state --state NEW,ESTABLISHED    -m time --weekdays 1,2,3,4,5 --timestart 00:30:00 --timestop 10:00:00 
+    [root@centos-151 ~]# iptables -A INPUT -s 192.168.46.0/24 -d 192.168.46.151 -p tcp --dport 21 -m state --state  RELATED -m limit --limit 5/min -j ACCEPT 
+    # 看了网络的， 有人在这里添加了一条方向established的。 添不添加看你情况。
+    # 如果不添加的话， 原有的连接在指定的时间范围内， 一直连接者， 时间到了禁止的点了，就直接拒绝了。 
+    # 如果到添加的话， 原有连接还可以一直使用，如果里面在断开就没法连接了。
+    [root@centos-151 ~]# iptables -A OUTPUT -d 192.168.46.0/24 -s 192.168.46.151 -p tcp --sport 21 -m state --state ESTABLISHED -j ACCEPT
+
+    # 第三条
+
+    [root@centos-151 ~]# iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 192.168.46.160-192.168.46.200 -d 192.168.46.151 -m state --state NEW -m limit --limit 2/min -j ACCEPT
+    [root@centos-151 ~]# iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 192.168.46.160-192.168.46.200 -d 192.168.46.151 -m state --state ESTABLISHED  -j ACCEPT
+    [root@centos-151 ~]# iptables -A OUTPUT -p tcp --sport 22 -m iprange --dst-range 192.168.46.160-192.168.46.200 -s 192.168.46.151 -m  state --state ESTABLISHED -j ACCEPT
+
+
+    # 第四条 
+    # 默认规则是drop, 我们前面已经添加了几个accept, 这个要求是拒绝非正常的数据包，需要放到相对前面的，至少不能放到那几个accept的后面。
+    [root@centos-151 ~]# iptables -I INPUT 1  -d 192.168.46.151 -p tcp --tcp-flags ALL ALL -j DROP 
+    [root@centos-151 ~]# iptables -I INPUT 1  -d 192.168.46.151 -p tcp --tcp-flags ALL NONE -j DROP 
+
+    # 第五条，这里有个问题， 本机ping 本机192.168.46.151的时候无法ping通。  当然可以考虑-s ,-d 对ip详细限制下。
+    [root@centos-151 ~]# iptables -A INPUT -p icmp --icmp-type 0 -d 192.168.46.151 -j ACCEPT
+    [root@centos-151 ~]# iptables -A OUTPUT -p icmp --icmp-type 8 -s 192.168.46.151 -j ACCEPT
+
+    # 最终的规则查看
+
+    [root@centos-151 ~]# iptables -S 
+    -P INPUT DROP
+    -P FORWARD ACCEPT
+    -P OUTPUT DROP
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP
+    -A INPUT -s 192.168.46.1/32 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --dport 80 -m state --state NEW -m limit --limit 100/sec -m time --weekdays Tue,Wed,Thu,Fri,Sat,Sun --datestop 2038-01-19T03:14:07 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --dport 80 -m state --state ESTABLISHED -j ACCEPT
+    -A INPUT -s 192.168.46.0/24 -d 192.168.46.151/32 -p tcp -m tcp --dport 21 -m state --state NEW,ESTABLISHED -m time --timestart 00:30:00 --timestop 10:00:00 --weekdays Mon,Tue,Wed,Thu,Fri --datestop 2038-01-19T03:14:07
+    -A INPUT -s 192.168.46.0/24 -d 192.168.46.151/32 -p tcp -m tcp --dport 21 -m state --state RELATED -m limit --limit 5/min -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --dport 22 -m iprange --src-range 192.168.46.160-192.168.46.200 -m state --state NEW -m limit --limit 2/min -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m tcp --dport 22 -m iprange --src-range 192.168.46.160-192.168.46.200 -m state --state ESTABLISHED -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p icmp -m icmp --icmp-type 0 -j ACCEPT
+    -A OUTPUT -d 192.168.46.1/32 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p tcp -m tcp --sport 80 -m string ! --string "admin" --algo bm --to 65535 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -d 192.168.46.0/24 -p tcp -m tcp --sport 21 -m state --state ESTABLISHED -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p tcp -m tcp --sport 22 -m iprange --dst-range 192.168.46.160-192.168.46.200 -m state --state ESTABLISHED -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p icmp -m icmp --icmp-type 0 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p icmp -m icmp --icmp-type 8 -j ACCEPT
+
+练习1-防火墙实用练习
+-------------------------------------------------------
+
+要求如下： 
+
+.. code-block:: text 
+
+    1 实现主机防火墙：
+    放行telnet, ftp, web服务
+    放行samba服务
+    放行dns服务(查询和区域传送)
+
+    2 实现网络防火墙：
+    放行telnet, ftp, web服务
+    放行samba服务
+    放行dns服务(查询和区域传送)
+
+网络防火墙的我这里不做了 ， 主要是在forward链上操作。 一般都是买的专业的硬件防火墙， 这里只做主机防火墙的实验。
+
+.. code-block:: bash 
+
+    # 上面实验有配置，考虑不影响下面的配置， 我这清理下。
+    [root@centos-151 ~]# iptables -P INPUT ACCEPT
+    [root@centos-151 ~]# iptables -P OUTPUT ACCEPT
+    [root@centos-151 ~]# iptables -F 
+    [root@centos-151 ~]# iptables -nvL 
+    Chain INPUT (policy ACCEPT 36 packets, 2448 bytes)
+    pkts bytes target     prot opt in     out     source               destination         
+
+    Chain FORWARD (policy ACCEPT 8 packets, 672 bytes)
+    pkts bytes target     prot opt in     out     source               destination         
+
+    Chain OUTPUT (policy ACCEPT 16 packets, 1520 bytes)
+    pkts bytes target     prot opt in     out     source               destination      
+
+    # 特殊，我这里使用xshell远程，考虑到后面需要设置默认为drop，所以需要放行下192.168.46.1的所有
+    [root@centos-151 ~]# iptables -A INPUT -s 192.168.46.1/32 -j ACCEPT
+    [root@centos-151 ~]# iptables -A OUTPUT -d 192.168.46.1/32 -j ACCEPT
+    [root@centos-151 ~]# iptables -P INPUT DROP
+    [root@centos-151 ~]# iptables -P INPUT DROP
+
+
+
+    # 主机防火墙
+
+    [root@centos-151 yum.repos.d]# yum install telnet-server vsftpd httpd samba bind
+
+    [root@centos-151 yum.repos.d]# systemctl start telnet.socket 
+
+    ##  telnet,ftp,web
+    [root@centos-151 ~]# iptables -R INPUT 2 -p tcp -m multiport --dports 23,80,443,21 -d 192.168.46.151 -j ACCEPT
+    [root@centos-151 ~]# iptables -R OUTPUT 2 -p tcp -m multiport --sports 23,80,443,21 -s 192.168.46.151 -j ACCEPT
+    [root@centos-151 ~]# iptables -I INPUT 2 -m state --state ESTABLISHED,RELATED -s 192.168.46.151  -j ACCEPT
+    [root@centos-151 ~]# iptables -I OUTPUT 2 -m state --state ESTABLISHED,RELATED  -d 192.168.46.151  -j ACCEPT
+
+
+    # 在152上测试下telnet配置
+    [root@centos-152 ~]# telnet 192.168.46.151
+    Trying 192.168.46.151...
+    Connected to 192.168.46.151.
+    Escape character is '^]'.
+    Kernel 3.10.0-693.el7.x86_64 on an x86_64
+    centos-151 login: zhao
+    Password: 
+    Last login: Sat Mar  3 13:14:37 from ::ffff:192.168.46.1
+    [zhao@centos-151 ~]$ logout
+
+    # 在152上测试下web配置
+    [root@centos-152 ~]# curl 192.168.46.151
+    www
+
+    # 在152上测试下ftp配置
+    [root@centos-152 ~]# ftp 192.168.46.151
+    Connected to 192.168.46.151 (192.168.46.151).
+    220 (vsFTPd 3.0.2)
+    Name (192.168.46.151:root): ftp
+    331 Please specify the password.
+    Password:
+    230 Login successful.
+    Remote system type is UNIX.
+    Using binary mode to transfer files.
+    ftp> ls
+    227 Entering Passive Mode (192,168,46,151,153,42).
+    150 Here comes the directory listing.
+    drwxr-xr-x    2 0        0               6 Aug 03  2017 pub
+    226 Directory send OK.
+    ftp> quit
+    221 Goodbye.
+
+
+    # 放行samba服务
+
+    [root@centos-151 ~]# vim /etc/samba/smb.conf
+    [root@centos-151 ~]# tail -5 /etc/samba/smb.conf
+
+    [test]
+        comment =test
+        path = /tmp 
+        public = Yes 
+        read only = YES 
+
+    [root@centos-151 ~]# systemctl start smb
+    [root@centos-151 ~]# systemctl start smb nmb
+    [root@centos-151 ~]# netstat -tunlp |grep mb 
+    tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN      18820/smbd          
+    tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN      18820/smbd          
+    tcp6       0      0 :::139                  :::*                    LISTEN      18820/smbd          
+    tcp6       0      0 :::445                  :::*                    LISTEN      18820/smbd          
+    udp        0      0 172.18.255.255:137      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 172.18.46.151:137       0.0.0.0:*                           18832/nmbd          
+    udp        0      0 192.168.46.255:137      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 192.168.46.151:137      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 0.0.0.0:137             0.0.0.0:*                           18832/nmbd          
+    udp        0      0 172.18.255.255:138      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 172.18.46.151:138       0.0.0.0:*                           18832/nmbd          
+    udp        0      0 192.168.46.255:138      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 192.168.46.151:138      0.0.0.0:*                           18832/nmbd          
+    udp        0      0 0.0.0.0:138             0.0.0.0:*                           18832/nmbd    
+    # 还需要添加用户， 这里我就不添加了。 自行添加。 然后在152的机器上测试挂载即可。
+    [root@centos-152 ~]# mount -o username=smbuser //192.168.46.151/test /mnt/test
+    Password for smbuser@//192.168.46.151/test:  ******
+    [root@centos-152 ~]# ll /mnt/test
+    total 24
+    drwx------ 3 root root    0 Mar  3 11:15 systemd-private-63249d2097d14289a36dc98acf680875-httpd.service-J1rUuI
+    drwx------ 3 root root    0 Mar  3 11:18 systemd-private-63249d2097d14289a36dc98acf680875-mariadb.service-gPUdp0
+    drwx------ 3 root root    0 Feb 18 19:47 systemd-private-63249d2097d14289a36dc98acf680875-vgauthd.service-IO27zv
+    drwx------ 3 root root    0 Feb 18 19:47 systemd-private-63249d2097d14289a36dc98acf680875-vmtoolsd.service-Mw5wCZ
+    drwx------ 3 root root    0 Feb 18 18:50 systemd-private-c39b1eee959e41999dee80095c373d20-vgauthd.service-zw95HP
+    drwx------ 3 root root    0 Feb 18 18:50 systemd-private-c39b1eee959e41999dee80095c373d20-vmtoolsd.service-ntZbfa
+    -rw------- 1 root root  242 Feb 18 18:59 yum_save_tx.2018-02-18.18-59.UD0ejW.yumtx
+    -rw------- 1 root root  242 Feb 18 19:00 yum_save_tx.2018-02-18.19-00.o7GAer.yumtx
+    -rw------- 1 root root 4611 Feb 25 09:45 yum_save_tx.2018-02-25.09-45.cs4qy6.yumtx
+    -rw------- 1 root root  237 Mar  3 13:07 yum_save_tx.2018-03-03.13-07.wruNr0.yumtx
+    -rw------- 1 root root  378 Mar  3 13:10 yum_save_tx.2018-03-03.13-10.rQvpAJ.yumtx
+
+
+    ## dns 
+
+    [root@centos-151 ~]# netstat -tunlp  |grep named
+    tcp        0      0 172.18.46.151:53        0.0.0.0:*               LISTEN      18881/named         
+    tcp        0      0 192.168.46.151:53       0.0.0.0:*               LISTEN      18881/named         
+    tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      18881/named         
+    tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN      18881/named         
+    tcp6       0      0 ::1:953                 :::*                    LISTEN      18881/named         
+    udp        0      0 172.18.46.151:53        0.0.0.0:*                           18881/named         
+    udp        0      0 192.168.46.151:53       0.0.0.0:*                           18881/named         
+    udp        0      0 127.0.0.1:53            0.0.0.0:*                           18881/named
+
+    [root@centos-151 named]# iptables -A INPUT -d 192.168.46.151 -p tcp  -m multiport --dports 53,953 -j ACCEPT
+    [root@centos-151 named]# iptables -A INPUT -d 192.168.46.151 -p udp   --dport 53 -j ACCEPT
+    [root@centos-151 named]# iptables -A OUTPUT -s 192.168.46.151 -p tcp -m multiport --sports 53,953 -j ACCEPT
+    [root@centos-151 named]# iptables -A OUTPUT -s 192.168.46.151 -p udp --sport 53 -j ACCEPT
+
+    # 152测试
+    [root@centos-152 ~]# dig www.linuxpadna.tech @192.168.46.151
+
+    ; <<>> DiG 9.9.4-RedHat-9.9.4-50.el7 <<>> www.linuxpadna.tech @192.168.46.151
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 1923
+    ;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+    ;; WARNING: recursion requested but not available
+
+    ;; OPT PSEUDOSECTION:
+    ; EDNS: version: 0, flags:; udp: 4096
+    ;; QUESTION SECTION:
+    ;www.linuxpadna.tech.		IN	A
+
+    ;; Query time: 2 msec
+    ;; SERVER: 192.168.46.151#53(192.168.46.151)
+    ;; WHEN: Sat Mar 03 13:55:37 CST 2018
+    ;; MSG SIZE  rcvd: 48
+
+
+    # 最终规则查看
+
+    [root@centos-151 named]# iptables -S 
+    -P INPUT DROP
+    -P FORWARD ACCEPT
+    -P OUTPUT DROP
+    -A INPUT -s 192.168.46.1/32 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -m state --state RELATED,ESTABLISHED -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m multiport --dports 23,80,443,21 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m multiport --dports 139,445 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p udp -m udp --dport 137:138 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p tcp -m multiport --dports 53,953 -j ACCEPT
+    -A INPUT -d 192.168.46.151/32 -p udp -m udp --dport 53 -j ACCEPT
+    -A OUTPUT -d 192.168.46.1/32 -j ACCEPT
+    -A OUTPUT -d 192.168.46.151/32 -m state --state RELATED,ESTABLISHED -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p tcp -m multiport --sports 23,80,443,21 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p tcp -m multiport --sports 139,445 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p udp -m udp --sport 137:138 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p tcp -m multiport --sports 53,953 -j ACCEPT
+    -A OUTPUT -s 192.168.46.151/32 -p udp -m udp --sport 53 -j ACCEPT

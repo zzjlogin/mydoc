@@ -1,0 +1,100 @@
+2017-11-15
+============================
+
+上节课回顾
+----------------------------
+
+本节内容
+----------------------------
+
+::
+
+    主组：primary group
+
+    附加组：supplementary group
+
+    /etc/passwd: name:passwd:uid,gid,gecos:dir:shell
+
+    getent passwd root:查看指定用户信息
+
+    pwunconv: 将shadow的密码转到/etc/passwd中
+
+    pwconv：
+
+    重新登陆获取令牌信息。
+
+    root uid修改修复
+    1)菜单项e键盘进入设置 init=/bin/bash selinux=0
+    2)mount -o rw,remount /
+    3)vim
+    4）reboot
+
+    chfn : change finger 添加个人信息
+
+    chsh: 修改shell,或者usermod
+
+    $6:SHA512
+
+    $1:MD5
+
+    authconfig --passalgo=sha256 --update ：更新加密算法
+
+    /etc/login.defs：定义登陆相关的配置
+
+    openssl rand -base64 30：产生随机数
+
+    空密码是可以登陆的。
+
+    centos5:可以使用usermod-U让用户无密码登陆，centos6不可以。
+
+
+    net accounts：windows查看账户信息
+
+    chage:修改口令有效期
+
+    passwd -e zhaojiedi:用户即使过期
+
+    chage -d 0 zhaojiedi:用户立即过期
+
+    group zhajiedi:查看用户组信息。
+
+    newgrp:切换主组
+
+    gpasswd:设置组信息，可以设置管理员
+
+    groupmems:组成员管理
+
+    vipw,vigr:编辑密码和组文件
+    pwck,grpck:文件检查
+
+    useradd -r：系统不会自动给系统用户创建家目录
+
+    rpm -qp --scripts a.rpm: 查看对应包的相关脚本
+
+    /etc/default/useradd：添加用户默认配置
+
+    /etc/skel：新建用户的摹本文件夹
+
+    newusers:创建用户根据一个文件。
+
+    新加一个文件， 用户名：密码
+
+    chpasswd:批量修改用户密码
+
+    groups root:查看指定用户组信息。
+
+
+    删除附加组： usermod -G "" zhao
+
+    fat格式文件系统不支持权限设置。 不支持所有者设置
+
+
+    chown root: file1 : =chown root:root file1 
+
+
+    读写对root没控制的，但是执行对root有影响。
+
+    chown -R wang / app: 问题很大。 
+
+    chmod -R a+X /app ： 只给目录权限， 文件不添加。
+

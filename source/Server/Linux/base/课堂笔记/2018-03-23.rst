@@ -1,0 +1,41 @@
+2018-03-23
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+  流处理， spark
+
+
+  采集数据
+  存储数据
+  数据可视化
+  报警系统
+
+  snmp simple network management protocol
+    c/s: 
+    v1,v2,v3
+  
+  ssh 
+
+  agent 
+
+  grafana
+
+
+  cacti
+
+  zabbix: 独立完整的系统
+
+  promethus: 
+  cadvisor,heapster,influxdb,grafana
+
+  网络发现， 模板
+
+  

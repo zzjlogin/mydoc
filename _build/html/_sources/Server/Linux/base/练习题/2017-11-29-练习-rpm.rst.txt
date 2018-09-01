@@ -1,0 +1,310 @@
+2017-11-28-练习-rpm
+==========================================
+
+练习1-基础启动故障修复
+------------------------------------------------
+1 、 删除一个动态链接库， 并使用救援模式修复它 
+
+.. code-block:: bash
+
+    光盘挂载启动，进入救援模式
+    copy so /sys/sysimage目录下对应目录即可
+
+2 、 内核被卸载 ，并安装后丢失了启动菜单修复他   
+
+模拟一个破坏环境 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# rpm -qa |grep kernel
+    kernel-2.6.32-696.13.2.el6.x86_64
+    dracut-kernel-004-409.el6_8.2.noarch
+    kernel-2.6.32-696.el6.x86_64
+    abrt-addon-kerneloops-2.0.8-43.el6.centos.x86_64
+    kernel-firmware-2.6.32-696.13.2.el6.noarch
+    libreport-plugin-kerneloops-2.0.9-33.el6.centos.x86_64
+    kernel-headers-2.6.32-696.13.2.el6.x86_64
+    [root@centos6 ~]# rpm -e kernel-2.6.32-696.el6.x86_64
+    warning:    erase unlink of /lib/modules/2.6.32-696.el6.x86_64/modules.order failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.el6.x86_64/modules.networking failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.el6.x86_64/modules.modesetting failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.el6.x86_64/modules.drm failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.el6.x86_64/modules.block failed: No such file or directory
+    [root@centos6 ~]# ll /boot
+    total 32204
+    -rw-r--r--. 1 root root   108169 Oct  6 05:27 config-2.6.32-696.13.2.el6.x86_64
+    drwxr-xr-x. 3 root root     4096 Nov  7 15:38 efi
+    drwxr-xr-x. 2 root root     4096 Nov 26 04:03 grub
+    -rw-------. 1 root root 25719414 Nov  9 21:49 initramfs-2.6.32-696.13.2.el6.x86_64.img
+    drwx------. 2 root root    16384 Nov  7 15:26 lost+found
+    -rw-r--r--. 1 root root   215634 Oct  6 05:28 symvers-2.6.32-696.13.2.el6.x86_64.gz
+    -rw-r--r--. 1 root root  2622609 Oct  6 05:27 System.map-2.6.32-696.13.2.el6.x86_64
+    -rwxr-xr-x. 1 root root  4276016 Oct  6 05:27 vmlinuz-2.6.32-696.13.2.el6.x86_64
+    [root@centos6 ~]# rpm -e kernel-2.6.32-696.13.2.el6.x86_64
+    error: Failed dependencies:
+        kernel >= 2.6.30 is needed by (installed) pulseaudio-0.9.21-26.el6.x86_64
+        kernel >= 2.6.17 is needed by (installed) autofs-1:5.0.5-132.el6.x86_64
+        kernel >= 2.6.14 is needed by (installed) fuse-2.8.3-5.el6.x86_64
+        kernel >= 2.6.32-33.el6 is needed by (installed) xorg-x11-drv-intel-2.99.917-0.4.20151111.el6.x86_64
+        kernel >= 2.6.32-358.2.1 is needed by (installed) irqbalance-2:1.0.7-8.el6.x86_64
+        kernel >= 2.6.12-1.1411_FC5 is needed by (installed) pcmciautils-015-4.2.el6.x86_64
+        kernel >= 2.6.32-33.el6 is needed by (installed) xorg-x11-drv-ati-7.6.1-3.el6_9.x86_64
+        kernel-drm-nouveau = 16 is needed by (installed) xorg-x11-drv-nouveau-1:1.0.12-1.el6.x86_64
+    [root@centos6 ~]# rpm -e kernel-2.6.32-696.13.2.el6.x86_64 --force
+    rpm: only installation, upgrading, rmsource and rmspec may be forced
+    [root@centos6 ~]# rpm -e kernel-2.6.32-696.13.2.el6.x86_64 --nodeps
+    grubby fatal error: unable to find a suitable template
+    grubby: doing this would leave no kernel entries. Not writing out new config.
+    warning:    erase unlink of /lib/modules/2.6.32-696.13.2.el6.x86_64/modules.order failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.13.2.el6.x86_64/modules.networking failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.13.2.el6.x86_64/modules.modesetting failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.13.2.el6.x86_64/modules.drm failed: No such file or directory
+    warning:    erase unlink of /lib/modules/2.6.32-696.13.2.el6.x86_64/modules.block failed: No such file or directory
+    [root@centos6 ~]# ll /boot
+    total 24
+    drwxr-xr-x. 3 root root  4096 Nov  7 15:38 efi
+    drwxr-xr-x. 2 root root  4096 Nov 26 04:03 grub
+    drwx------. 2 root root 16384 Nov  7 15:26 lost+found
+
+修复问题 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# rpm -ivh /misc/cd/Packages/kernel-2.6.32-696.el6.x86_64.rpm
+    Preparing...                ########################################### [100%]
+    1:kernel                 ########################################### [100%]
+    grubby fatal error: unable to find a suitable template
+
+    [root@centos6 ~]# ll /bot
+    ls: cannot access /bot: No such file or directory
+    [root@centos6 ~]# ll/boot
+    -bash: ll/boot: No such file or directory
+    [root@centos6 ~]# ll /boot
+    total 32204
+    -rw-r--r--. 1 root root   108164 Mar 22  2017 config-2.6.32-696.el6.x86_64
+    drwxr-xr-x. 3 root root     4096 Nov  7 15:38 efi
+    drwxr-xr-x. 2 root root     4096 Nov 26 04:11 grub
+    -rw-------. 1 root root 25719125 Nov 26 04:11 initramfs-2.6.32-696.el6.x86_64.img
+    drwx------. 2 root root    16384 Nov  7 15:26 lost+found
+    -rw-r--r--. 1 root root   215634 Mar 22  2017 symvers-2.6.32-696.el6.x86_64.gz
+    -rw-r--r--. 1 root root  2622364 Mar 22  2017 System.map-2.6.32-696.el6.x86_64
+    -rwxr-xr-x. 1 root root  4274992 Mar 22  2017 vmlinuz-2.6.32-696.el6.x86_64
+
+    #重启进入grub页面
+    root (hd0,0)
+    kernel /vmlinuz-2.6.32-696.el6.x86_64
+    initrd /initrd-2.6.32-696.el6.x86_64
+    #b键重启
+
+练习2-rpm基础使用
+---------------------------------------------------------------------------
+1 、 查询/usr/bin/java来自于哪个rpm 
+
+.. code-block:: bash
+
+    [root@centos7 Bash]$ ll /usr/bin/java                  #readlink -e /usr/bin/java
+    lrwxrwxrwx. 1 root root 22 Nov  7 16:10 /usr/bin/java -> /etc/alternatives/java
+    [root@centos7 Bash]$ ll /etc/alternatives/java
+    lrwxrwxrwx. 1 root root 72 Nov  7 16:10 /etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64/jre/bin/java
+    [root@centos7 Bash]$ rpm -qf /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64/jre/bin/java
+    java-1.8.0-openjdk-headless-1.8.0.131-11.b12.el7.x86_64
+
+2 、rpm -e rpm --nodeps  删除rpm包，恢复之 
+
+.. code-block:: bash
+
+    #另一个机器copy到故障机器
+    [root@centos7 ~]# scp /usr/bin/rpm  root@172.18.1.250:/bin/              
+    [root@centos7 ~]# scp /usr/lib/rpm/rpmrc 172.18.1.250:/usr/lib/rpm/rpmrc
+    [root@centos7 rpm]# scp /usr/lib/rpm/macros 172.18.1.250://usr/lib/rpm/macros
+    #故障机器执行updatedb
+    [root@centos7 rpm]$ updatedb
+    [root@centos7 rpm]$ yum install yum* 
+
+
+3、编写系统初始化脚本reset.sh，包括别名，提示符颜色，yum仓库配置文件,安装tree,ftp,lftp,telnet等包 
+
+.. code-block:: bash
+
+    [root@centos7 Bash]$ cat alias.sh 
+    #!/bin/bash
+    #================================================
+    #FileName   :alias_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 08:51:22
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    # interactive operation
+    alias cp='cp -i' 
+    alias mv='mv -i'
+    alias rm='rm -i'
+
+    # grep 
+    alias grep='grep --color'
+    alias egrep='egrep --color'
+
+    # list 
+    alias ll= 'ls -l'
+    alias la='ls -a'
+    alias lA='ls -A'
+    alias l1='ls -1'
+
+    # cd dir
+
+    alias cdnet='cd /etc/sysconfig/network-scripts'
+    alias cdyum='cd /etc/yum.repos.d'
+
+    # git 
+    alias ga='git add'
+    alias gaa='git add --all'
+    alias gs='git status'
+    alias gc='git commit'
+    alias gct='git commit -m "- comment"'
+    alias gcm='git commit -m'
+    alias gca='git commit --amend'
+    alias gco='git checkout'
+    alias gd='git diff'
+    alias gdh='git diff HEAD'
+    alias gf='git fetch'
+    alias gfa='git fetch -a'
+    alias gp='git pull'
+    alias gb='git branch'
+    alias gg='git grep'
+    alias gmv='git mv'
+
+    [root@centos7 Bash]$ cat rpm.sh 
+    mkdir -pv /etc/yum.repos.d/bak
+    mv /etc/yum.repos.d/*.* /etc/yum.repos.d/bak
+    echo "
+    [base]
+    name=base
+    baseurl=file:///misc/cd
+    gpgcheck=0
+    cost=20
+    enable=1
+    " >> /etc/yum.repos.d/base.repo
+
+    yum clean all
+    yum makecache
+
+
+    # start install 
+    yum install -y  tree ftp lftp telnet 
+
+    [root@centos7 Bash]$ cat init.sh
+    #!/bin/bash
+    #================================================
+    #FileName   :init_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 08:50:50
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    # configurate rpm and install some rpm 
+    . rpm.sh
+
+    # alias set 
+    sed -i '/^alias/d'  ~/.bashrc
+    sed -i '/^# Source global/i . alias.sh' ~/.bashrc 
+
+    # set PS1
+    . ps.sh
+
+    [root@centos7 Bash]$ cat ps.sh
+    #!/bin/bash
+    #================================================
+    #FileName   :ps.sh_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-30 19:40:35
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    ! grep PS1 ~/.bash_profile &&  echo PS1=\"'\033[1;33m[\u@\h \W]$ \033[0m'\" >> ~/.bash_profile
+
+
+4、在CentOS6上编译安装apache 2.2源码包,并启动此服务 
+
+.. code-block:: bash
+
+    [root@centos7 Bash]$ cat install_httpd_46_zhaojiedi.sh 
+    #!/bin/bash
+    #================================================
+    #FileName   :install_httpd_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-30 14:23:41
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    # var set
+    #file_url=http://mirror.bit.edu.cn/apache//httpd/httpd-2.4.29.tar.bz2
+    file_url=ftp://172.18.1.159/pub/httpd-2.2.34.tar.bz2
+    #file_url=ftp://172.18.1.159/pub/httpd-2.4.29.tar.bz2
+    #file_url=/root/httpd-2.4.29.tar.bz2
+    download_dir=/root/apache/httpd
+    download_log=$download_dir/download.log
+    filename=$(basename $file_url)
+    filename_without_ext=$(echo $filename |sed -r 's@.tar.bz2$@@')
+    echo $filename
+    download_file=$download_dir/$filename
+    download_retry=3
+    install_dir=/usr/local/httpd
+    # create compire dir
+    rm -rf $download_dir
+    mkdir -pv $download_dir
+    # start download
+    [[ "$file_url" =~ ^/ ]]  && cp $file_url $download_file || wget --no-check-certificate -o $download_log  -O $download_file -t $download_retry -Nc $file_url
+    [ $? -ne 0 ] && exit 1
+    # extract tar file
+    [ ! -f $download_file ] && exit 2
+    [ -d $download_dir/$filename_without_ext ] && rm -rf $download_dir/$filename_without_ext
+    tar xf $download_file -C $download_dir 
+    # get version 
+    version=$(cat /etc/system-release  |sed -nr 's@.*release ([0-9]+)\.[0-9]+.*@\1@p')
+    # install Development Tools and apr 
+    yum groupinstall "Development Tools" -y 
+    yum install apr-devel apr-util-devel pcre-devel openssl-devel -y 
+    yum install elinks -y
+
+    # cd workspace and start make 
+    [ -d $install_dir ] && rm -rf $install_dir
+    cd $download_dir/$filename_without_ext
+    ./configure --prefix=$install_dir  --enable-ssl 
+    [ $? -ne 0 ] && echo ".configure error " && exit 6
+
+    make -j 2  && make install 
+
+    # test make  
+    [ $? -ne 0 ] && echo "echo make && make install error " && exit 7
+
+    # add bin
+    httpd_bin=$install_dir/bin
+    echo 'PATH=$httpd_bin:\$PATH' > /etc/profile.d/httpd.sh
+    . /etc/profile.d/httpd.sh
+    # add man 
+    httpd_man=$install_dir/man
+    man_conf=""
+    [ $version -ge 7 ] && man_conf="/etc/man_db.conf"
+    [ $version -eq 6 ] && man_conf="/etc/man.config"
+    grep $httpd_man  $man_conf 
+    declare -i ret=$?
+    [ $ret -ne 0 ] && [ $version -ge 7 ] && sed -i "/#MANDATORY_MANPATH/aMANDATORY_MANPATH                     $httpd_man" $man_conf
+    [ $ret -ne 0 ] && [ $version -eq 6 ] && sed -i "/# Every automatically/aMANPATH    $httpd_man" $man_conf
+    # start httpd 
+    chown -R apache:apache /var/run/httpd
+    apachectl stop &> /dev/null
+    killall httpd
+    [ $version -ge 7 ] && ip=$(ifconfig ens33 |sed -nr '2s@.*inet (.*) netmask.*@\1@p')
+    [ $version -eq 6 ] && ip=$(ifconfig eth0 |sed -nr '2s@.*inet addr:(.*) Bcast.*@\1@p')
+
+    apachectl start && elinks $ip --source |grep "works" && echo " finish it ok " ||echo "not ok"
+    
+    # start httpd on boot 
+    [ $version -ge 7 ] && systemctl enable httpd
+    [ $version -eq 6 ] && chkconfig httpd on

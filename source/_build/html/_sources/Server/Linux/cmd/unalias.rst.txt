@@ -4,11 +4,18 @@
 unalias
 ===================
 
+<<<<<<< HEAD
 :Date: 
 
 
 .. contents::
 .. section-numbering::
+=======
+:Date: 2018-08-29
+
+
+.. contents::
+>>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 .. _unalias-format:
 
@@ -39,3 +46,8 @@ unalias
 
 相关命令：
 =============
+<<<<<<< HEAD
+=======
+
+==========
+>>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a

@@ -1,0 +1,89 @@
+2018-01-08
+======================
+
+上节课回顾
+----------------------------
+
+::
+
+    sudo
+    sudoedit
+
+
+   
+
+本节内容
+----------------------------
+
+::
+
+    hosts.allow
+    hosts.deny 
+
+    centos6不支cidr
+
+    tcpmatch -d sshd 192.168.27.7
+
+    pam文件
+    /lib64/security/
+    /etc/security/
+    /etc/pam.conf
+    /etc/pam.d/
+
+    application type control module-path arguments
+
+    type control module-path arguments
+
+    required:如果失败就game over
+    requisite:如果失败就exit
+    sufficient: 一票通过
+    option:没有影响，仅供参考
+
+    pam_nologin
+    pam_securitytty
+    pam_limits
+
+    domain  type   item value 
+    ftp     soft    nproc   20 
+
+    
+    自动化系统安装
+
+    检查光盘
+    运行anaconda
+    欢迎界面
+    语言
+    键盘
+    存储
+    存储警告初始化
+    hostname
+    配置网络
+    时区
+    root密码
+    分区信息
+    grub配置
+    软件包
+    reboot
+
+
+    vim-enhanced
+
+    system-config-kickstart
+
+    linux ks=ftp://172.18.0.6/pub/ks6-mini.cfg ip=172.18.46.100 netmask=255.255.0.0 
+
+    [development] 
+
+    syslinux
+
+    isohybrid boot.iso
+
+
+    删除TRANS.TBL
+    删除repodata,保留xm文件
+    create -g repodata/43*.xml ./
+    mkdir ksdir
+    cp ks.conf ksdir/
+    修改linuxiso.cfg
+    制作iso
+    

@@ -1,0 +1,32 @@
+2018-02-28
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+  iptables -t nat -A PREROUTING -d 172.16.100.10 -p tcp --dport 80 -j REDIRECT --to-ports 8080
+
+  端口转发
+
+  memcached 
+  redis 
+
+  heartbeat 
+  cman +rgmanager 
+  coresync pacemaker 
+
+  keepalived vrrp协议。 
+
+  argignore  
+
+  arp
+
+
+
+  
