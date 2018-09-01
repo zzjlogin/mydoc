@@ -1,0 +1,53 @@
+2017-11-17
+============================
+
+上节课回顾
+----------------------------
+
+本节内容
+----------------------------
+
+::
+
+    umask -p: 可以追加到bashrc文件
+    umake -S
+
+    suid:
+    * suid 只能作用在二进制上， 不能作用在scripts上。 
+    * suid 将使用该程序的所有者的权限。
+
+    粘滞位： 即使你有目录的写权限，也无法删除文件， 重命名文件。 
+
+    sgid:
+    * 文件， 让用户使用所属组的权限
+    * 文件夹： 这个目录新建的文件所属组集成目录的所属组
+
+    sticky:
+    * 文件上：用户只能删除自己文件的
+
+    chattr: +i:写保护。
+
+    chattr:+a:只能追加
+
+    chattr:+A:不更新accesstime
+
+    tune2fs -l /dev/sda3: 默认挂载选项
+
+    setfacl -m u:zhaojiedi:rw file1: file1上添加acl权限
+
+    mask：影响除了所有者其他人。
+
+    权限判定：
+    1. 判定所有,返回
+    1. 判定特定用户，effective权限
+    1. 判定组，判定特定组 effective权限
+    1. other
+
+    getfacl file1 | setfacl --set-file - f2|将f1的权限复制给f2
+
+    rev:abc=>cba
+
+    cat:行反转
+
+    paste：合并到一行。 
+

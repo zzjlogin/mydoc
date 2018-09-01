@@ -1,0 +1,56 @@
+2018-01-05
+======================
+
+上节课回顾
+----------------------------
+::
+
+   搭建私有ca的主要过程
+
+   (umask 066 ; openssl genrsa -out /etc/pki/CA/private/cakey.pem)
+   openssl req -new -x509 -key /etc/pki/CA/private/cakey.pem -out /etc/pki/CA/cacert.pem -days 3650
+   touch 01 >/etc/pki/CA/serial
+   touch /etc/pki/CA/index.txt
+
+   (umask 066; openssl genrsa -out http.pem)
+   openssl req -new -key http.pem -out http.csr
+
+   scp
+
+   openssl ca -in http.csr -out /etc/pki/CA/certs/http.crt -days 365
+
+   scp
+   
+
+本节内容
+----------------------------
+
+::
+
+    rsync
+
+    rsync -av /etc/sysconfig/ remote:/app
+    rsync -av /etc/sysconfig remote:/app
+
+    pssh
+
+    pssh -H 172.18.46.6 -i getenforce
+    pssh -H "172.18.46.6 ip2" -i getenforce
+    pssh -h ip.txt -i getenforce
+   
+    -o 指定一个目录， 每个ip会生成一个文件，存储信息。
+
+    后续命令可以使用双引号。
+
+    aide
+
+    aide --init
+
+    aide --check
+
+    visudo -c 
+
+    visudo -f file 
+
+    sudoedit
+

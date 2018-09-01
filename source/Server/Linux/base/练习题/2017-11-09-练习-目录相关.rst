@@ -1,0 +1,104 @@
+2017-11-09-练习-目录相关
+==================================
+
+练习1-mkdir
+---------------------------
+
+1、如何创建/app/x/y1,/app/x/y2,/app/x/y1/a,/app/y1/b,/app/x/y2/a,/app/x/y2/b 
+
+.. code-block:: bash
+
+    [root@centos6 dirtest]# mkdir x/y1  x/y2 x/y1/a y1/b x/y2/a x/y2/b -pv
+
+2、如何创建x_m,y_m,x_n,y_n 
+
+.. code-block:: bash
+
+    [root@centos6 dirtest]# mkdir -pv {x,y}_{m,n}
+    mkdir: created directory 'x_m'
+    mkdir: created directory 'x_n'
+    mkdir: created directory 'y_m'
+    mkdir: created directory 'y_n'
+
+3、如何创建/app/bin,/app/sbin,/app/usr/app/usr/bin,/app/usr/sbin 
+
+.. code-block:: bash
+
+    [root@centos6 dirtest]# mkdir -pv {bin,sbin,usr/{bin,sbin}}
+    mkdir: created directory 'bin'
+    mkdir: created directory 'sbin'
+    mkdir: created directory 'usr'
+    mkdir: created directory 'usr/bin'
+    mkdir: created directory 'usr/sbin'
+
+练习2-alias,cp
+-------------------------
+
+1 、定义别名命令baketc ，每 天将 将/etc/ 目录下所有文件，备份到/app 独立的子目录 下， 并要求子目录 格式为 为 backupYYYY-mm-dd， ， 备份过程可见 
+
+.. code-block:: bash
+
+    [root@centos7 cpdir]# alias baketc="cp -av /etc /app/backup$(date +%Y-%m-%d)"
+
+2 、创建/app/rootdir 目录，并复制/root下 下 所有文件 到该目录 内，要求保留权限 
+
+.. code-block:: bash
+
+    #这个有点迷，不知道是复制到文件内部还是就是root复制到/rootdir
+    [root@centos7 cpdir]# cp -a /root /app/rootdir
+
+
+练习3-rename
+---------------------------------------------------------------------------
+
+1 、 目录下有f1..f300文件，修改为f001..f300。 
+
+.. code-block:: bash
+
+    [root@centos7 renametest]# touch f{1..300}         # 创建一些样例文件
+    [root@centos7 renametest]# ls                      # 查看下文件
+    f1    f117  f135  f153  f171  f19   f207  f225  f243  f261  f28   f298  f45  f63  f81
+    f10   f118  f136  f154  f172  f190  f208  f226  f244  f262  f280  f299  f46  f64  f82
+    f100  f119  f137  f155  f173  f191  f209  f227  f245  f263  f281  f3    f47  f65  f83
+    f101  f12   f138  f156  f174  f192  f21   f228  f246  f264  f282  f30   f48  f66  f84
+    f102  f120  f139  f157  f175  f193  f210  f229  f247  f265  f283  f300  f49  f67  f85
+    f103  f121  f14   f158  f176  f194  f211  f23   f248  f266  f284  f31   f5   f68  f86
+    f104  f122  f140  f159  f177  f195  f212  f230  f249  f267  f285  f32   f50  f69  f87
+    f105  f123  f141  f16   f178  f196  f213  f231  f25   f268  f286  f33   f51  f7   f88
+    f106  f124  f142  f160  f179  f197  f214  f232  f250  f269  f287  f34   f52  f70  f89
+    f107  f125  f143  f161  f18   f198  f215  f233  f251  f27   f288  f35   f53  f71  f9
+    f108  f126  f144  f162  f180  f199  f216  f234  f252  f270  f289  f36   f54  f72  f90
+    f109  f127  f145  f163  f181  f2    f217  f235  f253  f271  f29   f37   f55  f73  f91
+    f11   f128  f146  f164  f182  f20   f218  f236  f254  f272  f290  f38   f56  f74  f92
+    f110  f129  f147  f165  f183  f200  f219  f237  f255  f273  f291  f39   f57  f75  f93
+    f111  f13   f148  f166  f184  f201  f22   f238  f256  f274  f292  f4    f58  f76  f94
+    f112  f130  f149  f167  f185  f202  f220  f239  f257  f275  f293  f40   f59  f77  f95
+    f113  f131  f15   f168  f186  f203  f221  f24   f258  f276  f294  f41   f6   f78  f96
+    f114  f132  f150  f169  f187  f204  f222  f240  f259  f277  f295  f42   f60  f79  f97
+    f115  f133  f151  f17   f188  f205  f223  f241  f26   f278  f296  f43   f61  f8   f98
+    f116  f134  f152  f170  f189  f206  f224  f242  f260  f279  f297  f44   f62  f80  f99
+    [root@centos7 renametest]# rename f f00 f?            # 这个f?匹配到f1..f9这些文件， 然后把f替换为f00,就变成了f001..f009
+    [root@centos7 renametest]# rename f f0 f??            # 这个f??匹配到f10..f99这些文件， 然后把f替换为f0,就变成了f010..f099
+    [root@centos7 renametest]# ls                         # 再次查看
+    f001  f023  f045  f067  f089  f111  f133  f155  f177  f199  f221  f243  f265  f287
+    f002  f024  f046  f068  f090  f112  f134  f156  f178  f200  f222  f244  f266  f288
+    f003  f025  f047  f069  f091  f113  f135  f157  f179  f201  f223  f245  f267  f289
+    f004  f026  f048  f070  f092  f114  f136  f158  f180  f202  f224  f246  f268  f290
+    f005  f027  f049  f071  f093  f115  f137  f159  f181  f203  f225  f247  f269  f291
+    f006  f028  f050  f072  f094  f116  f138  f160  f182  f204  f226  f248  f270  f292
+    f007  f029  f051  f073  f095  f117  f139  f161  f183  f205  f227  f249  f271  f293
+    f008  f030  f052  f074  f096  f118  f140  f162  f184  f206  f228  f250  f272  f294
+    f009  f031  f053  f075  f097  f119  f141  f163  f185  f207  f229  f251  f273  f295
+    f010  f032  f054  f076  f098  f120  f142  f164  f186  f208  f230  f252  f274  f296
+    f011  f033  f055  f077  f099  f121  f143  f165  f187  f209  f231  f253  f275  f297
+    f012  f034  f056  f078  f100  f122  f144  f166  f188  f210  f232  f254  f276  f298
+    f013  f035  f057  f079  f101  f123  f145  f167  f189  f211  f233  f255  f277  f299
+    f014  f036  f058  f080  f102  f124  f146  f168  f190  f212  f234  f256  f278  f300
+    f015  f037  f059  f081  f103  f125  f147  f169  f191  f213  f235  f257  f279
+    f016  f038  f060  f082  f104  f126  f148  f170  f192  f214  f236  f258  f280
+    f017  f039  f061  f083  f105  f127  f149  f171  f193  f215  f237  f259  f281
+    f018  f040  f062  f084  f106  f128  f150  f172  f194  f216  f238  f260  f282
+    f019  f041  f063  f085  f107  f129  f151  f173  f195  f217  f239  f261  f283
+    f020  f042  f064  f086  f108  f130  f152  f174  f196  f218  f240  f262  f284
+    f021  f043  f065  f087  f109  f131  f153  f175  f197  f219  f241  f263  f285
+    f022  f044  f066  f088  f110  f132  f154  f176  f198  f220  f242  f264  f286

@@ -1,0 +1,42 @@
+.. _poweroff-cmd:
+
+===================
+poweroff
+===================
+
+:Date: 2018-08-29
+
+
+.. contents::
+
+.. _poweroff-format:
+
+命令格式
+=============
+
+.. _poweroff-user:
+
+所属用户
+=============
+
+.. _poweroff-guid:
+
+使用指导
+=============
+
+.. _poweroff-args:
+
+参数：
+=============
+
+.. _poweroff-instance:
+
+参考实例：
+=============
+
+.. _poweroff-relevant:
+
+相关命令：
+=============
+
+==========

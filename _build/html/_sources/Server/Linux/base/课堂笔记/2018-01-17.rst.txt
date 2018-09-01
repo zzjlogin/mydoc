@@ -1,0 +1,94 @@
+2018-01-17
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+   
+    bind 服务名named
+    53端口。
+
+     /etc/rc.d/init.d/named
+     /usr/lib/systemd/named.service
+
+    /etc/named.conf
+    /etc/named.rfc1992.zones
+
+    /var/named/zone_name.zone
+
+    soa： 起始授权记录
+    ns:
+    a:
+    aaaa:
+    ptr:
+    cname:
+    srv：
+    txt:
+    
+    优先级： 数字越低优先级越高
+
+    host www.suhu.com
+
+    smtp
+    pop
+
+    name ttl IN rr_type value
+
+    admin@magedu.com 写成admin.magedu.com
+
+    type ,filename
+
+    $TTL 1D ,默认是秒单位
+
+    serial
+    refresh
+    retry
+    expire: 从服务器的持续时间
+    minimum： 不成功的返回结果持续时间。
+
+    rndc reload: 重新加载dns的配置文件
+
+    aa权威服务器。
+
+    localhost: 在dns中为所有ip
+
+    named-checkconf 检查错误
+
+    name-checkzone 检查区域 name-checkzone linuxpanda.tech /var/named/linuxpanda.tech
+
+    any： 任意主机
+    192.168.27.0/24;172.18.0.0/16
+
+    host www.linuxpanda.tech 192.168.0.1
+    dig www.linuxpanda.tech @192.168.0.1
+
+    nslookup : server 
+
+    dig -x 
+
+    dig -t 
+
+    dig -t axfr 
+
+    nslookup : set q=NS
+
+    $generate 1-254 HOST$ A 1.2.3.$
+
+    linuxpanda.tech 
+    xxxxx.linuxpanda.tech 
+
+    allow-transfer {    }
+    rndc querylog
+    rndc reload 
+    rndc status 
+
+    dns安全， 子域授权需要设置
+
+    rndc flush 
+
+    

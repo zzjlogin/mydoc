@@ -1,0 +1,13 @@
+内置常量
+====================================
+
+False
+    bool值
+True
+    bool值
+None
+    无类型
+NotImplemented
+    没有实现
+
+

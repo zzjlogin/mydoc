@@ -1,0 +1,78 @@
+2018-01-22
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    mysql_install_db
+    mysql -e 'show variables like "basedir" ;'
+
+    port=3307
+
+    select user,password,host from mysql.user;
+
+    update mysql.user set password=password("root") ;
+
+    drop user ''@localhost;
+
+    flush privileges;
+
+    select user();
+    skip-grant-tables
+
+    delete from mysql.user where  host="centos7.localdomain"
+
+    create usr wang@'192.168.46.1' identified by 'oracle';
+
+    select * from mysql.user/G;
+
+    注释： 
+    -- 
+    /* */
+    #
+    show tables
+
+    create database if not exists panda.
+    show create database panda.
+    show character set 
+
+    select table status from mysql;
+    show engines;
+
+    create table newt1 select * from t1;
+
+    insert into nett2 select * from t1;
+
+    show columns from t1;
+    truncate table t1;
+
+    explain 
+
+    show indexes from students
+
+    drop index index_name on t1;
+
+    values (v1,v2), (v3,v4);
+
+    insert into t1 set id=5,name="zhaojiedi";
+
+    --safe-updates 
+    -U 
+
+    order by -col1 desc; 
+
+    limit 3 
+
+    litmit 3,4 ; 跳过3个取4个。
+
+    between 10 and 20 ; 左封闭右封闭
+
+    
+
+

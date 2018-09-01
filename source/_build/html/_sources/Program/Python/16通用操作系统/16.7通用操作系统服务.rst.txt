@@ -1,0 +1,40 @@
+logging.Config
+=====================================================
+这个模块主要提供日志配置功能
+
+logging.config.dictConfig
+----------------------------------------------------
+获取日志的配置从一个字典对象获取,接受一个字典对象，构造dictConfigClass类对象，然后调用configure完成配置工作。
+
+logging.config.fileConfig
+---------------------------------------------------------
+读取日志的配置从一个文件获取，
+
+logging.config.listen
+-------------------------------------------------------------
+启动一个socket去监听特定端口，如果没有指定端口，使用DEFAULT_LOGGING_CONFIG_PORT设置，这个日志配置
+可以被dictConfig或者fileConfig使用， 返回一个Thread实例，这个实例可以调用start,join,stopListening等方法。 
+
+字典配置细节
+--------------------------------------------------------------
+
+.. code-block:: text 
+
+    这些字段必须配置的
+    version:            版本
+    formatters:         格式化器
+    filters:            过滤器
+    handlers:           描述如何配置相应的Handler实例   
+        class： 类
+        level： 级别
+        formatter: 格式化器
+        filters:   过滤器
+    loggers:           每个值是描述如何配置对应的日志的字典 
+        level： 级别
+        propagate: 日志的传播方式
+        filters: 过滤器
+        handlers: 日志处理器
+    root: 根logger的配置
+    incremental:是否增量配置
+    disable_exist_loggers:是否禁用已经存在的日志记录器
+

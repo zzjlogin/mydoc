@@ -1,0 +1,31 @@
+2017-12-05
+============================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    at:suid的
+    删除at:rm -rf /var/spool/a*
+
+    corn:cornie
+    cornie-anacron:补充包
+    corntabs:系统维护
+
+    at.allow优先级最高。 
+    at.deny
+
+    allow,deny都存在： 只有allow里面的用户才能使用
+    allow只有： 只有allow里面的用户才能使用
+    deny:只有deny不能使用，其他的都能使用
+    allow,deny都不存在：都不能访问的。
+    
+    
+
+
+ 

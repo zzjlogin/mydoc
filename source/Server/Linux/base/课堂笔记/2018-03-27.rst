@@ -1,0 +1,66 @@
+2018-03-27
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    cpu,ram,io
+    
+    内核模式，特权指令只能内核运行。
+
+    mmu: 内存管理单元
+
+    tlb: 转化后援器 
+
+    bt 二进制转化
+
+    完全虚拟化
+    准虚拟化
+
+    ept: 扩展的页表
+
+    grp : 通用路由封装
+
+    cpu: 
+        bt
+        hvm 
+    io: 
+
+    type-II 
+
+    type-I 
+
+    hypervisor layer : 有操作系统和虚拟功能。 
+
+    vmm: 虚拟机管理端。
+
+    xen,kvm,virtualbox 主机虚拟化
+
+    cpu和内存， 虚拟机来虚拟io
+
+
+    privileged domain 
+    unprivileged domain 
+
+    kvm kernel-base vm 
+
+    支不支持容器是内核的问题。 
+
+
+    容器引擎runC 
+    镜像格式标准
+
+    openvz 
+
+
+    cirros 
+
+    ctrl + }
+
+    

@@ -1,0 +1,215 @@
+2018-01-03-练习加密
+====================================
+
+练习1-加密
+---------------------------------------
+
+1、在centos7使用gpg公钥加密数据，给centos6机器，完成解密
+
+先分别在2个主机上使用gpg命令生成各自的公钥和秘钥
+
+.. code-block:: bash
+
+	[root@centos74 ~]$ gpg --gen-key
+	gpg (GnuPG) 2.0.22; Copyright (C) 2013 Free Software Foundation, Inc.
+	This is free software: you are free to change and redistribute it.
+	There is NO WARRANTY, to the extent permitted by law.
+
+	Please select what kind of key you want:
+	(1) RSA and RSA (default)
+	(2) DSA and Elgamal
+	(3) DSA (sign only)
+	(4) RSA (sign only)
+	Your selection? 
+	RSA keys may be between 1024 and 4096 bits long.
+	What keysize do you want? (2048) 
+	Requested keysize is 2048 bits
+	Please specify how long the key should be valid.
+			0 = key does not expire
+		<n>  = key expires in n days
+		<n>w = key expires in n weeks
+		<n>m = key expires in n months
+		<n>y = key expires in n years
+	Key is valid for? (0) 
+	Key does not expire at all
+	Is this correct? (y/N) y
+
+	GnuPG needs to construct a user ID to identify your key.
+
+	Real name: root-centos7
+	Email address: root@linuxpanda.tech
+	Comment: 
+	You selected this USER-ID:
+		"rootroot <root@linuxpanda.tech>"
+
+	Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+	You need a Passphrase to protect your secret key.
+
+	We need to generate a lot of random bytes. It is a good idea to perform
+	some other action (type on the keyboard, move the mouse, utilize the
+	disks) during the prime generation; this gives the random number
+	generator a better chance to gain enough entropy.
+	We need to generate a lot of random bytes. It is a good idea to perform
+	some other action (type on the keyboard, move the mouse, utilize the
+	disks) during the prime generation; this gives the random number
+	generator a better chance to gain enough entropy.
+	gpg: /root/.gnupg/trustdb.gpg: trustdb created
+	gpg: key 51307618 marked as ultimately trusted
+	public and secret key created and signed.
+
+	gpg: checking the trustdb
+	gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+	gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+	pub   2048R/51307618 2018-01-04
+		Key fingerprint = FD85 7BE3 43C4 635A 112F  22D2 3874 E874 5130 7618
+	uid                  root-centos7 <root@linuxpanda.tech>
+	sub   2048R/3572455E 2018-01-04
+
+	# 同样的gpg --gen-key在centos6上执行一次
+
+互相copy公钥
+
+.. code-block:: bash
+
+	[root@centos66 ~]$ gpg -a --export -o /app/centos6.pubkey
+	[root@centos66 ~]$ cat /app/centos6.pubkey 
+	[root@centos66 ~]$ scp /app/centos6.pubkey root@172.18.46.7:/app/
+
+
+	#同样的操作在centos7上执行一次。
+
+导入彼此公钥
+
+.. code-block:: bash
+
+	[root@centos74 ~]$ gpg --import /app/centos6.pubkey 
+	gpg: key EA73F7F7: public key "rootroot <root@linuxpanda.tech>" imported
+	gpg: Total number processed: 1
+	gpg:               imported: 1  (RSA: 1)
+	[root@centos74 ~]$ gpg --list-key
+	/root/.gnupg/pubring.gpg
+	------------------------
+	pub   2048R/51307618 2018-01-04
+	uid                  root-centos7 <root@linuxpanda.tech>
+	sub   2048R/3572455E 2018-01-04
+
+	pub   2048R/EA73F7F7 2017-12-22
+	uid                  root-centos6 <root@linuxpanda.tech>
+	sub   2048R/43E98B8A 2017-12-22
+
+	# 同样操作在对方机器操作
+
+centos7加密，传送给centos6并解密
+
+.. code-block:: text
+
+	[root@centos74 test]$ gpg -e -r root-centos6 fstab 
+	gpg: 694F10F7: There is no assurance this key belongs to the named user
+
+	pub  2048R/694F10F7 2018-01-04 root-centos6 <root@linuxpanda.tech>
+	Primary key fingerprint: EE7C 0929 A144 AD51 A8A2  765F 5F63 760E 1E0F 2C2F
+		Subkey fingerprint: 3FA5 2D57 3347 3747 F9AD  5206 4171 C8E3 694F 10F7
+	It is NOT certain that the key belongs to the person named
+	in the user ID.  If you *really* know what you are doing,
+	you may answer the next question with yes.
+
+	Use this key anyway? (y/N) y
+	[root@centos74 test]$ scp fstab
+	fstab      fstab.gpg  
+	[root@centos74 test]$ scp fstab
+	fstab      fstab.gpg  
+	[root@centos74 test]$ scp fstab.gpg  172.18.46.6:/app/
+	root@172.18.46.6's password: 
+	fstab.gpg                                                                                     100%  795   616.3KB/s   00:00 
+
+	[root@centos66 ~]$ cd /app
+	[root@centos66 app]$ file fstab.gpg 
+	fstab.gpg: data
+	[root@centos66 app]$ gpg -d fstab.gpg 
+
+	You need a passphrase to unlock the secret key for
+	user: "root-centos6 <root@linuxpanda.tech>"
+	2048-bit RSA key, ID 694F10F7, created 2018-01-04 (main key ID 1E0F2C2F)
+
+	can't connect to '/root/.gnupg/S.gpg-agent': No such file or directory
+	gpg: encrypted with 2048-bit RSA key, ID 694F10F7, created 2018-01-04
+		"root-centos6 <root@linuxpanda.tech>"
+
+	#
+	# /etc/fstab
+	# Created by anaconda on Tue Nov  7 16:07:01 2017
+	#
+	# Accessible filesystems, by reference, are maintained under '/dev/disk'
+	# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+	#
+
+	UUID=59ccea87-3c4e-4bbc-9e2f-3fadb1dcf2e6 /                       ext4    defaults        1 1
+	UUID=f4e867e8-bcde-43a2-adc7-c80b0948e85f /app                    ext4    noatime,usrquota,grpquota        1 2
+	UUID=1d6cbe88-ffb4-4adf-bacf-76be1fa75708 /boot                   ext4    defaults        1 2
+	#UUID=b2c064f5-1ee5-4b5c-9e75-ed41cb99c5aa swap                    swap    defaults        0 0
+	#UUID=a0516c4f-40e6-4919-905a-8b44db12ff7b swap 			  swap    defaults,pri=0        0 0 
+	#/dev/sdb2 /test ext4 rw,seclabel,relatime,data=ordered 0 0
+	#/dev/sdb1 /home xfs rw,seclabel,relatime,attr2,inode64,usrquota,grpquota  0 0
+	[root@centos66 app]$ gpg -d fstab.gpg  >newfstab
+
+	You need a passphrase to unlock the secret key for
+	user: "root-centos6 <root@linuxpanda.tech>"
+	2048-bit RSA key, ID 694F10F7, created 2018-01-04 (main key ID 1E0F2C2F)
+
+	can't connect to '/root/.gnupg/S.gpg-agent': No such file or directory
+	gpg: encrypted with 2048-bit RSA key, ID 694F10F7, created 2018-01-04
+		"root-centos6 <root@linuxpanda.tech>"
+	[root@centos66 app]$ cat newfstab 
+
+	#
+	# /etc/fstab
+	# Created by anaconda on Tue Nov  7 16:07:01 2017
+	#
+	# Accessible filesystems, by reference, are maintained under '/dev/disk'
+	# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+	#
+
+	UUID=59ccea87-3c4e-4bbc-9e2f-3fadb1dcf2e6 /                       ext4    defaults        1 1
+	UUID=f4e867e8-bcde-43a2-adc7-c80b0948e85f /app                    ext4    noatime,usrquota,grpquota        1 2
+	UUID=1d6cbe88-ffb4-4adf-bacf-76be1fa75708 /boot                   ext4    defaults        1 2
+	#UUID=b2c064f5-1ee5-4b5c-9e75-ed41cb99c5aa swap                    swap    defaults        0 0
+	#UUID=a0516c4f-40e6-4919-905a-8b44db12ff7b swap 			  swap    defaults,pri=0        0 0 
+	#/dev/sdb2 /test ext4 rw,seclabel,relatime,data=ordered 0 0
+	#/dev/sdb1 /home xfs rw,seclabel,relatime,attr2,inode64,usrquota,grpquota  0 0
+
+
+2、使用gpg对称加密文件，并解密数据
+
+.. code-block:: bash
+
+	[root@centos74 app]$ vim 11.txt 
+	[root@centos74 app]$ cat 11.txt 
+	abc
+	[root@centos74 app]$ gpg -c 11.txt 
+	[root@centos74 app]$ cp 11.txt.gpg /root/
+	[root@centos74 app]$ cd /root
+	[root@centos74 ~]$ gpg -d 11.txt.gpg  >a.txt
+	gpg: CAST5 encrypted data
+	gpg: encrypted with 1 passphrase
+	gpg: WARNING: message was not integrity protected
+	[root@centos74 ~]$ cat a.txt 
+	abc
+
+3、加密生成的秘钥， 如果使用代理免去输入密码
+
+免密码登陆_
+
+.. _免密码登陆: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_023_sshgenkey.html
+
+
+4、配置免密码登陆
+
+免密码登陆_
+
+.. _免密码登陆: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_023_sshgenkey.html
+
+5、批量配置免密码登陆
+
+免密码登陆_
+
+.. _免密码登陆: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_linux_023_sshgenkey.html

@@ -1,0 +1,44 @@
+2017-12-06
+============================
+
+上节课回顾
+----------------------------
+
+
+
+本节内容
+----------------------------
+
+::
+
+    resize2fs /dev/md0
+
+逻辑卷 ::
+
+    扩展方便
+    lvcconvert --merge /dev/vg0/lv0-snapshot
+
+网络 :: 
+
+    应用层
+    表示层
+    会话层
+    传输层
+    网络层
+    数据链路层
+    物理层
+
+    iso:国际标准化组织，光盘格式
+    osi网络标准协议，开发系统互联
+    ios apple系统
+
+    all people seem to need data processing 
+
+    单播
+    广播
+    多播
+
+    ieee:国际电子电器协议
+    mac:media access control
+
+    

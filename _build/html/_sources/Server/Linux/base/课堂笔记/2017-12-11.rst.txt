@@ -1,0 +1,109 @@
+2017-12-11
+============================
+
+上节课回顾
+----------------------------
+
+::
+
+    物理层
+    链路层
+    网络层
+    传输层
+    会话层
+    表示层
+    应用层
+
+PDU : Protocol Data Unit 
+
+46-1521
+
+本节内容
+--------------------------
+
+::
+
+    冲突监测的载波侦听多路访问CSMA/CD
+    
+    HUB:多端口的中继器，带宽共享
+    
+    单工：单向传递
+    双工：可以同时说
+    半双工:不能同时说， 轮流说
+
+    网桥和交换机： 隔断冲突域
+    路由器：路由表,屏蔽广播
+
+    冲突域
+    广播域
+
+    trunk 口
+    vlan : 灵活配置。
+
+tcp/ip协议栈 ::
+
+    应用层
+    传输层
+    internet层
+    网络访问层
+    https:443
+    mysql：3306
+    mssqlserver:
+    pop:110
+    imap:143
+
+    01-1023:系统端口
+    1024-49151：注册端口
+    49152-65535：动态端口
+
+
+    /proc/sys/net/ipv4/tcp_max_orphans
+    /proc/sys/net/ipv4/tcp_fin_timeout
+    /proc/sys/net/ipv4/tcp_retries1
+    /proc/sys/net/ipv4/tcp_retries2
+    /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+    ttl：time to live 
+
+    /proc/sys/net/ipv4/ip_default_ttl
+
+    arp:address resolutinon protocol ip->mac
+
+
+
+    urg:是否有紧急数据
+    ack：前面的确认号字段是否有效
+    psh:提示接收端应用程序应该立即从tcp接受缓冲区读走数据
+    rst:rst=1说明和主机有严重的错误，
+    syn:用来同步序号
+    fin:表示通知对方本地端要关闭连接了。
+
+
+
+    pdu:protocol data unit 协议数据单元对等层次的数据单位
+
+    物理层PDU:BIT
+    链路层PD:FRAME
+    网络层pdu:packet
+    传输层pdu:SEGMENT
+    应用层PDU:MESSAGE
+
+    repeater中继器
+
+    icmp:1
+    tcp:6
+    udp:17
+    
+
+    
+
+    
+
+
+
+
+
+    
+
+
+

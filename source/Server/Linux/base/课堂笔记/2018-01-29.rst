@@ -1,0 +1,34 @@
+2018-01-26
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    proxypass "/" "http://www.example.com/"
+    proxypassreverse "/" "http://www.example.com/"
+
+
+    proxy_httpmodule
+
+    httpd -t
+
+    apache portable run-time library
+    
+    lamp
+
+    zend->opcode 
+    #
+    ;
+
+    apc
+
+    xcache 
+
+     
+

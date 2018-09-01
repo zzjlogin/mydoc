@@ -1,0 +1,82 @@
+2018-01-02
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+    systemd 
+    /etc/systemd/system/
+    /lib/systemd/system/
+    sysv
+    /etc/init.d/
+
+    systemctl -l status httpd:
+
+    service name condrestart ==> systemctl try-restart name.service
+
+    systemctl resload-or-restart name.service
+    systemctl reload-or-try-restart name.service 
+
+    systemctl mask(unmask) name.service
+
+    systemctl list-units -t service -a
+
+    systemctl daemon-reload
+
+    systemctl isolate graphical.target
+
+    systemctl resuce
+
+
+    Unit片段
+    Description
+    After
+    Before
+    Requires
+    Wants
+    Conflicts
+    
+
+.. code-block:: text
+
+    保密性
+    完整性
+    可用性
+    可控制性
+    不可否认性
+
+    telnet ip 25 
+    helo a.com 
+    mail from:god@heaven.com
+    rcpt to:root
+    data
+    subject: hello 
+    I miss you 
+    .
+    quit
+
+
+    md5sum --check f1.sh f1.sh.md5
+
+    gpg -c f1.sh 
+    gpg -d f1.sh.gpg 
+
+
+
+    
+
+    
+
+    
+
+
+
+
+    
+  

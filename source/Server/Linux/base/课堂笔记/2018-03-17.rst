@@ -1,0 +1,88 @@
+2018-03-17
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+  jvm java虚拟机
+
+  tomcat 是java的参考实现。
+
+  jsp java server page 
+
+  gc 垃圾收集器 。 
+
+  分布式存储， 分兼容文件系统和不兼容文件系统。
+
+  xml,json,yaml
+
+  mangdb 文档存储， 
+
+  开发环境， 测试环境， 生成环境。
+
+  servlet 分离工作
+
+  j2se 
+  j2ee
+  j2me
+
+  tomcat 
+
+  test.jsp -> jasper-> test.java -> servlet -> test.class -> jvm
+
+  work目录， 用于存储编译好的结果。 
+
+  engine
+
+  jvm加载类  classloader类加载器。
+
+  引擎， 连接器。 
+
+  tomcat server可以有多个service，每个service只有一个引擎。 
+
+  java 1.6.0,1.7.0,1.8.0 
+  多版本并存，使用alternatives调整默认的版本使用。
+
+  java一次编译，到处运行。
+
+  tomcat-docs-w
+  tomcat ebapp
+  tomcat-lib
+  tomcat-admin-webapps
+
+
+  index.jsp index.html 
+
+  web-inf 当前webapp的私有资源路径。
+
+  jar，当前webapp提供的类
+
+  .war 打包的站点应用程序
+  .jar  ejb的类打包文件
+  .rar  资源适配器类打包文件
+  .ear  企业级别webapp
+
+
+
+  直接访问tomcat
+  调度过来到tomcat的
+
+  httpd支持http,ajp等连接方式。 
+   
+  proxy_ajp 
+  mod_jk 
+  porxy_http
+
+  ajp 8009 
+
+  set,add,replace,append,prepend,class
+  get,gets
+  其他
+
+  

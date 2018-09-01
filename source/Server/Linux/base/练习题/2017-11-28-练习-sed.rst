@@ -1,0 +1,71 @@
+2017-11-28-练习-sed
+=====================================
+
+练习1
+-------------------------------------------------------
+
+1、删除centos7系统/etc/grub2.cfg文件中所有以空白开头的行行首的空白字符 
+
+.. code-block:: bash
+
+    [root@centos7 ~]$ sed -nr 's@^([[:space:]]+)(.*)@\2@p' /etc/grub2.cfg
+
+2、删除/etc/fstab文件中所有以#开头，后面至少跟一个空白字符的行的行首的#和空白字符 
+
+.. code-block:: bash
+
+    [root@centos7 ~]$ sed -nr 's@^(#[[:space:]])+(.*)@\2@p' /etc/fstab
+
+3、在centos6系统/root/install.log每一行行首增加#号 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# sed -nr 's@.*@#\0@p' /root/install.log
+
+4、在/etc/fstab文件中不以#开头的行的行首增加#号 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# sed -nr 's@^[^#].*@#\0@p' /etc/fstab
+
+5、处理/etc/fstab路径,使用sed命令取出其目录名和基名 
+
+.. code-block:: bash
+
+    [root@centos6 ~]# echo "/etc/fstab"   |sed -nr 's@(.*/)([^/]+)/?@\2@p'
+    fstab
+    [root@centos6 ~]# echo "/etc/fstab/"   |sed -nr 's@(.*/)([^/]+)/?@\2@p'
+    fstab
+    [root@centos6 ~]# echo "/etc/"   |sed -nr 's@(.*/)([^/]+)/?@\1@p'
+    /
+
+6、利用sed 取出ifconfig命令中本机的IPv4地址 
+
+.. code-block:: bash
+
+    [root@centos7 ~]$ ifconfig ens33 |sed -nr '2s@.*inet (.*) netmask.*@\1@p'
+
+7、统计centos安装光盘中Package目录下的所有rpm文件的以.分隔倒数第二个字段的重复次数 
+
+.. code-block:: bash
+
+    root@centos7 ~]$ ls /misc/cd/Packages/ |sed -nr 's@.*\.([^.]*)\.rpm@\1@p' |sort  |uniq -c 
+    2141 i686
+    3076 noarch
+    4374 x86_64
+
+8、统计/etc/init.d/functions文件中每个单词的出现次数，并排序（用grep和sed两种方法分别实现） 
+
+.. code-block:: bash
+   
+    cat  /etc/init.d/functions  | egrep -o "([[:alpha:]]+)"  |sort |uniq -c  > /root/grep.txt
+    cat /etc/init.d/functions | sed -r 's@[^[:alpha:]]@\n@g' |sed '/^$/d' |sort |uniq -c  >/root/sed.txt
+    diff /root/sed.txt /root/grep.txt 
+
+.. warning:: 这个题，2种结果必须是一致的。
+
+9、将文本文件的n和n+1行合并为一行，n为奇数行 
+
+.. code-block:: bash
+
+    [root@centos7 ~]$ sed 'N;s@\n@@' /etc/fstab

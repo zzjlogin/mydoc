@@ -1,0 +1,10 @@
+2018-01-11-练习自动化安装
+====================================
+
+参考1_
+
+参考2_
+
+.. _参考2: http://my-study-linux-services.readthedocs.io
+
+.. _参考1: http://services.linuxpanda.tech/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%AE%89%E8%A3%85/index.html

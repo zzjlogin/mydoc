@@ -1,0 +1,69 @@
+2018-01-26
+======================
+
+上节课回顾
+----------------------------
+
+::
+
+  发请求
+  dns
+  处理请求
+  访问资源
+  构建响应
+  响应
+  日志记录
+
+
+
+本节内容
+----------------------------
+
+::
+
+  aliasmatch ^/imgs(/.*)+$ "/data/img/$1"
+
+  httpasswd -c .httpusers http1
+
+  authtype base 
+  authname  "admini "
+  authuserfile 
+  require user  http1 
+
+
+  allowoverride all
+
+  satisfy all|any
+
+  <ifmodule module_userdir>
+    userdir abled
+    userdir publicweb
+  </ifmodeule>
+
+  setfacl -m "u:apache:x" ~/zhaojiedi/
+
+  serversignature
+
+  servertype inetd,standalone
+
+  namevirtualhost *:80
+
+   
+  200 
+  301
+  302
+  304
+  401
+  403
+  404
+  500
+  502
+  503
+  504
+
+  combined
+
+  mod mod_deflate
+
+  openssl x509 -in a.crt --noout --text
+  

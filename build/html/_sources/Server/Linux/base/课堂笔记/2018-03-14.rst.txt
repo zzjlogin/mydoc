@@ -1,0 +1,67 @@
+2018-03-14
+======================
+
+上节课回顾
+----------------------------
+
+
+本节内容
+----------------------------
+
+::
+
+
+  iaas基础架构及服务。
+  paas平台及服务
+  saas软件及服务
+
+  cdn , content deviled network 
+
+  gslb 全局服务复杂均衡
+
+
+  cname解析。
+
+  php 模块方式
+  fpm 方式运行
+
+  nginx + php 
+
+  if-modified-since 
+  3.4 not modified 
+
+  etag 扩展标签
+
+  if-none-match 
+
+  squid 
+  varnish 
+
+  ipfs 
+
+  manager ,cacher 进程
+  varnish_listen_port 6081 
+  
+
+  varnish_reload_vcl  
+
+  varnishlog.service 
+  varnishlog.service 
+  varnishncsa.servee 
+
+  param.show 
+
+
+
+ 有限状态机
+
+ vcl_init 
+ vcl_finit 
+
+  vcl.load test1  default.vcl 
+  vcl.use test1 
+
+  
+
+
+

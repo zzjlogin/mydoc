@@ -1,0 +1,39 @@
+2017-12-04
+============================
+
+上节课回顾
+----------------------------
+
+本节内容
+----------------------------
+
+::
+
+    lsof：
+    fuser:查看用户使用挂载点信息
+    findmnt：查看指定目录是不是挂载点
+    cat /proc/mounts:查看挂载信息
+    mount dir1 dir2 --bind: 挂载指定目录
+
+    dd 创建一个大文件
+    mkfs.ext4创建文件系统
+    mount挂载 -o
+
+    losetup /dev/loop8 /app/partfile2
+    /etc/grub/grub.conf max_loop=100
+
+    /etc/fstab 后面的2个参数都要设置0 0 
+
+    spwpon -s 
+    cat /proc/swaps
+    pri=10
+    
+    eject 弹出光驱
+
+    cp /dev/cdrom /root/centos7.iso 
+    mkisofs -r -o /app/etc/etc.iso /etc
+
+    sync：同步磁盘
+
+    dd conv=notrunc
+    findmnt: 查找是不是挂载点

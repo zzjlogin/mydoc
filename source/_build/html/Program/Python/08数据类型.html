@@ -1,0 +1,1286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. 数据类型 &mdash; 张志佳的技术文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="9. 数值模块" href="09数值模块.html" />
+    <link rel="prev" title="7. 二进制处理" href="07二进制处理.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> 张志佳的技术文档
+          
+
+          
+            
+            <img src="../../_static/logo-wordmark-light.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018-08-30
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Program.html">编程语言学习</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Python.html">Python学习</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01环境准备.html">1. 环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html#python">1.1. 安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html#ipython">1.2. ipython的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html#id2">1.3. ipython测试</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02内建函数.html">2. 内建函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html#id2">2.1. 常用内置函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04内置类型.html">4. 内置类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#id2">4.1. 真值测试</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#boolean">4.2. boolean操作符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#id3">4.3. 比较操作符号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#int-float-complex">4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#list-tuple-range">4.5. 数据类型 list, tuple, range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">4.6. Binary Sequence Types — bytes, bytearray, memoryview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html#set-types-set-frozenset">4.7. Set Types — set, frozenset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06文本处理.html">6. 文本处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#string">6.1. string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#re">6.2. re</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#difflib">6.3. difflib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#textwrap">6.4. textwrap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#unicodedata">6.5. unicodedata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#stringprep">6.6. stringprep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#readline">6.7. readline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html#rlcompleter">6.8. rlcompleter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="07二进制处理.html#struct">7.1. struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07二进制处理.html#codecs">7.2. codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">8. 数据类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datetime">8.1. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calendar">8.2. calendar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#collectons">8.3. collectons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#collections-abc">8.4. collections.abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heapq">8.5. heapq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bisect">8.6. bisect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#array">8.7. array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#weakref">8.8. weakref</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#types">8.9. types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy">8.10. copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pprint">8.11. pprint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reprlib">8.12. reprlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enum">8.13. enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flag">8.14. Flag</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="09数值模块.html">9. 数值模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#numbers">9.1. numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#math">9.2. math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#cmath">9.3. cmath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#decimal">9.4. decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#fractions">9.5. fractions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#random">9.6. random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html#statistics">9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="10函数式编程模块.html">10. 函数式编程模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="10函数式编程模块.html#itertools">10.1. itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10函数式编程模块.html#functools">10.2. functools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10函数式编程模块.html#operator">10.3. operator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="11文件和目录访问.html">11. 文件和目录访问</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#pathlib">11.1. pathlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#os-path">11.2. os.path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#fileinput">11.3. fileinput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#stat">11.4. stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#filecmp">11.5. filecmp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#tempfile">11.6. tempfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#glob">11.7. glob</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#fnmatch">11.8. fnmatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#linecache">11.9. linecache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#shutil">11.10. shutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html#macpath">11.11. macpath</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="12数据持久化.html">12. 数据持久化</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#pickle">12.1. pickle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#copyreg">12.2. copyreg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#shelve">12.3. shelve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#marshal">12.4. marshal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#dbm">12.5. dbm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12数据持久化.html#sqllite">12.6. sqllite</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="13数据压缩和归档.html">13. 数据压缩和归档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#zlib">13.1. zlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#gzip">13.2. gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#bz2">13.3. bz2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#lzma">13.4. lzma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#zipfile">13.5. zipfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html#tarfile">13.6. tarfile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="14文件格式.html">14. 文件格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#csv">14.1. csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#configparser">14.2. configparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#netrc">14.3. netrc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#xdrlib">14.4. xdrlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html#plistlib">14.5. plistlib</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15加密服务.html">15. 加密服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15加密服务.html#hashlib">15.1. hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="15加密服务.html#hmac">15.2. hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="15加密服务.html#secrets">15.3. secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="16通用操作系统服务.html">16. 通用操作系统服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.1通用操作系统服务.html">16.1. os</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.2通用操作系统服务.html">16.2. io</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.3通用操作系统服务.html">16.3. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.4通用操作系统服务.html">16.4. argparse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.5通用操作系统服务.html">16.5. getopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.6通用操作系统服务.html">16.6. logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.7通用操作系统服务.html">16.7. logging.Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.8通用操作系统服务.html">16.8. logging.Handlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统/16.9通用操作系统服务.html">16.9. getpass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="17并发执行.html">17. 并发执行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#threading">17.1. threading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#multiprocessing">17.2. multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#multiprocessing-process">17.3. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#id2">17.4. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#multiprocessing-queue">17.5. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#id3">17.6. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#multiprocessing-joinablequeue">17.7. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html#multiprocessing-connection-connection">17.8. multiprocessing.connection.Connection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="18进程通信和网络.html">18. 进程通信和网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="19网络数据处理.html">19. 网络数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Algorithm.html">算法学习(Algorithm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Algorithm/CCFexam.html">CCF考试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Algorithm/ccf/201703-1.html">2017031-分蛋糕</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Algorithm/ccf/201703-2.html">2017032-学生排队</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Algorithm/ccf/201803-1.html">2018031-跳一跳</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Network.html">计算机网络学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Network/1.NetworkTheory.html">理论学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Network/2.HuaWei.html">华为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Network/3.H3C.html">H3C(华三/新华三)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Network/4.CISCO.html">思科(CISCO)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Server.html">服务器相关学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/1.AboutAndClass.html">服务器相关常识</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/2.Linux.html">Linux 服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Server/Linux/cmd.html">Linux命令汇总</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/Ctrl+d.html">1. 1&nbsp;&nbsp;&nbsp;Ctrl+d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/alias.html">2. 1&nbsp;&nbsp;&nbsp;alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/basename.html">3. 1&nbsp;&nbsp;&nbsp;basename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/bc.html">4. 1&nbsp;&nbsp;&nbsp;bc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/bg.html">5. 1&nbsp;&nbsp;&nbsp;bg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/cal.html">6. 1&nbsp;&nbsp;&nbsp;cal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/cat.html">7. 1&nbsp;&nbsp;&nbsp;cat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/cd.html">8. 1&nbsp;&nbsp;&nbsp;cd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chage.html">9. 1&nbsp;&nbsp;&nbsp;chage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chattr.html">10. 1&nbsp;&nbsp;&nbsp;chattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chgrp.html">11. 1&nbsp;&nbsp;&nbsp;chgrp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chkconfig.html">12. 1&nbsp;&nbsp;&nbsp;chkconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chmod.html">13. 1&nbsp;&nbsp;&nbsp;chmod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/chown.html">14. 1&nbsp;&nbsp;&nbsp;chown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/clear.html">15. 1&nbsp;&nbsp;&nbsp;clear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/cp.html">16. 1&nbsp;&nbsp;&nbsp;cp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/crontab.html">17. 1&nbsp;&nbsp;&nbsp;crontab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/cut.html">18. 1&nbsp;&nbsp;&nbsp;cut</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/date.html">19. 1&nbsp;&nbsp;&nbsp;date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dd.html">20. 1&nbsp;&nbsp;&nbsp;dd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/df.html">21. 1&nbsp;&nbsp;&nbsp;df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/diff.html">22. 1&nbsp;&nbsp;&nbsp;diff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dig.html">23. 1&nbsp;&nbsp;&nbsp;dig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dirname.html">24. 1&nbsp;&nbsp;&nbsp;dirname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dmesg.html">25. 1&nbsp;&nbsp;&nbsp;dmesg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dos2unix.html">26. 1&nbsp;&nbsp;&nbsp;dos2unix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/du.html">27. 1&nbsp;&nbsp;&nbsp;du</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dump.html">28. 1&nbsp;&nbsp;&nbsp;dump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/dumpe2fs.html">29. 1&nbsp;&nbsp;&nbsp;dumpe2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/e2fsck.html">30. 1&nbsp;&nbsp;&nbsp;e2fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/echo.html">31. 1&nbsp;&nbsp;&nbsp;echo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/eject.html">32. 1&nbsp;&nbsp;&nbsp;eject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/exec.html">33. 1&nbsp;&nbsp;&nbsp;exec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/exit.html">34. 1&nbsp;&nbsp;&nbsp;exit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/export.html">35. 1&nbsp;&nbsp;&nbsp;export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/fdisk.html">36. 1&nbsp;&nbsp;&nbsp;fdisk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/fg.html">37. 1&nbsp;&nbsp;&nbsp;fg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/file.html">38. 1&nbsp;&nbsp;&nbsp;file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/find.html">39. 1&nbsp;&nbsp;&nbsp;find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/finger.html">40. 1&nbsp;&nbsp;&nbsp;finger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/free.html">41. 1&nbsp;&nbsp;&nbsp;free</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/fsck.html">42. 1&nbsp;&nbsp;&nbsp;fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/grep.html">43. 1&nbsp;&nbsp;&nbsp;grep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/groupadd.html">44. 1&nbsp;&nbsp;&nbsp;groupadd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/gzip.html">45. 1&nbsp;&nbsp;&nbsp;gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/halt.html">46. 1&nbsp;&nbsp;&nbsp;halt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/head.html">47. 1&nbsp;&nbsp;&nbsp;head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/history.html">48. 1&nbsp;&nbsp;&nbsp;history</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/host.html">49. 1&nbsp;&nbsp;&nbsp;host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/hostname.html">50. 1&nbsp;&nbsp;&nbsp;hostname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/iconv.html">51. 1&nbsp;&nbsp;&nbsp;iconv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/id.html">52. 1&nbsp;&nbsp;&nbsp;id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ifconfig.html">53. 1&nbsp;&nbsp;&nbsp;ifconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ifdown.html">54. 1&nbsp;&nbsp;&nbsp;ifdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ifup.html">55. 1&nbsp;&nbsp;&nbsp;ifup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/init.html">56. 1&nbsp;&nbsp;&nbsp;init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/iostat.html">57. 1&nbsp;&nbsp;&nbsp;iostat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ipcrm.html">58. 1&nbsp;&nbsp;&nbsp;ipcrm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ipcs.html">59. 1&nbsp;&nbsp;&nbsp;ipcs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/jobs.html">60. 1&nbsp;&nbsp;&nbsp;jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/join.html">61. 1&nbsp;&nbsp;&nbsp;join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/kill.html">62. 1&nbsp;&nbsp;&nbsp;kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/killall.html">63. 1&nbsp;&nbsp;&nbsp;killall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/last.html">64. 1&nbsp;&nbsp;&nbsp;last</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/lastlog.html">65. 1&nbsp;&nbsp;&nbsp;lastlog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/less.html">66. 1&nbsp;&nbsp;&nbsp;less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/locate.html">67. 1&nbsp;&nbsp;&nbsp;locate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/logout.html">68. 1&nbsp;&nbsp;&nbsp;logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ls.html">69. 1&nbsp;&nbsp;&nbsp;ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/lsattr.html">70. 1&nbsp;&nbsp;&nbsp;lsattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/lsof.html">71. 1&nbsp;&nbsp;&nbsp;lsof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ltrace.html">72. 1&nbsp;&nbsp;&nbsp;ltrace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mail.html">73. 1&nbsp;&nbsp;&nbsp;mail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/md5sum.html">74. 1&nbsp;&nbsp;&nbsp;md5sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mkdir.html">75. 1&nbsp;&nbsp;&nbsp;mkdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mkfs.html">76. 1&nbsp;&nbsp;&nbsp;mkfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mkswap.html">77. 1&nbsp;&nbsp;&nbsp;mkswap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/more.html">78. 1&nbsp;&nbsp;&nbsp;more</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mount.html">79. 1&nbsp;&nbsp;&nbsp;mount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mpstat.html">80. 1&nbsp;&nbsp;&nbsp;mpstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mutt.html">81. 1&nbsp;&nbsp;&nbsp;mutt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/mv.html">82. 1&nbsp;&nbsp;&nbsp;mv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/nc.html">83. 1&nbsp;&nbsp;&nbsp;nc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/netstat.html">84. 1&nbsp;&nbsp;&nbsp;netstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/nice.html">85. 1&nbsp;&nbsp;&nbsp;nice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/nmap.html">86. 1&nbsp;&nbsp;&nbsp;nmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/nohup.html">87. 1&nbsp;&nbsp;&nbsp;nohup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/nslookup.html">88. 1&nbsp;&nbsp;&nbsp;nslookup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/parted.html">89. 1&nbsp;&nbsp;&nbsp;parted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/partprobe.html">90. 1&nbsp;&nbsp;&nbsp;partprobe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/passwd.html">91. 1&nbsp;&nbsp;&nbsp;passwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/paste.html">92. 1&nbsp;&nbsp;&nbsp;paste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/pgrep.html">93. 1&nbsp;&nbsp;&nbsp;pgrep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ping.html">94. 1&nbsp;&nbsp;&nbsp;ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/pkill.html">95. 1&nbsp;&nbsp;&nbsp;pkill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/poweroff.html">96. 1&nbsp;&nbsp;&nbsp;poweroff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/printf.html">97. 1&nbsp;&nbsp;&nbsp;printf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ps.html">98. 1&nbsp;&nbsp;&nbsp;ps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/pstree.html">99. 1&nbsp;&nbsp;&nbsp;pstree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/pwd.html">100. 1&nbsp;&nbsp;&nbsp;pwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/rename.html">101. 1&nbsp;&nbsp;&nbsp;rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/resize2fs.html">102. 1&nbsp;&nbsp;&nbsp;resize2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/rev.html">103. 1&nbsp;&nbsp;&nbsp;rev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/rm.html">104. 1&nbsp;&nbsp;&nbsp;rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/rmdir.html">105. 1&nbsp;&nbsp;&nbsp;rmdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/route.html">106. 1&nbsp;&nbsp;&nbsp;route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/rpm.html">107. 1&nbsp;&nbsp;&nbsp;rpm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/runlevel.html">108. 1&nbsp;&nbsp;&nbsp;runlevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/sar.html">109. 1&nbsp;&nbsp;&nbsp;sar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/scp.html">110. 1&nbsp;&nbsp;&nbsp;scp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/service.html">111. 1&nbsp;&nbsp;&nbsp;service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/shutdown.html">112. 1&nbsp;&nbsp;&nbsp;shutdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/sort.html">113. 1&nbsp;&nbsp;&nbsp;sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/split.html">114. 1&nbsp;&nbsp;&nbsp;split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ss.html">115. 1&nbsp;&nbsp;&nbsp;ss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/ssh.html">116. 1&nbsp;&nbsp;&nbsp;ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/stat.html">117. 1&nbsp;&nbsp;&nbsp;stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/strace.html">118. 1&nbsp;&nbsp;&nbsp;strace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/su.html">119. 1&nbsp;&nbsp;&nbsp;su</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/sudo.html">120. 1&nbsp;&nbsp;&nbsp;sudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/swapoff.html">121. 1&nbsp;&nbsp;&nbsp;swapoff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/swapon.html">122. 1&nbsp;&nbsp;&nbsp;swapon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/sync.html">123. 1&nbsp;&nbsp;&nbsp;sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tac.html">124. 1&nbsp;&nbsp;&nbsp;tac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tail.html">125. 1&nbsp;&nbsp;&nbsp;tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tar.html">126. 1&nbsp;&nbsp;&nbsp;tar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tcpdump.html">127. 1&nbsp;&nbsp;&nbsp;tcpdump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/telnet.html">128. 1&nbsp;&nbsp;&nbsp;telnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/time.html">129. 1&nbsp;&nbsp;&nbsp;time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/top.html">130. 1&nbsp;&nbsp;&nbsp;top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/touch.html">131. 1&nbsp;&nbsp;&nbsp;touch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tr.html">132. 1&nbsp;&nbsp;&nbsp;tr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/traceroute.html">133. 1&nbsp;&nbsp;&nbsp;traceroute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/tree.html">134. 1&nbsp;&nbsp;&nbsp;tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/type.html">135. 1&nbsp;&nbsp;&nbsp;type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/umask.html">136. 1&nbsp;&nbsp;&nbsp;umask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/umount.html">137. 1&nbsp;&nbsp;&nbsp;umount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/unalias.html">138. 1&nbsp;&nbsp;&nbsp;unalias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/uname.html">139. 1&nbsp;&nbsp;&nbsp;uname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/uniq.html">140. 1&nbsp;&nbsp;&nbsp;uniq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/unset.html">141. 1&nbsp;&nbsp;&nbsp;unset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/unzip.html">142. 1&nbsp;&nbsp;&nbsp;unzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/uptime.html">143. 1&nbsp;&nbsp;&nbsp;uptime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/useradd.html">144. 1&nbsp;&nbsp;&nbsp;useradd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/userdel.html">145. 1&nbsp;&nbsp;&nbsp;userdel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/usermod.html">146. 1&nbsp;&nbsp;&nbsp;usermod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/users.html">147. 1&nbsp;&nbsp;&nbsp;users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/vi.html">148. 1&nbsp;&nbsp;&nbsp;vi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/vimdiff.html">149. 1&nbsp;&nbsp;&nbsp;vimdiff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/visudo.html">150. 1&nbsp;&nbsp;&nbsp;visudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/vmstat.html">151. 1&nbsp;&nbsp;&nbsp;vmstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/w.html">152. 1&nbsp;&nbsp;&nbsp;w</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/watch.html">153. 1&nbsp;&nbsp;&nbsp;watch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/wc.html">154. 1&nbsp;&nbsp;&nbsp;wc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/wget.html">155. 1&nbsp;&nbsp;&nbsp;wget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/whereis.html">156. 1&nbsp;&nbsp;&nbsp;whereis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/which.html">157. 1&nbsp;&nbsp;&nbsp;which</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/who.html">158. 1&nbsp;&nbsp;&nbsp;who</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/whoami.html">159. 1&nbsp;&nbsp;&nbsp;whoami</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/xargs.html">160. 1&nbsp;&nbsp;&nbsp;xargs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/yum.html">161. 1&nbsp;&nbsp;&nbsp;yum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/zip.html">162. 1&nbsp;&nbsp;&nbsp;zip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/3.Unix.html">Unix 和类Unix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/4.Windows.html">Windows 服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/5.Optimization.html">服务器优化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Server/6.FAQ.html">常见问题及解决(FAQ)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Data.html">数据相关/大数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Data/1.html">我的文档库123</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../MachineLearning.html">机器学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../MachineLearning/base.html">机器学习入门</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ToolsOpenSource.html">工具和开源项目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ToolsOpenSource/Tools/1.rST.html">用reStructuredText实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/1.index.html">1. rST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/4.toOthers.html">4. 格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/5.API.html">5. 文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/6.rstTools.html">6. reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ToolsOpenSource/Tools/rST/7.addFunctions.html">7. 其他</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Others.html">其他杂项</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Others/1.html">我的文档库123</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../log.html">博客更新日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../AboutMe.html">关于我</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">张志佳的技术文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../Program.html">编程语言学习</a> &raquo;</li>
+        
+          <li><a href="../Python.html">Python学习</a> &raquo;</li>
+        
+      <li>8. 数据类型</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="09数值模块.html" class="btn btn-neutral float-right" title="9. 数值模块" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="07二进制处理.html" class="btn btn-neutral" title="7. 二进制处理" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>8. 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="datetime">
+<h2>8.1. datetime<a class="headerlink" href="#datetime" title="永久链接至标题">¶</a></h2>
+<div class="section" id="timedelta">
+<h3>8.1.1. timedelta<a class="headerlink" href="#timedelta" title="永久链接至标题">¶</a></h3>
+<p>class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</p>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">year</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">365</span><span class="p">,</span><span class="n">hours</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span><span class="n">minutes</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">seconds</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">year</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="mf">31622400.0</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">year</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">366</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="k">print</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<span class="mi">366</span> <span class="n">days</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mo">00</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="date">
+<h3>8.1.2. date<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h3>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">date</span><span class="o">.</span><span class="n">min</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">date</span><span class="o">.</span><span class="n">max</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">today</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># 日期构造</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">another_day</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">today</span><span class="o">.</span><span class="n">year</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">another_day</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># 日期差值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">times</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">today</span> <span class="o">-</span> <span class="n">another_day</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="nb">type</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">times</span><span class="o">.</span><span class="n">total_seconds</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">timedelta</span><span class="o">.</span><span class="n">total_seconds</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">times</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="mf">7948800.0</span>
+
+<span class="c1"># 日期转字符串的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">today</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="s1">&#39;2018-02-11&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>8.1.3. datetime<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># 日期和时间构造一个datetime</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># 当前时间</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">986889</span><span class="p">)</span>
+
+<span class="c1"># utc时间，北京和utc时区差8个小时</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">978965</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+
+<span class="c1"># 日期转字符串</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;2018-02-11 07:23:39&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">43</span><span class="p">]:</span> <span class="n">now_str</span> <span class="o">=</span> <span class="s1">&#39;2018-02-11 07:23:39&#39;</span>
+
+<span class="c1"># 字符串转日期</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">now_str</span><span class="p">,</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">39</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="time">
+<h3>8.1.4. time<a class="headerlink" href="#time" title="永久链接至标题">¶</a></h3>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span>  <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span>  <span class="n">dt</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">56</span><span class="p">,</span> <span class="n">microsecond</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 指定下显示的精度程度</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;microseconds&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="s1">&#39;12:34:56.000000&#39;</span>
+
+<span class="c1"># 默认的，只是显示，时分秒</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">dt</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="s1">&#39;12:34:56&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>8.1.5. 格式控制<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">日期格式控制符</a></p>
+</div>
+</div>
+<div class="section" id="calendar">
+<h2>8.2. calendar<a class="headerlink" href="#calendar" title="永久链接至标题">¶</a></h2>
+<p>提供日历功能</p>
+</div>
+<div class="section" id="collectons">
+<h2>8.3. collectons<a class="headerlink" href="#collectons" title="永久链接至标题">¶</a></h2>
+<p>提供容器数据类型</p>
+<div class="section" id="chainmap">
+<h3>8.3.1. ChainMap<a class="headerlink" href="#chainmap" title="永久链接至标题">¶</a></h3>
+<p>提供用于快速链接多个映射，以便将它们视为单个单元。 它通常比创建新字典和运行多个update()调用要快得多。</p>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">c</span><span class="o">=</span> <span class="n">ChainMap</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">new_child</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="n">e</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">new_child</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">e</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="p">{}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">e</span><span class="o">.</span><span class="n">maps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="p">{}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">e</span><span class="o">.</span><span class="n">parents</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">ChainMap</span><span class="p">({})</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">61</span><span class="p">]:</span> <span class="n">ChainMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">},</span> <span class="p">{})</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">ItemsView</span><span class="p">(</span><span class="n">ChainMap</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">},</span> <span class="p">{}))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;abc&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="counter">
+<h3>8.3.2. Counter<a class="headerlink" href="#counter" title="永久链接至标题">¶</a></h3>
+<p>计数功能</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># 构造新对象</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">cnt</span><span class="o">=</span><span class="n">Counter</span><span class="p">()</span>
+
+<span class="c1"># 开始计数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;green&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">]:</span>
+<span class="o">...</span><span class="p">:</span>     <span class="n">cnt</span><span class="p">[</span><span class="n">word</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+<span class="o">...</span><span class="p">:</span>
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">cnt</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="c1"># 访问指定key</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">cnt</span><span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mi">3</span>
+<span class="c1"># 直接设置</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">cnt</span><span class="p">[</span><span class="s2">&quot;yellow&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># 转化为dict</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+
+<span class="c1"># 查看所有元素</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">cnt</span><span class="o">.</span><span class="n">elements</span><span class="p">())</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">]</span>
+
+<span class="c1"># 减法</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">d</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">c</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">6</span><span class="p">})</span>
+
+<span class="c1"># 个数总和</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="o">-</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="deque">
+<h3>8.3.3. deque<a class="headerlink" href="#deque" title="永久链接至标题">¶</a></h3>
+<p>队列</p>
+<p>常用方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="c1"># 初始化</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">deque</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
+
+<span class="c1"># 追加</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+
+<span class="c1"># 左侧追加</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+
+<span class="c1"># 特定元素的个数</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="mi">1</span>
+
+<span class="c1"># 批量追加</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;ef&quot;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">])</span>
+
+<span class="c1"># 特定位置插入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span> <span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">])</span>
+
+<span class="c1"># 右侧去除</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="s1">&#39;f&#39;</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
+
+<span class="c1"># 左侧弹出</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="s1">&#39;0&#39;</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
+
+<span class="c1"># 滚动2下，就是右边的元素放到第一个位置，在删除他原来的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>获取到指定文件最后几行</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">44</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">tail</span> <span class="p">(</span><span class="n">filename</span> <span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="k">return</span> <span class="n">deque</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="defaultdict">
+<h3>8.3.4. defaultdict<a class="headerlink" href="#defaultdict" title="永久链接至标题">¶</a></h3>
+<p>默认字典，就是在原有字典的基础上提供默认值。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">d</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">50</span><span class="p">]:</span>
+<span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">dict_items</span><span class="p">([(</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>上面使用defaultdict指定int参数，如果没有值的话，会自动获取int的默认值0的。</p>
+</div>
+<div class="section" id="namedtuple">
+<h3>8.3.5. namedtuple<a class="headerlink" href="#namedtuple" title="永久链接至标题">¶</a></h3>
+<p>给元组提供了名字的扩展</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span> <span class="n">Point</span><span class="o">=</span><span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">Point</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">56</span><span class="p">]:</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span><span class="n">p</span><span class="o">.</span><span class="n">y</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">57</span><span class="p">]:</span> <span class="mi">13</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">58</span><span class="p">]:</span> <span class="mi">13</span>
+
+<span class="c1"># list 元素转化元组</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">59</span><span class="p">]:</span> <span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">Point</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">60</span><span class="p">]:</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 命名元组转化有序字典</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">62</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">63</span><span class="p">]:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+
+<span class="c1"># 获取字段</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">_fields</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">64</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="c1"># 获取属性值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">66</span><span class="p">]:</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ordereddict">
+<h3>8.3.6. OrderedDict<a class="headerlink" href="#ordereddict" title="永久链接至标题">¶</a></h3>
+<p>有序字典与普通词典一样，但它们记住插入项的顺序。在遍历一个有序字典时，这些项将按其第一次添加的顺序返回。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">68</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;banana&#39;</span><span class="p">:</span><span class="mi">3</span> <span class="p">,</span> <span class="s1">&#39;appale&#39;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+
+<span class="c1"># 根据元素的key来排序</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">69</span><span class="p">]:</span> <span class="n">e</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="n">e</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">70</span><span class="p">]:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;appale&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+
+<span class="c1"># 根据元素的value来排序</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">71</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="n">f</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">72</span><span class="p">]:</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;appale&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="collections-abc">
+<h2>8.4. collections.abc<a class="headerlink" href="#collections-abc" title="永久链接至标题">¶</a></h2>
+<p>这个模块提供抽象基类，可以用来测试是否一个类提供了一个特定的接口；</p>
+</div>
+<div class="section" id="heapq">
+<h2>8.5. heapq<a class="headerlink" href="#heapq" title="永久链接至标题">¶</a></h2>
+<p>这个模块提供了一个堆队列算法的实现，也称为优先级队列算法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappush</span><span class="p">,</span><span class="n">heappop</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">88</span><span class="p">]:</span> <span class="n">h</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="c1"># 添加一个元组</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">89</span><span class="p">]:</span> <span class="n">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;write code&#39;</span><span class="p">))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="n">h</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">90</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;write code&#39;</span><span class="p">)]</span>
+
+<span class="c1"># 在加一个</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">91</span><span class="p">]:</span> <span class="n">heappush</span><span class="p">(</span><span class="n">h</span><span class="p">,(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;write book&#39;</span><span class="p">))</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">92</span><span class="p">]:</span> <span class="n">h</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">92</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;write code&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;write book&#39;</span><span class="p">)]</span>
+
+<span class="c1"># 弹出一个</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">93</span><span class="p">]:</span> <span class="n">heappop</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">93</span><span class="p">]:</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;write code&#39;</span><span class="p">)</span>
+
+<span class="c1"># 查看</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">94</span><span class="p">]:</span> <span class="n">h</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">94</span><span class="p">]:</span> <span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;write book&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bisect">
+<h2>8.6. bisect<a class="headerlink" href="#bisect" title="永久链接至标题">¶</a></h2>
+<p>此模块提供了支持以排序的顺序维护列表，而不必在每次插入之后对列表进行排序。</p>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">110</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect</span> <span class="p">,</span> <span class="n">bisect_left</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">111</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">grade</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">breakpoints</span><span class="o">=</span><span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">grades</span><span class="o">=</span><span class="s1">&#39;FDCBA&#39;</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">i</span> <span class="o">=</span> <span class="n">bisect</span><span class="p">(</span><span class="n">breakpoints</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="n">grades</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">112</span><span class="p">]:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">112</span><span class="p">]:</span> <span class="p">[</span><span class="n">grade</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="k">for</span> <span class="n">score</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">33</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">]]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">112</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>上面的使用4 个break point 将区间划分为5个， 每个对应一个等级，使用bisect去查找对应索引。</p>
+</div>
+<div class="section" id="array">
+<h2>8.7. array<a class="headerlink" href="#array" title="永久链接至标题">¶</a></h2>
+<p>这个模块定义了一个可以紧凑地表示基本值数组的对象类型：字符、整数、浮点数。</p>
+</div>
+<div class="section" id="weakref">
+<h2>8.8. weakref<a class="headerlink" href="#weakref" title="永久链接至标题">¶</a></h2>
+<p>这个模块允许Python程序员创建对象的弱引用</p>
+</div>
+<div class="section" id="types">
+<h2>8.9. types<a class="headerlink" href="#types" title="永久链接至标题">¶</a></h2>
+<p>此模块定义实用工具函数，以帮助动态创建新类型。</p>
+</div>
+<div class="section" id="copy">
+<h2>8.10. copy<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
+<p>此模块提供深copy和浅copy功能</p>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">pass</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">114</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">116</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">117</span><span class="p">]:</span> <span class="n">p2</span> <span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">119</span><span class="p">]:</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pprint">
+<h2>8.11. pprint<a class="headerlink" href="#pprint" title="永久链接至标题">¶</a></h2>
+<p>数据显示美化打印</p>
+<p>方法： pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://pypi.python.org/pypi/Twisted/json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">url</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">http_info</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">raw_data</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">http_info</span><span class="o">.</span><span class="n">get_content_charset</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">project_info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">project_info</span><span class="p">)</span>
+<span class="go">{&#39;info&#39;: {&#39;_pypi_hidden&#39;: False,</span>
+<span class="go">        &#39;_pypi_ordering&#39;: 125,</span>
+<span class="go">        &#39;author&#39;: &#39;Glyph Lefkowitz&#39;,</span>
+<span class="go">        &#39;author_email&#39;: &#39;glyph@twistedmatrix.com&#39;,</span>
+<span class="go">        &#39;bugtrack_url&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;cheesecake_code_kwalitee_id&#39;: None,</span>
+<span class="go">        &#39;cheesecake_documentation_id&#39;: None,</span>
+<span class="go">        &#39;cheesecake_installability_id&#39;: None,</span>
+<span class="go">        &#39;classifiers&#39;: [&#39;Programming Language :: Python :: 2.6&#39;,</span>
+<span class="go">                        &#39;Programming Language :: Python :: 2.7&#39;,</span>
+<span class="go">                        &#39;Programming Language :: Python :: 2 :: Only&#39;],</span>
+<span class="go">        &#39;description&#39;: &#39;An extensible framework for Python programming, with &#39;</span>
+<span class="go">                        &#39;special focus\r\n&#39;</span>
+<span class="go">                        &#39;on event-based network programming and multiprotocol &#39;</span>
+<span class="go">                        &#39;integration.&#39;,</span>
+<span class="go">        &#39;docs_url&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;download_url&#39;: &#39;UNKNOWN&#39;,</span>
+<span class="go">        &#39;home_page&#39;: &#39;http://twistedmatrix.com/&#39;,</span>
+<span class="go">        &#39;keywords&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;license&#39;: &#39;MIT&#39;,</span>
+<span class="go">        &#39;maintainer&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;maintainer_email&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;name&#39;: &#39;Twisted&#39;,</span>
+<span class="go">        &#39;package_url&#39;: &#39;http://pypi.python.org/pypi/Twisted&#39;,</span>
+<span class="go">        &#39;platform&#39;: &#39;UNKNOWN&#39;,</span>
+<span class="go">        &#39;release_url&#39;: &#39;http://pypi.python.org/pypi/Twisted/12.3.0&#39;,</span>
+<span class="go">        &#39;requires_python&#39;: None,</span>
+<span class="go">        &#39;stable_version&#39;: None,</span>
+<span class="go">        &#39;summary&#39;: &#39;An asynchronous networking framework written in Python&#39;,</span>
+<span class="go">        &#39;version&#39;: &#39;12.3.0&#39;},</span>
+<span class="go">&#39;urls&#39;: [{&#39;comment_text&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;downloads&#39;: 71844,</span>
+<span class="go">        &#39;filename&#39;: &#39;Twisted-12.3.0.tar.bz2&#39;,</span>
+<span class="go">        &#39;has_sig&#39;: False,</span>
+<span class="go">        &#39;md5_digest&#39;: &#39;6e289825f3bf5591cfd670874cc0862d&#39;,</span>
+<span class="go">        &#39;packagetype&#39;: &#39;sdist&#39;,</span>
+<span class="go">        &#39;python_version&#39;: &#39;source&#39;,</span>
+<span class="go">        &#39;size&#39;: 2615733,</span>
+<span class="go">        &#39;upload_time&#39;: &#39;2012-12-26T12:47:03&#39;,</span>
+<span class="go">        &#39;url&#39;: &#39;https://pypi.python.org/packages/source/T/Twisted/Twisted-12.3.0.tar.bz2&#39;},</span>
+<span class="go">        {&#39;comment_text&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;downloads&#39;: 5224,</span>
+<span class="go">        &#39;filename&#39;: &#39;Twisted-12.3.0.win32-py2.7.msi&#39;,</span>
+<span class="go">        &#39;has_sig&#39;: False,</span>
+<span class="go">        &#39;md5_digest&#39;: &#39;6b778f5201b622a5519a2aca1a2fe512&#39;,</span>
+<span class="go">        &#39;packagetype&#39;: &#39;bdist_msi&#39;,</span>
+<span class="go">        &#39;python_version&#39;: &#39;2.7&#39;,</span>
+<span class="go">        &#39;size&#39;: 2916352,</span>
+<span class="go">        &#39;upload_time&#39;: &#39;2012-12-26T12:48:15&#39;,</span>
+<span class="go">        &#39;url&#39;: &#39;https://pypi.python.org/packages/2.7/T/Twisted/Twisted-12.3.0.win32-py2.7.msi&#39;}]}</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">project_info</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">{&#39;info&#39;: {&#39;_pypi_hidden&#39;: False,</span>
+<span class="go">        &#39;_pypi_ordering&#39;: 125,</span>
+<span class="go">        &#39;author&#39;: &#39;Glyph Lefkowitz&#39;,</span>
+<span class="go">        &#39;author_email&#39;: &#39;glyph@twistedmatrix.com&#39;,</span>
+<span class="go">        &#39;bugtrack_url&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;cheesecake_code_kwalitee_id&#39;: None,</span>
+<span class="go">        &#39;cheesecake_documentation_id&#39;: None,</span>
+<span class="go">        &#39;cheesecake_installability_id&#39;: None,</span>
+<span class="go">        &#39;classifiers&#39;: [...],</span>
+<span class="go">        &#39;description&#39;: &#39;An extensible framework for Python programming, with &#39;</span>
+<span class="go">                        &#39;special focus\r\n&#39;</span>
+<span class="go">                        &#39;on event-based network programming and multiprotocol &#39;</span>
+<span class="go">                        &#39;integration.&#39;,</span>
+<span class="go">        &#39;docs_url&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;download_url&#39;: &#39;UNKNOWN&#39;,</span>
+<span class="go">        &#39;home_page&#39;: &#39;http://twistedmatrix.com/&#39;,</span>
+<span class="go">        &#39;keywords&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;license&#39;: &#39;MIT&#39;,</span>
+<span class="go">        &#39;maintainer&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;maintainer_email&#39;: &#39;&#39;,</span>
+<span class="go">        &#39;name&#39;: &#39;Twisted&#39;,</span>
+<span class="go">        &#39;package_url&#39;: &#39;http://pypi.python.org/pypi/Twisted&#39;,</span>
+<span class="go">        &#39;platform&#39;: &#39;UNKNOWN&#39;,</span>
+<span class="go">        &#39;release_url&#39;: &#39;http://pypi.python.org/pypi/Twisted/12.3.0&#39;,</span>
+<span class="go">        &#39;requires_python&#39;: None,</span>
+<span class="go">        &#39;stable_version&#39;: None,</span>
+<span class="go">        &#39;summary&#39;: &#39;An asynchronous networking framework written in Python&#39;,</span>
+<span class="go">        &#39;version&#39;: &#39;12.3.0&#39;},</span>
+<span class="go">&#39;urls&#39;: [{...}, {...}]}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reprlib">
+<h2>8.12. reprlib<a class="headerlink" href="#reprlib" title="永久链接至标题">¶</a></h2>
+<p>reprlib模块提供了对生成的字符串的大小限制生产对象表示的一种手段</p>
+</div>
+<div class="section" id="enum">
+<h2>8.13. enum<a class="headerlink" href="#enum" title="永久链接至标题">¶</a></h2>
+<p>枚举</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">135</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span><span class="n">auto</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">137</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">RED</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">GREEN</span> <span class="o">=</span><span class="mi">2</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">BLUE</span> <span class="o">=</span><span class="n">auto</span><span class="p">()</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">138</span><span class="p">]:</span> <span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+<span class="n">Color</span><span class="o">.</span><span class="n">RED</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">139</span><span class="p">]:</span> <span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">RED</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">140</span><span class="p">]:</span> <span class="k">print</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="mi">1</span>
+
+<span class="c1"># 判断</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">141</span><span class="p">]:</span> <span class="n">Color</span><span class="o">.</span><span class="n">RED</span> <span class="o">==</span> <span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">141</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="c1"># 给枚举加唯一条件</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">142</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span> <span class="p">,</span> <span class="n">unique</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">143</span><span class="p">]:</span> <span class="nd">@unique</span>
+    <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">MIsstake</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">one</span><span class="o">=</span><span class="mi">1</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">two</span><span class="o">=</span><span class="mi">2</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">three</span><span class="o">=</span><span class="mi">3</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">four</span><span class="o">=</span><span class="mi">3</span>
+    <span class="o">...</span><span class="p">:</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">143</span><span class="o">-</span><span class="mi">8</span><span class="n">f8798c8b548</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="mi">1</span> <span class="nd">@unique</span>
+<span class="o">----&gt;</span> <span class="mi">2</span> <span class="k">class</span> <span class="nc">MIsstake</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="mi">3</span>     <span class="n">one</span><span class="o">=</span><span class="mi">1</span>
+    <span class="mi">4</span>     <span class="n">two</span><span class="o">=</span><span class="mi">2</span>
+    <span class="mi">5</span>     <span class="n">three</span><span class="o">=</span><span class="mi">3</span>
+
+<span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Administrator</span>\<span class="n">Anaconda3</span>\<span class="n">lib</span>\<span class="n">enum</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">(</span><span class="n">enumeration</span><span class="p">)</span>
+    <span class="mi">832</span>                 <span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="n">duplicates</span><span class="p">])</span>
+    <span class="mi">833</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;duplicate values found in </span><span class="si">%r</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
+<span class="o">--&gt;</span> <span class="mi">834</span>                 <span class="p">(</span><span class="n">enumeration</span><span class="p">,</span> <span class="n">alias_details</span><span class="p">))</span>
+    <span class="mi">835</span>     <span class="k">return</span> <span class="n">enumeration</span>
+    <span class="mi">836</span>
+
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">duplicate</span> <span class="n">values</span> <span class="n">found</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">enum</span> <span class="s1">&#39;MIsstake&#39;</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">four</span> <span class="o">-&gt;</span> <span class="n">three</span>
+
+<span class="c1"># 遍历</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">145</span><span class="p">]:</span> <span class="p">[</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">Color</span><span class="o">.</span><span class="n">__members__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">145</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;RED&#39;</span><span class="p">,</span> <span class="s1">&#39;GREEN&#39;</span><span class="p">,</span> <span class="s1">&#39;BLUE&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="intenum">
+<h3>8.13.1. IntEnum<a class="headerlink" href="#intenum" title="永久链接至标题">¶</a></h3>
+<p>整型枚举</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">146</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
+    <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">circle</span> <span class="o">=</span><span class="mi">1</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">square</span> <span class="o">=</span><span class="mi">2</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">147</span><span class="p">]:</span> <span class="n">Shape</span><span class="o">.</span><span class="n">circle</span> <span class="o">==</span><span class="mi">1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">147</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intflag">
+<h3>8.13.2. IntFlag<a class="headerlink" href="#intflag" title="永久链接至标题">¶</a></h3>
+<p>整型标记</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">150</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">R</span> <span class="o">=</span><span class="mi">4</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">W</span> <span class="o">=</span><span class="mi">2</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">X</span> <span class="o">=</span><span class="mi">1</span>
+    <span class="o">...</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">151</span><span class="p">]:</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">151</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Perm</span><span class="o">.</span><span class="n">R</span><span class="p">:</span> <span class="mi">4</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">152</span><span class="p">]:</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span>  <span class="o">==</span><span class="mi">4</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">152</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">153</span><span class="p">]:</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">153</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Perm</span><span class="o">.</span><span class="n">R</span><span class="o">|</span><span class="n">W</span><span class="p">:</span> <span class="mi">6</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">154</span><span class="p">]:</span> <span class="n">Perm</span><span class="o">.</span><span class="n">R</span> <span class="o">|</span> <span class="n">Perm</span><span class="o">.</span><span class="n">W</span>  <span class="o">==</span><span class="mi">6</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">154</span><span class="p">]:</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="flag">
+<h2>8.14. Flag<a class="headerlink" href="#flag" title="永久链接至标题">¶</a></h2>
+<p>标记</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">160</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span>
+    <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">red</span><span class="o">=</span><span class="n">auto</span><span class="p">()</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">blue</span><span class="o">=</span><span class="n">auto</span><span class="p">()</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">green</span><span class="o">=</span><span class="n">auto</span><span class="p">()</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">161</span><span class="p">]:</span> <span class="n">Color</span><span class="o">.</span><span class="n">red</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">161</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Color</span><span class="o">.</span><span class="n">red</span><span class="p">:</span> <span class="mi">1</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">162</span><span class="p">]:</span> <span class="n">Color</span><span class="o">.</span><span class="n">red</span> <span class="o">==</span><span class="mi">1</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">162</span><span class="p">]:</span> <span class="bp">False</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">163</span><span class="p">]:</span> <span class="n">Color</span><span class="o">.</span><span class="n">blue</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">163</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Color</span><span class="o">.</span><span class="n">blue</span><span class="p">:</span> <span class="mi">2</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">164</span><span class="p">]:</span> <span class="n">Color</span><span class="o">.</span><span class="n">green</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">164</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">Color</span><span class="o">.</span><span class="n">green</span><span class="p">:</span> <span class="mi">4</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>使用Flag，每个item都是按照1，2，4，8，16这样的值。</p>
+<p>这种flag的主要用于后续有异或运算的情况下。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="09数值模块.html" class="btn btn-neutral float-right" title="9. 数值模块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="07二进制处理.html" class="btn btn-neutral" title="7. 二进制处理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, 张志佳.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

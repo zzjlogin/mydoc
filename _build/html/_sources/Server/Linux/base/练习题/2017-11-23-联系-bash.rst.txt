@@ -1,0 +1,351 @@
+2017-11-23-练习-bash
+==============================================
+
+练习1
+---------------------------------------------------
+
+1、编写脚本/root/bin/systeminfo.sh,显示当前主机系统信息，包括主机名，IPv4地址，操作系统版本，内核版本，CPU型号，内存大小，硬盘大小 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :systeminfo_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 09:01:32
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    hostname=`hostname`
+    ipv4=`ifconfig ens33 |grep "inet " |egrep "[0-9]{1,3}(\.[0-9]{1,3}){3}" -o |head -n 1`
+    os_version=`cat /etc/redhat-release`
+    kernel_version=`uname -r`
+    cpu_info=`lscpu |grep "Model name:" |cut -c 12- |grep "[^[:space:]].*" -o`
+    mem_size=`cat /proc/meminfo  |grep "MemTotal" |cut -c 10- | grep "[^[:space:]].*" -o`
+    disk_size=`df -h`
+
+    echo "system info is 
+    ===========================================
+    hostname=$hostname
+    ipv4=$ipv4
+    kernel_version=$kernel_version
+    cpu_info=$cpu_info
+    mem_size=$mem_size
+    disk_size=$disk_size
+    ============================================
+    " 
+
+
+2、编写脚本/root/bin/backup.sh，可实现每日将/etc/目录备份到/root/etcYYYY-mm-dd中 
+
+.. code-block:: bash
+    
+    #!/bin/bash
+    #Author:     root
+    #Description:	
+    #DateTime:   2017-11-22 14:53:42
+    #Version:    V1.0
+
+    cp -a /etc /root/etc$(date "+%Y-%m-%d")
+
+3、编写脚本/root/bin/disk.sh,显示当前硬盘分区中空间利用率最大的值 
+
+.. code-block:: bash
+    
+    #!/bin/bash
+    #================================================
+    #FileName   :disk_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 09:25:00
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    val=`df  |egrep "[0-9]{1,3}%" -o |tr -d "%" |sort  -n |tail -n 1`
+    echo val
+
+4、编写脚本/root/bin/links.sh,显示正连接本主机的每个远程主机的IPv4地址和连接数，并按连接数从大到小排序 
+
+.. code-block:: bash
+    
+    #!/bin/bash
+    #================================================
+    #FileName   :links_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 09:28:28
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    links=`ss -tan |grep "^ESTAB" |egrep "[0-9]{1,3}(\.[0-9]{1,3}){3}:[0-9]{1,6}[[:space:]]*$" -o |cut -d ":" -f 1 |sort |uniq -c | sort  -r -n -t " " -k1`
+    echo "$links"
+
+练习2
+--------------------------------------------------------------------------------
+
+1、编写脚本/root/bin/sumid.sh，计算/etc/passwd文件中的第10个用户和第20用户的ID之和 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :sumid_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 10:33:24
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    uid_10=`cat /etc/passwd |head -n 10 |tail -n 1 |cut -d ":" -f 3`
+    uid_20=`cat /etc/passwd |head -n 20 |tail -n 1 |cut -d ":" -f 3`
+    sum_id=$[uid_10+uid_20]
+    echo $sum_id
+
+.. code-block:: bash
+
+    [root@7 ~]# cat /etc/passwd |awk -F ":" ' {if(NR==10 || NR==20 ){sum+=$3}} END{print sum}'
+
+2、编写脚本/root/bin/sumspace.sh，传递两个文件路径作为参数给脚本，计算这两个文件中所有空白行之和 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :sumspace_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 10:39:22
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    # need to check  paramter number 
+    file1_space_line=`cat $1  |grep "^$" |wc -l`
+    file2_space_line=`cat $2  |grep "^$" |wc -l`
+
+    sum_space_line=$[file1_space_line+file2_space_line]
+    echo $sum_space_line
+
+3、编写脚本/root/bin/sumfile.sh,统计/etc, /var, /usr目录中共有多少个一级子目录和文件 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :sumfile_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-23 10:44:17
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    let sumfiles=$[`ls -A -1 /etc |wc -l`]+$[`ls -A -1 /usr | wc -l`]+$[`ls -A -1 /var |wc -l`]
+    echo $sumfiles
+    
+练习3
+---------------------------------------------------------
+1、编写脚本/root/bin/argsnum.sh，接受一个文件路径作为参数；如果参数个数小于1，则提示用户“至少应该给一个参数”，并立即退出；如果参数个数不小于1，则显示第一个参数所指向的文件中的空白行数 
+
+.. code-block:: bash
+    
+    #!/bin/bash
+    #================================================
+    #FileName   :argsnum_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 18:55:43
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ $# -lt 1 ] && echo "must one parameter" && exit 1
+    [ ! -f $1 ] && echo " file not exist" && exit 2
+    echo `cat $1 |grep "^[[:space:]]*$" |wc -l`
+
+2、编写脚本/root/bin/hostping.sh，接受一个主机的IPv4地址做为参数，测试是否可连通。如果能ping通，则提示用户“该IP地址可访问”；如果不可ping通，则提示用户“该IP地址不可访问” 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :hostping_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:00:40
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    [ $# -lt 1 ] && echo "must a parameter " && exit 1
+    [[ "$1" =~ ^(([0-9]|([1-9][0-9])|(1[0-9][0-9])|(2[0-4][0-9])|(25[0-5]))(\.([0-9]|([1-9][0-9])|(1[0-9][0-9])|(2[0-4][0-9])|(25[0-5]))){3})$ ]]
+    [ $? -ne 0 ] && echo " ip is not reacheable" && exit 2 
+    ping -t 1 -c 1 $1 &>/dev/null  && echo "ip is reachable" ||echo "ip is not reachable"
+
+3、编写脚本/root/bin/checkdisk.sh，检查磁盘分区空间和inode使用率，如果超过80%，就发广播警告空间将满 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :checkdisk_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 11:25:31
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    declare -i data_limit=10
+    declare -i inode_limit=10
+    declare -i data_block_max=`df |egrep "/dev/[sh]d.*" |egrep "[0-9]{1,3}%" -o |egrep "[0-9]{1,3}" -o |sort -nr |head -n 1`
+    declare -i inode_block_max=`df -i |egrep "/dev/[sh]d.*" |egrep "[0-9]{1,3}%" -o |egrep "[0-9]{1,3}" -o |sort -nr |head -n 1`
+
+
+    [ $data_block_max -ge $data_limit ] && wall "data_block beyond $data_limit" 
+    [ $inode_block_max -ge $inode_limit ] && wall "inode_block beyond $inode_limit" 
+
+练习4
+-------------------------------------------------------------------------------------------------------------
+1、编写脚本/bin/per.sh,判断当前用户对指定的参数文件，是否不可读并且不可写 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :per_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:40:48
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ $# -lt 1 ] && echo " must a parameter" && exit 1
+
+    [ ! -r $1 ] && [ ! -w $1 ] && echo " no read,and write" || echo " other"
+
+
+2、编写脚本/root/bin/excute.sh ，判断参数文件是否为sh后缀的普通文件，如果是，添加所有人可执行权限，否则提示用户非脚本文件 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :excute_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:50:29
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ $# -lt 1 ] && echo "must one parameter" && exit 1
+    [ ! -f $1 ] && echo "file not exist" 
+    [[ "$1" =~ .*.sh$ ]] && chmod a+x $1 || echo "not sh file  "
+
+
+3、编写脚本/root/bin/nologin.sh和login.sh,实现禁止和充许普通用户登录系统 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #================================================
+    #FileName   :nologin.sh_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:56:30
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    [ ! -f /etc/nologin ] && touch /etc/nologin
+
+    [root@centos7 sh]# cat login.sh_46_zhaojiedi.sh 
+    #!/bin/bash
+    #================================================
+    #FileName   :login.sh_46_zhaojiedi.sh
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :2017-11-24 19:57:23
+    #Version    :V1.0
+    #Other      :
+    #================================================
+
+    [ -f /etc/nologin ] && rm -rf /etc/nologin
+
+练习5 
+---------------------------------------------------------------------
+
+.. note:: 初始化脚本托管到github上了， My_Study_Bash_
+
+.. _My_Study_Bash: https://github.com/zhaojiedi1992/Bash
+
+1、让所有用户的PATH环境变量的值多出一个路径，例如：/usr/local/apache/bin 
+
+.. code-block:: bash
+
+    [root@centos7 job]# echo "export PATH=$PATH:/usr/local/apache/bin" >>/etc/profile.d/path.sh
+
+2、用户root登录时，将命令指示符变成红色，并自动启用如下别名：rm=‘rm –i’cdnet=‘cd /etc/sysconfig/network-scripts/’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eth0’ editnet=‘vim /etc/sysconfig/network-scripts/ifcfg-eno16777736 或 ifcfg-ens33 ’ (如果系统是CentOS7) ::
+
+    [root@centos7 ~]# echo "PS1=\"\033[1;31m$PS1\033[0m\"" >>/root/.bash_profile
+    [root@centos7 .etc]# cat alias.sh 
+    alias rm='rm-i'
+    alias cdnet='cd /etc/sysconfig/network-scripts'
+    alias editeth0='vim /etc/sysconfig/network-scripts/ifcfg-eth0'
+    alias editens33='vim /etc/sysconfig/network-scripts/ifcfg-ens33'
+    # 添加如下行到/root/.bashrc文件中去   
+    . ~/.etc/alias.sh 
+    echo ". ~/.etc/alias.sh" >> /root/.bashrc
+
+
+
+3、任意用户登录系统时，显示红色字体的警示提醒信息“Hi,dangerous！”  
+
+.. code-block:: bash
+
+    [root@centos7 .etc]# cat -A /etc/motd
+    ^[[31mHi,dangerous^[[0m$
+
+
+4、编写生成脚本基本格式的脚本，包括作者，联系方式，版本，时间，描述等 
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #change filename
+    filename=$1_46_zhaojiedi.sh
+    #check file exist
+    [ -e $filename ] && echo "$filename has exist" && exit 1
+    # create file and add x 
+    touch $filename
+    chmod u+x $filename
+    #add info
+
+    echo "#!/bin/bash
+    #================================================
+    #FileName   :$(basename $filename)
+    #Author     :zhaojiedi
+    #Description:
+    #DateTime   :$(date "+%Y-%m-%d %H:%M:%S")
+    #Version    :V1.0
+    #Other      :
+    #================================================
+    " >> $filename
+
+
+    # start vim
+    vim $filename  +
+
+
+5、编写用户的环境初始化脚本reset.sh，包括别名，登录提示符，vim的设置，环境变量等 
+
+.. code-block:: bash
+
+    . alias.sh
+    . prompt.sh
+    . vim.sh
+    . path.sh
+

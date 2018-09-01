@@ -1,0 +1,53 @@
+
+2017-07-练习-Linux简介练习
+==================================
+
+1)halt,poweroff,shutdown,init 0的主要区别
+--------------------------------------------
+关机相关shutdown,init 0::
+
+    shutdown实际上是调用init 0, init 0会cleanup一些工作然后调用halt或者poweroff。
+    其实主要区别是halt和poweroff，做没有acpi（高级配置和电源管理接口）的系统上，
+    halt只是关闭了os，电源还在工作，你得手动取按一下那个按钮，
+    但在现在的系统上，他们实际上都一样了 
+
+重启相关reboot,shudown,init6::
+
+    "init 6" 基于一系列/etc/inittab文件，并且每个应用都会有一个相应shutdown脚本。
+    "init 6" 调用一系列shutdown脚本(/etc/rc0.d/K*)来使系统优雅关机;
+    "reboot" 并不执行这些过程，
+    reboot更是一个kernel级别的命令，不对应用使用shutdown脚本。
+    我们应该在通常情况下使用 init 6.
+    在出问题的状况下或强制重启时使用reboot.
+
+2)用户登陆相关
+--------------------------------------------
+
+who,whoami,w的使用
+
+.. code-block:: bash
+
+    [root@centos6 ~]# who #查看当前用户登陆情况， 建议使用w，显示更全面
+    root     tty1         2017-11-07 16:20 (:0)
+    root     pts/0        2017-11-07 16:20 (:0)
+    root     pts/1        2017-11-07 16:34 (:0)
+    root     pts/2        2017-11-07 16:39 (192.168.27.1)
+    root     pts/3        2017-11-07 17:11 (192.168.27.1)
+    root     pts/4        2017-11-07 18:56 (192.168.27.1)
+
+
+    [root@centos6 ~]# who -r #显示运行级别
+    run-level 5  2017-11-07 16:11
+    [root@centos6 ~]# whoami
+    root
+    [root@centos6 ~]# w #    带有启动时间，用户数，还有负载情况，用户，连接终端，来源ip,登陆时间，空闲时间，占用cpu时常
+    19:05:53 up  2:54,  6 users,  load average: 0.00, 0.00, 0.00
+
+    USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+    root     tty1     :0               16:20    2:54m  5.38s  5.38s /usr/bin/Xorg :0 -br -v
+    root     pts/0    :0               16:20    2:45m  0.00s  0.54s kded4
+    root     pts/1    :0               16:34    2:30m  0.00s  0.00s /bin/bash
+    root     pts/2    192.168.27.1     16:39    2:12m  0.04s  0.04s -bash
+    root     pts/3    192.168.27.1     17:11    1:21m  0.07s  0.07s -bash
+    root     pts/4    192.168.27.1     18:56    0.00s  0.16s  0.10s w
+
