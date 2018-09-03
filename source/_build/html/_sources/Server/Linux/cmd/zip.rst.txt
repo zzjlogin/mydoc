@@ -1,73 +1,40 @@
-<<<<<<< HEAD
-.. _zip-cmd:
-
-===================
-zip
-=======
 .. _xxxx-cmd:
 
 ===================
 xxxx
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 ===================
 
 :Date: 2018-08-29
 
 
 .. contents::
-<<<<<<< HEAD
-.. section-numbering::
-
-.. _zip-format:
-=======
 
 .. _xxxx-format:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 命令格式
 =============
 
-<<<<<<< HEAD
-.. _zip-user:
-=======
 .. _xxxx-user:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 所属用户
 =============
 
-<<<<<<< HEAD
-.. _zip-guid:
-=======
 .. _xxxx-guid:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 使用指导
 =============
 
-<<<<<<< HEAD
-.. _zip-args:
-=======
 .. _xxxx-args:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 参数：
 =============
 
-<<<<<<< HEAD
-.. _zip-instance:
-=======
 .. _xxxx-instance:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 参考实例：
 =============
 
-<<<<<<< HEAD
-.. _zip-relevant:
-=======
 .. _xxxx-relevant:
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 
 相关命令：
 =============

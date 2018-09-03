@@ -5,7 +5,7 @@ Shell 编程
 ========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :numbered:
    

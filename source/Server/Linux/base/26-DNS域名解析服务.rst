@@ -1,5 +1,10 @@
 DNS域名解析服务
 =======================================
+
+:Date: 2018-09-02
+
+.. contents::
+
 dns是domain names system的简写，主要作用就是将主机名解析成ip地址的过程。
 
 dns是一个分布式、分层次的主机名管理架构，通过配置dns服务器地址，主机不需要知道对应的
@@ -7,8 +12,11 @@ ip地址就能通过主机名的形式访问互联网。
 
 fqdn是full qualified domain name的简写，焦作完整主机名
 
+.. note:: Linux默认不像微软的Windows系统会自动缓存DNS访问记录。Linux如果需要缓存DNS记录信息需要额外安装DNS缓存软件。
+
 dns解析过程
 --------------------------------------------
+
 假定访问www.linuxpanda.tech这个主机的话
 
 #. 本机先查询本地的hosts文件是否有对应blog.linuxpanda.tech这个主机和ip对应关系，如果直接给与，

@@ -432,6 +432,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../Server/Linux/cmd/zip.html">162. xxxx</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../Server/Linux/2.base.html">Linux基础</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Server/Linux/3.service.html">Linux服务器</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../Server/3.Unix.html">Unix 和类Unix</a></li>
@@ -1274,8 +1280,8 @@ if: if COMMANDS; then COMMANDS; [ elif COMMANDS; then COMMANDS; ]... [ else COMM
 73
 74</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span> -f <span class="s2">&quot;somefile&quot;</span> <span class="o">]</span>       判断是否是一个文件
 <span class="o">[</span> -x <span class="s2">&quot;/bin/ls&quot;</span> <span class="o">]</span>        判断/bin/ls是否存在并有可执行权限
-<span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$var</span><span class="s2">&quot;</span> <span class="o">]</span>           判断<span class="nv">$var</span>变量是否有值
-<span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span>         判断<span class="nv">$a</span>和<span class="nv">$b</span>是否相等
+<span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$var</span><span class="s2">&quot;</span> <span class="o">]</span>           判断<span class="nv">$var变量是否有值</span>
+<span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span>         判断<span class="nv">$a和$b是否相等</span>
 -r file                 用户可读为真
 -w file                 用户可写为真
 -x file                 用户可执行为真
@@ -1337,7 +1343,7 @@ f1 -ef f2                   文件f1和f2是否硬连接到同一个文件
 
 字符串比较：
 <span class="o">=</span>               等于           <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span>
-<span class="o">==</span>              与<span class="o">=</span>等价
+<span class="o">==</span>              <span class="nv">与</span><span class="o">=</span>等价
 !<span class="o">=</span>              不等于         <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]</span>
 &lt;               小于，在ASCII字母中的顺序：
                 <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> &lt; <span class="s2">&quot;</span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="o">]]</span>

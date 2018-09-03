@@ -1,0 +1,124 @@
+.. _rst-admonitions:
+
+==============================
+警告集合 [1]_
+==============================
+
+.. contents::
+
+
+
+**警告/提示关键字包括11个：**::
+
+    attention, caution, danger, error, hint, important, note, tip, warning, admonition, title
+
+注解(note)
+---------------
+
+**样例展示：**
+
+----
+
+.. note::
+
+    测试注意(note)。
+
+
+**上面换行功能实现方法，以下是rST源码显示样例**::
+
+    .. note::
+
+        测试注意(note)。
+
+----
+
+小技巧(tip)
+--------------------
+
+**样例展示：**
+
+----
+
+.. tip::
+
+    小技巧测试(tip)。
+
+**上面换行功能实现方法，以下是rST源码显示样例**::
+
+    .. tip::
+
+        小技巧测试(tip)。
+
+----
+
+其他警告提示的关键字的作用方法和前两个相同。以下是其他关键字的显示结果。
+
+警告(warning)
+---------------
+
+.. warning::
+
+    warning
+
+注意(attention)
+---------------
+
+.. attention::
+
+    attention
+
+警告(caution)
+---------------
+
+.. caution::
+
+    caution
+
+错误(error)
+---------------
+
+.. error::
+
+    error
+
+重要(important)
+---------------
+
+.. important::
+
+    important
+
+提示(hint)
+---------------
+
+.. hint::
+
+    hint
+
+危险(danger)
+---------------
+
+.. danger:: 
+
+    danger
+
+通用型警告(admonition)
+---------------------------
+
+.. admonition:: 我定义的危险级别
+
+   You can make up your own admonition too.
+
+
+
+
+
+
+.. |date| date::
+.. |time| date:: %H:%M
+
+This document was generated on |date| at |time|.
+
+
+
+.. [1]  http://docutils.sourceforge.net/docs/ref/rst/directives.html#Admonitions

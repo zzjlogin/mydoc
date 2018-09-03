@@ -15,7 +15,11 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import sys, os
 
+sys.path.append(os.path.abspath('sphinxext'))
+
+extensions = ['extname']
 
 
 # -- Project information -----------------------------------------------------
@@ -50,6 +54,7 @@ html_show_sourcelink = False
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.mathjax',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -88,7 +93,7 @@ pygments_style = 'sphinx'
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
 
-html_search_language
+html_search_language = 'zh'
 
 #setting the homepage logo
 #html_logo = './logo.png'
