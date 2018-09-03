@@ -1,0 +1,39 @@
+
+.. _zzjlogin-python:
+
+========================
+Python学习
+========================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   :numbered:
+   
+   Python/*
+
+.. _zzjlogin-shell:
+
+========================
+Shell 编程
+========================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :numbered:
+   
+   Shell/*
+
+.. _zzjlogin-algorithm:
+
+====================
+算法学习(Algorithm)
+====================
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   Algorithm/*
+

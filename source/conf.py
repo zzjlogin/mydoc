@@ -88,7 +88,7 @@ pygments_style = 'sphinx'
 #html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
 
-html_search_language
+html_search_language = 'zh'
 
 #setting the homepage logo
 #html_logo = './logo.png'
