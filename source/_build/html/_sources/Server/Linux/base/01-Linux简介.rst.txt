@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .. highlight:: bash
 
 =======
@@ -864,60 +865,63 @@ echo
         \\     backslash  打印\
 
         \a     alert (BEL) 警钟声音
+=======
+.. _linux-introduction:
 
-        \b     backspace 删除一个字符
+======================================================
+Linux 简介
+======================================================
 
-        \c     produce no further output
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 
-        \e     escape 
+:Date: 2018-09-02
 
-        \f     form feed
+.. contents::
 
-        \n     new line 新行
+.. _linux-ref:
 
-        \r     carriage return 回车符
+Linux 相关参考
+======================================================
 
-        \t     horizontal tab 制表符
+参考：`百度百科`_ 、`维基百科`_
 
-        \v     vertical tab  水平制表符
+.. _百度百科: https://baike.baidu.com/item/linux/27050?fromtitle=linux%E7%B3%BB%E7%BB%9F&fromid=1732935&fr=aladdin
+.. _维基百科: https://en.wikipedia.org/wiki/Linux
+
+相关网址：
+
+    - Linux官网：https://www.linux.org/
+    - Linux内核：https://www.kernel.org/
+    - Linux GNU：http://www.gnu.org/
+
+相关FTP/HTTPS：
+    - GNU：http://mirrors.ustc.edu.cn/gnu/
+    - GNU: https://ftp.gnu.org/pub/gnu/
+    - GNU: https://ftp.gnu.org/
+
+.. _linux-history:
+
+Linux 发展史
+======================================================
+
+Linux操作系统诞生于1991 年10 月5 日（这是第一次正式向外公布时间）。Linux存在着许多不同的Linux版本，但它们都使用了Linux内核。
+Linux可安装在各种计算机硬件设备中，比如手机、平板电脑、路由器、视频游戏控制台、台式计算机、大型机和超级计算机。
+Linux这个词本身只表示Linux内核，但实际上人们已经习惯了用Linux来形容整个基于Linux内核，并且使用GNU 工程各种工具和数据库的操作系统。
+
+.. _linux-timeline:
+
+Linux 时间线
+======================================================
+
+Linux发展时间线：
 
 
-echo 打印颜色符号
+.. image:: /images/server/linux/LinuxTimeLine.svg
+    :width: 600px
+    :align: center
 
-.. code-block:: bash
 
-  [root@mail ~]# echo -e "\033[34mOk\033[0m"
-  Ok(这个字体是带颜色的)
+----
 
-颜色控制
 
-.. code-block:: bash
 
-  \033[##m:控制颜色
-  第一个#：控制字体的前景色
-  第二个#：控制字体的背景色
-  如果同时使用前景和背景色：\033[3#:4#m
-  \033[0m：关闭字体功能
-
-which 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-  [root@mail ~]# which ls
-  alias ls='ls --color=auto'
-    /usr/bin/ls
-  [root@mail ~]# which ls --skip-alias
-  /usr/bin/ls
-
-whatis
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-  [root@mail ~]# whatis ls
-  ls (1)               - list directory contents
-  ls (1p)              - list directory contents
-
-  #centos6:makewhat命令创建帮助手册和对应关键字的数据库
-  #cnetos7:mandb

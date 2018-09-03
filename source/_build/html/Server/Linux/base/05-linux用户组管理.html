@@ -84,7 +84,11 @@
             
             
               <ul>
+<<<<<<< HEAD
 <li class="toctree-l1"><a class="reference internal" href="../../../guide.html">编程语言学习</a><ul>
+=======
+<li class="toctree-l1"><a class="reference internal" href="../../../Program.html">编程语言学习</a><ul>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <li class="toctree-l2"><a class="reference internal" href="../../../Program/Algorithm.html">算法学习(Algorithm)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Program/Algorithm/CCFexam.html">CCF考试</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../Program/Algorithm/ccf/201703-1.html">2017031-分蛋糕</a></li>
@@ -248,6 +252,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../Program/Shell/1.base.html#shell-stander">1.3. Shell规范</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Program/Shell/1.base.html#shell-cmd">1.4. Shell基础语句</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Program/Shell/1.base.html#id21">1.5. Shell調試</a></li>
+<<<<<<< HEAD
+=======
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Program/Shell/2.advance.html">2. Shell编程高级用法</a></li>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Program/Shell/2.advance.html">2. Shell编程高级用法</a></li>
@@ -255,7 +265,11 @@
 </li>
 </ul>
 </li>
+<<<<<<< HEAD
 <li class="toctree-l1"><a class="reference internal" href="../../../guide.html#id2">服务器相关学习</a><ul>
+=======
+<li class="toctree-l1"><a class="reference internal" href="../../../Server.html">服务器相关学习</a><ul>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <li class="toctree-l2"><a class="reference internal" href="../../1.AboutAndClass.html">服务器相关常识</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../2.Linux.html">Linux 服务器</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../1.cmd.html">Linux命令汇总</a><ul>
@@ -457,13 +471,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/1.rST.html">用reStructuredText实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">1. rST简介</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法学习</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">4. 格式转换</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">5. 文档API</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">6. reST工具</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">7. 其他</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/2.MarkDownTools.html">MarkDown工具</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
@@ -540,42 +555,149 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux">
+<<<<<<< HEAD
 <h1>linux用户和组管理<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+=======
+<h1><a class="toc-backref" href="#id4">linux用户和组管理</a><a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">2018-09-02</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#linux" id="id4">linux用户和组管理</a><ul>
+<li><a class="reference internal" href="#id2" id="id5">主要配置文件分析</a><ul>
+<li><a class="reference internal" href="#etc-passwd" id="id6">/etc/passwd</a></li>
+<li><a class="reference internal" href="#etc-group" id="id7">/etc/group</a></li>
+<li><a class="reference internal" href="#etc-shadow" id="id8">/etc/shadow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3" id="id9">用户管理命令</a><ul>
+<li><a class="reference internal" href="#useradd" id="id10">useradd</a></li>
+<li><a class="reference internal" href="#groupadd" id="id11">groupadd</a></li>
+<li><a class="reference internal" href="#su" id="id12">su</a></li>
+<li><a class="reference internal" href="#usermod" id="id13">usermod</a></li>
+<li><a class="reference internal" href="#passwd" id="id14">passwd</a></li>
+<li><a class="reference internal" href="#userdel" id="id15">userdel</a></li>
+<li><a class="reference internal" href="#groupdel" id="id16">groupdel</a></li>
+<li><a class="reference internal" href="#groupmod" id="id17">groupmod</a></li>
+<li><a class="reference internal" href="#gpasswd" id="id18">gpasswd</a></li>
+<li><a class="reference internal" href="#newgrp" id="id19">newgrp</a></li>
+<li><a class="reference internal" href="#chage" id="id20">chage</a></li>
+<li><a class="reference internal" href="#sudo" id="id21">sudo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <p>用户分类</p>
 <ul class="simple">
-<li>系统用户:  1-499(centos6),1-999(centos7)</li>
-<li>登陆用户： 500+（centos6）,1000+(centos7)</li>
+<li>系统用户:1-499(centos6),1-999(centos7)</li>
+<li>登陆用户：500+（centos6）,1000+(centos7)</li>
 </ul>
+<<<<<<< HEAD
 <div class="section" id="id1">
 <h2>主要配置文件分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="section" id="etc-passwd">
 <h3>/etc/passwd<a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name:password:uid:gid:geocos:homedir:shell
-</pre></div>
+=======
+<div class="admonition hint">
+<p class="first admonition-title">提示</p>
+<p class="last">用户ID为0的账号是系统管理员。默认root的用户ID是0</p>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/passwd</span>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">主要配置文件分析</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="etc-passwd">
+<h3><a class="toc-backref" href="#id6">/etc/passwd</a><a class="headerlink" href="#etc-passwd" title="永久链接至标题">¶</a></h3>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>name:password:uid:gid:geocos:homedir:shell
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/passwd</span>
 root:x:0:0:root:/root:/bin/bash
 </pre></div>
+</td></tr></table></div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<ul class="last simple">
+<li><dl class="first docutils">
+<dt>如果/etc/passwd文件用冒号分割的第二列为空，则这个用户没有设置密码。可以通过这样手动设置，来设置用户登录不用密码。(和免密钥登录不一样)</dt>
+<dd><ol class="first last arabic">
+<li>第一个字段root是用户名为root</li>
+<li>第二个x，是root用户登录需要密码。</li>
+<li>root的用户id是0。</li>
+<li>root的组ID，(一个用户可以有多个组，这是主组ID)。</li>
+<li>/root是用户root的家目录。默认普通用户在/home/username，这个username是对应的用户名。</li>
+<li>/bin/bash是用户登录系统时使用的shell类型。</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 </div>
 <div class="section" id="etc-group">
+<<<<<<< HEAD
 <h3>/etc/group<a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>groupname:password:gid:userlist
+=======
+<h3><a class="toc-backref" href="#id7">/etc/group</a><a class="headerlink" href="#etc-group" title="永久链接至标题">¶</a></h3>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>groupname:password:gid:userlist
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 </pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/group</span>
+</td></tr></table></div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># head -1 /etc/group</span>
 root:x:0:
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="etc-shadow">
+<<<<<<< HEAD
 <h3>/etc/shadow<a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
+=======
+<h3><a class="toc-backref" href="#id8">/etc/shadow</a><a class="headerlink" href="#etc-shadow" title="永久链接至标题">¶</a></h3>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>name:password: date of last password change : minimum password age : maximum password age : password warning period: password warning period: password inactivity period
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@zzjlogin ~<span class="o">]</span><span class="c1"># tail -n 1 /etc/shadow</span>
+zzjlogin:<span class="nv">$6$Ja8cr1kv</span>$.B64B7jS2ypx5ZHKVkgaxWJU/sAtp5AGJzt2YOFWlfzv9KKoyOv9DhzRzH76I./1wLH4zSi/vcSR7X0/sNi7x0:17639:0:99999:7:::
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># tail -n 1 /etc/shadow</span>
-zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</span>/MTmTHyo.2XhUNSiJab1BU/qf1vgpdZ3c0JBgzSDMG8tKzyUsPk..xJ9a31a17kGctcgm0OBIUTQGf7Uv0:17477:0:99999:7:::
-</pre></div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<p>创建的新用户，默认有效期为10年。提前7天提醒用户修改密码。</p>
+<p>其中shadow中存放的密码密文格式如下：$id$salt$encrypted</p>
+<p>其中id是指使用的哈希算法：</p>
+<p>可取如下值：</p>
+<blockquote>
+<div>ID  | Method</div></blockquote>
+<dl class="docutils">
+<dt>－－－－－－－－－－－－－－－－－－－－－－－－－－</dt>
+<dd><p class="first">1   | MD5
+2a  | Blowfish (not in mainline glibc; added in some</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Linux distributions)</div>
+</div>
+</div></blockquote>
+<p class="last">5   | SHA-256 (since glibc 2.7)
+6   | SHA-512 (since glibc 2.7)</p>
+</dd>
+</dl>
+<p>salt：是使用上面hash算法对密码进行hash的一个干扰值。</p>
+<p class="last">encrypted: 这个值即 密码的hash, 但不是直接的hash(“passwd”)，而是hash(“passwd＋salt”)后，再经过编码。</p>
 </div>
 <ul class="simple">
 <li>用户名</li>
@@ -590,10 +712,18 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div class="section" id="id2">
 <h2>用户管理命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="section" id="useradd">
 <h3>useradd<a class="headerlink" href="#useradd" title="永久链接至标题">¶</a></h3>
+=======
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id9">用户管理命令</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="useradd">
+<h3><a class="toc-backref" href="#id10">useradd</a><a class="headerlink" href="#useradd" title="永久链接至标题">¶</a></h3>
+<p>新建/增加一个用户</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -623,7 +753,12 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 </table>
 </div>
 <div class="section" id="groupadd">
+<<<<<<< HEAD
 <h3>groupadd<a class="headerlink" href="#groupadd" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id11">groupadd</a><a class="headerlink" href="#groupadd" title="永久链接至标题">¶</a></h3>
+<p>增加/新建一个组</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -637,7 +772,16 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 </tbody>
 </table>
 <p>id</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id</span>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>root@zzjlogin ~<span class="o">]</span><span class="c1"># id</span>
 <span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">groups</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">context</span><span class="o">=</span>unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 <span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -u</span>
 <span class="m">0</span>
@@ -648,17 +792,26 @@ zhaojiedi:<span class="nv">$6$rZ5h80aV</span>/7Sci.YB<span class="nv">$D25I</spa
 <span class="o">[</span>root@centos6 ~<span class="o">]</span><span class="c1"># id -un</span>
 root
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="su">
+<<<<<<< HEAD
 <h3>su<a class="headerlink" href="#su" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id12">su</a><a class="headerlink" href="#su" title="永久链接至标题">¶</a></h3>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <ul class="simple">
 <li>su username: 非登录切换，不会读取目标用户的配置文件</li>
 <li>su -username:登陆切换，会读取目标用户配置文件，完全切换</li>
 </ul>
 </div>
 <div class="section" id="usermod">
+<<<<<<< HEAD
 <h3>usermod<a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id13">usermod</a><a class="headerlink" href="#usermod" title="永久链接至标题">¶</a></h3>
+<p>修改用户的基本信息</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -700,7 +853,12 @@ root
 </table>
 </div>
 <div class="section" id="passwd">
+<<<<<<< HEAD
 <h3>passwd<a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id14">passwd</a><a class="headerlink" href="#passwd" title="永久链接至标题">¶</a></h3>
+<p>为指定用户修改/创建密码(默认为当前登录用户)</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -730,7 +888,12 @@ root
 </table>
 </div>
 <div class="section" id="userdel">
+<<<<<<< HEAD
 <h3>userdel<a class="headerlink" href="#userdel" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id15">userdel</a><a class="headerlink" href="#userdel" title="永久链接至标题">¶</a></h3>
+<p>删除用户</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -742,10 +905,19 @@ root
 </table>
 </div>
 <div class="section" id="groupdel">
+<<<<<<< HEAD
 <h3>groupdel<a class="headerlink" href="#groupdel" title="永久链接至标题">¶</a></h3>
 </div>
 <div class="section" id="groupmod">
 <h3>groupmod<a class="headerlink" href="#groupmod" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id16">groupdel</a><a class="headerlink" href="#groupdel" title="永久链接至标题">¶</a></h3>
+<p>删除用户组</p>
+</div>
+<div class="section" id="groupmod">
+<h3><a class="toc-backref" href="#id17">groupmod</a><a class="headerlink" href="#groupmod" title="永久链接至标题">¶</a></h3>
+<p>修改用户组信息</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -760,7 +932,12 @@ root
 </table>
 </div>
 <div class="section" id="gpasswd">
+<<<<<<< HEAD
 <h3>gpasswd<a class="headerlink" href="#gpasswd" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id18">gpasswd</a><a class="headerlink" href="#gpasswd" title="永久链接至标题">¶</a></h3>
+<p>修改/新增用户组密码</p>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -778,11 +955,19 @@ root
 </table>
 </div>
 <div class="section" id="newgrp">
+<<<<<<< HEAD
 <h3>newgrp<a class="headerlink" href="#newgrp" title="永久链接至标题">¶</a></h3>
 <p>用户临时切换基本组</p>
 </div>
 <div class="section" id="chage">
 <h3>chage<a class="headerlink" href="#chage" title="永久链接至标题">¶</a></h3>
+=======
+<h3><a class="toc-backref" href="#id19">newgrp</a><a class="headerlink" href="#newgrp" title="永久链接至标题">¶</a></h3>
+<p>用户临时切换基本组</p>
+</div>
+<div class="section" id="chage">
+<h3><a class="toc-backref" href="#id20">chage</a><a class="headerlink" href="#chage" title="永久链接至标题">¶</a></h3>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -799,9 +984,12 @@ root
 </tbody>
 </table>
 </div>
-</div>
 <div class="section" id="sudo">
+<<<<<<< HEAD
 <h2>sudo<a class="headerlink" href="#sudo" title="永久链接至标题">¶</a></h2>
+=======
+<h3><a class="toc-backref" href="#id21">sudo</a><a class="headerlink" href="#sudo" title="永久链接至标题">¶</a></h3>
+>>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -826,6 +1014,7 @@ root
 <li>组使用%</li>
 <li>别名 User_Alias User1 = magedu,centos,test</li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -873,6 +1062,7 @@ root
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

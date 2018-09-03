@@ -15,7 +15,11 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import sys, os
 
+sys.path.append(os.path.abspath('sphinxext'))
+
+extensions = ['extname']
 
 
 # -- Project information -----------------------------------------------------
@@ -50,6 +54,7 @@ html_show_sourcelink = False
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.mathjax',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

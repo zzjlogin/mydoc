@@ -1,0 +1,49 @@
+.. _rst-code:
+
+==============================
+代码块 [1]_
+==============================
+
+* 有效的语言:
+
+  * ``none`` (没有高亮显示)
+  * ``python`` (默认， :confval:\`highlight_language` 没有设置时)
+  * ``guess`` (让 Pygments 根据内容去决定, 仅支持一些可识别的语言)
+  * ``rest``
+  * ``c``
+  * ``bash``
+  * ``json``
+  * ... 其他Pygments 支持的语言名.
+
+* 如果选定语言的高亮显示失败，则模块不会以其他方式高亮显示.
+
+* 代码显示行号，通过关键字：“:linenos:”、“:linenothreshold: 5”
+
+* 代码样例：
+
+ruby、python、c、none测试：
+
+.. code-block:: ruby
+
+     puts "Some Ruby code."
+
+.. code-block:: python
+    
+    import os
+    print('Some python code.')
+
+.. code-block:: c
+
+    #include <stdio.h>
+    int main(void) {
+        int count = printf("This is a test!\n");
+        printf("%d\n", count);
+        return 0;
+    }
+
+.. code-block:: none
+    
+    测试none
+
+.. [1]  http://docutils.sourceforge.net/docs/ref/rst/directives.html#code
+.. [code] https://zh-sphinx-doc.readthedocs.io/en/latest/markup/code.html

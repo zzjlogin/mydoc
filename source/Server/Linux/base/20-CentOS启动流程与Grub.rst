@@ -1,0 +1,122 @@
+
+===================================
+CentOS启动流程与Grub
+===================================
+
+:Date: 2018-09-02
+
+.. contents::
+
+系统启动流程
+===================================
+
+#. 加点自检，由bios程序实现，这个程序是固化在硬件里面的。
+#. 选择启动顺序，加载mbr，其中启动顺序的管理由boot loader提供。
+#. 加载系统内核kernel,执行系统初始化信息。
+#. 启动用户空间的第一个执行程序/sbin/init
+
+init的配置文件
+
+centos5： 采用sysv方式
+
+centos6： 采用upstart方式
+
+centos7:  采用systemd方式，启动非常快
+
+init的主要级别
+
+.. code-block:: text 
+
+    0  关机
+    1  单用户
+    2  多用户，没有nfs
+    3  多用户，文本界面
+    4  备用
+    5  图形界面
+    6  重启
+
+init的处理流程
+
+#. 获取默认level
+#. 使用/etc/rc.d/rc.sysinit初始化
+#. 读取对应levle下的服务 /etc/rc.d/rc{level}.d目录下的服务
+#. 配置ctrl + alt + del 功能件
+#. 配置不断电系统pf和pr两种机制
+#. 启动mintty6个终端
+#. 如果是5级别，就启动图形界面
+
+sysinit的处理流程
+
+#. 设置主机名字
+#. 打印欢迎信息
+#. 激活selinux和udev
+#. 挂载/etc/fstab定义的文件系统
+#. 挂载swap设备
+#. 重新读写挂载根文件系统
+#. 设置系统时钟
+#. 根据/etc/sysctl.conf文件设置内核参数
+#. 激活lvm和raid 
+#. 加载额外的驱动设备
+#. 清理工作
+
+
+grub 
+===================================
+
+grub运行阶段
+----------------------------------------------------------------
+
+linux将bootloader的程序运行和配置项分成三个阶段来运行。
+
+stage1: 
+    运行bootloader主程序，这个程序必须要被安装在启动区，也就是mbr中。因为空间有限，因此mbr当中
+    仅仅安装bootloader的最小主程序，并没有安装bootloader的相关配置文件
+stage1_5:
+    在mbr随后的扇区中存放，主要用于与stage2所在分区的文件系统进行交互。
+stage2: 
+    通过bootloader加载所有配置文件及其相关的环境参数信息，这些配置文件及其相关的环境参数都放在磁盘分区的
+    /boot目录下。
+
+grub.conf文件
+----------------------------------------------------------------
+
+.. code-block:: bash
+
+    [root@centos6 ~]$ cat /etc/grub.conf 
+    default=0
+    timeout=5
+    title centos6.9
+    kernel /vmlinuz-2.6.32-696.el6.x86_64 root=/dev/sda2
+    initrd /initramfs-2.6.32-696.el6.x86_64.img 
+
+主要配置项 
+
+.. code-block:: text 
+
+    (hd0,0)                     表示第一个磁盘的第一个分区
+    default=0                   表示默认是的启动条目
+    timeout=5                   选择等待时间
+    splashimage                 背景图片
+    hiddenmenu                  启动是否显示菜单
+    title                       定义各个操作系统的菜单
+    root                        定义内核文件存放的位置
+    kernel	                    内核的名称一些启动的核心参数
+    initrd                      虚拟的根文件系统
+    password                    保护作用
+
+
+CentOS系统启动图解
+==========================================
+
+.. image:: /images/server/linux/linuxstart.svg
+    :width: 600px
+    :align: center
+
+
+
+
+
+
+
+
+
