@@ -1,0 +1,42 @@
+
+.. _mydoc-lang:
+
+==============================
+编程语言学习
+==============================
+
+.. _zzjlogin-python:
+
+Python学习
+================================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :numbered:
+   
+   Python/*
+
+.. _zzjlogin-shell:
+
+Shell 编程
+================================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   :numbered:
+   
+   Shell/*
+
+.. _zzjlogin-algorithm:
+
+算法学习(Algorithm)
+================================================
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+   
+   Algorithm/*
+

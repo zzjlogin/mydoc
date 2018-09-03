@@ -166,7 +166,6 @@ figure
 
 
 
-It is methioned by [Ref]_ that C++ is good.
 
 .. [1]  http://docutils.sourceforge.net/docs/ref/rst/directives.html#images
 

@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-.. _mydoc-index:
+.. _zzjlogin-index:
 
-===============================
-=======
-
-==========
->>>>>>> 0a90d78f508cb091e3c2dadb8194db9df2bad7e3
+====================
 我的文档库
-===============================
-
+====================
 
 :Author: zzjlogin
 :Contact: login_root@163.com
@@ -20,6 +14,23 @@
    :glob:
    :hidden:
    
-   guide
+   Language
+   
+   Network
+   
+   Server
+   
+   Data
+   
+   MachineLearning
+   
+   ToolsOpenSource
+   
+   Others
+
+   log
+   
+   AboutMe
+   
    
    

@@ -7,7 +7,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    
    Language/*
@@ -20,7 +20,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    
@@ -34,7 +34,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    
    Network/*
@@ -46,7 +46,7 @@
 ==============================
 
 .. toctree::
-   :maxdepth: -1
+   :maxdepth: 1
    :glob:
 
    Data/*
@@ -60,7 +60,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    MachineLearning/*
@@ -72,7 +72,7 @@
 ==============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    
    
@@ -87,7 +87,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    Others/*
@@ -99,7 +99,7 @@
 ==============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    log

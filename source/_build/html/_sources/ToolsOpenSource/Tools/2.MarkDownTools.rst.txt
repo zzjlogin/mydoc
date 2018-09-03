@@ -6,14 +6,18 @@ MarkDown工具
 
 StackEdit
 
-    `StackEdit`_是个免费开源的Markdown编辑器，是基于PageDown(Stack Overflow使用的库)的。
+显示链接测试百度链接：baidu_biaoqian_。
+
+.. _baidu_biaoqian: https://www.baidu.com
+
+    StackEdit_ 是个免费开源的Markdown编辑器，是基于PageDown(Stack Overflow使用的库)的。
     此编辑器可以传教和管理存储在本地的多个文档，同时也可以从Google Drive或者Dropbox导出或者导入，可以保存文档为HTML格式。
 
 .. _StackEdit: https://stackedit.io/
 
 EpicEditor
 
-    `EpicEditor`_是个嵌入式JavaScript Markdown编辑器，带有独立全屏编辑，在线预览，自动草稿保存，支持离线等功能。
+    `EpicEditor`_ 是个嵌入式JavaScript Markdown编辑器，带有独立全屏编辑，在线预览，自动草稿保存，支持离线等功能。
     对于开发者来说，它提供一个强健的API，容易进行自定义；允许通过绑定的Markdown解析器转换任何想转换的东西。
     EpicEditor设置成可以允许用户使用任意的百年祭起，接受和返回一个字符串。这也说明用户可以使用任何风格的Markdown，process Textile，甚至是创建一个简单的HTML编辑器/预览器。同时，EpicEditor的主题也非常容易自定义。
 

@@ -1,35 +1,8 @@
-.. math::
-    \int_a^{b}f=\left[f(a+\dfrac{dx}{2})+f(a+dx+\dfrac{dx}{2})+(f(a+2dx+\dfrac{dx}{2})+\cdots \right]dx
+.. _zzjlogin-index:
 
-:math:`a^2 + b^2 = c^2`
-
-.. math::
-
-   (a + b)^2 = a^2 + 2ab + b^2
-
-   (a - b)^2 = a^2 - 2ab + b^2
-
-.. math::
-
-   (a + b)^2  &=  (a + b)(a + b) \\
-              &=  a^2 + 2ab + b^2
-
-
-.. math::
-   :nowrap:
-
-   \begin{eqnarray}
-      y    & = & ax^2 + bx + c \\
-      f(x) & = & x^2 + 2xy + y^2
-   \end{eqnarray}
-
-   
-
-   
-   
-==========
+====================
 我的文档库
-==========
+====================
 
 :Author: zzjlogin
 :Contact: login_root@163.com
@@ -41,7 +14,7 @@
    :glob:
    :hidden:
    
-   Program
+   Language
    
    Network
    
