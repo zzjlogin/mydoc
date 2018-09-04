@@ -1,0 +1,1022 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9.3. mysql安装 &mdash; 张志佳的技术文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../../search.html" />
+    <link rel="next" title="9.4. mariadb多实例安装" href="02-mysql多实例.html" />
+    <link rel="prev" title="9.2. sql语句" href="../sql语句.html" /> 
+
+  
+  <script src="../../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home"> 张志佳的技术文档
+          
+
+          
+            
+            <img src="../../../../../_static/logo-wordmark-light.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018-09-04
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Language.html">编程语言学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Language/Python.html">Python学习</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/01环境准备.html">1. 环境准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/01环境准备.html#python">1.1. 安装python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/01环境准备.html#ipython">1.2. ipython的安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/01环境准备.html#id2">1.3. ipython测试</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/02内建函数.html">2. 内建函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/02内建函数.html#id2">2.1. 常用内置函数</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html">4. 内置类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#id2">4.1. 真值测试</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#boolean">4.2. boolean操作符</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#id3">4.3. 比较操作符号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#int-float-complex">4.4. 数据类型int,float,complex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#list-tuple-range">4.5. 数据类型 list, tuple, range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">4.6. Binary Sequence Types — bytes, bytearray, memoryview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/04内置类型.html#set-types-set-frozenset">4.7. Set Types — set, frozenset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/05内置异常.html">5. 内置异常</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html">6. 文本处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#string">6.1. string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#re">6.2. re</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#difflib">6.3. difflib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#textwrap">6.4. textwrap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#unicodedata">6.5. unicodedata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#stringprep">6.6. stringprep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#readline">6.7. readline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/06文本处理.html#rlcompleter">6.8. rlcompleter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/07二进制处理.html">7. 二进制处理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/07二进制处理.html#struct">7.1. struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/07二进制处理.html#codecs">7.2. codecs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html">8. 数据类型</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#datetime">8.1. datetime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#calendar">8.2. calendar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#collectons">8.3. collectons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#collections-abc">8.4. collections.abc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#heapq">8.5. heapq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#bisect">8.6. bisect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#array">8.7. array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#weakref">8.8. weakref</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#types">8.9. types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#copy">8.10. copy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#pprint">8.11. pprint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#reprlib">8.12. reprlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#enum">8.13. enum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/08数据类型.html#flag">8.14. Flag</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html">9. 数值模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#numbers">9.1. numbers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#math">9.2. math</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#cmath">9.3. cmath</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#decimal">9.4. decimal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#fractions">9.5. fractions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#random">9.6. random</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/09数值模块.html#statistics">9.7. statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/10函数式编程模块.html">10. 函数式编程模块</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/10函数式编程模块.html#itertools">10.1. itertools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/10函数式编程模块.html#functools">10.2. functools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/10函数式编程模块.html#operator">10.3. operator</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html">11. 文件和目录访问</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#pathlib">11.1. pathlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#os-path">11.2. os.path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#fileinput">11.3. fileinput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#stat">11.4. stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#filecmp">11.5. filecmp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#tempfile">11.6. tempfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#glob">11.7. glob</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#fnmatch">11.8. fnmatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#linecache">11.9. linecache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#shutil">11.10. shutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/11文件和目录访问.html#macpath">11.11. macpath</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html">12. 数据持久化</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#pickle">12.1. pickle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#copyreg">12.2. copyreg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#shelve">12.3. shelve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#marshal">12.4. marshal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#dbm">12.5. dbm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/12数据持久化.html#sqllite">12.6. sqllite</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html">13. 数据压缩和归档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#zlib">13.1. zlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#gzip">13.2. gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#bz2">13.3. bz2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#lzma">13.4. lzma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#zipfile">13.5. zipfile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/13数据压缩和归档.html#tarfile">13.6. tarfile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html">14. 文件格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html#csv">14.1. csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html#configparser">14.2. configparser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html#netrc">14.3. netrc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html#xdrlib">14.4. xdrlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/14文件格式.html#plistlib">14.5. plistlib</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/15加密服务.html">15. 加密服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/15加密服务.html#hashlib">15.1. hashlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/15加密服务.html#hmac">15.2. hmac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/15加密服务.html#secrets">15.3. secrets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统服务.html">16. 通用操作系统服务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.1通用操作系统服务.html">16.1. os</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.2通用操作系统服务.html">16.2. io</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.3通用操作系统服务.html">16.3. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.4通用操作系统服务.html">16.4. argparse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.5通用操作系统服务.html">16.5. getopt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.6通用操作系统服务.html">16.6. logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.7通用操作系统服务.html">16.7. logging.Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.8通用操作系统服务.html">16.8. logging.Handlers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/16通用操作系统/16.9通用操作系统服务.html">16.9. getpass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html">17. 并发执行</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#threading">17.1. threading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#multiprocessing">17.2. multiprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#multiprocessing-process">17.3. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#id2">17.4. multiprocessing.Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#multiprocessing-queue">17.5. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#id3">17.6. multiprocessing.Queue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#multiprocessing-joinablequeue">17.7. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Python/17并发执行.html#multiprocessing-connection-connection">17.8. multiprocessing.connection.Connection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/18进程通信和网络.html">18. 进程通信和网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/19网络数据处理.html">19. 网络数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Python/20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Language/Algorithm.html">算法学习(Algorithm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Algorithm/index.html">树(tree)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Algorithm/tree/indroduction.html">树(tree)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Algorithm/index.html#ccf">CCF考试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Algorithm/ccf/201703-1.html">2017031-分蛋糕</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Algorithm/ccf/201703-2.html">2017032-学生排队</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Algorithm/ccf/201712-4.html">2017124-行车路线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Algorithm/ccf/201803-1.html">2018031-跳一跳</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Language/Shell.html">Shell 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Shell/1.base.html">1. Shell编程基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Shell/1.base.html#shell-about">1.1. Shell编程简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Shell/1.base.html#shell-demo">1.2. 入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Shell/1.base.html#shell-stander">1.3. Shell规范</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Shell/1.base.html#shell-cmd">1.4. Shell基础语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Language/Shell/1.base.html#id21">1.5. Shell調試</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Language/Shell/2.advance.html">2. Shell编程高级用法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Network.html">计算机网络学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Network/1.NetworkTheory.html">理论学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Network/2.HuaWei.html">华为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Network/3.H3C.html">H3C(华三/新华三)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Network/4.CISCO.html">思科(CISCO)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../Server.html">服务器相关学习</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../1.AboutAndClass.html">服务器相关常识</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../2.Linux.html">Linux 服务器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../1.cmd.html">Linux命令汇总</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/Ctrl+d.html">1. Ctrl+d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/alias.html">2. alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/basename.html">3. basename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/bc.html">4. bc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/bg.html">5. bg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/cal.html">6. cal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/cat.html">7. cat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/cd.html">8. cd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chage.html">9. chage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chattr.html">10. chattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chgrp.html">11. chgrp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chkconfig.html">12. chkconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chmod.html">13. chmod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/chown.html">14. chown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/clear.html">15. clear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/cp.html">16. cp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/crontab.html">17. crontab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/cut.html">18. cut</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/date.html">19. date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dd.html">20. dd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/df.html">21. df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/diff.html">22. diff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dig.html">23. dig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dirname.html">24. dirname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dmesg.html">25. dmesg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dos2unix.html">26. dos2unix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/du.html">27. du</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dump.html">28. dump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/dumpe2fs.html">29. dumpe2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/e2fsck.html">30. e2fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/echo.html">31. echo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/eject.html">32. eject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/exec.html">33. exec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/exit.html">34. exit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/export.html">35. export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/fdisk.html">36. fdisk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/fg.html">37. fg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/file.html">38. file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/find.html">39. find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/finger.html">40. finger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/free.html">41. free</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/fsck.html">42. fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/grep.html">43. grep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/groupadd.html">44. groupadd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/gzip.html">45. gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/halt.html">46. halt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/head.html">47. head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/history.html">48. history</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/host.html">49. host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/hostname.html">50. hostname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/iconv.html">51. iconv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/id.html">52. id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ifconfig.html">53. ifconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ifdown.html">54. ifdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ifup.html">55. ifup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/init.html">56. init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/iostat.html">57. iostat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ipcrm.html">58. ipcrm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ipcs.html">59. ipcs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/jobs.html">60. jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/join.html">61. join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/kill.html">62. kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/killall.html">63. killall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/last.html">64. last</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/lastlog.html">65. lastlog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/less.html">66. less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/locate.html">67. locate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/logout.html">68. logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ls.html">69. ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/lsattr.html">70. lsattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/lsof.html">71. lsof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ltrace.html">72. ltrace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mail.html">73. mail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/md5sum.html">74. md5sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mkdir.html">75. mkdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mkfs.html">76. mkfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mkswap.html">77. mkswap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/more.html">78. more</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mount.html">79. mount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mpstat.html">80. mpstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mutt.html">81. mutt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/mv.html">82. mv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/nc.html">83. nc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/netstat.html">84. netstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/nice.html">85. nice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/nmap.html">86. nmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/nohup.html">87. nohup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/nslookup.html">88. nslookup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/parted.html">89. parted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/partprobe.html">90. partprobe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/passwd.html">91. passwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/paste.html">92. paste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/pgrep.html">93. pgrep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ping.html">94. ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/pkill.html">95. pkill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/poweroff.html">96. poweroff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/printf.html">97. printf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ps.html">98. ps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/pstree.html">99. pstree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/pwd.html">100. pwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/rename.html">101. rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/resize2fs.html">102. resize2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/rev.html">103. rev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/rm.html">104. rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/rmdir.html">105. rmdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/route.html">106. route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/rpm.html">107. rpm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/runlevel.html">108. runlevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/sar.html">109. sar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/scp.html">110. scp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/service.html">111. service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/shutdown.html">112. shutdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/sort.html">113. sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/split.html">114. split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ss.html">115. ss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/ssh.html">116. ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/stat.html">117. stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/strace.html">118. strace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/su.html">119. su</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/sudo.html">120. sudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/swapoff.html">121. swapoff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/swapon.html">122. swapon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/sync.html">123. sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tac.html">124. tac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tail.html">125. tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tar.html">126. tar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tcpdump.html">127. tcpdump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/telnet.html">128. telnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/time.html">129. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/top.html">130. top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/touch.html">131. touch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tr.html">132. tr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/traceroute.html">133. traceroute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/tree.html">134. tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/type.html">135. type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/umask.html">136. umask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/umount.html">137. umount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/unalias.html">138. unalias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/uname.html">139. uname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/uniq.html">140. uniq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/unset.html">141. unset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/unzip.html">142. unzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/uptime.html">143. uptime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/useradd.html">144. useradd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/userdel.html">145. userdel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/usermod.html">146. usermod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/users.html">147. users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/vi.html">148. vi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/vimdiff.html">149. vimdiff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/visudo.html">150. visudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/vmstat.html">151. vmstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/w.html">152. w</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/watch.html">153. watch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/wc.html">154. wc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/wget.html">155. wget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/whereis.html">156. whereis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/which.html">157. which</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/who.html">158. who</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/whoami.html">159. whoami</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/xargs.html">160. xargs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/yum.html">161. yum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../cmd/zip.html">162. xxxx</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../2.base.html">Linux基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/01-Linux简介.html">1. Linux 简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/02-Linux入门.html">2. 计算机简述</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/03-文件系统.html">3. Linux文件系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/04-Bash特性.html">4. bash的基础特性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/05-linux用户组管理.html">5. linux用户和组管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/07-grep正则表达式.html">6. grep正则表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/08-Linux文件查找.html">7. Linux文件查找</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/09-Vim编辑器.html">8. Vim编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/10-Linux磁盘管理.html">9. Linux磁盘管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/11-Linux文件权限.html">10. Linux文件权限</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/12-RAID.html">11. RAID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/13-LVM.html">12. LVM逻辑卷 </a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/14-Btrfs文件系统.html">13. Btrfs文件系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/15-解压缩.html">14. 解压缩</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/16-Linux程序包管理.html">15. Linux程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/16-Linux系统程序包管理.html">16. Linux系统程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/17-Linux系统网络属性管理.html">17. Linux系统网络属性管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/17-Linux系统网络管理.html">18. Linux系统网络管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/18-Linux进程管理.html">19. Linux进程管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/19-Linux任务计划.html">20. Linux任务计划</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/20-CentOS启动流程与Grub.html">21. CentOS启动流程与Grub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/21-Linux Kernel.html">22. Linux Kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/22-文本处理工具之sed,awk.html">23. 文本处理工具之sed,awk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/23-Openssl.html">24. Openssl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/24-Nssitch、pam.html">25. Nssitch、pam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/25-文件共享服务.html">26. 文件共享服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/26-DNS域名解析服务.html">27. DNS域名解析服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/27-Linux系统防火墙.html">28. Linux系统防火墙</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/28-LinuxSyslog系统日志管理.html">29. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../base/29-WebServices.html">30. Web Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../3.service.html">Linux服务器</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../DHCP/index.html">1. dhcp服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Rsync同步/index.html">2. Rsync同步</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../自动化安装/index.html">3. 自动化安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../自动化运维/index.html">4. 自动化运维</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../安全和监控/index.html">5. 安全和监控</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../远程登陆/index.html">6. 远程登陆</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../认证/index.html">7. 认证</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../DNS/index.html">8. DNS</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">9. 数据库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../WEB/index.html">10. WEB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../日志管理/index.html">11. 日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../网络文件共享/index.html">12. 网络文件共享</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../版本控制/index.html">13. 版本控制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../集群/index.html">14. 集群</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../容器/index.html">15. 容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../虚拟化/index.html">16. 虚拟化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../杂项/index.html">17. 杂项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../3.Unix.html">Unix 和类Unix</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../4.Windows.html">Windows 服务器</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../5.Optimization.html">服务器优化</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../6.FAQ.html">常见问题及解决(FAQ)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Data.html">数据相关/大数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Data/index.html">数据相关/大数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../MachineLearning.html">机器学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../MachineLearning/index.html">机器学习入门</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../ToolsOpenSource.html">工具和开源项目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/index.html">用reStructuredText实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/1.index.html">1. rST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法学习</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/4.toOthers.html">4. 格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/5.API.html">5. 文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/6.rstTools.html">6. reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">7. 其他</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/index.html#markdown">用MarkDown实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ToolsOpenSource/Tools/MarkDown/MarkDownTools.html">1. MarkDown常用工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Others.html">其他杂项</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Others/index.html">电脑疑难杂症</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../log.html">更新日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../AboutMe.html">关于我</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">张志佳的技术文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../../../Server.html">服务器相关学习</a> &raquo;</li>
+        
+          <li><a href="../../../../2.Linux.html">Linux 服务器</a> &raquo;</li>
+        
+          <li><a href="../../../3.service.html">Linux服务器</a> &raquo;</li>
+        
+          <li><a href="../../index.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../index.html">9. 数据库</a> &raquo;</li>
+        
+      <li>9.3. mysql安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02-mysql多实例.html" class="btn btn-neutral float-right" title="9.4. mariadb多实例安装" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sql语句.html" class="btn btn-neutral" title="9.2. sql语句" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mysql">
+<h1>9.3. mysql安装<a class="headerlink" href="#mysql" title="永久链接至标题">¶</a></h1>
+<div class="section" id="yum">
+<h2>9.3.1. yum安装<a class="headerlink" href="#yum" title="永久链接至标题">¶</a></h2>
+<p>yum安装是三种安装方式最简单的方式：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 ~<span class="o">]</span><span class="c1"># yum info mariadb-server</span>
+<span class="o">[</span>root@7 ~<span class="o">]</span><span class="c1"># yum install mariadb</span>
+</pre></div>
+</div>
+<p>上面方式可能下载的版本比较旧，如果想安装最新稳定版本，去这里选择 Maraidb-repo,按照下图提示操作，添加repo文件即可。</p>
+<img alt="images/mysql/yum配置.png" src="images/mysql/yum配置.png" />
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 ~<span class="o">]</span><span class="c1"># cd /etc/yum.repos.d/</span>
+<span class="o">[</span>root@7 yum.repos.d<span class="o">]</span><span class="c1"># ls</span>
+bak  cdrom.repo  epel-7.repo
+<span class="o">[</span>root@7 yum.repos.d<span class="o">]</span><span class="c1"># vim mariadb.repo</span>
+<span class="o">[</span>root@7 yum.repos.d<span class="o">]</span><span class="c1"># cat mariadb.repo</span>
+<span class="c1"># MariaDB 10.2 CentOS repository list - created 2018-01-20 01:29 UTC</span>
+<span class="c1"># http://downloads.mariadb.org/mariadb/repositories/</span>
+<span class="o">[</span>mariadb<span class="o">]</span>
+<span class="nv">name</span> <span class="o">=</span> MariaDB
+<span class="nv">baseurl</span> <span class="o">=</span> http://yum.mariadb.org/10.2/centos7-amd64
+<span class="nv">gpgkey</span><span class="o">=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+<span class="o">[</span>root@7 yum.repos.d<span class="o">]</span><span class="c1"># sudo yum install MariaDB-server MariaDB-client</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>9.3.2. 二进制安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>9.3.2.1. 原有版本的卸载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 ~<span class="o">]</span><span class="c1"># sudo yum remove MariaDB-server MariaDB-client</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>9.3.2.2. 下载数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://downloads.mariadb.org/">下载地址</a>.</p>
+<img alt="images/mysql/下载二进制.png" src="images/mysql/下载二进制.png" />
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">centos7的下载systemd的，centos6下载第二个。</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 src<span class="o">]</span><span class="c1"># cd /usr/src</span>
+<span class="o">[</span>root@7 src<span class="o">]</span><span class="c1"># wget https://downloads.mariadb.org/interstitial/mariadb-10.2.12/bintar-linux-systemd-x86_64/mariadb-10.2.12-linux-systemd-x86_64.tar.gz/from/http%3A/.edu.cn/mariadb/     \</span>
+ -O mariadb-10.2.12-linux-systemd-x86_64.tar.gz
+<span class="o">[</span>root@7 src<span class="o">]</span><span class="c1"># tar xf mariadb-10.2.12-linux-systemd-x86_64.tar.gz  -C /usr/local/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>9.3.2.3. 创建用户和组<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 src<span class="o">]</span><span class="c1"># groupadd -g 27 -r mysql</span>
+<span class="o">[</span>root@7 src<span class="o">]</span><span class="c1"># useradd -r -u 27 -g mysql mysql -s /sbin/nologin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>9.3.2.4. 安装<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>[root&#64;7 src]# cd /usr/local/
+[root&#64;7 local]# ls
+bin  etc  games  include  lib  lib64  libexec  mariadb-10.2.12-linux-systemd-x86_64  sbin  share  src
+[root&#64;7 local]# ln -s mariadb-10.2.12-linux-systemd-x86_64 mysql
+[root&#64;7 local]# chown -R mysql:mysql  mysql/
+[root&#64;7 local]# echo ‘PATH=/usr/local/bin:$PATH’ &gt;&gt; /etc/profile.d/mysql.sh
+[root&#64;7 local]# cat /etc/profile.d/mysql.sh
+PATH=/usr/local/bin:$PATH
+[root&#64;7 local]# source /etc/profile.d/mysql.sh</p>
+</div>
+<div class="section" id="id7">
+<h3>9.3.2.5. 存储设备准备<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">数据库文件占用空间很大的，建议放到lvm上面去，容易扩展，避免导致根分区占用过大。</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># lsblk</span>
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               <span class="m">8</span>:0    <span class="m">0</span>  200G  <span class="m">0</span> disk
+├─sda1            <span class="m">8</span>:1    <span class="m">0</span>    1G  <span class="m">0</span> part /boot
+└─sda2            <span class="m">8</span>:2    <span class="m">0</span>  199G  <span class="m">0</span> part
+├─centos-root <span class="m">253</span>:0    <span class="m">0</span>   50G  <span class="m">0</span> lvm  /
+├─centos-swap <span class="m">253</span>:1    <span class="m">0</span>    2G  <span class="m">0</span> lvm  <span class="o">[</span>SWAP<span class="o">]</span>
+└─centos-home <span class="m">253</span>:2    <span class="m">0</span>  147G  <span class="m">0</span> lvm  /home
+sr0              <span class="m">11</span>:0    <span class="m">1</span>  <span class="m">8</span>.1G  <span class="m">0</span> rom  /mnt/cdrom
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># for i in `find /sys/devices/ -name scan` ; do echo &quot;- - -&quot; &gt; $i ; done;</span>
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># lsblk</span>
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               <span class="m">8</span>:0    <span class="m">0</span>  200G  <span class="m">0</span> disk
+├─sda1            <span class="m">8</span>:1    <span class="m">0</span>    1G  <span class="m">0</span> part /boot
+└─sda2            <span class="m">8</span>:2    <span class="m">0</span>  199G  <span class="m">0</span> part
+├─centos-root <span class="m">253</span>:0    <span class="m">0</span>   50G  <span class="m">0</span> lvm  /
+├─centos-swap <span class="m">253</span>:1    <span class="m">0</span>    2G  <span class="m">0</span> lvm  <span class="o">[</span>SWAP<span class="o">]</span>
+└─centos-home <span class="m">253</span>:2    <span class="m">0</span>  147G  <span class="m">0</span> lvm  /home
+sdb               <span class="m">8</span>:16   <span class="m">0</span>   20G  <span class="m">0</span> disk
+sr0              <span class="m">11</span>:0    <span class="m">1</span>  <span class="m">8</span>.1G  <span class="m">0</span> rom  /mnt/cdrom
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># fdisk /dev/sdb</span>
+Welcome to fdisk <span class="o">(</span>util-linux <span class="m">2</span>.23.2<span class="o">)</span>.
+
+Changes will remain in memory only, <span class="k">until</span> you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table
+Building a new DOS disklabel with disk identifier 0x489a4915.
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+Partition type:
+p   primary <span class="o">(</span><span class="m">0</span> primary, <span class="m">0</span> extended, <span class="m">4</span> free<span class="o">)</span>
+e   extended
+Select <span class="o">(</span>default p<span class="o">)</span>: p
+Partition number <span class="o">(</span><span class="m">1</span>-4, default <span class="m">1</span><span class="o">)</span>:
+First sector <span class="o">(</span><span class="m">2048</span>-41943039, default <span class="m">2048</span><span class="o">)</span>:
+Using default value <span class="m">2048</span>
+Last sector, +sectors or +size<span class="o">{</span>K,M,G<span class="o">}</span> <span class="o">(</span><span class="m">2048</span>-41943039, default <span class="m">41943039</span><span class="o">)</span>: +5G
+Partition <span class="m">1</span> of <span class="nb">type</span> Linux and of size <span class="m">5</span> GiB is <span class="nb">set</span>
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: t
+Selected partition <span class="m">1</span>
+Hex code <span class="o">(</span><span class="nb">type</span> L to list all codes<span class="o">)</span>: 8e
+Changed <span class="nb">type</span> of partition <span class="s1">&#39;Linux&#39;</span> to <span class="s1">&#39;Linux LVM&#39;</span>
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: p
+
+Disk /dev/sdb: <span class="m">21</span>.5 GB, <span class="m">21474836480</span> bytes, <span class="m">41943040</span> sectors
+<span class="nv">Units</span> <span class="o">=</span> sectors of <span class="m">1</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">512</span> bytes
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+Disk label type: dos
+Disk identifier: 0x489a4915
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1            <span class="m">2048</span>    <span class="m">10487807</span>     <span class="m">5242880</span>   8e  Linux LVM
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
+The partition table has been altered!
+
+Calling ioctl<span class="o">()</span> to re-read partition table.
+Syncing disks.
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># lsblk</span>
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               <span class="m">8</span>:0    <span class="m">0</span>  200G  <span class="m">0</span> disk
+├─sda1            <span class="m">8</span>:1    <span class="m">0</span>    1G  <span class="m">0</span> part /boot
+└─sda2            <span class="m">8</span>:2    <span class="m">0</span>  199G  <span class="m">0</span> part
+├─centos-root <span class="m">253</span>:0    <span class="m">0</span>   50G  <span class="m">0</span> lvm  /
+├─centos-swap <span class="m">253</span>:1    <span class="m">0</span>    2G  <span class="m">0</span> lvm  <span class="o">[</span>SWAP<span class="o">]</span>
+└─centos-home <span class="m">253</span>:2    <span class="m">0</span>  147G  <span class="m">0</span> lvm  /home
+sdb               <span class="m">8</span>:16   <span class="m">0</span>   20G  <span class="m">0</span> disk
+└─sdb1            <span class="m">8</span>:17   <span class="m">0</span>    5G  <span class="m">0</span> part
+sr0              <span class="m">11</span>:0    <span class="m">1</span>  <span class="m">8</span>.1G  <span class="m">0</span> rom  /mnt/cdrom
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># pvcreate /dev/sdb1</span>
+Physical volume <span class="s2">&quot;/dev/sdb1&quot;</span> successfully created.
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># vgcreate  vg_data /dev/sdb1</span>
+Volume group <span class="s2">&quot;vg_data&quot;</span> successfully created
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># lvcreate -n lv_mysql -l 100%FREE vg_data</span>
+Logical volume <span class="s2">&quot;lv_mysql&quot;</span> created.
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># mkfs.xfs  /dev/mapper/vg_data-lv_mysql</span>
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># mkdir /data/mysql -pv</span>
+mkdir: created directory ‘/data’
+mkdir: created directory ‘/data/mysql’
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># mount /dev/mapper/vg_data-lv_mysql  /data/mysql/</span>
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># tail -n /etc/mtab</span>
+tail: /etc/mtab: invalid number of lines
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># tail -n 1 /etc/mtab</span>
+/dev/mapper/vg_data-lv_mysql /data/mysql xfs rw,seclabel,relatime,attr2,inode64,noquota <span class="m">0</span> <span class="m">0</span>
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># tail -n 1 /etc/mtab &gt;&gt; /etc/fstab</span>
+<span class="o">[</span>root@7 local<span class="o">]</span><span class="c1"># cd /data/</span>
+<span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">0</span>
+drwxr-xr-x. <span class="m">2</span> root root <span class="m">6</span> Jan <span class="m">20</span> <span class="m">14</span>:00 mysql
+<span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># chown mysql.mysql mysql/</span>
+<span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">0</span>
+drwxr-xr-x. <span class="m">2</span> mysql mysql <span class="m">6</span> Jan <span class="m">20</span> <span class="m">14</span>:00 mysql
+<span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># chmod -R 770 mysql/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>9.3.2.6. 安装并配置<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># chmod -R 770 mysql/</span>
+<span class="o">[</span>root@7 data<span class="o">]</span><span class="c1"># cd /usr/local/mysql/</span>
+<span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># ll</span>
+<span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># ./scripts/mysql_install_db --datadir=/data/mysql --user=mysql    # 安装库</span>
+<span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># cp support-files/my-huge.cnf /etc/my.conf</span>
+<span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># ll /etc/my.conf</span>
+-rw-r--r--. <span class="m">1</span> root root <span class="m">4914</span> Jan <span class="m">20</span> <span class="m">14</span>:19 /etc/my.conf
+
+<span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># vim /etc/my.conf</span>
+<span class="c1"># 添加如下项到[mysqld]的下一行</span>
+<span class="nv">datadir</span>         <span class="o">=</span> /data/mysql
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>9.3.2.7. 启动服务<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> <span class="o">[</span>root@7 mysql<span class="o">]</span><span class="c1"># cp support-files/mysql.server /etc/rc.d/init.d/mysqld</span>
+ <span class="o">[</span>root@centos7 mysql<span class="o">]</span><span class="c1"># vim /etc/rc.d/init.d/mysqld</span>
+ <span class="c1"># 找到basedir行，修改如下内容</span>
+ <span class="nv">basedir</span><span class="o">=</span>/usr/local/mysql
+ <span class="nv">datadir</span><span class="o">=</span>/data/mysqldb
+ <span class="o">[</span>root@centos7 mysql<span class="o">]</span><span class="c1"># chkconfig --add mysqld</span>
+ <span class="o">[</span>root@centos7 mysql<span class="o">]</span><span class="c1"># chkconfig mysqld on</span>
+<span class="o">[</span>root@centos7 mysql<span class="o">]</span><span class="c1"># mysql</span>
+ Welcome to the MariaDB monitor.  Commands end with <span class="p">;</span> or <span class="se">\g</span>.
+ Your MariaDB connection id is <span class="m">9</span>
+ Server version: <span class="m">10</span>.2.12-MariaDB MariaDB Server
+
+ Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2000</span>, <span class="m">2017</span>, Oracle, MariaDB Corporation Ab and others.
+
+ Type <span class="s1">&#39;help;&#39;</span> or <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> help. Type <span class="s1">&#39;\c&#39;</span> to clear the current input statement.
+
+ MariaDB <span class="o">[(</span>none<span class="o">)]</span>&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>9.3.2.8. 数据库安全安装设置<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos7 mysql<span class="o">]</span><span class="c1"># mysql_secure_installation</span>
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+    SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we<span class="s1">&#39;ll need the current</span>
+<span class="s1">password for the root user.  If you&#39;</span>ve just installed MariaDB, and
+you haven<span class="s1">&#39;t set the root password yet, the password will be blank,</span>
+<span class="s1">so you should just press enter here.</span>
+
+<span class="s1">Enter current password for root (enter for none):      # 没有密码就直接回车，有的话就输入</span>
+<span class="s1">OK, successfully used password, moving on...</span>
+
+<span class="s1">Setting the root password ensures that nobody can log into the MariaDB</span>
+<span class="s1">root user without the proper authorisation.</span>
+
+<span class="s1">Set root password? [Y/n] y</span>
+<span class="s1">New password:</span>
+<span class="s1">Re-enter new password:</span>
+<span class="s1">Password updated successfully!</span>
+<span class="s1">Reloading privilege tables..</span>
+<span class="s1">... Success!</span>
+
+
+<span class="s1">By default, a MariaDB installation has an anonymous user, allowing anyone</span>
+<span class="s1">to log into MariaDB without having to have a user account created for</span>
+<span class="s1">them.  This is intended only for testing, and to make the installation</span>
+<span class="s1">go a bit smoother.  You should remove them before moving into a</span>
+<span class="s1">production environment.</span>
+
+<span class="s1">Remove anonymous users? [Y/n] y</span>
+<span class="s1">... Success!</span>
+
+<span class="s1">Normally, root should only be allowed to connect from &#39;</span>localhost<span class="s1">&#39;.  This</span>
+<span class="s1">ensures that someone cannot guess at the root password from the network.</span>
+
+<span class="s1">Disallow root login remotely? [Y/n] y</span>
+<span class="s1">... Success!</span>
+
+<span class="s1">By default, MariaDB comes with a database named &#39;</span>test<span class="s1">&#39; that anyone can</span>
+<span class="s1">access.  This is also intended only for testing, and should be removed</span>
+<span class="s1">before moving into a production environment.</span>
+
+<span class="s1">Remove test database and access to it? [Y/n] y</span>
+<span class="s1">- Dropping test database...</span>
+<span class="s1">... Success!</span>
+<span class="s1">- Removing privileges on test database...</span>
+<span class="s1">... Success!</span>
+
+<span class="s1">Reloading the privilege tables will ensure that all changes made so far</span>
+<span class="s1">will take effect immediately.</span>
+
+<span class="s1">Reload privilege tables now? [Y/n] y</span>
+<span class="s1">... Success!</span>
+
+<span class="s1">Cleaning up...</span>
+
+<span class="s1">All done!  If you&#39;</span>ve completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks <span class="k">for</span> using MariaDB!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>9.3.3. 源码安装<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 下载文件</span>
+wget https://downloads.mariadb.org/interstitial/mariadb-10.2.12/bintar-linux-systemd-x86_64/mariadb-10.2.12-linux-systemd-x86_64.tar.gz/from/http%3A//mirrors.tuna.tsinghua.edu.cn/mariadb/ <span class="se">\</span>
+-O mariadb-10.2.12-linux-systemd-x86_64.tar.gz
+<span class="c1"># 解压</span>
+<span class="o">[</span>root@centos151 ~<span class="o">]</span><span class="c1"># tar xf mariadb-10.2.12.tar.gz</span>
+<span class="o">[</span>root@centos151 ~<span class="o">]</span><span class="c1"># cd mariadb-10.2.12/</span>
+<span class="o">[</span>root@centos151 mariadb-10.2.12<span class="o">]</span><span class="c1">#</span>
+<span class="o">[</span>root@centos151 bin<span class="o">]</span><span class="c1"># cmake . \</span>
+-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/app/mysql <span class="se">\</span>
+-DMYSQL_DATADIR<span class="o">=</span>/mysqldb/ <span class="se">\</span>
+-DSYSCONFDIR<span class="o">=</span>/etc <span class="se">\</span>
+-DMYSQL_USER<span class="o">=</span>mysql <span class="se">\</span>
+-DWITH_INNOBASE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_ARCHIVE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_BLACKHOLE_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_READLINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_SSL<span class="o">=</span>system <span class="se">\</span>
+-DWITH_ZLIB<span class="o">=</span>system <span class="se">\</span>
+-DWITH_LIBWRAP<span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-DMYSQL_UNIX_ADDR<span class="o">=</span>/app/mysql/mysql.sock <span class="se">\</span>
+-DDEFAULT_CHARSET<span class="o">=</span>utf8 <span class="se">\</span>
+-DDEFAULT_COLLATION<span class="o">=</span>utf8_general_ci <span class="se">\</span>
+-DENABLED_LOCAL_INFILE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_PARTITION_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-DWITH_DEBUG<span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-DWITHOUT_MROONGA_STORAGE_ENGINE<span class="o">=</span><span class="m">1</span>
+<span class="o">[</span>root@centos151 mariadb-10.2.12<span class="o">]</span><span class="c1"># make &amp;&amp; make install</span>
+<span class="o">[</span>root@centos151 mariadb-10.2.12<span class="o">]</span><span class="c1"># echo &#39;PATH=/app/mysql/bin:$PATH&#39; &gt; /etc/profile.d/mysql.sh</span>
+<span class="o">[</span>root@centos151 mariadb-10.2.12<span class="o">]</span><span class="c1"># source /etc/profile.d/mysql.sh</span>
+<span class="o">[</span>root@centos151 mariadb-10.2.12<span class="o">]</span><span class="c1"># cd /app/mysql</span>
+<span class="o">[</span>root@centos151 mysql<span class="o">]</span><span class="c1"># scripts/mysql_install_db --basedir=/app/mysql --datadir=/app/mysql/data --user=mysql</span>
+<span class="o">[</span>root@centos151 mysql<span class="o">]</span><span class="c1"># cp support-files/my-huge.cnf /etc/my.cnf</span>
+<span class="o">[</span>root@centos151 mysql<span class="o">]</span><span class="c1"># vim /etc/my.cnf</span>
+<span class="c1"># 添加如下行到mysqld片段内部</span>
+<span class="nv">basedir</span><span class="o">=</span>/app/mysql
+<span class="nv">datadir</span><span class="o">=</span>/app/mysql/data
+<span class="o">[</span>root@centos151 mysql<span class="o">]</span><span class="c1"># chown mysql.mysql /app/mysql/ -R</span>
+<span class="o">[</span>root@centos151 mysql<span class="o">]</span><span class="c1"># chkconfig --add mysql</span>
+<span class="o">[</span>root@centos151 init.d<span class="o">]</span><span class="c1"># service mysql restart</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02-mysql多实例.html" class="btn btn-neutral float-right" title="9.4. mariadb多实例安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sql语句.html" class="btn btn-neutral" title="9.2. sql语句" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, 张志佳.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../../',
+            VERSION:'1.0',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

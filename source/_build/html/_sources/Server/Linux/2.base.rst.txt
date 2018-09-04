@@ -1,7 +1,5 @@
-<<<<<<< HEAD
+.. _linux-base:
 
-=======
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a
 =========================
 Linux基础
 =========================
@@ -10,9 +8,5 @@ Linux基础
    :maxdepth: 1
    :glob:
    :numbered:
-   
-<<<<<<< HEAD
+
    base/*
-=======
-   base/*
->>>>>>> 1a3b0948bc58a8b5673388d7fcbc7aded3ebe41a

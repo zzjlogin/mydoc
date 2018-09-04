@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. bash的基础特性 &mdash; 张志佳的技术文档 1.0 文档</title>
+  <title>4. bash的基础特性 &mdash; 张志佳的技术文档 1.0 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="7. LINUX上bash的基础特性(二)" href="04-bash特性2.html" />
-    <link rel="prev" title="5. Linux文件系统" href="03-文件系统.html" /> 
+    <link rel="next" title="5. linux用户和组管理" href="05-linux用户组管理.html" />
+    <link rel="prev" title="3. Linux文件系统" href="03-文件系统.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-03
+                2018-09-04
               </div>
             
           
@@ -86,8 +86,8 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html">编程语言学习</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Language/index.html">Python学习</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Language/Python.html">Python学习</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Language/Python/01环境准备.html">1. 环境准备</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../Language/Python/01环境准备.html#python">1.1. 安装python</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Language/Python/01环境准备.html#ipython">1.2. ipython的安装</a></li>
@@ -233,19 +233,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../Language/Python/20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Language/index.html#shell">Shell 编程</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../Language/Shell/1.base.html">1. Shell编程基础</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-about">1.1. Shell编程简介</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-demo">1.2. 入门样例</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-stander">1.3. Shell规范</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-cmd">1.4. Shell基础语句</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#id21">1.5. Shell調試</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../Language/Shell/2.advance.html">2. Shell编程高级用法</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Language/index.html#algorithm">算法学习(Algorithm)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Language/Algorithm.html">算法学习(Algorithm)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Language/Algorithm/index.html">树(tree)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../Language/Algorithm/tree/indroduction.html">树(tree)</a></li>
 </ul>
@@ -259,12 +247,33 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Language/Shell.html">Shell 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Language/Shell/1.base.html">1. Shell编程基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-about">1.1. Shell编程简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-demo">1.2. 入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-stander">1.3. Shell规范</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#shell-cmd">1.4. Shell基础语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Language/Shell/1.base.html#id21">1.5. Shell調試</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../../guide.html#mydoc-server">服务器相关学习</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../index.html">服务器相关常识</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#linux">Linux 服务器</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../index.html">Linux命令汇总</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Language/Shell/2.advance.html">2. Shell编程高级用法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Network.html">计算机网络学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/1.NetworkTheory.html">理论学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/2.HuaWei.html">华为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/3.H3C.html">H3C(华三/新华三)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/4.CISCO.html">思科(CISCO)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Server.html">服务器相关学习</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../1.AboutAndClass.html">服务器相关常识</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../2.Linux.html">Linux 服务器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../1.cmd.html">Linux命令汇总</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../cmd/Ctrl+d.html">1. Ctrl+d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cmd/alias.html">2. alias</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../cmd/basename.html">3. basename</a></li>
@@ -429,76 +438,85 @@
 <li class="toctree-l4"><a class="reference internal" href="../cmd/zip.html">162. xxxx</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#id1">Linux基础</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../2.base.html">Linux基础</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="01-Linux简介.html">1. Linux 简介</a></li>
 <li class="toctree-l4"><a class="reference internal" href="02-Linux入门.html">2. 计算机简述</a></li>
-<li class="toctree-l4"><a class="reference internal" href="02-文件系统.html">3. LINUX文件系统</a></li>
-<li class="toctree-l4"><a class="reference internal" href="03-Bash特性.html">4. LINUX上bash的基础特性(一）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="03-文件系统.html">5. Linux文件系统</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">6. bash的基础特性</a></li>
-<li class="toctree-l4"><a class="reference internal" href="04-bash特性2.html">7. LINUX上bash的基础特性(二)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="05-linux用户组管理.html">8. linux用户和组管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="06-linuxbash特性3.html">9. Linux上bash的基础特性（三）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="07-grep正则表达式.html">10. grep正则表达式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="08-Linux文件查找.html">11. Linux文件查找</a></li>
-<li class="toctree-l4"><a class="reference internal" href="09-Vim编辑器.html">12. Vim编辑器</a></li>
-<li class="toctree-l4"><a class="reference internal" href="10-Linux磁盘管理.html">13. Linux磁盘管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11-Linux文件权限.html">14. Linux文件权限</a></li>
-<li class="toctree-l4"><a class="reference internal" href="11-Linux文件系统上的权限.html">15. Linux文件系统上的权限</a></li>
-<li class="toctree-l4"><a class="reference internal" href="12-RAID.html">16. RAID</a></li>
-<li class="toctree-l4"><a class="reference internal" href="13-LVM.html">17. LVM逻辑卷 </a></li>
-<li class="toctree-l4"><a class="reference internal" href="14-Btrfs文件系统.html">18. Btrfs文件系统</a></li>
-<li class="toctree-l4"><a class="reference internal" href="15-解压缩.html">19. 解压缩</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16-Linux程序包管理.html">20. Linux程序包管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="16-Linux系统程序包管理.html">21. Linux系统程序包管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="17-Linux系统网络属性管理.html">22. Linux系统网络属性管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="17-Linux系统网络管理.html">23. Linux系统网络管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="18-Linux进程及作业管理.html">24. Linux进程及作业管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="18-Linux进程管理.html">25. Linux进程管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="19-Linux任务计划.html">26. Linux任务计划</a></li>
-<li class="toctree-l4"><a class="reference internal" href="20-CentOS启动流程与Grub.html">27. CentOS启动流程与Grub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="20-Centos系统启动流程与Grub.html">28. Centos系统启动流程与Grub</a></li>
-<li class="toctree-l4"><a class="reference internal" href="21-Linux Kernel.html">29. Linux Kernel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="22-文本处理工具之sed,awk.html">30. 文本处理工具之sed,awk</a></li>
-<li class="toctree-l4"><a class="reference internal" href="23-Openssl.html">31. Openssl</a></li>
-<li class="toctree-l4"><a class="reference internal" href="24-Nssitch、pam.html">32. Nssitch、pam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html">33. 文件共享服务</a></li>
-<li class="toctree-l4"><a class="reference internal" href="26-DNS域名解析服务.html">34. DNS域名解析服务</a></li>
-<li class="toctree-l4"><a class="reference internal" href="27-Linux系统防火墙.html">35. Linux系统防火墙</a></li>
-<li class="toctree-l4"><a class="reference internal" href="28-LinuxSyslog系统日志管理.html">36. Linux Syslog系统日志管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="29-WebServices.html">37. Web Service</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="index.html">38. 基础类</a></li>
-<li class="toctree-l4"><a class="reference internal" href="index.html#id2">39. 服务类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-文件系统.html">3. Linux文件系统</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4. bash的基础特性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05-linux用户组管理.html">5. linux用户和组管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07-grep正则表达式.html">6. grep正则表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08-Linux文件查找.html">7. Linux文件查找</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09-Vim编辑器.html">8. Vim编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10-Linux磁盘管理.html">9. Linux磁盘管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11-Linux文件权限.html">10. Linux文件权限</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12-RAID.html">11. RAID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13-LVM.html">12. LVM逻辑卷 </a></li>
+<li class="toctree-l4"><a class="reference internal" href="14-Btrfs文件系统.html">13. Btrfs文件系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="15-解压缩.html">14. 解压缩</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16-Linux程序包管理.html">15. Linux程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16-Linux系统程序包管理.html">16. Linux系统程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17-Linux系统网络属性管理.html">17. Linux系统网络属性管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17-Linux系统网络管理.html">18. Linux系统网络管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="18-Linux进程管理.html">19. Linux进程管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="19-Linux任务计划.html">20. Linux任务计划</a></li>
+<li class="toctree-l4"><a class="reference internal" href="20-CentOS启动流程与Grub.html">21. CentOS启动流程与Grub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="21-Linux Kernel.html">22. Linux Kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="22-文本处理工具之sed,awk.html">23. 文本处理工具之sed,awk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="23-Openssl.html">24. Openssl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="24-Nssitch、pam.html">25. Nssitch、pam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="25-文件共享服务.html">26. 文件共享服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="26-DNS域名解析服务.html">27. DNS域名解析服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="27-Linux系统防火墙.html">28. Linux系统防火墙</a></li>
+<li class="toctree-l4"><a class="reference internal" href="28-LinuxSyslog系统日志管理.html">29. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="29-WebServices.html">30. Web Service</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#id2">Linux服务器</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../3.service.html">Linux服务器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../service/DHCP/index.html">1. dhcp服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/Rsync同步/index.html">2. Rsync同步</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/自动化安装/index.html">3. 自动化安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/自动化运维/index.html">4. 自动化运维</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/安全和监控/index.html">5. 安全和监控</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/远程登陆/index.html">6. 远程登陆</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/认证/index.html">7. 认证</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/DNS/index.html">8. DNS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/数据库/index.html">9. 数据库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/WEB/index.html">10. WEB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/日志管理/index.html">11. 日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/网络文件共享/index.html">12. 网络文件共享</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/版本控制/index.html">13. 版本控制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/集群/index.html">14. 集群</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/容器/index.html">15. 容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/虚拟化/index.html">16. 虚拟化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../service/杂项/index.html">17. 杂项</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#unix-unix">Unix 和类Unix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#windows">Windows 服务器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#optimization">服务器优化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../index.html#faq">常见问题及解决(FAQ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../3.Unix.html">Unix 和类Unix</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-network">计算机网络学习</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/index.html">理论学习</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/index.html#id2">华为</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/index.html#h3c">H3C(华三/新华三)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../Network/index.html#cisco">思科(CISCO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4.Windows.html">Windows 服务器</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-data">数据相关/大数据</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../Data/index.html">我的文档库123</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5.Optimization.html">服务器优化</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-machineleanring">机器学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../6.FAQ.html">常见问题及解决(FAQ)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Data.html">数据相关/大数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Data/index.html">数据相关/大数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning.html">机器学习</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/index.html">机器学习入门</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-tools-opensource">工具和开源项目</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/index.html">常用工具汇总</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../ToolsOpenSource.html">工具和开源项目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/index.html">用reStructuredText实践</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">1. rST简介</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
@@ -515,17 +533,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/index.html#zzjlogin-opensource">关注的开源项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-others">其他杂项</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Others.html">其他杂项</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../Others/index.html">电脑疑难杂症</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../guide.html#mydoc-log">更新日志</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../log.html">博客更新日志</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../log.html">更新日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../AboutMe.html">关于我</a></li>
 </ul>
 
             
@@ -571,13 +587,13 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../../../guide.html">编程语言学习</a> &raquo;</li>
+          <li><a href="../../../Server.html">服务器相关学习</a> &raquo;</li>
         
-          <li><a href="../../index.html">服务器相关常识</a> &raquo;</li>
+          <li><a href="../../2.Linux.html">Linux 服务器</a> &raquo;</li>
         
-          <li><a href="../index.html">Linux命令汇总</a> &raquo;</li>
+          <li><a href="../2.base.html">Linux基础</a> &raquo;</li>
         
-      <li>6. bash的基础特性</li>
+      <li>4. bash的基础特性</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -591,10 +607,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="04-bash特性2.html" class="btn btn-neutral float-right" title="7. LINUX上bash的基础特性(二)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="05-linux用户组管理.html" class="btn btn-neutral float-right" title="5. linux用户和组管理" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="03-文件系统.html" class="btn btn-neutral" title="5. Linux文件系统" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="03-文件系统.html" class="btn btn-neutral" title="3. Linux文件系统" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -604,7 +620,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="bash">
-<span id="linux-bash"></span><h1><a class="toc-backref" href="#id20">6. bash的基础特性</a><a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h1>
+<span id="linux-bash"></span><h1><a class="toc-backref" href="#id20">4. bash的基础特性</a><a class="headerlink" href="#bash" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -658,7 +674,7 @@
 </ul>
 </div>
 <div class="section" id="id2">
-<h2><a class="toc-backref" href="#id21">6.1. 命令历史</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id21">4.1. 命令历史</a><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>环境变量</p>
 <ul class="simple">
 <li>PWD:保存当前目录路径</li>
@@ -701,17 +717,17 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id22">6.2. 命令补全</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id22">4.2. 命令补全</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>tab补全</p>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id23">6.3. 路径补全</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">4.3. 路径补全</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>tab补全</p>
 </div>
 <div class="section" id="id5">
-<h2><a class="toc-backref" href="#id24">6.4. 目录管理类命令</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id24">4.4. 目录管理类命令</a><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <div class="section" id="mkdir">
-<h3><a class="toc-backref" href="#id25">6.4.1. mkdir</a><a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">4.4.1. mkdir</a><a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h3>
 <p>用法： mkdir [option] directoy…</p>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -755,7 +771,7 @@ drwxr--r--. <span class="m">2</span> root root <span class="m">4096</span> Aug  
 </td></tr></table></div>
 </div>
 <div class="section" id="tree">
-<h3><a class="toc-backref" href="#id26">6.4.2. tree</a><a class="headerlink" href="#tree" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">4.4.2. tree</a><a class="headerlink" href="#tree" title="永久链接至标题">¶</a></h3>
 <p>用法： tree [option] directory</p>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
@@ -774,15 +790,15 @@ drwxr--r--. <span class="m">2</span> root root <span class="m">4096</span> Aug  
 </table>
 </div>
 <div class="section" id="id6">
-<h3><a class="toc-backref" href="#id27">6.4.3. 命令行展开</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">4.4.3. 命令行展开</a><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>~，{},~username</p>
 </div>
 <div class="section" id="id7">
-<h3><a class="toc-backref" href="#id28">6.4.4. 命令的执行结果状态</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">4.4.4. 命令的执行结果状态</a><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>$?：获取上一个命令的执行状态码</p>
 </div>
 <div class="section" id="id8">
-<h3><a class="toc-backref" href="#id29">6.4.5. 文件查看命令</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">4.4.5. 文件查看命令</a><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>more</p>
 <p>less</p>
 <p>head</p>
@@ -817,9 +833,9 @@ drwxr--r--. <span class="m">2</span> root root <span class="m">4096</span> Aug  
 </div>
 </div>
 <div class="section" id="id9">
-<h2><a class="toc-backref" href="#id30">6.5. 文件管理</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">4.5. 文件管理</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <div class="section" id="cp">
-<h3><a class="toc-backref" href="#id31">6.5.1. cp</a><a class="headerlink" href="#cp" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id31">4.5.1. cp</a><a class="headerlink" href="#cp" title="永久链接至标题">¶</a></h3>
 <p>用法： cp src dst</p>
 <p>情况1：测试src是文件，目标不存在</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1013,7 +1029,7 @@ ap
 </div>
 </div>
 <div class="section" id="id10">
-<h2><a class="toc-backref" href="#id32">6.6. 命令别名</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">4.6. 命令别名</a><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>alias cdnet=”cd /etc/sysconfig/network-scripts”</p>
 <p>针对用户的别名： “~/.bashrc”</p>
 <p>针对系统的别名：”/etc/bashrc”</p>
@@ -1021,7 +1037,7 @@ ap
 <p>unalias:撤销别名</p>
 </div>
 <div class="section" id="glob">
-<h2><a class="toc-backref" href="#id33">6.7. glob通配</a><a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">4.7. glob通配</a><a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>* 代表任意长度的任意字符</li>
 <li>？： 表示任意单个字符</li>
@@ -1037,7 +1053,7 @@ ap
 </ul>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id34">6.8. bash快捷键盘</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id34">4.8. bash快捷键盘</a><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>ctrl+L:作用和clear命令相同。清空当前屏幕输出内容。然后把光标移动到屏幕最上方。</li>
 <li>ctrl+a:把光标移动到输入内容的最左侧(开始的位置)。</li>
@@ -1047,7 +1063,7 @@ ap
 </ul>
 </div>
 <div class="section" id="bash-i-o">
-<h2><a class="toc-backref" href="#id35">6.9. bash i/o重定向</a><a class="headerlink" href="#bash-i-o" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id35">4.9. bash i/o重定向</a><a class="headerlink" href="#bash-i-o" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>&gt;:覆盖输出重定向，会覆盖文件原有内容。从第一行开始覆盖。</li>
 <li>&gt;&gt;:追加输出重定向，会追加到文件末尾。</li>
@@ -1078,9 +1094,9 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </div>
 </div>
 <div class="section" id="id12">
-<h2><a class="toc-backref" href="#id36">6.10. 文本处理工具</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id36">4.10. 文本处理工具</a><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 <div class="section" id="wc">
-<h3><a class="toc-backref" href="#id37">6.10.1. wc</a><a class="headerlink" href="#wc" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">4.10.1. wc</a><a class="headerlink" href="#wc" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -1098,7 +1114,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </table>
 </div>
 <div class="section" id="cut">
-<h3><a class="toc-backref" href="#id38">6.10.2. cut</a><a class="headerlink" href="#cut" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">4.10.2. cut</a><a class="headerlink" href="#cut" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -1113,7 +1129,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </table>
 </div>
 <div class="section" id="sort">
-<h3><a class="toc-backref" href="#id39">6.10.3. sort</a><a class="headerlink" href="#sort" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">4.10.3. sort</a><a class="headerlink" href="#sort" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -1140,7 +1156,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </table>
 </div>
 <div class="section" id="uniq">
-<h3><a class="toc-backref" href="#id40">6.10.4. uniq</a><a class="headerlink" href="#uniq" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">4.10.4. uniq</a><a class="headerlink" href="#uniq" title="永久链接至标题">¶</a></h3>
 <table class="docutils option-list" frame="void" rules="none">
 <col class="option" />
 <col class="description" />
@@ -1159,9 +1175,9 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </div>
 </div>
 <div class="section" id="id13">
-<h2><a class="toc-backref" href="#id41">6.11. 编程环境</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id41">4.11. 编程环境</a><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <div class="section" id="shell">
-<h3><a class="toc-backref" href="#id42">6.11.1. shell脚本的组成部分</a><a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">4.11.1. shell脚本的组成部分</a><a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>关键字、控制语句:if…else…，for,do…done</li>
 <li>shell命令,例如:echo，exit等</li>
@@ -1170,7 +1186,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </ul>
 </div>
 <div class="section" id="id14">
-<h3><a class="toc-backref" href="#id43">6.11.2. 编程变量种类</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">4.11.2. 编程变量种类</a><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>本地变量： 仅仅在当前的shell生效</li>
 <li>环境变量： 在当前和子shell生效</li>
@@ -1180,7 +1196,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </ul>
 </div>
 <div class="section" id="id15">
-<h3><a class="toc-backref" href="#id44">6.11.3. 特殊变量如下</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">4.11.3. 特殊变量如下</a><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>$?:上一个命令的执行返回码</li>
 <li>$#:参数个数</li>
@@ -1193,7 +1209,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 <p>查看环境变量： env,export,printenv变量</p>
 </div>
 <div class="section" id="id16">
-<h3><a class="toc-backref" href="#id45">6.11.4. bash的配置文件</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">4.11.4. bash的配置文件</a><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>全局配置文件</dt>
@@ -1218,7 +1234,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 <p>bashrc：用于定义命令别名和本地变量</p>
 </div>
 <div class="section" id="id17">
-<h3><a class="toc-backref" href="#id46">6.11.5. 算数运算</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id46">4.11.5. 算数运算</a><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>let a=expr</li>
 <li>$[expr]</li>
@@ -1246,7 +1262,7 @@ PROC                    /PROC                   PROC    DEFAULTS        <span cl
 </td></tr></table></div>
 </div>
 <div class="section" id="id18">
-<h3><a class="toc-backref" href="#id47">6.11.6. 条件测试</a><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">4.11.6. 条件测试</a><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li>test expr</li>
 <li>[ expr ]</li>
@@ -1403,7 +1419,7 @@ f1 -ef f2                   文件f1和f2是否硬连接到同一个文件
 </td></tr></table></div>
 </div>
 <div class="section" id="id19">
-<h3><a class="toc-backref" href="#id48">6.11.7. 语句控制</a><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id48">4.11.7. 语句控制</a><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
 <p>if</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1432,10 +1448,10 @@ f1 -ef f2                   文件f1和f2是否硬连接到同一个文件
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="04-bash特性2.html" class="btn btn-neutral float-right" title="7. LINUX上bash的基础特性(二)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="05-linux用户组管理.html" class="btn btn-neutral float-right" title="5. linux用户和组管理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="03-文件系统.html" class="btn btn-neutral" title="5. Linux文件系统" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="03-文件系统.html" class="btn btn-neutral" title="3. Linux文件系统" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
