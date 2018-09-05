@@ -1,0 +1,59 @@
+io
+=====================================================
+
+io入门样例
+------------------------------------------
+
+.. code-block:: python
+
+    # Text I/O
+    f = open("myfile.txt", "r", encoding="utf-8")
+    f = io.StringIO("some initial text data")
+
+    # Binary I/O
+    f = open("myfile.jpg", "rb")
+    f = io.BytesIO(b"some initial binary data: \x00\x01")
+
+    3Raw I/O
+    f = open("myfile.jpg", "rb", buffering=0)
+
+
+主要先关类和主要方法
+--------------------------------------------------
+
+.. code-block:: text 
+
+    io.IOBase
+        close
+        closed
+        flush
+        readline
+        readlines
+        seek
+        tell
+        writelines(lines)
+
+    io.RawIOBase
+        read
+        readall
+        readinto
+        write
+
+    io.BufferedIOBase
+        read
+        readinto
+        write
+
+    io.BytesIO
+        getbuffer
+        getvalue
+
+    io.TextIOBase
+        encoding
+        errors
+        newlines
+        buffer
+        read
+        readline
+        tell
+        write

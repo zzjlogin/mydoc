@@ -1,0 +1,791 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12. 数据持久化 &mdash; 张志佳的技术文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="13. 数据压缩和归档" href="13数据压缩和归档.html" />
+    <link rel="prev" title="11. 文件和目录访问" href="11文件和目录访问.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> 张志佳的技术文档
+          
+
+          
+            
+            <img src="../../../_static/logo-wordmark-light.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018-09-05
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Python基础</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. 环境准备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04内置类型.html">4. 内置类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08数据类型.html">8. 数据类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09数值模块.html">9. 数值模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10函数式编程模块.html">10. 函数式编程模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11文件和目录访问.html">11. 文件和目录访问</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">12. 数据持久化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13数据压缩和归档.html">13. 数据压缩和归档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14文件格式.html">14. 文件格式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="15加密服务.html">15. 加密服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="16通用操作系统服务.html">16. 通用操作系统服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="17并发执行.html">17. 并发执行</a></li>
+<li class="toctree-l4"><a class="reference internal" href="18进程通信和网络.html">18. 进程通信和网络</a></li>
+<li class="toctree-l4"><a class="reference internal" href="19网络数据处理.html">19. 网络数据处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#python-libs">Python常用第三方库</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Algorithm.html">算法学习(Algorithm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Algorithm/index.html">树(tree)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/tree/indroduction.html">树(tree)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Algorithm/index.html#ccf">CCF考试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-1.html">2017031-分蛋糕</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201703-2.html">2017032-学生排队</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201712-4.html">2017124-行车路线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Algorithm/ccf/201803-1.html">2018031-跳一跳</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Shell.html">Shell 编程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Shell/1.base.html">1. Shell编程基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Shell/1.base.html#shell-about">1.1. Shell编程简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Shell/1.base.html#shell-demo">1.2. 入门样例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Shell/1.base.html#shell-stander">1.3. Shell规范</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Shell/1.base.html#shell-cmd">1.4. Shell基础语句</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Shell/1.base.html#id21">1.5. Shell調試</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Shell/2.advance.html">2. Shell编程高级用法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Network.html">计算机网络学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/1.NetworkTheory.html">理论学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/2.HuaWei.html">华为</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/3.H3C.html">H3C(华三/新华三)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Network/4.CISCO.html">思科(CISCO)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Server.html">服务器相关学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/1.AboutAndClass.html">服务器相关常识</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/2.Linux.html">Linux 服务器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Server/Linux/1.cmd.html">Linux命令汇总</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/Ctrl+d.html">1. Ctrl+d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/alias.html">2. alias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/basename.html">3. basename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/bc.html">4. bc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/bg.html">5. bg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/cal.html">6. cal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/cat.html">7. cat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/cd.html">8. cd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chage.html">9. chage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chattr.html">10. chattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chgrp.html">11. chgrp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chkconfig.html">12. chkconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chmod.html">13. chmod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/chown.html">14. chown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/clear.html">15. clear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/cp.html">16. cp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/crontab.html">17. crontab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/cut.html">18. cut</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/date.html">19. date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dd.html">20. dd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/df.html">21. df</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/diff.html">22. diff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dig.html">23. dig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dirname.html">24. dirname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dmesg.html">25. dmesg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dos2unix.html">26. dos2unix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/du.html">27. du</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dump.html">28. dump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/dumpe2fs.html">29. dumpe2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/e2fsck.html">30. e2fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/echo.html">31. echo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/eject.html">32. eject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/exec.html">33. exec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/exit.html">34. exit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/export.html">35. export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/fdisk.html">36. fdisk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/fg.html">37. fg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/file.html">38. file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/find.html">39. find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/finger.html">40. finger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/free.html">41. free</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/fsck.html">42. fsck</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/grep.html">43. grep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/groupadd.html">44. groupadd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/gzip.html">45. gzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/halt.html">46. halt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/head.html">47. head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/history.html">48. history</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/host.html">49. host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/hostname.html">50. hostname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/iconv.html">51. iconv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/id.html">52. id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ifconfig.html">53. ifconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ifdown.html">54. ifdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ifup.html">55. ifup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/init.html">56. init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/iostat.html">57. iostat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ipcrm.html">58. ipcrm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ipcs.html">59. ipcs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/jobs.html">60. jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/join.html">61. join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/kill.html">62. kill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/killall.html">63. killall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/last.html">64. last</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/lastlog.html">65. lastlog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/less.html">66. less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/locate.html">67. locate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/logout.html">68. logout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ls.html">69. ls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/lsattr.html">70. lsattr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/lsof.html">71. lsof</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ltrace.html">72. ltrace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mail.html">73. mail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/md5sum.html">74. md5sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mkdir.html">75. mkdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mkfs.html">76. mkfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mkswap.html">77. mkswap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/more.html">78. more</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mount.html">79. mount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mpstat.html">80. mpstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mutt.html">81. mutt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/mv.html">82. mv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/nc.html">83. nc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/netstat.html">84. netstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/nice.html">85. nice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/nmap.html">86. nmap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/nohup.html">87. nohup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/nslookup.html">88. nslookup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/parted.html">89. parted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/partprobe.html">90. partprobe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/passwd.html">91. passwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/paste.html">92. paste</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/pgrep.html">93. pgrep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ping.html">94. ping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/pkill.html">95. pkill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/poweroff.html">96. poweroff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/printf.html">97. printf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ps.html">98. ps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/pstree.html">99. pstree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/pwd.html">100. pwd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/rename.html">101. rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/resize2fs.html">102. resize2fs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/rev.html">103. rev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/rm.html">104. rm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/rmdir.html">105. rmdir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/route.html">106. route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/rpm.html">107. rpm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/runlevel.html">108. runlevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/sar.html">109. sar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/scp.html">110. scp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/service.html">111. service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/shutdown.html">112. shutdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/sort.html">113. sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/split.html">114. split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ss.html">115. ss</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/ssh.html">116. ssh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/stat.html">117. stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/strace.html">118. strace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/su.html">119. su</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/sudo.html">120. sudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/swapoff.html">121. swapoff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/swapon.html">122. swapon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/sync.html">123. sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tac.html">124. tac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tail.html">125. tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tar.html">126. tar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tcpdump.html">127. tcpdump</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/telnet.html">128. telnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/time.html">129. time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/top.html">130. top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/touch.html">131. touch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tr.html">132. tr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/traceroute.html">133. traceroute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/tree.html">134. tree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/type.html">135. type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/umask.html">136. umask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/umount.html">137. umount</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/unalias.html">138. unalias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/uname.html">139. uname</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/uniq.html">140. uniq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/unset.html">141. unset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/unzip.html">142. unzip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/uptime.html">143. uptime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/useradd.html">144. useradd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/userdel.html">145. userdel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/usermod.html">146. usermod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/users.html">147. users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/vi.html">148. vi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/vimdiff.html">149. vimdiff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/visudo.html">150. visudo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/vmstat.html">151. vmstat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/w.html">152. w</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/watch.html">153. watch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/wc.html">154. wc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/wget.html">155. wget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/whereis.html">156. whereis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/which.html">157. which</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/who.html">158. who</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/whoami.html">159. whoami</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/xargs.html">160. xargs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/yum.html">161. yum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/cmd/zip.html">162. xxxx</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Server/Linux/2.base.html">Linux基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/01-Linux简介.html">1. Linux 简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/02-Linux入门.html">2. 计算机简述</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/03-文件系统.html">3. Linux文件系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/04-Bash特性.html">4. bash的基础特性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/05-linux用户组管理.html">5. linux用户和组管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/07-grep正则表达式.html">6. grep正则表达式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/08-Linux文件查找.html">7. Linux文件查找</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/09-Vim编辑器.html">8. Vim编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/10-Linux磁盘管理.html">9. Linux磁盘管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/11-Linux文件权限.html">10. Linux文件权限</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/12-RAID.html">11. RAID</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/13-LVM.html">12. LVM逻辑卷 </a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/14-Btrfs文件系统.html">13. Btrfs文件系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/15-解压缩.html">14. 解压缩</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/16-Linux程序包管理.html">15. Linux程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/16-Linux系统程序包管理.html">16. Linux系统程序包管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/17-Linux系统网络属性管理.html">17. Linux系统网络属性管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/17-Linux系统网络管理.html">18. Linux系统网络管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/18-Linux进程管理.html">19. Linux进程管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/19-Linux任务计划.html">20. Linux任务计划</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/20-CentOS启动流程与Grub.html">21. CentOS启动流程与Grub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/21-Linux Kernel.html">22. Linux Kernel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/22-文本处理工具之sed,awk.html">23. 文本处理工具之sed,awk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/23-Openssl.html">24. Openssl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/24-Nssitch、pam.html">25. Nssitch、pam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/25-文件共享服务.html">26. 文件共享服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/26-DNS域名解析服务.html">27. DNS域名解析服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/27-Linux系统防火墙.html">28. Linux系统防火墙</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/28-LinuxSyslog系统日志管理.html">29. Linux Syslog系统日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/base/29-WebServices.html">30. Web Service</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Server/Linux/3.service.html">Linux服务器</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/DHCP/index.html">1. dhcp服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/Rsync同步/index.html">2. Rsync同步</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/自动化安装/index.html">3. 自动化安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/自动化运维/index.html">4. 自动化运维</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/安全和监控/index.html">5. 安全和监控</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/远程登陆/index.html">6. 远程登陆</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/认证/index.html">7. 认证</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/DNS/index.html">8. DNS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/数据库/index.html">9. 数据库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/WEB/index.html">10. WEB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/日志管理/index.html">11. 日志管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/网络文件共享/index.html">12. 网络文件共享</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/版本控制/index.html">13. 版本控制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/集群/index.html">14. 集群</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/容器/index.html">15. 容器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/虚拟化/index.html">16. 虚拟化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Server/Linux/service/杂项/index.html">17. 杂项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/3.Unix.html">Unix 和类Unix</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/4.Windows.html">Windows 服务器</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/5.Optimization.html">服务器优化</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Server/6.FAQ.html">常见问题及解决(FAQ)</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Data.html">数据相关/大数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Data/index.html">数据相关/大数据</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../MachineLearning.html">机器学习</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../MachineLearning/index.html">机器学习入门</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ToolsOpenSource.html">工具和开源项目</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/1.Tools.html">常用工具汇总</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/index.html">用reStructuredText实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/1.index.html">1. reST简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/2.install.html">2. reST安装及环境配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/3.grammar.html">3. reST语法学习</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/4.toOthers.html">4. 格式转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/5.API.html">5. 文档API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/6.rstTools.html">6. reST工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/rST/7.addFunctions.html">7. 其他</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ToolsOpenSource/Tools/index.html#markdown">用MarkDown实践</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ToolsOpenSource/Tools/MarkDown/MarkDownTools.html">1. MarkDown常用工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ToolsOpenSource/2.OpenSource.html">关注的开源项目</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Others.html">其他杂项</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Others/index.html">电脑疑难杂症</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../log.html">更新日志</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../AboutMe.html">关于我</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">张志佳的技术文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../Language.html">编程语言学习</a> &raquo;</li>
+        
+          <li><a href="../../Python.html">Python学习</a> &raquo;</li>
+        
+          <li><a href="../index.html">Python基础</a> &raquo;</li>
+        
+      <li>12. 数据持久化</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="13数据压缩和归档.html" class="btn btn-neutral float-right" title="13. 数据压缩和归档" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11文件和目录访问.html" class="btn btn-neutral" title="11. 文件和目录访问" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>12. 数据持久化<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="pickle">
+<h2>12.1. pickle<a class="headerlink" href="#pickle" title="永久链接至标题">¶</a></h2>
+<p>提供二进制级别的序列化和反序列化。</p>
+<p>和json比较</p>
+<ul class="simple">
+<li>pickle协议和JSON（JavaScript Object Notation）之间有着根本的区别：</li>
+<li>JSON是一种文本序列化格式（它输出unicode文本，虽然大多数时候它被编码为utf-8），而pickle是一种二进制序列化格式。</li>
+<li>JSON是人类可读的，而pickle不是;</li>
+<li>JSON可以在Python生态系统之外互操作并广泛使用，而pickle则是Python特有的;</li>
+<li>默认情况下，JSON只能表示Python内置类型的一个子集，并且不包含自定义类; pickle可以代表大量的Python类型。</li>
+</ul>
+<p>序列化和反序列号样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用dump来将python对象直接dump到文件中去</span>
+
+<span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># 构造一个python对象</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="o">+</span><span class="mi">6j</span><span class="p">],</span>
+    <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;character string&quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;byte string&quot;</span><span class="p">),</span>
+    <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="p">{</span><span class="bp">None</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span>
+
+<span class="c1"># 使用load来将文件直接load成python对象</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pickle&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 这个地方就不能在指定版本了，会自动识别的，指定了反而不好。</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>load接受的是文件描述符，loads接受的是文件的内容，dump接受文件描述符，dumps默认返回str</p>
+</div>
+<div class="section" id="copyreg">
+<h2>12.2. copyreg<a class="headerlink" href="#copyreg" title="永久链接至标题">¶</a></h2>
+<p>copyreg模块提供了一种自定义函数来序列和反序列特定对象时使用的函数的机制。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copyreg</span><span class="o">,</span><span class="nn">copy</span><span class="o">,</span><span class="nn">pickle</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>         <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="o">=</span><span class="n">a</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="k">def</span> <span class="nf">pickle_c</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;picking c instance...&quot;</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">return</span> <span class="n">C</span><span class="p">,(</span><span class="n">c</span><span class="o">.</span><span class="n">a</span><span class="p">,)</span>
+    <span class="o">...</span><span class="p">:</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">copyreg</span><span class="o">.</span><span class="n">pickle</span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">pickle_c</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">c</span><span class="o">=</span><span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">picking</span> <span class="n">c</span> <span class="n">instance</span><span class="o">...</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">picking</span> <span class="n">c</span> <span class="n">instance</span><span class="o">...</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">p</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x80\x03</span><span class="s1">c__main__</span><span class="se">\n</span><span class="s1">C</span><span class="se">\n</span><span class="s1">q</span><span class="se">\x00</span><span class="s1">K</span><span class="se">\x01\x85</span><span class="s1">q</span><span class="se">\x01</span><span class="s1">Rq</span><span class="se">\x02</span><span class="s1">.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shelve">
+<h2>12.3. shelve<a class="headerlink" href="#shelve" title="永久链接至标题">¶</a></h2>
+<p>shelve是一个持久的，类似字典的对象。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">shelve</span>
+
+<span class="c1"># 打开一个文件，可以不存在，会创建的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;a.shelve&quot;</span><span class="p">)</span>
+
+<span class="c1"># 设置一些属性值</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span> <span class="mi">26</span>
+
+<span class="c1"># 列出keys</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]</span>
+
+<span class="c1"># 关闭</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># 再次打开</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;a.shelve&quot;</span><span class="p">)</span>
+
+<span class="c1"># 还是可以获取到原有的数据的</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="marshal">
+<h2>12.4. marshal<a class="headerlink" href="#marshal" title="永久链接至标题">¶</a></h2>
+<p>该模块包含可以以二进制格式读取和写入Python值的函数。</p>
+<p>和pickle用法差不多，重要是load,loads,dump,dumps这4个方法。</p>
+<p>简单序列化和反序化样例:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">marshal</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">e</span> <span class="o">=</span> <span class="n">marshal</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="n">e</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">34</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xdb\x04\x00\x00\x00\xe9\x01\x00\x00\x00\xe9\x02\x00\x00\x00\xe9\x03\x00\x00\x00\xe9\x04\x00\x00\x00</span><span class="s1">&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">35</span><span class="p">]:</span> <span class="n">f</span> <span class="o">=</span> <span class="n">marshal</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="n">f</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">36</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="bp">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dbm">
+<h2>12.5. dbm<a class="headerlink" href="#dbm" title="永久链接至标题">¶</a></h2>
+<p>dbm是DBM数据库变体的通用接口,dbm.gnu或dbm.ndbm。 如果没有安装这些模块，
+则将使用模块dbm.dumb中的慢而简单的实现。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dbm</span>
+<span class="c1"># r只读，w写，c读写，且如果不存在创建，n创建一个新的，如果存在就读写打开。</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;26&quot;</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;100&quot;</span>
+</pre></div>
+</div>
+<p>这个和marshal一样，这次修改完毕，下次再次打开还是可以得到上次的数据的。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">使用dbm的时候value只能是bytes 或者 strings。</p>
+</div>
+</div>
+<div class="section" id="sqllite">
+<h2>12.6. sqllite<a class="headerlink" href="#sqllite" title="永久链接至标题">¶</a></h2>
+<p>SQLite是一个C库，它提供了一个轻量级的基于磁盘的数据库，它不需要单独的服务器进程，并允许
+使用SQL查询语言的非标准变体访问数据库。 一些应用程序可以使用SQLite进行内部数据存储。
+也可以使用SQLite对应用程序进行原型设计，然后将代码移植到更大的数据库，如PostgreSQL或Oracle。</p>
+<p>这个模块使用起来像我们使用大型数据一样，只是这个数据库比较low而已，没有进程和复杂的数据库管理功能。</p>
+<p>样例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="c1"># 创建一个连接，example.db可以存在，可以不存在</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;example.db&quot;</span><span class="p">)</span>
+
+<span class="c1"># 获取cursor</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># 执行创建表语句</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;CREATE TABLE stocks</span>
+<span class="s1">...:              (date text, trans text, symbol text, qty real, price real)&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea658650</span><span class="o">&gt;</span>
+
+<span class="c1"># 插入单条数据</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO stocks VALUES (&#39;2006-01-05&#39;,&#39;BUY&#39;,&#39;RHAT&#39;,100,35.14)&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea658650</span><span class="o">&gt;</span>
+
+<span class="c1"># 批量插入</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">example_date</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;2007-01-05&#39;</span><span class="p">,</span><span class="s1">&#39;BUY&#39;</span><span class="p">,</span><span class="s1">&#39;RHAT&#39;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mf">35.14</span><span class="p">),(</span><span class="s1">&#39;2008-01-05&#39;</span><span class="p">,</span><span class="s1">&#39;BUY&#39;</span><span class="p">,</span><span class="s1">&#39;RHAT&#39;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mf">35.14</span><span class="p">)]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;insert into stocks values(?,?,?,?,?)&#39;</span><span class="p">,</span><span class="n">example_data</span><span class="p">)</span>
+
+<span class="c1"># 提交到数据库</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># 查询，遍历cursor</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from stocks&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea6588f0</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="o">...</span><span class="p">:</span>
+<span class="p">(</span><span class="s1">&#39;2006-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;2007-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">&#39;2008-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+<span class="c1"># 查询后直接获取所有结果</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from stocks&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea6588f0</span><span class="o">&gt;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span>
+<span class="p">[(</span><span class="s1">&#39;2006-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;2007-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;2008-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)]</span>
+
+<span class="c1"># 查询，一个一个查询</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from stocks&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea6588f0</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;2006-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;2007-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="p">(</span><span class="s1">&#39;2008-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+
+<span class="c1"># 特定条件查询</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from stocks where date=:date and trans=:trans&quot;</span><span class="p">,{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span><span class="s1">&#39;2006-01-05&#39;</span><span class="p">,</span><span class="s2">&quot;trans&quot;</span><span class="p">:</span><span class="s1">&#39;BUY&#39;</span><span class="p">})</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="o">&lt;</span><span class="n">sqlite3</span><span class="o">.</span><span class="n">Cursor</span> <span class="n">at</span> <span class="mh">0x1d2ea6588f0</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="p">[(</span><span class="s1">&#39;2006-01-05&#39;</span><span class="p">,</span> <span class="s1">&#39;BUY&#39;</span><span class="p">,</span> <span class="s1">&#39;RHAT&#39;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">,</span> <span class="mf">35.14</span><span class="p">)]</span>
+
+<span class="c1"># 关闭连接</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="13数据压缩和归档.html" class="btn btn-neutral float-right" title="13. 数据压缩和归档" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="11文件和目录访问.html" class="btn btn-neutral" title="11. 文件和目录访问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, 张志佳.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            LANGUAGE:'zh_CN',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
