@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>16.8. logging.Handlers &mdash; 张志佳的技术文档 1.0 文档</title>
+  <title>1.15.8. logging.Handlers &mdash; 张志佳的技术文档 1.0 文档</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="16.9. getpass" href="16.9通用操作系统服务.html" />
-    <link rel="prev" title="16.7. logging.Config" href="16.7通用操作系统服务.html" /> 
+    <link rel="next" title="1.15.9. getpass" href="16.9通用操作系统服务.html" />
+    <link rel="prev" title="1.15.7. logging.Config" href="16.7通用操作系统服务.html" /> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
@@ -88,30 +88,30 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../../Python.html">Python学习</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">Python基础</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../01环境准备.html">1. Python开发环境搭建</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../02内建函数.html">2. 内建函数 </a></li>
-<li class="toctree-l4"><a class="reference internal" href="../03内置常量.html">3. 内置常量</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html">4. 内置类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../06字符串处理.html">6. 文本处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../07二进制处理.html">7. 二进制处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html">8. 数据类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html">9. 数值模块</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html">10. 函数式编程模块</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html">11. 文件和目录访问</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html">12. 数据持久化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html">13. 数据压缩和归档</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html">14. 文件格式</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html">15. 加密服务</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="../16通用操作系统服务.html">16. 通用操作系统服务</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html">17. 并发执行</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../18进程通信和网络.html">18. 进程通信和网络</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../19网络数据处理.html">19. 网络数据处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../20结构化文本文档处理工具.html">20. 结构化文本文档处理工具</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">1. Python基础</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../02环境准备.html">1.1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03内置常量.html">1.2. 内置常量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04内置类型.html">1.3. 内置类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../05内建函数.html">1.4. 内建函数 </a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06内置异常.html">1.5. 内置异常</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07字符串处理.html">1.6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08数据类型.html">1.7. 数据类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09数值模块.html">1.8. 数值模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10函数式编程模块.html">1.9. 函数式编程模块</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11文件和目录访问.html">1.10. 文件和目录访问</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12数据持久化.html">1.11. 数据持久化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../13数据压缩和归档.html">1.12. 数据压缩和归档</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../14文件格式.html">1.13. 文件格式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../15加密服务.html">1.14. 加密服务</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../16通用操作系统服务.html">1.15. 通用操作系统服务</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../17并发执行.html">1.16. 并发执行</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../18进程通信和网络.html">1.17. 进程通信和网络</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../19网络数据处理.html">1.18. 网络数据处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../20结构化文本文档处理工具.html">1.19. 结构化文本文档处理工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../21二进制处理.html">1.20. 二进制处理</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../index.html#python-libs">Python常用第三方库</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#python-libs">2. Python常用第三方库</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -474,11 +474,11 @@
         
           <li><a href="../../../Python.html">Python学习</a> &raquo;</li>
         
-          <li><a href="../../index.html">Python基础</a> &raquo;</li>
+          <li><a href="../../index.html">1. Python基础</a> &raquo;</li>
         
-          <li><a href="../16通用操作系统服务.html">16. 通用操作系统服务</a> &raquo;</li>
+          <li><a href="../16通用操作系统服务.html">1.15. 通用操作系统服务</a> &raquo;</li>
         
-      <li>16.8. logging.Handlers</li>
+      <li>1.15.8. logging.Handlers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -492,10 +492,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="16.9. getpass" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="1.15.9. getpass" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="16.7. logging.Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="1.15.7. logging.Config" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -505,26 +505,26 @@
            <div itemprop="articleBody">
             
   <div class="section" id="logging-handlers">
-<h1>16.8. logging.Handlers<a class="headerlink" href="#logging-handlers" title="永久链接至标题">¶</a></h1>
+<h1>1.15.8. logging.Handlers<a class="headerlink" href="#logging-handlers" title="永久链接至标题">¶</a></h1>
 <p>这个模块主要提供有用的处理程序， 比如StreamHandler，FileHandler和NullHandler。</p>
 <div class="section" id="logging-streamhandler">
-<h2>16.8.1. logging.StreamHandler<a class="headerlink" href="#logging-streamhandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.1. logging.StreamHandler<a class="headerlink" href="#logging-streamhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个流handler对象使用， 如果没有指定，使用sys.stderrr将会使用。</p>
 </div>
 <div class="section" id="logging-filehandler">
-<h2>16.8.2. logging.FileHandler<a class="headerlink" href="#logging-filehandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.2. logging.FileHandler<a class="headerlink" href="#logging-filehandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个文件Handler对象使用， 打开特定的文件， 追加记录。</p>
 </div>
 <div class="section" id="logging-nullhandler">
-<h2>16.8.3. logging.NullHandler<a class="headerlink" href="#logging-nullhandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.3. logging.NullHandler<a class="headerlink" href="#logging-nullhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供一个空的Handler对象使用，不会做格式话和输出。</p>
 </div>
 <div class="section" id="watchedfilehandler">
-<h2>16.8.4. WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.4. WatchedFileHandler<a class="headerlink" href="#watchedfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是FileHandler的子类</p>
 </div>
 <div class="section" id="baserotatinghandler">
-<h2>16.8.5. BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.5. BaseRotatingHandler<a class="headerlink" href="#baserotatinghandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供日志滚动功能。</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>namer: 如果此属性设置为可调用，则rotation_filename（）方法委托给此可调用对象。
 rotator: 如果此属性设置为可调用的，则rotate方法委托给此可调用对象。
@@ -532,47 +532,47 @@ rotator: 如果此属性设置为可调用的，则rotate方法委托给此可�
 </div>
 </div>
 <div class="section" id="rotatingfilehandler">
-<h2>16.8.6. RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.6. RotatingFileHandler<a class="headerlink" href="#rotatingfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是BaseRotatingHandler的子类，提供文件的滚动功能。</p>
 </div>
 <div class="section" id="timedrotatingfilehandler">
-<h2>16.8.7. TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.7. TimedRotatingFileHandler<a class="headerlink" href="#timedrotatingfilehandler" title="永久链接至标题">¶</a></h2>
 <p>是BaseRotatingHandler的子类，提供基于时间的滚动功能。</p>
 </div>
 <div class="section" id="sockethandler">
-<h2>16.8.8. SocketHandler<a class="headerlink" href="#sockethandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.8. SocketHandler<a class="headerlink" href="#sockethandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志输出到远程主机的功能，使用tcp socket。</p>
 </div>
 <div class="section" id="datagramhandler">
-<h2>16.8.9. DatagramHandler<a class="headerlink" href="#datagramhandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.9. DatagramHandler<a class="headerlink" href="#datagramhandler" title="永久链接至标题">¶</a></h2>
 <p>这个提供发送日志输出到远程主机的功能功能，使用udp。</p>
 </div>
 <div class="section" id="sysloghandler">
-<h2>16.8.10. SysLogHandler<a class="headerlink" href="#sysloghandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.10. SysLogHandler<a class="headerlink" href="#sysloghandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志信息到远程或者本地的syslog去。</p>
 </div>
 <div class="section" id="nteventloghandler">
-<h2>16.8.11. NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.11. NTEventLogHandler<a class="headerlink" href="#nteventloghandler" title="永久链接至标题">¶</a></h2>
 <p>提供发送日志信息到windows主机上面，使用的时候确保win32扩展安装。</p>
 </div>
 <div class="section" id="smtphandler">
-<h2>16.8.12. SMTPHandler<a class="headerlink" href="#smtphandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.12. SMTPHandler<a class="headerlink" href="#smtphandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志信息发送到一个邮箱的功能。</p>
 </div>
 <div class="section" id="logging-handlers-bufferinghandler">
-<h2>16.8.13. logging.handlers.BufferingHandler<a class="headerlink" href="#logging-handlers-bufferinghandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.13. logging.handlers.BufferingHandler<a class="headerlink" href="#logging-handlers-bufferinghandler" title="永久链接至标题">¶</a></h2>
 <p>提供缓存日志记录到内存buffer中去。</p>
 </div>
 <div class="section" id="logging-handlers-memoryhandler">
-<h2>16.8.14. logging.handlers.MemoryHandler<a class="headerlink" href="#logging-handlers-memoryhandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.14. logging.handlers.MemoryHandler<a class="headerlink" href="#logging-handlers-memoryhandler" title="永久链接至标题">¶</a></h2>
 <p>提供缓存日志记录到内存中去。</p>
 </div>
 <div class="section" id="httphandler">
-<h2>16.8.15. HTTPHandler<a class="headerlink" href="#httphandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.15. HTTPHandler<a class="headerlink" href="#httphandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志发送到一个web server去， 使用get或者post方法。</p>
 </div>
 <div class="section" id="queuehandler">
-<h2>16.8.16. QueueHandler<a class="headerlink" href="#queuehandler" title="永久链接至标题">¶</a></h2>
+<h2>1.15.8.16. QueueHandler<a class="headerlink" href="#queuehandler" title="永久链接至标题">¶</a></h2>
 <p>提供日志发送到一个队列的功能</p>
 </div>
 </div>
@@ -585,10 +585,10 @@ rotator: 如果此属性设置为可调用的，则rotate方法委托给此可�
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="16.9. getpass" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="16.9通用操作系统服务.html" class="btn btn-neutral float-right" title="1.15.9. getpass" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="16.7. logging.Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="16.7通用操作系统服务.html" class="btn btn-neutral" title="1.15.7. logging.Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

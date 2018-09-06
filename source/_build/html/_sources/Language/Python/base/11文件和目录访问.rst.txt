@@ -10,8 +10,6 @@
 
 .. image:: /images/language/python/pathlib-inheritance.png
     :align: center
-    :height: 400px
-    :width: 400 px
     :alt: zzjlogin's picture loss
 
 pathlib
@@ -448,6 +446,7 @@ fnmatch
 .. csv-table:: 
    :header: "模式","描述"
    :widths: 20,40
+   :align: center
 
    "\*","任何的"
    "?","单个字符"

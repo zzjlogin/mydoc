@@ -40,7 +40,7 @@ release = u'1.0'
 #do not show the document build by sphinx in subscript.
 html_show_sphinx = False
 #show the copyright in the subscript
-html_show_copyright = True
+html_show_copyright = False
 #do not show the buttom to show the rst source code
 html_show_sourcelink = False
 

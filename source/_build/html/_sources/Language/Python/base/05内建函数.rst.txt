@@ -1,0 +1,903 @@
+.. python-buildin-fuc:
+
+===============================================
+内建函数 [1]_
+===============================================
+
+.. contents::
+
+
+常用内置函数
+===============================================
+
+内置函数列表：
+
+===================  =================  ==================  =================  ====================
+..                   ..                 Built-in Functions  ..                 ..
+===================  =================  ==================  =================  ====================
+       abs                  divmod             input               open               staticmethod 
+       all                  enumerate          int                 ord                str 
+       any                  eval               isinstance          pow                sum 
+       basestring           execfile           issubclass          print              super 
+       bin                  file               iter                property           tuple 
+       bool                 filter             len                 range              type 
+       bytearray            float        func-list                 raw input          unichr 
+       callable             format             locals              reduce             unicode 
+       chr            func-frozenset           long                reload             vars 
+       classmethod          getattr            map           func-repr                xrange 
+       cmp                  globals            max                 reversed           zip 
+       compile              hasattr      func-memoryview           round                import   
+       complex              hash               min           func-set          ..
+       delattr              help               next                setattr     ..
+ func-dict                  hex                object              slice       ..
+       dir                  id                 oct                 sorted      ..
+===================  =================  ==================  =================  ====================
+
+
+abs(x)
+---------------------------------------------
+
+功能：返回数字的绝对值。
+
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [1]: abs(-1)
+    Out[1]: 1
+
+.. attention:: ``abs`` 这个函数的操作对象应该是数字类型，如果不是数字则会报出异常。
+
+all(iterable)
+---------------------------------------------
+
+功能：可迭代对象所有值都是True(即非空也非False也非0)，则返回True，否则返回Fals。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [3]: a = list('abc')
+
+    In [4]: a
+    Out[4]: ['a', 'b', 'c']
+
+    In [5]: all(a)
+    Out[5]: True
+
+    In [6]: a.append(None)
+
+    In [7]: a
+    Out[7]: ['a', 'b', 'c', None]
+
+    In [8]: all(a)
+    Out[8]: False
+
+
+any(iterable)
+---------------------------------------------
+
+功能：可迭代对象中主要有元素是非空/非False/非0的则返回True。
+ 
+样例：
+
+.. code-block:: python
+    :linenos:
+
+    In [24]: a = [0,0,0]
+
+    In [25]: any(a)
+    Out[25]: False
+
+    In [26]: a = [0,0,'1']
+
+    In [27]: any(a)
+    Out[27]: True
+
+bool(x)
+---------------------------------------------
+
+功能：把任意类型返回bool类型，所有元素非空则返回True，否则返回False
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [28]: a = [0,0,0]
+
+    In [29]: bool(a)
+    Out[29]: True
+
+    In [30]: a = [None]
+
+    In [31]: bool(a)
+    Out[31]: True
+
+    In [32]: a = None
+
+    In [33]: bool(a)
+    Out[33]: False
+
+    In [34]: a = ''
+
+    In [35]: bool(a)
+    Out[35]: False
+
+    In [36]: a = []
+
+    In [37]: bool(a)
+    Out[37]: False
+
+callable(object)
+---------------------------------------------
+
+功能：这个内置函数的操作对象是 ``对象的函数`` 如果对象有对应的函数功能可以调用则返回True，否则返回False。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [39]: d = {}
+
+    In [40]: callable(d)
+    Out[40]: False
+
+    In [41]: callable(d.get)
+    Out[41]: True
+
+chr(i)
+---------------------------------------------
+
+功能：把数字转换成ascii
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [26]: chr(97)
+    Out[26]: 'a'
+
+    In [27]: chr(98)
+    Out[27]: 'b'
+
+.. attention:: 与这个函数相对的就是ord了，从字符转数值。注意数字的取值范围是 ``0-255`` 这是一个字节的取值范围。
+
+classmethod
+---------------------------------------------
+
+功能： 定义类方法的关键字
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    class C: 
+        @classmethod
+        def f(cls,arg1,arg2):
+            pass
+    # 调用方式
+    C.f()
+    C().f()
+
+.. attention:: 注意类方法和静态方法的相同和不同。
+
+delattr(object,name)
+---------------------------------------------
+
+功能：删除对象的属性
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [52]: class People:
+        ...:     pass
+        ...:
+
+    In [53]: p = People()
+
+    In [54]: p.name = 'zzjlogin'
+
+    In [55]: p.age = 20
+
+    In [56]: p.age
+    Out[56]: 20
+
+    In [57]: delattr(p, 'age')
+
+    In [58]: p.age
+    ---------------------------------------------------------------------------
+    AttributeError                            Traceback (most recent call last)
+    <ipython-input-58-3523b116dc0e> in <module>()
+    ----> 1 p.age
+
+    AttributeError: People instance has no attribute 'age'
+
+删除了属性后再去访问这个属性，就会触发属性异常错误。
+
+dict(\*\*kwarg)
+---------------------------------------------
+
+功能：创建字典，或转化为一个字典
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [42]: p = dict(name="zzjlogin",age=26)
+
+    In [43]: p
+    Out[43]: {'age': 26, 'name': 'zzjlogin'}
+
+
+
+dir(x)
+---------------------------------------------
+功能：如果没有参数，返回本地作用域的名称列表，如果有参数，返回有效属性列表
+
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [2]: class People:
+       ...:     pass
+       ...:
+
+    In [3]: p = People()
+
+    In [4]: p.name = 'zzjlogin'
+
+    In [5]: p.age = 28
+
+    In [6]: dir(p)
+    Out[6]: ['__doc__', '__module__', 'age', 'name']
+
+    In [9]: dir(str)
+    Out[9]:
+    ['__add__',
+    '__class__',
+    '__contains__',
+    '__delattr__',
+    '__doc__',
+    '__eq__',
+    '__format__',
+    '__ge__',
+    '__getattribute__',
+    '__getitem__',
+    '__getnewargs__',
+    '__getslice__',
+    '__gt__',
+    '__hash__',
+    '__init__',
+    '__le__',
+    '__len__',
+    '__lt__',
+    '__mod__',
+    '__mul__',
+    '__ne__',
+    '__new__',
+    '__reduce__',
+    '__reduce_ex__',
+    '__repr__',
+    '__rmod__',
+    '__rmul__',
+    '__setattr__',
+    '__sizeof__',
+    '__str__',
+    '__subclasshook__',
+    '_formatter_field_name_split',
+    '_formatter_parser',
+    'capitalize',
+    'center',
+    'count',
+    'decode',
+    'encode',
+    'endswith',
+    'expandtabs',
+    'find',
+    'format',
+    'index',
+    'isalnum',
+    'isalpha',
+    'isdigit',
+    'islower',
+    'isspace',
+    'istitle',
+    'isupper',
+    'join',
+    'ljust',
+    'lower',
+    'lstrip',
+    'partition',
+    'replace',
+    'rfind',
+    'rindex',
+    'rjust',
+    'rpartition',
+    'rsplit',
+    'rstrip',
+    'split',
+    'splitlines',
+    'startswith',
+    'strip',
+    'swapcase',
+    'title',
+    'translate',
+    'upper',
+    'zfill']
+
+enumerate(iterable, start=0)
+---------------------------------------------
+
+功能：返回一个枚举的迭代器
+
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [10]: s = list('abcdefghi')
+
+    In [11]: s
+    Out[11]: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+    In [12]: e = enumerate(s)
+
+    In [13]: e
+    Out[13]: <enumerate at 0x3f03c10>
+
+    In [14]: e.next()
+    Out[14]: (0, 'a')
+
+    In [15]: e.next()
+    Out[15]: (1, 'b')
+
+    In [16]: list(e)
+    Out[16]: [(2, 'c'), (3, 'd'), (4, 'e'), (5, 'f'), (6, 'g'), (7, 'h'), (8, 'i')]
+
+    In [18]: s
+    Out[18]: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+
+    In [19]: e = enumerate(s, 2)
+
+    In [20]: list(e)
+    Out[20]:
+    [(2, 'a'),
+    (3, 'b'),
+    (4, 'c'),
+    (5, 'd'),
+    (6, 'e'),
+    (7, 'f'),
+    (8, 'g'),
+    (9, 'h'),
+    (10, 'i')]
+
+
+eval(expression, globals=None, locals=None)
+------------------------------------------------------------------------------------------^^^^^
+
+功能：用于计算表达式
+
+样例：
+
+.. code-block:: python
+    :linenos:
+
+    In [53]: x=1
+
+    In [54]: eval('x+1')
+    Out[54]: 2
+
+.. attention:: 使用eval时注意安全漏洞。
+
+float(x)
+---------------------------------------------
+
+功能：把数字转换成浮点型数字(即带小数点的数字)
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [57]: float('-00.1')
+    Out[57]: -0.1
+
+    In [58]: float('1e6')
+    Out[58]: 1000000.0
+
+
+
+getattr(object, name[, default])
+---------------------------------------------
+
+功能：读取对象属性值
+ 
+样例：
+
+.. code-block:: python
+    :linenos:
+
+    In [59]: class p2:
+        ...:     pass
+        ...:
+
+    In [60]: p=p2()
+
+    In [61]: p.name="zzjlogin"
+
+    In [62]: getattr(p,"name")
+    Out[62]: 'zzjlogin'
+
+    In [63]: getattr(p,"age",26)
+    Out[63]: 26
+
+.. attention:: 不提供默认值去访问一个不存在的属性，会抛出属性错误的。
+
+hasattr(object, name)
+---------------------------------------------
+
+功能：判断对象是否有特定属性，如果有则返回True，否则返回False。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [65]: p=p2()
+
+    In [66]: hasattr(p,"name")
+    Out[66]: False
+
+    In [67]: p.name="zzjlogin"
+
+    In [68]: hasattr(p,"name")
+    Out[68]: True
+
+hex(x)
+---------------------------------------------
+
+功能：转化一个整数为16进制
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [69]: hex(11)
+    Out[69]: '0xb'
+
+    In [70]: hex(10)
+    Out[70]: '0xa'
+
+    In [71]: hex(9)
+    Out[71]: '0x9'
+
+.. attention:: 这是转16进制的，当然还有oct转8进制的。二进制bin。转换二进制int
+
+
+input(prompt)
+---------------------------------------------
+
+功能：接受输入参数，将输入赋值给变量
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [73]: s=input("please input a string:")
+    please input a string:zzjlogin
+
+    In [74]: s
+    Out[74]: 'zzjlogin'
+
+.. attention:: python2中input和raw_input，python2中的raw_input和python3中的input相同。
+
+isinstance(object,classinfo)
+---------------------------------------------
+
+功能：判断对象是不是特定类，如果是返回True否则返回False。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [79]: isinstance("a",str)
+    Out[79]: True
+
+    In [80]: isinstance("a",list)
+    Out[80]: False
+
+    In [82]: isinstance("a",(list,str))
+    Out[82]: True
+
+.. attention:: 如果后面的classinfo是没有定义的类型则会抛出异常错误。
+
+issubclass(class, classinfo)
+---------------------------------------------
+
+功能：是否是子类的(即是否继承了classinfo)，如果是返回True，否则返回False。
+ 
+样例：
+
+.. code-block:: python
+    :linenos:
+
+    In [90]: class p5():
+        ...:     pass
+        ...:
+
+    In [91]: class p6(p5):
+        ...:     pass
+        ...:
+
+    In [92]: issubclass(p6,p5)
+    Out[92]: True
+
+iter(object[, sentinel])或者iter(collection)
+---------------------------------------------
+
+功能：返回一个迭代对象。
+
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [96]: with open('test.txt') as fp:
+        ...:     for line in iter(fp.readline,''):
+        ...:         print(line)
+
+    In [54]: a = 0
+
+    In [55]: s = list('abcde')
+
+    In [56]: s
+    Out[56]: ['a', 'b', 'c', 'd', 'e']
+
+    In [57]: a = iter(s.pop,'c')
+
+    In [58]: list(a)
+    Out[58]: ['e', 'd']
+
+len(x)
+---------------------------------------------
+
+功能：返回对象长度，对象不能是数字类型。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [97]: len("abc")
+    Out[97]: 3
+
+    In [98]: len([1,2,3,4])
+    Out[98]: 4
+
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+---------------------------------------------------------------------------------------------------------------------------------------^^^^^^^^^^
+
+功能：打开文件
+
+模式
+
+.. csv-table::
+   :header: "字符","描述"
+   :widths: 30,30
+
+   "r","读取，这是默认值"
+   "w","写文件"
+   "x","打开去执行创建"
+   "a","追加"
+   "b","二进制模式"
+   "t","文本模式，默认值"
+   "\+","读写模式"
+
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [101]: with open('a.txt','w') as f:
+        ...:     f.write("this is a test")
+
+pow(x, y[, z])
+---------------------------------------------
+
+功能： 默认返回x的y次方，即x**y,如果输入了z，则返回(x**y)%z
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [102]: pow(2,3)
+    Out[102]: 8
+
+    In [103]: pow(3,2)
+    Out[103]: 9
+
+    In [104]: pow(3,2,5)
+    Out[104]: 4
+
+range(start,stop,step)
+---------------------------------------------
+
+功能：生成一组连续的数值
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [106]: list(range(3))
+    Out[106]: [0, 1, 2]
+
+    In [107]: list(range(2,4))
+    Out[107]: [2, 3]
+
+    In [108]: list(range(2,10,3))
+    Out[108]: [2, 5, 8]
+
+.. attention::
+
+    python2中的range会直接生成这个列表。python3中的range和python2中的xrange功能相同。
+    python3中的range生成一个迭代器，这样占用内存小。
+
+repr(object)
+---------------------------------------------
+
+功能：得到对象的打印信息
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [113]: class p8():
+        ...:     def __repr__(self):
+        ...:         return " this is a test"
+        ...:
+
+    In [114]: p=p8()
+
+    In [115]: p
+    Out[115]:  this is a test
+
+    In [116]: repr(p)
+    Out[116]: ' this is a test'
+
+reversed(seq)
+---------------------------------------------
+
+功能：反转一个对象的序列顺序。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [117]: a=[1,2,3]
+
+    In [118]: reversed(a)
+    Out[118]: <list_reverseiterator at 0x2480c111320>
+
+    In [119]: list(reversed(a))
+    Out[119]: [3, 2, 1]
+
+round(number[, ndigits])
+---------------------------------------------
+
+功能：四舍五入功能
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [121]: round(101,-1)
+    Out[121]: 100
+
+    In [122]: round(101.667,2)
+    Out[122]: 101.67
+
+    In [123]: round(101.667,1)
+    Out[123]: 101.7
+
+
+setattr(object,name,value)
+---------------------------------------------
+
+功能：用于设置对象的特定属性为value值。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [70]: class p9:
+        ...:     pass
+        ...:
+
+    In [71]: p = p9()
+
+    In [72]: p
+    Out[72]: <__main__.p9 instance at 0x04072210>
+
+    In [73]: p.name
+    ---------------------------------------------------------------------------
+    AttributeError                            Traceback (most recent call last)
+    <ipython-input-73-a2041b62649a> in <module>()
+    ----> 1 p.name
+
+    AttributeError: p9 instance has no attribute 'name'
+
+    In [74]: setattr(p, 'name', 'zzjlogin')
+
+    In [75]: p.name
+    Out[75]: 'zzjlogin'
+
+slice(start, stop[, step])
+---------------------------------------------
+
+功能：分片功能，用于提取迭代对象的一部分
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [130]: a=[1,2,3,4]
+
+    In [131]: slice(a,1)
+    Out[131]: slice([1, 2, 3, 4], 1, None)
+
+    In [132]: a[1]
+    Out[132]: 2
+
+    In [133]: a[1:]
+    Out[133]: [2, 3, 4]
+
+    In [134]: a[1:2]
+    Out[134]: [2]
+
+sorted(iterable, \*, key=None, reverse=False)
+------------------------------------------------------------------------------------------^^^^^
+
+功能： 排序功能
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [137]: a=["aAbc","bC","Bc"]
+
+    In [138]: sorted(a,key=str.upper)
+    Out[138]: ['aAbc', 'bC', 'Bc']
+
+.. attention::
+
+    sorted排序后源数据不变，会返回一个新的已经排序好的列表。传入的可以数据类型比较多。
+    list.sort函数只可以排序列表，并且在源数据进行修改。如果想排序源数据list.sort效率会更好。
+
+
+@staticmethod
+---------------------------------------------
+
+功能：定义类里面的静态方法。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    class C:
+        @staticmethod
+        def f(arg1,arg2):
+            pass
+
+.. attention:: 注意静态方法和类方法的比较。
+
+sum(iterable[, start])
+---------------------------------------------
+
+功能：返回迭代对象数值和。
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [139]: a=[1,2,3,4]
+
+    In [140]: sum(a)
+    Out[140]: 10
+
+    In [141]: sum(a,1)
+    Out[141]: 11
+
+    In [142]: sum(a,100)
+    Out[142]: 110
+
+super([type[, object-or-type]])
+---------------------------------------------
+
+功能：返回一个将方法调用委托给父类或兄弟类的代理对象。 这对访问在类中被覆盖的继承方法很有用
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    class C(B):
+        def method(self, arg):
+            super().method(arg)
+
+tuple(iterable)
+---------------------------------------------
+
+功能：转化为元组
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [143]: a=[1,2,3,4]
+
+    In [144]: tuple(a)
+    Out[144]: (1, 2, 3, 4)
+
+type(object)
+---------------------------------------------
+
+功能：获取对象的类型
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [145]: type("aaa")
+    Out[145]: str
+
+    In [146]: type([1,2,3])
+    Out[146]: list
+
+zip(\*iterables)
+---------------------------------------------
+功能：获取对象的类型
+ 
+样例： 
+
+.. code-block:: python
+    :linenos:
+
+    In [148]: a=[1,2,3,4]
+
+    In [149]: b=["a","b","c","d"]
+
+    In [150]: c=zip(a,b)
+
+    In [151]: list(c)
+    Out[151]: [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
+
+
+
+
+.. [1] https://docs.python.org/2/library/functions.html
