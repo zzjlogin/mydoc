@@ -97,7 +97,7 @@ html_search_language = 'zh'
 
 #setting the homepage logo
 #html_logo = './logo.png'
-html_logo = './Images/logo-wordmark-light.svg'
+html_logo = './images/logo-wordmark-light.svg'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

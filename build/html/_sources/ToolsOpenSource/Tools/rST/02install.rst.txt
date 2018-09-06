@@ -10,7 +10,7 @@ reST安装及环境配置
 
     其次，应该已经安装了pip。
     
-    **Pyhon安装可以参考：** :ref:`python-env`_
+    **Pyhon安装可以参考：** :ref:`python-env`
 
 
 .. _rst-env-install:
@@ -191,18 +191,82 @@ reST安装及环境配置
         .. code-block:: python
             :linenos:
             
-            html_logo = './Images/logo-wordmark-light.svg'
+            html_logo = './images/logo-wordmark-light.svg'
 
 
-conf.py 配置详解
+conf.py 配置详解 [1]_
 ======================================
+
+如果指定1.4.8版本 [2]_ 配置也基本类似不变。
+
 
 
 生成html文件
 ======================================
 
+**生成html文件：**
+
+.. tip::
+
+    下面生成的html文件在 ``test/build/html`` 目录。
+
+.. code-block:: txt
+    :linenos:
+
+    G:\test>make html
+    Running Sphinx v1.7.9
+    loading translations [zh_CN]... done
+    making output directory...
+    loading pickled environment... not yet created
+    building [mo]: targets for 0 po files that are out of date
+    building [html]: targets for 1 source files that are out of date
+    updating environment: 1 added, 0 changed, 0 removed
+    reading sources... [100%] index
+    looking for now-outdated files... none found
+    pickling environment... done
+    checking consistency... done
+    preparing documents... done
+    writing output... [100%] index
+    generating indices... genindex
+    writing additional pages... search
+    copying static files... done
+    copying extra files... done
+    dumping search index in English (code: en) ... done
+    dumping object inventory... done
+    build succeeded.
+
+    The HTML pages are in build\html.
 
 
 make命令详解
 ======================================
 
+::
+
+    Please use `make target' where target is one of
+    html        to make standalone HTML files，通过源文件生成表中html文件
+    dirhtml     to make HTML files named index.html in directories
+    singlehtml  to make a single large HTML file，生成一个大的html文件
+    pickle      to make pickle files，生成pickle文件
+    json        to make JSON files，生成json文件
+    htmlhelp    to make HTML files and an HTML help project，生成html文件和一个html帮助工程
+    qthelp      to make HTML files and a qthelp project，生成html文件和qt帮助工程
+    devhelp     to make HTML files and a Devhelp project，生成html文件和dev帮助工程
+    epub        to make an epub，生成epub文档
+    latex       to make LaTeX files, you can set PAPER=a4 or PAPER=letter，生成pdf文档
+    text        to make text files，生成txt文档
+    man         to make manual pages，生成Unix的man格式文档
+    texinfo     to make Texinfo files，生成
+    gettext     to make PO message catalogs
+    changes     to make an overview of all changed/added/deprecated items
+    xml         to make Docutils-native XML files
+    pseudoxml   to make pseudoxml-XML files for display purposes
+    linkcheck   to check all external links for integrity
+    doctest     to run all doctests embedded in the documentation (if enabled)
+    coverage    to run coverage check of the documentation (if enabled)
+
+
+
+
+.. [1] :http://www.sphinx-doc.org/en/stable/config.html
+.. [1] :http://www.sphinx-doc.org/en/1.4.8/config.html#build-config

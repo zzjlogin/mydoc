@@ -14,13 +14,11 @@ Python基础
 .. _python-libs:
 
 ========================
-Python常用第三方库
+Python第三方库
 ========================
 
 .. toctree::
    :maxdepth: 2
    :glob:
-
-   libs/*
 
 
