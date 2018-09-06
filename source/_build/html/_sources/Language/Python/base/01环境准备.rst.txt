@@ -1,33 +1,53 @@
-环境准备
+.. _python-env:
+
+====================================================================
+Python开发环境搭建
+====================================================================
+
+.. contents::
+
+.. _python-install:
+
+Python安装
 ====================================================================
 
 安装python
 ----------------------------------------------
 
-anaconda下载python_
+.. hint::
 
-.. _anaconda下载python: https://www.anaconda.com/download/
+    本安装实例是安装anaconda这个发行版Python，这个版本的优点是：
+
+    - 很多方便优秀的第三方库已经默认安装。
+    - 集成了ipython notebook
+    - 安装简单，易用。
+    - 科学计算中尤其方便。
+
+
+anaconda下载 python_
+
+.. _python :https://www.anaconda.com/download/
 
 .. note:: 安装过程请勾选添加到环境变量的选项，不然后续的命令没法直接使用。
 
 ipython的安装
 ----------------------------------------------
 
-.. code-block:: text 
+.. literalinclude:: /demo/program/python/ipython-install.txt
+    :language: python
+    :linenos:
+    :encoding: utf-8
 
-    C:\Users\Administrator>pip install ipython
+
 
 .. note:: 如果你感觉ipython不好用，可以换用bpython。
-
-bpython的安装_
-
-.. _bpython的安装: http://www.cnblogs.com/zhaojiedi1992/p/zhaojiedi_python_006_bpython.html
 
 
 ipython测试
 ----------------------------------------------
 
 .. code-block:: python
+    :linenos:
 
     C:\Users\Administrator>ipython
     Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)]
@@ -38,3 +58,13 @@ ipython测试
 
     In [2]: print(a)
     2
+
+
+.. _python-ide:
+
+Python开发工具安装配置
+====================================================================
+
+
+
+

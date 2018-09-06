@@ -1,5 +1,10 @@
+.. _python-buildin-constant:
+
+====================================
 内置常量
 ====================================
+
+.. contents::
 
 False
     bool值
@@ -9,5 +14,104 @@ None
     无类型
 NotImplemented
     没有实现
+
+Python常量
+====================================
+
+Python中变量并没有严格的常量类型。如果需要固定的变量来代表常量。则需要自己定义数据类型。
+这个过程一般需要自己定义这个数据的不可修改的性质。但是这个性质往往不是特别严格。
+
+Python常量不可修改实现
+------------------------------------
+
+.. note:: 方法1和方法2测试在python2.7环境可以使用。
+
+不可修改常量-方法1
+....................................
+
+**具体步骤：**
+
+1. 新建一个const.py文件，然后把下面代码复制到这个文件。
+
+.. literalinclude:: /demo/program/python/const.py
+    :encoding: utf-8
+    :language: python
+    :linenos:
+
+2. 把第一步的const.py文件放入sys.path输出路径列表的任何一个路径都可以。
+
+.. hint:: 一般把const.py文件加入python安装路径下的lib目录下。
+
+3. 在使用过程不是一般变量使用的形式。具体使用方法如下：
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-
+
+    import const
+    const.TEST_CONSTANT = 'test'
+    print(const.TEST_CONSTANT)
+    test
+    const.TEST_CONSTANT = '123'
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "C:\Python27\lib\const.py", line 8, in __setattr__
+        raise self.ConstError,"constant reassignment error!"
+    const.ConstError: constant reassignment error!
+
+
+不可修改常量-方法2
+....................................
+
+**具体步骤：**
+
+1. 新建一个const.py文件，然后把下面代码复制到这个文件。
+
+.. literalinclude:: /demo/program/python/const.py
+    :encoding: utf-8
+    :language: python
+    :lines: 1-10
+    :linenos:
+
+2. 把第一步的const.py文件放入sys.path输出路径列表的任何一个路径都可以。
+
+.. hint:: 一般把const.py文件加入python安装路径下的lib目录下。
+
+3. 在使用过程不是一般变量使用的形式。具体使用方法如下：
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-
+
+    import const
+    c = const._const()
+    c.TEST_CONSTANT = 'test'
+    print(c.TEST_CONSTANT)
+    test
+    c.TEST_CONSTANT = '123'
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "C:\Python27\lib\const.py", line 8, in __setattr__
+        raise self.ConstError,"constant reassignment error!"
+    const.ConstError: constant reassignment error!
+
+
+Python中代表空/假的常见值
+====================================
+
+False
+    bool值
+()
+    空元组(tuple)
+[]
+    空列表(list)
+''
+    空字符串(str)
+{}
+    空字典(dict)
+set()
+    空集合
+    
+
 
 

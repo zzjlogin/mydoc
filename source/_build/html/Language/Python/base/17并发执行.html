@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-05
+                2018-09-06
               </div>
             
           
@@ -89,12 +89,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Python基础</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. 环境准备</a></li>
-<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数 </a></li>
 <li class="toctree-l4"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="04内置类型.html">4. 内置类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06字符串处理.html">6. 文本处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="08数据类型.html">8. 数据类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="09数值模块.html">9. 数值模块</a></li>
@@ -508,7 +508,15 @@
 <h2>17.1. threading<a class="headerlink" href="#threading" title="永久链接至标题">¶</a></h2>
 <p>提供基础的并行操作</p>
 <p>主要方法：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>threading.active_count: 活动个数
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>threading.active_count: 活动个数
 therading.current_thread: 当前线程
 threading.get_ident: 获取线程的identifier
 threading.enumerate：线程遍历
@@ -518,10 +526,21 @@ threading.setprofile: 设置profile函数
 threading.stack_size: 设置stack大小
 threading.TIMEOUT_MAX: 线程超时最大值
 </pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-thread">
-<h3>17.1.1. threading.Thread<a class="headerlink" href="#threading-thread" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>start: 启动一个线程
+<h2>17.2. threading.Thread<a class="headerlink" href="#threading-thread" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>start: 启动一个线程
 run: 运行线程
 join: 等待线程中断
 name: 名字
@@ -533,65 +552,86 @@ daemon: 是否是守护进程
 isDaemon: 是否是守护进程
 setDaemon: 设置为守护进程
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-lock">
-<h3>17.1.2. threading.Lock<a class="headerlink" href="#threading-lock" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acqure: 请求一个锁
+<h2>17.3. threading.Lock<a class="headerlink" href="#threading-lock" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>acqure: 请求一个锁
 release: 释放锁
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-rlock">
-<h3>17.1.3. threading.RLock<a class="headerlink" href="#threading-rlock" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acqure: 请求一个锁
+<h2>17.4. threading.RLock<a class="headerlink" href="#threading-rlock" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>acqure: 请求一个锁
 release: 释放锁
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-condition">
-<h3>17.1.4. threading.Condition<a class="headerlink" href="#threading-condition" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>acqure: 请求一个锁
+<h2>17.5. threading.Condition<a class="headerlink" href="#threading-condition" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>acqure: 请求一个锁
 release: 释放锁
 wait: 等待一直到一个通知或者超时
 wait_for: 等待到一个条件为true
 notify： 通知
 notify_all: 通知所有
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-event">
-<h3>17.1.5. threading.Event<a class="headerlink" href="#threading-event" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>is_set:只有内部标记为true返回true
+<h2>17.6. threading.Event<a class="headerlink" href="#threading-event" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>is_set:只有内部标记为true返回true
 set： 设置内部标记
 clear: 清空时间
 wait: 阻塞一直到内部标记为true
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-timer">
-<h3>17.1.6. threading.Timer<a class="headerlink" href="#threading-timer" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cancel: 取消
+<h2>17.7. threading.Timer<a class="headerlink" href="#threading-timer" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>cancel: 取消
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="threading-barrier">
-<h3>17.1.7. threading.Barrier<a class="headerlink" href="#threading-barrier" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>wait： 等待
+<h2>17.8. threading.Barrier<a class="headerlink" href="#threading-barrier" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>wait： 等待
 reset: 重置
 abort: 中断
 parties: 需要pass的线程个数
 n_waiting: 当前等待个数
 broken: 是否是broken状态
 </pre></div>
-</div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="multiprocessing">
-<h2>17.2. multiprocessing<a class="headerlink" href="#multiprocessing" title="永久链接至标题">¶</a></h2>
+<h2>17.9. multiprocessing<a class="headerlink" href="#multiprocessing" title="永久链接至标题">¶</a></h2>
 <p>类似线程的多处理模块</p>
 <p>Pool样例使用</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
@@ -600,9 +640,17 @@ broken: 是否是broken状态
     <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Process样例使用</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -612,9 +660,20 @@ broken: 是否是broken状态
     <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>两个进程通信样例</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Pipe</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Pipe</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">([</span><span class="mi">42</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">])</span>
@@ -627,9 +686,22 @@ broken: 是否是broken状态
     <span class="k">print</span><span class="p">(</span><span class="n">parent_conn</span><span class="o">.</span><span class="n">recv</span><span class="p">())</span>   <span class="c1"># prints &quot;[42, None, &#39;hello&#39;]&quot;</span>
     <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>进程同步样例</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Lock</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Lock</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
     <span class="n">l</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
@@ -644,9 +716,25 @@ broken: 是否是broken状态
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
         <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">lock</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>共享内存样例</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="n">Array</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">Value</span><span class="p">,</span> <span class="n">Array</span>
 
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
     <span class="n">n</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mf">3.1415927</span>
@@ -664,12 +752,22 @@ broken: 是否是broken状态
     <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
     <span class="k">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[:])</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="multiprocessing-process">
-<h2>17.3. multiprocessing.Process<a class="headerlink" href="#multiprocessing-process" title="永久链接至标题">¶</a></h2>
+<h2>17.10. multiprocessing.Process<a class="headerlink" href="#multiprocessing-process" title="永久链接至标题">¶</a></h2>
 <p>主要方法</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>run: 运行
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>run: 运行
 start:启动
 join: 等待
 name:名字
@@ -681,16 +779,25 @@ authkey: 认证key
 sentinel: 系统对象数字句柄
 terminate: 中断进程
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="id2">
-<h2>17.4. multiprocessing.Process<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>17.11. multiprocessing.Process<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>返回一个（conn1,conn2）的连接对象。</p>
 </div>
 <div class="section" id="multiprocessing-queue">
-<h2>17.5. multiprocessing.Queue<a class="headerlink" href="#multiprocessing-queue" title="永久链接至标题">¶</a></h2>
+<h2>17.12. multiprocessing.Queue<a class="headerlink" href="#multiprocessing-queue" title="永久链接至标题">¶</a></h2>
 <p>主要方法</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>qsize: 队列大小
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>qsize: 队列大小
 empty: 是否为空
 full: 是否满了
 put: 添加对象
@@ -701,18 +808,25 @@ close: 关闭
 join_thread: 等待后台进程
 cancel_join_thread: 取消join进程
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="id3">
-<h2>17.6. multiprocessing.Queue<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>17.13. multiprocessing.Queue<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="multiprocessing-joinablequeue">
-<h2>17.7. multiprocessing.JoinableQueue<a class="headerlink" href="#multiprocessing-joinablequeue" title="永久链接至标题">¶</a></h2>
+<h2>17.14. multiprocessing.JoinableQueue<a class="headerlink" href="#multiprocessing-joinablequeue" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="multiprocessing-connection-connection">
-<h2>17.8. multiprocessing.connection.Connection<a class="headerlink" href="#multiprocessing-connection-connection" title="永久链接至标题">¶</a></h2>
+<h2>17.15. multiprocessing.connection.Connection<a class="headerlink" href="#multiprocessing-connection-connection" title="永久链接至标题">¶</a></h2>
 <p>主要方法</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>send： 发送对象
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>send： 发送对象
 recv:  接受对象
 fileno： 文件描述符
 close:   关闭
@@ -721,10 +835,18 @@ send_bytes: 发送字节对象
 recv_bytes: 接受字节对象
 recv_bytes_into: 接受字节到一个buffer
 </pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="id4">
-<h3>17.8.1. 共享对象<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>multiprocessing.Value
+<h2>17.16. 共享对象<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>multiprocessing.Value
 multiprocessing.Array
 multiprocessing.sharedctypes.RawArray
 multiprocessing.sharedctypes.RawValue
@@ -733,23 +855,39 @@ multiprocessing.sharedctypes.Value
 multiprocessing.sharedctypes.copy
 multiprocessing.sharedctypes.synchronized
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="id5">
-<h3>17.8.2. 进程管理者<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h2>17.17. 进程管理者<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>multiprocessing.managers.BaseManager</p>
 <p>主要方法</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>start： 启动
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>start： 启动
 get_server:获取server对象
 connect: 连接
 shutdown: 关闭
 register: 注册
 address: 管理者使用地址
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>multiprocessing.managers.SyncManager</p>
 <p>主要方法</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Barrier： 创建一个共享的屏障对象
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Barrier： 创建一个共享的屏障对象
 Bounded:  创建一个有界信号量
 Event:  创建一个事件对象
 Lock: 创建一个共享锁对象
@@ -762,10 +900,20 @@ Value: 创建一个数值
 dict: 字典
 list: 列表
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>multiprocessing.pool.Pool</p>
 <p>主要方法：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>apply: 给定的函数和参数去调用
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>apply: 给定的函数和参数去调用
 apply_async: 异步调用
 map: 并行操作
 map_async: 异步操作
@@ -777,21 +925,24 @@ close: 关闭
 terminate: 中断
 join: 等待进程去退出
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>multiprocessing.pool.AsyncResult</p>
 <p>主要方法：</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>get: 返回结果如果结果到达
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>get: 返回结果如果结果到达
 wait: 等待数秒等结果到来
 ready: 返回是否调用完毕
 successful: 返回是否完成且没有异常
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>日志</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>multiprocessing.get_logger()获取日志
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>multiprocessing.get_logger()获取日志
 multiprocessing.log_to_stderr() 日志输出到标准错误去。
 </pre></div>
-</div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 

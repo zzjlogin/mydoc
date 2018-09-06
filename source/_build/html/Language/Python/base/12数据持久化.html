@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-05
+                2018-09-06
               </div>
             
           
@@ -89,12 +89,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Python基础</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. 环境准备</a></li>
-<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数 </a></li>
 <li class="toctree-l4"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="04内置类型.html">4. 内置类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06字符串处理.html">6. 文本处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="08数据类型.html">8. 数据类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="09数值模块.html">9. 数值模块</a></li>
@@ -516,7 +516,24 @@
 <li>默认情况下，JSON只能表示Python内置类型的一个子集，并且不包含自定义类; pickle可以代表大量的Python类型。</li>
 </ul>
 <p>序列化和反序列号样例：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用dump来将python对象直接dump到文件中去</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 使用dump来将python对象直接dump到文件中去</span>
 
 <span class="kn">import</span> <span class="nn">pickle</span>
 
@@ -535,13 +552,36 @@
     <span class="c1"># 这个地方就不能在指定版本了，会自动识别的，指定了反而不好。</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>load接受的是文件描述符，loads接受的是文件的内容，dump接受文件描述符，dumps默认返回str</p>
 </div>
 <div class="section" id="copyreg">
 <h2>12.2. copyreg<a class="headerlink" href="#copyreg" title="永久链接至标题">¶</a></h2>
 <p>copyreg模块提供了一种自定义函数来序列和反序列特定对象时使用的函数的机制。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copyreg</span><span class="o">,</span><span class="nn">copy</span><span class="o">,</span><span class="nn">pickle</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">copyreg</span><span class="o">,</span><span class="nn">copy</span><span class="o">,</span><span class="nn">pickle</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="o">...</span><span class="p">:</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
@@ -566,18 +606,40 @@
 <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">p</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x80\x03</span><span class="s1">c__main__</span><span class="se">\n</span><span class="s1">C</span><span class="se">\n</span><span class="s1">q</span><span class="se">\x00</span><span class="s1">K</span><span class="se">\x01\x85</span><span class="s1">q</span><span class="se">\x01</span><span class="s1">Rq</span><span class="se">\x02</span><span class="s1">.&#39;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="shelve">
 <h2>12.3. shelve<a class="headerlink" href="#shelve" title="永久链接至标题">¶</a></h2>
 <p>shelve是一个持久的，类似字典的对象。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">shelve</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">shelve</span>
 
 <span class="c1"># 打开一个文件，可以不存在，会创建的</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;a.shelve&quot;</span><span class="p">)</span>
 
 <span class="c1"># 设置一些属性值</span>
-<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zzjlogin&quot;</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span> <span class="mi">26</span>
 
@@ -593,16 +655,31 @@
 
 <span class="c1"># 还是可以获取到原有的数据的</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s1">&#39;zhaojiedi&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s1">&#39;zzjlogin&#39;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="marshal">
 <h2>12.4. marshal<a class="headerlink" href="#marshal" title="永久链接至标题">¶</a></h2>
 <p>该模块包含可以以二进制格式读取和写入Python值的函数。</p>
 <p>和pickle用法差不多，重要是load,loads,dump,dumps这4个方法。</p>
 <p>简单序列化和反序化样例:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">marshal</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">marshal</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">31</span><span class="p">]:</span> <span class="n">d</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 
@@ -619,21 +696,27 @@
 <span class="n">In</span> <span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">37</span><span class="p">]:</span> <span class="bp">False</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="dbm">
 <h2>12.5. dbm<a class="headerlink" href="#dbm" title="永久链接至标题">¶</a></h2>
 <p>dbm是DBM数据库变体的通用接口,dbm.gnu或dbm.ndbm。 如果没有安装这些模块，
 则将使用模块dbm.dumb中的慢而简单的实现。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dbm</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dbm</span>
 <span class="c1"># r只读，w写，c读写，且如果不存在创建，n创建一个新的，如果存在就读写打开。</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="k">with</span> <span class="n">dbm</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
-    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zhaojiedi&quot;</span>
+    <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;zzjlogin&quot;</span>
     <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;26&quot;</span>
     <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span>
     <span class="o">...</span><span class="p">:</span>     <span class="n">db</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;100&quot;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>这个和marshal一样，这次修改完毕，下次再次打开还是可以得到上次的数据的。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
@@ -647,7 +730,76 @@
 也可以使用SQLite对应用程序进行原型设计，然后将代码移植到更大的数据库，如PostgreSQL或Oracle。</p>
 <p>这个模块使用起来像我们使用大型数据一样，只是这个数据库比较low而已，没有进程和复杂的数据库管理功能。</p>
 <p>样例：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
 
 <span class="c1"># 创建一个连接，example.db可以存在，可以不存在</span>
@@ -718,7 +870,7 @@
 <span class="c1"># 关闭连接</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 

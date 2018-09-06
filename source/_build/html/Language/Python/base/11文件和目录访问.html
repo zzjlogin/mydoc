@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-05
+                2018-09-06
               </div>
             
           
@@ -89,12 +89,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Python基础</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. 环境准备</a></li>
-<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数 </a></li>
 <li class="toctree-l4"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="04内置类型.html">4. 内置类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06字符串处理.html">6. 文本处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="08数据类型.html">8. 数据类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="09数值模块.html">9. 数值模块</a></li>
@@ -506,12 +506,52 @@
 <h1>11. 文件和目录访问<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>这个模块提供了代表文件系统路径的类，其语义适用于不同的操作系统。</p>
 <p>文件类继承图</p>
-<img alt="../../../_images/pathlib-inheritance.png" src="../../../_images/pathlib-inheritance.png" />
+<a class="reference internal image-reference" href="../../../_images/pathlib-inheritance.png"><img alt="zzjlogin's picture loss" class="align-center" src="../../../_images/pathlib-inheritance.png" style="width: 400px; height: 400px;" /></a>
 <div class="section" id="pathlib">
 <h2>11.1. pathlib<a class="headerlink" href="#pathlib" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id2">
 <h3>11.1.1. 基本使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下的所有文件</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 列出目录下的所有文件</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">p</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
@@ -553,11 +593,73 @@
 <span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">q</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="bp">False</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="pure">
 <h3>11.1.2. pure路径<a class="headerlink" href="#pure" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 路径整合</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 路径整合</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">PurePath</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">PurePath</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;some/path&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
@@ -621,14 +723,31 @@
 <span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">p</span><span class="o">.</span><span class="n">as_uri</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="s1">&#39;file:///c:/Program</span><span class="si">%20F</span><span class="s1">iles&#39;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="concrete">
 <h3>11.1.3. Concrete路径<a class="headerlink" href="#concrete" title="永久链接至标题">¶</a></h3>
 <p>在原有PurePath的基础上又提供了对路径对象执行系统调用的方法。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 当前目录，current workspace directory</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 当前目录，current workspace directory</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;E:/ZhaojiediProject/github/My_Aliyun_Hexo_Blog/hexo&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">WindowsPath</span><span class="p">(</span><span class="s1">&#39;E:/Project/github/mydoc/hexo&#39;</span><span class="p">)</span>
 
 <span class="c1"># 当前用户的家目录</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">52</span><span class="p">]:</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span>
@@ -645,13 +764,41 @@
         <span class="n">as_posix</span><span class="p">()</span>        <span class="n">drive</span>             <span class="n">group</span><span class="p">()</span>           <span class="n">is_char_device</span><span class="p">()</span>  <span class="n">is_reserved</span><span class="p">()</span>     <span class="o">&gt;</span>
         <span class="n">as_uri</span><span class="p">()</span>          <span class="n">exists</span><span class="p">()</span>          <span class="n">home</span><span class="p">()</span>            <span class="n">is_dir</span><span class="p">()</span>          <span class="n">is_socket</span><span class="p">()</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 <div class="section" id="os-path">
 <h2>11.2. os.path<a class="headerlink" href="#os-path" title="永久链接至标题">¶</a></h2>
 <p>这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>os.path.abspath(path)                       绝对路径
 os.path.basename(path)                      基名
 os.path.commonpath(paths)                   公共路径
 os.path.commonprefix(list)                  公共前缀
@@ -681,21 +828,86 @@ os.path.split(path)                         路径分割
 os.path.splitdrive(path)                    分割驱动盘
 os.path.splitext(path)                      扩展，用于提取不带扩展的文件名字
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="fileinput">
 <h2>11.3. fileinput<a class="headerlink" href="#fileinput" title="永久链接至标题">¶</a></h2>
 <p>该模块实现了一个辅助类和函数，可以在标准输入或文件列表上快速编写循环。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fileinput</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fileinput</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="stat">
 <h2>11.4. stat<a class="headerlink" href="#stat" title="永久链接至标题">¶</a></h2>
 <p>stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre></div></td><td class="code"><div class="highlight"><pre><span></span>stat.S_ISDIR(mode)              是否是一个目录
 stat.S_ISCHR(mode)              字符设备
 stat.S_ISBLK(mode)              块设备
 stat.S_ISREG(mode)              普通文件
@@ -760,18 +972,37 @@ stat.SF_APPEND
 stat.SF_NOUNLINK
 stat.SF_SNAPSHOT
 </pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">mode</span> <span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span>
+</td></tr></table></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">76</span><span class="p">]:</span> <span class="n">mode</span> <span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">st_mode</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="n">stat</span><span class="o">.</span><span class="n">S_ISDIR</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">77</span><span class="p">]:</span> <span class="bp">True</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="filecmp">
 <h2>11.5. filecmp<a class="headerlink" href="#filecmp" title="永久链接至标题">¶</a></h2>
 <p>这个目录定义了一些文件和目录比较的功能。</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>report()                    报告比较信息
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>report()                    报告比较信息
 report_partial_closure()    报告包括自路径
 report_full_closure()       公共子目录的比较
 left                        第一个比较的目录a
@@ -789,16 +1020,48 @@ diff_files                  不同的文件
 funny_files
 subdirs
 </pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件比较的</span>
+</td></tr></table></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 文件比较的</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">filecmp</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">filecmp</span><span class="o">.</span><span class="n">cmp</span><span class="p">(</span><span class="s2">&quot;a.txt&quot;</span><span class="p">,</span><span class="s2">&quot;b.txt&quot;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="bp">False</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>下面的代码在linux测试的。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@centos-7 tmp<span class="o">]</span><span class="c1"># tree</span>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>root@zzjlogin tmp<span class="o">]</span><span class="c1"># tree</span>
 .
 ├── dir1
 │   ├── sub1
@@ -810,7 +1073,7 @@ subdirs
     │   └── aa.txt
     ├── sub2
     └── sub4
-<span class="o">[</span>root@centos-7 tmp<span class="o">]</span><span class="c1"># bpython</span>
+<span class="o">[</span>root@zzjlogin tmp<span class="o">]</span><span class="c1"># bpython</span>
 bpython version <span class="m">0</span>.16 on top of Python <span class="m">2</span>.7.5 /usr/bin/python
 &gt;&gt;&gt; import filecmp
 &gt;&gt;&gt; filecmp.dircmp<span class="o">(</span><span class="s2">&quot;dir1&quot;</span>,<span class="s2">&quot;dir2&quot;</span><span class="o">)</span>
@@ -828,18 +1091,63 @@ Only in dir1 : <span class="o">[</span><span class="s1">&#39;sub3&#39;</span><sp
 Only in dir2 : <span class="o">[</span><span class="s1">&#39;sub4&#39;</span><span class="o">]</span>
 Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;</span>, <span class="s1">&#39;sub2&#39;</span><span class="o">]</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="tempfile">
 <h2>11.6. tempfile<a class="headerlink" href="#tempfile" title="永久链接至标题">¶</a></h2>
 <p>从名字上就知道这个是临时文件相关的。</p>
 <p>比较简单，直接上个例子吧。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用临时文件</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 使用临时文件</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">tempfile</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">fp</span> <span class="o">=</span><span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryFile</span><span class="p">()</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;my name is zhaojiedi&#39;</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;my name is zzjlogin&#39;</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">20</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">fp</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -881,17 +1189,28 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 <span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="bp">False</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="glob">
 <h2>11.7. glob<a class="headerlink" href="#glob" title="永久链接至标题">¶</a></h2>
 <p>提供通配功能去查找文件的。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">38</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;backup.zip&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;eclipse-jee-neon-3-win32-x86_64</span><span class="se">\xa1\xbe</span><span class="s1">CDT+PyDev</span><span class="se">\xa1\xbf</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+<span class="s1">&#39;hammertime-master.zip&#39;</span><span class="p">]</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;**/*.txt&quot;</span><span class="p">,</span><span class="n">recursive</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="p">[</span><span class="s1">&#39;2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;sub/3.txt&#39;</span><span class="p">]</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="fnmatch">
 <h2>11.8. fnmatch<a class="headerlink" href="#fnmatch" title="永久链接至标题">¶</a></h2>
@@ -921,7 +1240,13 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
 </tr>
 </tbody>
 </table>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 找到当前目录下的所有txt文件</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 找到当前目录下的所有txt文件</span>
 <span class="kn">import</span> <span class="nn">fnmatch</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -929,23 +1254,42 @@ Common subdirectories : <span class="o">[</span><span class="s1">&#39;sub1&#39;<
     <span class="k">if</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatch</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;*.txt&#39;</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="linecache">
 <h2>11.9. linecache<a class="headerlink" href="#linecache" title="永久链接至标题">¶</a></h2>
 <p>linecache模块允许从Python源文件中获取任何行，同时尝试使用缓存进行内部优化，这是
 一种从单个文件中读取多行的常见情况。</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">linecache</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">linecache</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">linecache</span><span class="o">.</span><span class="n">getline</span><span class="p">(</span><span class="n">linecache</span><span class="o">.</span><span class="vm">__file__</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s1">&#39;import functools</span><span class="se">\n</span><span class="s1">&#39;</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="shutil">
 <h2>11.10. shutil<a class="headerlink" href="#shutil" title="永久链接至标题">¶</a></h2>
 <p>这个模块提供高级别的文件操作，比较递归copy文件等。</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>shutil.copyfile(src, dst, *, follow_symlinks=True)                          复制文件
+<div class="highlight-text notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span>shutil.copyfile(src, dst, *, follow_symlinks=True)                          复制文件
 shutil.copymode(src, dst, *, follow_symlinks=True)                          复制mode
 shutil.copystat(src, dst, *, follow_symlinks=True)                          复制stat的atime,ctime,mtime信息
 shutil.copy(src, dst, *, follow_symlinks=True)                              复制文件，支持目录的
@@ -963,9 +1307,19 @@ shutil.unpack_archive(filename[, extract_dir[, format]])                    解�
 shutil.unregister_unpack_format(name)                                       取消加压格式
 shutil.get_terminal_size(fallback=(columns, lines))                         获取终端大小
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>使用样例：</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 复制src到dst目录，处理*.pyc和tmp*文件</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 复制src到dst目录，处理*.pyc和tmp*文件</span>
 <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copytree</span><span class="p">,</span> <span class="n">ignore_patterns</span>
 <span class="n">copytree</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="n">ignore_patterns</span><span class="p">(</span><span class="s1">&#39;*.pyc&#39;</span><span class="p">,</span> <span class="s1">&#39;tmp*&#39;</span><span class="p">))</span>
 
@@ -977,7 +1331,7 @@ shutil.get_terminal_size(fallback=(columns, lines))                         获�
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">unpack_archive</span><span class="p">(</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">Administrator</span><span class="se">\\</span><span class="s1">帮助文档.tar.gz&#39;</span><span class="p">,</span><span class="s2">&quot;d:</span><span class="se">\\</span><span class="s2">test&quot;</span><span class="p">)</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 <div class="section" id="macpath">
 <h2>11.11. macpath<a class="headerlink" href="#macpath" title="永久链接至标题">¶</a></h2>

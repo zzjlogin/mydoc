@@ -1,18 +1,27 @@
+
+==========================================
 文件和目录访问
 ==========================================
+
+
 这个模块提供了代表文件系统路径的类，其语义适用于不同的操作系统。
 
 文件类继承图
 
-.. image:: /images/filedir/pathlib-inheritance.png
+.. image:: /images/language/python/pathlib-inheritance.png
+    :align: center
+    :height: 400px
+    :width: 400 px
+    :alt: zzjlogin's picture loss
 
 pathlib
-------------------------------------------------
+==================================================
 
 基本使用
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------
 
 .. code-block:: python
+    :linenos:
 
     # 列出目录下的所有文件
     In [1]: from pathlib import Path
@@ -57,9 +66,10 @@ pathlib
     Out[22]: False
 
 pure路径
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 路径整合
     In [24]: from pathlib import PurePath
@@ -126,14 +136,16 @@ pure路径
     Out[49]: 'file:///c:/Program%20Files'
 
 Concrete路径
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
+
 在原有PurePath的基础上又提供了对路径对象执行系统调用的方法。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 当前目录，current workspace directory
     In [51]: Path.cwd()
-    Out[51]: WindowsPath('E:/ZhaojiediProject/github/My_Aliyun_Hexo_Blog/hexo')
+    Out[51]: WindowsPath('E:/Project/github/mydoc/hexo')
 
     # 当前用户的家目录
     In [52]: Path.home()
@@ -151,10 +163,12 @@ Concrete路径
             as_uri()          exists()          home()            is_dir()          is_socket()
 
 os.path
-----------------------------------------------------------------------------------------
+==================================================
+
 这个模块算是用的比较多的，目录判断和文件相关的大部分功能都有。
 
 .. code-block:: text
+    :linenos:
 
     os.path.abspath(path)                       绝对路径
     os.path.basename(path)                      基名
@@ -187,20 +201,24 @@ os.path
     os.path.splitext(path)                      扩展，用于提取不带扩展的文件名字
 
 fileinput
-----------------------------------------------------------------------------------------
+==================================================
+
 该模块实现了一个辅助类和函数，可以在标准输入或文件列表上快速编写循环。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     import fileinput
     for line in fileinput.input():
         print(line)
 
 stat
----------------------------------------------------------------------------------
+==================================================
+
 stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们存在）的结果的常量和函数。
 
 .. code-block:: text
+    :linenos:
 
     stat.S_ISDIR(mode)              是否是一个目录
     stat.S_ISCHR(mode)              字符设备
@@ -269,7 +287,8 @@ stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们�
 
 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [76]: mode =os.stat(".").st_mode
 
@@ -277,11 +296,13 @@ stat模块定义用于解释os.stat()，os.fstat()和os.lstat()（如果它们�
     Out[77]: True
 
 filecmp
-----------------------------------------------------------
+==================================================
+
 这个目录定义了一些文件和目录比较的功能。
 
 
 .. code-block:: text 
+    :linenos:
 
     report()                    报告比较信息
     report_partial_closure()    报告包括自路径
@@ -301,7 +322,8 @@ filecmp
     funny_files
     subdirs
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 文件比较的
     In [1]: import filecmp
@@ -312,8 +334,9 @@ filecmp
 下面的代码在linux测试的。
 
 .. code-block:: bash
+    :linenos:
 
-    root@centos-7 tmp]# tree
+    root@zzjlogin tmp]# tree
     .
     ├── dir1
     │   ├── sub1
@@ -325,7 +348,7 @@ filecmp
         │   └── aa.txt
         ├── sub2
         └── sub4
-    [root@centos-7 tmp]# bpython
+    [root@zzjlogin tmp]# bpython
     bpython version 0.16 on top of Python 2.7.5 /usr/bin/python
     >>> import filecmp
     >>> filecmp.dircmp("dir1","dir2")
@@ -344,19 +367,21 @@ filecmp
     Common subdirectories : ['sub1', 'sub2']
 
 tempfile
---------------------------------------------------------------------
+==================================================
+
 从名字上就知道这个是临时文件相关的。
 
 比较简单，直接上个例子吧。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 使用临时文件
     In [1]: import tempfile
 
     In [2]: fp =tempfile.TemporaryFile()
 
-    In [3]: fp.write(b'my name is zhaojiedi')
+    In [3]: fp.write(b'my name is zzjlogin')
     Out[3]: 20
 
     In [4]: fp.seek(0)
@@ -399,18 +424,25 @@ tempfile
     Out[20]: False
 
 glob
--------------------------------------------------------------------------
+==================================================
+
 提供通配功能去查找文件的。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
-    In [38]: glob.glob('*.zip')
-    Out[38]: ['backup.zip']
+    In [1]: import glob
+
+    In [2]: glob.glob('*.zip')
+    Out[2]:
+    ['eclipse-jee-neon-3-win32-x86_64\xa1\xbeCDT+PyDev\xa1\xbf.zip',
+    'hammertime-master.zip']
     In [39]: glob.glob("**/*.txt",recursive=True)
     Out[39]: ['2.txt', 'sub/3.txt']
 
 fnmatch
--------------------------------------------------------------------------
+==================================================
+
 此模块提供对Unix shell风格通配符的支持，这与正则表达式（在re模块中记录）不同。
 
 .. csv-table:: 
@@ -422,7 +454,8 @@ fnmatch
    "[seq]","集合里面的任何一个"
    "[^seq]","除了集合的任何一个"
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 找到当前目录下的所有txt文件
     import fnmatch
@@ -433,11 +466,13 @@ fnmatch
             print(file)
 
 linecache
--------------------------------------------------------------------------
+==================================================
+
 linecache模块允许从Python源文件中获取任何行，同时尝试使用缓存进行内部优化，这是
 一种从单个文件中读取多行的常见情况。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [40]: import linecache
 
@@ -445,10 +480,12 @@ linecache模块允许从Python源文件中获取任何行，同时尝试使用�
     Out[41]: 'import functools\n'
 
 shutil
--------------------------------------------------------------------------
+==================================================
+
 这个模块提供高级别的文件操作，比较递归copy文件等。
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     shutil.copyfile(src, dst, *, follow_symlinks=True)                          复制文件
     shutil.copymode(src, dst, *, follow_symlinks=True)                          复制mode
@@ -470,7 +507,8 @@ shutil
 
 使用样例： 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 复制src到dst目录，处理*.pyc和tmp*文件
     from shutil import copytree, ignore_patterns
@@ -485,4 +523,5 @@ shutil
     In [8]: unpack_archive( 'C:\\Users\\Administrator\\帮助文档.tar.gz',"d:\\test")
 
 macpath
----------------------------------------------------------------------
+==================================================
+

@@ -1,13 +1,16 @@
+
+==================================================================
 并发执行
-========================================================
+==================================================================
 
 threading
-------------------------------------------------------
+==================================================================
 提供基础的并行操作
 
 主要方法： 
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     threading.active_count: 活动个数
     therading.current_thread: 当前线程
@@ -20,9 +23,10 @@ threading
     threading.TIMEOUT_MAX: 线程超时最大值
 
 threading.Thread
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     start: 启动一个线程
     run: 运行线程
@@ -37,25 +41,28 @@ threading.Thread
     setDaemon: 设置为守护进程
 
 threading.Lock
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     acqure: 请求一个锁
     release: 释放锁
 
 threading.RLock
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     acqure: 请求一个锁
     release: 释放锁
 
 threading.Condition
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     acqure: 请求一个锁
     release: 释放锁
@@ -65,9 +72,10 @@ threading.Condition
     notify_all: 通知所有
 
 threading.Event
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     is_set:只有内部标记为true返回true
     set： 设置内部标记
@@ -75,16 +83,18 @@ threading.Event
     wait: 阻塞一直到内部标记为true
 
 threading.Timer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     cancel: 取消
 
 threading.Barrier
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     wait： 等待
     reset: 重置
@@ -94,12 +104,14 @@ threading.Barrier
     broken: 是否是broken状态
 
 multiprocessing
-------------------------------------------------------
+==================================================================
+
 类似线程的多处理模块
 
 Pool样例使用
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     from multiprocessing import Pool
 
@@ -112,7 +124,8 @@ Pool样例使用
 
 Process样例使用
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     from multiprocessing import Process
 
@@ -126,7 +139,8 @@ Process样例使用
 
 两个进程通信样例
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     from multiprocessing import Process, Pipe
 
@@ -143,7 +157,8 @@ Process样例使用
 
 进程同步样例
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     from multiprocessing import Process, Lock
 
@@ -162,7 +177,8 @@ Process样例使用
 
 共享内存样例
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     from multiprocessing import Process, Value, Array
 
@@ -183,11 +199,12 @@ Process样例使用
         print(arr[:])
              
 multiprocessing.Process
-------------------------------------------
+==================================================================
 
 主要方法
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     run: 运行
     start:启动
@@ -202,15 +219,17 @@ multiprocessing.Process
     terminate: 中断进程
 
 multiprocessing.Process
-------------------------------------------
+==================================================================
+
 返回一个（conn1,conn2）的连接对象。
 
 multiprocessing.Queue
-------------------------------------------
+==================================================================
 
 主要方法
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     qsize: 队列大小
     empty: 是否为空
@@ -224,19 +243,20 @@ multiprocessing.Queue
     cancel_join_thread: 取消join进程
 
 multiprocessing.Queue
-------------------------------------------
+==================================================================
 
 multiprocessing.JoinableQueue
-------------------------------------------
+==================================================================
 
 
 
 multiprocessing.connection.Connection
----------------------------------------------
+==================================================================
 
 主要方法
 
 .. code-block:: text 
+    :linenos:
 
     send： 发送对象
     recv:  接受对象
@@ -248,9 +268,10 @@ multiprocessing.connection.Connection
     recv_bytes_into: 接受字节到一个buffer
 
 共享对象
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
 .. code-block:: text
+    :linenos:
 
     multiprocessing.Value
     multiprocessing.Array
@@ -262,13 +283,14 @@ multiprocessing.connection.Connection
     multiprocessing.sharedctypes.synchronized
 
 进程管理者
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==================================================================
 
 multiprocessing.managers.BaseManager
 
 主要方法
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     start： 启动
     get_server:获取server对象
@@ -281,7 +303,8 @@ multiprocessing.managers.SyncManager
 
 主要方法
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     Barrier： 创建一个共享的屏障对象
     Bounded:  创建一个有界信号量
@@ -300,7 +323,8 @@ multiprocessing.pool.Pool
 
 主要方法： 
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     apply: 给定的函数和参数去调用
     apply_async: 异步调用
@@ -318,7 +342,8 @@ multiprocessing.pool.AsyncResult
 
 主要方法： 
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     get: 返回结果如果结果到达
     wait: 等待数秒等结果到来
@@ -328,6 +353,7 @@ multiprocessing.pool.AsyncResult
 日志
 
 .. code-block:: text
+    :linenos:
 
     multiprocessing.get_logger()获取日志
     multiprocessing.log_to_stderr() 日志输出到标准错误去。

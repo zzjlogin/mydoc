@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-05
+                2018-09-06
               </div>
             
           
@@ -89,12 +89,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../Python.html">Python学习</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Python基础</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. 环境准备</a></li>
-<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01环境准备.html">1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02内建函数.html">2. 内建函数 </a></li>
 <li class="toctree-l4"><a class="reference internal" href="03内置常量.html">3. 内置常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="04内置类型.html">4. 内置类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06字符串处理.html">6. 文本处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="07二进制处理.html">7. 二进制处理</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">8. 数据类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="09数值模块.html">9. 数值模块</a></li>
@@ -503,11 +503,54 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>8. 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1><a class="toc-backref" href="#id6">8. 数据类型</a><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="contents topic" id="id2">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id6">数据类型</a><ul>
+<li><a class="reference internal" href="#datetime" id="id7">datetime</a><ul>
+<li><a class="reference internal" href="#timedelta" id="id8">timedelta</a><ul>
+<li><a class="reference internal" href="#date" id="id9">date</a></li>
+<li><a class="reference internal" href="#id3" id="id10">datetime</a></li>
+<li><a class="reference internal" href="#time" id="id11">time</a></li>
+<li><a class="reference internal" href="#id4" id="id12">格式控制</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#calendar" id="id13">calendar</a></li>
+<li><a class="reference internal" href="#collectons" id="id14">collectons</a><ul>
+<li><a class="reference internal" href="#chainmap" id="id15">ChainMap</a></li>
+<li><a class="reference internal" href="#counter" id="id16">Counter</a></li>
+<li><a class="reference internal" href="#deque" id="id17">deque</a></li>
+<li><a class="reference internal" href="#defaultdict" id="id18">defaultdict</a></li>
+<li><a class="reference internal" href="#namedtuple" id="id19">namedtuple</a></li>
+<li><a class="reference internal" href="#ordereddict" id="id20">OrderedDict</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#collections-abc" id="id21">collections.abc</a></li>
+<li><a class="reference internal" href="#heapq" id="id22">heapq</a></li>
+<li><a class="reference internal" href="#bisect" id="id23">bisect</a></li>
+<li><a class="reference internal" href="#array" id="id24">array</a></li>
+<li><a class="reference internal" href="#weakref" id="id25">weakref</a></li>
+<li><a class="reference internal" href="#types" id="id26">types</a></li>
+<li><a class="reference internal" href="#copy" id="id27">copy</a></li>
+<li><a class="reference internal" href="#pprint" id="id28">pprint</a></li>
+<li><a class="reference internal" href="#reprlib" id="id29">reprlib</a></li>
+<li><a class="reference internal" href="#enum" id="id30">enum</a><ul>
+<li><a class="reference internal" href="#intenum" id="id31">IntEnum</a></li>
+<li><a class="reference internal" href="#intflag" id="id32">IntFlag</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flag" id="id33">Flag</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="datetime">
-<h2>8.1. datetime<a class="headerlink" href="#datetime" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">8.1. datetime</a><a class="headerlink" href="#datetime" title="永久链接至标题">¶</a></h2>
 <div class="section" id="timedelta">
-<h3>8.1.1. timedelta<a class="headerlink" href="#timedelta" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">8.1.1. timedelta</a><a class="headerlink" href="#timedelta" title="永久链接至标题">¶</a></h3>
 <p>class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</p>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
@@ -524,9 +567,8 @@
 <span class="mi">366</span> <span class="n">days</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mo">00</span><span class="p">:</span><span class="mo">00</span>
 </pre></div>
 </div>
-</div>
 <div class="section" id="date">
-<h3>8.1.2. date<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id9">8.1.1.1. date</a><a class="headerlink" href="#date" title="永久链接至标题">¶</a></h4>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">15</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
@@ -565,8 +607,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>8.1.3. datetime<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h4><a class="toc-backref" href="#id10">8.1.1.2. datetime</a><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
 
@@ -602,7 +644,7 @@
 </div>
 </div>
 <div class="section" id="time">
-<h3>8.1.4. time<a class="headerlink" href="#time" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id11">8.1.1.3. time</a><a class="headerlink" href="#time" title="永久链接至标题">¶</a></h4>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span>  <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
 
@@ -618,20 +660,20 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>8.1.5. 格式控制<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#id12">8.1.1.4. 格式控制</a><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
 <p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">日期格式控制符</a></p>
 </div>
 </div>
 <div class="section" id="calendar">
-<h2>8.2. calendar<a class="headerlink" href="#calendar" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id13">8.1.2. calendar</a><a class="headerlink" href="#calendar" title="永久链接至标题">¶</a></h3>
 <p>提供日历功能</p>
 </div>
 <div class="section" id="collectons">
-<h2>8.3. collectons<a class="headerlink" href="#collectons" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id14">8.1.3. collectons</a><a class="headerlink" href="#collectons" title="永久链接至标题">¶</a></h3>
 <p>提供容器数据类型</p>
 <div class="section" id="chainmap">
-<h3>8.3.1. ChainMap<a class="headerlink" href="#chainmap" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id15">8.1.3.1. ChainMap</a><a class="headerlink" href="#chainmap" title="永久链接至标题">¶</a></h4>
 <p>提供用于快速链接多个映射，以便将它们视为单个单元。 它通常比创建新字典和运行多个update()调用要快得多。</p>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
@@ -668,7 +710,7 @@
 </div>
 </div>
 <div class="section" id="counter">
-<h3>8.3.2. Counter<a class="headerlink" href="#counter" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id16">8.1.3.2. Counter</a><a class="headerlink" href="#counter" title="永久链接至标题">¶</a></h4>
 <p>计数功能</p>
 <blockquote>
 <div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
@@ -715,7 +757,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="deque">
-<h3>8.3.3. deque<a class="headerlink" href="#deque" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id17">8.1.3.3. deque</a><a class="headerlink" href="#deque" title="永久链接至标题">¶</a></h4>
 <p>队列</p>
 <p>常用方法：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
@@ -793,11 +835,11 @@
 </div>
 </div>
 <div class="section" id="defaultdict">
-<h3>8.3.4. defaultdict<a class="headerlink" href="#defaultdict" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id18">8.1.3.4. defaultdict</a><a class="headerlink" href="#defaultdict" title="永久链接至标题">¶</a></h4>
 <p>默认字典，就是在原有字典的基础上提供默认值。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">46</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;zhaojiedi&quot;</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;zzjlogin&quot;</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
@@ -817,7 +859,7 @@
 <p>上面使用defaultdict指定int参数，如果没有值的话，会自动获取int的默认值0的。</p>
 </div>
 <div class="section" id="namedtuple">
-<h3>8.3.5. namedtuple<a class="headerlink" href="#namedtuple" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id19">8.1.3.5. namedtuple</a><a class="headerlink" href="#namedtuple" title="永久链接至标题">¶</a></h4>
 <p>给元组提供了名字的扩展</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">53</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
@@ -857,7 +899,7 @@
 </div>
 </div>
 <div class="section" id="ordereddict">
-<h3>8.3.6. OrderedDict<a class="headerlink" href="#ordereddict" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id20">8.1.3.6. OrderedDict</a><a class="headerlink" href="#ordereddict" title="永久链接至标题">¶</a></h4>
 <p>有序字典与普通词典一样，但它们记住插入项的顺序。在遍历一个有序字典时，这些项将按其第一次添加的顺序返回。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">67</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
@@ -880,11 +922,11 @@
 </div>
 </div>
 <div class="section" id="collections-abc">
-<h2>8.4. collections.abc<a class="headerlink" href="#collections-abc" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id21">8.1.4. collections.abc</a><a class="headerlink" href="#collections-abc" title="永久链接至标题">¶</a></h3>
 <p>这个模块提供抽象基类，可以用来测试是否一个类提供了一个特定的接口；</p>
 </div>
 <div class="section" id="heapq">
-<h2>8.5. heapq<a class="headerlink" href="#heapq" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id22">8.1.5. heapq</a><a class="headerlink" href="#heapq" title="永久链接至标题">¶</a></h3>
 <p>这个模块提供了一个堆队列算法的实现，也称为优先级队列算法。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入</span>
 <span class="n">In</span> <span class="p">[</span><span class="mi">87</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">heapq</span> <span class="kn">import</span> <span class="n">heappush</span><span class="p">,</span><span class="n">heappop</span>
@@ -914,7 +956,7 @@
 </div>
 </div>
 <div class="section" id="bisect">
-<h2>8.6. bisect<a class="headerlink" href="#bisect" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id23">8.1.6. bisect</a><a class="headerlink" href="#bisect" title="永久链接至标题">¶</a></h3>
 <p>此模块提供了支持以排序的顺序维护列表，而不必在每次插入之后对列表进行排序。</p>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">110</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect</span> <span class="p">,</span> <span class="n">bisect_left</span>
@@ -933,19 +975,19 @@
 <p>上面的使用4 个break point 将区间划分为5个， 每个对应一个等级，使用bisect去查找对应索引。</p>
 </div>
 <div class="section" id="array">
-<h2>8.7. array<a class="headerlink" href="#array" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id24">8.1.7. array</a><a class="headerlink" href="#array" title="永久链接至标题">¶</a></h3>
 <p>这个模块定义了一个可以紧凑地表示基本值数组的对象类型：字符、整数、浮点数。</p>
 </div>
 <div class="section" id="weakref">
-<h2>8.8. weakref<a class="headerlink" href="#weakref" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id25">8.1.8. weakref</a><a class="headerlink" href="#weakref" title="永久链接至标题">¶</a></h3>
 <p>这个模块允许Python程序员创建对象的弱引用</p>
 </div>
 <div class="section" id="types">
-<h2>8.9. types<a class="headerlink" href="#types" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id26">8.1.9. types</a><a class="headerlink" href="#types" title="永久链接至标题">¶</a></h3>
 <p>此模块定义实用工具函数，以帮助动态创建新类型。</p>
 </div>
 <div class="section" id="copy">
-<h2>8.10. copy<a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id27">8.1.10. copy</a><a class="headerlink" href="#copy" title="永久链接至标题">¶</a></h3>
 <p>此模块提供深copy和浅copy功能</p>
 <p>样例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">113</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -963,7 +1005,7 @@
 </div>
 </div>
 <div class="section" id="pprint">
-<h2>8.11. pprint<a class="headerlink" href="#pprint" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id28">8.1.11. pprint</a><a class="headerlink" href="#pprint" title="永久链接至标题">¶</a></h3>
 <p>数据显示美化打印</p>
 <p>方法： pprint.pprint(object, stream=None, indent=1, width=80, depth=None, *, compact=False)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
@@ -1060,11 +1102,11 @@
 </div>
 </div>
 <div class="section" id="reprlib">
-<h2>8.12. reprlib<a class="headerlink" href="#reprlib" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id29">8.1.12. reprlib</a><a class="headerlink" href="#reprlib" title="永久链接至标题">¶</a></h3>
 <p>reprlib模块提供了对生成的字符串的大小限制生产对象表示的一种手段</p>
 </div>
 <div class="section" id="enum">
-<h2>8.13. enum<a class="headerlink" href="#enum" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id30">8.1.13. enum</a><a class="headerlink" href="#enum" title="永久链接至标题">¶</a></h3>
 <p>枚举</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">135</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span><span class="n">auto</span>
 
@@ -1121,7 +1163,7 @@
 </pre></div>
 </div>
 <div class="section" id="intenum">
-<h3>8.13.1. IntEnum<a class="headerlink" href="#intenum" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id31">8.1.13.1. IntEnum</a><a class="headerlink" href="#intenum" title="永久链接至标题">¶</a></h4>
 <p>整型枚举</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">146</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">IntEnum</span>
     <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">IntEnum</span><span class="p">):</span>
@@ -1135,7 +1177,7 @@
 </div>
 </div>
 <div class="section" id="intflag">
-<h3>8.13.2. IntFlag<a class="headerlink" href="#intflag" title="永久链接至标题">¶</a></h3>
+<h4><a class="toc-backref" href="#id32">8.1.13.2. IntFlag</a><a class="headerlink" href="#intflag" title="永久链接至标题">¶</a></h4>
 <p>整型标记</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">150</span><span class="p">]:</span> <span class="k">class</span> <span class="nc">Perm</span><span class="p">(</span><span class="n">IntFlag</span><span class="p">):</span>
     <span class="o">...</span><span class="p">:</span>     <span class="n">R</span> <span class="o">=</span><span class="mi">4</span>
@@ -1160,7 +1202,7 @@
 </div>
 </div>
 <div class="section" id="flag">
-<h2>8.14. Flag<a class="headerlink" href="#flag" title="永久链接至标题">¶</a></h2>
+<h3><a class="toc-backref" href="#id33">8.1.14. Flag</a><a class="headerlink" href="#flag" title="永久链接至标题">¶</a></h3>
 <p>标记</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">160</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Flag</span>
     <span class="o">...</span><span class="p">:</span> <span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Flag</span><span class="p">):</span>
@@ -1184,6 +1226,7 @@
 </div>
 <p>使用Flag，每个item都是按照1，2，4，8，16这样的值。</p>
 <p>这种flag的主要用于后续有异或运算的情况下。</p>
+</div>
 </div>
 </div>
 

@@ -1,17 +1,19 @@
+
+==========================================================
 文件格式
-=============================
+==========================================================
 
 csv
--------------------------------------------
+==========================================================
+
 csv是逗号分割的文件，使用比较广泛。
 
 
-
-
 csv.writer(csvfile, dialect='excel', \*\*fmtparams)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------------------------------
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [59]: import csv
 
@@ -22,9 +24,10 @@ csv.writer(csvfile, dialect='excel', \*\*fmtparams)
         ...:
 
 csv.reader(csvfile, dialect='excel', \*\*fmtparams)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------------------------------
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [61]: import csv
 
@@ -37,9 +40,10 @@ csv.reader(csvfile, dialect='excel', \*\*fmtparams)
     2,3,4,5
 
 csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel', \*args, \*\*kwds)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------------------------------------------------------
 
 .. code-block:: python
+    :linenos:
 
     In [63]: import csv
         ...:
@@ -53,9 +57,10 @@ csv.DictWriter(f, fieldnames, restval='', extrasaction='raise', dialect='excel',
         ...:     writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
 csv.reader(csvfile, dialect='excel', \*\*fmtparams)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------------------------------
 
 .. code-block:: python
+    :linenos:
 
     In [64]: import csv
 
@@ -70,12 +75,14 @@ csv.reader(csvfile, dialect='excel', \*\*fmtparams)
 
 configparser
 ----------------------------------------------------------------------------------------------------
+
 提供ini风跟配置文件的解析，window下的大量配置文件都是使用的ini风格， 还有linux下的yum仓库或者mysql数据库配置文件等等。
 
 
 ini风格的样例： 
 
 .. code-block:: ini
+    :linenos:
 
     [DEFAULT]
     ServerAliveInterval = 45
@@ -92,7 +99,8 @@ ini风格的样例：
 
 怎么生成上面的配置文件呢？
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [66]: import configparser
 
@@ -113,39 +121,41 @@ ini风格的样例：
 
 上面的代码就可以生成ini的配置文件了，下面是读取解析
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
-In [68]: import configparser
+    In [68]: import configparser
 
-In [69]: config = configparser.ConfigParser()
+    In [69]: config = configparser.ConfigParser()
 
-In [70]: config.sections()
-Out[70]: []
+    In [70]: config.sections()
+    Out[70]: []
 
-# 读取配置文件
-In [71]: config.read('example.ini')
-Out[71]: ['example.ini']
+    # 读取配置文件
+    In [71]: config.read('example.ini')
+    Out[71]: ['example.ini']
 
-In [72]: config.sections()
-Out[72]: ['bitbucket.org', 'topsecret.server.com']
+    In [72]: config.sections()
+    Out[72]: ['bitbucket.org', 'topsecret.server.com']
 
-In [73]: 'bitbucket.org' in config
-Out[73]: True
+    In [73]: 'bitbucket.org' in config
+    Out[73]: True
 
-In [75]: config['DEFAULT']['Compression']
-Out[75]: 'yes'
+    In [75]: config['DEFAULT']['Compression']
+    Out[75]: 'yes'
 
-In [76]: config.getboolean('DEFAULT','Compression')
-Out[76]: True
+    In [76]: config.getboolean('DEFAULT','Compression')
+    Out[76]: True
 
-# 指定默认值
-In [77]: topsecret.getboolean('BatchMode', fallback=True)
-Out[77]: True
+    # 指定默认值
+    In [77]: topsecret.getboolean('BatchMode', fallback=True)
+    Out[77]: True
 
 
 比较通用的一个样例： 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     import configparser
 
@@ -169,16 +179,19 @@ Out[77]: True
         config.write(configfile)
 
 netrc
-----------------------------------------------------------------------------------------------------
+==========================================================
+
 提供netrc文件的解析能力
 
 xdrlib
-----------------------------------------------------------------------------------------------------
+==========================================================
+
 支持外部数据表示标准,提供encode和decode xdr数据。
 
 样例： 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     import xdrlib
     p = xdrlib.Packer()
@@ -188,12 +201,14 @@ xdrlib
         print('packing the double failed:', instance.msg)
 
 plistlib
-----------------------------------------------------------------------------------------------------
+==========================================================
+
 用于读写主要由Mac OS X使用的“属性列表”文件，并支持二进制文件和XML plist文件。
 
 主要的方法是dumps,dump,load,loads,writePlist,readPlist方法。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     pl = dict(
         aString = "Doodah",

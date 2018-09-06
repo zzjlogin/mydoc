@@ -4,7 +4,7 @@
 alias
 ===================
 
-:Date: 2018-08-29
+:Date: 2018-09-06
 
 .. contents::
 
@@ -14,30 +14,113 @@ alias
 命令格式
 ===================
 
+.. code-block:: bash
+    :linenos:
+
+    alias [-p] [name[=value] ... ]
+
 .. _alias-user:
 
 所属用户
 ===================
+
+普通用户
 
 .. _alias-guid:
 
 使用指导
 ===================
 
+alias is a shell builtin
+
+alias是bash的内置命令。
+
+查看alias帮助方法：
+    .. code-block:: bash
+        :linenos:
+
+        man alias
+        或者下面命令：
+        help alias
+
 .. _alias-args:
 
-参数：
+参数
 ===================
+
+.. list-table:: **参数详解**
+   :widths: 25 70 50
+   :header-rows: 1
+   :align: center
+
+   * - **参数**
+     - **功能**
+     - **实例**
+   * - \- p
+     - 打印所有可以复用的别名信息。
+     - alias \- p
+
+
 
 .. _alias-instance:
 
-参考实例：
+参考实例
 ===================
+
+查询命令别名信息
+-------------------
+
+查看当前系统所有别名命令：
+
+.. literalinclude:: /demo/server/linux/cmd/alias.txt
+    :language: bash
+    :encoding: utf-8
+    :linenos:
+    :lines: 1-9
+
+查看指定命令别名信息：
+
+.. literalinclude:: /demo/server/linux/cmd/alias.txt
+    :language: bash
+    :encoding: utf-8
+    :linenos:
+    :lines: 11-14
+
+.. note:: 如果命令没有这个命令不是别名则会提示上面第四行的信息： ``-bash: alias: cd: not found``
+
+.. attention:: 用alias命令添加的命令别名，系统重启以后会失效。
+
+为命令增加别名
+-------------------
+
+给命令增加别名，方便日常使用：
+
+为 ``echo`` 命令增加命令别名 ``nihao`` 。
+
+.. literalinclude:: /demo/server/linux/cmd/alias.txt
+    :language: bash
+    :encoding: utf-8
+    :linenos:
+    :lines: 17-25
+
+为命令和常用参数的使用方法设置别名，方便日常使用：
+
+新增命令别名 ``chakan`` ，这个命令名称作用和 ``ls -l`` 相同。
+
+
+.. literalinclude:: /demo/server/linux/cmd/alias.txt
+    :language: bash
+    :encoding: utf-8
+    :linenos:
+    :lines: 27-44
+
 
 .. _alias-relevant:
 
-相关命令：
+相关命令
 ===================
+
+:ref:`unalias-cmd` :删除命令别名
 
 
 

@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="1. 环境准备" href="base/01环境准备.html" />
+    <link rel="next" title="1. Python开发环境搭建" href="base/01环境准备.html" />
     <link rel="prev" title="Python学习" href="../Python.html" /> 
 
   
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                2018-09-05
+                2018-09-06
               </div>
             
           
@@ -89,12 +89,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../Language.html">编程语言学习</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../Python.html">Python学习</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Python基础</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="base/01环境准备.html">1. 环境准备</a></li>
-<li class="toctree-l4"><a class="reference internal" href="base/02内建函数.html">2. 内建函数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="base/01环境准备.html">1. Python开发环境搭建</a></li>
+<li class="toctree-l4"><a class="reference internal" href="base/02内建函数.html">2. 内建函数 </a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/03内置常量.html">3. 内置常量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/04内置类型.html">4. 内置类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l4"><a class="reference internal" href="base/06文本处理.html">6. 文本处理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="base/06字符串处理.html">6. 文本处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/07二进制处理.html">7. 二进制处理</a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/08数据类型.html">8. 数据类型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/09数值模块.html">9. 数值模块</a></li>
@@ -488,7 +488,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="base/01环境准备.html" class="btn btn-neutral float-right" title="1. 环境准备" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="base/01环境准备.html" class="btn btn-neutral float-right" title="1. Python开发环境搭建" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Python.html" class="btn btn-neutral" title="Python学习" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -504,37 +504,31 @@
 <span id="python-base"></span><h1>Python基础<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="base/01环境准备.html">1. 环境准备</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="base/01环境准备.html#python">1.1. 安装python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/01环境准备.html#ipython">1.2. ipython的安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/01环境准备.html#id2">1.3. ipython测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base/01环境准备.html">1. Python开发环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base/01环境准备.html#python-install">1.1. Python安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/01环境准备.html#python-ide">1.2. Python开发工具安装配置</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="base/02内建函数.html">2. 内建函数</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="base/02内建函数.html#id2">2.1. 常用内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base/02内建函数.html">2. 内建函数 </a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base/02内建函数.html#id4">2.1. 常用内置函数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="base/03内置常量.html">3. 内置常量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base/03内置常量.html">3. 内置常量</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base/03内置常量.html#python">3.1. Python常量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/03内置常量.html#id6">3.2. Python中代表空/假的常见值</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="base/04内置类型.html">4. 内置类型</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#id2">4.1. 真值测试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#id3">4.1. 真值测试</a></li>
 <li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#boolean">4.2. boolean操作符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#id3">4.3. 比较操作符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#int-float-complex">4.4. 数据类型int,float,complex</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#list-tuple-range">4.5. 数据类型 list, tuple, range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#binary-sequence-types-bytes-bytearray-memoryview">4.6. Binary Sequence Types — bytes, bytearray, memoryview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#set-types-set-frozenset">4.7. Set Types — set, frozenset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#id4">4.3. 比较操作符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#int-float-complex">4.4. 数值类型int,float,complex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/04内置类型.html#list-tuple-str">4.5. 序列类型 list, tuple, str</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/05内置异常.html">5. 内置异常</a></li>
-<li class="toctree-l1"><a class="reference internal" href="base/06文本处理.html">6. 文本处理</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#string">6.1. string</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#re">6.2. re</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#difflib">6.3. difflib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#textwrap">6.4. textwrap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#unicodedata">6.5. unicodedata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#stringprep">6.6. stringprep</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#readline">6.7. readline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/06文本处理.html#rlcompleter">6.8. rlcompleter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base/06字符串处理.html">6. 文本处理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base/06字符串处理.html#string-string">6.1. string(string库)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/07二进制处理.html">7. 二进制处理</a><ul>
@@ -544,19 +538,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/08数据类型.html">8. 数据类型</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#datetime">8.1. datetime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#calendar">8.2. calendar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#collectons">8.3. collectons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#collections-abc">8.4. collections.abc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#heapq">8.5. heapq</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#bisect">8.6. bisect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#array">8.7. array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#weakref">8.8. weakref</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#types">8.9. types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#copy">8.10. copy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#pprint">8.11. pprint</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#reprlib">8.12. reprlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#enum">8.13. enum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/08数据类型.html#flag">8.14. Flag</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/09数值模块.html">9. 数值模块</a><ul>
@@ -609,10 +590,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/14文件格式.html">14. 文件格式</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#csv">14.1. csv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#configparser">14.2. configparser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#netrc">14.3. netrc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#xdrlib">14.4. xdrlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#plistlib">14.5. plistlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#netrc">14.2. netrc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#xdrlib">14.3. xdrlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/14文件格式.html#plistlib">14.4. plistlib</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/15加密服务.html">15. 加密服务</a><ul>
@@ -635,13 +615,22 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/17并发执行.html">17. 并发执行</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading">17.1. threading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing">17.2. multiprocessing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-process">17.3. multiprocessing.Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id2">17.4. multiprocessing.Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-queue">17.5. multiprocessing.Queue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id3">17.6. multiprocessing.Queue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-joinablequeue">17.7. multiprocessing.JoinableQueue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-connection-connection">17.8. multiprocessing.connection.Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-thread">17.2. threading.Thread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-lock">17.3. threading.Lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-rlock">17.4. threading.RLock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-condition">17.5. threading.Condition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-event">17.6. threading.Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-timer">17.7. threading.Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#threading-barrier">17.8. threading.Barrier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing">17.9. multiprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-process">17.10. multiprocessing.Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id2">17.11. multiprocessing.Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-queue">17.12. multiprocessing.Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id3">17.13. multiprocessing.Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-joinablequeue">17.14. multiprocessing.JoinableQueue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#multiprocessing-connection-connection">17.15. multiprocessing.connection.Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id4">17.16. 共享对象</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/17并发执行.html#id5">17.17. 进程管理者</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="base/18进程通信和网络.html">18. 进程通信和网络</a></li>
@@ -664,7 +653,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="base/01环境准备.html" class="btn btn-neutral float-right" title="1. 环境准备" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="base/01环境准备.html" class="btn btn-neutral float-right" title="1. Python开发环境搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Python.html" class="btn btn-neutral" title="Python学习" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

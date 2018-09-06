@@ -1,11 +1,13 @@
+
+========================================
 文本处理
 ========================================
 
 string
-----------------------------------------
+========================================
 
 string常量
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 .. csv-table::
    :header: "常量" , "描述"
@@ -23,6 +25,7 @@ string常量
 样例：
 
 .. code-block:: python
+    :linenos:
 
     In [156]: string.ascii_letters
     Out[156]: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -55,7 +58,8 @@ string常量
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 根据位置格式化
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [166]: '{0},{1},{2}'.format('a,','b','c')
     Out[166]: 'a,,b,c'
@@ -66,6 +70,7 @@ string常量
 根据参数名格式化
 
 .. code-block:: python
+    :linenos:
 
     In [168]: '{lon},{lat}'.format(lon=110,lat=45)
     Out[168]: '110,45'
@@ -73,6 +78,7 @@ string常量
 根据类属性格式化
 
 .. code-block:: python
+    :linenos:
 
     In [170]: class point:
         ...:     def __init__(self,x,y):
@@ -88,6 +94,7 @@ string常量
 根据参数的条目
 
 .. code-block:: python
+    :linenos:
 
     In [174]: coord=(3,4)
 
@@ -96,7 +103,8 @@ string常量
 
 对齐
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [176]: '{:<30}'.format('left aligned')
     Out[176]: 'left aligned                  '
@@ -109,7 +117,8 @@ string常量
 
 样例： 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [178]:  from string import Template
 
@@ -129,7 +138,8 @@ re是regulare expression的简写。
 
 正则表达式元字符
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     .           任意单个字符（除了换行），如果想包含换行，指定DOTALL标记
     ^           开始位置锚定
@@ -196,6 +206,7 @@ regex.search(string[, pos[, endpos]])
 功能： 扫描字符串查找正则表达式产生匹配的第一个位置，并返回相应的匹配对象。 如果字符串中没有位置与模式匹配，则返回None;
 
 .. code-block:: python
+    :linenos:
 
     In [1]: import re
 
@@ -226,7 +237,8 @@ regex.fullmatch(string[, pos[, endpos]])
 
 功能： 如果整个字符串匹配这个正则表达式，返回一个相应的匹配对象。 如果字符串与模式不匹配则返回None;
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [16]: pattern = re.compile("o[gh]")
 
@@ -261,7 +273,8 @@ regex.split(string, maxsplit=0)
 
 使用正则表达式匹配有成功有失败，可以使用简单的if判定结果状态。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     match = re.search(pattern, string)
     if match:
@@ -271,7 +284,8 @@ match.group([group1, ...])
 
 功能： 返回一个或多个匹配的子组。
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     # 使用索引分组
     In [25]:  m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
@@ -324,7 +338,8 @@ match.groupdict(default=None)
 
 功能： 将匹配的直接转化为字典
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [41]: m = re.match(r"(?P<first_name>\w+) (?P<last_name>\w+)", "Malcolm Reynolds")
 
@@ -335,7 +350,8 @@ match.start([group])
 
 功能： 获取匹配到的开始位置
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [44]: m = re.search("remove_this", email)
 
@@ -367,7 +383,8 @@ difflib
 
 diff样例
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [58]: text1 = '''1. Beautiful is better than ugly.
         ...: 2. Explicit is better than implicit.
@@ -424,7 +441,8 @@ textwrap.indent(text, prefix, predicate=None)
 
 功能： 文本缩进
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [71]:  s = 'hello\n\n \nworld'
 
@@ -455,7 +473,8 @@ unicodedata
 
 样例： 
 
-.. code-block:: python 
+.. code-block:: python
+    :linenos:
 
     In [83]: import unicodedata
 
