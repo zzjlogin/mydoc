@@ -2,3 +2,5 @@
 .vscode
 build
 build/*
+source/_build
+source/_build/*
