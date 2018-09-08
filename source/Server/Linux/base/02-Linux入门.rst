@@ -1,4 +1,4 @@
-.. _computer-introduction
+.. _computer-introduction:
 
 ======================================================
 计算机简述
@@ -107,44 +107,59 @@ CLI
     [root@zzjlogin ~]# echo $PS1
     [\u@\h \W]\$
 
+说明：
+
+.. code-block:: text
+    :linenos:
+
+    \e 和\033一样的。
+    \e[33m相当与开始颜色配置，33代表指定的颜色，可以修改。
+    \e[0m代表颜色结束控制。
+    \u 用户名
+    \w 当前目录名字
+    \W当前目录基名
+    \#开机后命令历史数
+
+
 详细的PS1设置可以通过"man bash \|grep PS1 -A 40"获得
 
 .. code-block:: text
     :linenos:
-              \a     an ASCII bell character (07)
-              \d     the date in "Weekday Month Date" format (e.g., "Tue May 26")
-              \D{format}
-                     the format is passed to strftime(3) and the result  is  inserted
-                     into the prompt string; an empty format results in a locale-spe‐
-                     cific time representation.  The braces are required
-              \e     an ASCII escape character (033)
-              \h     the hostname up to the first '.' 短主机名字
-              \H     the hostname 全主机名
-              \j     the number of jobs currently managed by the shell
-              \l     the basename of the shell's terminal device name
-              \n     newline
-              \r     carriage return
-              \s     the name of the shell, the basename of $0 (the portion following
-                     the final slash)
-              \t     the current time in 24-hour HH:MM:SS format 24小时的格式
-              \T     the current time in 12-hour HH:MM:SS format 24小时的格式
-              \@     the current time in 12-hour am/pm format    12小时的上下午格式
-              \A     the current time in 24-hour HH:MM format    24的时分没秒的格式
-              \u     the username of the current user   用户名
-              \v     the version of bash (e.g., 2.00)   bash的版本
-              \V     the release of bash, version + patch level (e.g., 2.00.0) 补丁版本
-              \w     the  current  working  directory,  with $HOME abbreviated with a
-                     tilde (uses the value of the PROMPT_DIRTRIM variable) 长工作目录名字
-              \W     the basename of the current working directory, with $HOME abbre‐
-                     viated with a tilde  短工作目录名字
-              \!     the history number of this command 当前命令的历史号
-              \#     the command number of this command 命令提示符，表示管理员和普通用户的
-              \$     if the effective UID is 0, a #, otherwise a $ 用户的uid
-              \nnn   the character corresponding to the octal number nnn
-              \\     a backslash 
-              \[     begin a sequence of non-printing characters, which could be used
-                     to embed a terminal control sequence into the prompt
-              \]     end a sequence of non-printing characters
+
+    \a     an ASCII bell character (07)
+    \d     the date in "Weekday Month Date" format (e.g., "Tue May 26")
+    \D{format}
+            the format is passed to strftime(3) and the result  is  inserted
+            into the prompt string; an empty format results in a locale-spe‐
+            cific time representation.  The braces are required
+    \e     an ASCII escape character (033)
+    \h     the hostname up to the first '.' 短主机名字
+    \H     the hostname 全主机名
+    \j     the number of jobs currently managed by the shell
+    \l     the basename of the shell's terminal device name
+    \n     newline
+    \r     carriage return
+    \s     the name of the shell, the basename of $0 (the portion following
+            the final slash)
+    \t     the current time in 24-hour HH:MM:SS format 24小时的格式
+    \T     the current time in 12-hour HH:MM:SS format 24小时的格式
+    \@     the current time in 12-hour am/pm format    12小时的上下午格式
+    \A     the current time in 24-hour HH:MM format    24的时分没秒的格式
+    \u     the username of the current user   用户名
+    \v     the version of bash (e.g., 2.00)   bash的版本
+    \V     the release of bash, version + patch level (e.g., 2.00.0) 补丁版本
+    \w     the  current  working  directory,  with $HOME abbreviated with a
+            tilde (uses the value of the PROMPT_DIRTRIM variable) 长工作目录名字
+    \W     the basename of the current working directory, with $HOME abbre‐
+            viated with a tilde  短工作目录名字
+    \!     the history number of this command 当前命令的历史号
+    \#     the command number of this command 命令提示符，表示管理员和普通用户的
+    \$     if the effective UID is 0, a #, otherwise a $ 用户的uid
+    \nnn   the character corresponding to the octal number nnn
+    \\     a backslash 
+    \[     begin a sequence of non-printing characters, which could be used
+            to embed a terminal control sequence into the prompt
+    \]     end a sequence of non-printing characters
 
 
 查看命令对应的执行程序全路径

@@ -4,7 +4,9 @@
 mkdir
 ===================
 
-:Date: 2018-08-29
+
+
+:Date: 2018-09
 
 .. contents::
 
@@ -14,29 +16,65 @@ mkdir
 命令格式
 ===================
 
+
+
+
 .. _mkdir-user:
 
 所属用户
 ===================
+
+
+
 
 .. _mkdir-guid:
 
 使用指导
 ===================
 
+
+
+
 .. _mkdir-args:
 
-参数：
+参数
 ===================
+
+
 
 .. _mkdir-instance:
 
-参考实例：
+参考实例
 ===================
+
+
+创建 ``/app/x/y1,/app/x/y2,/app/x/y1/a,/app/y1/b,/app/x/y2/a,/app/x/y2/b``
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# mkdir x/y1  x/y2 x/y1/a y1/b x/y2/a x/y2/b -pv
+    mkdir: 已创建目录 "x"
+    mkdir: 已创建目录 "x/y1"
+    mkdir: 已创建目录 "x/y2"
+    mkdir: 已创建目录 "x/y1/a"
+    mkdir: 已创建目录 "y1"
+    mkdir: 已创建目录 "y1/b"
+    mkdir: 已创建目录 "x/y2/a"
+    mkdir: 已创建目录 "x/y2/b"
+
+创建/app/bin,/app/sbin,/app/usr/app/usr/bin,/app/usr/sbin
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# mkdir -pv {bin,sbin,usr/{bin,sbin}}
+
+
 
 .. _mkdir-relevant:
 
-相关命令：
+相关命令
 ===================
 
 

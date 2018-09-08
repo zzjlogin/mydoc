@@ -263,4 +263,4 @@ samba是为window和linux之间共享文件而生的。
 
 创建密码使用smbpasswd命令就可以了，不过要本地有这个用户。
 
-样例参考： :ref:`fileshare`  
+样例参考： 

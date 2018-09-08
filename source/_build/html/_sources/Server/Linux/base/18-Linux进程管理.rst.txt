@@ -61,7 +61,7 @@ ps
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 backup]# ps aux  |head -n 3
+    [root@zzjlogin backup]# ps aux  |head -n 3
     USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
     root          1  0.0  0.3 125340  3872 ?        Ss   Feb10   0:00 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
     root          2  0.0  0.0      0     0 ?        S    Feb10   0:00 [kthreadd]
@@ -108,7 +108,51 @@ ps是相对一个时间点的进程信息，有时候我们需要动态去观察
 -n          显示的次数
 -d          指定延迟的时间，单位秒
 
-.. image:: /images/top.png
+.. code-block:: text
+    :linenos:
+    
+    top - 02:18:10 up 1 day, 20:51,  1 user,  load average: 0.00, 0.00, 0.00
+    Tasks:  80 total,   1 running,  79 sleeping,   0 stopped,   0 zombie
+    Cpu(s):  0.0%us,  0.3%sy,  0.0%ni, 99.7%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+    Mem:   1004348k total,   393252k used,   611096k free,    75484k buffers
+    Swap:  2072572k total,        0k used,  2072572k free,   139700k cached
+
+    PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                                                                                       
+        1 root      20   0 19364 1536 1224 S  0.0  0.2   0:01.26 init                                                                                                           
+        2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd                                                                                                       
+        3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0                                                                                                    
+        4 root      20   0     0    0    0 S  0.0  0.0   0:00.61 ksoftirqd/0                                                                                                    
+        5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/0                                                                                                      
+        6 root      RT   0     0    0    0 S  0.0  0.0   0:33.21 watchdog/0                                                                                                     
+        7 root      20   0     0    0    0 S  0.0  0.0  10:20.48 events/0                                                                                                       
+        8 root      20   0     0    0    0 S  0.0  0.0   0:00.00 cgroup                                                                                                         
+        9 root      20   0     0    0    0 S  0.0  0.0   0:00.00 khelper                                                                                                        
+        10 root      20   0     0    0    0 S  0.0  0.0   0:00.00 netns                                                                                                          
+        11 root      20   0     0    0    0 S  0.0  0.0   0:00.00 async/mgr                                                                                                      
+        12 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pm                                                                                                             
+        13 root      20   0     0    0    0 S  0.0  0.0   0:02.98 sync_supers                                                                                                    
+        14 root      20   0     0    0    0 S  0.0  0.0   0:04.30 bdi-default                                                                                                    
+        15 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kintegrityd/0                                                                                                  
+        16 root      20   0     0    0    0 S  0.0  0.0   0:02.89 kblockd/0                                                                                                      
+        17 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpid                                                                                                         
+        18 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpi_notify                                                                                                   
+        19 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kacpi_hotplug                                                                                                  
+        20 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ata_aux                                                                                                        
+        21 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ata_sff/0                                                                                                      
+        22 root      20   0     0    0    0 S  0.0  0.0   0:00.00 ksuspend_usbd                                                                                                  
+        23 root      20   0     0    0    0 S  0.0  0.0   0:00.01 khubd                                                                                                          
+        24 root      20   0     0    0    0 S  0.0  0.0   0:00.01 kseriod                                                                                                        
+        25 root      20   0     0    0    0 S  0.0  0.0   0:00.00 md/0                                                                                                           
+        26 root      20   0     0    0    0 S  0.0  0.0   0:00.00 md_misc/0                                                                                                      
+        27 root      20   0     0    0    0 S  0.0  0.0   0:00.01 linkwatch                                                                                                      
+        29 root      20   0     0    0    0 S  0.0  0.0   0:00.10 khungtaskd                                                                                                     
+        30 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kswapd0                                                                                                        
+        31 root      25   5     0    0    0 S  0.0  0.0   0:00.00 ksmd                                                                                                           
+        32 root      39  19     0    0    0 S  0.0  0.0   0:00.00 khugepaged                                                                                                     
+        33 root      20   0     0    0    0 S  0.0  0.0   0:00.00 aio/0                                                                                                          
+        34 root      20   0     0    0    0 S  0.0  0.0   0:00.00 crypto/0                                                                                                       
+        42 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthrotld/0                                                                                                     
+        43 root      20   0     0    0    0 S  0.0  0.0   0:00.00 pciehpd
 
 .. code-block:: text
     :linenos:
@@ -179,7 +223,7 @@ vmstat
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 backup]# vmstat 
+    [root@zzjlogin backup]# vmstat 
     procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
     r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
     2  0      0 495732  15588 292884    0    0    11    20   97  124  0  0 100  0  0
@@ -264,7 +308,7 @@ kill
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 backup]# kill -l 
+    [root@zzjlogin backup]# kill -l 
     1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
     6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
     11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
@@ -297,7 +341,7 @@ kill
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 backup]# kill -9 3110
+    [root@zzjlogin backup]# kill -9 3110
 
 作业管理
 ==================================
@@ -308,7 +352,7 @@ kill
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 backup]# jobs 
+    [root@zzjlogin backup]# jobs 
     [1]+  Stopped                 vim a.txt
 
 作业控制

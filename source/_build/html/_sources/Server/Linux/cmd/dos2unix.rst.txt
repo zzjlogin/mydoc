@@ -4,7 +4,9 @@
 dos2unix
 ===================
 
-:Date: 2018-08-29
+
+
+:Date: 2018-09
 
 .. contents::
 
@@ -14,29 +16,46 @@ dos2unix
 命令格式
 ===================
 
+
+
+
 .. _dos2unix-user:
 
 所属用户
 ===================
+
+
+
 
 .. _dos2unix-guid:
 
 使用指导
 ===================
 
+
+
+
 .. _dos2unix-args:
 
-参数：
+参数
 ===================
+
+
 
 .. _dos2unix-instance:
 
-参考实例：
+参考实例
 ===================
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# dos2unix win.txt
+
 
 .. _dos2unix-relevant:
 
-相关命令：
+相关命令
 ===================
 
 

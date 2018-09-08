@@ -29,7 +29,9 @@ reST安装及环境配置
     pip install sphinx sphinx-autobuild sphinx_rtd_theme
 
 .. tip::
-    可以用指定python库版本号的方法安装上面需要安装的库，例如： ``pip install sphinx==1.7.9``
+    可以用指定python库版本号的方法安装上面需要安装的库。
+    
+    例如： ``pip install sphinx==1.7.9``
 
 2. 检查安装结果
 
@@ -62,13 +64,13 @@ reST安装及环境配置
     G:\>cd test
 4. 然后输入下面命令：
     .. literalinclude:: /demo/tools/rst/sphinx-quickstart.txt
-         :language: txt
+         :language: text
          :emphasize-lines: 1,12,20-22,30,54
          :linenos:
 
 
 .. attention::
-    注意上面的选项。
+    **注意上面的选项:**
 
     - 如果由rst生成html文档挂在github-page上面，就需要勾选第54行。
     - 如果把文档和其他文件目录分开，第12行就要选 ``y``
@@ -78,7 +80,7 @@ reST安装及环境配置
 
 5. 查看创建文档结果
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     G:\test>dir
@@ -210,7 +212,7 @@ conf.py 配置详解 [1]_
 
     下面生成的html文件在 ``test/build/html`` 目录。
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     G:\test>make html

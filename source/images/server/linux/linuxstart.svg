@@ -1,0 +1,1544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 linuxstart.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="16.0354in" height="11.6929in"
+		viewBox="0 0 1154.55 841.89" xml:space="preserve" color-interpolation-filters="sRGB" class="st40">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(0):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st2 {fill:url(#grad0-6);stroke:#000000;stroke-dasharray:5.25,3.75;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st3 {fill:#000000;font-family:宋体;font-size:1.33333em;font-weight:bold}
+		.st4 {font-size:1em}
+		.st5 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st6 {fill:#ffc000;font-family:宋体;font-size:1.99999em}
+		.st7 {fill:#ff0000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st8 {fill:#ffff00;font-family:宋体;font-size:1.00001em;font-weight:bold}
+		.st9 {fill:#000000;font-family:微软雅黑;font-size:1em}
+		.st10 {fill:#000000;font-family:Microsoft Sans Serif;font-size:1em}
+		.st11 {fill:#d8d8d8;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st12 {fill:#ff0000;font-family:宋体;font-size:1.00001em;font-weight:bold}
+		.st13 {fill:#000000;font-family:微软雅黑;font-size:1em;font-weight:normal}
+		.st14 {fill:#000000;font-family:Microsoft Sans Serif;font-size:1em;font-weight:normal}
+		.st15 {marker-start:url(#mrkr5-29);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st16 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.15923566878981}
+		.st17 {fill:#000000;font-family:Calibri;font-size:1em;font-weight:normal}
+		.st18 {marker-end:url(#mrkr5-65);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st19 {fill:#ff0000;font-family:Cambria Math;font-size:1.00001em;font-weight:bold}
+		.st20 {fill:#4bacc6;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5}
+		.st21 {marker-end:url(#mrkr39-124);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st22 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22935779816514}
+		.st23 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st24 {fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st25 {fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75;visibility:hidden}
+		.st26 {fill:#ff0000;font-family:宋体;font-size:0.833336em}
+		.st27 {fill:#000000;font-family:Calibri;font-size:1em}
+		.st28 {font-family:Microsoft Sans Serif;font-size:1em}
+		.st29 {fill:#000000;font-family:Calibri;font-size:0.899997em}
+		.st30 {fill:#000000;font-family:微软雅黑;font-size:0.899997em}
+		.st31 {fill:#ffffff}
+		.st32 {fill:#000000;font-family:宋体;font-size:0.833336em}
+		.st33 {font-family:微软雅黑;font-size:1em}
+		.st34 {font-family:Calibri;font-size:1em}
+		.st35 {fill:#ff0000;font-family:微软雅黑;font-size:1em}
+		.st36 {fill:#ff0000;font-family:Microsoft Sans Serif;font-size:1em}
+		.st37 {fill:#000000;font-size:1em}
+		.st38 {fill:#00b050;font-family:微软雅黑;font-size:1em}
+		.st39 {fill:#ff0000;font-family:Calibri;font-size:1em}
+		.st40 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Patterns_And_Gradients">
+		<linearGradient id="grad0-6" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(270 0.5 0.5)">
+			<stop offset="0" stop-color="#2b768a" stop-opacity="1"/>
+			<stop offset="0.43" stop-color="#50aec7" stop-opacity="1"/>
+			<stop offset="1" stop-color="#92cddc" stop-opacity="1"/>
+		</linearGradient>
+	</defs>
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-29" class="st16" v:arrowType="5" v:arrowSize="4" v:setback="10.51" refX="10.51" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(6.28) "/>
+		</marker>
+		<marker id="mrkr5-65" class="st16" v:arrowType="5" v:arrowSize="4" v:setback="10.99" refX="-10.99" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-6.28,-6.28) "/>
+		</marker>
+		<g id="lend39">
+			<path d="M 0 0 L 2 -1 L 2 1 L 0 0 M 2 0 L 4 -1 L 4 1 L 2 0 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr39-124" class="st22" v:arrowType="39" v:arrowSize="2" v:setback="17.44" refX="-17.44" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend39" transform="scale(-4.36,-4.36) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="容器" v:index="0"/>
+		<v:layer v:name="标注" v:index="1"/>
+		<v:layer v:name="连接线" v:index="2"/>
+		<g id="shape164-1" v:mID="164" v:groupContext="shape" transform="translate(25.5118,-14.1732)">
+			<title>工作表.164</title>
+			<rect x="0" y="34.0157" width="1105.51" height="807.874" rx="8.50394" ry="8.50394" class="st1"/>
+		</g>
+		<g id="shape165-3" v:mID="165" v:groupContext="shape" transform="translate(56.6929,-737.008)">
+			<title>工作表.165</title>
+			<desc>&#60;Linux系统启动&#62; 流程图</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="813.543" width="170.08" height="56.6929"/>
+			<rect x="0" y="785.197" width="170.079" height="56.6929" rx="14.1732" ry="14.1732" class="st2"/>
+			<text x="24.7" y="808.74" class="st3" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>&#60;Linux系统启动&#62;<v:newlineChar/><tspan
+						x="60.95" dy="1.2em" class="st4">流程图</tspan></text>		</g>
+		<g id="shape166-9" v:mID="166" v:groupContext="shape" transform="translate(804.898,-682.478)">
+			<title>工作表.166</title>
+			<desc>zzjlogin制作。禁止商业用途</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="164.48" cy="793.365" width="328.97" height="97.0491"/>
+			<rect x="0" y="744.841" width="328.961" height="97.0491" class="st5"/>
+			<text x="8.48" y="800.57" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>zzjlogin制作。禁止商业用途</text>		</g>
+		<g id="group163-12" transform="translate(45.3543,-28.3465)" v:mID="163" v:groupContext="group">
+			<title>工作表.163</title>
+			<g id="shape1-13" v:mID="1" v:groupContext="shape" transform="translate(145.984,-635.669)">
+				<title>工作表.1</title>
+				<desc>①加电启动/PowerOn</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="63.7795" cy="824.173" width="127.56" height="35.4331"/>
+				<rect x="0" y="806.457" width="127.559" height="35.4331" rx="8.50394" ry="8.50394" class="st7"/>
+				<text x="7.05" y="828.12" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>①<tspan
+							class="st9">加电启动</tspan><tspan class="st10">/PowerOn</tspan></text>			</g>
+			<g id="shape2-18" v:mID="2" v:groupContext="shape" transform="translate(571.181,-635.669)">
+				<title>工作表.2</title>
+				<desc>③加载BIOS</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="20.08" y="828.12" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>③<tspan
+							class="st13">加载</tspan><tspan class="st14">BIOS</tspan></text>			</g>
+			<g id="shape31-23" v:mID="31" v:groupContext="shape" v:layerMember="2" transform="translate(534.685,-693.071)">
+				<title>动态连接线</title>
+				<path d="M7.88 841.89 L8.24 841.89 L22.32 841.89 A14.1732 14.1732 0 0 1 36.5 856.06 L36.5 885.12" class="st15"/>
+			</g>
+			<g id="shape41-30" v:mID="41" v:groupContext="shape" transform="translate(762.52,-461.339)">
+				<title>工作表.41</title>
+				<desc>⑤读取MBR</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="21.08" y="828.12" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑤<tspan
+							class="st13">读取</tspan><tspan class="st14">MBR</tspan></text>			</g>
+			<g id="shape56-35" v:mID="56" v:groupContext="shape" transform="translate(365.669,-635.669)">
+				<title>工作表.56</title>
+				<desc>②读取BIOS</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="20.08" y="828.12" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>②<tspan
+							class="st13">读取</tspan><tspan class="st14">BIOS</tspan></text>			</g>
+			<g id="shape61-40" v:mID="61" v:groupContext="shape" transform="translate(762.52,-364.961)">
+				<title>工作表.61</title>
+				<desc>⑥加载BootLoader</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="34.42" y="820.92" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑥<tspan
+							class="st13">加载</tspan><tspan x="21.42" dy="1.229em" class="st14">BootLoader</tspan></text>			</g>
+			<g id="shape69-45" v:mID="69" v:groupContext="shape" v:layerMember="2" transform="translate(685.63,-394.102)">
+				<title>动态连接线.69</title>
+				<path d="M7.88 846.94 L8.24 846.94 L52.92 846.94 A14.1732 14.1732 0 0 1 55.43 847.16 L76.89 851.02" class="st15"/>
+			</g>
+			<g id="shape70-50" v:mID="70" v:groupContext="shape" transform="translate(762.52,-262.205)">
+				<title>工作表.70</title>
+				<desc>⑦加载内核Kernel</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="6.71" y="828.17" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑦<tspan
+							class="st13">加载内核</tspan><tspan class="st17" v:langID="1033">Kernel</tspan></text>			</g>
+			<g id="shape75-55" v:mID="75" v:groupContext="shape" transform="translate(762.52,-635.669)">
+				<title>工作表.75</title>
+				<desc>④加载硬盘</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="22.42" y="828.12" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>④<tspan
+							class="st13">加载硬盘</tspan></text>			</g>
+			<g id="shape82-59" v:mID="82" v:groupContext="shape" v:layerMember="2" transform="translate(762.52,-649.843)">
+				<title>动态连接线.82</title>
+				<path d="M0 841.89 L0 801.5 A14.1732 14.1732 -180 0 0 -14.17 787.32 L-21.88 787.32" class="st18"/>
+			</g>
+			<g id="shape83-66" v:mID="83" v:groupContext="shape" v:layerMember="2" transform="translate(762.52,-475.512)">
+				<title>动态连接线.83</title>
+				<path d="M0 841.89 L0 829.49 A12.4016 12.4016 -180 0 0 -12.4 817.09 L-71.48 817.09" class="st18"/>
+			</g>
+			<g id="shape85-71" v:mID="85" v:groupContext="shape" transform="translate(762.52,-120.472)">
+				<title>工作表.85</title>
+				<desc>⑧init根据inittab初始化</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="4.72" y="820.87" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑧<tspan
+							class="st14">init</tspan><tspan class="st13">根据</tspan><tspan class="st17" v:langID="1033">inittab</tspan><tspan
+							class="st13">初</tspan><tspan x="40.44" dy="1.245em" class="st13">始化</tspan></text>			</g>
+			<g id="shape91-79" v:mID="91" v:groupContext="shape" transform="translate(479.055,-120.472)">
+				<title>工作表.91</title>
+				<desc>⑨init进程执行rc.sysinit</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="14.5" y="820.97" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑨<tspan
+							class="st17" v:langID="1033">init</tspan><tspan class="st13">进程执行</tspan><tspan x="30.97" dy="1.233em"
+							class="st17" v:langID="1033">rc.sysinit</tspan></text>			</g>
+			<g id="shape96-85" v:mID="96" v:groupContext="shape" v:layerMember="2" transform="translate(762.52,-276.378)">
+				<title>动态连接线.96</title>
+				<path d="M0 841.89 L0 852.52 A10.6299 10.6299 0 0 1 -10.63 863.15 L-68.65 863.15" class="st18"/>
+			</g>
+			<g id="shape97-90" v:mID="97" v:groupContext="shape" v:layerMember="2" transform="translate(762.52,-138.189)">
+				<title>动态连接线.97</title>
+				<path d="M0 841.89 L0 859.61 A14.1732 14.1732 0 0 1 -14.17 873.78 L-64.4 873.78" class="st18"/>
+			</g>
+			<g id="shape99-95" v:mID="99" v:groupContext="shape" transform="translate(167.244,-120.472)">
+				<title>工作表.99</title>
+				<desc>⑩启动内核模块</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="10.42" y="828.12" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑩<tspan
+							class="st13">启动内核模块</tspan></text>			</g>
+			<g id="shape104-99" v:mID="104" v:groupContext="shape" transform="translate(167.244,-315.354)">
+				<title>工作表.104</title>
+				<desc>⑪执行不同运行级别的脚本程序</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="9.37" y="820.53" class="st19" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑪<tspan
+							class="st13">执行不同运行</tspan><tspan x="10.44" dy="1.217em" class="st13">级别的脚本程序</tspan></text>			</g>
+			<g id="shape109-104" v:mID="109" v:groupContext="shape" transform="translate(167.244,-439.37)">
+				<title>工作表.109</title>
+				<desc>⑫执行/etc/rc.d/rc.local</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="52.4409" cy="824.173" width="104.89" height="35.4331"/>
+				<rect x="0" y="806.457" width="104.882" height="35.4331" rx="8.50394" ry="8.50394" class="st11"/>
+				<text x="10.24" y="820.67" class="st19" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑫<tspan
+							class="st13">执行</tspan><tspan class="st14">/</tspan><tspan class="st17" v:langID="1033">etc/rc.d/</tspan><tspan
+							x="34.97" dy="1.208em" class="st17" v:langID="1033">rc.local</tspan></text>			</g>
+			<g id="shape114-111" v:mID="114" v:groupContext="shape" transform="translate(167.244,-538.583)">
+				<title>工作表.114</title>
+				<desc>⑬执行/bin/login程序进入登录状态</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="53.1496" cy="824.173" width="106.3" height="35.4331"/>
+				<rect x="0" y="806.457" width="106.299" height="35.4331" rx="8.50394" ry="8.50394" class="st20"/>
+				<text x="4.52" y="820.58" class="st19" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>⑬<tspan
+							class="st13">执行</tspan><tspan class="st14">/</tspan><tspan class="st17" v:langID="1033">bin/login</tspan><tspan
+							class="st13">程</tspan><tspan x="11.15" dy="1.221em" class="st13">序进入登录状态</tspan></text>			</g>
+			<g id="shape145-119" v:mID="145" v:groupContext="shape" v:layerMember="2" transform="translate(273.543,-642.756)">
+				<title>动态连接线.145</title>
+				<path d="M0 834.8 L79.05 834.8" class="st21"/>
+			</g>
+			<g id="shape146-125" v:mID="146" v:groupContext="shape" v:layerMember="2" transform="translate(479.055,-138.189)">
+				<title>动态连接线.146</title>
+				<path d="M0 841.89 L-10.02 831.87 A14.1732 14.1732 -180 0 0 -20.04 827.72 L-36.05 827.72" class="st18"/>
+			</g>
+			<g id="shape148-130" v:mID="148" v:groupContext="shape" v:layerMember="2" transform="translate(470.551,-642.756)">
+				<title>动态连接线.148</title>
+				<path d="M0 834.8 L87.55 834.8" class="st21"/>
+			</g>
+			<g id="shape149-135" v:mID="149" v:groupContext="shape" v:layerMember="2" transform="translate(676.063,-642.756)">
+				<title>动态连接线.149</title>
+				<path d="M0 834.8 L73.38 834.8" class="st21"/>
+			</g>
+			<g id="shape150-140" v:mID="150" v:groupContext="shape" v:layerMember="2" transform="translate(807.874,-635.669)">
+				<title>动态连接线.150</title>
+				<path d="M7.09 841.89 L7.09 967.71" class="st21"/>
+			</g>
+			<g id="shape151-145" v:mID="151" v:groupContext="shape" v:layerMember="2" transform="translate(807.874,-461.339)">
+				<title>动态连接线.151</title>
+				<path d="M7.09 841.89 L7.09 889.75" class="st21"/>
+			</g>
+			<g id="shape152-150" v:mID="152" v:groupContext="shape" v:layerMember="2" transform="translate(807.874,-364.961)">
+				<title>动态连接线.152</title>
+				<path d="M7.09 841.89 L7.09 896.13" class="st21"/>
+			</g>
+			<g id="shape153-155" v:mID="153" v:groupContext="shape" v:layerMember="2" transform="translate(807.874,-262.205)">
+				<title>动态连接线.153</title>
+				<path d="M7.09 841.89 L7.09 935.11" class="st21"/>
+			</g>
+			<g id="shape154-160" v:mID="154" v:groupContext="shape" v:layerMember="2" transform="translate(762.52,-131.102)">
+				<title>动态连接线.154</title>
+				<path d="M0 834.8 L-165.5 834.8" class="st21"/>
+			</g>
+			<g id="shape155-165" v:mID="155" v:groupContext="shape" v:layerMember="2" transform="translate(479.055,-131.102)">
+				<title>动态连接线.155</title>
+				<path d="M0 834.8 L-193.85 834.8" class="st21"/>
+			</g>
+			<g id="shape156-170" v:mID="156" v:groupContext="shape" v:layerMember="2" transform="translate(226.772,-155.906)">
+				<title>动态连接线.156</title>
+				<path d="M-7.09 841.89 L-7.09 695.52" class="st21"/>
+			</g>
+			<g id="shape157-175" v:mID="157" v:groupContext="shape" v:layerMember="2" transform="translate(212.598,-350.787)">
+				<title>动态连接线.157</title>
+				<path d="M7.09 841.89 L7.09 766.39" class="st21"/>
+			</g>
+			<g id="shape158-180" v:mID="158" v:groupContext="shape" v:layerMember="2" transform="translate(212.953,-474.803)">
+				<title>动态连接线.158</title>
+				<path d="M6.86 841.89 L7.22 791.19" class="st21"/>
+			</g>
+			<g id="shape159-185" v:mID="159" v:groupContext="shape" v:layerMember="2" transform="translate(167.244,-141.732)">
+				<title>动态连接线.159</title>
+				<path d="M0 848.98 L-47.39 848.98" class="st18"/>
+			</g>
+			<g id="shape160-190" v:mID="160" v:groupContext="shape" v:layerMember="2" transform="translate(167.244,-552.756)">
+				<title>动态连接线.160</title>
+				<path d="M0 841.89 L0 831.26 A10.6299 10.6299 -180 0 0 -10.63 820.63 L-47.39 820.63" class="st18"/>
+			</g>
+			<g id="shape161-195" v:mID="161" v:groupContext="shape" v:layerMember="2" transform="translate(167.244,-453.543)">
+				<title>动态连接线.161</title>
+				<path d="M0 841.89 L0 848.98 A7.08661 7.08661 0 0 1 -7.09 856.06 L-47.39 856.06" class="st18"/>
+			</g>
+			<g id="shape162-200" v:mID="162" v:groupContext="shape" v:layerMember="2" transform="translate(167.244,-329.528)">
+				<title>动态连接线.162</title>
+				<path d="M0 841.89 L0 817.09 A14.1732 14.1732 -180 0 0 -14.17 802.91 L-47.39 802.91" class="st18"/>
+			</g>
+			<g id="group27-205" transform="translate(423.071,-693.071)" v:mID="27" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3978293650339,-0.39370069821004)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇</title>
+				<desc>1.加载BIOS程序POST(Power On Self Test加电自检)。 2.检查BIOS中包含了CPU的相关信息、...</desc>
+				<g id="shape28-206" v:mID="28" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1602.99) rotate(180)">
+					<title>工作表.28</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 761.1 L148.82 761.1" class="st23"/>
+				</g>
+				<g id="shape29-209" v:mID="29" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1602.99) rotate(180)">
+					<title>工作表.29</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape27-211" v:mID="27" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="801.496" width="148.82" height="77.6037"/>
+					<rect x="0" y="761.102" width="148.819" height="80.7874" class="st25"/>
+					<text x="4" y="775.72" class="st26" v:langID="2052"><v:paragraph/><v:tabList/>1.<tspan class="st9">加载</tspan><tspan
+								class="st10">BIOS</tspan><tspan class="st9">程序</tspan><tspan class="st9">，</tspan><tspan
+								class="st10">POST(</tspan><tspan class="st27" v:langID="1033">Power </tspan><tspan x="4"
+								dy="1.256em" class="st27" v:langID="1033">On Self Test</tspan><tspan class="st9" v:langID="1033">，</tspan><tspan
+								class="st9">加电自检</tspan><tspan class="st10">)</tspan><tspan class="st9">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.22em" class="st28">2.</tspan><tspan class="st9">检查</tspan><tspan class="st29"
+								v:langID="1033">BIOS</tspan><tspan class="st30">中包含了</tspan><tspan class="st29" v:langID="1033">CPU</tspan><tspan
+								class="st30">的相关信</tspan><tspan x="4" dy="1.238em" class="st30">息</tspan><tspan class="st30">、</tspan><tspan
+								class="st30">设备启动顺序信息</tspan><tspan class="st30">、</tspan><tspan class="st30">硬盘信</tspan><tspan
+								x="4" dy="1.211em" class="st30">息</tspan><tspan class="st30">、</tspan><tspan class="st30">内存信息</tspan><tspan
+								class="st30">、</tspan><tspan class="st30">时钟信息</tspan><tspan class="st30">、</tspan><tspan
+								class="st29" v:langID="1033">PnP</tspan><tspan class="st30">特性</tspan><tspan x="4" dy="1.304em"
+								class="st30">等等</tspan><tspan class="st30">。</tspan></text>				</g>
+			</g>
+			<g id="shape42-246" v:mID="42" v:groupContext="shape" v:layerMember="1" transform="translate(932.598,-491.811)">
+				<title>思想气泡.42</title>
+				<desc>MBR存放位置是硬盘上第0磁道第一个扇区。</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-0.90874093308583,-0.0217831996616)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-0.90874093308583,-0.0217831996616)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.39276081600583):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.22023094632979,0.12575471455278)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.68850998675604,0.14753791421438)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="41.1024" cy="820.63" width="82.21" height="38.6035"/>
+				<path d="M-3.38 844.84 A24.8176 19.254 -180 0 0 27.03 848.92 A20.2291 15.6942 -180 0 0 62.11 844.84 A17.7595 13.7782
+							 -180 0 0 87.84 834.67 A16.3829 12.7102 -180 0 0 99.53 814.32 A13.2244 10.2598 -180 0 0 90.18 800.07
+							 A15.4299 11.9708 -180 0 0 64.45 794.98 A13.2249 10.2602 -180 0 0 43.4 796 A20.7747 16.1175 -180 0 0
+							 18.85 799.06 A19.5401 15.1597 -180 0 0 -9.81 812.79 A11.0006 8.53453 -180 0 0 -14.48 829.07 A11.6745
+							 9.05737 -180 0 0 -3.38 844.84 ZM-51.39 840.8 A1.64409 1.64409 -180 1 0 -54.68 840.8 A1.64409 1.64409
+							 -180 1 0 -51.39 840.8 ZM-38.35 838.36 A3.28819 3.28819 -180 1 0 -44.92 838.36 A3.28819 3.28819 -180
+							 1 0 -38.35 838.36 ZM-23.32 835.49 A4.93228 4.93228 -180 1 0 -33.18 835.49 A4.93228 4.93228 -180 1 0
+							 -23.32 835.49 Z" class="st31"/>
+				<path d="M-3.38 844.84 A24.8176 19.254 -180 0 0 27.03 848.92 A20.2291 15.6942 -180 0 0 62.11 844.84 A17.7595 13.7782
+							 -180 0 0 87.84 834.67 A16.3829 12.7102 -180 0 0 99.53 814.32 A13.2244 10.2598 -180 0 0 90.18 800.07
+							 A15.4299 11.9708 -180 0 0 64.45 794.98 A13.2249 10.2602 -180 0 0 43.4 796 A20.7747 16.1175 -180 0 0
+							 18.85 799.06 A19.5401 15.1597 -180 0 0 -9.81 812.79 A11.0006 8.53453 -180 0 0 -14.48 829.07 A11.6745
+							 9.05737 -180 0 0 -3.38 844.84" class="st23"/>
+				<path d="M-14.48 829.07 A8.72446 6.76864 -180 0 0 -8.06 829.58" class="st23"/>
+				<path d="M25.27 846.38 A11.5344 8.94868 -180 0 0 27.03 848.92" class="st23"/>
+				<path d="M62.11 844.84 A9.92167 7.69747 -180 0 0 62.99 841.8" class="st23"/>
+				<path d="M87.84 834.67 A9.20959 7.14501 -180 0 0 80.82 826.53" class="st23"/>
+				<path d="M96.02 817.37 A8.03953 6.23726 -180 0 0 99.53 814.32" class="st23"/>
+				<path d="M22.35 801.09 A11.8298 9.17785 -180 0 0 18.84 799.06" class="st23"/>
+				<path d="M-51.39 840.8 A1.64409 1.64409 -180 1 0 -54.68 840.8 A1.64409 1.64409 -180 1 0 -51.39 840.8" class="st23"/>
+				<path d="M-38.35 838.36 A3.28819 3.28819 -180 1 0 -44.92 838.36 A3.28819 3.28819 -180 1 0 -38.35 838.36"
+						class="st23"/>
+				<path d="M-23.32 835.49 A4.93228 4.93228 -180 1 0 -33.18 835.49 A4.93228 4.93228 -180 1 0 -23.32 835.49"
+						class="st23"/>
+				<text x="4" y="812.08" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>MBR存放位置是<tspan x="4"
+							dy="0.9em" class="st4">硬盘上第</tspan>0磁道<tspan x="4" dy="1.17em" class="st33">第一个扇区</tspan><tspan
+							class="st33">。</tspan></text>			</g>
+			<g id="group43-262" transform="translate(571.181,-500.315)" v:mID="43" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.8257406359566,-0.049212634441044)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.43</title>
+				<desc>1.MBR是Master Boot Record即主引导记录它的大小是512字节,里面却存放了预启动信息、分区表信息。 2...</desc>
+				<g id="shape44-263" v:mID="44" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1577.48) rotate(180)">
+					<title>工作表.44</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 735.59 L148.82 735.59" class="st23"/>
+				</g>
+				<g id="shape45-266" v:mID="45" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1577.48) rotate(180)">
+					<title>工作表.45</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape43-268" v:mID="43" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="788.74" width="148.82" height="104.004"/>
+					<rect x="0" y="735.591" width="148.819" height="106.299" class="st25"/>
+					<text x="4" y="749.28" class="st26" v:langID="2052"><v:paragraph/><v:tabList/>1.<tspan class="st10">M</tspan><tspan
+								class="st27" v:langID="1033">BR</tspan><tspan class="st9">是</tspan><tspan class="st27"
+								v:langID="1033">Master Boot Record</tspan><tspan class="st9" v:langID="1033">，</tspan><tspan
+								class="st9">即</tspan><tspan x="4" dy="1.245em" class="st9">主引导记录</tspan><tspan class="st9">，</tspan><tspan
+								class="st9">它的大小是</tspan><tspan class="st10">512</tspan><tspan class="st9">字</tspan><tspan x="4"
+								dy="1.216em" class="st9">节</tspan><tspan class="st10">,</tspan><tspan class="st9">里面却存放了预启动信息</tspan><tspan
+								class="st9">、</tspan><tspan x="4" dy="1.216em" class="st9">分区表信息</tspan><tspan class="st9">。<v:newlineChar/></tspan><tspan
+								x="4" dy="1.227em" class="st28">2.</tspan><tspan class="st27" v:langID="1033">446bytes</tspan><tspan
+								class="st9">用于存储</tspan><tspan class="st27" v:langID="1033">BootLoader</tspan><tspan x="4"
+								dy="1.231em" class="st9">程序</tspan><tspan class="st9">，</tspan><tspan class="st10">64</tspan><tspan
+								class="st27" v:langID="1033">bytes</tspan><tspan class="st9">用于存储分区表</tspan><tspan x="4"
+								dy="1.231em" class="st9">信息</tspan><tspan class="st9">，</tspan><tspan class="st9">最后</tspan><tspan
+								class="st10">2</tspan><tspan class="st27" v:langID="1033">bytes</tspan><tspan class="st9">用于</tspan><tspan
+								class="st27" v:langID="1033">MBR</tspan><tspan class="st9">的有</tspan><tspan x="4" dy="1.22em"
+								class="st9">效性检查</tspan><tspan class="st9">。</tspan></text>				</g>
+			</g>
+			<g id="shape57-307" v:mID="57" v:groupContext="shape" v:layerMember="1" transform="translate(248.032,-707.953)">
+				<title>思想气泡.57</title>
+				<desc>BIOS存储在主板的ROM芯片上。需要读取到RAM内运行</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(1.9658908372579,-0.51181093443051)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(1.9658908372579,-0.51181093443051)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(-0.78555073567661):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(1.1762687497317,-0.021551097675768)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(-0.78962208752618,0.49025983675474)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="41.1024" cy="816.378" width="82.21" height="47.6036"/>
+				<path d="M-3.38 845.44 A24.8176 23.1049 -180 0 0 27.03 850.32 A20.2291 18.8331 -180 0 0 62.11 845.44 A17.7595 16.5339
+							 -180 0 0 87.84 833.23 A16.3829 15.2523 -180 0 0 99.53 808.81 A13.2244 12.3117 -180 0 0 90.18 791.71
+							 A15.4299 14.365 -180 0 0 64.45 785.6 A13.2249 12.3122 -180 0 0 43.4 786.83 A20.7747 19.341 -180 0 0
+							 18.85 790.49 A19.5401 18.1916 -180 0 0 -9.81 806.97 A11.0006 10.2414 -180 0 0 -14.48 826.51 A11.6745
+							 10.8688 -180 0 0 -3.38 845.44 ZM128.98 869.92 A1.64409 1.64409 -180 1 0 125.69 869.92 A1.64409 1.64409
+							 -180 1 0 128.98 869.92 ZM117.54 861.8 A3.28819 3.28819 -180 1 0 110.97 861.8 A3.28819 3.28819 -180 1
+							 0 117.54 861.8 ZM103.84 852.27 A4.93228 4.93228 -180 1 0 93.97 852.27 A4.93228 4.93228 -180 1 0 103.84
+							 852.27 Z" class="st31"/>
+				<path d="M-3.38 845.44 A24.8176 23.1049 -180 0 0 27.03 850.32 A20.2291 18.8331 -180 0 0 62.11 845.44 A17.7595 16.5339
+							 -180 0 0 87.84 833.23 A16.3829 15.2523 -180 0 0 99.53 808.81 A13.2244 12.3117 -180 0 0 90.18 791.71
+							 A15.4299 14.365 -180 0 0 64.45 785.6 A13.2249 12.3122 -180 0 0 43.4 786.83 A20.7747 19.341 -180 0 0
+							 18.85 790.49 A19.5401 18.1916 -180 0 0 -9.81 806.97 A11.0006 10.2414 -180 0 0 -14.48 826.51 A11.6745
+							 10.8688 -180 0 0 -3.38 845.44" class="st23"/>
+				<path d="M-14.48 826.51 A8.72446 8.12237 -180 0 0 -8.06 827.12" class="st23"/>
+				<path d="M25.27 847.27 A11.5344 10.7384 -180 0 0 27.03 850.32" class="st23"/>
+				<path d="M62.11 845.44 A9.92167 9.23696 -180 0 0 62.99 841.78" class="st23"/>
+				<path d="M87.84 833.23 A9.20959 8.57402 -180 0 0 80.82 823.45" class="st23"/>
+				<path d="M96.02 812.47 A8.03953 7.48471 -180 0 0 99.53 808.81" class="st23"/>
+				<path d="M22.35 792.93 A11.8298 11.0134 -180 0 0 18.84 790.49" class="st23"/>
+				<path d="M128.98 869.92 A1.64409 1.64409 -180 1 0 125.69 869.92 A1.64409 1.64409 -180 1 0 128.98 869.92"
+						class="st23"/>
+				<path d="M117.54 861.8 A3.28819 3.28819 -180 1 0 110.97 861.8 A3.28819 3.28819 -180 1 0 117.54 861.8" class="st23"/>
+				<path d="M103.84 852.27 A4.93228 4.93228 -180 1 0 93.97 852.27 A4.93228 4.93228 -180 1 0 103.84 852.27"
+						class="st23"/>
+				<text x="4" y="803.49" class="st32" v:langID="1033"><v:paragraph v:spLine="-0.9"/><v:tabList/>BIOS<tspan
+							class="st33" v:langID="2052">存储在主板</tspan><tspan x="4" dy="0.931em" class="st33" v:langID="2052">的</tspan><tspan
+							class="st28" v:langID="2052">ROM</tspan><tspan class="st33" v:langID="2052">芯片上</tspan><tspan
+							class="st33" v:langID="2052">。</tspan><tspan x="4" dy="0.903em" class="st33" v:langID="2052">（</tspan><tspan
+							class="st33" v:langID="2052">需要读取到</tspan><tspan x="4" dy="1.17em" class="st28" v:langID="2052">RAM</tspan><tspan
+							class="st33" v:langID="2052">内运行</tspan><tspan class="st33" v:langID="2052">）</tspan></text>			</g>
+			<g id="shape62-330" v:mID="62" v:groupContext="shape" v:layerMember="1" transform="translate(941.102,-384.095)">
+				<title>思想气泡.62</title>
+				<desc>MBR的前446bytes</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.0236218878723,0.076625183385143)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.0236218878723,0.076625183385143)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.27494919797079):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.27946993423094,0.17502547288019)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.74415195364136,0.098400289495048)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="820.63" width="90.71" height="20.6035"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84 ZM-58.49 834.6 A1.81417 1.81417 -180 1 0 -62.12 834.6 A1.81417 1.81417 -180 1
+							 0 -58.49 834.6 ZM-44.35 832.97 A3.62835 3.62835 -180 1 0 -51.61 832.97 A3.62835 3.62835 -180 1 0 -44.35
+							 832.97 ZM-28.07 831.06 A5.44252 5.44252 -180 1 0 -38.96 831.06 A5.44252 5.44252 -180 1 0 -28.07 831.06
+							 Z" class="st31"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84" class="st23"/>
+				<path d="M-15.98 829.07 A9.627 6.76864 -180 0 0 -8.89 829.58" class="st23"/>
+				<path d="M27.88 846.38 A12.7276 8.94868 -180 0 0 29.83 848.92" class="st23"/>
+				<path d="M68.54 844.84 A10.9481 7.69747 -180 0 0 69.51 841.8" class="st23"/>
+				<path d="M96.92 834.67 A10.1623 7.14501 -180 0 0 89.18 826.53" class="st23"/>
+				<path d="M105.96 817.37 A8.87121 6.23726 -180 0 0 109.82 814.32" class="st23"/>
+				<path d="M24.66 801.09 A13.0536 9.17785 -180 0 0 20.79 799.06" class="st23"/>
+				<path d="M-58.49 834.6 A1.81417 1.81417 -180 1 0 -62.12 834.6 A1.81417 1.81417 -180 1 0 -58.49 834.6" class="st23"/>
+				<path d="M-44.35 832.97 A3.62835 3.62835 -180 1 0 -51.61 832.97 A3.62835 3.62835 -180 1 0 -44.35 832.97"
+						class="st23"/>
+				<path d="M-28.07 831.06 A5.44252 5.44252 -180 1 0 -38.96 831.06 A5.44252 5.44252 -180 1 0 -28.07 831.06"
+						class="st23"/>
+				<text x="4" y="823.78" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>MBR的前446bytes</text>			</g>
+			<g id="group63-343" transform="translate(574.016,-389.055)" v:mID="63" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.6218054447876,0.068682079062338)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.63</title>
+				<desc>系统读取内存中的grub配置信息一般为menu.lst或grub.lst并依照此配置信息来启动不同的操作系统。</desc>
+				<g id="shape64-344" v:mID="64" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1624.25) rotate(180)">
+					<title>工作表.64</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 782.36 L148.82 782.36" class="st23"/>
+				</g>
+				<g id="shape65-347" v:mID="65" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1624.25) rotate(180)">
+					<title>工作表.65</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape63-349" v:mID="63" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="812.126" width="148.82" height="56.0037"/>
+					<rect x="0" y="782.362" width="148.819" height="59.5276" class="st25"/>
+					<text x="4" y="797.3" class="st32" v:langID="2052"><v:paragraph/><v:tabList/>系统读取内存中的<tspan class="st34"
+								v:langID="1033">grub</tspan><tspan class="st33">配置信息</tspan><tspan x="4" dy="1.244em" class="st33">（</tspan><tspan
+								class="st33">一般为</tspan><tspan class="st34" v:langID="1033">menu.lst</tspan><tspan class="st33">或</tspan><tspan
+								class="st34" v:langID="1033">grub.lst</tspan><tspan class="st33" v:langID="1033">），</tspan><tspan
+								x="4" dy="1.204em" class="st33">并依照此配置信息来启动不同的</tspan><tspan x="4" dy="1.212em" class="st33">操作系统</tspan><tspan
+								class="st33">。</tspan></text>				</g>
+			</g>
+			<g id="shape71-363" v:mID="71" v:groupContext="shape" v:layerMember="1" transform="translate(943.937,-274.252)">
+				<title>思想气泡.71</title>
+				<desc>根据grub设定的内核镜像所在路径找到Kernel存放位置</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.0629920208744,0.14387678225282)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.0629920208744,0.14387678225282)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.18852044606897):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.2982197897219,0.21227107061515)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.7647722311525,0.068394288362333)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="820.63" width="90.71" height="35.0037"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84 ZM-60.96 830.3 A1.81417 1.81417 -180 1 0 -64.58 830.3 A1.81417 1.81417 -180 1
+							 0 -60.96 830.3 ZM-46.48 829.17 A3.62835 3.62835 -180 1 0 -53.73 829.17 A3.62835 3.62835 -180 1 0 -46.48
+							 829.17 ZM-29.8 827.84 A5.44252 5.44252 -180 1 0 -40.68 827.84 A5.44252 5.44252 -180 1 0 -29.8 827.84
+							 Z" class="st31"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84" class="st23"/>
+				<path d="M-15.98 829.07 A9.627 6.76864 -180 0 0 -8.89 829.58" class="st23"/>
+				<path d="M27.88 846.38 A12.7276 8.94868 -180 0 0 29.83 848.92" class="st23"/>
+				<path d="M68.54 844.84 A10.9481 7.69747 -180 0 0 69.51 841.8" class="st23"/>
+				<path d="M96.92 834.67 A10.1623 7.14501 -180 0 0 89.18 826.53" class="st23"/>
+				<path d="M105.96 817.37 A8.87121 6.23726 -180 0 0 109.82 814.32" class="st23"/>
+				<path d="M24.66 801.09 A13.0536 9.17785 -180 0 0 20.79 799.06" class="st23"/>
+				<path d="M-60.96 830.3 A1.81417 1.81417 -180 1 0 -64.58 830.3 A1.81417 1.81417 -180 1 0 -60.96 830.3" class="st23"/>
+				<path d="M-46.48 829.17 A3.62835 3.62835 -180 1 0 -53.73 829.17 A3.62835 3.62835 -180 1 0 -46.48 829.17"
+						class="st23"/>
+				<path d="M-29.8 827.84 A5.44252 5.44252 -180 1 0 -40.68 827.84 A5.44252 5.44252 -180 1 0 -29.8 827.84" class="st23"/>
+				<text x="4" y="813.88" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>根据grub设定的内<tspan
+							x="4" dy="0.9em" class="st4">核镜像所在路径找</tspan><tspan x="4" dy="0.9em" class="st4">到</tspan>Kernel存放位置</text>			</g>
+			<g id="group72-378" transform="translate(574.016,-255.118)" v:mID="72" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.6181103578515,0.46846198706992)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.72</title>
+				<desc>1.系统读取内存映像并进行解压缩操作。系统将解压后的内核放置在内存之中。 2.调用start_kernel()函数来启动一...</desc>
+				<g id="shape73-379" v:mID="73" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1577.48) rotate(180)">
+					<title>工作表.73</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 735.59 L148.82 735.59" class="st23"/>
+				</g>
+				<g id="shape74-382" v:mID="74" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1577.48) rotate(180)">
+					<title>工作表.74</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape72-384" v:mID="72" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="788.74" width="148.82" height="104.004"/>
+					<rect x="0" y="735.591" width="148.819" height="106.299" class="st25"/>
+					<text x="4" y="755.64" class="st26" v:langID="2052"><v:paragraph/><v:tabList/>1.<tspan class="st9">系统读取内存映像</tspan><tspan
+								class="st9">，</tspan><tspan class="st9">并进行解</tspan><tspan x="4" dy="1.229em" class="st9">压缩操作</tspan><tspan
+								class="st9">。</tspan><tspan class="st9">系统将解压后的内核</tspan><tspan x="4" dy="1.212em" class="st9">放置在内存之中</tspan><tspan
+								class="st9">。<v:newlineChar/></tspan><tspan x="4" dy="1.227em" class="st28">2.</tspan><tspan
+								class="st9">调用</tspan><tspan class="st27" v:langID="1033">start_kernel()</tspan><tspan class="st9">函数来启动</tspan><tspan
+								x="4" dy="1.208em" class="st9">一系列的初始化函数并初始化各</tspan><tspan x="4" dy="1.211em" class="st9">种设备</tspan><tspan
+								class="st9">，</tspan><tspan class="st9">完成</tspan><tspan class="st27" v:langID="1033">Linux</tspan><tspan
+								class="st9">核心环境的</tspan><tspan x="4" dy="1.216em" class="st9">建立</tspan><tspan class="st9">。</tspan><tspan
+								class="st10">(</tspan><tspan class="st9">挂载根分区</tspan><tspan class="st9">，</tspan><tspan
+								class="st9">找到</tspan><tspan class="st10">/sbin/)</tspan></text>				</g>
+			</g>
+			<g id="group77-412" transform="translate(620.787,-704.409)" v:mID="77" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3503116235231,-0.46259849951367)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.77</title>
+				<desc>1.找到硬盘的0磁道的第一个扇区 注此处一般根据BIOS内设置的启动项依次查找此处直接把硬盘设置为第一启动项。</desc>
+				<g id="shape78-413" v:mID="78" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1615.75) rotate(180)">
+					<title>工作表.78</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 773.86 L148.82 773.86" class="st23"/>
+				</g>
+				<g id="shape79-416" v:mID="79" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1615.75) rotate(180)">
+					<title>工作表.79</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape77-418" v:mID="77" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="807.874" width="148.82" height="68.0038"/>
+					<rect x="0" y="773.858" width="148.819" height="68.0315" class="st25"/>
+					<text x="4" y="786.71" class="st32" v:langID="2052"><v:paragraph/><v:tabList/>1.找到硬盘的0磁道的第一个扇<tspan x="4"
+								dy="1.2em" class="st4">区<v:newlineChar/></tspan><tspan x="4" dy="1.212em" class="st35">注</tspan><tspan
+								class="st35">：</tspan><tspan class="st35">此处一般根据</tspan><tspan class="st36">BIOS</tspan><tspan
+								class="st35">内设置</tspan><tspan x="4" dy="1.204em" class="st35">的启动项依次查找</tspan><tspan class="st35">，</tspan><tspan
+								class="st35">此处直接把</tspan><tspan x="4" dy="1.212em" class="st35">硬盘设置为第一启动项</tspan><tspan
+								class="st35">。</tspan></text>				</g>
+			</g>
+			<g id="shape86-432" v:mID="86" v:groupContext="shape" v:layerMember="1" transform="translate(946.772,-85.0394)">
+				<title>思想气泡.86</title>
+				<desc>1.inittabl存放路径是/etc/用来设定用户运行等级等信息 2.init存放在/sbin/它的进程号是1 参数说明...</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.1023621538765,0.3334645740612)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.1023621538765,0.3334645740612)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.1926291642561):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.29748440083604,0.73669474284845)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.80487775304046,0.40323016878725)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="767.48" width="90.71" height="146.604"/>
+				<path d="M-3.73 852.23 A27.3849 67.3892 -180 0 0 29.83 866.49 A22.3218 54.9298 -180 0 0 68.54 852.23 A19.5967 48.2238
+							 -180 0 0 96.92 816.62 A18.0777 44.4858 -180 0 0 109.82 745.4 A14.5924 35.9092 -180 0 0 99.51 695.53
+							 A17.026 41.8979 -180 0 0 71.12 677.71 A14.593 35.9107 -180 0 0 47.89 681.28 A22.9238 56.4112 -180 0
+							 0 20.8 691.97 A21.5615 53.0589 -180 0 0 -10.82 740.05 A12.1386 29.8709 -180 0 0 -15.98 797.02 A12.8822
+							 31.7008 -180 0 0 -3.73 852.23 ZM-63.07 810.62 A1.81417 1.81417 -180 1 0 -66.7 810.62 A1.81417 1.81417
+							 -180 1 0 -63.07 810.62 ZM-47.93 803.94 A3.62835 3.62835 -180 1 0 -55.18 803.94 A3.62835 3.62835 -180
+							 1 0 -47.93 803.94 ZM-30.46 796.11 A5.44252 5.44252 -180 1 0 -41.35 796.11 A5.44252 5.44252 -180 1 0
+							 -30.46 796.11 Z" class="st31"/>
+				<path d="M-3.73 852.23 A27.3849 67.3892 -180 0 0 29.83 866.49 A22.3218 54.9298 -180 0 0 68.54 852.23 A19.5967 48.2238
+							 -180 0 0 96.92 816.62 A18.0777 44.4858 -180 0 0 109.82 745.4 A14.5924 35.9092 -180 0 0 99.51 695.53
+							 A17.026 41.8979 -180 0 0 71.12 677.71 A14.593 35.9107 -180 0 0 47.89 681.28 A22.9238 56.4112 -180 0
+							 0 20.8 691.97 A21.5615 53.0589 -180 0 0 -10.82 740.05 A12.1386 29.8709 -180 0 0 -15.98 797.02 A12.8822
+							 31.7008 -180 0 0 -3.73 852.23" class="st23"/>
+				<path d="M-15.98 797.02 A9.627 23.6902 -180 0 0 -8.89 798.81" class="st23"/>
+				<path d="M27.88 857.59 A12.7276 31.3204 -180 0 0 29.83 866.49" class="st23"/>
+				<path d="M68.54 852.23 A10.9481 26.9411 -180 0 0 69.51 841.56" class="st23"/>
+				<path d="M96.92 816.62 A10.1623 25.0075 -180 0 0 89.18 788.12" class="st23"/>
+				<path d="M105.96 756.08 A8.87121 21.8304 -180 0 0 109.82 745.4" class="st23"/>
+				<path d="M24.66 699.1 A13.0536 32.1225 -180 0 0 20.79 691.97" class="st23"/>
+				<path d="M-63.07 810.62 A1.81417 1.81417 -180 1 0 -66.7 810.62 A1.81417 1.81417 -180 1 0 -63.07 810.62"
+						class="st23"/>
+				<path d="M-47.93 803.94 A3.62835 3.62835 -180 1 0 -55.18 803.94 A3.62835 3.62835 -180 1 0 -47.93 803.94"
+						class="st23"/>
+				<path d="M-30.46 796.11 A5.44252 5.44252 -180 1 0 -41.35 796.11 A5.44252 5.44252 -180 1 0 -30.46 796.11"
+						class="st23"/>
+				<text x="4" y="704.05" class="st26" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>1.<tspan class="st37">inittabl</tspan><tspan
+							class="st37">存放路</tspan><tspan x="4" dy="0.9em" class="st37">径是</tspan><tspan class="st37"
+							v:langID="1033">/etc/</tspan><tspan class="st37">，</tspan><tspan class="st37">用来</tspan><tspan x="4"
+							dy="0.9em" class="st37">设定用户运行等级</tspan><tspan x="4" dy="0.9em" class="st37">等信息<v:newlineChar/></tspan><tspan
+							x="4" dy="0.909em" class="st28">2.</tspan><tspan class="st10">init</tspan><tspan class="st9">存放在</tspan><tspan
+							x="4" dy="0.912em" class="st10">/sbin/</tspan><tspan class="st9">，</tspan><tspan class="st9">它的进程</tspan><tspan
+							x="4" dy="0.912em" class="st9">号是</tspan><tspan class="st10">1<v:newlineChar/></tspan><tspan x="4"
+							dy="0.912em" class="st38">参数说明</tspan><tspan class="st9">：<v:newlineChar/></tspan><tspan x="4"
+							dy="0.92em" class="st28">CentOS6</tspan><tspan class="st10">:</tspan><tspan class="st27"
+							v:langID="1033">id:</tspan><tspan class="st34" v:langID="1033">5</tspan><tspan class="st27"
+							v:langID="1033">:initd</tspan><tspan x="4" dy="0.923em" class="st27" v:langID="1033">efault<v:newlineChar/></tspan><tspan
+							x="4" dy="0.923em" class="st28">CentOS7</tspan><tspan class="st10">:</tspan><tspan class="st27"
+							v:langID="1033">multi</tspan><tspan class="st27" v:langID="1033">-</tspan><tspan x="4" dy="0.923em"
+							class="st27" v:langID="1033">user.target</tspan><tspan class="st9">是</tspan><tspan class="st10">3</tspan><tspan
+							class="st9">级</tspan><tspan x="4" dy="0.915em" class="st9">别</tspan><tspan class="st9">，<v:newlineChar/></tspan><tspan
+							x="4" dy="0.92em" class="st27" v:langID="1033">graphical.target</tspan><tspan class="st9">是</tspan><tspan
+							class="st10">5</tspan><tspan x="4" dy="1.176em" class="st9">级别</tspan></text>			</g>
+			<g id="group87-483" transform="translate(578.268,0)" v:mID="87" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.8178314227881,1.6732285154586)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+				</v:userDefs>
+				<title>雪橇.87</title>
+				<desc>0关机 1单用户模式 2无网络支持的多用户模式 3有网络支持的多用户模式 4保留未使用 5有网络支持有X-Window支持...</desc>
+				<g id="shape88-484" v:mID="88" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.88</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M37.2 735.59 L148.82 735.59" class="st23"/>
+				</g>
+				<g id="shape89-487" v:mID="89" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.89</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape87-489" v:mID="87" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="788.74" width="148.82" height="104.004"/>
+					<rect x="0" y="735.591" width="148.819" height="106.299" class="st25"/>
+					<text x="4" y="748.89" class="st26" v:langID="2052"><v:paragraph/><v:tabList/>0：<tspan class="st9">关机<v:newlineChar/></tspan><tspan
+								x="4" dy="1.241em" class="st28">1</tspan><tspan class="st33">：</tspan><tspan class="st9">单用户模式<v:newlineChar/></tspan><tspan
+								x="4" dy="1.216em" class="st28">2</tspan><tspan class="st33">：</tspan><tspan class="st9">无网络支持的多用户模式<v:newlineChar/></tspan><tspan
+								x="4" dy="1.216em" class="st28">3</tspan><tspan class="st33">：</tspan><tspan class="st9">有网络支持的多用户模式<v:newlineChar/></tspan><tspan
+								x="4" dy="1.216em" class="st28">4</tspan><tspan class="st33">：</tspan><tspan class="st9">保留</tspan><tspan
+								class="st9">，</tspan><tspan class="st9">未使用<v:newlineChar/></tspan><tspan x="4" dy="1.227em"
+								class="st28">5</tspan><tspan class="st33">：</tspan><tspan class="st9">有网络支持有</tspan><tspan
+								class="st27" v:langID="1033">X</tspan><tspan class="st27" v:langID="1033">-</tspan><tspan
+								class="st27" v:langID="1033">Window</tspan><tspan class="st9">支持</tspan><tspan x="4" dy="1.22em"
+								class="st9">的多用户模式<v:newlineChar/></tspan><tspan x="4" dy="1.292em" class="st4">6</tspan>：<tspan
+								class="st9">重新引导系统</tspan><tspan class="st9">，</tspan><tspan class="st9">即重启</tspan></text>				</g>
+			</g>
+			<g id="shape92-519" v:mID="92" v:groupContext="shape" v:layerMember="1" transform="translate(612.283,-170.079)">
+				<title>思想气泡.92</title>
+				<desc>rc.sysinit存放路径是/etc/</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-0.538057565453,-0.19685020700699)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-0.538057565453,-0.19685020700699)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.73219388944258):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.072796451401481,-0.00081327419660082)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.46526111405152,0.19603693281039)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="820.63" width="90.71" height="29.6035"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84 ZM-28.55 852.53 A1.81417 1.81417 180 1 0 -32.18 852.53 A1.81417 1.81417 180 1
+							 0 -28.55 852.53 ZM-19.03 849.29 A3.62835 3.62835 180 1 0 -26.29 849.29 A3.62835 3.62835 180 1 0 -19.03
+							 849.29 ZM-8.17 845.48 A5.44252 5.44252 180 1 0 -19.06 845.48 A5.44252 5.44252 180 1 0 -8.17 845.48 Z"
+						class="st31"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84" class="st23"/>
+				<path d="M-15.98 829.07 A9.627 6.76864 -180 0 0 -8.89 829.58" class="st23"/>
+				<path d="M27.88 846.38 A12.7276 8.94868 -180 0 0 29.83 848.92" class="st23"/>
+				<path d="M68.54 844.84 A10.9481 7.69747 -180 0 0 69.51 841.8" class="st23"/>
+				<path d="M96.92 834.67 A10.1623 7.14501 -180 0 0 89.18 826.53" class="st23"/>
+				<path d="M105.96 817.37 A8.87121 6.23726 -180 0 0 109.82 814.32" class="st23"/>
+				<path d="M24.66 801.09 A13.0536 9.17785 -180 0 0 20.79 799.06" class="st23"/>
+				<path d="M-28.55 852.53 A1.81417 1.81417 180 1 0 -32.18 852.53 A1.81417 1.81417 180 1 0 -28.55 852.53" class="st23"/>
+				<path d="M-19.03 849.29 A3.62835 3.62835 180 1 0 -26.29 849.29 A3.62835 3.62835 180 1 0 -19.03 849.29" class="st23"/>
+				<path d="M-8.17 845.48 A5.44252 5.44252 180 1 0 -19.06 845.48 A5.44252 5.44252 180 1 0 -8.17 845.48" class="st23"/>
+				<text x="4" y="816.58" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>rc.sysinit存放路<tspan
+							x="4" dy="1.17em" class="st4">径是</tspan>/etc/</text>			</g>
+			<g id="group93-533" transform="translate(323.15,-152.362)" v:mID="93" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.5936625126242,0.049212794410527)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.93</title>
+				<desc>1.Linux系统执行的第一个用户层文件就是 /etc/rc.sysinit脚本程序 2.它的功能包括1、激活udev和s...</desc>
+				<g id="shape94-534" v:mID="94" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1492.44) rotate(180)">
+					<title>工作表.94</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 650.55 L148.82 650.55" class="st23"/>
+				</g>
+				<g id="shape95-537" v:mID="95" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1492.44) rotate(180)">
+					<title>工作表.95</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape93-539" v:mID="93" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="746.22" width="148.82" height="188.004"/>
+					<rect x="0" y="650.551" width="148.819" height="191.339" class="st25"/>
+					<text x="4" y="663.99" class="st26" v:langID="2052"><v:paragraph/><v:tabList/>1.<tspan class="st27"
+								v:langID="1033">Linux</tspan><tspan class="st9">系统执行的第一个用户</tspan><tspan x="4" dy="1.245em"
+								class="st9">层文件就是</tspan><tspan class="st9">：<v:newlineChar/></tspan><tspan x="4" dy="1.227em"
+								class="st10">/</tspan><tspan class="st27" v:langID="1033">etc/rc.sysinit</tspan><tspan class="st9">脚本程序<v:newlineChar/></tspan><tspan
+								x="4" dy="1.231em" class="st28">2.</tspan><tspan class="st9">它的功能包括</tspan><tspan class="st9">：</tspan><tspan
+								class="st10">1</tspan><tspan class="st9">、</tspan><tspan class="st9">激活</tspan><tspan class="st27"
+								v:langID="1033">udev</tspan><tspan x="4" dy="1.231em" class="st9">和</tspan><tspan class="st27"
+								v:langID="1033">selinux</tspan><tspan class="st9" v:langID="1033">；</tspan><tspan class="st27"
+								v:langID="1033">2</tspan><tspan class="st9" v:langID="1033">、</tspan><tspan class="st9">根据</tspan><tspan
+								class="st10">/</tspan><tspan class="st27" v:langID="1033">etc/</tspan><tspan x="4" dy="1.219em"
+								class="st27" v:langID="1033">sysctl.conf</tspan><tspan class="st9">文件</tspan><tspan class="st9">，</tspan><tspan
+								class="st9">来设定内核参</tspan><tspan x="4" dy="1.216em" class="st9">数</tspan><tspan class="st9">；</tspan><tspan
+								class="st10">3</tspan><tspan class="st9">、</tspan><tspan class="st9">设定系统时钟</tspan><tspan
+								class="st9">；</tspan><tspan class="st10">4</tspan><tspan class="st9">、</tspan><tspan class="st9">装</tspan><tspan
+								x="4" dy="1.216em" class="st9">载硬盘映射</tspan><tspan class="st9">；</tspan><tspan class="st10">5</tspan><tspan
+								class="st9">、</tspan><tspan class="st9">启用交换分</tspan><tspan x="4" dy="1.216em" class="st9">区</tspan><tspan
+								class="st9">；</tspan><tspan class="st10">6</tspan><tspan class="st9">、</tspan><tspan class="st9">设置主机名</tspan><tspan
+								class="st9">；</tspan><tspan class="st10">7</tspan><tspan class="st9">、</tspan><tspan class="st9">根文</tspan><tspan
+								x="4" dy="1.204em" class="st9">件系统检测</tspan><tspan class="st9">，</tspan><tspan class="st9">并以读写方式重新</tspan><tspan
+								x="4" dy="1.223em" class="st9">挂载根文件系统</tspan><tspan class="st9">；</tspan><tspan class="st10">8</tspan><tspan
+								class="st9">、</tspan><tspan class="st9">激活</tspan><tspan class="st27" v:langID="1033">RAID</tspan><tspan
+								x="4" dy="1.231em" class="st9">和</tspan><tspan class="st27" v:langID="1033">LVM</tspan><tspan
+								class="st9">设备</tspan><tspan class="st9">；</tspan><tspan class="st10">9</tspan><tspan class="st9">、</tspan><tspan
+								class="st9">启用磁盘配</tspan><tspan x="4" dy="1.231em" class="st9">额</tspan><tspan class="st9">；</tspan><tspan
+								class="st10">10</tspan><tspan class="st9">、</tspan><tspan class="st9">根据</tspan><tspan class="st10">/</tspan><tspan
+								class="st27" v:langID="1033">etc/fstab</tspan><tspan class="st9" v:langID="1033">，</tspan><tspan
+								class="st9">检查并</tspan><tspan x="4" dy="1.22em" class="st9">挂载其他文件系统</tspan><tspan class="st9">；</tspan><tspan
+								class="st10">11</tspan><tspan class="st9">、</tspan><tspan class="st9">清理</tspan><tspan x="4"
+								dy="1.227em" class="st9">过期的锁和</tspan><tspan class="st27" v:langID="1033">PID</tspan><tspan
+								class="st9">文件</tspan></text>				</g>
+			</g>
+			<g id="shape100-624" v:mID="100" v:groupContext="shape" v:layerMember="1" transform="translate(354.331,-59.5276)">
+				<title>思想气泡.100</title>
+				<desc>CentOS7/6是/etc/sysconfig/modules/</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.1842543772415,0.87381205857423)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.1842543772415,0.87381205857423)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(-0.59739213648559):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.1513121221129,0.54440914066476)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(1.0329422551286,-0.32940291790947)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="820.63" width="90.71" height="35.0037"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84 ZM-64.86 784.9 A1.81417 1.81417 -180 1 0 -68.49 784.9 A1.81417 1.81417 -180 1
+							 0 -64.86 784.9 ZM-45.94 790.36 A3.62835 3.62835 -180 1 0 -53.2 790.36 A3.62835 3.62835 -180 1 0 -45.94
+							 790.36 ZM-24.04 796.76 A5.44252 5.44252 -180 1 0 -34.93 796.76 A5.44252 5.44252 -180 1 0 -24.04 796.76
+							 Z" class="st31"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84" class="st23"/>
+				<path d="M-15.98 829.07 A9.627 6.76864 -180 0 0 -8.89 829.58" class="st23"/>
+				<path d="M27.88 846.38 A12.7276 8.94868 -180 0 0 29.83 848.92" class="st23"/>
+				<path d="M68.54 844.84 A10.9481 7.69747 -180 0 0 69.51 841.8" class="st23"/>
+				<path d="M96.92 834.67 A10.1623 7.14501 -180 0 0 89.18 826.53" class="st23"/>
+				<path d="M105.96 817.37 A8.87121 6.23726 -180 0 0 109.82 814.32" class="st23"/>
+				<path d="M24.66 801.09 A13.0536 9.17785 -180 0 0 20.79 799.06" class="st23"/>
+				<path d="M-64.86 784.9 A1.81417 1.81417 -180 1 0 -68.49 784.9 A1.81417 1.81417 -180 1 0 -64.86 784.9" class="st23"/>
+				<path d="M-45.94 790.36 A3.62835 3.62835 -180 1 0 -53.2 790.36 A3.62835 3.62835 -180 1 0 -45.94 790.36"
+						class="st23"/>
+				<path d="M-24.04 796.76 A5.44252 5.44252 -180 1 0 -34.93 796.76 A5.44252 5.44252 -180 1 0 -24.04 796.76"
+						class="st23"/>
+				<text x="4" y="814.13" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>CentOS7/6是：<tspan
+							class="st34" v:langID="1033">/</tspan><tspan x="4" dy="0.925em" class="st34" v:langID="1033">etc/sysconfig/</tspan><tspan
+							x="4" dy="0.9em" class="st34" v:langID="1033">modules/</tspan></text>			</g>
+			<g id="group101-640" transform="translate(0,-53.8583)" v:mID="101" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3561752956925,0.96106301618064)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+				</v:userDefs>
+				<title>雪橇.101</title>
+				<desc>依据/etc/modules.conf文件或/etc/modules.d目录下的文件来装载内核模块 注CentOS7/6是...</desc>
+				<g id="shape102-641" v:mID="102" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.102</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M37.2 761.1 L148.82 761.1" class="st23"/>
+				</g>
+				<g id="shape103-644" v:mID="103" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.103</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape101-646" v:mID="101" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="801.496" width="148.82" height="80.0038"/>
+					<rect x="0" y="761.102" width="148.819" height="80.7874" class="st25"/>
+					<text x="4" y="774.28" class="st32" v:langID="2052"><v:paragraph/><v:tabList/>依据/<tspan class="st34"
+								v:langID="1033">etc/modules.conf</tspan><tspan class="st33">文件或</tspan><tspan x="4" dy="1.256em"
+								class="st28">/</tspan><tspan class="st34" v:langID="1033">etc/modules.d</tspan><tspan class="st33">目录下的文件来</tspan><tspan
+								x="4" dy="1.22em" class="st33">装载内核模块<v:newlineChar/></tspan><tspan x="4" dy="1.227em" class="st35">注</tspan><tspan
+								class="st35">：</tspan><tspan class="st36">CentOS7/6</tspan><tspan class="st35">是依据</tspan><tspan
+								class="st39" v:langID="1033">/etc/</tspan><tspan x="4" dy="1.219em" class="st39" v:langID="1033">sysconfig/modules/</tspan><tspan
+								class="st35">目录下的文件</tspan><tspan x="4" dy="1.216em" class="st35">来装载内核模块</tspan></text>				</g>
+			</g>
+			<g id="shape105-663" v:mID="105" v:groupContext="shape" v:layerMember="1" transform="translate(358.583,-373.465)">
+				<title>思想气泡.105</title>
+				<desc>这一步的脚本程序存放在/etc/rc.d/rc*.d/ 注*是0-6</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.2614174731473,-0.3298910461438)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.2614174731473,-0.3298910461438)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.59122324360428):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.15457591005729,0.053246417918629)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(1.10684156309,0.38313746406243)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="818.504" width="90.71" height="44.0037"/>
+				<path d="M-3.73 845.14 A27.3849 21.1795 -180 0 0 29.83 849.62 A22.3218 17.2636 -180 0 0 68.54 845.14 A19.5967 15.156
+							 -180 0 0 96.92 833.95 A18.0777 13.9812 -180 0 0 109.82 811.56 A14.5924 11.2858 -180 0 0 99.51 795.89
+							 A17.026 13.1679 -180 0 0 71.12 790.29 A14.593 11.2862 -180 0 0 47.89 791.41 A22.9238 17.7292 -180 0
+							 0 20.8 794.77 A21.5615 16.6756 -180 0 0 -10.82 809.88 A12.1386 9.38798 -180 0 0 -15.98 827.79 A12.8822
+							 9.9631 -180 0 0 -3.73 845.14 ZM-69.08 858.75 A1.81417 1.81417 -180 1 0 -72.71 858.75 A1.81417 1.81417
+							 -180 1 0 -69.08 858.75 ZM-48.94 852.4 A3.62835 3.62835 -180 1 0 -56.2 852.4 A3.62835 3.62835 -180 1
+							 0 -48.94 852.4 ZM-25.61 844.95 A5.44252 5.44252 -180 1 0 -36.5 844.95 A5.44252 5.44252 -180 1 0 -25.61
+							 844.95 Z" class="st31"/>
+				<path d="M-3.73 845.14 A27.3849 21.1795 -180 0 0 29.83 849.62 A22.3218 17.2636 -180 0 0 68.54 845.14 A19.5967 15.156
+							 -180 0 0 96.92 833.95 A18.0777 13.9812 -180 0 0 109.82 811.56 A14.5924 11.2858 -180 0 0 99.51 795.89
+							 A17.026 13.1679 -180 0 0 71.12 790.29 A14.593 11.2862 -180 0 0 47.89 791.41 A22.9238 17.7292 -180 0
+							 0 20.8 794.77 A21.5615 16.6756 -180 0 0 -10.82 809.88 A12.1386 9.38798 -180 0 0 -15.98 827.79 A12.8822
+							 9.9631 -180 0 0 -3.73 845.14" class="st23"/>
+				<path d="M-15.98 827.79 A9.627 7.44551 -180 0 0 -8.89 828.35" class="st23"/>
+				<path d="M27.88 846.82 A12.7276 9.84355 -180 0 0 29.83 849.62" class="st23"/>
+				<path d="M68.54 845.14 A10.9481 8.46721 -180 0 0 69.51 841.79" class="st23"/>
+				<path d="M96.92 833.95 A10.1623 7.85951 -180 0 0 89.18 824.99" class="st23"/>
+				<path d="M105.96 814.92 A8.87121 6.86098 -180 0 0 109.82 811.56" class="st23"/>
+				<path d="M24.66 797.01 A13.0536 10.0956 -180 0 0 20.79 794.77" class="st23"/>
+				<path d="M-69.08 858.75 A1.81417 1.81417 -180 1 0 -72.71 858.75 A1.81417 1.81417 -180 1 0 -69.08 858.75"
+						class="st23"/>
+				<path d="M-48.94 852.4 A3.62835 3.62835 -180 1 0 -56.2 852.4 A3.62835 3.62835 -180 1 0 -48.94 852.4" class="st23"/>
+				<path d="M-25.61 844.95 A5.44252 5.44252 -180 1 0 -36.5 844.95 A5.44252 5.44252 -180 1 0 -25.61 844.95"
+						class="st23"/>
+				<text x="4" y="806.58" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>这一步的脚本程序<tspan x="4"
+							dy="0.974em" class="st4">存放在</tspan>：<tspan class="st34" v:langID="1033">/etc/rc.d/</tspan><tspan x="4"
+							dy="0.942em" class="st34" v:langID="1033">rc</tspan><tspan class="st36">*</tspan><tspan class="st34"
+							v:langID="1033">.d/<v:newlineChar/></tspan><tspan x="4" dy="0.915em" class="st35">注</tspan><tspan
+							class="st35">：</tspan><tspan class="st36">*</tspan><tspan class="st35">是</tspan><tspan class="st36">0</tspan><tspan
+							class="st36">-</tspan><tspan class="st36">6</tspan></text>			</g>
+			<g id="group106-688" transform="translate(0,-262.205)" v:mID="106" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3228347071119,0.89542923310486)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+				</v:userDefs>
+				<title>雪橇.106</title>
+				<desc>根据运行级别的不同系统会运行相应的脚本程序来完成相应的初始化工作和启动相应的服务。 运行脚本存放目录 级别0脚本/etc/...</desc>
+				<g id="shape107-689" v:mID="107" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.107</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M37.2 735.59 L148.82 735.59" class="st23"/>
+				</g>
+				<g id="shape108-692" v:mID="108" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,0) scale(-1,1)">
+					<title>工作表.108</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(2):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape106-694" v:mID="106" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="788.74" width="148.82" height="104.004"/>
+					<rect x="0" y="735.591" width="148.819" height="106.299" class="st25"/>
+					<text x="4" y="749.35" class="st32" v:langID="2052"><v:paragraph/><v:tabList/>根据运行级别的不同，系统会运<tspan x="4"
+								dy="1.2em" class="st4">行相应的脚本程序</tspan>，来完成相应<tspan x="4" dy="1.2em" class="st4">的初始化工作和启动相应的服</tspan><tspan
+								x="4" dy="1.2em" class="st4">务</tspan>。<v:newlineChar/><tspan x="4" dy="1.212em" class="st33">运行脚本存放目录</tspan><tspan
+								class="st33">：<v:newlineChar/></tspan><tspan x="4" dy="1.227em" class="st33">级别</tspan><tspan
+								class="st28">0</tspan><tspan class="st33">脚本</tspan><tspan class="st33">：</tspan><tspan
+								class="st28">/etc/rc.d/</tspan><tspan class="st34" v:langID="1033">rc0.d</tspan><tspan class="st28">/<v:newlineChar/><v:tabChar/><v:tabChar/></tspan><tspan
+								x="89.04" dy="1.208em" class="st36">……<v:newlineChar/></tspan><tspan x="4" dy="1.223em"
+								class="st33">级别</tspan><tspan class="st28">6</tspan><tspan class="st33">脚本</tspan><tspan
+								class="st33">：</tspan><tspan class="st28">/etc/rc.d/</tspan><tspan class="st34" v:langID="1033">rc</tspan><tspan
+								class="st28">6</tspan><tspan class="st34" v:langID="1033">.d</tspan><tspan class="st28">/</tspan></text>				</g>
+			</g>
+			<g id="shape110-719" v:mID="110" v:groupContext="shape" v:layerMember="1" transform="translate(362.835,-477.638)">
+				<title>思想气泡.110</title>
+				<desc>存放路径 /etc/rc.d/rc.local</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.2636315128611,-0.12780462947847)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.2636315128611,-0.12780462947847)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.46510198577155):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.23202686027125,0.096622755622102)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(1.0316046525898,0.22442738510057)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="49.0394" cy="820.63" width="98.08" height="26.0037"/>
+				<path d="M-4.03 844.84 A29.6099 19.254 -180 0 0 32.25 848.92 A24.1354 15.6942 -180 0 0 74.11 844.84 A21.1889 13.7782
+							 -180 0 0 104.8 834.67 A19.5465 12.7102 -180 0 0 118.74 814.32 A15.7781 10.2598 -180 0 0 107.59 800.07
+							 A18.4094 11.9708 -180 0 0 76.89 794.98 A15.7787 10.2602 -180 0 0 51.78 796 A24.7863 16.1175 -180 0 0
+							 22.49 799.06 A23.3134 15.1597 -180 0 0 -11.7 812.79 A13.1249 8.53453 -180 0 0 -17.28 829.07 A13.9289
+							 9.05737 -180 0 0 -4.03 844.84 ZM-70.45 847.05 A1.96157 1.96157 -180 1 0 -74.37 847.05 A1.96157 1.96157
+							 -180 1 0 -70.45 847.05 ZM-51.41 843.34 A3.92315 3.92315 -180 1 0 -59.25 843.34 A3.92315 3.92315 -180
+							 1 0 -51.41 843.34 ZM-29.39 838.97 A5.88472 5.88472 -180 1 0 -41.16 838.97 A5.88472 5.88472 -180 1 0
+							 -29.39 838.97 Z" class="st31"/>
+				<path d="M-4.03 844.84 A29.6099 19.254 -180 0 0 32.25 848.92 A24.1354 15.6942 -180 0 0 74.11 844.84 A21.1889 13.7782
+							 -180 0 0 104.8 834.67 A19.5465 12.7102 -180 0 0 118.74 814.32 A15.7781 10.2598 -180 0 0 107.59 800.07
+							 A18.4094 11.9708 -180 0 0 76.89 794.98 A15.7787 10.2602 -180 0 0 51.78 796 A24.7863 16.1175 -180 0 0
+							 22.49 799.06 A23.3134 15.1597 -180 0 0 -11.7 812.79 A13.1249 8.53453 -180 0 0 -17.28 829.07 A13.9289
+							 9.05737 -180 0 0 -4.03 844.84" class="st23"/>
+				<path d="M-17.28 829.07 A10.4092 6.76864 -180 0 0 -9.61 829.58" class="st23"/>
+				<path d="M30.15 846.38 A13.7618 8.94868 -180 0 0 32.25 848.92" class="st23"/>
+				<path d="M74.11 844.84 A11.8376 7.69747 -180 0 0 75.16 841.8" class="st23"/>
+				<path d="M104.8 834.67 A10.988 7.14501 -180 0 0 96.43 826.53" class="st23"/>
+				<path d="M114.57 817.37 A9.59199 6.23726 -180 0 0 118.74 814.32" class="st23"/>
+				<path d="M26.67 801.09 A14.1142 9.17785 -180 0 0 22.48 799.06" class="st23"/>
+				<path d="M-70.45 847.05 A1.96157 1.96157 -180 1 0 -74.37 847.05 A1.96157 1.96157 -180 1 0 -70.45 847.05"
+						class="st23"/>
+				<path d="M-51.41 843.34 A3.92315 3.92315 -180 1 0 -59.25 843.34 A3.92315 3.92315 -180 1 0 -51.41 843.34"
+						class="st23"/>
+				<path d="M-29.39 838.97 A5.88472 5.88472 -180 1 0 -41.16 838.97 A5.88472 5.88472 -180 1 0 -29.39 838.97"
+						class="st23"/>
+				<text x="4" y="818.38" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>存放路径：<v:newlineChar/><tspan
+							x="4" dy="0.9em" class="st34" v:langID="1033">/etc/rc.d/rc.local</tspan></text>			</g>
+			<g id="group111-733" transform="translate(0,-439.37)" v:mID="111" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3228347071119,0.30646245884533)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.111</title>
+				<desc>rc.local就是在一切初始化工作后Linux留给用户进行个性化的地方。你可以把你想设置和启动的东西放到这里。</desc>
+				<g id="shape112-734" v:mID="112" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1624.25) rotate(180)">
+					<title>工作表.112</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 782.36 L148.82 782.36" class="st23"/>
+				</g>
+				<g id="shape113-737" v:mID="113" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1624.25) rotate(180)">
+					<title>工作表.113</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape111-739" v:mID="111" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="812.126" width="148.82" height="56.0037"/>
+					<rect x="0" y="782.362" width="148.819" height="59.5276" class="st25"/>
+					<text x="4" y="797.26" class="st32" v:langID="1033"><v:paragraph/><v:tabList/>rc.local<tspan class="st33"
+								v:langID="2052">就是在一切初始化工作</tspan><tspan x="4" dy="1.24em" class="st33" v:langID="2052">后</tspan><tspan
+								class="st33" v:langID="2052">，</tspan><tspan class="st34">Linux</tspan><tspan class="st33"
+								v:langID="2052">留给用户进行个性化</tspan><tspan x="4" dy="1.204em" class="st33" v:langID="2052">的地方</tspan><tspan
+								class="st33" v:langID="2052">。</tspan><tspan class="st33" v:langID="2052">你可以把你想设置和启</tspan><tspan
+								x="4" dy="1.212em" class="st33" v:langID="2052">动的东西放到这里</tspan><tspan class="st33" v:langID="2052">。</tspan></text>				</g>
+			</g>
+			<g id="shape115-752" v:mID="115" v:groupContext="shape" v:layerMember="1" transform="translate(357.165,-557.717)">
+				<title>思想气泡.115</title>
+				<desc>存放路径/etc/login</desc>
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-6MM,-9MM)):40"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.97860964724525):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(2.0341870190681MM,-1.8343737397501MM)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(8.0341870190681MM,7.1656262602499MM)):40"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(-1.1614173552204,0.072229478626939)):40"/>
+					<v:ud v:nameU="LeaderEnd" v:prompt="" v:val="VT7(PNT(-1.1614173552204,0.072229478626939)):40"/>
+					<v:ud v:nameU="Theta" v:prompt="" v:val="VT0(0.25963349092106):32"/>
+					<v:ud v:nameU="PntOnEllp" v:prompt="" v:val="VT7(PNT(-0.28329211788161,0.18156805632905)):40"/>
+					<v:ud v:nameU="LeaderSize" v:prompt="" v:val="VT7(PNT(0.87812523733879,0.10933857770211)):40"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="45.3543" cy="820.63" width="90.71" height="26.0037"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84 ZM-66 834.72 A1.81417 1.81417 180 1 0 -69.63 834.72 A1.81417 1.81417 180 1 0 -66
+							 834.72 ZM-49.65 832.91 A3.62835 3.62835 180 1 0 -56.9 832.91 A3.62835 3.62835 180 1 0 -49.65 832.91
+							 ZM-30.76 830.78 A5.44252 5.44252 180 1 0 -41.65 830.78 A5.44252 5.44252 180 1 0 -30.76 830.78 Z"
+						class="st31"/>
+				<path d="M-3.73 844.84 A27.3849 19.254 -180 0 0 29.83 848.92 A22.3218 15.6942 -180 0 0 68.54 844.84 A19.5967 13.7782
+							 -180 0 0 96.92 834.67 A18.0777 12.7102 -180 0 0 109.82 814.32 A14.5924 10.2598 -180 0 0 99.51 800.07
+							 A17.026 11.9708 -180 0 0 71.12 794.98 A14.593 10.2602 -180 0 0 47.89 796 A22.9238 16.1175 -180 0 0 20.8
+							 799.06 A21.5615 15.1597 -180 0 0 -10.82 812.79 A12.1386 8.53453 -180 0 0 -15.98 829.07 A12.8822 9.05737
+							 -180 0 0 -3.73 844.84" class="st23"/>
+				<path d="M-15.98 829.07 A9.627 6.76864 -180 0 0 -8.89 829.58" class="st23"/>
+				<path d="M27.88 846.38 A12.7276 8.94868 -180 0 0 29.83 848.92" class="st23"/>
+				<path d="M68.54 844.84 A10.9481 7.69747 -180 0 0 69.51 841.8" class="st23"/>
+				<path d="M96.92 834.67 A10.1623 7.14501 -180 0 0 89.18 826.53" class="st23"/>
+				<path d="M105.96 817.37 A8.87121 6.23726 -180 0 0 109.82 814.32" class="st23"/>
+				<path d="M24.66 801.09 A13.0536 9.17785 -180 0 0 20.79 799.06" class="st23"/>
+				<path d="M-66 834.72 A1.81417 1.81417 180 1 0 -69.63 834.72 A1.81417 1.81417 180 1 0 -66 834.72" class="st23"/>
+				<path d="M-49.65 832.91 A3.62835 3.62835 180 1 0 -56.9 832.91 A3.62835 3.62835 180 1 0 -49.65 832.91" class="st23"/>
+				<path d="M-30.76 830.78 A5.44252 5.44252 180 1 0 -41.65 830.78 A5.44252 5.44252 180 1 0 -30.76 830.78" class="st23"/>
+				<text x="4" y="818.38" class="st32" v:langID="2052"><v:paragraph v:spLine="-0.9"/><v:tabList/>存放路径：<tspan x="4"
+							dy="0.9em" class="st4">/etc/login</tspan></text>			</g>
+			<g id="group116-766" transform="translate(0,-574.016)" v:mID="116" v:groupContext="group" v:layerMember="1">
+				<v:userDefs>
+					<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+					<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+					<v:ud v:nameU="BackCharColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#000000)"/>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+					<v:ud v:nameU="msvStructureType" v:prompt="" v:val="VT4(Callout)"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt=""/>
+					<v:ud v:nameU="msvSDCalloutNoHighlight" v:prompt="" v:val="VT0(0):5"/>
+					<v:ud v:nameU="msvShapeCategories" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+					<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+					<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+					<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+					<v:ud v:nameU="msvSDTargetIntersection" v:prompt="" v:val="VT7(PNT(2.3319381998165,-0.072639578121525)):40"/>
+					<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+				</v:userDefs>
+				<title>雪橇.116</title>
+				<desc>/bin/login是linux系统二进制执行文件</desc>
+				<g id="shape117-767" v:mID="117" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1649.76) rotate(180)">
+					<title>工作表.117</title>
+					<v:userDefs>
+						<v:ud v:nameU="BackFillColor" v:prompt="" v:val="VT5(#96afcf)"/>
+						<v:ud v:nameU="BackLineColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="DarkerColor" v:prompt="" v:val="VT5(#1f477d)"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="MultiFormat" v:prompt="" v:val="VT0(0):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M37.2 807.87 L148.82 807.87" class="st23"/>
+				</g>
+				<g id="shape118-770" v:mID="118" v:groupContext="shape" v:layerMember="1"
+						transform="translate(148.819,1649.76) rotate(180)">
+					<title>工作表.118</title>
+					<v:userDefs>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(4):26"/>
+						<v:ud v:nameU="Embellishment" v:prompt="" v:val="VT0(2):26"/>
+						<v:ud v:nameU="BarThkness" v:prompt="" v:val="VT0(0.029527559055118):24"/>
+						<v:ud v:nameU="Side" v:prompt="" v:val="VT0(3):26"/>
+					</v:userDefs>
+					<path d="M-0.88 844.02 L148.82 844.02 L148.82 841.89 L0 841.89 L-2.13 839.76 L-5.13 839.76 L-0.88 844.02 Z"
+							class="st24"/>
+				</g>
+				<g id="shape116-772" v:mID="116" v:groupContext="groupContent" v:layerMember="1">
+					<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+					<v:textRect cx="74.4095" cy="824.882" width="148.82" height="32.0037"/>
+					<rect x="0" y="807.874" width="148.819" height="34.0157" class="st25"/>
+					<text x="4" y="821.38" class="st32" v:langID="2052"><v:paragraph/><v:tabList/>/bin/login是linux系统二进制<tspan x="4"
+								dy="1.275em" class="st4">执行文件</tspan></text>				</g>
+			</g>
+		</g>
+	</g>
+</svg>

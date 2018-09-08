@@ -12,6 +12,16 @@ Linux文件系统
 =================================================
 
 
+    linux: ext2,ext3,ext4,xfs,btrfs,reiserfs,jfs
+    光盘： iso9660
+    window:fat32,vsfat,ntfs
+    unix : FFS,UFS,JFS2
+    网络文件系统：NFS,CIFS
+    集群文件系统：GFS2,OCFS2
+    分布式文件系统：FASTDFSceph ,glusterfs
+    RAW:裸设备
+
+
 Windows常用的分区格式有三种，分别是FAT16、FAT32、NTFS格式。 [1]_
 
 在Linux操作系统里有Ext2、Ext3、Linux swap和VFAT四种格式。

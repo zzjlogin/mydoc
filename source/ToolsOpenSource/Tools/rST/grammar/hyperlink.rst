@@ -6,7 +6,7 @@
 
 总体来说链接可以为：`外部链接`、`内部链接 <https://zh-sphinx-doc.readthedocs.io/en/latest/markup/inline.html>`_
 
-这些链接还可以分为：`显示链接`、`隐示链接`、`扩展链接`等。
+这些链接还可以分为： `显示链接` 、 `隐示链接` 、 `扩展链接` 等。
 
 显示链接
 ========================
@@ -45,15 +45,13 @@
 .. _我最喜欢的编程语言: http://www.python.org
 
 
-- `A HYPERLINK`_
-- `a   hyperlink`_
-
-.. _A HYPERLINK:
 
 隐式链接
 ========================
 
-.. __: anonymous-hyperlink-target-link-block
+::
+
+    .. __: anonymous-hyperlink-target-link-block
 
 上面是隐式超链接
 

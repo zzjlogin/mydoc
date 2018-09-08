@@ -30,7 +30,7 @@ ipython的安装
 ----------------------------------------------
 
 .. literalinclude:: /demo/program/python/ipython-install.txt
-    :language: python
+    :language: text
     :linenos:
     :encoding: utf-8
 

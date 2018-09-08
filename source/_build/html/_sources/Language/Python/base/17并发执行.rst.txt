@@ -203,7 +203,7 @@ multiprocessing.Process
 
 主要方法
 
-.. code-block:: python
+.. code-block:: none
     :linenos:
 
     run: 运行
@@ -228,7 +228,7 @@ multiprocessing.Queue
 
 主要方法
 
-.. code-block:: python
+.. code-block:: none
     :linenos:
 
     qsize: 队列大小

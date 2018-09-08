@@ -1,0 +1,22 @@
+
+
+======================================
+权限控制
+======================================
+
+
+
+[root@zzjlogin ~]# getfacl grub.conf
+# file: grub.conf
+# owner: root
+# group: root
+user::rw-
+group::---
+other::---
+
+
+
+
+
+
+

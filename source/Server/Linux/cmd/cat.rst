@@ -4,7 +4,9 @@
 cat
 ===================
 
-:Date: 2018-08-29
+
+
+:Date: 2018-09
 
 .. contents::
 
@@ -14,29 +16,58 @@ cat
 命令格式
 ===================
 
+
+
+
 .. _cat-user:
 
 所属用户
 ===================
+
+
+
 
 .. _cat-guid:
 
 使用指导
 ===================
 
+
+
+
 .. _cat-args:
 
-参数：
+参数
 ===================
+
+
 
 .. _cat-instance:
 
-参考实例：
+参考实例
 ===================
+
+
+/etc/passwd文件中的第10个用户的ID
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat /etc/passwd |head -n 10 |tail -n 1 |cut -d ":" -f 3
+    10
+
+计算/etc/passwd文件中的第10个用户和第20用户的ID之和 
+
+.. code-block:: bash
+    :linenos:
+
+    cat /etc/passwd |awk -F ":" ' {if(NR==10 || NR==20 ){sum+=$3}} END{print sum}'
+
+
 
 .. _cat-relevant:
 
-相关命令：
+相关命令
 ===================
 
 

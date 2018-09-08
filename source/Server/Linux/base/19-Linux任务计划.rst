@@ -36,7 +36,7 @@ time的几种格式
     HH:MM MONTH DATE 
     HH:MM + number [minutes|hour|days|weeks]
 
-.. code-block:: bash
+.. code-block:: text
     :linenos:
 
     [root@centos-155 ~]# at 10:30

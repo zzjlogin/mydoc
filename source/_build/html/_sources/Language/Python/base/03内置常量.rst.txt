@@ -44,7 +44,7 @@ Python常量不可修改实现
 
 3. 在使用过程不是一般变量使用的形式。具体使用方法如下：
 
-.. code-block:: python
+.. code-block:: none
     :linenos:
     :emphasize-lines: 5-
 
@@ -54,7 +54,7 @@ Python常量不可修改实现
     test
     const.TEST_CONSTANT = '123'
     Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
+    File "<stdin>" , line 1, in <module>
     File "C:\Python27\lib\const.py", line 8, in __setattr__
         raise self.ConstError,"constant reassignment error!"
     const.ConstError: constant reassignment error!
@@ -79,7 +79,7 @@ Python常量不可修改实现
 
 3. 在使用过程不是一般变量使用的形式。具体使用方法如下：
 
-.. code-block:: python
+.. code-block:: none
     :linenos:
     :emphasize-lines: 6-
 
@@ -105,7 +105,7 @@ False
     空元组(tuple)
 []
     空列表(list)
-''
+\''
     空字符串(str)
 {}
     空字典(dict)

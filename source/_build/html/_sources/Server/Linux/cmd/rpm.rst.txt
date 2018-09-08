@@ -24,19 +24,60 @@ rpm
 使用指导
 ===================
 
+rpm搜索:
+    http://pkgs.org
+    http://rpmfind.org
+数据库:
+    /var/lib/rpm
+
 .. _rpm-args:
 
-参数：
+参数
 ===================
+
+-i  安装
+-v  提示信息
+-h  进度信息
+-q  查询
+-f  指定文件
+-p  指定rpm全路径
+-i  获取包的详细信息
+--test          测试
+--nosignature   不检查来源合法性
+--nodigest      不检查完整性
+--noscripts     不执行程序的包脚本
+--nodeps        不考虑依赖性
+
+--replacepkgs   替换包
+--replacefiles  替换文件
+--force         强制
+--oldpackagekk  安装老版本的
+--whatprovides  查询特定功能由那个包提供
+--whatrequires  查询特定功能能由那些包依赖
+--privides      查询包提供的功能
+--import        导入公钥
+-U              更新
+-F              升级
+-V              验证包提供的文件变换情况 
+-K              验证包
+--script        脚本
+--allmatches    所有匹配的
 
 .. _rpm-instance:
 
-参考实例：
+参考实例
 ===================
+
+    rpm -qa :查看所有包
+
+    rpm -qf :查询文件来自那个包
+
+    rpm -qlp : 包全名
+
 
 .. _rpm-relevant:
 
-相关命令：
+相关命令
 ===================
 
 

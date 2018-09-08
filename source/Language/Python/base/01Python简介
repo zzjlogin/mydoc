@@ -54,7 +54,11 @@ PyPy
 
 基于Python编译器子集rPytho实现的python，然后可以再转换位C/CIL…。动态变异型编译器。
 
-PyPy：是Python发展的趋势。而且PyPy也经历了pypy2到pypy3的转变。但是现在并不是所有的库都能完美的运行再PyPy编译器上(PyTest就已经放弃了对PyPy3的支持)。PyPy利用了JIT技术(参考wiki：https://en.wikipedia.org/wiki/Just-in-time_compilation)。
+PyPy：
+    是Python发展的趋势。
+    而且PyPy也经历了pypy2到pypy3的转变。
+    但是现在并不是所有的库都能完美的运行再PyPy编译器上(PyTest就已经放弃了对PyPy3的支持)。
+    PyPy利用了JIT技术(参考wiki：https://en.wikipedia.org/wiki/Just-in-time_compilation)。
 
 PyPy运行速度也并不是所有函数比CPython2.x/3.x都快，而是一部分函数功能运行快(PyPy在计算浮点数运算时效率有明显提升)。
 

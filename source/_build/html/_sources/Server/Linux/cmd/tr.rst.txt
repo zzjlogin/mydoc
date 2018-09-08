@@ -4,7 +4,9 @@
 tr
 ===================
 
-:Date: 2018-08-29
+
+
+:Date: 2018-09
 
 .. contents::
 
@@ -14,29 +16,60 @@ tr
 命令格式
 ===================
 
+
+
+
 .. _tr-user:
 
 所属用户
 ===================
+
+
+
 
 .. _tr-guid:
 
 使用指导
 ===================
 
+
+
+
 .. _tr-args:
 
-参数：
+参数
 ===================
+
+
 
 .. _tr-instance:
 
-参考实例：
+参考实例
 ===================
+
+::
+
+    处理字符串 xt.,l 1 jr#!$mn 2 c*/fe 3 uz 4 ，只保留其中的数字和空格
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# echo 'xt.,l 1 jr#win.txtmn 2 c*/fe 3 uz 4 ' | tr -cd "[0-9] "
+
+将/etc/centos-release文件中每个单词（由字母组成）显示在独立的一行，并无空行
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat /etc/centos-release | tr -sc "a-zA-Z " "\n"
+    CentOS release 
+    
+    Final
+
 
 .. _tr-relevant:
 
-相关命令：
+相关命令
 ===================
 
 
