@@ -1,0 +1,6 @@
+G:\LocalCode\Python\mydoc\source\Server\Linux\base\systemInstall\CentOS6.rst:1: WARNING: malformed hyperlink target.
+G:\LocalCode\Python\mydoc\source\Server\Linux\base\systemInstall\CentOS6.rst:16: WARNING: Explicit markup ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Server\Linux\base\systemInstall\CentOS6.rst:264: WARNING: Explicit markup ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Server\Linux\base\systemInstall\CentOS6.rst:: WARNING: image file not readable: images/server/linux/system-install/centos6/faq01
+G:\LocalCode\Python\mydoc\source\Tools\svn\Git\03gitConf.rst:26: WARNING: Inline literal start-string without end-string.
+G:\LocalCode\Python\mydoc\source\Tools\svn\Git\03gitConf.rst:33: WARNING: Unexpected indentation.

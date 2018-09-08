@@ -32,8 +32,4 @@
 CCF考试
 ============================================
 
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   
-   ccf/*
+我的ccf练习：https://github.com/zzjlogin/ccf_certification

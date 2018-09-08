@@ -1,9 +1,12 @@
-.. zzjlogin-git-install:
+.. _zzjlogin-git-install:
 
 ======================================
 Gitb客户端安装
 ======================================
 
+:Date: 2018-09
+
+.. contents::
 
 git安装
 ======================================
@@ -14,12 +17,74 @@ git下载安装
 下载地址：https://git-scm.com/downloads
 
 .. attention::
-    这个 ``git``客户端提供服务的应该是亚马逊云，国内经常会出现下载特别慢或者下载不下来的情况。
+    这个 ``git`` 客户端提供服务的应该是亚马逊云，国内经常会出现下载特别慢或者下载不下来的情况。
 
 下载以后的安装过程就和普通软件一样。一直下一步即可。
 
 .. attention::
     安装完 ``git`` 客户端以后需要把git的路径加入到环境变量。
+
+具体安装过程如下图:
+
+
+.. image:: /images/tools/svn/git/git01.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+
+.. image:: /images/tools/svn/git/git02.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+
+.. image:: /images/tools/svn/git/git03.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git04.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+
+.. image:: /images/tools/svn/git/git05.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git06.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git07.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+
+.. image:: /images/tools/svn/git/git08.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git09.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git10.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /images/tools/svn/git/git11.png
+    :align: center
+    :height: 500px
+    :width: 800 px
 
 安装以后可以通过命令行使用git
 

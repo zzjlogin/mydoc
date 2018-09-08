@@ -49,9 +49,18 @@
 隐式链接
 ========================
 
-::
+`主要用于将大段文字转换为链接。如果将这部分文字作为链接名，
+链接名也将被写进注释中……`__
 
-    .. __: anonymous-hyperlink-target-link-block
+__ http://www.ubuntu.org.cn/
+
+.. code-block:: text
+    :linenos:
+
+    `主要用于将大段文字转换为链接。如果将这部分文字作为链接名，
+    链接名也将被写进注释中……`__
+
+    __ http://www.ubuntu.org.cn/
 
 上面是隐式超链接
 
