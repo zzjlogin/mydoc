@@ -22,6 +22,22 @@ github客户端安装方法和普通的应用软件基本相同。就是一直�
 github客户端配置
 --------------------------------------
 
+登陆用户参考:
+
+.. image:: /images/tools/svn/github-desktop01.png
+    :align: center
+    :scale: 70 %
+
+提交更新参考:
+
+.. image:: /images/tools/svn/github-desktop02.png
+    :align: center
+    :scale: 70 %
+
+设置忽略文件目录参考:
+
+
+
 
 
 github插件使用
