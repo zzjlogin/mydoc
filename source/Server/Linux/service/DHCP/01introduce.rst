@@ -15,9 +15,8 @@ DHCP简述
 
 
 参考:
-    `DHCP百度百科 <https://baike.baidu.com/item/DHCP/218195?fromtitle=%EF%BC%A4%EF%BC%A8%EF%BC%A3%EF%BC%B0&fromid=11165431&fr=aladdin>`_
-    
-    `DHCP维基百科 <https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%8D%8F%E8%AE%AE>`_
+    - `DHCP百度百科 <https://baike.baidu.com/item/DHCP/218195?fromtitle=%EF%BC%A4%EF%BC%A8%EF%BC%A3%EF%BC%B0&fromid=11165431&fr=aladdin>`_
+    - `DHCP维基百科 <https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%8D%8F%E8%AE%AE>`_
 
 DHCP:
     动态主机设置协议（英语：Dynamic Host Configuration Protocol，DHCP）是一个局域网的网络协议，使用UDP协议工作。
@@ -90,6 +89,7 @@ windows系统用 ``wireshark`` 抓包分析时，可以通过释放IP重新获�
 DHCP Discover数据包:
     1. Client端使用IP地址0.0.0.0发送了一个广播包，可以看到此时的目的IP为255.255.255.255。Client想通过这个数据包发现可以给它提供服务的DHCP服务器。
     2. 从下图可以看出，DHCP属于应用层协议，它在传输层使用UDP协议，目的端口是67。 
+
 参考下面DHCP Discover抓包数据:
 
 .. image:: /images/server/linux/dhcp/dhcp-data02.png

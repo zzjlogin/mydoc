@@ -1,12 +1,14 @@
-.. _linux-service:
+.. _zzjlogin-linux-nfsindex:
 
 =========================
-Linux服务器安装配置
+nfs服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :numbered:
 
-   service/*
+   nfs/*
+
+
+

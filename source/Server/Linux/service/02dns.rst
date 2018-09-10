@@ -1,12 +1,12 @@
-.. _linux-service:
+.. _zzjlogin-linux-dnsindex:
 
 =========================
-Linux服务器安装配置
+DNS服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :numbered:
 
-   service/*
+   DNS/*
+

@@ -158,13 +158,13 @@ umask查看和修改
 #. 进程的发起者同文件的属组，则应用文件的属组权限。
 #. 应用文件其他位权限。
 
-0: 不设置特殊权限 
-1: 只设置sticky 
-2 : 只设置SGID 
-3: 只设置SGID和sticky 
-4 : 只设置SUID 
-5 : 只设置SUID和sticky 
-6 : 只设置SUID和SGID 
+0: 不设置特殊权限
+1: 只设置sticky
+2 : 只设置SGID
+3: 只设置SGID和sticky
+4 : 只设置SUID
+5 : 只设置SUID和sticky
+6 : 只设置SUID和SGID
 7 : 设置3种权限
 
 

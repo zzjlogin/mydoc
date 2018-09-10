@@ -1,4 +1,4 @@
-.. _zzjlogin-server:
+.. _zzjlogin-server-select:
 
 ==================================
 企业常识

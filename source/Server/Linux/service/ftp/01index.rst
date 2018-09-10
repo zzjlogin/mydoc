@@ -1,0 +1,107 @@
+.. _zzjlogin-ftp-introduce:
+
+================================
+FTP简介
+================================
+
+参考:
+    - `ftp百度百科 <https://baike.baidu.com/item/ftp/13839>`_
+    - `ftp维基百科 <https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE>`_
+
+
+FTP简述
+================================
+
+FTP
+    文件传输协议（英文：File Transfer Protocol，缩写：FTP）是用于在网络上进行文件传输的一套标准协议，使用客户/服务器模式。
+    它属于网络传输协议的应用层。
+    
+    文件传送（file transfer）和文件访问（file access）之间的区别在于：
+        前者由FTP提供，后者由如NFS等应用系统提供。参考文献 `RFC 959`_ 定义了此规范。
+
+.. _`RFC 959`: https://www.rfc-editor.org/rfc/rfc959.txt
+
+
+FTP历史
+    文件传输协议的原始规范于1971年4月16日发布为 `RFC  114`_ 。直到1980年，FTP运行在TCP/IP的前身NCP上。
+    该协议后来被TCP/IP版本， `RFC 765`_ （1980年6月）和 `RFC 959`_ （1985年10月）（当前规范）所取代。 `RFC 959`_ 提出了若干标准修改，
+    例如 `RFC 1579`_ （1994年2月）启用防火墙FTP（被动模式）， `RFC 2228`_ （1997年6月）
+    提出安全扩展， `RFC 2428`_ （1998年9月）增加了对IPv6的支持，并定义了一种新型的被动模式。
+
+
+.. _`RFC 114`: https://www.rfc-editor.org/rfc/rfc114.txt
+.. _`RFC 765`: https://www.rfc-editor.org/rfc/rfc765.txt
+.. _`RFC 1579`: https://www.rfc-editor.org/rfc/rfc1579.txt
+.. _`RFC 2228`: https://www.rfc-editor.org/rfc/rfc2228.txt
+.. _`RFC 2428`: https://www.rfc-editor.org/rfc/rfc2428.txt
+
+
+FTP服务端口
+    FTP服务一般运行在20和21两个端口。
+    
+.. hint::
+    端口20用于在客户端和服务器之间传输数据流，而端口21用于传输控制流
+
+
+运行FTP服务的许多站点都开放匿名服务，在这种设置下，用户不需要帐号就可以登录服务器，默认情况下，匿名用户的用户名是：“anonymous”。这个帐号不需要密码，虽然通常要求输入用户的邮件地址作为认证密码，但这只是一些细节或者此邮件地址根本不被确定，而是依赖于FTP服务器的配置情况。
+
+
+FTP技术
+=======================================
+
+FTP有两种使用模式：
+    - 主动模式
+    - 被动模式
+    
+主动模式：
+    要求客户端和服务器端同时打开并且监听一个端口以创建连接。在这种情况下，客户端由于安装了防火墙会产生一些问题。
+
+.. image:: /images/server/linux/ftp/ftp-standard.bmp
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+被动模式:
+    被动模式只要求服务器端产生一个监听相应端口的进程，这样就可以绕过客户端安装了防火墙的问题。
+
+.. image:: /images/server/linux/ftp/ftp-passive.bmp
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+FTP访问
+    大多数最新的网页浏览器和文件管理器都能和FTP服务器创建连接 ``ftp://<服务器地址>`` （例如，ftp://ftp.gimp.org ）。
+    是否提供密码是可选择的，如果有密码，则形如 ``ftp://<login>:<password>@<ftpserveraddress>`` 。
+    
+.. attention:: 大部分网页浏览器要求使用被动FTP模式，然而并不是所有的FTP服务器都支持被动模式
+
+FTP服务软件
+=======================================
+
+FTP是一种技术协议。我们在实际中应用的是根据这些标准协议开发的应用软件。
+
+日常中常用的FTP服务器软件包括:
+
+服务端软件:
+    - vsftpd(Very Secure ftp Daemon)
+    - wu-ftpd
+    - proftpd
+    - FileZilla server
+    - Serv-U
+    - PureFTPd
+客户端:
+    - 命令行的客户端:
+        - ftp
+        - lftp
+    - 图形客户端：
+        - gftpd
+        - FlashFXP
+        - Cuteftp
+        - FileZilla
+
+
+        还有很多不一一列举。
+
+    
+
+

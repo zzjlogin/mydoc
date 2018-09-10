@@ -1,12 +1,12 @@
-.. _linux-service:
+.. _zzjlogin-linux-ftpindex:
 
 =========================
-Linux服务器安装配置
+FTP服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :numbered:
 
-   service/*
+   ftp/*
+

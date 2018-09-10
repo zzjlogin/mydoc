@@ -5,4 +5,6 @@
 .. toctree::
    :maxdepth: 1
    :glob:
-   :hidden:
+   :numbered:
+   
+   Common/*

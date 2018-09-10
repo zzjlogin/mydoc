@@ -1,12 +1,12 @@
-.. _linux-service:
+.. _zzjlogin-linux-rsyncindex:
 
 =========================
-Linux服务器安装配置
+rsync服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
-   :numbered:
 
-   service/*
+   Rsync/*
+

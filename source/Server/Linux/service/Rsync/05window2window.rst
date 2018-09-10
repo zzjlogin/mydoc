@@ -1,0 +1,9 @@
+.. _zzjlogin-rsync-windows2windows:
+
+=====================================
+window推送到window
+=====================================
+:Date:
+
+
+这个基本和linux推送到window差的不多。 :ref:`zzjlogin-rsync-linux2windows` 

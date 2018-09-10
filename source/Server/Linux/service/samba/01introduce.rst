@@ -1,0 +1,83 @@
+.. _zzjlogin-samba-introduce:
+
+================================
+samba简介
+================================
+
+
+
+
+
+
+
+.. _zzjlogin-samba-introduce:
+
+===============================================
+samba简介
+===============================================
+
+参考:
+    - samba官方:https://www.samba.org/
+    - `samba百度百科 <https://baike.baidu.com/item/samba/455025?fr=aladdin>`_
+    - `samba维基百科 <https://zh.wikipedia.org/wiki/Samba>`_
+
+
+Samba是在Linux和UNIX系统上实现SMB协议的一个免费软件，由服务器及客户端程序构成。SMB（Server Messages Block，信息服务块）是一种在局域网上共享文件和打印机的一种通信协议，它为局域网内的不同计算机之间提供文件及打印机等资源的共享服务。SMB协议是客户机/服务器型协议，客户机通过该协议可以访问服务器上的共享文件系统、打印机及其他资源。通过设置“NetBIOS over TCP/IP”使得Samba不但能与局域网络主机分享资源，还能与全世界的电脑分享资源。
+
+samba作用
+-----------------------------------------------
+
+- 分享档案(共享资料)与打印机服务；
+- 提供使用者登入 ``SAMBA`` 主机时的身份认证，以提供不同身份者的个别数据；
+- 进行 Windows 网络上的主机名称解析 ``(NetBIOS name)``
+- 进行装置的分享 ( 例如 Zip, CDROM... )
+
+samba历史
+-----------------------------------------------
+
+安德鲁·垂鸠（Andrew Tridgell）于1992年在澳洲国立大学（ANU）开发了第一版的Samba Unix软件。
+
+samba技术
+-----------------------------------------------
+
+Samba是许多服务以及协议的实现，其包括:
+    - TCP/IP上的NetBIOS（NBT）
+    - SMB
+    - CIFS（SMB的增强版本）
+    - DCE/RPC或者更具体来说MSRPC（網絡鄰居协议包）
+    - 一种WINS服务器（也被称作NetBIOS Name Server（NBNS））
+    - NT域协议包（包括NT Domain Logons、Secure Accounts Manager（SAM）数据库
+    - Local Security Authority（LSA）服务
+    - NT-style打印服务（SPOOLSS）
+    - NTLM以及近来出现的包括一种改进的Kerberos协议与改进的轻型目录访问协议（LDAP）在内的Active Directory Logon服务）。
+
+以上这些服务以及协议经常被错误地归类为NetBIOS或者SMB。
+
+Samba也能够用于共享打印机。
+
+samba服务端口:
+    1. Port137(UDP)——NetBIOS名字服务；nmbd
+    2. Port138(UDP)——NetBIOS数据报服务
+    3. Port139(TCP)——文件和打印共享；smbd(基于SMB(ServerMessageBlock)协议，主要在局域网中使用，文件共享协议)
+    4. Port389(TCP)——用于LDAP(ActiveDirectoryMode)
+    5. Port445(TCP)——NetBIOS服务在windos2000及以后版本使用此端口,(CommonInternetFileSystem，CIFS，它是SMB协议扩展到Internet后，实现Internet文件共享)
+    6. Port901(TCP)——用于SWAT，用于网页管理Samba
+
+
+
+相关软件
+-----------------------------------------------
+
+- Samba TNG Samba的一个分支，其在NT域服务关键部分的结构及实现具有明显的不同。
+- LinNeighborhood
+- LDAP Account Manager
+- Kerberos protocol
+- Smb4K SMB/CIFS Share Browser for KDE。
+- Smbldap-Tools用户／群管理工具
+
+
+
+
+
+
+
