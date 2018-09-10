@@ -1,11 +1,14 @@
-.. _zzjlogin-linux-sambaindex:
+.. _zzjlogin-linux-nfsindex:
 
 =========================
-samba服务器
+nfs服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   samba/*
+   *
+
+
+

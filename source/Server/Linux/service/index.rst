@@ -9,4 +9,13 @@ Linux服务器安装配置
    :glob:
    :numbered:
 
-   service/*
+   dhcp/index
+   dns/index
+   Rsync/index
+   ftp/index
+   nfs/index
+   samba/index
+   docker/index
+   monitor/index
+   syslog/index
+

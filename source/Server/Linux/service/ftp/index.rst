@@ -1,12 +1,12 @@
-.. _zzjlogin-linux-dnsindex:
+.. _zzjlogin-linux-ftpindex:
 
 =========================
-DNS服务器
+FTP服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   DNS/*
+   *
 

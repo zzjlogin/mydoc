@@ -1,0 +1,50 @@
+.. _zzjlogin-docker-introduce:
+
+==========================================================
+Docker简介
+==========================================================
+
+参考:
+    - `Docker百度百科 <https://baike.baidu.com/item/Docker/13344470?fr=aladdin>`_
+    - `Docker维基百科 <https://en.wikipedia.org/wiki/Docker_(software)>`_
+    - `Docker官网 <https://www.docker.com/>`_
+
+.. _Docker: https://www.docker.com/
+
+Docker简述
+==========================================================
+
+`Docker`_ 是一个开源的应用容器引擎，`Docker`_ 是PaaS(平台即服务)提供商dotCloud开源的一个基于LXC(Linux Container)的高级容器引擎。
+``Docker`` 源代码托管在 Github 上, 基于go语言并遵从Apache2.0协议开源。
+
+Docker软件结构
+==========================================================
+
+Docker软件组成
+----------------------------------------------------------
+
+一个完整的Docker有以下几个部分组成：
+    - dockerClient客户端
+    - Docker Daemon守护进程
+    - Docker Image镜像
+    - DockerContainer容器
+
+Docker软件结构
+-----------------------------------------------------------
+
+Docker使用客户端-服务器(C/S)架构模式，使用远程API来管理和创建Docker容器。Docker容器通过Docker镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。
+
+Docker作用
+==========================================================
+
+    - Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用
+    - LXC是基于cgroup等linux kernel功能的，因此container的guest系统只能是linux base的
+    - 隔离性相比KVM之类的虚拟化方案还是有些欠缺，所有container公用一部分的运行库
+    - 网络管理相对简单，主要是基于namespace隔离
+    - cgroup的cpu和cpuset提供的cpu功能相比KVM的等虚拟化方案相比难以度量(所以dotcloud主要是按内存收费)
+    - Docker对disk的管理比较有限
+    - container随着用户进程的停止而销毁，container中的log等用户数据不便收集
+
+注意事项:
+    - Docker实例是无状态的。这意味着它们不应该承载任何交易数据，所有数据应该保存在数据库服务器中。
+    - 开发Docker实例并不像创建一台虚拟机、添加应用然后克隆那样简单。为成功创建并使用Docker基础设施，管理员需要对系统管理的各个方面有一个全面的理解，包括Linux管理、编排及配置工具比如Puppet、Chef以及Salt。这些工具生来就基于命令行以及脚本。

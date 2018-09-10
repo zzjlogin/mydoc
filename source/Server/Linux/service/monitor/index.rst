@@ -1,12 +1,14 @@
-.. _zzjlogin-linux-dhcpindex:
+.. _zzjlogin-monitorindex:
 
 =========================
-DHCP服务器
+监控服务器
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   DHCP/*
+   monitor/*
+
+
 

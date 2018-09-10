@@ -8,5 +8,5 @@ rsync服务器
    :maxdepth: 1
    :glob:
 
-   Rsync/*
+   *
 
