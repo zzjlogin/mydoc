@@ -1,0 +1,14 @@
+G:\LocalCode\Python\mydoc\source\Server\Common\01index.rst:46: WARNING: malformed hyperlink target.
+G:\LocalCode\Python\mydoc\source\Server\Common\01index.rst:102: WARNING: Definition list ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Server\Common\01index.rst:41: WARNING: Unknown target name: "?????".
+G:\LocalCode\Python\mydoc\source\Server\Linux\service\ftp\02vsftpd.rst:64: WARNING: Title level inconsistent:
+
+vsftp??
+================================
+G:\LocalCode\Python\mydoc\source\Server\Linux\service\ftp\02vsftpd.rst:78: WARNING: Title level inconsistent:
+
+??????
+================================
+G:\LocalCode\Python\mydoc\source\Server\Linux\service\nfs\index.rst:7: WARNING: toctree glob pattern u'*' didn't match any documents
+G:\LocalCode\Python\mydoc\source\Server\Linux\service\samba\01introduce.rst:13: WARNING: Duplicate explicit target name: "zzjlogin-samba-introduce".
+G:\LocalCode\Python\mydoc\source\Server\Linux\service\samba\02windows.rst:91: WARNING: Could not lex literal_block as "bash". Highlighting skipped.

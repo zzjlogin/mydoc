@@ -6,7 +6,6 @@
 
 :Author: zzjlogin
 :Contact: login_root@163.com
-:github: https://github.com/zzjlogin
 
 ----
 

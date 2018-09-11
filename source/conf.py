@@ -19,7 +19,11 @@ import sys, os
 
 sys.path.append(os.path.abspath('sphinxext'))
 
-extensions = ['extname']
+extensions = [
+    'extname'
+    'sphinx.ext.mathjax',
+    'sphinx.ext.githubpages',
+    ]
 
 
 # -- Project information -----------------------------------------------------

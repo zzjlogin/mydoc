@@ -56,13 +56,13 @@ dockerfile官方参考_
 
     [root@centos-151 nginx]# cat Dockerfile 
     ######################################################################
-    #name: zhaojiedi1992
+    #name: zzjlogin
     #created: 2018-04-07
-    #github:  https//github.com/zhaojiedi1992/nginx
+    #github:  https//github.com/zzjlogin/
     ######################################################################
     FROM centos:latest
 
-    LABEL maintainer="LinuxPanda <zhaojiedi1992@outlook.com>"
+    LABEL maintainer="LinuxPanda <zzjlogin@outlook.com>"
     ADD  http://download2.linuxpanda.tech/yum/epel-7.repo /etc/yum.repos.d/epel-7.repo 
     ADD  http://download2.linuxpanda.tech/yum/ali-7.repo  /etc/yum.repos.d/ali-7.repo
 

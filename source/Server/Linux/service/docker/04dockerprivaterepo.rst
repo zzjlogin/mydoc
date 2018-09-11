@@ -4,9 +4,12 @@
 docker私有仓库构建
 ============================================================================
 
-github:  habor_ 
+:github: habor_ 
 
 .. _habor: https://github.com/vmware/harbor
+
+habor是
+
 
 habor安装
 ---------------------------------------

@@ -1,7 +1,7 @@
 .. _linux-service:
 
 =========================
-Linux服务器安装配置
+Linux服务搭建
 =========================
 
 .. toctree::
@@ -15,7 +15,8 @@ Linux服务器安装配置
    ftp/index
    nfs/index
    samba/index
-   docker/index
-   monitor/index
    syslog/index
+   monitor/index
+   docker/index
+
 

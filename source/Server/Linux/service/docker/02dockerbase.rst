@@ -7,6 +7,9 @@ docker基础
 docker安装
 ==============================================
 
+centos7配置docker源并安装docker
+
+
 .. code-block:: bash
     :linenos:
 
@@ -15,90 +18,117 @@ docker安装
     bak  CentOS-Base.repo  epel.repo  mariadb.repo.bak
     [root@centos-151 yum.repos.d]# wget http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
-    [root@centos-151 ~]# yum install docker 
-    [root@centos-151 ~]# systemctl enable docker 
-    [root@centos-151 ~]# systemctl start docker 
+    [root@centos-151 ~]# yum install docker
 
-docker基础信息获取
-==============================================
 
-获取version
+CentOS6通过 ``epel-release`` 来安装docker
+
+epel-release:
+    Enterprise Linux（或EPEL）的额外软件包,企业Linux额外包（EPEL）
+
+RHEL / CentOS 6：
+   #yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+RHEL / CentOS 7：
+   #yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+.. attention::
+    一般可以通过 ``yum install epel-release -y`` 来安装。
+
+安装完 ``epel-release`` 以后，可以查看docker安装信息:
+
+
+CentOS6安装docker:
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-151 ~]# docker version 
-    Client:
-    Version:         1.13.1
-    API version:     1.26
-    Package version: <unknown>
-    Go version:      go1.8.3
-    Git commit:      774336d/1.13.1
-    Built:           Wed Mar  7 17:06:16 2018
-    OS/Arch:         linux/amd64
+    yum install docker-io -y
 
-    Server:
-    Version:         1.13.1
-    API version:     1.26 (minimum version 1.12)
-    Package version: <unknown>
-    Go version:      go1.8.3
-    Git commit:      774336d/1.13.1
-    Built:           Wed Mar  7 17:06:16 2018
-    OS/Arch:         linux/amd64
-    Experimental:    false
+
+.. code-block:: bash
+    :linenos:
+
+    rpm -qa docker-io
+    rpm -ql docker-io
+
+配置docker开机自启动
+----------------------------------------------
+
+CentOS7:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-151 ~]# systemctl enable docker
+    #启动docker
+    [root@centos-151 ~]# systemctl start docker 
+
+CentOS6:
+
+.. code-block:: bash
+    :linenos:
+
+    chkconfig docker on
+    #启动docker
+    /etc/init.d/docker start
+
+docker信息获取
+==============================================
+
+获取version
+
+.. attention::
+    查看docker版本信息，需要先启动docker。如果没有启动是不能查看的。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# docker version
+    Client version: 1.7.1
+    Client API version: 1.19
+    Go version (client): go1.4.2
+    Git commit (client): 786b29d/1.7.1
+    OS/Arch (client): linux/amd64
+    Server version: 1.7.1
+    Server API version: 1.19
+    Go version (server): go1.4.2
+    Git commit (server): 786b29d/1.7.1
+    OS/Arch (server): linux/amd64
+
 
 获取info
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-151 ~]# docker info 
+    [root@zzjlogin ~]# docker info
     Containers: 0
-    Running: 0
-    Paused: 0
-    Stopped: 0
     Images: 0
-    Server Version: 1.13.1
-    Storage Driver: overlay2
-    Backing Filesystem: xfs
-    Supports d_type: true
-    Native Overlay Diff: true
-    Logging Driver: journald
-    Cgroup Driver: systemd
-    Plugins: 
-    Volume: local
-    Network: bridge host macvlan null overlay
-    Swarm: inactive
-    Runtimes: docker-runc runc
-    Default Runtime: docker-runc
-    Init Binary: docker-init
-    containerd version:  (expected: aa8187dbd3b7ad67d8e5e3a15115d3eef43a7ed1)
-    runc version: N/A (expected: 9df8b306d01f59d3a8029be411de015b7304dd8f)
-    init version: N/A (expected: 949e6facb77383876aeff8a6944dde66b3089574)
-    Security Options:
-    seccomp
-    WARNING: You're not using the default seccomp profile
-    Profile: /etc/docker/seccomp.json
-    Kernel Version: 3.10.0-693.el7.x86_64
-    Operating System: CentOS Linux 7 (Core)
-    OSType: linux
-    Architecture: x86_64
-    Number of Docker Hooks: 3
+    Storage Driver: devicemapper
+    Pool Name: docker-8:3-40736-pool
+    Pool Blocksize: 65.54 kB
+    Backing Filesystem: extfs
+    Data file: /dev/loop0
+    Metadata file: /dev/loop1
+    Data Space Used: 305.7 MB
+    Data Space Total: 107.4 GB
+    Data Space Available: 656.1 MB
+    Metadata Space Used: 729.1 kB
+    Metadata Space Total: 2.147 GB
+    Metadata Space Available: 656.1 MB
+    Udev Sync Supported: true
+    Deferred Removal Enabled: false
+    Data loop file: /var/lib/docker/devicemapper/devicemapper/data
+    Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
+    Library Version: 1.02.89-RHEL6 (2014-09-01)
+    Execution Driver: native-0.2
+    Logging Driver: json-file
+    Kernel Version: 2.6.32-504.el6.x86_64
+    Operating System: <unknown>
     CPUs: 1
-    Total Memory: 506.3 MiB
-    Name: centos-151.linuxpanda.tech
-    ID: QQNH:77EU:CBH7:NHX4:A5H4:4PEA:YJBK:EFXQ:VCOP:C2YL:QH7O:Q7XE
-    Docker Root Dir: /var/lib/docker
-    Debug Mode (client): false
-    Debug Mode (server): false
-    Registry: https://index.docker.io/v1/
-    WARNING: bridge-nf-call-iptables is disabled
-    WARNING: bridge-nf-call-ip6tables is disabled
-    Experimental: false
-    Insecure Registries:
-    127.0.0.0/8
-    Live Restore Enabled: false
-    Registries: docker.io (secure)
+    Total Memory: 980.8 MiB
+    Name: zzjlogin
+    ID: GAII:U77Y:CUAH:NJ7Y:XE6M:SB7I:UD3Z:UHVO:VPDZ:RONM:7VQH:MMZ3
 
 
 docker常用命令
@@ -107,24 +137,24 @@ docker常用命令
 .. code-block:: text
     :linenos: 
 
-    docker run 运行一个容器
-    docker create 创建，需要在配合start命令
-    docker start 启动一个创建好的容器
-    docker stop 停止容器
-    docker kill 杀掉容器
-    docker restart 重启容器
-    docker pause   暂停容器
-    docker search  查询registry的相关镜像
-    docker pull  从registry拉取镜像
-    docker push  推送到registry
-    docker save  保存成压缩包
-    docker load  从压缩包加载进来
-    docker log  查看日志信息
-    docker info  查看docker信息
-    docker version 查看docker版本
-    docker inspect 查看镜像容器信息
-    docker images 查看已有镜像信息
-    docker rm     删除容器
+    docker run      运行一个容器
+    docker create   创建，需要在配合start命令
+    docker start    启动一个创建好的容器
+    docker stop     停止容器
+    docker kill     杀掉容器
+    docker restart  重启容器
+    docker pause    暂停容器
+    docker search   查询registry的相关镜像
+    docker pull     从registry拉取镜像
+    docker push     推送到registry
+    docker save     保存成压缩包
+    docker load     从压缩包加载进来
+    docker log      查看日志信息
+    docker info     查看docker信息
+    docker version  查看docker版本
+    docker inspect  查看镜像容器信息
+    docker images   查看已有镜像信息
+    docker rm       删除容器
 
 .. code-block:: bash
     :linenos:
@@ -144,7 +174,7 @@ docker run常用命令
 .. code-block:: text
     :linenos: 
 
-    [root@centos-151 ~]# docker help run 
+    [root@centos-151 ~]# docker help run
 
     Usage:	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
@@ -257,182 +287,165 @@ docker run常用命令
     --rm: 停掉容器就删除
 
 
-docker拉取和分发
+阿里云使用阿里云docker仓库拉取和分发
 ==============================================
 
-在拉取和分发之前需要配置下docker加速,因为默认是从dockerhub上拉取的，太慢了。
+
+阿里云ECS
+----------------------------------------------
+
+在拉取和分发之前需要配置下docker加速,因为默认是从dockerhub上拉取的，比较慢，这个可以根据实际情况修改。
+
+阿里的docker加速配置:
+    进入网址:https://dev.aliyun.com/search.html
 
 docker加速器配置
------------------------------------------------
+...............................................
 
-.. image:: /images/docker/进入加速器配置.png
+具体步骤:
+    - 首先是访问:https://dev.aliyun.com/search.html,然后登陆阿里云账号。
+    - 根据镜像加速中的操作文档操作。其中加速地址和账号有关联。根据这个操作文档配置 ``ECS`` 的 ``docker``
+    - 然后进入 ``管理中心``
+    - 初次使用设置 ``Registry登陆密码`` ，这个密码之后从云主机推送或者拉取自建镜像使用。
+    - 创建 ``命名空间``
+    - 创建 ``镜像仓库``
 
-.. image:: /images/docker/加速器配置.png
-
-.. code-block:: bash
-    :linenos:
-
-    [root@centos-151 ~]# sudo mkdir -p /etc/docker
-    [root@centos-151 ~]# sudo tee /etc/docker/daemon.json <<-'EOF'
-    > {
-    >   "registry-mirrors": ["https://mdobwrbd.mirror.aliyuncs.com"]
-    > }
-    > EOF
-    {
-    "registry-mirrors": ["https://mdobwrbd.mirror.aliyuncs.com"]
-    }
-    [root@centos-151 ~]# sudo systemctl daemon-reload
-    [root@centos-151 ~]# sudo systemctl restart docker
-    [root@centos-151 ~]# cat /etc/docker/daemon.json 
-    {
-    "registry-mirrors": ["https://mdobwrbd.mirror.aliyuncs.com"]
-    }
+.. attention::
+    创建 ``镜像仓库`` 的时候可以选择
 
 .. note:: 上面的加速地址，是阿里云给我分配的加速地址，如果没有阿里云的账号，可以使用docker中国的加速器，地址为https://registry.docker-cn.com
 
-镜像拉取(pull)
------------------------------------------------
+上面具体步骤重点步骤如下图说明：
+
+- 创建仓库如下图：
+
+.. hint::
+    创建仓库需要先有命名空间。
+
+.. image:: /images/server/linux/docker/docker-aliyun-create-repo.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+- 如果使用的是代码仓库来创建docker仓库镜像，可以绑定不同的代码平台的账号，具体如下(举例github)：
+
+首先:
+
+.. image:: /images/server/linux/docker/docker-aliyun-bind-codeaccount01.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+然后绑定对应的账号:
+
+.. image:: /images/server/linux/docker/docker-aliyun-bind-codeaccount02.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+- 根据绑定代码平台账号创建仓库镜像
+
+.. image:: /images/server/linux/docker/docker-aliyun-github-createrep.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+- 创建空的仓库，然后推送本地镜像到仓库。
+
+.. image:: /images/server/linux/docker/docker-aliyun-create-localrepo.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+准备下阿里云相关的配置:
+
+.. code-block:: text
+    :linenos:
+
+    1. 登录阿里云Docker Registry
+    $ sudo docker login --username=1530225798@qq.com registry.cn-hongkong.aliyuncs.com
+    用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+
+    您可以在产品控制台首页修改登录密码。
+
+    2. 从Registry中拉取镜像
+    $ sudo docker pull registry.cn-hongkong.aliyuncs.com/zzjlogin/ceshi:[镜像版本号]
+    3. 将镜像推送到Registry
+    $ sudo docker login --username=1530225798@qq.com registry.cn-hongkong.aliyuncs.com
+    $ sudo docker tag [ImageId] registry.cn-hongkong.aliyuncs.com/zzjlogin/ceshi:[镜像版本号]
+    $ sudo docker push registry.cn-hongkong.aliyuncs.com/zzjlogin/ceshi:[镜像版本号]
+    请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。
+
+    4. 选择合适的镜像仓库地址
+    从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。
+
+    如果您使用的机器位于经典网络，请使用 registry-internal.cn-hongkong.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。
+    如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hongkong.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。
+    5. 示例
+    使用"docker tag"命令重命名镜像，并将它通过专有网络地址推送至Registry。
+
+    $ sudo docker images
+    REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB
+    $ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-hongkong.aliyuncs.com/acs/agent:0.7-dfb6816
+    使用"docker images"命令找到镜像，将该镜像名称中的域名部分变更为Registry专有网络地址。
+
+    $ sudo docker push registry-vpc.cn-hongkong.aliyuncs.com/acs/agent:0.7-dfb6816
+
+
+普通主机使用docker-hub公共镜像pull下来镜像
+==============================================
+
+查找:
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-151 ~]# docker pull alpine
-    [root@centos-151 ~]# docker pull busybox 
-    [root@centos-151 ~]# docker pull cirros
-    [root@centos-151 ~]# docker pull centos 
-    [root@centos-151 ~]# docker image ls 
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    docker.io/busybox   latest              2716f21dc1e3        33 hours ago        1.15 MB
-    docker.io/centos    latest              2d194b392dd1        4 weeks ago         195 MB
-    docker.io/alpine    latest              3fd9065eaf02        2 months ago        4.15 MB
-    docker.io/cirros    latest              a5e21e1957b6        5 months ago        7.74 MB
+    [root@zzjlogin ~]# docker search centos-io
+    NAME                                 DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+    centos                               The official build of CentOS.                   4679      [OK]       
+    iojs                                 io.js is an npm compatible platform origin...   127       [OK]       
+    ansible/centos7-ansible              Ansible on Centos7                              116                  [OK]
+    jdeathe/centos-ssh                   CentOS-6 6.10 x86_64 / CentOS-7 7.5.1804 x...   99                   [OK]
+    agileek/ionic-framework              Run ionic framework                             87                   [OK]
+    openshift/base-centos7               A Centos7 derived base image for Source-To...   33                   
+    beevelop/ionic                       Latest Ionic based on the latest Cordova, ...   30                   [OK]
+    iotaledger/iri                       IOTA Reference Implementation                   16                   [OK]
+    bluedigits/iota-node                 IOTA Full Node                                  9                    [OK]
+    mesosphere/iot-demo                  IoT demo Docker image.                          9                    [OK]
+    buanet/iobroker                      Docker Image for ioBroker based on Debian ...   9                    [OK]
+    pivotaldata/centos-gpdb-dev          CentOS image for GPDB development. Tag nam...   7                    
+    asmaps/docker-iodine                 Dockerized iodine server                        6                    [OK]
+    marcoturi/ionic                      Ionic image for CI with karma and protract...   5                    [OK]
+    microsoft/iot-edge-opc-publisher     Azure IoT Edge OPC Publisher Module             5                    [OK]
+    microsoft/iot-gateway-opc-ua-proxy   Azure IoT Edge OPC Proxy Module                 5                    [OK]
+    microsoft/iot-edge-opc-proxy         Azure IoT Edge OPC Proxy Module                 4                    [OK]
+    iobroker/iobroker                    This is docker version of ioBroker Home-Au...   3                    [OK]
+    pivotaldata/centos                   Base centos, freshened up a little with a ...   2                    
+    plusrseito/centos-ionic                                                              0                    
+    applet/applet-io                     applet-io repository                            0                    
+    cubedhost/tools-3h-io                tools-3h-io                                     0                    [OK]
+    turistforeningen/ruby-iojs           Docker Image with Ruby and io.js installed      0                    [OK]
+    aerogearcatalog/ios-app-apb          APB for creating an iOS App                     0                    [OK]
+    oblique/iodined                      Docker image for iodine server                  0                    [OK]
 
-    # 运行一个容器
-    [root@centos-151 ~]# docker run -it busybox
-    / # ls
-    bin   dev   etc   home  proc  root  run   sys   tmp   usr   var
-    / # ifconfig 
-    eth0      Link encap:Ethernet  HWaddr 02:42:AC:11:00:02  
-            inet addr:172.17.0.2  Bcast:0.0.0.0  Mask:255.255.0.0
-            inet6 addr: fe80::42:acff:fe11:2/64 Scope:Link
-            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-            RX packets:16 errors:0 dropped:0 overruns:0 frame:0
-            TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
-            collisions:0 txqueuelen:0 
-            RX bytes:1296 (1.2 KiB)  TX bytes:648 (648.0 B)
-
-    lo        Link encap:Local Loopback  
-            inet addr:127.0.0.1  Mask:255.0.0.0
-            inet6 addr: ::1/128 Scope:Host
-            UP LOOPBACK RUNNING  MTU:65536  Metric:1
-            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-            collisions:0 txqueuelen:1 
-            RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-            
-    # 查看运行的容器信息
-    [root@centos-151 ~]# docker ps 
-    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-    7913587953d5        busybox             "sh"                8 seconds ago       Up 8 seconds                            goofy_feynman
-    [root@centos-151 ~]# docker ps -a 
-    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                          PORTS               NAMES
-    7913587953d5        busybox             "sh"                51 seconds ago      Exited (130) 6 seconds ago                          goofy_feynman
-    1d60bcd49b65        busybox             "sh"                4 minutes ago       Exited (0) About a minute ago                       inspiring_colden
-    
-
-
-镜像推送(push)
------------------------------------------------
+把镜像下载到本地:
 
 .. code-block:: bash
     :linenos:
 
-    # 拉取镜像
-    [root@centos-151 ~]# docker pull nginx:1.12-alpine
-
-    # 运行镜像
-    [root@centos-151 ~]# docker run --name nginx1 -d nginx:1.12-alpine
-    88fd050b758c611fe7e1972ffd5c673fd957838b9f60e31e531019e86ef8481b
-    # 查看
-    [root@centos-151 ~]# docker ps 
-    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-    88fd050b758c        nginx:1.12-alpine   "nginx -g 'daemon ..."   7 seconds ago       Up 6 seconds        80/tcp              nginx1
-                                            
-    [root@centos-151 ~]# docker help exec 
-    [root@centos-151 ~]# docker exec -it nginx1 /bin/sh
-    / # ls
-    bin    dev    etc    home   lib    media  mnt    proc   root   run    sbin   srv    sys    tmp    usr    var
-    / # cd /etc/nginx/
-    /etc/nginx # vim nginx.conf
-    /bin/sh: vim: not found
-    /etc/nginx # ls
-    conf.d                  fastcgi_params          koi-win                 modules                 scgi_params             uwsgi_params.default
-    fastcgi.conf            fastcgi_params.default  mime.types              nginx.conf              scgi_params.default     win-utf
-    fastcgi.conf.default    koi-utf                 mime.types.default      nginx.conf.default      uwsgi_params
-    /etc/nginx # cd conf.d/
-    /etc/nginx/conf.d # ls
-    default.conf
-    /etc/nginx/conf.d # vi default.conf 
-    # 添加一个location
-    location /test {
-            root /data/html ;                   
-            index index.html;                   
-        }                
-    /etc/nginx/conf.d # echo "hello linuxpanda.tech " > /data/html/test/index.html
-    /bin/sh: can't create /data/html/test/index.html: nonexistent directory
-    /etc/nginx/conf.d # mkdir /data/html/test  -pv 
-    /etc/nginx/conf.d # echo "hello linuxpanda.tech " > /data/html/test/index.html
-
-准备下阿里云相关的配置
-
-.. image:: /images/docker/创建镜像仓库.png
-
-.. image:: /images/docker/配置镜像仓库.png
-
-.. image:: /images/docker/管理.png
-
-.. image:: /images/docker/镜像管理详细页面.png
-
-.. image:: /images/docker/修改密码.png
-
-        
-    # 提交镜像
-    [root@centos-151 ~]# docker commit -a "Zhao Jiedi <zhaojiedi1992@outlook.com>" -m "add test location for nginx " -p nginx1
-    sha256:f51a8135583c5777b94888550c0928d6c2cd7643ab7570c16a9c95b8c75425df
-    [root@centos-151 ~]# docker tag f51a8135583c5777b94888550c0928d6c2cd7643ab7570c16a9c95b8c75425df registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test :v1
-    [root@centos-151 ~]# docker image ls 
-    REPOSITORY                                                TAG                 IMAGE ID            CREATED             SIZE
-    registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test       v1                  f51a8135583c        17 minutes ago      15.5 MB
-    docker.io/busybox                                         latest              2716f21dc1e3        37 hours ago        1.15 MB
-    docker.io/centos                                          latest              2d194b392dd1        4 weeks ago         195 MB
-    docker.io/nginx                                           1.12-alpine         24ed1c575f81        2 months ago        15.5 MB
-    docker.io/alpine                                          latest              3fd9065eaf02        2 months ago        4.15 MB
-    docker.io/cirros                                          latest              a5e21e1957b6        5 months ago        7.74 MB
-
-    [root@centos-151 ~]# docker image push registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test:v1
-    The push refers to a repository [registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test]
-    b0095ccf03cc: Pushed 
-    68695a6cfd7d: Pushed 
-    c1dc81a64903: Pushed 
-    8460a579ab63: Pushed 
-    d39d92664027: Pushed 
-    v1: digest: sha256:f0a6e93821b76a418def04082fa095e5e4b5fab9e8599d17aa2340e58ee05b57 size: 1361
-
-.. image:: /images/docker/版本情况.png
-
-在另一个主机上面pull下来，测试
-
-.. code-block:: bash
-    :linenos:
-
-    [root@centos-152 docker]# docker pull registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test:v1
-    [root@centos-152 docker]# docker image ls 
-    REPOSITORY                                            TAG                 IMAGE ID            CREATED             SIZE
-    registry.cn-beijing.aliyuncs.com/zhaojiedi1992/test   v1                  f51a8135583c        27 minutes ago      15.5 MB
-    [root@centos-152 docker]# docker run --name nginx02 -d f51a8135583c
-    39b4d5747dc24a40509011c9b33e21435d6798ee8d113a438183808d1a3bf259
-    [root@centos-152 docker]# curl 172.17.0.2/test/
-    hello linuxpanda.tech 
+    [root@zzjlogin ~]# docker pull centos
+    latest: Pulling from centos
+    675ac122cafb: Pull complete 
+    a4875ffe6057: Pull complete 
+    c5507be714a7: Pull complete 
+    Digest: sha256:5d91c5535c41fd1bb48d40581a2c8b53d38fc2eb26df774556b53c5a0bd4d44e
+    Status: Downloaded newer image for centos:latest
+    [root@zzjlogin ~]# docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    centos              latest              c5507be714a7        5 weeks ago         199.7 MB
 
 镜像保存(save)
 -----------------------------------------------
@@ -467,10 +480,14 @@ docker卷(Volumes)
 
 docker的卷分为2种
 
-- bind挂载卷 
+- bind挂载卷
 - docker自管理卷
 
-.. code-block:: 
+.. attention::
+    可以通过这些参数，映射本地文件到docker，这样可以达到docker和本地文件的共享。
+
+.. code-block:: bash
+    :linenos:
 
     [root@centos-151 ~]# docker run --name nginx03    -v /data:/usr/share/nginx/html -d  nginx:1.12-alpine 
     30a8824241a92439547ac5918f75404d3f9953b987c61e0cbada0efe67ef7463
@@ -480,8 +497,8 @@ docker的卷分为2种
     [root@centos-151 ~]# docker inspect  nginx03  |grep -i ipa
                 "SecondaryIPAddresses": null,
                 "IPAddress": "172.17.0.3",
-                        "IPAMConfig": null,
-                        "IPAddress": "172.17.0.3",
+                "IPAMConfig": null,
+                "IPAddress": "172.17.0.3",
 
     [root@centos-151 ~]# curl 172.17.0.3
     my page
@@ -654,11 +671,10 @@ opened
     </html>
 
 docker端口映射
------------------------------------------------
+==================================================
 
 .. code-block:: bash
     :linenos:
-
 
     [root@centos-151 ~]# docker run --name nginx17 -d  -p 80:80 nginx:1.12-alpine 
     dda9ec45687aa71d552a32e65bb7d703a1b2170ea57416543a67e2055e1f5052
@@ -692,7 +708,11 @@ docker端口映射
     </body>
     </html>
 
-    #查看映射
+查看映射
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-151 ~]# docker port nginx17
     80/tcp -> 0.0.0.0:80
 
