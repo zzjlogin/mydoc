@@ -34,6 +34,15 @@ Docker软件结构
 
 Docker使用客户端-服务器(C/S)架构模式，使用远程API来管理和创建Docker容器。Docker容器通过Docker镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。
 
+Docker版本变化
+-----------------------------------------------------------
+
+Docker从1.13.x版本开始，版本分为企业版EE和社区版CE，版本号也改为按照时间线来发布，比如17.03就是2017年3月。
+
+Docker的linux发行版的软件仓库从以前的https://apt.dockerproject.org和https://yum.dockerproject.org变更为目前的https://download.docker.com, 软件包名字改为docker-ce和docker-ee。
+
+Docker的社区版（Docker Community Edition）叫做docker-ce
+
 Docker作用
 ==========================================================
 
@@ -48,3 +57,7 @@ Docker作用
 注意事项:
     - Docker实例是无状态的。这意味着它们不应该承载任何交易数据，所有数据应该保存在数据库服务器中。
     - 开发Docker实例并不像创建一台虚拟机、添加应用然后克隆那样简单。为成功创建并使用Docker基础设施，管理员需要对系统管理的各个方面有一个全面的理解，包括Linux管理、编排及配置工具比如Puppet、Chef以及Salt。这些工具生来就基于命令行以及脚本。
+
+
+
+
