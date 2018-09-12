@@ -59,6 +59,7 @@ html_show_sourcelink = False
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
+    'sphinx.ext.githubpages',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
