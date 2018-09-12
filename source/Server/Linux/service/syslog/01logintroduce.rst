@@ -149,18 +149,41 @@ rsyslog的配置文件主要包括三个大的片段
 
 修改sshd的所有日志信息到到单独的文件
 ------------------------------------------------
+
+
+新建 ``/etc/rsyslog.d/sshd.conf`` 并添加配置:
+
 .. code-block:: bash
     :linenos:
 
     [root@102 ~]$vim /etc/rsyslog.d/sshd.conf
     [root@102 ~]$cat /etc/rsyslog.d/sshd.conf
     local1.*                 /var/log/sshd.log
+    
+修改sshd server的配置
+
+.. code-block:: bash
+    :linenos:
+
     [root@102 ~]$vim /etc/ssh/sshd_config
     # 修改如下2行内容
     SyslogFacility LOCAL1
     LogLevel INFO
+
+重启日志服务，使配置生效:
+
+.. code-block:: bash
+    :linenos:
+
     [root@102 ~]$systemctl restart sshd
     [root@102 ~]$systemctl restart rsyslog
+
+.. attention:: CentOS6重启对应的服务，用命令 ``service sshd restart`` 把sshd换成 ``rsyslog``，则重启系统日志服务。
+
+测试日志记录
+
+.. code-block:: bash
+    :linenos:
 
     [root@102 ~]$ssh localhost
     Last login: Thu Feb  1 09:41:16 2018 from localhost
