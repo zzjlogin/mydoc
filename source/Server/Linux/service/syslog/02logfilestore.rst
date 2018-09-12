@@ -112,6 +112,7 @@ logrorate的主要配置参数
     # system-specific logs may be also be configured here.
 
 httpd
+--------------------------------------------
 
 .. code-block:: text
     :linenos:
@@ -129,6 +130,7 @@ httpd
 
 
 bootlog
+--------------------------------------------
 
 .. code-block:: text
     :linenos:
@@ -143,6 +145,7 @@ bootlog
     }
 
 syslog
+--------------------------------------------
 
 .. code-block:: text
     :linenos:
@@ -162,6 +165,7 @@ syslog
     }
 
 yum
+--------------------------------------------
 
 .. code-block:: text
     :linenos:

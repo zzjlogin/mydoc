@@ -83,7 +83,7 @@ windows系统用 ``wireshark`` 抓包分析时，可以通过释放IP重新获�
 
 .. image:: /images/server/linux/dhcp/dhcp-data01.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 DHCP Discover数据包:
@@ -94,7 +94,7 @@ DHCP Discover数据包:
 
 .. image:: /images/server/linux/dhcp/dhcp-data02.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 DHCP Offer包:
@@ -106,14 +106,14 @@ DHCP Offer包:
 
 .. image:: /images/server/linux/dhcp/dhcp-data03.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 具体信息参考:
 
 .. image:: /images/server/linux/dhcp/dhcp-data03-1.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 DHCP Request包:
@@ -122,7 +122,7 @@ DHCP Request包:
 
 .. image:: /images/server/linux/dhcp/dhcp-data04.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 
@@ -141,7 +141,7 @@ DHCP ACK包:
 
 .. image:: /images/server/linux/dhcp/dhcp-data05.png
     :align: center
-    :height: 500 px
+    :height: 350 px
     :width: 800 px
 
 

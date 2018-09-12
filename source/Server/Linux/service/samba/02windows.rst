@@ -19,13 +19,13 @@ windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件�
 
 .. image:: /images/server/linux/samba/windows-share01.png
     :align: center
-    :height: 500 px
+    :height: 550 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/samba/windows-share02.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 .. attention::
@@ -34,7 +34,7 @@ windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件�
 
 .. image:: /images/server/linux/samba/windows-share03.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 
@@ -47,13 +47,13 @@ windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件�
 
 .. image:: /images/server/linux/samba/windows-share-localtest01.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/samba/windows-share-localtest02.png
     :align: center
-    :height: 500 px
+    :height: 400 px
     :width: 800 px
 
 

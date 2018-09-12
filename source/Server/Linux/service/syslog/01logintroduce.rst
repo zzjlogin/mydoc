@@ -108,7 +108,7 @@ rsyslog的配置文件主要包括三个大的片段
     "管道",         "| command","直接重定向到某个命令"
     "终端",     "/dev/console","直接输出的指定的登陆终端"
     "远程主机",       "@192.168.0.1","直接输出到远程指定主机"
-    "用户列表",      "root,zhaojiedi1992",直接输出到2个用户对应的登陆终端
+    "用户列表",      "root,zzjloginjiedi1992",直接输出到2个用户对应的登陆终端
     "所有用户",       "*","直接给所有登陆用户发送"
     "数据库表",       "192.168.0.1,dbname,username,password","连接指定主机的数据库表"
     "丢弃",         "~","丢弃日志，不记录"
@@ -194,10 +194,17 @@ rsyslog的配置文件主要包括三个大的片段
 修改sshd的所有日志信息到远程主机
 ------------------------------------------------
 
+整体步骤:
+    这里涉及到2台主机，主要思路先启用服务器端的监听，然后在客户端配置要配置要推送地址
+
+
+**服务器配置:**
+
+
+
 .. code-block:: text
     :linenos:
 
-    # 这里涉及到2台主机，主要思路先启用服务器端的监听，然后在客户端配置要配置要推送地址
     [root@centos-158 ~]# vim /etc/rsyslog.conf
     # 解注释如下4行
     $ModLoad imudp
@@ -225,7 +232,13 @@ rsyslog的配置文件主要包括三个大的片段
     tcp    LISTEN     0      25        *:514                   *:*                  
     tcp    LISTEN     0      25       :::514                  :::*                  
 
-    # 接下来是客户端的配置
+**客户端配置:**
+
+接下来是客户端的配置
+
+.. code-block:: text
+    :linenos:
+
     [root@102 ~]$vim /etc/rsyslog.d/sshd.conf 
     [root@102 ~]$cat /etc/rsyslog.d/sshd.conf
     local1.*                 @172.19.104.175
@@ -237,20 +250,20 @@ rsyslog的配置文件主要包括三个大的片段
     [root@102 ~]$systemctl restart rsyslog
 
     # 102客户端尝试登陆下
-    [root@102 ~]$ssh zhao@localhost
-    zhao@localhost's password: 
+    [root@102 ~]$ssh zzjlogin@localhost
+    zzjlogin@localhost's password: 
     jlsdfjslfs
     Permission denied, please try again.
-    zhao@localhost's password: 
+    zzjlogin@localhost's password: 
     Permission denied, please try again.
-    zhao@localhost's password: 
+    zzjlogin@localhost's password: 
     Permission denied (publickey,password).
 
     # 服务端查看日志是否记录了
     [root@centos-158 ~]# tail /var/log/sshd.log 
-    Feb  1 10:24:14 102 sshd[37196]: Failed password for zhao from ::1 port 40016 ssh2
-    Feb  1 10:24:15 102 sshd[37196]: Failed password for zhao from ::1 port 40016 ssh2
-    Feb  1 10:24:15 102 sshd[37196]: Failed password for zhao from ::1 port 40016 ssh2
+    Feb  1 10:24:14 102 sshd[37196]: Failed password for zzjlogin from ::1 port 40016 ssh2
+    Feb  1 10:24:15 102 sshd[37196]: Failed password for zzjlogin from ::1 port 40016 ssh2
+    Feb  1 10:24:15 102 sshd[37196]: Failed password for zzjlogin from ::1 port 40016 ssh2
     Feb  1 10:24:15 102 sshd[37196]: Connection closed by ::1 port 40016 [preauth]
 
 .. note:: 如果网络不稳定，可以使用@@替换@,@@使用的tcp协议，@使用的udp协议。
