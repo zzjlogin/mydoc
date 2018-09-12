@@ -32,6 +32,7 @@ zabbix安装参考:
 链接参考:
     - http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/
     - http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/
+    - https://sourceforge.net/projects/zabbix/files/
 
 
 CentOS6安装配置(编译安装)
