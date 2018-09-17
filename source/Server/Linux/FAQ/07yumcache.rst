@@ -1,0 +1,16 @@
+
+
+==========================================
+保留yum安装软件包
+==========================================
+
+修改yum配置文件:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# sed -i 's#keepcache=0#keepcache=1#g' /etc/yum.conf
+    [root@zzjlogin ~]# grep keepcache /etc/yum.conf
+    keepcache=1
+
+
