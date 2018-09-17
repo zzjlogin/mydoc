@@ -42,21 +42,22 @@
 
 
 
-以下是理解冒泡排序过程的动态图片:
-
+以下是理解冒泡排序过程的动态图片
+----------------------------------------------------------
 
 .. image:: /images/language/sort/bubble-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
 
-以下时冒泡排序python实现样例demo:
+以下时冒泡排序python实现样例demo
+----------------------------------------------------------
 
-把数字列表 ``65318724`` 用冒泡排序进行排序( **升序** ),具体过程如下图
+把数字列表 ``31524`` 用冒泡排序进行排序( **升序** ),具体过程如下图
 
-.. image:: /images/language/sort/bubble-sort-demo.gif
+.. image:: /images/language/sort/bubble-sort-demo1.gif
     :align: center
-    :height: 200 px
+    :height: 550 px
     :width: 800 px
 
 .. code-block:: python
@@ -75,7 +76,7 @@
                         pass
         return mylist
 
-    print(bubble_sort(list('65318724')))
+    print(bubble_sort(list('31524')))
 
 
 选择排序(Selection Sort)
@@ -97,7 +98,8 @@
     这个过程可以结合最大堆/最小堆，所以就可以参看堆排序。
 
 
-以下是理解选择排序过程的动态图片:
+以下是理解选择排序过程的动态图片
+----------------------------------------------------------
 
 
 .. image:: /images/language/sort/selection-sort.gif
@@ -106,15 +108,18 @@
     :width: 800 px
 
 
-以下时选择排序python实现样例demo:
+以下时选择排序python实现样例demo
+----------------------------------------------------------
 
-把数字列表 ``8526931407`` 用选择排序进行排序( **降序** ),具体过程如下图
+把数字列表 ``31524`` 用选择排序进行排序( **降序** ),具体过程如下图
 
 
-.. image:: /images/language/sort/selection-sort-demo.gif
+.. image:: /images/language/sort/selection-sort-demo1.gif
     :align: center
-    :height: 800 px
-    :width: 200 px
+    :height: 550 px
+    :width: 800 px
+
+以下是选择排序(升序)的python实现
 
 .. code-block:: python
     :linenos:
@@ -136,7 +141,7 @@
             mylist[i], mylist[i+index_min] = mylist[i+index_min], mylist[i]
         return mylist
 
-    print(selection_sort(list('8526931407')))
+    print(selection_sort(list('31524')))
 
 
 堆排序(Heap Sort)
@@ -155,7 +160,8 @@
     时间复杂度是 2nlog(n)-O(nlog(n)),即nlog(n),但是实际情况如果元素个数不是很多(100以内)，堆排序的排序效果并没有
     那么理想。比希尔排序差。
 
-以下是理解堆排序过程的动态图片:
+以下是理解堆排序过程的动态图片
+----------------------------------------------------------
 
 .. image:: /images/language/sort/heap-sort.gif
     :align: center
@@ -163,12 +169,23 @@
     :width: 800 px
 
 
-以下时堆排序python实现样例demo:
 
-把数字列表 ``8526931407`` 用堆排序进行排序( **升序** ),具体过程如下图
+以下时堆排序python实现样例demo
+----------------------------------------------------------
 
-升序或者降序都可以用最大堆来创建。只不过一个是从源列表偷开始替换，一个是从源列表尾开始替换。
+把数字列表 ``31524`` 用堆排序进行排序( **降序** ),具体过程如下图
 
+
+.. image:: /images/language/sort/heap-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+
+以下是堆排序(升序)的python实现
+
+.. tip::
+    升序或者降序都可以用最大堆来创建。只不过一个是从源列表偷开始替换，一个是从源列表尾开始替换。
 
 .. code-block:: python
     :linenos:
@@ -226,7 +243,7 @@
 
 
 
-以下是理解插入排序过程的动态图片:
+- 以下是理解插入排序过程的动态图片:
 
 
 .. image:: /images/language/sort/insertion-sort.gif
@@ -234,6 +251,16 @@
     :height: 500 px
     :width: 800 px
 
+
+
+- 以下时插入排序python实现样例demo:
+
+把数字列表 ``31524`` 用插入排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/insertion-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
 
 
 
@@ -248,7 +275,7 @@
 =====================================
 
 
-以下是理解希尔排序过程的动态图片:
+- 以下是理解希尔排序过程的动态图片:
 
 
 .. image:: /images/language/sort/shell-sort.gif
@@ -257,11 +284,22 @@
     :width: 800 px
 
 
+- 以下时希尔排序python实现样例demo:
+
+把数字列表 ``31524`` 用希尔排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/shell-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+
+
 归并排序(Merge Sort)
 =====================================
 
 
-以下是理解归并排序过程的动态图片:
+- 以下是理解归并排序过程的动态图片:
 
 
 .. image:: /images/language/sort/merge-sort.gif
@@ -275,7 +313,7 @@
 
 
 
-以下是理解快速排序过程的动态图片:
+- 以下是理解快速排序过程的动态图片:
 
 
 .. image:: /images/language/sort/quick-sort.gif
@@ -283,7 +321,14 @@
     :height: 500 px
     :width: 800 px
 
+- 以下时快速排序python实现样例demo:
 
+把数字列表 ``31524`` 用快速排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/quick-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
 
 
 
