@@ -182,9 +182,6 @@ Bye
 
 3. 准备环境并下载软件包编译安装
 
-[root@zzjlogin ~]# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y
-
-
 [root@zzjlogin ~]# rpm -i http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-2.el7.noarch.rpm
 warning: /var/tmp/rpm-tmp.NfLb4n: Header V4 RSA/SHA512 Signature, key ID a14fe591: NOKEY
 [root@zzjlogin ~]# rpm -qa zabbix*
