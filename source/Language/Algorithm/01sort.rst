@@ -59,8 +59,10 @@
 
 .. image:: /images/language/sort/bubble-sort-demo1.gif
     :align: center
-    :height: 200 px
+    :height: 550 px
     :width: 800 px
+
+以下是冒泡排序的代码:
 
 .. code-block:: python
     :linenos:
@@ -116,8 +118,8 @@
 
 .. image:: /images/language/sort/selection-sort-demo1.gif
     :align: center
-    :height: 800 px
-    :width: 200 px
+    :height: 550 px
+    :width: 800 px
 
 .. code-block:: python
     :linenos:
@@ -162,7 +164,7 @@
 
 .. image:: /images/language/sort/heap-sort.gif
     :align: center
-    :height: 500 px
+    :height: 550 px
     :width: 800 px
 
 
@@ -172,6 +174,14 @@
 
 .. tip::
     升序或者降序都可以用最大堆来创建。只不过一个是从源列表偷开始替换，一个是从源列表尾开始替换。
+
+
+.. image:: /images/language/sort/heap-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是冒泡排序的代码:
 
 
 .. code-block:: python
@@ -232,16 +242,9 @@
     排序排序也是相邻元素交换，所以排序速度和逆序对个数有关。
 
 简单理解:
-    如果序列的元素个数是n。首先扫描这个序列，然后找到最大(小)的元素。
-    然后把最大的值放在序列的最后位置。然后再扫描一遍。
-    把剩下的n-1个元素中最大(小)的放在n-1的位置。一直扫描n-1遍即可。
+    插入排序就是简单理解从第一个元素开始排序，首先认为第一个元素是有序的。
+    然后把第二个元素插入到第一个元素的序列中，并保证这个新的序列有序。依次循环，直至元素结束。
 
-    因为每次交换顺序是常数的时间复杂度。但是每次找最大元素时间复杂度是n^2，所以选择排序时间复杂度是n^2
-
-瓶颈：
-    由上面可以看出选择排序的瓶颈就是扫描列表找到最大元素。这个操作的时间复杂度决定了选择排序的时间复杂度。
-
-    这个过程可以结合最大堆/最小堆，所以就可以参看堆排序。
 
 
 以下是理解插入排序过程的动态图片:
@@ -251,13 +254,46 @@
     :height: 500 px
     :width: 800 px
 
+以下时插入排序python实现样例demo:
 
+把数字列表 ``31524`` 用插入排序进行排序( **升序** ),具体过程如下图
 
+.. image:: /images/language/sort/insertion-sort-demo.gif
+    :align: center
+    :height: 200 px
+    :width: 800 px
+
+以下是插入排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def insertion_sort(mylist):
+        
+        mylist_len = len(mylist)
+        
+        for now_index in range(mylist_len):
+            if now_index == 0:
+                pass
+            else:
+                #temp = mylist[now_index]
+                while now_index > 0:
+                    if mylist[now_index] < mylist[now_index-1]:
+                        mylist[now_index], mylist[now_index-1] = \
+                            mylist[now_index-1], mylist[now_index]
+                        now_index -= 1
+                    else:
+                        break
+        return mylist
+
+    print(insertion_sort(list('31524')))
 
 
 
 二分插入排序
 =====================================
+
+
 
 
 
@@ -275,6 +311,39 @@
     :height: 500 px
     :width: 800 px
 
+以下时希尔排序python实现样例demo:
+
+把数字列表 ``31524`` 用希尔排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/shell-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是希尔排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def shell_sort(arr):
+        n = len(arr)
+        h = 1
+        while h < n/3:
+            h = 3*h+1
+        while h >= 1:
+            for i in range(h,n):
+                j = i
+                while j>=h and arr[j]<arr[j-h]:
+                    arr[j], arr[j-h] = arr[j-h], arr[j]
+                    j -= h
+            h = h//3
+        return arr
+
+    print(shell_sort(list('31524')))
+
+
+
+
 
 归并排序(Merge Sort)
 =====================================
@@ -287,6 +356,9 @@
     :align: center
     :height: 500 px
     :width: 800 px
+
+
+
 
 
 快速排序(Quick Sort)
@@ -303,8 +375,43 @@
     :width: 800 px
 
 
+以下时快速排序python实现样例demo:
 
+把数字列表 ``31524`` 用快速排序进行排序( **升序** ),具体过程如下图
 
+.. image:: /images/language/sort/quick-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是快速排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def quick_sort(mylist):
+        
+        mylist_len = len(mylist)
+        
+        if mylist_len <= 1:
+            return mylist
+        else:
+            temp = mylist.pop()
+            separation = [temp]
+            left = []
+            right = []
+            for i in range(mylist_len-1):
+                now_pint = mylist.pop()
+                if now_pint > temp:
+                    right.append(now_pint)
+                elif now_pint < temp:
+                    left.append(now_pint)
+                else:
+                    separation.append(now_pint)
+            mylist = quick_sort(left) + separation + quick_sort(right)
+            return mylist
+
+    print(quick_sort(list('31524')))
 
 
 
