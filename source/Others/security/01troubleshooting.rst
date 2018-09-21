@@ -1,0 +1,275 @@
+
+=======================================
+服务器受攻击故障排查
+=======================================
+
+
+
+准备
+=======================================
+
+这一步很重要。在排查服务器之前需要先，和服务器对应的负责人沟通。
+
+沟通需要弄明白的几点:
+    1. 故障表现。
+    #. 故障出现时间。
+    #. 故障是否反复出现，反复出现频率。
+    #. 故障受影响情况。对公司内部的影响(经济和内部其他功能)。
+    #. 是否有监控系统。
+    #. 是否有日志可以查阅。
+
+查看系统登陆信息
+========================================
+
+查看当前登陆用户
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# w
+
+查看成功登陆历史
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# last |less
+
+
+查看登陆失败日志
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# lastb |less
+
+查看哪些用户登陆过系统
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# lastlog
+
+
+
+查看之前的操作记录
+========================================
+
+这一步无论是否有非法登陆都需要查看。因为一般可能是内部人员用合法账户登陆，或者是非法人员用合法用户登陆。
+
+所以需要查看操作历史记录。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# history
+
+    #可以把命令历史输出到文件然后传到本地后序分析
+
+    [root@zzjlogin ~]# history >history.txt
+
+查看进程信息
+========================================
+
+``ps aux`` 的结果比较杂乱， ``pstree -a`` 的结果比较简单明了，可以看到正在运行的进程及相关用户。
+
+查看进程信息，也可以输出到文件然后后序一点儿一点儿排查。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# pstree -a
+
+    [root@zzjlogin ~]# ps -aux
+
+查看监听的网络服务
+========================================
+
+如果服务器被黑客攻击。经常会挂一些黑客自己的服务，然后发起请求，或者监听他们的请求。
+所以排查监听网络服务，查看是否有非法的监听服务。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# netstat -lntup
+
+    [root@zzjlogin ~]# ss -lntup
+
+
+查看CPU和内存信息
+========================================
+
+被黑客攻击后，可能会运行黑客的服务。所以如果排查发现有未知服务长时间占用很高的CPU和内存。
+则需要注意了。
+
+查看内存:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# free -m
+
+查看运行时间:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# uptime
+
+
+查看CPU占用情况以及排队服务:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# top
+
+
+查看硬件信息
+========================================
+
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# lspci
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# dmidecode | less
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# ethtool eth0
+
+
+
+IO性能查看
+========================================
+
+查看IO
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# iostat -kx 2
+
+查看
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# vmstat 2 10
+
+.. code-block:: bash
+    :linenos:
+    
+    [root@zzjlogin ~]# mpstat 2 10
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# dstat --top-io --top-bio
+
+.. attention:: dstat这个命令需要安装，系统默认没有这个工具。安装方法: ``yum install dstat``
+
+
+挂载点和文件系统查看
+========================================
+
+查看系统默认挂在信息：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat /etc/fstab
+
+查看当前挂载信息:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# mount
+
+查看存储信息:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# df -h
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# lsof +D /
+
+查看逻辑卷信息:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# lvs
+
+    [root@zzjlogin ~]# vgs
+
+    [root@zzjlogin ~]# pgs
+
+
+内核信息中断和网络信息查看
+========================================
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# sysctl -a
+
+    [root@zzjlogin ~]# cat /proc/interrupts
+
+    [root@zzjlogin ~]# cat /proc/sys/net/netfilter/nf_conntrack_count
+    [root@zzjlogin ~]# cat /proc/net/nf_conntrack
+
+
+
+
+
+系统日志查看
+========================================
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# dmesg
+
+    [root@zzjlogin ~]# less /var/log/messages
+
+    [root@zzjlogin ~]# less /var/log/secure
+
+    [root@zzjlogin ~]# less /var/log/audit/audit.log
+
+
+
+定时任务
+========================================
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# ls /etc/cron* |cat
+
+    [root@zzjlogin ~]# for user in $(cat /etc/passwd |cut -f1 -d:); do crontab -l -u $user; done
+
+
+应用日志查看
+========================================
+
+nginx/mysql/apache/php
+
+
+
+
+
+
+
+

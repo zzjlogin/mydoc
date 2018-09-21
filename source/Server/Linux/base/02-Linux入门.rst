@@ -20,27 +20,6 @@ Linux系统安装
    systemInstall/*
 
 
-操作系统与硬件
-======================================================
-
-参考 :ref:`cd-user`
-
-
-分层结构如下：
-
-* 硬件
-    * 冯诺依曼结构计算机
-        * 计算机由：控制器、运算器、存储器、输入设备、输出设备五部分组成
-        * 参考： `冯诺依曼百度百科 <https://baike.baidu.com/item/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/4690854?fromtitle=%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84&fromid=213926&fr=aladdin>`_
-    * 非冯诺依曼结构
-        * 例如：并行计算机、数据流计算机以及量子计算机、光子计算机等
-        * 哈佛结构:cortex-m系列都是采用这种结构。使用两个独立的存储器模块，分别存储指令和数据，每个存储模块都不允许指令和数据并存，以便实现并行处理；
-* 软件
-    * 操作系统
-        * 内核
-        * 库
-    * 应用程序
-
 
 
 终端的概念
@@ -48,22 +27,32 @@ Linux系统安装
 
 概念： 是一个或者多个设备的组合。
 
-在Linux系统中可以用一句话来说明所有的设备及文件。即``一切皆文件``。
+在Linux系统中可以用一句话来说明所有的设备及文件。即 ``一切皆文件`` 。
 
 终端分类
 ------------------------------------------------------
 
-Linux系统中所有的设备在Linux系统中都表现为一个文件，一般是在``/dev``目录下面。
+Linux系统中所有的设备在Linux系统中都表现为一个文件，一般是在 ``/dev`` 目录下面。
 
 物理终端
-    本机自带的，显示器，键盘和鼠标等，表示为"/dev/control"。
+    本机自带的，显示器，键盘和鼠标等，表示为 ``/dev/control`` 。
 虚拟终端
-    系统提供的终端（软件实现），表示为"/dev/tty#"。
+    系统提供的终端（软件实现），表示为 ``/dev/tty#`` 。
+
+    系统本地登陆则登陆显示为tty#,其中 ``#`` 默认从1开始。
+
+    
 图形终端
     附加在物理终端之上，用软件方式实现的终端，提供图形界面。
+
 伪终端
     图形界面下打开的命令行接口,还有基于远程协议打开的命令行界面，表示为"/dev/pts#"。
 
+    pts/ptmx：pts(pseudo-terminal slave)是pty的实现方法，与ptmx(pseudo-terminal master)配合使用实现pty。
+    man里面是这样说的：ptmx and pts - pseudo-terminal master and slave，pts是所谓的伪终端或虚拟终端，具体表现就是你打开一个终端，
+    这个终端就叫pts/0，如果你再打开一个终端，这个新的终端就叫pts /1。
+
+    ssh链接服务器，一般登陆后用 ``last`` 和 ``who`` 来登陆用户信息时可以看到pts/1
 
 - 查看当前的登陆的终端类型：
 
@@ -75,12 +64,22 @@ Linux系统中所有的设备在Linux系统中都表现为一个文件，一般�
 
 - 交互式程序分类
 
-GUI
-    图形化界面（GNOME,KDE,XFCE）
-CLI
-    命令行界面
+    GUI
+        图形化界面（GNOME,KDE,XFCE）
+    CLI
+        命令行界面
+
+Linux的shell
+------------------------------------------------------
+
+shell的概念可以参考： `shell百度百科 <https://baike.baidu.com/item/shell/99702?fr=aladdin>`_
+
+个人理解，shell就是用户和操作系统内核交互的一个中间件。用户可以通过shell实现控制或调试内核输入输出等操作。
 
 - 查看当前的shell类型
+
+.. attention::
+    Linux的shell有很多种。但是一般linux默认是bash。
 
 .. code-block:: bash
     :linenos:
@@ -100,6 +99,24 @@ CLI
     /bin/dash
     /bin/tcsh
     /bin/csh
+
+
+shell命令分类
+======================================================
+内建命令
+  由shell自带。
+外部命令
+  某路径下的可执行程序文件。
+
+查看命令类型
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin user1]# type cd
+    cd is a shell builtin
+    [root@zzjlogin user1]# type service
+    service is /usr/sbin/service
 
 命令提示符
 ======================================================
@@ -191,57 +208,38 @@ CLI
     [root@zzjlogin user1]# whereis ls
     ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz /usr/share/man/man1p/ls.1p.gz
 
-shell命令分类
-======================================================
-内建命令
-  由shell自带。
-外部命令
-  某路径下的可执行程序文件。
 
-查看命令类型
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin user1]# type cd
-    cd is a shell builtin
-    [root@zzjlogin user1]# type service
-    service is /usr/sbin/service
 
 文件系统
 ======================================================
 
 文件系统特性
-
-- 文件名区分大小写
-- 文件名除了'/'的任意字符都可以，不建议特殊字符
-- 文件名长度不能超过255字符
-- 所有'.'开头的文件都是隐藏文件或者目录
+    - 文件名区分大小写
+    - 文件名除了'/'的任意字符都可以，不建议特殊字符
+    - 文件名长度不能超过255字符
+    - 所有'.'开头的文件都是隐藏文件或者目录
 
 路径分类：
-
-- 绝对路径： 从根目录开始的路径
-- 相对路径： 从当前目录开始的路径
+    - 绝对路径： 从根目录开始的路径
+    - 相对路径： 从当前目录开始的路径
 
 文件类型有一下几类
-
-- \-            普通文件
-- d             目录文件
-- b             块设备文件
-- c             字符设备文件
-- s             socket文件
-- p             管道文件
-- l             连接文件
+    - \-            普通文件
+    - d             目录文件
+    - b             块设备文件
+    - c             字符设备文件
+    - s             socket文件
+    - p             管道文件
+    - l             连接文件
 
 Linux命令获取帮助方式
-
-1. COMMAND --help
-#. man
-#. info
-#. 程序自身的帮助文档，如README,INSTALL,CHANGELOG.
-#. 程序的官方文档
-#. 发行版的官方文档
-#. GOOGLE
+    1. COMMAND --help
+    #. man
+    #. info
+    #. 程序自身的帮助文档，如README,INSTALL,CHANGELOG.
+    #. 程序的官方文档
+    #. 发行版的官方文档
+    #. GOOGLE
 
 基础命令学习
 ---------------------------------------------------
