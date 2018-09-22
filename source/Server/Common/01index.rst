@@ -43,9 +43,9 @@
     - `机柜式`_
 
 .. _`塔式服务器`: https://baike.baidu.com/item/%E5%A1%94%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/5863706?fr=aladdin
-.. _`机架服务器(Rack)`:https://baike.baidu.com/item/%E6%9C%BA%E6%9E%B6%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/485424?fr=aladdin
-.. _`刀片服务器`: https://baike.baidu.com/item/%E5%88%80%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8
-.. _`机柜式`: https://baike.baidu.com/item/%E6%9C%BA%E6%9F%9C%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8
+.. _`机架服务器(Rack)` :https://baike.baidu.com/item/%E6%9C%BA%E6%9E%B6%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/485424?fr=aladdin
+.. _`刀片服务器` : https://baike.baidu.com/item/%E5%88%80%E7%89%87%E6%9C%8D%E5%8A%A1%E5%99%A8
+.. _`机柜式` :https://baike.baidu.com/item/%E6%9C%BA%E6%9F%9C%E5%BC%8F%E6%9C%8D%E5%8A%A1%E5%99%A8
 
 参考下面图片:
 

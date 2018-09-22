@@ -31,32 +31,30 @@ ftp
 ftp数据传输模式: 
 
 主动模式： 
-    #. 客户端先随机一个端口如5000去连接服务器的21端口来建立命令传输连接
+    1. 客户端先随机一个端口如5000去连接服务器的21端口来建立命令传输连接
     #. 服务器以20端口来主动连接客户端的5001（5000+1）端口，来进行数据传输
 被动模式： 
-    #. 客户端先随机一个端口如5000去连接服务器的21端口来建立命令传输连接
+    1. 客户端先随机一个端口如5000去连接服务器的21端口来建立命令传输连接
     #. 服务器通过命令传输连接告诉客户端自己的监听端口如6000
     #. 服务器就以5001（5000+1）去连接服务器的6000端口来进行数据传输
 
 提供ftp的软件：
-
-- wu-ftpd
-- proftpd
-- pureftp
-- vsftp
-- ServU
+    - wu-ftpd
+    - proftpd
+    - pureftp
+    - vsftp
+    - ServU
 
 客户端工具：
-
-- ftp
-- lftp
-- lftpget
-- wget
-- curl
-- filezilla
-- gftp
-- flashfxp
-- cuteftp
+    - ftp
+    - lftp
+    - lftpget
+    - wget
+    - curl
+    - filezilla
+    - gftp
+    - flashfxp
+    - cuteftp
 
 ftp用户分类： 
 
@@ -68,14 +66,16 @@ ftp用户分类：
 vsftpd的安装
 ---------------------------------------------------
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     [root@centos-155 ~]# yum install vsftpd 
 
 常见配置项
 ---------------------------------------------------
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     1、 匿名用户的配置
         anonymouns_enable=YES 是否启用匿名
@@ -137,31 +137,29 @@ vsftpd的安装
 基于虚拟用户的vsftpd
 ---------------------------------------------------
 
-主要步骤： 
+主要步骤：
+    1. 创建虚拟用户账户和密码文件，并使用db_load转化
+    #. 创建本地账户，修改权限
+    #. 添加pam文件
+    #. 配置文件添加guest相关项目，pam_service_name,user_config_dir
+    #. 创建user_config_dir目录，在目录下创建虚拟用户同名的文件，添加配置项
+    #. 重启服务，测试。
 
-#. 创建虚拟用户账户和密码文件，并使用db_load转化
-#. 创建本地账户，修改权限
-#. 添加pam文件
-#. 配置文件添加guest相关项目，pam_service_name,user_config_dir
-#. 创建user_config_dir目录，在目录下创建虚拟用户同名的文件，添加配置项
-#. 重启服务，测试。
-
-详细步骤参考： ftp基于文件的验证_
-
-.. _ftp基于文件的验证: http://services.linuxpanda.tech/%E7%BD%91%E7%BB%9C%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/ftp%E5%9F%BA%E4%BA%8E%E6%96%87%E4%BB%B6%E7%9A%84%E9%AA%8C%E8%AF%81.html
+详细步骤参考：
 
 lftp
 ---------------------------------------------------
 
 命令样例
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     # 直接输入用户密码和端口等详细信息的方式
-    [root@centos-155 virtualftp]# lftp -p 21 -u panda1:panda1 192.168.46.155
-    lftp panda1@192.168.46.155:~> ls
+    [root@centos-155 virtualftp]# lftp -p 21 -u user1:user1 192.168.46.155
+    lftp user1@192.168.46.155:~> ls
     drwxr-xr-x    3 1017     1020           15 Feb 12 08:34 pub
-    lftp panda1@192.168.46.155:/> help
+    lftp user1@192.168.46.155:/> help
         !<shell-command>                     (commands)                           alias [<name> [<value>]]             attach [PID]                         bookmark [SUBCMD]
         cache [SUBCMD]                       cat [-b] <files>                     cd <rdir>                            chmod [OPTS] mode file...            close [-a]
         [re]cls [opts] [path/][pattern]      debug [<level>|off] [-o <file>]      du [options] <dirs>                  exit [<code>|bg]
@@ -173,41 +171,40 @@ lftp
         queue [OPTS] [<cmd>]                 quote <cmd>                          repeat [OPTS] [delay] [command]      rm [-r] [-f] <files>                 rmdir [-f] <dirs>
         scache [<session_no>]                set [OPT] [<var> [<val>]]            site <site-cmd>                      source <file>
         torrent [-O <dir>] <file|URL>...     user <user|URL> [<pass>]             wait [<jobno>]                       zcat <files>                         zmore <files>
-    lftp panda1@192.168.46.155:/> quit
+    lftp user1@192.168.46.155:/> quit
 
     # 后输入用户和密码方式
     [root@centos-155 virtualftp]# lftp localhost
-    lftp localhost:~> user panda1
+    lftp localhost:~> user user1
     Password: 
-    lftp panda1@localhost:~> ls
+    lftp user1@localhost:~> ls
     drwxr-xr-x    3 1017     1020           28 Feb 12 08:44 pub
-    lftp panda1@localhost:/> cd pub/
-    lftp panda1@localhost:/pub> ls
+    lftp user1@localhost:/> cd pub/
+    lftp user1@localhost:/pub> ls
     drwx------    2 1017     1020            6 Feb 12 08:34 a
     -rw-r--r--    1 0        0               0 Feb 12 08:44 a.txt
-    lftp panda1@localhost:/pub> get a.txt 
+    lftp user1@localhost:/pub> get a.txt 
 
 wget
 ---------------------------------------------------
 
 wget是gpl许可的一个文件下载软件包，支持http,https，ftp协议，支持代理服务器和断点续传功能。
 
-主要常用选项： 
-
--r          递归下载
--b          后台下载
--m          镜像
--c          断点续传
--I          指定下载目录列表
--A          指定接受和拒绝下载列表
---proxy     代理
--t          重试次数
--nc         不覆盖原有的
--N          只下载新的文件
--nd         不进行目录结构创建
--x          强制创建目录结构
--nH         不继承主机主机目录结构
--P          设置目录前缀
+主要常用选项：
+    -r          递归下载
+    -b          后台下载
+    -m          镜像
+    -c          断点续传
+    -I          指定下载目录列表
+    -A          指定接受和拒绝下载列表
+    --proxy     代理
+    -t          重试次数
+    -nc         不覆盖原有的
+    -N          只下载新的文件
+    -nd         不进行目录结构创建
+    -x          强制创建目录结构
+    -nH         不继承主机主机目录结构
+    -P          设置目录前缀
 
 nfs
 ===================================================
@@ -219,7 +216,8 @@ nfs是通过rpc调用来实现文件共享的，先启动rpc服务，在启动nf
 
 nfs的配置比较简单
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     [root@centos-155 ~]# vim /etc/exports  
     # 添加如下行
@@ -257,10 +255,14 @@ samba是为window和linux之间共享文件而生的。
 
 安装
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     [root@centos-155 ~]# yum install samba 
 
 创建密码使用smbpasswd命令就可以了，不过要本地有这个用户。
 
-样例参考： 
+
+
+
+

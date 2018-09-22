@@ -17,15 +17,15 @@ fqdn是full qualified domain name的简写，焦作完整主机名
 dns解析过程
 --------------------------------------------
 
-假定访问www.linuxpanda.tech这个主机的话
+假定访问www.display.tk这个主机的话
 
-#. 本机先查询本地的hosts文件是否有对应blog.linuxpanda.tech这个主机和ip对应关系，如果直接给与，
-   否则进行第二步。
-#. 本机想自己的dns server1 发送查询请求，ns1在收到客户端的请求后，会及时的查询自己缓存记录，如果有就
-   反馈给客户端，没有没有，进行第三步。
-#. ns1会主动想根域名服务器发起查询blog.linuxpanda.tech的请求，根只告诉.tech的相关信息，ns1去.tech的
-   机器查询，告诉linuxpanda这个域， 最终linuxpanda的dns服务来告诉ns1整整的blog主机所在的ip。
-#. ns1缓存下这个查询结果，然后反馈结果给客户端，客户端也会缓存一份。
+    1. 本机先查询本地的hosts文件是否有对应blog.display.tk这个主机和ip对应关系，如果直接给与，
+    否则进行第二步。
+    #. 本机想自己的dns server1 发送查询请求，ns1在收到客户端的请求后，会及时的查询自己缓存记录，如果有就
+    反馈给客户端，没有没有，进行第三步。
+    #. ns1会主动想根域名服务器发起查询blog.display.tk的请求，根只告诉.tech的相关信息，ns1去.tech的
+    机器查询，告诉linuxpanda这个域， 最终linuxpanda的dns服务来告诉ns1整整的blog主机所在的ip。
+    #. ns1缓存下这个查询结果，然后反馈结果给客户端，客户端也会缓存一份。
 
 查询方式： 
 

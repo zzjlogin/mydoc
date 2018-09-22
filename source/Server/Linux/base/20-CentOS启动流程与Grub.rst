@@ -25,7 +25,8 @@ centos7:  采用systemd方式，启动非常快
 
 init的主要级别
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     0  关机
     1  单用户
@@ -36,28 +37,26 @@ init的主要级别
     6  重启
 
 init的处理流程
-
-#. 获取默认level
-#. 使用/etc/rc.d/rc.sysinit初始化
-#. 读取对应levle下的服务 /etc/rc.d/rc{level}.d目录下的服务
-#. 配置ctrl + alt + del 功能件
-#. 配置不断电系统pf和pr两种机制
-#. 启动mintty6个终端
-#. 如果是5级别，就启动图形界面
+    1. 获取默认level
+    #. 使用/etc/rc.d/rc.sysinit初始化
+    #. 读取对应levle下的服务 /etc/rc.d/rc{level}.d目录下的服务
+    #. 配置ctrl + alt + del 功能件
+    #. 配置不断电系统pf和pr两种机制
+    #. 启动mintty6个终端
+    #. 如果是5级别，就启动图形界面
 
 sysinit的处理流程
-
-#. 设置主机名字
-#. 打印欢迎信息
-#. 激活selinux和udev
-#. 挂载/etc/fstab定义的文件系统
-#. 挂载swap设备
-#. 重新读写挂载根文件系统
-#. 设置系统时钟
-#. 根据/etc/sysctl.conf文件设置内核参数
-#. 激活lvm和raid 
-#. 加载额外的驱动设备
-#. 清理工作
+    1. 设置主机名字
+    #. 打印欢迎信息
+    #. 激活selinux和udev
+    #. 挂载/etc/fstab定义的文件系统
+    #. 挂载swap设备
+    #. 重新读写挂载根文件系统
+    #. 设置系统时钟
+    #. 根据/etc/sysctl.conf文件设置内核参数
+    #. 激活lvm和raid 
+    #. 加载额外的驱动设备
+    #. 清理工作
 
 
 grub 
@@ -81,6 +80,7 @@ grub.conf文件
 ----------------------------------------------------------------
 
 .. code-block:: bash
+    :linenos:
 
     [root@centos6 ~]$ cat /etc/grub.conf 
     default=0
@@ -91,7 +91,8 @@ grub.conf文件
 
 主要配置项 
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     (hd0,0)                     表示第一个磁盘的第一个分区
     default=0                   表示默认是的启动条目

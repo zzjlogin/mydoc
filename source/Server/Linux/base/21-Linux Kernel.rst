@@ -77,7 +77,8 @@ uname的使用
 
 修改内核参数
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     # 方法1 
     [root@centos6 ~]$ echo "1" > /proc/sys/net/ipv4/ip_forward
@@ -92,24 +93,22 @@ uname的使用
 编译内核
 ==========================================
 
-编译内核的情况： 
-
-- 有新的功能需求，如支持虚拟化
-- 原来的内核太过臃肿
-- 升级来提高稳定性
-- 个人定制或专业用途
-- 个人学习
+编译内核的情况：
+    - 有新的功能需求，如支持虚拟化
+    - 原来的内核太过臃肿
+    - 升级来提高稳定性
+    - 个人定制或专业用途
+    - 个人学习
 
 编译内核的步骤
-
-#. 查看硬件设备信息
-#. 开发环境和源码
-#. 下载并解压源码
-#. 复制系统的默认的编译配置
-#. make menconfig
-#. make -j 4 
-#. make modules_install 
-#. make install 
+    #. 查看硬件设备信息
+    #. 开发环境和源码
+    #. 下载并解压源码
+    #. 复制系统的默认的编译配置
+    #. make menconfig
+    #. make -j 4 
+    #. make modules_install 
+    #. make install 
 
 screen命令
 ==========================================
@@ -125,7 +124,8 @@ screen可以让执行的命令脱离终端和终端无关。
 
 使用样例：
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     # 创建一个test名字的
     [root@centos-155 ~]# screen -S test

@@ -8,6 +8,7 @@ Linux入门
 
 .. contents::
 
+
 计算机一般是计算机硬件和软件的综合体的统称。
 
 Linux系统安装
@@ -342,3 +343,8 @@ whatis
 
     #centos6:makewhat命令创建帮助手册和对应关键字的数据库
     #cnetos7:mandb
+
+
+
+
+

@@ -296,22 +296,22 @@ sticky只对文件有效
     
     实例：
 
-        .. code-block:: bash
-            :linenos:
+.. code-block:: bash
+    :linenos:
 
-            [root@CaseServer ~]# ll
-            total 4
-            -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
-            [root@CaseServer ~]# lsattr 
-            -------------e-- ./test.txt
-            [root@CaseServer ~]# chattr +a test.txt
-            [root@CaseServer ~]# lsattr 
-            -----a-------e-- ./test.txt
-            [root@CaseServer ~]# ll
-            total 4
-            -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
-            [root@CaseServer ~]# rm -rf test.txt
-            rm: cannot remove ‘test.txt’: Operation not permitted
+    [root@CaseServer ~]# ll
+    total 4
+    -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
+    [root@CaseServer ~]# lsattr 
+    -------------e-- ./test.txt
+    [root@CaseServer ~]# chattr +a test.txt
+    [root@CaseServer ~]# lsattr 
+    -----a-------e-- ./test.txt
+    [root@CaseServer ~]# ll
+    total 4
+    -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
+    [root@CaseServer ~]# rm -rf test.txt
+    rm: cannot remove ‘test.txt’: Operation not permitted
 
 2. 不可更改不可删除锁定
 
@@ -320,21 +320,21 @@ sticky只对文件有效
     
     实例：
 
-        .. code-block:: bash
-            :linenos:
+.. code-block:: bash
+    :linenos:
 
-            [root@CaseServer ~]# ll
-            total 4
-            -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
-            [root@CaseServer ~]# lsattr 
-            -------------e-- ./test.txt
-            [root@CaseServer ~]# chattr +i test.txt
-            [root@CaseServer ~]# lsattr 
-            ----i--------e-- ./test.txt
-            [root@CaseServer ~]# echo "test" >> test.txt
-            -bash: test.txt: Permission denied
-            [root@CaseServer ~]# mv test.txt abc.txt
-            mv: cannot move ‘test.txt’ to ‘abc.txt’: Operation not permitted
-            [root@CaseServer ~]# chattr -i test.txt 
-            [root@CaseServer ~]# lsattr 
-            -------------e-- ./test.txt
+    [root@CaseServer ~]# ll
+    total 4
+    -rw-r--r-- 1 root root 23 Nov 25 17:27 test.txt
+    [root@CaseServer ~]# lsattr 
+    -------------e-- ./test.txt
+    [root@CaseServer ~]# chattr +i test.txt
+    [root@CaseServer ~]# lsattr 
+    ----i--------e-- ./test.txt
+    [root@CaseServer ~]# echo "test" >> test.txt
+    -bash: test.txt: Permission denied
+    [root@CaseServer ~]# mv test.txt abc.txt
+    mv: cannot move ‘test.txt’ to ‘abc.txt’: Operation not permitted
+    [root@CaseServer ~]# chattr -i test.txt 
+    [root@CaseServer ~]# lsattr 
+    -------------e-- ./test.txt

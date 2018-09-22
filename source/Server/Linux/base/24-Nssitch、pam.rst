@@ -18,7 +18,8 @@ nss的配置文件
 
 nss的配置文件是/etc/nsswitch.conf，格式比较简单。
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     格式： 
         解析库： 解析库类型
@@ -29,48 +30,47 @@ nss的配置文件是/etc/nsswitch.conf，格式比较简单。
         # 主机需要去文件找，没有再去dns找
         hosts: files dns
 
-解析库： 
-
-- files
-- ethers
-- group
-- hosts
-- netgroup
-- networks
-- passwd 
-- protocols
-- rpm 
-- services 
-- shadow 
+解析库：
+    - files
+    - ethers
+    - group
+    - hosts
+    - netgroup
+    - networks
+    - passwd 
+    - protocols
+    - rpm 
+    - services 
+    - shadow 
 
 解析库类型：
+    - files
+    - dns
+    - compat
+    - dbm 
+    - hesiod 
+    - winbind
+    - nis
+    - nisplus
 
-- files
-- dns
-- compat
-- dbm 
-- hesiod 
-- winbind
-- nis
-- nisplus
-
-查询结果： 
-
-- SUCCESS  成功
-- NOTFOUND 没有找到
-- UNAVIL   服务不可用
-- TRYAGAIN 临时失败
+查询结果：
+    - SUCCESS  成功
+    - NOTFOUND 没有找到
+    - UNAVIL   服务不可用
+    - TRYAGAIN 临时失败
 
 默认找到一个成功就返回了，后续的就不判断了，如果出现没有找到就继续找下一个配置项，我们可以修改默认配置。
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     # 这个含义就是如果文件没有找到的话，后续的工作（去dns查找）就不做了。
     hosts: files[NOTFOUND=return] dns
  
 其他命令
 
-.. code-block:: bash  
+.. code-block:: bash
+    :linenos:
 
     [root@centos-155 ~]# getent shadow root 
     root:$6$Y1.nEGyQRYQrX.8l$R6QPw5uthWgpv6RlY.9YfEVv5TrBwbNjWX7Di2f4kKbFsgP1W0T2Z4qyVk.N3XuSOTxp01iEvQC0y9GkDh3sB.::0:99999:7:::
@@ -87,7 +87,8 @@ pam的主配置文件是/etc/pam.conf。次级配置目录有/etc/pam.d/目录�
 
 配置文件格式
 
-.. code-block:: text 
+.. code-block:: text
+    :linenos:
 
     type control  module-path module-arguments
 

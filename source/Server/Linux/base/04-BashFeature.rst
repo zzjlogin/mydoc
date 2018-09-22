@@ -340,58 +340,57 @@ uniq
 ===============================================
 
 shell脚本的组成部分
------------------------------------------------
-
-- 关键字、控制语句:if...else...，for,do...done
-- shell命令,例如:echo，exit等
-- 文本处理命令,例如:awk,grep,cut,sed等
-- 函数
+    - 关键字、控制语句:if...else...，for,do...done
+    - shell命令,例如:echo，exit等
+    - 文本处理命令,例如:awk,grep,cut,sed等
+    - 函数
 
 编程变量种类
------------------------------------------------
-
-- 本地变量： 仅仅在当前的shell生效
-- 环境变量： 在当前和子shell生效
-- 局部变量： shell进程某代码片段
-- 位置变量： $1,$2来表示，用与获取脚本接受的参数
-- 特殊变量： 一些特殊变量
+    - 本地变量： 仅仅在当前的shell生效
+    - 环境变量： 在当前和子shell生效
+    - 局部变量： shell进程某代码片段
+    - 位置变量： $1,$2来表示，用与获取脚本接受的参数
+    - 特殊变量： 一些特殊变量
 
 特殊变量如下
------------------------------------------------
+    - $?:上一个命令的执行返回码
+    - $#:参数个数
+    - $*:参数
+    - $0:命令本身
+    - $@:所有参数
 
-- $?:上一个命令的执行返回码
-- $#:参数个数
-- $*:参数
-- $0:命令本身
-- $@:所有参数
+本地变量：
+    name='value'
 
-本地变量： name='value'
+环境变量：
+    export name=value,declare -x name=value
 
-环境变量：export name=value,declare -x name=value
-
-查看环境变量： env,export,printenv变量
+查看环境变量：
+    env,export,printenv变量
 
 bash的配置文件
 -----------------------------------------------
 
-- 全局配置文件
+全局配置文件
     - /etc/profile
     - /etc/profile.d/\*.sh
-- 个人的配置文件
+个人的配置文件
     - ~/.bash_profile
     - ~/.bashrc
 
-profile:用于定义环境变量和脚本
+profile:
+    用于定义环境变量和脚本
 
-bashrc：用于定义命令别名和本地变量
+bashrc：
+    用于定义命令别名和本地变量
 
 算数运算
-----------------------------------------------------
+    -  let a=expr
+    -  $[expr]
+    -  $((expr))
+    -  expr a1 op a2
 
--  let a=expr
--  $[expr]
--  $((expr))
--  expr a1 op a2
+运算符使用举例:
 
 .. code-block:: bash
     :linenos:
@@ -407,11 +406,9 @@ bashrc：用于定义命令别名和本地变量
     30
 
 条件测试
-----------------------------------------------------
-
-- test expr
-- [ expr ]
-- [[ expr ]]
+    - test expr
+    - [ expr ]
+    - [[ expr ]]
 
 .. literalinclude:: /demo/program/shell/shell-demo.sh
     :linenos:
@@ -419,8 +416,7 @@ bashrc：用于定义命令别名和本地变量
     :language: bash
 
 语句控制
-----------------------------------------------------
-if 
+    if 
 
 .. code-block:: bash
     :linenos:
@@ -428,6 +424,7 @@ if
     if expr ; then 
         sate
     fi 
+
 
 for 
 
