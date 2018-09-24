@@ -167,11 +167,12 @@ nfs安装配置
 
 绝对路径法
 
+
+
 .. code-block:: bash
     :linenos:
 
     [root@centos-152 ~]# vim /etc/auto.master
-    # 添加一行
     /-         /etc/auto.test2
     [root@centos-152 ~]# vim /etc/auto.test2
     [root@centos-152 ~]# cat /etc/auto.test2
@@ -180,14 +181,16 @@ nfs安装配置
     [root@centos-152 ~]# ll /data/nfs2
     total 0
 
+.. tip:: 添加一行 ``/-         /etc/auto.test2``
 
 nfs实现伪根挂载
 ==============================================================----------
 
+1. 创建分散的文件夹和文件
+
 .. code-block:: bash
     :linenos:
 
-    # 创建分散的文件夹和文件
     [root@centos-155 ~]# mkdir /test1/test1 -pv 
     [root@centos-155 ~]# mkdir /test2/test2 -pv 
     [root@centos-155 ~]# mkdir /test3/test3 -pv 
@@ -196,7 +199,11 @@ nfs实现伪根挂载
     [root@centos-155 nfsroot]# touch /test2/test2/test2
     [root@centos-155 nfsroot]# touch /test3/test3/test3
 
-    # 整合到一块
+2. 整合到一块
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# mkdir /nfsroot
     [root@centos-155 ~]# cd /nfsroot/
     [root@centos-155 nfsroot]# mkdir test1 test2 test3
@@ -204,7 +211,11 @@ nfs实现伪根挂载
     [root@centos-155 nfsroot]# mount /test2/test2 test2 -B
     [root@centos-155 nfsroot]# mount /test3/test3 test3 -B
 
-    # 导出配置
+3. 导出配置
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 nfsroot]# vim /etc/exports
     [root@centos-155 nfsroot]# cat /etc/exports
     /nfsroot    *(fsid=0,ro,crossmnt)
@@ -213,7 +224,11 @@ nfs实现伪根挂载
     /test2/test2 *(rw)
     /test3/test3 *(rw)
 
-    # 导出
+4. 导出
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 nfsroot]# exportfs -r
     [root@centos-155 nfsroot]# exportfs -v 
     /nfsroot      	<world>(ro,sync,wdelay,hide,crossmnt,no_subtree_check,fsid=0,sec=sys,secure,root_squash,no_all_squash)
@@ -221,7 +236,10 @@ nfs实现伪根挂载
     /test2/test2  	<world>(rw,sync,wdelay,hide,no_subtree_check,sec=sys,secure,root_squash,no_all_squash)
     /test3/test3  	<world>(rw,sync,wdelay,hide,no_subtree_check,sec=sys,secure,root_squash,no_all_squash)
 
-    # 另外一个机器测试
+5. 另外一个机器测试
+
+.. code-block:: bash
+    :linenos:
 
     [root@centos-152 ~]# mount 192.168.46.155:/ /mnt/nfsroot
     [root@centos-152 ~]# tree /mnt/nfsroot

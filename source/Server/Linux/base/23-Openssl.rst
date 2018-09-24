@@ -257,17 +257,28 @@ openssl是ssl的一个开源项目，由三部分组成。
 数字证书的获取
 ====================================================
 
+生成证书
+---------------------------------------------------
+
+1. 生成自己的私钥
 
 .. code-block:: bash
     :linenos:
 
-    # 1 生成自己的私钥
     [root@centos-155 ~]# (umask 066; openssl genrsa -out /etc/pki/CA/private/cakey.pem 2048)
 
-    # 2 给自己颁发证书
+2. 给自己颁发证书
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# openssl req -new -x509 -key /etc/pki/CA/private/cakey.pem -out /etc/pki/CA/cacert.pem -days 3650
 
-    # 3 查看辅助文件
+3. 查看辅助文件
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# cat /etc/pki/tls/openssl.cnf  |grep dir
     dir		= /etc/pki/CA		# Where everything is kept
     certs		= $dir/certs		# Where the issued certs are kept
@@ -286,34 +297,58 @@ openssl是ssl的一个开源项目，由三部分组成。
     certs		= $dir/cacert.pem	# Certificate chain to include in reply
     signer_key	= $dir/private/tsakey.pem # The TSA private key (optional)
 
-    # 4 创建辅助文件
-    [root@centos-155 ~]# touch /etc/pki/CA/index.txt 
-    [root@centos-155 ~]# echo "01" >> /etc/pki/CA/serial
-
-
-    # 5 节点生成自己的证书请求
-    [root@centos-155 ~]# (umask 066; openssl genrsa -out test 1024)
-    [root@centos-155 ~]# openssl req -new -days 365 -key test -out test.csr
-
-    # 6 ca颁发证书
-    [root@centos-155 ~]# openssl ca -in test.csr -out /etc/pki/CA/certs/test.pem -days 300
-
-
-吊销证书
+4. 创建辅助文件
 
 .. code-block:: bash
     :linenos:
 
-    # 查看吊销证书编号
+    [root@centos-155 ~]# touch /etc/pki/CA/index.txt 
+    [root@centos-155 ~]# echo "01" >> /etc/pki/CA/serial
+
+
+5. 节点生成自己的证书请求
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-155 ~]# (umask 066; openssl genrsa -out test 1024)
+    [root@centos-155 ~]# openssl req -new -days 365 -key test -out test.csr
+
+6. ca颁发证书
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-155 ~]# openssl ca -in test.csr -out /etc/pki/CA/certs/test.pem -days 300
+
+
+吊销证书
+---------------------------------------------------
+
+
+1. 查看吊销证书编号
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# openssl x509 -in /etc/pki/CA/cacert.pem  -noout  -serial  -subject 
     serial=986C2523B50ABD8C
     subject= /C=cn/ST=henan/L=nanyang/O=display/OU=opt/CN=ca.display.tk
 
-    # 吊销证书
+2. 吊销证书
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# openssl ca -revoke /etc/pki/CA/cacert.pem 
-    # 生成吊销证书编号
+3. 生成吊销证书编号
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos-155 ~]# echo 01 >> /etc/pki/CA/crlnumber
-    # 更新证书吊销列表
+
+更新证书吊销列表
 
 
 

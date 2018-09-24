@@ -18,17 +18,16 @@ nss的配置文件
 
 nss的配置文件是/etc/nsswitch.conf，格式比较简单。
 
-.. code-block:: text
-    :linenos:
 
-    格式： 
-        解析库： 解析库类型
 
-    样例： 
-        # 密码通过文件去验证
-        passwd: files
-        # 主机需要去文件找，没有再去dns找
-        hosts: files dns
+格式： 
+    解析库： 解析库类型
+
+样例： 
+    - 密码通过文件去验证
+    passwd: files
+    - 主机需要去文件找，没有再去dns找
+    hosts: files dns
 
 解析库：
     - files

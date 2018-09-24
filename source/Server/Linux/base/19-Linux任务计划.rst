@@ -1,3 +1,4 @@
+.. _linux-base-timedtask:
 
 =======================================================
 Linux任务计划
@@ -9,9 +10,8 @@ Linux任务计划
 
 
 计划任务的分类：
-
-- 一次性的
-- 周期性的
+    - 一次性的
+    - 周期性的
 
 at
 =======================================================
@@ -45,17 +45,42 @@ time的几种格式
     at> <EOT>
     job 1 at Sun Feb 11 10:30:00 2018
     Can't open /var/run/atd.pid to signal atd. No atd running?
-    # 上面的这一句提示我们没有开启atd服务的
+
+上面的这一句提示我们没有开启atd服务的
+
+.. code-block:: text
+    :linenos:
+
     [root@centos-155 ~]# systemctl start atd 
     [root@centos-155 ~]# systemctl enable atd 
-    # 查看
+
+查看
+
+.. code-block:: text
+    :linenos:
+
     [root@centos-155 ~]# at -l
     1	Sun Feb 11 10:30:00 2018 a root
-    # 查看job1的详细信息
+
+查看job1的详细信息
+
+.. code-block:: text
+    :linenos:
+
     [root@centos-155 ~]# at -c 1
-    # 删除job1
-    [root@centos-155 ~]# at -d 1 
-    # 再次查看
+
+删除job1
+
+.. code-block:: text
+    :linenos:
+
+    [root@centos-155 ~]# at -d 1
+
+再次查看
+
+.. code-block:: text
+    :linenos:
+
     [root@centos-155 ~]# at -l
 
 .. note:: at的命令输入需要ctrl+d结束。
@@ -74,7 +99,8 @@ cron任务分为2种
 
 系统配置文件格式
 
-.. code-block:: text 
+.. code-block:: bash
+    :linenos:
 
     [root@centos-155 ~]# cat /etc/crontab 
     SHELL=/bin/bash

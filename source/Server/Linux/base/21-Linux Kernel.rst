@@ -1,3 +1,4 @@
+.. _linux-base-kernel:
 
 ==========================================
 Linux Kernel
@@ -14,7 +15,8 @@ linux系统是单内核，模块化体系。
 uname的使用
 ==========================================
 
-.. code-block:: bash 
+.. code-block:: bash
+    :linenos:
 
     [root@centos6 ~]$ uname -a 
     Linux centos6.zzjlogin 2.6.32-696.el6.x86_64 #1 SMP Tue Mar 21 19:29:05 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
@@ -24,7 +26,7 @@ uname的使用
     centos6.zzjlogin
 
 内核模块管理
--------------------------------------------------
+==========================================
 
 查看模块
 -------------------------------------------------
@@ -77,15 +79,26 @@ uname的使用
 
 修改内核参数
 
+1. 方法1
+
 .. code-block:: bash
     :linenos:
 
-    # 方法1 
     [root@centos6 ~]$ echo "1" > /proc/sys/net/ipv4/ip_forward
-    # 方法2 
+    
+2. 方法2
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos6 ~]$ sysctl -w  net.ipv4.ip_forward=1
     net.ipv4.ip_forward = 1
-    # 方法3 
+
+3. 方法3
+
+.. code-block:: bash
+    :linenos:
+
     [root@centos6 ~]$ vim /etc/sysctl.conf 
     [root@centos6 ~]$ sysctl -p 
 
@@ -101,7 +114,7 @@ uname的使用
     - 个人学习
 
 编译内核的步骤
-    #. 查看硬件设备信息
+    1. 查看硬件设备信息
     #. 开发环境和源码
     #. 下载并解压源码
     #. 复制系统的默认的编译配置
