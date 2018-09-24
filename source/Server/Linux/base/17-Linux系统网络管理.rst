@@ -193,7 +193,7 @@ nameserver用于设置dns服务器。
 
 修改主机名方法比较多
 
-#. hostname
+1. hostname
 #. echo "you_host_name" >> /proc/sys/kernel/hostname
 #. 编辑/etc/sysconfig/network和/etc/hosts
 #. hostnamectl命令的（centos7有，centos6没有此命令）
@@ -241,6 +241,8 @@ netstat
     tcp6       0      0 :::3306                 :::*                    LISTEN      1132/mysqld    
 
 .. note:: nestat命令效率低下，推荐使用ss命令
+
+.. attention:: netstat和ss效率比较地下的原因可以参考: :ref:`linux-faq-compare-netstat-ss`
 
 ss 
 -----------------------------------------------------------
