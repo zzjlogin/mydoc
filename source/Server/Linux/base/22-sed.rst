@@ -36,6 +36,12 @@ sed [选项]... {脚本(如果没有其他脚本)} [输入文件]...
 命令参数
 -------------------------------------------------
 
+.. attention::
+    重点常用参数:
+        - ``-n`` 结合子命令 ``p``
+        - ``-i`` 用来处理文本内容替换。用这个参数才能替换文件中指定内容并写入文件。
+
+
 1. 参数
 
 ========    =====================================================================
@@ -108,10 +114,115 @@ W        file写并追加模板块的第一行到file末尾。
 #        把注释扩展到下一个换行符以前。
 ======== ==================================================================================================================== 
 
-3. 
+3. 替换标记
 
+=========== ==================================================
+g           表示行内全面替换。
+----------- --------------------------------------------------
+p           表示打印行。
+----------- --------------------------------------------------
+w           表示把行写入一个文件。
+----------- --------------------------------------------------
+x           表示互换模板块中的文本和缓冲区中的文本。
+----------- --------------------------------------------------
+y           表示把一个字符翻译为另外的字符（但是不用于正则表达式）
+----------- --------------------------------------------------
+\1          子串匹配标记
+----------- --------------------------------------------------
+&           已匹配字符串标记
+=========== ==================================================
 
 
 sed实例
 ===============================================
+
+1. 参数 ``-n``
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# echo -e 'hello world\nnihao' | sed 's/hello/A/'    
+    A world
+    nihao
+    [root@zzjlogin ~]# echo -e 'hello world\nnihao' | sed -n 's/hello/A/' 
+    [root@zzjlogin ~]# echo -e 'hello world\nnihao' | sed -n 's/hello/A/p'
+    A world
+
+.. tip::
+    参数 ``-n`` 是只打印匹配的行，后面是替换操作，所以 ``s`` 和 ``p`` 是替换命令，如果没有替换后的打印命令 ``p``也是不能打印的。
+
+2. 参数 ``-e``
+
+使用参数 ``-e`` 可以在多次处理，而不用每次处理结果用管道连接后再处理。
+
+参考下面实例：
+
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# echo -e 'hello world' | sed -e 's/hello/A/' -e 's/world/B/'
+    A B
+    [root@zzjlogin ~]# echo -e 'hello world' | sed 's/hello/A/;s/world/B/'
+    A B
+
+
+3. 参数 ``-i``
+
+sed默认会把输入行读取到模式空间，简单理解就是一个内存缓冲区，sed子命令处理的内容是模式空间中的内容，
+而非直接处理文件内容。因此在sed修改模式空间内容之后，并非直接写入修改输入文件，而是打印输出到标准输出。
+如果需要修改输入文件，那么就可以指定-i选项。
+
+.. attention::
+    参数 ``-i`` 替换文件内容时，替换标记命令的 ``p`` 不可以一起用，否则会出现替换文件中有两行。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat test.txt
+    hello world
+    [root@zzjlogin ~]# sed 's/hello/A/' test.txt
+    A world
+    [root@zzjlogin ~]# cat test.txt
+    hello world
+    [root@zzjlogin ~]# sed -i 's/hello/A/' test.txt
+    [root@zzjlogin ~]# cat test.txt                
+    A world
+
+.. tip::
+    默认匹配替换每行第一次匹配的地方，如果把文件中所有匹配的都替换，需要用替换标记命令 ``g``
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat test.txt                 
+    hello world
+    hello world
+    hello world
+    hello world hello
+
+    [root@zzjlogin ~]# sed -i 's/hello/A/' test.txt                 
+    [root@zzjlogin ~]# cat test.txt                
+    A world
+    A world
+    A world
+    A world hello
+
+    [root@zzjlogin ~]# sed -i 's/A/hello/' test.txt                
+    [root@zzjlogin ~]# cat test.txt                                
+    hello world
+    hello world
+    hello world
+    hello world hello
+
+    [root@zzjlogin ~]# sed -i 's/hello/A/g' test.txt                                 
+    [root@zzjlogin ~]# cat test.txt                 
+    A world
+    A world
+    A world
+    A world A
+
+4. 参数 ``-r``
+
+sed命令的匹配模式支持正则表达式的，默认只能支持基本正则表达式，如果需要支持扩展正则表达式，那么需要添加-r选项。
 
