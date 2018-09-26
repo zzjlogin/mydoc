@@ -16,7 +16,8 @@ basename
 命令格式
 ===================
 
-
+命令格式:
+    basename 名称 [后缀]
 
 
 .. _basename-user:
@@ -24,7 +25,11 @@ basename
 所属用户
 ===================
 
+命令路径:
+    /bin/basename
 
+需要权限:
+    普通用户权限即可执行
 
 
 .. _basename-guid:
@@ -32,7 +37,7 @@ basename
 使用指导
 ===================
 
-
+从文件名剥离目录和后缀。返回文件名。
 
 
 .. _basename-args:
@@ -40,14 +45,28 @@ basename
 参数
 ===================
 
-
+=============   =====================
+**参数**               **作用**
+-------------   ---------------------
+--help          显示帮助信息
+-------------   ---------------------
+--version       显示软件版本信息
+=============   =====================
 
 .. _basename-instance:
 
 参考实例
 ===================
 
+.. code-block:: bash
+    :linenos:
 
+    [root@zzjlogin ~]# basename /usr/bin/sort
+    sort
+    [root@zzjlogin ~]# basename include/stdio.h .h
+    stdio
+    [root@zzjlogin ~]# basename include/stdio.h
+    stdio.h
 
 .. _basename-relevant:
 

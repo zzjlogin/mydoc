@@ -246,45 +246,69 @@ sed命令的匹配模式支持正则表达式的，默认只能支持基本正�
 
 将第4行中hello字符串替换为A，其它行如果有hello也不会被替换。
 
-sed –n '4s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed –n '4s/hello/A/' message
 
 显示末行：
 
 $符号表示最后一行，和正则中的$符号类似，但是第1行不用^表示，直接1就行了。
 
-sed –n '$s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed –n '$s/hello/A/' message
 
 2. 显示指定区间的行内容
 
 将第2-4行中hello字符串替换为A，其它行如果有hello也不会被替换。
 
-sed –n '2,4s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed –n '2,4s/hello/A/' message
 
 从第2行开始，再接着往下数4行，也就是2-6行，这些行会把hello字符替换为A。
 
-sed –n '2,+4s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed –n '2,+4s/hello/A/' message
 
 第4行开始，到第6行。解释6的由来，"4,~3"表示从4行开始到下一个3的倍数，这里从4开始算，那就是6了，当然9就不是了，因为是要求3的第一个超过前边数字4的倍数，感觉这种适用场景不会太多。
 
-sed –n '4,~3s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+    
+    sed –n '4,~3s/hello/A/' message
 
 3. 按照等差数列取行
 
 从第4行开始，每隔3行就把hello替换为A。比如从4行开始，7行，10行等依次+3行。这个比较常用，比如3替换为2的时候，也就是每隔2行的步调，可以实现奇数和偶数行的操作。
 
-sed –n '4~3s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed –n '4~3s/hello/A/' message
 
 4. 选择去除指定行的其余行
 
 !符号表示取反，该命令是将除了第1行，其它行hello替换为A，上述定址方式也可以使用！符号。
 
-sed -n '1!s/hello/A/' message
+.. code-block:: bash
+    :linenos:
+
+    sed -n '1!s/hello/A/' message
 
 5. 空行操作
 
 删除空行
 
-sed -n '/^$/d' message
+.. code-block:: bash
+    :linenos:
+
+    sed -n '/^$/d' message
 
 .. note:: 上面命令中 ``d`` 是替换标识命令，即删除操作。
 
@@ -298,11 +322,17 @@ sed -n '/^$/d' message
 
 将message文件中每一行下边都插入添加一行内容是A。
 
-sed 'a A' message
+.. code-block:: bash
+    :linenos:
+
+    sed 'a A' message
 
 将message文件中1-2行的下边插入添加一行内容是A
 
-sed '1,2a A' message
+.. code-block:: bash
+    :linenos:
+
+    sed '1,2a A' message
 
 2. 子命令 ``i``
 
@@ -310,11 +340,17 @@ sed '1,2a A' message
 
 将message文件中每一行上边都插入添加一行内容是A。
 
-sed 'i A' message
+.. code-block:: bash
+    :linenos:
+    
+    sed 'i A' message
 
 将message文件中1-2行的上边分别添加3行，3行内容分别是A、B、C，这里使用了\n，插入多行内容都可以按照这种方式来实现。
 
-sed '1,2i A\nB\nC' message
+.. code-block:: bash
+    :linenos:
+
+    sed '1,2i A\nB\nC' message
 
 3. 子命令 ``c``
 
@@ -322,11 +358,17 @@ sed '1,2i A\nB\nC' message
 
 将message文件中所有的行内容都分别替换为A行内容。
 
-sed 'c A' message
+.. code-block:: bash
+    :linenos:
+
+    sed 'c A' message
 
 将message文件中1-2行的内容替换为A，注意这里说的是将1-2行所有的内容只替换为一个A内容，也就是1-2行内容编程了一行，定址如果连续就是这种情况。
 
-sed '1,2c A' message
+.. code-block:: bash
+    :linenos:
+
+    sed '1,2c A' message
 
 4. 子命令 ``d``
 
@@ -334,11 +376,17 @@ sed '1,2c A' message
 
 将message所有行全部删除
 
-sed 'd' message
+.. code-block:: bash
+    :linenos:
+
+    sed 'd' message
 
 将message文件中1-3行内容删除。
 
-sed '1,3d' message
+.. code-block:: bash
+    :linenos:
+
+    sed '1,3d' message
 
 5. 子命令 ``y``
 
@@ -346,7 +394,10 @@ sed '1,3d' message
 
 把message中所有a字符替换为A符号，所有b字符替换为B符号。
 
-sed 'y/ab/AB/' message
+.. code-block:: bash
+    :linenos:
+
+    sed 'y/ab/AB/' message
 
 6. 子命令 ``=``
 
@@ -354,12 +405,15 @@ sed 'y/ab/AB/' message
 
 将指定行的上边显示行号。
 
-sed '1,2=' message
+.. code-block:: bash
+    :linenos:
 
-1
-nihao
-2
-hello world
+    sed '1,2=' message
+
+    1
+    nihao
+    2
+    hello world
 
 
 7. 子命令 ``r``
@@ -368,7 +422,10 @@ hello world
 
 将a.txt文件内容读取并插入到message文件第2行的下边。
 
-sed '2r a.txt' message
+.. code-block:: bash
+    :linenos:
+
+    sed '2r a.txt' message
 
 8. 子命令 ``s``
 
@@ -392,10 +449,40 @@ flags
 
 在匹配结果前后分别加了111、222。
 
-cat message
-hello 123 world
+.. code-block:: bash
+    :linenos:
 
-sed -r 's/([a-z]+)( [0-9]+ )([a-z]+)/111&222/' message
+    cat message
+    hello 123 world
+
+    sed -r 's/([a-z]+)( [0-9]+ )([a-z]+)/111&222/' message
+
+
+9. 其他子命令
+
+把message文件中内容的每行第一个字符i替换为A，然后把修改内容另存为b.txt文件。
+
+
+.. code-block:: bash
+    :linenos:
+
+    sed -n 's/i/A/w b.txt' message
+
+把message文件中每行的第2个i字符替换为A。
+
+.. code-block:: bash
+    :linenos:
+
+    sed 's/i/A/2' message
+
+在message文件中每行的首尾分别加上111、222。
+
+.. code-block:: bash
+    :linenos:
+
+    sed -r 's/.*/111&222/' message
+
+
 
 替换标识命令实例
 -----------------------------------------------
@@ -405,16 +492,42 @@ sed -r 's/([a-z]+)( [0-9]+ )([a-z]+)/111&222/' message
 
 把文件从第22行到第33行复制到56行后面。
 
-sed '22h;23,33H;56G' /etc/passwd
+.. code-block:: bash
+    :linenos:
+
+    sed '22h;23,33H;56G' /etc/passwd
 
 把文件从第22行到第33行移动到第56行后面。
 
-sed '22{h;d};23,33{H;d};56g' /etc/passwd
+.. code-block:: bash
+    :linenos:
+
+    sed '22{h;d};23,33{H;d};56g' /etc/passwd
 
 只显示每行的第一个单词。
 
-sed -r 's/([a-Z]+)([^a-Z]+)(.*)/\1/' /etc/passwd
+.. code-block:: bash
+    :linenos:
+
+    sed -r 's/([a-Z]+)([^a-Z]+)(.*)/\1/' /etc/passwd
 
 删除第5行。
 
-sed '4{n;d}' message
+.. code-block:: bash
+    :linenos:
+
+    sed '4{n;d}' message
+
+交换每行的第一个单词和最后一个单词。
+
+思路：
+    文件 ``/etc/passwd`` 的列数是固定的。所以可以用分组，然后这些分组后向引用。这样就达到了要求的目的。
+
+.. code-block:: bash
+    :linenos:
+
+    sed -r 's/([a-Z]+)([^a-Z]+)(.*)([^a-Z]+)([a-Z]+)([^a-Z]*$)/\5\2\3\4\1\6/' /etc/passwd
+
+
+
+
