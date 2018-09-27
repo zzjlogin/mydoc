@@ -58,7 +58,12 @@ CentOS6.6官方源直接安装会包错，具体错误信息如下:
 
 有上面报错，所以有下面源的转换:
 
-[root@zzjlogin ~]# rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+[root@zzjlogin ~]# rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+
+
+.. attention::
+    ``http://mirror.webtatic.com/yum/el6/latest.rpm`` 链接也可是 ``https`` ，但是如果rpm安装使用https则会安装失败，因为ca证书问题。
+
 
 [root@zzjlogin ~]# yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
 
@@ -66,6 +71,9 @@ CentOS6.6官方源直接安装会包错，具体错误信息如下:
     注意安装php56w-mysql.x86_64 0:5.6.37-1.w6 ，否则会出现php链接mysql时失败。
 
 
+.. tip::
+    yum安装报错可以参考：
+        :ref:`linux-faq-yuminstallerr`
 
 [root@zzjlogin zabbix-3.4.13]# yum install httpd libxml2-devel net-snmp-devel libcurl-devel -y
 
