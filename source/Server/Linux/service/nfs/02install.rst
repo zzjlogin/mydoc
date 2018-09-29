@@ -9,101 +9,182 @@ nfs安装配置
 .. contents::
 
 
+环境
+==============================================================
+
+系统：
+    CentOS6.7 64位
+
+nfs软件：
+    - 服务端软件：
+        1. nfs-utils
+        #. portmap
+        #. rpcbind
+    - 客户端软件：
+        1. rpcbind
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# hostname
+    Server
+    [root@Server ~]# uname -a
+    Linux Server 2.6.32-573.el6.x86_64 #1 SMP Thu Jul 23 15:44:03 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+    [root@Server ~]# uname -r
+    2.6.32-573.el6.x86_64
+    [root@Server ~]# cat /proc/version
+    Linux version 2.6.32-573.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-16) (GCC) ) #1 SMP Thu Jul 23 15:44:03 UTC 2015
 
 
-安装nfs工具
+
+安装nfs软件包
 ==============================================================
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-7 ~]$yum install nfs-utils
+    [root@Server ~]# yum install nfs-utils portmap rpcbind -y
 
-    [root@centos-7 ~]# rpm -ql nfs-utils |grep bin 
+    [root@Server ~]# rpm -qa nfs-utils portmap rpcbind            
+    rpcbind-0.2.0-16.el6.x86_64
+    nfs-utils-1.2.3-78.el6.x86_64
 
-    [root@centos-7 ~]# rpm -ql nfs-utils |grep systemd
+.. tip::
+    yum安装nfs也可以通过软件包组安装，通过 ``yum grouplist``查看nfs的软件包组。
+    然后通过命令 ``yum groupinstall "NFS file server"``
 
 
 启动服务
-==============================================================------
+==============================================================
+
+
+查看启动服务前的监听服务：
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-155 yum.repos.d]# rpcinfo
-    program version netid     address                service    owner
-        100000    4    tcp6      ::.0.111               portmapper superuser
-        100000    3    tcp6      ::.0.111               portmapper superuser
-        100000    4    udp6      ::.0.111               portmapper superuser
-        100000    3    udp6      ::.0.111               portmapper superuser
-        100000    4    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    3    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    2    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    4    udp       0.0.0.0.0.111          portmapper superuser
-        100000    3    udp       0.0.0.0.0.111          portmapper superuser
-        100000    2    udp       0.0.0.0.0.111          portmapper superuser
-        100000    4    local     /var/run/rpcbind.sock  portmapper superuser
-        100000    3    local     /var/run/rpcbind.sock  portmapper superuser
+    [root@Server ~]# ss -lntu
+    Netid  State      Recv-Q Send-Q     Local Address:Port       Peer Address:Port 
+    udp    UNCONN     0      0                      *:68                    *:*     
+    tcp    LISTEN     0      128                   :::22                   :::*     
+    tcp    LISTEN     0      128                    *:22                    *:*     
 
-    [root@centos-155 yum.repos.d]# systemctl start nfs-server 
-    [root@centos-155 yum.repos.d]# rpcinfo
-    program version netid     address                service    owner
-        100000    4    tcp6      ::.0.111               portmapper superuser
-        100000    3    tcp6      ::.0.111               portmapper superuser
-        100000    4    udp6      ::.0.111               portmapper superuser
-        100000    3    udp6      ::.0.111               portmapper superuser
-        100000    4    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    3    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    2    tcp       0.0.0.0.0.111          portmapper superuser
-        100000    4    udp       0.0.0.0.0.111          portmapper superuser
-        100000    3    udp       0.0.0.0.0.111          portmapper superuser
-        100000    2    udp       0.0.0.0.0.111          portmapper superuser
-        100000    4    local     /var/run/rpcbind.sock  portmapper superuser
-        100000    3    local     /var/run/rpcbind.sock  portmapper superuser
-        100024    1    udp       0.0.0.0.224.237        status     29
-        100024    1    tcp       0.0.0.0.140.148        status     29
-        100024    1    udp6      ::.146.29              status     29
-        100024    1    tcp6      ::.188.103             status     29
-        100005    1    udp       0.0.0.0.78.80          mountd     superuser
-        100005    1    tcp       0.0.0.0.78.80          mountd     superuser
-        100005    1    udp6      ::.78.80               mountd     superuser
-        100005    1    tcp6      ::.78.80               mountd     superuser
-        100005    2    udp       0.0.0.0.78.80          mountd     superuser
-        100005    2    tcp       0.0.0.0.78.80          mountd     superuser
-        100005    2    udp6      ::.78.80               mountd     superuser
-        100005    2    tcp6      ::.78.80               mountd     superuser
-        100005    3    udp       0.0.0.0.78.80          mountd     superuser
-        100005    3    tcp       0.0.0.0.78.80          mountd     superuser
-        100005    3    udp6      ::.78.80               mountd     superuser
-        100005    3    tcp6      ::.78.80               mountd     superuser
-        100003    3    tcp       0.0.0.0.8.1            nfs        superuser
-        100003    4    tcp       0.0.0.0.8.1            nfs        superuser
-        100227    3    tcp       0.0.0.0.8.1            nfs_acl    superuser
-        100003    3    udp       0.0.0.0.8.1            nfs        superuser
-        100003    4    udp       0.0.0.0.8.1            nfs        superuser
-        100227    3    udp       0.0.0.0.8.1            nfs_acl    superuser
-        100003    3    tcp6      ::.8.1                 nfs        superuser
-        100003    4    tcp6      ::.8.1                 nfs        superuser
-        100227    3    tcp6      ::.8.1                 nfs_acl    superuser
-        100003    3    udp6      ::.8.1                 nfs        superuser
-        100003    4    udp6      ::.8.1                 nfs        superuser
-        100227    3    udp6      ::.8.1                 nfs_acl    superuser
-        100021    1    udp       0.0.0.0.221.211        nlockmgr   superuser
-        100021    3    udp       0.0.0.0.221.211        nlockmgr   superuser
-        100021    4    udp       0.0.0.0.221.211        nlockmgr   superuser
-        100021    1    tcp       0.0.0.0.128.74         nlockmgr   superuser
-        100021    3    tcp       0.0.0.0.128.74         nlockmgr   superuser
-        100021    4    tcp       0.0.0.0.128.74         nlockmgr   superuser
-        100021    1    udp6      ::.194.142             nlockmgr   superuser
-        100021    3    udp6      ::.194.142             nlockmgr   superuser
-        100021    4    udp6      ::.194.142             nlockmgr   superuser
-        100021    1    tcp6      ::.165.168             nlockmgr   superuser
-        100021    3    tcp6      ::.165.168             nlockmgr   superuser
-        100021    4    tcp6      ::.165.168             nlockmgr   superuser
+启动rpcbind并检查监听服务的端口：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# /etc/init.d/rpcbind start
+    Starting rpcbind:                                          [  OK  ]
+    [root@Server ~]# ss -lntu
+    Netid  State      Recv-Q Send-Q     Local Address:Port       Peer Address:Port 
+    udp    UNCONN     0      0                      *:68                    *:*     
+    udp    UNCONN     0      0                      *:736                   *:*     
+    udp    UNCONN     0      0                      *:111                   *:*     
+    udp    UNCONN     0      0                     :::736                  :::*     
+    udp    UNCONN     0      0                     :::111                  :::*     
+    tcp    LISTEN     0      128                   :::111                  :::*     
+    tcp    LISTEN     0      128                    *:111                   *:*     
+    tcp    LISTEN     0      128                   :::22                   :::*     
+    tcp    LISTEN     0      128                    *:22                    *:*     
+
+
+检查rpcbind服务：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# rpcinfo -p localhost
+
+启动nfs服务并检查监听端口：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# /etc/init.d/nfs start    
+    Starting NFS services:                                     [  OK  ]
+    Starting NFS quotas:                                       [  OK  ]
+    Starting NFS mountd:                                       [  OK  ]
+    Starting NFS daemon:                                       [  OK  ]
+    Starting RPC idmapd:                                       [  OK  ]
+    [root@Server ~]# ss -lntu             
+    Netid  State      Recv-Q Send-Q     Local Address:Port       Peer Address:Port 
+    udp    UNCONN     0      0                      *:41984                 *:*     
+    udp    UNCONN     0      0                      *:2049                  *:*     
+    udp    UNCONN     0      0                      *:40119                 *:*     
+    udp    UNCONN     0      0                      *:68                    *:*     
+    udp    UNCONN     0      0                      *:44244                 *:*     
+    udp    UNCONN     0      0                      *:736                   *:*     
+    udp    UNCONN     0      0                      *:58723                 *:*     
+    udp    UNCONN     0      0                      *:875                   *:*     
+    udp    UNCONN     0      0                      *:111                   *:*     
+    udp    UNCONN     0      0                     :::2049                 :::*     
+    udp    UNCONN     0      0                     :::60162                :::*     
+    udp    UNCONN     0      0                     :::51599                :::*     
+    udp    UNCONN     0      0                     :::736                  :::*     
+    udp    UNCONN     0      0                     :::42223                :::*     
+    udp    UNCONN     0      0                     :::111                  :::*     
+    udp    UNCONN     0      0                     :::58097                :::*     
+    tcp    LISTEN     0      128                   :::35069                :::*     
+    tcp    LISTEN     0      64                     *:35041                 *:*     
+    tcp    LISTEN     0      64                    :::2049                 :::*     
+    tcp    LISTEN     0      64                     *:2049                  *:*     
+    tcp    LISTEN     0      128                   :::54628                :::*     
+    tcp    LISTEN     0      128                   :::50507                :::*     
+    tcp    LISTEN     0      128                    *:875                   *:*     
+    tcp    LISTEN     0      128                    *:54478                 *:*     
+    tcp    LISTEN     0      128                   :::111                  :::*     
+    tcp    LISTEN     0      128                    *:111                   *:*     
+    tcp    LISTEN     0      128                    *:52817                 *:*     
+    tcp    LISTEN     0      128                    *:55346                 *:*     
+    tcp    LISTEN     0      128                   :::22                   :::*     
+    tcp    LISTEN     0      128                    *:22                    *:*     
+    tcp    LISTEN     0      64                    :::44444                :::*     
+
+
+nfs服务端配置
+==============================================================
+
+nfs服务开机自启动
+-------------------------------------------------------------
+
+方法1：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# chkconfig nfs on
+    [root@Server ~]# chkconfig rpcbind on
+
+方法2：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# echo "#######################">>/etc/rc.local
+    [root@Server ~]# echo "#add by zzj">>/etc/rc.local            
+    [root@Server ~]# echo "#func: start nfs service">>/etc/rc.local 
+    [root@Server ~]# echo "/etc/init.d/rpcbind start">>/etc/rc.local
+    [root@Server ~]# echo "/etc/init.d/nfs start">>/etc/rc.local    
+    [root@Server ~]# tail /etc/rc.local
+    # This script will be executed *after* all the other init scripts.
+    # You can put your own initialization stuff in here if you don't
+    # want to do the full Sys V style init stuff.
+
+    touch /var/lock/subsys/local
+    #######################
+    #add by zzj
+    #func: start nfs service
+    /etc/init.d/rpcbind start
+    /etc/init.d/nfs start
+
+nfs配置共享目录
+-------------------------------------------------------------
+
 
 
 共享目录
-==============================================================----
+==============================================================
 
 .. code-block:: bash
     :linenos:
@@ -123,7 +204,7 @@ nfs安装配置
     /data/nfs2    	<world>(rw,sync,wdelay,hide,no_subtree_check,sec=sys,secure,root_squash,no_all_squash)
 
 挂载
-==============================================================----------
+==============================================================
 
 .. code-block:: bash
     :linenos:
@@ -139,6 +220,39 @@ nfs安装配置
 
 配置文件选项
 ==============================================================----------
+
+配置nfs服务器共享的本地文件目录：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# echo "# share file for xxx by zzjlogin at 20180901" >>/etc/exports
+    [root@Server ~]# echo "/data 192.168.0.0/16(rw,sync)" >>/etc/exports
+    [root@Server ~]# tail /etc/exports
+    # share file for xxx by zzjlogin at 20180901
+    /data 192.168.0.0/16(rw,sync)
+
+.. attention::
+    nfs服务器共享目录需要在本地有这个目录才可以。否则会共享失败。
+
+重启nfs服务：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# /etc/init.d/nfs reload
+
+本地检查共享是否正常：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# /etc/init.d/nfs reload
+    [root@Server ~]# showmount -e localhost
+    Export list for localhost:
+    /data 192.168.0.0/16
+
+到此时服务端的配置基本完成。此时可以看客户端是否正常查看到nfs：
 
 
 自动挂载

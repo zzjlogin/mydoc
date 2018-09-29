@@ -41,8 +41,10 @@ NTFS:
 Ext2:
     Ext2是GNU/Linux系统中标准的文件系统。这是Linux中使用最多的一种文件系统，它是专门为Linux设计的，拥有极快的速度和极小的CPU占用率。Ext2既可以用于标准的块设备(如硬盘)，也被应用在软盘等移动存储设备上。 Ext3： Ext3是Ext2的下一代，也就是保有Ext2的格式之下再加上日志功能。Ext3是一种日志式文件系统（Journal File System),最大的特点是：它会将整个磁盘的写入动作完整的记录在磁盘的某个区域上，以便有需要时回溯追踪。当在某个过程中断时，系统可以根据这些记录直接回溯并重整被中断的部分，重整速度相当快。该分区格式被广泛应用在Linux系统中。
 Ext3:
-    现在一般Linux系列系统默认是Ext3。从CentOS6开始默认是Ext4
+    现在一般CentOS5.X默认是ext3文件系统。从CentOS6开始默认是Ext4。
 Ext4 [2]_: 
+    适用于视频下载、流媒体、数据库、小文件业务也可以。CentOS6默认的文件系统。
+
     [测试性能]_ 更大的文件系统和更大的文件。较之 Ext3 目前所支持的最大 16TB 文件系统和最大 2TB 文件，Ext4 分别支持 1EB（1,048,576TB， 1EB=1024PB， 1PB=1024TB）的文件系统，以及 16TB 的文件。
     无限数量的子目录。Ext3 目前只支持 32,000 个子目录，而 Ext4 支持无限数量的子目录。用间接块映射，当操作大文件时，效率极其低下。比如一个 100MB 大小的文件，在 Ext3 中要建立 25,600 个数据块（每个数据块大小为 4KB）的映射表。而 Ext4 引入了现代文件系统中流行的 extents 概念，每个 extent为一组连续的数据块，上述文件则表示为“ 该文件数据保存在接下来的 25,600 个数据块中”，提高了不少效率。
     Ext4 的日志校验功能可以很方便地判断日志数据是否损坏，而且它将 Ext3 的两阶段日志机制合并成一个阶段，在增加安全性的同时提高了性能。
@@ -54,6 +56,39 @@ Ext4 [2]_:
 
 Linux swap:
     它是Linux中一种专门用于交换分区的swap文件系统。Linux是使用这一整个分区作为交换空间。一般这个swap格式的交换分区是主内存的2倍。在内存不够时，Linux会将部分数据写到交换分区上。 VFAT： VFAT叫长文件名系统，这是一个与Windows系统兼容的Linux文件系统，支持长文件名，可以作为Windows与Linux交换文件的分区。
+
+xfs
+    适合数据库业务，门户网站使用，例如MySQL数据库使用这种文件系统。
+
+    XFS一种高性能的日志文件系统，XFS 特别擅长处理大文件，同时提供平滑的数据传输。
+    
+    XFS 是一个全64-bit的文件系统，它可以支持上百万T字节的存储空间。对特大文件及小尺寸文件的支持都表现出众，支持特大数量的目录。最大可支持的文件大 小为263 = 9 x 1018 = 9 exabytes，最大文件系统尺寸为18 exabytes。
+
+    XFS使用高的表结构(B+树)，保证了文件系统可以快速搜索与快速空间分配。XFS能够持续提供高速操作，文件系统的性能不受目录中目录及文件数量的限制。
+
+    缺点：
+        XFS文件系统无法被收缩。
+
+btrfs
+    B-Tree是btrfs的核心btrfs文件系统中所有的 metadata 都由B-Tree管理。
+    使用B-Tree的主要好处在于查找，插入和删除操作都很高效
+
+reiserfs
+    如果小文件超级多比较适合这种文件系统。
+
+    ReiserFS是一种新型的文件系统，它通过完全平衡树结构来容纳数据，包括文件数据，文件名以及日志支持。
+
+    ReiserFS搜索大量文件时，搜索速度要比ext2快得多。Reiserfs文件系统使用B*Tree存储文件，而其它文件系统使用B+Tree树。B*Tree查询速度比B+Tree要快很多。Reiserfs在文件定位上速度非常快。
+
+    ReiserFS文件系统最大支持的文件系统尺寸为16TB。这非常适合企业级应用中。
+jfs
+    一种字节级日志文件系统，借鉴了数据库保护系统的技术，以日志的形式记录文件的变化。JFS通过记录文件结构而不是数据本身的变化来保证数据的完整性。这种方式可以确保在任何时刻都能维护数据的可访问性。
+
+
+
+
+
+
 
 .. [1] http://www.ilsistemista.net/index.php/linux-a-unix/6-linux-filesystems-benchmarked-ext3-vs-ext4
 .. [2] https://kernelnewbies.org/Ext4
@@ -169,6 +204,19 @@ GridFS文件系统
 
 MongoDB是一种知名的NoSql数据库，GridFS是MongoDB的一个内置功能，它提供一组文件操作的API以利用MongoDB存储文件，GridFS的基本原理是将文件保存在两个Collection中，一个保存文件索引，一个保存文件内容，文件内容按一定大小分成若干块，每一块存在一个Document中，这种方法不仅提供了文件存储，还提供了对文件相关的一些附加属性（比如MD5值，文件名等等）的存储。文件在GridFS中会按4MB为单位进行分块存储。
 
+linux支持的文件系统
+=================================================
+
+查看linux支持的文件系统：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@Server ~]# ls /lib/modules/2.6.32-573.el6.x86_64/kernel/fs/
+    autofs4     configfs  exportfs  fat      jbd    mbcache.ko  nls       xfs
+    btrfs       cramfs    ext2      fscache  jbd2   nfs         squashfs
+    cachefiles  dlm       ext3      fuse     jffs2  nfs_common  ubifs
+    cifs        ecryptfs  ext4      gfs2     lockd  nfsd        udf
 
 linux根简介
 =================================================
