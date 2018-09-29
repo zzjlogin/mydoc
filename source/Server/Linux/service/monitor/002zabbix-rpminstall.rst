@@ -8,28 +8,51 @@ zabbix rpm安装
 环境
 ========================================
 
-服务器：
+服务器系统环境：
+    **系统：**CentOS6.6 64位
+    **内核：**2.6.32
+    **主机名：**zzjlogin
 
-[root@zzjlogin ~]# hostname
-zzjlogin
-[root@zzjlogin ~]# uname -a
-Linux zzjlogin 2.6.32-504.el6.x86_64 #1 SMP Wed Oct 15 04:27:16 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
-[root@zzjlogin ~]# uname -r
-2.6.32-504.el6.x86_64
-[root@zzjlogin ~]# cat /etc/redhat-release
-CentOS release 6.6 (Final)
 
-[root@zzjlogin ~]# cat /proc/version
-Linux version 2.6.32-504.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-11) (GCC) ) #1 SMP Wed Oct 15 04:27:16 UTC 2014
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# hostname
+    zzjlogin
+    [root@zzjlogin ~]# uname -a
+    Linux zzjlogin 2.6.32-504.el6.x86_64 #1 SMP Wed Oct 15 04:27:16 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+    [root@zzjlogin ~]# uname -r
+    2.6.32-504.el6.x86_64
+    [root@zzjlogin ~]# cat /etc/redhat-release
+    CentOS release 6.6 (Final)
+
+    [root@zzjlogin ~]# cat /proc/version
+    Linux version 2.6.32-504.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-11) (GCC) ) #1 SMP Wed Oct 15 04:27:16 UTC 2014
+
+zabbix软件：
+    zabbix版本：3.4.14
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# rpm -qa zabbix*
+    zabbix-server-mysql-3.4.14-1.el6.x86_64
+    zabbix-release-3.4-1.el6.noarch
+    zabbix-web-3.4.14-1.el6.noarch
+    zabbix-agent-3.4.14-1.el6.x86_64
+    zabbix-web-mysql-3.4.14-1.el6.noarch
+
 
 客户端：
 
 
-准备
+
+zabbix安装前准备
 ========================================
 
 zabbix安装参考:
-    https://www.zabbix.com/download
+    - zabbix3.4官方文档：https://www.zabbix.com/documentation/3.4/zh/start
+    - zabbix官方下载地址：https://www.zabbix.com/download
 
 需要使用的链接:
     - http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/
@@ -37,225 +60,503 @@ zabbix安装参考:
     - https://sourceforge.net/projects/zabbix/files/
 
 需要的软件包：
+    yum的方式安装rpm软件包，yum会自动解决软件包依赖问题。但是httpd服务软件和mysql数据库软件需要手动先安装。
     
 网络时间同步
 ----------------------------------------
 
-[root@zzjlogin ~]# date
-Thu Sep  6 21:07:25 CST 2018
-[root@zzjlogin ~]# ntpdate pool.ntp.org
-28 Sep 00:53:38 ntpdate[1577]: step time server 5.103.139.163 offset 1827966.915121 sec
+.. attention::
+    如果时间没有和网络同步，yum安装会报错。
+    
+    参考:
+        :ref:`linux-yuminstallerr-time`
 
-LNMP安装
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# date
+    Thu Sep  6 21:07:25 CST 2018
+    [root@zzjlogin ~]# ntpdate pool.ntp.org
+    28 Sep 00:53:38 ntpdate[1577]: step time server 5.103.139.163 offset 1827966.915121 sec
+
+
+关闭selinux
 ----------------------------------------
 
+.. attention::
+    如果不关闭selinux也没有配置selinux。则安装以后zabbix会启动失败。会发现zabbix网页可以访问，但是提示zabbix服务没有启动。
 
-安装
+**永久关闭:**
+    下面配置会让selinux的关闭重启系统后还是关闭状态。但是配置不会立即生效。
+
+.. attention::
+    通过 ``source /etc/selinux/config`` 也不能让修改的文件立即生效。所以需要下面的临时关闭的方式结合使用。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    [root@zzjlogin ~]# grep SELINUX /etc/selinux/config
+    # SELINUX= can take one of these three values:
+    SELINUX=disabled
+    # SELINUXTYPE= can take one of these two values:
+    SELINUXTYPE=targeted
+
+**临时关闭：**
+    下面配置是立即生效，但是系统重启后会失效。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# getenforce
+    Enforcing
+    [root@zzjlogin ~]# setenforce 0
+    [root@zzjlogin ~]# getenforce
+    Permissive
+
+
+
+
+关闭防火墙
+----------------------------------------
+
+.. attention::
+    防火墙一般都是关闭。如果不不关闭，也可以通过配置规则允许所有使用的端口被访问。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# /etc/init.d/iptables stop 
+    iptables: Setting chains to policy ACCEPT: filter          [  OK  ]
+    iptables: Flushing firewall rules:                         [  OK  ]
+    iptables: Unloading modules:                               [  OK  ]
+
+
+
+LAMP安装
+----------------------------------------
+
+安装apache、php组件以及MySQL：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+    [root@zzjlogin ~]# yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
+
+    [root@zzjlogin ~]# yum install mysql-devel mysql-server -y
+
+
+检查安装结果：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# rpm -qa mysql*
+    mysql-5.1.73-8.el6_8.x86_64
+    mysql-libs-5.1.73-8.el6_8.x86_64
+    mysql-devel-5.1.73-8.el6_8.x86_64
+    mysql-server-5.1.73-8.el6_8.x86_64
+    [root@zzjlogin ~]# rpm -qa php httpd
+    httpd-2.2.15-69.el6.centos.x86_64
+    [root@zzjlogin ~]# rpm -qa php*
+    php56w-5.6.38-1.w6.x86_64
+    php56w-bcmath-5.6.38-1.w6.x86_64
+    php56w-cli-5.6.38-1.w6.x86_64
+    php56w-gd-5.6.38-1.w6.x86_64
+    php56w-mysql-5.6.38-1.w6.x86_64
+    php56w-ldap-5.6.38-1.w6.x86_64
+    php56w-pdo-5.6.38-1.w6.x86_64
+    php56w-xml-5.6.38-1.w6.x86_64
+    php56w-mbstring-5.6.38-1.w6.x86_64
+    php56w-common-5.6.38-1.w6.x86_64
+
+配置PHP
+----------------------------------------
+
+.. attention::
+    如果没有配置php下面信息。在配置完所有设置后。启动zabbix服务器，进行网页设置的时候会提示错误。提示页面会提示下面这些选项需要配置。
+
+
+配置php配置文件：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# sed -i 's#;date.timezone =#date.timezone = Asia/Shanghai#g' /etc/php.ini
+    [root@zzjlogin ~]# sed -i 's#post_max_size = 8M#post_max_size = 32M#g' /etc/php.ini
+    [root@zzjlogin ~]# sed -i 's#max_execution_time = 30#max_execution_time = 300#g' /etc/php.ini
+    [root@zzjlogin ~]# sed -i 's#max_input_time = 60#max_input_time = 300#g' /etc/php.ini
+    [root@zzjlogin ~]# sed -i 's#;always_populate_raw_post_data = -1#always_populate_raw_post_data = -1#g' /etc/php.ini
+
+
+zabbix安装配置
 ========================================
-
-
-[root@zzjlogin ~]# rpm -ivh http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
-Retrieving http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
-Preparing...                ########################################### [100%]
-   1:zabbix-release         ########################################### [100%]
-
-
-
 
 
 安装zabbix
 ----------------------------------------
 
-[root@zzjlogin ~]# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y
+1. 安装zabbix官方源：
 
-配置PHP
-----------------------------------------
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# rpm -ivh http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    Retrieving http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    Preparing...                ########################################### [100%]
+        1:zabbix-release         ########################################### [100%]
+
+2. 安装zabbix软件包：
+
+.. attention::
+    zabbix服务器也需要被监控，所以服务器端也安装zabbix客户端。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y
+
+
+3. 把zabbix前端显示的页面放在apache网站目录：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix]# cd /usr/share/zabbix
+    [root@zzjlogin zabbix]# pwd
+    /usr/share/zabbix
+    [root@zzjlogin zabbix]# cp -ra * /var/www/html/
+
+
+
 
 配置数据库
 ----------------------------------------
 
-
-安装并检查安装结果:
+1. mysql数据库启动创建密码
 
 
 启动数据库，并配置密码:
-
-[root@zzjlogin ~]# /etc/init.d/mysqld start
-
-[root@zzjlogin ~]# /usr/bin/mysqladmin -u root password '123'
-
-登陆数据库，清理空账号信息，创建zabbix数据库:
-
-[root@zzjlogin ~]# mysql -uroot -p
-Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 3
-Server version: 5.1.73 Source distribution
-
-Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql> use mysql;
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Database changed
-mysql> show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| test               |
-+--------------------+
-3 rows in set (0.00 sec)
-
-mysql> select user,host from user;
-+------+-----------+
-| user | host      |
-+------+-----------+
-| root | 127.0.0.1 |
-|      | localhost |
-| root | localhost |
-|      | zzjlogin  |
-| root | zzjlogin  |
-+------+-----------+
-5 rows in set (0.00 sec)
-
-mysql> drop user ""@"localhost"
-    -> ;
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> drop user ""@"zzjlogin";
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> drop user "root"@"zzjlogin";
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> select user,host from user;
-+------+-----------+
-| user | host      |
-+------+-----------+
-| root | 127.0.0.1 |
-| root | localhost |
-+------+-----------+
-2 rows in set (0.00 sec)
-
-mysql> create database zabbix;
-Query OK, 1 row affected (0.00 sec)
-
-mysql> show databases;            
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| test               |
-| zabbix             |
-+--------------------+
-4 rows in set (0.00 sec)
-
-mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> exit
-Bye
-
-
-
-.. attention::
-    这些表信息是zabbix已经提供的，直接导入即可，如果不导入数据库，是不能访问zabbix的。
-
-
-修改zabbix服务器配置信息:
-
-[root@zzjlogin zabbix-3.4.13]# vim /etc/zabbix/zabbix_server.conf
-
-DBHost=localhost  数据库ip地址
-DBName=zabbix
-DBUser=zabbix
-DBPassword=password
-ListenIP=192.168.161.132        #zabbix server ip地址
-
-把zabbix网页信息拷贝到httpd服务器的网页存放目录:
-
-[root@zzjlogin zabbix-3.4.13]# cp -r /root/zabbix-3.4.13/frontends/php/* /var/www/html/
-
-创建zabbix运行账户:
-
-启动mysql数据库:
-
-[root@zzjlogin zabbix-3.4.13]# /etc/init.d/mysqld start
-
-启动httpd服务:
-
-[root@zzjlogin zabbix-3.4.13]# /etc/init.d/httpd start
-
-启动zabbix服务:
-
-[root@zzjlogin zabbix-3.4.13]# /etc/init.d/zabbix_server start
-
-
-至此zabbix可以访问。然后通过浏览器输入zabbix服务器IP地址，然后通过网页配置zabbix即可。
 
 
 .. code-block:: bash
     :linenos:
 
-    # 安装配置数据库
-    [root@centos-151 ~]# yum install mariadb-server  
+    [root@zzjlogin ~]# /etc/init.d/mysqld start
 
-    [root@centos-151 ~]# systemctl start mariadb
-    [root@centos-151 ~]# mysql_secure_installation 
+    [root@zzjlogin ~]# /usr/bin/mysqladmin -u root password '123'
 
-    [root@centos-151 ~]# mysql -uroot -ppanda 
-    Welcome to the MariaDB monitor.  Commands end with ; or \g.
-    Your MariaDB connection id is 10
-    Server version: 5.5.56-MariaDB MariaDB Server
 
-    Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+2. 登陆数据库，清理空账号信息，创建zabbix数据库，并创建授权访问数据库的用户：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# mysql -uroot -p
+    Enter password: 
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 3
+    Server version: 5.1.73 Source distribution
+
+    Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
 
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-    MariaDB [(none)]> create database zabbix character set utf8 collate utf8_bin;
-    Query OK, 1 row affected (0.00 sec)
+    mysql> use mysql;
+    Reading table information for completion of table and column names
+    You can turn off this feature to get a quicker startup with -A
 
-    MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
+    Database changed
+    mysql> show databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | test               |
+    +--------------------+
+    3 rows in set (0.00 sec)
+
+    mysql> select user,host from user;
+    +------+-----------+
+    | user | host      |
+    +------+-----------+
+    | root | 127.0.0.1 |
+    |      | localhost |
+    | root | localhost |
+    |      | zzjlogin  |
+    | root | zzjlogin  |
+    +------+-----------+
+    5 rows in set (0.00 sec)
+
+    mysql> drop user ""@"localhost";
     Query OK, 0 rows affected (0.00 sec)
 
-    MariaDB [(none)]> exit
+    mysql> drop user ""@"zzjlogin";
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> drop user "root"@"zzjlogin";
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> select user,host from user;
+    +------+-----------+
+    | user | host      |
+    +------+-----------+
+    | root | 127.0.0.1 |
+    | root | localhost |
+    +------+-----------+
+    2 rows in set (0.00 sec)
+
+    mysql> select user,host,password from user;
+    +------+-----------+-------------------------------------------+
+    | user | host      | password                                  |
+    +------+-----------+-------------------------------------------+
+    | root | localhost | *23AE809DDACAF96AF0FD78ED04B6A265E05AA257 |
+    | root | 127.0.0.1 |                                           |
+    +------+-----------+-------------------------------------------+
+    2 rows in set (0.00 sec)
+
+    mysql> update user set password=password("123") where user="root" and host="127.0.0.1";
+    Query OK, 1 row affected (0.01 sec)
+    Rows matched: 1  Changed: 1  Warnings: 0
+
+    mysql> select user,host,password from user;                                            
+    +------+-----------+-------------------------------------------+
+    | user | host      | password                                  |
+    +------+-----------+-------------------------------------------+
+    | root | localhost | *23AE809DDACAF96AF0FD78ED04B6A265E05AA257 |
+    | root | 127.0.0.1 | *23AE809DDACAF96AF0FD78ED04B6A265E05AA257 |
+    +------+-----------+-------------------------------------------+
+    2 rows in set (0.00 sec)
+
+    mysql> create database zabbix;
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> show databases;            
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | test               |
+    | zabbix             |
+    +--------------------+
+    4 rows in set (0.00 sec)
+
+    mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
+    Query OK, 0 rows affected (0.00 sec)
+
+    mysql> exit
     Bye
 
-    # 安装zabbix
-    [root@centos-151 ~]# rpm -i http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-2.el7.noarch.rpm
-    [root@centos-151 ~]# yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent
 
-    # 导库
-    [root@centos-151 ~]# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -ppassword zabbix
 
-    # 配置文件添加密码
-    [root@centos-151 ~]# vim /etc/zabbix/zabbix_server.conf 
+
+.. tip::
+    - mysql数据库授权zabbix用户的时候的访问IP ``localhost`` 是本地主机。此时只能通过localhost
+    来登陆，不能通过127.0.0.1登陆，也不能通过系统IP登陆。
+    - 如果mysql授权访问用户通过IP访问需要授权方式是:grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
+
+.. attention::
+    这些表信息是zabbix已经提供的，直接导入即可，如果不导入数据库，是不能访问zabbix的。
+
+
+3. zabbix数据库文件导入MySQL数据库：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cd /usr/share/doc/zabbix-server-mysql-3.4.14/
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# ls
+    AUTHORS  ChangeLog  COPYING  create.sql.gz  NEWS  README
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# zcat create.sql.gz | mysql -uroot -p123 zabbix
+
+
+
+4. 修改zabbix服务器配置信息:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-3.4.13]# vim /etc/zabbix/zabbix_server.conf
+
+    DBHost=localhost  数据库ip地址
+    DBName=zabbix
+    DBUser=zabbix
     DBPassword=password
-    # 修改时区信息
-    [root@centos-151 ~]# vim /etc/httpd/conf.d/zabbix.conf 
-    php_value date.timezone Asia/Shanghai
-    # 重启web
-    [root@centos-151 ~]# systemctl start httpd
+    ListenIP=192.168.161.132        #zabbix server ip地址
 
+    
+
+5. zabbix服务器启动
+
+zabbix服务器启动需要先启动MySQL和httpd(apache/nginx)
+
+启动mysql数据库:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-3.4.13]# /etc/init.d/mysqld start
+
+启动httpd服务:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-3.4.13]# /etc/init.d/httpd start
+
+启动zabbix服务器的zabbix客户端:
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# /etc/init.d/zabbix-agent start
+    Starting Zabbix agent:                                     [  OK  ]
+
+启动zabbix服务器的zabix服务端软件：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# /etc/init.d/zabbix-server start
+    Starting Zabbix server:                                    [  OK  ]
+
+
+
+
+6. 查看服务器是否启动
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# ss -lntu
+    Netid State      Recv-Q Send-Q                          Local Address:Port                            Peer Address:Port 
+    udp   UNCONN     0      0                                           *:68                                         *:*     
+    tcp   LISTEN     0      128                                        :::22                                        :::*     
+    tcp   LISTEN     0      128                                         *:22                                         *:*     
+    tcp   LISTEN     0      100                                       ::1:25                                        :::*     
+    tcp   LISTEN     0      100                                 127.0.0.1:25                                         *:*     
+    tcp   LISTEN     0      128                                        :::10050                                     :::*     
+    tcp   LISTEN     0      128                                         *:10050                                      *:*     
+    tcp   LISTEN     0      128                           192.168.161.132:10051                                      *:*     
+    tcp   LISTEN     0      50                                          *:3306                                       *:*     
+    tcp   LISTEN     0      128                                        :::80                                        :::*     
+    [root@zzjlogin zabbix-server-mysql-3.4.14]# 
+
+至此zabbix可以访问。然后通过浏览器输入zabbix服务器IP地址，然后通过网页配置zabbix即可。
+
+
+
+zabbix安装配置命令集合
+----------------------------------------
+
+
+.. code-block:: bash
+    :linenos:
+
+    ntpdate pool.ntp.org
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    setenforce 0
+    getenforce
+    /etc/init.d/iptables stop
+    rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+    yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
+    yum install mysql-devel mysql-server -y
+
+    sed -i 's#;date.timezone =#date.timezone = Asia/Shanghai#g' /etc/php.ini
+    sed -i 's#post_max_size = 8M#post_max_size = 32M#g' /etc/php.ini
+    sed -i 's#max_execution_time = 30#max_execution_time = 300#g' /etc/php.ini
+    sed -i 's#max_input_time = 60#max_input_time = 300#g' /etc/php.ini
+    sed -i 's#;always_populate_raw_post_data = -1#always_populate_raw_post_data = -1#g' /etc/php.ini
+
+
+    rpm -ivh http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y
+    cd /usr/share/zabbix
+    cp -ra * /var/www/html/
+    
+    /etc/init.d/mysqld start
+    /usr/bin/mysqladmin -u root password '123'
+    mysql -uroot -p
+
+    use mysql;
+    drop user ""@"localhost";
+    drop user ""@"zzjlogin";
+    drop user "root"@"zzjlogin";
+    update user set password=password("123") where user="root" and host="127.0.0.1";
+    create database zabbix;
+    grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
+    grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
+    exit
+    cd /usr/share/doc/zabbix-server-mysql-3.4.14/
+    zcat create.sql.gz | mysql -uroot -123 zabbix
+
+    sed -i 's/# DBHost=localhost/DBHost=192.168.161.132/g' /etc/zabbix/zabbix_server.conf
+    sed -i 's/# DBPassword=/DBPassword=password/g' /etc/zabbix/zabbix_server.conf
+    sed -i 's/# ListenIP=127.0.0.1/# ListenIP=192.168.161.132/g' /etc/zabbix/zabbix_server.conf
+    
+    
+
+
+    /etc/init.d/mysqld start
+    /etc/init.d/httpd start
+    /etc/init.d/zabbix-agent start
+    /etc/init.d/zabbix-server start
 
 图形安装配置
 ========================================
 
 
+.. image:: /images/server/linux/zabbix-install/zabbix001.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
 
 
+.. image:: /images/server/linux/zabbix-install/zabbix002.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-install/zabbix003.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-install/zabbix004.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-install/zabbix005.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
 
 
+.. image:: /images/server/linux/zabbix-install/zabbix006.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+.. image:: /images/server/linux/zabbix-install/zabbix007.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+.. image:: /images/server/linux/zabbix-install/zabbix008.png
+    :align: center
+    :height: 500 px
+    :width: 800 px
 
 准备工作
 ========================================
