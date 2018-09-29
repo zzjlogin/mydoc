@@ -453,6 +453,29 @@ zabbix服务器启动需要先启动MySQL和httpd(apache/nginx)
 至此zabbix可以访问。然后通过浏览器输入zabbix服务器IP地址，然后通过网页配置zabbix即可。
 
 
+开机自启动
+----------------------------------------
+
+方法1：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# chkconfig httpd on
+    [root@zzjlogin ~]# chkconfig mysqld on
+    [root@zzjlogin ~]# chkconfig zabbix-agent on
+    [root@zzjlogin ~]# chkconfig zabbix-server on
+
+方法2：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# echo "/etc/init.d/mysqld start" >>/etc/rc.local
+    [root@zzjlogin ~]# echo "/etc/init.d/httpd start" >>/etc/rc.local
+    [root@zzjlogin ~]# echo "/etc/init.d/zabbix-agent start" >>/etc/rc.local
+    [root@zzjlogin ~]# echo "/etc/init.d/zabbix-server start" >>/etc/rc.local
+
 
 zabbix安装配置命令集合
 ----------------------------------------
@@ -496,7 +519,7 @@ zabbix安装配置命令集合
     grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
     exit
     cd /usr/share/doc/zabbix-server-mysql-3.4.14/
-    zcat create.sql.gz | mysql -uroot -123 zabbix
+    zcat create.sql.gz | mysql -uroot -p123 zabbix
 
     sed -i 's/# DBHost=localhost/DBHost=192.168.161.132/g' /etc/zabbix/zabbix_server.conf
     sed -i 's/# DBPassword=/DBPassword=password/g' /etc/zabbix/zabbix_server.conf
@@ -510,57 +533,70 @@ zabbix安装配置命令集合
     /etc/init.d/zabbix-agent start
     /etc/init.d/zabbix-server start
 
+    echo "/etc/init.d/mysqld start" >>/etc/rc.local
+    echo "/etc/init.d/httpd start" >>/etc/rc.local
+    echo "/etc/init.d/zabbix-agent start" >>/etc/rc.local
+    echo "/etc/init.d/zabbix-server start" >>/etc/rc.local
+
+
 图形安装配置
 ========================================
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix001.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix002.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-install/zabbix003.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-install/zabbix004.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-install/zabbix005.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix006.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix007.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix008.png
     :align: center
-    :height: 500 px
+    :height: 450 px
     :width: 800 px
 
-准备工作
+
+
+监控服务器自己
 ========================================
 
+
+.. image:: /images/server/linux/zabbix-config/zabbix-config001.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
 
 
 

@@ -1,7 +1,15 @@
 
-.. _server-linux-zabbix-config:
+.. _server-linux-zabbix-template:
 
 ==================================
-zabbix常用配置
+添加template模版
 ==================================
+
+
+
+
+
+
+
+
 
