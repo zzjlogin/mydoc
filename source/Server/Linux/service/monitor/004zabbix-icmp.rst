@@ -5,7 +5,10 @@
 添加ICMP监控
 ==================================
 
-通过icmp添加监控主机：
+通过icmp添加监控主机，主要步骤：
+    - 添加被监控主机
+    - 添加被监控主机的被监控项
+    - 添加被监控项的图形展示
 
 
 .. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp001.png

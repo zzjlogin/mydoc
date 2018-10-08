@@ -600,44 +600,108 @@ zabbix安装配置命令集合
 
 
 
-host group(主机组)
+
+zabbix客户端安装配置
 ========================================
 
 
-template(模板)
-========================================
-
-创建template
-
+客户端环境：
+    - 系统： 和服务器端一致(可以不一致)
+    - 客户端软件: 
 
 
-item
-========================================
+.. code-block:: bash
+    :linenos:
+
+    [root@client ~]# rpm -ivh https://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    Retrieving https://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    Preparing...                ########################################### [100%]
+    1:zabbix-release         ########################################### [100%]
+
+    [root@client ~]# yum install zabbix-agent -y
+    Loaded plugins: fastestmirror, security
+    Setting up Install Process
+    Loading mirror speeds from cached hostfile
+    * base: mirror.bit.edu.cn
+    * extras: mirror.bit.edu.cn
+    * updates: mirrors.tuna.tsinghua.edu.cn
+    Resolving Dependencies
+    --> Running transaction check
+    ---> Package zabbix-agent.x86_64 0:3.4.14-1.el6 will be installed
+    --> Finished Dependency Resolution
+
+    Dependencies Resolved
+
+    =========================================================================================================================
+    Package                        Arch                     Version                          Repository                Size
+    =========================================================================================================================
+    Installing:
+    zabbix-agent                   x86_64                   3.4.14-1.el6                     zabbix                   362 k
+
+    Transaction Summary
+    =========================================================================================================================
+    Install       1 Package(s)
+
+    Total size: 362 k
+    Installed size: 1.4 M
+    Downloading Packages:
+    warning: rpmts_HdrFromFdno: Header V4 RSA/SHA512 Signature, key ID a14fe591: NOKEY
+    Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
+    Importing GPG key 0xA14FE591:
+    Userid : Zabbix LLC <packager@zabbix.com>
+    Package: zabbix-release-3.4-1.el6.noarch (installed)
+    From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX-A14FE591
+    Running rpm_check_debug
+    Running Transaction Test
+    Transaction Test Succeeded
+    Running Transaction
+    Warning: RPMDB altered outside of yum.
+    Installing : zabbix-agent-3.4.14-1.el6.x86_64                                                                      1/1 
+    Verifying  : zabbix-agent-3.4.14-1.el6.x86_64                                                                      1/1 
+
+    Installed:
+    zabbix-agent.x86_64 0:3.4.14-1.el6                                                                                     
+
+    Complete!
+
+客户端配置：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@client ~]# cp -a /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.`date '+%F'`
+    [root@client ~]# sed -ir 's#^ServerActive=127.0.0.1#ServerActive=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf
+    [root@client ~]# grep "ServerActive=192.168.161.132" /etc/zabbix/zabbix_agentd.conf
+    ServerActive=192.168.161.132
+    [root@client ~]# sed -ir 's#^Server=127.0.0.1#Server=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf            
+    [root@client ~]# grep "Server=192.168.161.132" /etc/zabbix/zabbix_agentd.conf                          
+    Server=192.168.161.132
 
 
-graph
-========================================
+启动客户端：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@client ~]# /etc/init.d/zabbix-agent start
+    Starting Zabbix agent:                                     [  OK  ]
+
+开机自启动zabbix客户端：
+
+方法1：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@client ~]# chkconfig zabbix-agent on
+
+方法2：
 
 
+.. code-block:: bash
+    :linenos:
 
-
-discover(发现)
-========================================
-
-
-
-
-等会查看图形显示问题
-
-
-
-
-
-
-trigger(触发器)
-========================================
-
-
-
-
+    [root@client ~]# echo '############################' >>/etc/rc.local
+    [root@client ~]# echo '#add by zzj at 20180930' >>/etc/rc.local
+    [root@client ~]# echo '/etc/init.d/zabbix-agent start' >>/etc/rc.local 
 
