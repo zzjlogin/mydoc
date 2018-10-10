@@ -477,7 +477,7 @@ zabbix服务器启动需要先启动MySQL和httpd(apache/nginx)
     [root@zzjlogin ~]# echo "/etc/init.d/zabbix-server start" >>/etc/rc.local
 
 
-zabbix安装配置命令集合
+zabbix服务器安装配置命令集合
 ----------------------------------------
 
 
@@ -670,14 +670,14 @@ zabbix客户端安装配置
     :linenos:
 
     [root@client ~]# cp -a /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.`date '+%F'`
-    [root@client ~]# sed -ir 's#^ServerActive=127.0.0.1#ServerActive=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf
-    [root@client ~]# grep "ServerActive=192.168.161.132" /etc/zabbix/zabbix_agentd.conf
-    ServerActive=192.168.161.132
-    [root@client ~]# sed -ir 's#^Server=127.0.0.1#Server=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf            
-    [root@client ~]# grep "Server=192.168.161.132" /etc/zabbix/zabbix_agentd.conf                          
+    [root@client ~]# sed -ir 's#^Server=127.0.0.1#Server=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf
+    [root@client ~]# grep "Server=192.168.161.132" /etc/zabbix/zabbix_agentd.conf
     Server=192.168.161.132
 
-
+.. attention::
+    如果配置客户端主动向zabbix服务器注册需要添加： ``sed -ir 's#^ServerActive=127.0.0.1#ServerActive=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf``
+    zabbix服务器也需要添加对应的action。
+    
 启动客户端：
 
 .. code-block:: bash
@@ -703,5 +703,26 @@ zabbix客户端安装配置
 
     [root@client ~]# echo '############################' >>/etc/rc.local
     [root@client ~]# echo '#add by zzj at 20180930' >>/etc/rc.local
-    [root@client ~]# echo '/etc/init.d/zabbix-agent start' >>/etc/rc.local 
+    [root@client ~]# echo '/etc/init.d/zabbix-agent start' >>/etc/rc.local
+
+zabbix客户端安装配置命令集合
+----------------------------------------
+
+
+.. code-block:: bash
+    :linenos:
+
+    rpm -ivh https://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
+    yum install zabbix-agent -y
+    cp -a /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.`date '+%F'`
+
+    sed -ir 's#^Server=127.0.0.1#Server=192.168.161.132#g' /etc/zabbix/zabbix_agentd.conf
+    grep "Server=192.168.161.132" /etc/zabbix/zabbix_agentd.conf
+
+    /etc/init.d/zabbix-agent start
+    echo '############################' >>/etc/rc.local
+    echo '#add by zzj at 20180930' >>/etc/rc.local
+    echo '/etc/init.d/zabbix-agent start' >>/etc/rc.local
+
+
 
