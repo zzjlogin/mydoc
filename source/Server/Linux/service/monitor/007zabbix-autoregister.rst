@@ -87,9 +87,12 @@ zabbix 3.4以后版本有自带模版linux系统模版。此处不再设置模�
 重启zabbix客户端：
     zabbix客户端需要重启才能让修改的配置文件生效且自动主动向zabbix服务器注册。
 
-[root@client001 ~]# /etc/init.d/zabbix-agent restart
-Shutting down Zabbix agent:                                [  OK  ]
-Starting Zabbix agent:                                     [  OK  ]
+.. code-block:: bash
+    :linenos:
+
+    [root@client001 ~]# /etc/init.d/zabbix-agent restart
+    Shutting down Zabbix agent:                                [  OK  ]
+    Starting Zabbix agent:                                     [  OK  ]
 
 
 

@@ -250,65 +250,73 @@ UserParameter=memory.usage[*],/bin/cat /proc/meminfo | awk '/^$1:/{print $$2}'
 监控nginx
 ========================================
 
-cat >>/etc/nginx/nginx.conf<<EOF
-##status
-server{
-    listen    80;
-    #server_name    status.mysite.com;
-    location  /  {
-    stub_status    on;
-    access_log    off;
-    allow 192.168.161.0/24;
-    allow 127.0.0.1;
-    deny all;
+.. code-block:: bash
+    :linenos:
+
+    cat >>/etc/nginx/nginx.conf<<EOF
+    ##status
+    server{
+        listen    80;
+        #server_name    status.mysite.com;
+        location  /  {
+        stub_status    on;
+        access_log    off;
+        allow 192.168.161.0/24;
+        allow 127.0.0.1;
+        deny all;
+        }
     }
-}
-EOF
+    EOF
 
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" |awk '/^Active/ {print $NF}' 
-2
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" |awk '/^Active/ {print $NF}'
-1
+.. code-block:: bash
+    :linenos:
 
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"
-Reading: 0 Writing: 1 Waiting: 0 
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f2
-0
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f4
-1
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f6
-0
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Waiting"|cut -d " " -f6       
-0
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" |awk '/^Active/ {print $NF}' 
+    2
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" |awk '/^Active/ {print $NF}'
+    1
 
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $1}'    
-22
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $2}'
-23
-[root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $3}'
-25
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"
+    Reading: 0 Writing: 1 Waiting: 0 
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f2
+    0
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f4
+    1
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Reading"|cut -d " " -f6
+    0
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | grep "Waiting"|cut -d " " -f6       
+    0
+
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $1}'    
+    22
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $2}'
+    23
+    [root@zzjlogin ~]# /usr/bin/curl -s "http://192.168.161.134:80/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $3}'
+    25
 
 
 .. attention::
     ``/etc/zabbix/zabbix_agentd.d/`` 目录下的conf配置文件会自动以 ``UserParameter`` 方式包含在主配置文件中。
+.. code-block:: bash
+    :linenos:
 
-cat >>/etc/zabbix/zabbix_agentd.d/nginx_parameters.conf <<EOF
+    cat >>/etc/zabbix/zabbix_agentd.d/nginx_parameters.conf <<EOF
 
-UserParameter=Nginx.active[*],/usr/bin/curl -s "http://$1:$2/status" |awk '/^Active/ {print $$NF}'
+    UserParameter=Nginx.active[*],/usr/bin/curl -s "http://$1:$2/status" |awk '/^Active/ {print $$NF}'
 
-UserParameter=Nginx.reading[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Reading"|cut -d " " -f2
+    UserParameter=Nginx.reading[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Reading"|cut -d " " -f2
 
-UserParameter=Nginx.writing[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Writing"|cut -d " " -f4
+    UserParameter=Nginx.writing[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Writing"|cut -d " " -f4
 
-UserParameter=Nginx.waiting[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Waiting"|cut -d " " -f6
+    UserParameter=Nginx.waiting[*],/usr/bin/curl -s "http://$1:$2/status" | grep "Waiting"|cut -d " " -f6
 
-UserParameter=Nginx.accepted[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$1}'    
+    UserParameter=Nginx.accepted[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$1}'    
 
-UserParameter=Nginx.handled[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$2}'
+    UserParameter=Nginx.handled[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$2}'
 
-UserParameter=Nginx.requests[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$3}'
+    UserParameter=Nginx.requests[*],/usr/bin/curl -s "http://$1:$2/status" | awk '/^[ \t]+[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+/ {print $$3}'
 
-EOF
+    EOF
 
 
 
