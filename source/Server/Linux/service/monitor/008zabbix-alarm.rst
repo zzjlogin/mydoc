@@ -50,12 +50,88 @@ zabbix监控报警
 用户相关设置(user about)
 ==================================
 
+
+告警邮件服务设置(Media types)
+-----------------------------------
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-mediatype001.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-mediatype002.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+告警邮件接收用户设置(users)
+-----------------------------------
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-users001.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-users002.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
 触发器(triggers)
 ==================================
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger001.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger002.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger003.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
 
 
 动作(action)
 ==================================
+
+
+
+
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action001.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action002.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action003.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action004.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action005.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
 
 
 

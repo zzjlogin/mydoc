@@ -517,6 +517,7 @@ zabbix服务器安装配置命令集合
     create database zabbix;
     grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
     grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
+    flush privileges;
     exit
     cd /usr/share/doc/zabbix-server-mysql-3.4.14/
     zcat create.sql.gz | mysql -uroot -p123 zabbix
