@@ -76,6 +76,8 @@ windows系统zabbix agent
         - 常规页面注意选择 **不管用户是否登陆都运行**
         - 触发器选择 ``启动时`` ，操作选择脚本写入：``c:\zabbix\zabbix_agentd.exe -c c:\zabbix_agentd.conf -s``
 
+    .. attention::
+        默认zabbix安装后会自动开机启动，但是如果没有开机自动启动可以参考上面配置设置开机自启动。
 
     防火墙设置：
         控制面板--选择windows 防火墙--高级设置--设置入站规则--新建规则
