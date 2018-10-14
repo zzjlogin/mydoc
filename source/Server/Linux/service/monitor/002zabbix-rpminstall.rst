@@ -131,7 +131,12 @@ zabbix安装参考:
     iptables: Flushing firewall rules:                         [  OK  ]
     iptables: Unloading modules:                               [  OK  ]
 
+关闭防火墙开机自启动
 
+.. code-block:: bash
+    :linenos:
+    
+    [root@zzjlogin ~]# chkconfig iptables off
 
 LAMP安装
 ----------------------------------------

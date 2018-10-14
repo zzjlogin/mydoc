@@ -1,0 +1,116 @@
+.. _zzjlogin-nginx-introduce:
+
+========================================
+nginx简介
+========================================
+
+
+
+nginx软件介绍
+========================================
+
+nginx是一款由俄罗斯人(伊戈尔·赛索耶夫)开发的高性能的http和反向代理服务软件。
+也是一个IMAP/POP3/SMTP服务。
+
+参考：
+    - nginx百度百科：https://baike.baidu.com/item/nginx/3817705?fr=aladdin
+    - nginx维基百科：https://zh.wikipedia.org/wiki/Nginx
+    - nginx下载地址：http://nginx.org/download/
+    - nginx下载页面：http://nginx.org/en/download.html
+    - nginx网站：http://nginx.org
+    - nginx最新的稳定版：http://nginx.org/en/linux_packages.html#stable
+
+
+
+nginx历史
+========================================
+
+第一个公开版本0.1.0发布于2004年10月4日。
+
+现在最新的nginx版本：1.15.5
+
+
+
+nginx技术
+========================================
+
+nginx遵循的是BSD-like协议。
+
+nginx可以在linux、BSD、windows等平台运行。
+
+nginx采用的是
+
+nginx和同功能软件比较
+========================================
+
+国内使用nginx的网站有：
+    百度、京东、新浪、网易、腾讯、淘宝等
+
+
+web服务软件排名：
+    - https://news.netcraft.com/
+    - https://w3techs.com/technologies/overview/web_server/all
+
+apache：
+    - 稳定、功能强；
+    - prefork模式取消了进程创建开销，性能很高。(一般使用work模式)
+    - 处理动态处理时，需要关联后端引擎和数据库。所以性能瓶颈不在apache软件本身。
+    - 高并发时消耗的系统资源相对较多。
+    - 基于传统的select模型，所以相比使用epoll模型的nginx性能会比较低。
+    - 扩展库，DSO方法，apxs
+
+
+
+
+
+
+nginx：
+    - 基于异步IO模型(epoll,kqueue)，性能强，可以支持上万并发。
+    - 处理小文件请求时性能高。
+    - 代码规范，扩展库必须编译进主程序。
+    - 消耗系统资源相对较低。
+
+
+
+Lighttpd:
+    - 基于异步IO模型(epoll,kqueue)，性能和nginx接近。
+    - 扩展库是SO模式，比nginx灵活。
+    - 全球的使用数量较低，安全性没有apache和nginx高。
+    - 通过插件(mod_secdownload)可以实现文件url地址加密,不访问时几分钟失效。(**防盗链使用**)
+
+
+
+
+
+nginx特点
+========================================
+
+平时使用nginx的作用：
+ - 作为web服务器
+ - 作为web缓存服务器
+ - 作为反向代理(负载均衡)
+
+
+nginx优点：
+    - 配置简单灵活。
+    - 对小文件高并发，静态并发1-2万
+    - 资源占用相对少，在2W并发使用10个线程服务，内存消耗少(几百兆)。
+    - 支持的功能多，但是每个功能不是特别强。
+    - 支持epoll模型。这个模型使得nginx可以支持高并发。
+    - nginx配合动态服务php的原理和apache不同。
+    nginx与php配合时，php是一个FCGI服务并监听在9000端口，
+    nginx通过配置把指定文件处理转到指定端口来完成动态处理。
+    - nginx可以对IP限速，可以限制连接数。apache需要第三方模块来完成这个功能。
+
+.. tip::
+    apache结合php处理动态请求的原理是：php以apache模块形式和apache结合(libphp5.so)，如果有动态请求
+    apache就会调用php这个模块。然后通过php模块向mysql请求然后返回数据。
+
+
+
+
+
+
+
+
+
