@@ -1,19 +1,8 @@
-.. _zzjlogin-nginx-addmode:
+.. _zzjlogin-nginx-config-advance:
 
 ========================================
-nginx添加模块
+nginx高级配置
 ========================================
-
-
-
-
-
-
-
-
-
-
-
 
 
 

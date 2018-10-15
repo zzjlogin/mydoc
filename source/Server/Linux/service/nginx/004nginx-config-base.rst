@@ -1,8 +1,14 @@
-.. _zzjlogin-nginx-config-file:
+
+
+.. _zzjlogin-nginx-baseconfig:
 
 ========================================
-nginx配置文件详解
+nginx基础配置
 ========================================
+
+
+
+
 
 
 
