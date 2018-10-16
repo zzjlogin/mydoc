@@ -248,6 +248,8 @@ nginx编译安装
 nginx开机/开机自启动
 ----------------------------------------
 
+
+
 检查配置文件是否正确：
 
 
@@ -271,6 +273,10 @@ nginx开机/开机自启动
     TLS SNI support enabled
     configure arguments: --prefix=/usr/local/nginx-1.12.2 --user=nginx --group=nginx --with-http_stub_status_module --with-http_ssl_module
 
+.. attention::
+    本实例中安装目录是 ``/usr/local/nginx-1.12.2`` ，在实际工作环境，一般把所有业务应用单独创建目录来存放。例如创建/app，然后在这个目录下面安装所有应用。
+
+    这样安装的优点是。方便梳理业务。巡检服务时也清晰。当然数据也需要单独的目录。
 
 检查nginx软件版本：
 
@@ -289,8 +295,16 @@ nginx开机/开机自启动
 
     [root@zzjlogin ~]# /usr/local/nginx/sbin/nginx
 
-检查nginx监听端口：
 
+命令：
+    nginx -s signal
+signal具体值：
+    - stop — 快速关闭nginx服务
+    - quit — 优雅退出关闭服务。会让所有访问用户都访问结束再关不nginx
+    - reload — 重载nginx配置文件
+    - reopen — 重新打开日志文件。
+
+检查nginx监听端口：
 
 .. code-block:: bash
     :linenos:
@@ -499,6 +513,10 @@ nginx编译参数
 --with-openssl-opt=OPTIONS         set additional build options for OpenSSL
 
 --with-debug                       enable debug logging
+
+
+nginx编译优化安装参数
+========================================
 
 
 
