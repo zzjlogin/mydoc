@@ -334,6 +334,63 @@ $符号表示最后一行，和正则中的$符号类似，但是第1行不用^�
 
     sed '1,2a A' message
 
+在匹配内容的行下面追加一行内容：
+
+.. note:: 这是每个匹配行下面都追加。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin ~]# cat /root/test.txt
+    90
+    91
+    92
+    93
+    94
+    95
+    96
+    97
+    98
+    99
+    100
+    90
+    91
+    92
+    93
+    94
+    95
+    96
+    97
+    98
+    99
+    100
+    [root@zzjlogin ~]# sed -i '/91/a\append' /root/test.txt
+    [root@zzjlogin ~]# cat /root/test.txt
+    90
+    91
+    append
+    92
+    93
+    94
+    95
+    96
+    97
+    98
+    99
+    100
+    90
+    91
+    append
+    92
+    93
+    94
+    95
+    96
+    97
+    98
+    99
+    100
+
 2. 子命令 ``i``
 
 **i和a使用上基本上一样，只不过是在指定行上边插入指定行的内容。**
