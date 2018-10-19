@@ -109,185 +109,257 @@ kickstart+PXE自动安装系统
 DHCP安装配置
 ========================================
 
-[root@centos-node1 ~]# yum install dhcp -y
+安装dhcp服务：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# yum install dhcp -y
 
 
 查看DHCP安装目录：
 
-[root@centos-node1 ~]# rpm -ql dhcp
+.. code-block:: bash
+    :linenos:
+    
+    [root@centos-node1 ~]# rpm -ql dhcp
 
 DHCP配置
 
-[root@centos-node1 ~]# cat >>/etc/dhcp/dhcpd.conf<<EOF
-> subnet 192.168.6.0 netmask 255.255.255.0 {
->         range 192.168.6.100 192.168.6.200;
->         option subnet-mask 255.255.255.0;
->         default-lease-time 21600;
->         max-lease-time 43200;
->         next-server 192.168.6.10;
->         filename "/pxelinux.0";
-> }
-> EOF
-[root@centos-node1 ~]# cat /etc/dhcp/dhcpd.conf
-#
-# DHCP Server Configuration file.
-#   see /usr/share/doc/dhcp*/dhcpd.conf.sample
-#   see 'man 5 dhcpd.conf'
-#
-subnet 192.168.6.0 netmask 255.255.255.0 {
-        range 192.168.6.100 192.168.6.200;
-        option subnet-mask 255.255.255.0;
-        default-lease-time 21600;
-        max-lease-time 43200;
-        next-server 192.168.6.10;
-        filename "/pxelinux.0";
-}
+.. code-block:: bash
+    :linenos:
 
+    [root@centos-node1 ~]# cat >>/etc/dhcp/dhcpd.conf<<EOF
+    > subnet 192.168.6.0 netmask 255.255.255.0 {
+    >         range 192.168.6.100 192.168.6.200;
+    >         option subnet-mask 255.255.255.0;
+    >         default-lease-time 21600;
+    >         max-lease-time 43200;
+    >         next-server 192.168.6.10;
+    >         filename "/pxelinux.0";
+    > }
+    > EOF
+    [root@centos-node1 ~]# cat /etc/dhcp/dhcpd.conf
+    #
+    # DHCP Server Configuration file.
+    #   see /usr/share/doc/dhcp*/dhcpd.conf.sample
+    #   see 'man 5 dhcpd.conf'
+    #
+    subnet 192.168.6.0 netmask 255.255.255.0 {
+            range 192.168.6.100 192.168.6.200;
+            option subnet-mask 255.255.255.0;
+            default-lease-time 21600;
+            max-lease-time 43200;
+            next-server 192.168.6.10;
+            filename "/pxelinux.0";
+    }
 
-[root@centos-node1 ~]# ifconfig
-eth0      Link encap:Ethernet  HWaddr 00:0C:29:B3:93:42  
-          inet addr:192.168.161.132  Bcast:192.168.161.255  Mask:255.255.255.0
-          inet6 addr: fe80::20c:29ff:feb3:9342/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:1014 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:592 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:108635 (106.0 KiB)  TX bytes:97793 (95.5 KiB)
+检查网卡信息：
 
-eth1      Link encap:Ethernet  HWaddr 00:0C:29:B3:93:4C  
-          inet addr:192.168.6.10  Bcast:192.168.6.255  Mask:255.255.255.0
-          inet6 addr: fe80::20c:29ff:feb3:934c/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:4 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:14 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:316 (316.0 b)  TX bytes:916 (916.0 b)
+.. code-block:: bash
+    :linenos:
 
-lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0 
-          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+    [root@centos-node1 ~]# ifconfig
+    eth0      Link encap:Ethernet  HWaddr 00:0C:29:B3:93:42  
+            inet addr:192.168.161.132  Bcast:192.168.161.255  Mask:255.255.255.0
+            inet6 addr: fe80::20c:29ff:feb3:9342/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:1014 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:592 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:108635 (106.0 KiB)  TX bytes:97793 (95.5 KiB)
 
-[root@centos-node1 ~]# route
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-192.168.6.0     *               255.255.255.0   U     0      0        0 eth1
-192.168.161.0   *               255.255.255.0   U     0      0        0 eth0
-link-local      *               255.255.0.0     U     1002   0        0 eth0
-link-local      *               255.255.0.0     U     1003   0        0 eth1
-default         192.168.6.1     0.0.0.0         UG    0      0        0 eth1
+    eth1      Link encap:Ethernet  HWaddr 00:0C:29:B3:93:4C  
+            inet addr:192.168.6.10  Bcast:192.168.6.255  Mask:255.255.255.0
+            inet6 addr: fe80::20c:29ff:feb3:934c/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:4 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:14 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:316 (316.0 b)  TX bytes:916 (916.0 b)
 
-如果需要修改默认网关：
+    lo        Link encap:Local Loopback  
+            inet addr:127.0.0.1  Mask:255.0.0.0
+            inet6 addr: ::1/128 Scope:Host
+            UP LOOPBACK RUNNING  MTU:65536  Metric:1
+            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0 
+            RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
 
-[root@centos-node1 ~]# route del default gw 192.168.6.1
-[root@centos-node1 ~]# route add default gw 192.168.161.2
+修改默认网关：
+.. attention::
+    这一步根据实际情况。本例子，因为默认网关192.168.6.1不能访问外网，所以修改了默认网关。
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# route
+    Kernel IP routing table
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+    192.168.6.0     *               255.255.255.0   U     0      0        0 eth1
+    192.168.161.0   *               255.255.255.0   U     0      0        0 eth0
+    link-local      *               255.255.0.0     U     1002   0        0 eth0
+    link-local      *               255.255.0.0     U     1003   0        0 eth1
+    default         192.168.6.1     0.0.0.0         UG    0      0        0 eth1
+
+    [root@centos-node1 ~]# route del default gw 192.168.6.1
+    [root@centos-node1 ~]# route add default gw 192.168.161.2
 
 启动DHCP
 
-[root@centos-node1 ~]# /etc/init.d/dhcpd start
-Starting dhcpd:                                            [  OK  ]
+.. code-block:: bash
+    :linenos:
 
-[root@centos-node1 ~]# lsof -i :67
-COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-dhcpd   1866 dhcpd    7u  IPv4  14762      0t0  UDP *:bootps 
+    [root@centos-node1 ~]# /etc/init.d/dhcpd start
+    Starting dhcpd:                                            [  OK  ]
+
+    [root@centos-node1 ~]# lsof -i :67
+    COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+    dhcpd   1866 dhcpd    7u  IPv4  14762      0t0  UDP *:bootps 
 
 
 
 TFTP安装配置
 ========================================
 
+tfpt安装：
 
-[root@centos-node1 ~]# yum install tftp-server -y
+.. code-block:: bash
+    :linenos:
 
-[root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp
-     1  # default: off
-     2  # description: The tftp server serves files using the trivial file transfer \
-     3  #       protocol.  The tftp protocol is often used to boot diskless \
-     4  #       workstations, download configuration files to network-aware printers, \
-     5  #       and to start the installation process for some operating systems.
-     6  service tftp
-     7  {
-     8          socket_type             = dgram
-     9          protocol                = udp
-    10          wait                    = yes
-    11          user                    = root
-    12          server                  = /usr/sbin/in.tftpd
-    13          server_args             = -s /var/lib/tftpboot
-    14          disable                 = yes
-    15          per_source              = 11
-    16          cps                     = 100 2
-    17          flags                   = IPv4
-    18  }
+    [root@centos-node1 ~]# yum install tftp-server -y
 
-[root@centos-node1 ~]# sed -i '14s/yes/no/' /etc/xinetd.d/tftp
+配置tftp：
 
-[root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp              
-     1  # default: off
-     2  # description: The tftp server serves files using the trivial file transfer \
-     3  #       protocol.  The tftp protocol is often used to boot diskless \
-     4  #       workstations, download configuration files to network-aware printers, \
-     5  #       and to start the installation process for some operating systems.
-     6  service tftp
-     7  {
-     8          socket_type             = dgram
-     9          protocol                = udp
-    10          wait                    = yes
-    11          user                    = root
-    12          server                  = /usr/sbin/in.tftpd
-    13          server_args             = -s /var/lib/tftpboot
-    14          disable                 = no
-    15          per_source              = 11
-    16          cps                     = 100 2
-    17          flags                   = IPv4
-    18  }
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp
+        1  # default: off
+        2  # description: The tftp server serves files using the trivial file transfer \
+        3  #       protocol.  The tftp protocol is often used to boot diskless \
+        4  #       workstations, download configuration files to network-aware printers, \
+        5  #       and to start the installation process for some operating systems.
+        6  service tftp
+        7  {
+        8          socket_type             = dgram
+        9          protocol                = udp
+        10          wait                    = yes
+        11          user                    = root
+        12          server                  = /usr/sbin/in.tftpd
+        13          server_args             = -s /var/lib/tftpboot
+        14          disable                 = yes
+        15          per_source              = 11
+        16          cps                     = 100 2
+        17          flags                   = IPv4
+        18  }
+
+    [root@centos-node1 ~]# sed -i '14s/yes/no/' /etc/xinetd.d/tftp
+
+    [root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp              
+        1  # default: off
+        2  # description: The tftp server serves files using the trivial file transfer \
+        3  #       protocol.  The tftp protocol is often used to boot diskless \
+        4  #       workstations, download configuration files to network-aware printers, \
+        5  #       and to start the installation process for some operating systems.
+        6  service tftp
+        7  {
+        8          socket_type             = dgram
+        9          protocol                = udp
+        10          wait                    = yes
+        11          user                    = root
+        12          server                  = /usr/sbin/in.tftpd
+        13          server_args             = -s /var/lib/tftpboot
+        14          disable                 = no
+        15          per_source              = 11
+        16          cps                     = 100 2
+        17          flags                   = IPv4
+        18  }
+
+启动tftp服务：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# /etc/init.d/xinetd start
+    Starting xinetd:                                           [  OK  ]
 
 
-[root@centos-node1 ~]# /etc/init.d/xinetd start
-Starting xinetd:                                           [  OK  ]
-
-
-[root@centos-node1 ~]# ss -tunlp|grep 69       
-udp    UNCONN     0      0                      *:68                    *:*      users:(("dhclient",3269,6))
-udp    UNCONN     0      0                      *:69                    *:*      users:(("xinetd",3449,5))
+    [root@centos-node1 ~]# ss -tunlp|grep 69       
+    udp    UNCONN     0      0                      *:68                    *:*      users:(("dhclient",3269,6))
+    udp    UNCONN     0      0                      *:69                    *:*      users:(("xinetd",3449,5))
 
 
 
 apache安装配置
 ========================================
 
-[root@centos-node1 ~]# yum -y install httpd
+安装apache：
 
-[root@centos-node1 ~]# sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
+.. code-block:: bash
+    :linenos:
 
-[root@centos-node1 ~]# /etc/init.d/httpd start
-Starting httpd:                                            [  OK  ]
+    [root@centos-node1 ~]# yum -y install httpd
 
-[root@centos-node1 ~]# lsof -i :80
-COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-httpd   3553   root    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3554 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3555 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3556 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3558 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3559 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3560 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3561 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
-httpd   3562 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+添加ServerName，防止http提示域名和主机名映射的问题：
 
-[root@centos-node1 ~]# mkdir /var/www/html/centos/6.6 -p
-[root@centos-node1 ~]# mount /dev/cdrom /var/www/html/centos/6.6
-mount: block device /dev/sr0 is write-protected, mounting read-only
-[root@centos-node1 ~]# ls /var/www/html/centos/6.6/
-CentOS_BuildTag  GPL                       RPM-GPG-KEY-CentOS-6           RPM-GPG-KEY-CentOS-Testing-6  isolinux
-EFI              Packages                  RPM-GPG-KEY-CentOS-Debug-6     TRANS.TBL                     repodata
-EULA             RELEASE-NOTES-en-US.html  RPM-GPG-KEY-CentOS-Security-6  images
+.. code-block:: bash
+    :linenos:
 
-[root@centos-node1 ~]# curl -s -o /dev/null -I -w "%{http_code}\n" http://192.168.6.10/centos/6.6/
-200
+    [root@centos-node1 ~]# sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
+
+启动apache服务：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# /etc/init.d/httpd start
+    Starting httpd:                                            [  OK  ]
+
+查看http服务状态：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# lsof -i :80
+    COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+    httpd   3553   root    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3554 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3555 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3556 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3558 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3559 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3560 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3561 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+    httpd   3562 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
+
+创建挂载系统的目录，建议用操作系统版本命名。这样方便以后安装其他版本系统：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# mkdir /var/www/html/centos/6.6 -p
+
+挂载并检查挂载情况：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# mount /dev/cdrom /var/www/html/centos/6.6
+    mount: block device /dev/sr0 is write-protected, mounting read-only
+    [root@centos-node1 ~]# ls /var/www/html/centos/6.6/
+    CentOS_BuildTag  GPL                       RPM-GPG-KEY-CentOS-6           RPM-GPG-KEY-CentOS-Testing-6  isolinux
+    EFI              Packages                  RPM-GPG-KEY-CentOS-Debug-6     TRANS.TBL                     repodata
+    EULA             RELEASE-NOTES-en-US.html  RPM-GPG-KEY-CentOS-Security-6  images
+
+测试http访问情况：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# curl -s -o /dev/null -I -w "%{http_code}\n" http://192.168.6.10/centos/6.6/
+    200
 
 
 
@@ -296,19 +368,24 @@ EULA             RELEASE-NOTES-en-US.html  RPM-GPG-KEY-CentOS-Security-6  images
 
 安装syslinux
 
-[root@centos-node1 ~]# yum -y install syslinux
+.. code-block:: bash
+    :linenos:
+    
+    [root@centos-node1 ~]# yum -y install syslinux
 
 syslinux是一个功能强大的引导加载程序，而且兼容各种介质。
 SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装Linux的时间，并建立修护或其它特殊用途的启动盘。
 
+.. code-block:: bash
+    :linenos:
 
-[root@centos-node1 ~]# cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
-[root@centos-node1 ~]# cp -a /var/www/html/centos/6.6/isolinux/* /var/lib/tftpboot/
-[root@centos-node1 ~]# ls /var/lib/tftpboot/
-TRANS.TBL  boot.msg   initrd.img    isolinux.cfg  pxelinux.0  vesamenu.c32
-boot.cat   grub.conf  isolinux.bin  memtest       splash.jpg  vmlinuz
+    [root@centos-node1 ~]# cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
+    [root@centos-node1 ~]# cp -a /var/www/html/centos/6.6/isolinux/* /var/lib/tftpboot/
+    [root@centos-node1 ~]# ls /var/lib/tftpboot/
+    TRANS.TBL  boot.msg   initrd.img    isolinux.cfg  pxelinux.0  vesamenu.c32
+    boot.cat   grub.conf  isolinux.bin  memtest       splash.jpg  vmlinuz
 
-[root@centos-node1 ~]# cp /var/www/html/centos/6.6/isolinux/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default
+    [root@centos-node1 ~]# cp /var/www/html/centos/6.6/isolinux/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default
 
 
 
@@ -432,143 +509,131 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
 
 **密码123，但是不显示**
 
-[root@centos-node1 ~]# grub-crypt
-Password: 
-Retype password: 
-$6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# grub-crypt
+    Password: 
+    Retype password: 
+    $6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
 
 配置ks文件
 
-[root@centos-node1 ~]# cat >>/var/www/html/centos/ks_config/centos-6.6-ks.cfg<<EOF
-> # Kickstart Configurator for CentOS 6.6 by zzjlogin
-> install
-> url --url="http://192.168.6.10/centos/6.6/"
-> text
-> lang en_US.UTF-8
-> keyboard us
-> zerombr
-> bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"
-> network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS6
-> timezone --utc Asia/Shanghai
-> authconfig --enableshadow --passalgo=sha512
-> rootpw  --iscrypted $6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
-> clearpart --all --initlabel
-> part /boot --fstype=ext4 --asprimary --size=200
-> part swap --size=1024
-> part / --fstype=ext4 --grow --asprimary --size=200
-> firstboot --disable
-> selinux --disabled
-> firewall --disabled
-> logging --level=info
-> reboot
-> %packages
-> @base
-> @compat-libraries
-> @debugging
-> @development
-> tree
-> nmap
-> sysstat
-> lrzsz
-> dos2unix
-> telnet
-> %post
-> wget -O /tmp/optimization.sh http://192.168.6.10/centos/ks_config/optimization.sh &>/dev/null
-> /bin/sh /tmp/optimization.sh
-> %end
-> EOF
+.. code-block:: bash
+    :linenos:
 
+    [root@centos-node1 ~]# cat >>/var/www/html/centos/ks_config/centos-6.6-ks.cfg<<EOF
+    > # Kickstart Configurator for CentOS 6.6 by zzjlogin
+    > install
+    > url --url="http://192.168.6.10/centos/6.6/"
+    > text
+    > lang en_US.UTF-8
+    > keyboard us
+    > zerombr
+    > bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"
+    > network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS6
+    > timezone --utc Asia/Shanghai
+    > authconfig --enableshadow --passalgo=sha512
+    > rootpw  --iscrypted $6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
+    > clearpart --all --initlabel
+    > part /boot --fstype=ext4 --asprimary --size=200
+    > part swap --size=1024
+    > part / --fstype=ext4 --grow --asprimary --size=200
+    > firstboot --disable
+    > selinux --disabled
+    > firewall --disabled
+    > logging --level=info
+    > reboot
+    > %packages
+    > @base
+    > @compat-libraries
+    > @debugging
+    > @development
+    > tree
+    > nmap
+    > sysstat
+    > lrzsz
+    > dos2unix
+    > telnet
+    > %post
+    > wget -O /tmp/optimization.sh http://192.168.6.10/centos/ks_config/centos6_optimization.sh &>/dev/null
+    > /bin/sh /tmp/optimization.sh
+    > %end
+    > EOF
 
+编辑装机完成后运行的系统优化脚本：
 
-[root@centos-node1 ~]# cat >>/var/www/html/centos/ks_config/optimization.sh<<EOF
+.. code-block:: bash
+    :linenos:
 
+    [root@centos-node1 ~]# vi >>/var/www/html/centos/ks_config/centos6_optimization.sh
 
+把 :ref:`zzjlogin-kickstart-sys-optimization:` 内容插入上面的文件中。
 
-
-cat /var/www/html/centos/ks_config/centos-6.6-ks.cfg
-# Kickstart Configurator for CentOS 6.6 by zzjlogin
-install
-url --url="http://192.168.6.10/centos/6.6/"
-text
-lang en_US.UTF-8
-keyboard us
-zerombr
-bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"
-network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS6
-timezone --utc Asia/Shanghai
-authconfig --enableshadow --passalgo=sha512
-rootpw  --iscrypted $6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
-clearpart --all --initlabel
-part /boot --fstype=ext4 --asprimary --size=200
-part swap --size=1024
-part / --fstype=ext4 --grow --asprimary --size=200
-firstboot --disable
-selinux --disabled
-firewall --disabled
-logging --level=info
-reboot
-%packages
-@base
-@compat-libraries
-@debugging
-@development
-tree
-nmap
-sysstat
-lrzsz
-dos2unix
-telnet
-%post
-wget -O /tmp/optimization.sh http://192.168.6.10/centos/ks_config/optimization.sh &>/dev/null
-/bin/sh /tmp/optimization.sh
-%end
-
-[root@centos-node1 ~]# mkdir /var/www/html/centos/ks_config
 
 
 
 整合编辑default配置文件
 
+.. code-block:: bash
+    :linenos:
+
+    [root@centos-node1 ~]# cat >>/var/lib/tftpboot/pxelinux.cfg/default<<EOF
+    > default ks
+    > prompt 0
+    > 
+    > label ks
+    >     kernel vmlinuz
+    >     append initrd=initrd.img ks=http://192.168.6.10/centos/ks_config/centos-6.6-ks.cfg ksdevice=eth0
+    > EOF
+
+.. attention::
+    - 上面文件中的超链接指定的文件需要和前面配置的http文件路径一致。
+    - 参数 ``ksdevice`` 指定默认网卡，如果不指定，在服务器有多网卡时会弹出页面让选择网卡。一般无论有几个网卡都有eth0，所以选择eth0。
 
 
-[root@centos-node1 ~]# cat >>/var/lib/tftpboot/pxelinux.cfg/default<<EOF
-> default ks
-> prompt 0
-> 
-> label ks
->     kernel vmlinuz
->     append initrd=initrd.img ks=http://192.168.6.10/centos/ks_config/centos-6.6-ks.cfg ksdevice=eth0
-> EOF
-
-
+.. _zzjlogin-kickstart-sys-optimization:
 
 开机优化脚本
 ========================================
 
+.. code-block:: bash
+    :linenos:
 
-#!/usr/bin/env bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
-#=================================================================#
-#   System Required:  CentOS 6+,                                  #
-#   Description: optimization CentOS6.X                           #
-#   Author: zzjlogin <login_root@163.com>                         #
-#   Thanks: @XXX <XXX>                                            #
-#   Intro:                                                        #
-#=================================================================#
+    #!/usr/bin/env bash
+    PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+    export PATH
+    #=================================================================#
+    #   System Required:  CentOS 6+,                                  #
+    #   Description: optimization CentOS6.X                           #
+    #   Author: zzjlogin <login_root@163.com>                         #
+    #   Thanks: @XXX <XXX>                                            #
+    #   Intro:                                                        #
+    #=================================================================#
 
-Interface=eth0
+    Interface=eth0
 
-function get_ip-mask(){
-    Ip=`/sbin/ifconfig $Interface|awk -F '[ :]' '{if(NR==2) print $13}'`
-    Suffix=`ifconfig $Interface|awk -F "[ .]+" 'NR==2 {print $6}'`
-    Mask=`/sbin/ifconfig $Interface|awk -F '[ :]' '{if(NR==2) print $NF}'`
-    Gateway=/sbin/route|grep "^default.*$Interface$"|awk '{print $2}'
-}
+    # add log to the log file
+    function sh_log(){
+        if [ $? -eq 0 ];then
+            echo "$1 success" >>/tmp/optimization-`date +%F`.log
+        else
+            echo "$1 fail" >>/tmp/optimization-`date +%F`.log
+        fi
+    }
 
+    # get the network info:ip mask gateway suffix
+    function get_networkinfo(){
+        Ip=`/sbin/ifconfig $Interface|awk -F '[ :]' '{if(NR==2) print $13}'`
+        Suffix=`ifconfig $Interface|awk -F "[ .]+" 'NR==2 {print $6}'`
+        Mask=`/sbin/ifconfig $Interface|awk -F '[ :]' '{if(NR==2) print $NF}'`
+        Gateway=`/sbin/route|grep "^default.*$Interface$"|awk '{print $2}'`
+    }
 
-function config_network(){
-    get_ip-mask
+    # config network use static ip
+    function config_network(){
+        get_networkinfo
     cat >/etc/sysconfig/network-scripts/ifcfg-$Interface <<-END
     DEVICE=$Interface
     TYPE=Ethernet
@@ -582,27 +647,33 @@ function config_network(){
     IPV4_FAILURE_FATAL=yes
     IPV6INIT=no
     END
-    Msg "config eth0"
-}
-
-function config_unlimite(){
-    [ -f "/etc/security/limits.conf" ] && {
-    echo '*  -  nofile  65535' >> /etc/security/limits.conf
-    ulimit -HSn 65535
-    Msg "open files"
     }
-}
 
-function config_base-services(){
-    Servers="crond network rsyslog sshd sysstat ntpd"
+    # config max limit of open file
+    function config_unlimit(){
+        [ -f "/etc/security/limits.conf" ] && {
+        echo '*  -  nofile  65535' >> /etc/security/limits.conf
+        ulimit -HSn 65535
+        }
+    }
 
-    /sbin/chkconfig --list|grep "3:on"|grep -vE $Servers|awk '{print "chkconfig " $1 " off"}'|/bin/bash
-    Msg "base service config"
-}
+    # config service start when sys start
+    function config_base_services(){
+        Services="crond|network|rsyslog|sshd|sysstat|ntpd"
+        
+        /sbin/chkconfig --list|grep "3:on"|grep -vE $Services|awk '{print "chkconfig " $1 " off"}'|/bin/bash
+    }
 
-function main(){
-    config_base-services
-    config_network
-    config_unlimite
+    # the script's main function
+    function main(){
+        config_base_services
+        sh_log "config_base_services:base service config"
+        config_network
+        sh_log "config_network:config network"
+        config_unlimit
+        sh_log "config_unlimit:config max open file"
+    }
 
-}
+    main
+
+

@@ -592,6 +592,51 @@ nginx负载均衡功能依赖于 ``ngx_http_upstream_module`` 模块，支持的
 配置实现是通过在负载均衡节点nginx配置文件nginx.conf中的http区添加一个upstream区。
 然后在server区调用这个upstream区的名字即可。
 
+简单的负载均衡配置如下（轮询算法默认wrr weighted round-robin权重轮询）
+
+代理服务器的nginx配置文件：
+
+cat nginx.conf
+
+worker_processes  1;
+events {
+    worker_connections  1024;
+}
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+    upstream server_pools {
+        server 192.168.10.220    weight=1;
+    }
+    server {
+        listen       80;
+        server_name  localhost;
+        location / {
+            proxy_pass http://server_pools;
+        }
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
+
+
+上面upstream定义提供web服务的RIP。然后用户访问这个服务器时会自动调用后端的
+RIP的web服务然后返回给用户。
+
+说明：
+    - upstream：定义RIP的地址池和权值
+    - proxy_pass：定义符合这个规则访问到这个http页面时调用哪个地址池的RIP服务。
+
+
+
+
+
+
+
 
 配置优化
 ========================================

@@ -2,6 +2,9 @@
 .. _zzjlogin-kickstart-introduce:
 
 ================================
+kickstart和Cobbler介绍
+================================
+
 kickstart介绍
 ================================
 
@@ -37,4 +40,36 @@ kickstart解决了通过网批量自动安装系统的自动化问题。我们�
 如果要通过kickstart安装系统的条件：
     - 需要首先部署kickstart服务器。
     - 需要安装系统的硬件支持PXE(现在一般硬件都支持PXE)
+
+
+通过kickstart结合PXE完成通过网络自动安装系统需要的步骤：
+    - 带安装系统的硬件支持PXE
+    - 部署DHCP
+    - kickstart配置和系统文件的web服务器
+    - 启动硬件，会因为没有系统自动从PXE启动，然后通过DHCP获取IP然后安装系统。
+
+
+Cobbler介绍
+================================
+
+Cobbler官网：http://cobbler.github.io/
+
+Cobbler集成的服务
+    - PXE服务支持
+    - DHCP服务管理
+    - DNS服务管理(可选bind,dnsmasq)
+    - 电源管理
+    - Kickstart服务支持
+    - YUM仓库管理
+    - TFTP(PXE启动时需要)
+    - Apache(提供kickstart的安装源，并提供定制化的kickstart配置)
+
+
+Cobbler是一个Linux服务器安装的服务，可以通过网络启动(PXE)的方式来快速安装、重装物理服务器和虚拟机，同时还可以管理DHCP，DNS等。
+
+Cobbler可以使用命令行方式管理，也提供了基于Web的界面管理工具(cobbler-web)，还提供了API接口，可以方便二次开发使用。
+
+Cobbler是较早前的kickstart的升级版，优点是比较容易配置，还自带web界面比较易于管理。
+
+Cobbler内置了一个轻量级配置管理系统，但它也支持和其它配置管理系统集成，如Puppet，暂时不支持SaltStack。
 
