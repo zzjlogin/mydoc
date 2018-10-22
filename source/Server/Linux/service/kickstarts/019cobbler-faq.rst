@@ -88,30 +88,44 @@ CentOS6.6安装会提示错误：
             Requires: Django >= 1.4
         You could try using --skip-broken to work around the problem
 
+解决办法：
 
+.. code-block:: bash
+    :linenos:
+
+    rpm -ivh http://mirrors.aliyun.com/epel/epel-release-latest-6.noarch.rpm
+  
+    yum -y install mod_ssl python-cheetah createrepo python-netaddr genisoimage mod_wsgi syslinux libpthread.so.0 libpython2.6.so.1.0 python-libs python-simplejson
+    rpm -ivh http://mirror.centos.org/centos/6/os/x86_64/Packages/libyaml-0.1.3-4.el6_6.x86_64.rpm
+    rpm -ivh http://mirror.centos.org/centos/6/os/x86_64/Packages/PyYAML-3.10-3.1.el6.x86_64.rpm
+    rpm -ivh https://kojipkgs.fedoraproject.org//packages/Django14/1.4.14/1.el6/noarch/Django14-1.4.14-1.el6.noarch.rpm
+   
 
 
 重启httpd和cobbler服务就正常
 =======================================
 
-[root@centos-cobbler ~]# cobbler check
-Traceback (most recent call last):
-  File "/usr/bin/cobbler", line 36, in <module>
-    sys.exit(app.main())
-  File "/usr/lib/python2.6/site-packages/cobbler/cli.py", line 657, in main
-    rc = cli.run(sys.argv)
-  File "/usr/lib/python2.6/site-packages/cobbler/cli.py", line 270, in run
-    self.token         = self.remote.login("", self.shared_secret)
-  File "/usr/lib64/python2.6/xmlrpclib.py", line 1199, in __call__
-    return self.__send(self.__name, args)
-  File "/usr/lib64/python2.6/xmlrpclib.py", line 1489, in __request
-    verbose=self.__verbose
-  File "/usr/lib64/python2.6/xmlrpclib.py", line 1253, in request
-    return self._parse_response(h.getfile(), sock)
-  File "/usr/lib64/python2.6/xmlrpclib.py", line 1392, in _parse_response
-    return u.close()
-  File "/usr/lib64/python2.6/xmlrpclib.py", line 838, in close
-    raise Fault(**self._stack[0])
-xmlrpclib.Fault: <Fault 1: "<class 'cobbler.cexceptions.CX'>:'login failed'">
+.. code-block:: bash
+    :linenos:
+
+  [root@centos-cobbler ~]# cobbler check
+  Traceback (most recent call last):
+    File "/usr/bin/cobbler", line 36, in <module>
+      sys.exit(app.main())
+    File "/usr/lib/python2.6/site-packages/cobbler/cli.py", line 657, in main
+      rc = cli.run(sys.argv)
+    File "/usr/lib/python2.6/site-packages/cobbler/cli.py", line 270, in run
+      self.token         = self.remote.login("", self.shared_secret)
+    File "/usr/lib64/python2.6/xmlrpclib.py", line 1199, in __call__
+      return self.__send(self.__name, args)
+    File "/usr/lib64/python2.6/xmlrpclib.py", line 1489, in __request
+      verbose=self.__verbose
+    File "/usr/lib64/python2.6/xmlrpclib.py", line 1253, in request
+      return self._parse_response(h.getfile(), sock)
+    File "/usr/lib64/python2.6/xmlrpclib.py", line 1392, in _parse_response
+      return u.close()
+    File "/usr/lib64/python2.6/xmlrpclib.py", line 838, in close
+      raise Fault(**self._stack[0])
+  xmlrpclib.Fault: <Fault 1: "<class 'cobbler.cexceptions.CX'>:'login failed'">
 
 

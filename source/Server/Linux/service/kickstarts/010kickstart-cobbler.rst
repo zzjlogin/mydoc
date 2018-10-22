@@ -659,6 +659,8 @@ cobbler配置
     cobbler get-loaders
     cobbler sync
     cobbler check
+
+
     
 如果修改cobbler网页登陆密码：
 
@@ -667,3 +669,49 @@ cobbler配置
     
     htdigest /etc/cobbler/users.digest "Cobbler" cobbler
 
+
+cobbler安装配置命令汇总
+========================================
+
+.. code-block:: bash
+    :linenos:
+    
+    ntpdate pool.ntp.org
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    setenforce 0
+    /etc/init.d/iptables stop 
+    chkconfig iptables off
+    rpm -ivh http://mirrors.aliyun.com/epel/epel-release-latest-6.noarch.rpm
+    
+    yum -y install mod_ssl python-cheetah createrepo python-netaddr genisoimage mod_wsgi syslinux libpthread.so.0 libpython2.6.so.1.0 python-libs python-simplejson
+    rpm -ivh http://mirror.centos.org/centos/6/os/x86_64/Packages/libyaml-0.1.3-4.el6_6.x86_64.rpm
+    rpm -ivh http://mirror.centos.org/centos/6/os/x86_64/Packages/PyYAML-3.10-3.1.el6.x86_64.rpm
+    rpm -ivh https://kojipkgs.fedoraproject.org//packages/Django14/1.4.14/1.el6/noarch/Django14-1.4.14-1.el6.noarch.rpm
+    yum -y install cobbler cobbler-web dhcp tftp-server pykickstart httpd
+    sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
+    /etc/init.d/httpd restart
+    /etc/init.d/cobblerd start
+
+    cp /etc/cobbler/settings{,.ori}
+
+    sed -i 's/server: 127.0.0.1/server: 192.168.6.10/' /etc/cobbler/settings
+    sed -i 's/next_server: 127.0.0.1/next_server: 192.168.6.10/' /etc/cobbler/settings
+    sed -i 's/manage_dhcp: 0/manage_dhcp: 1/' /etc/cobbler/settings
+    sed -i 's/pxe_just_once: 0/pxe_just_once: 1/' /etc/cobbler/settings
+    sed -i 's#default_password_crypted: "$1$mF86/UHC$WvcIcX2t6crBz2onWxyac."#default_password_crypted: "$1$abc$98/EDagBiz63dxD3fhRFk1"#' /etc/cobbler/settings
+
+
+    sed -i '14s/yes/no/' /etc/xinetd.d/tftp
+    sed -i '6s/yes/no/' /etc/xinetd.d/rsync
+
+    sed -i 's#subnet 192.168.1.0 netmask 255.255.255.0 {#subnet 192.168.6.0 netmask 255.255.255.0 {#' /etc/cobbler/dhcp.template
+    sed -i 's#option routers             192.168.1.5;#option routers             192.168.161.2;#' /etc/cobbler/dhcp.template
+    sed -i 's/option domain-name-servers 192.168.1.1;/#option domain-name-servers 192.168.1.1;/' /etc/cobbler/dhcp.template
+    sed -i 's#range dynamic-bootp        192.168.1.100 192.168.1.254;#range dynamic-bootp        192.168.6.100 192.168.6.200;#' /etc/cobbler/dhcp.template
+
+    /etc/init.d/xinetd start
+    /etc/init.d/cobblerd restart
+
+    cobbler get-loaders
+    cobbler sync
+    cobbler check

@@ -10,6 +10,8 @@ Linux服务搭建
    :numbered:
 
    dhcp/index
+   kickstarts/index
+   nginx/index
    dns/index
    Rsync/index
    ftp/index
