@@ -653,25 +653,55 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
     function config_unlimit(){
         [ -f "/etc/security/limits.conf" ] && {
         echo '*  -  nofile  65535' >> /etc/security/limits.conf
-        ulimit -HSn 65535
+        ulimit -HSn 65535 >/dev/null 2&1
         }
     }
 
     # config service start when sys start
     function config_base_services(){
         Services="crond|network|rsyslog|sshd|sysstat|ntpd"
-        
-        /sbin/chkconfig --list|grep "3:on"|grep -vE $Services|awk '{print "chkconfig " $1 " off"}'|/bin/bash
+        /sbin/chkconfig --list|grep "3:on"|grep -vE $Services|awk '{print "chkconfig " $1 " off"}'|/bin/bash >/dev/null 2&1
+    }
+
+    # config ssh service
+    function config_ssh(){
+        File_ssh=/etc/ssh/sshd_config
+        cp $File_ssh $File_ssh.backup
+        sed -i 's%#PermitRootLogin no%PermitRootLogin yes%' $File_ssh >/dev/null 2&1
+        sed -i 's%#UseDNS yes%UseDNS no%' $File_ssh >/dev/null 2&1
+        sed -i 's%GSSAPIAuthentication yes%GSSAPIAuthentication no%' $File_ssh >/dev/null 2&1
+
+    }
+
+    # config quick time when sys boot
+    function config_boot_time(){
+        Bootloader="/boot/grub/grub.conf"
+        /bin/sed -i 's#rhgb quiet##' $Bootloader >/dev/null 2&1
+        /bin/sed -i 's#timeout=5#timeout=1#' $Bootloader >/dev/null 2&1
+    }
+
+    # config sys time
+    function config_systime(){
+        Dateserver='pool.ntp.org'
+        /usr/sbin/ntpdate $Dateserver >/dev/null 2&1
+        echo "#time sysc by myhome at 2018-03-30" >>/var/spool/cron/root
+        echo "*/5 * * * * /usr/sbin/ntpdate $Dateserver >/dev/null 2&1" >>/var/spool/cron/root
     }
 
     # the script's main function
     function main(){
         config_base_services
         sh_log "config_base_services:base service config"
+        config_ssh
+        sh_log "config_ssh:config ssh service"
         config_network
         sh_log "config_network:config network"
+        config_systime
+        sh_log "config_systime:config system time sync"
         config_unlimit
         sh_log "config_unlimit:config max open file"
+        config_boot_time
+        sh_log "config_boot_time:config boot time"
     }
 
     main
