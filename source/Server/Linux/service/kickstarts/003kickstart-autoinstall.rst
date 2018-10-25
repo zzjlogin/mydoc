@@ -106,6 +106,18 @@ kickstart+PXE自动安装系统
     [root@zzjlogin ~]# chkconfig iptables off
 
 
+系统准备命令集合
+----------------------------------------
+
+.. code-block:: bash
+    :linenos:
+
+    ntpdate pool.ntp.org
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    setenforce 0
+    /etc/init.d/iptables stop 
+    chkconfig iptables off
+
 DHCP安装配置
 ========================================
 

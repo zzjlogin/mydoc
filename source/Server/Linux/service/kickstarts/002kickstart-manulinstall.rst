@@ -448,3 +448,52 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
     kernel memtest
     append -
 
+
+
+配置PXE网络安装(非自动安装)命令集合
+========================================
+
+.. note::
+    - 下面挂载的镜像是CentOS7,所以目录名称有所改变。
+    - 本实例是通过挂载光驱得到的系统文件目录，而且直接挂载到了工作目录。
+    - 工作环境先导入镜像到系统，然后通过 ``mount -o loop /data/CentOS-7-x86_64-bin-DVD1.iso /mnt/`` 然后把/mnt目录下的文件复制到工作目录。
+
+.. code-block:: txt
+    :linenos:
+
+    chkconfig iptables off
+
+    yum install tftp-server httpd dhcp syslinux -y
+
+    >/etc/dhcp/dhcpd.conf 
+    cat >>/etc/dhcp/dhcpd.conf <<EOF
+            subnet 192.168.6.0 netmask 255.255.255.0 {
+            range 192.168.6.100 192.168.6.200;
+            option subnet-mask 255.255.255.0;
+            default-lease-time 21600;
+            max-lease-time 43200;
+            next-server 192.168.6.10;
+            filename "/pxelinux.0";
+    }
+    EOF
+
+    sed -i '14s/yes/no/' /etc/xinetd.d/tftp
+    sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
+    /etc/init.d/dhcpd start
+    /etc/init.d/xinetd start
+    /etc/init.d/httpd start
+
+    mkdir /var/www/html/centos/7 -p
+    mount /dev/cdrom /var/www/html/centos/7
+
+    curl -s -o /dev/null -I -w "%{http_code}\n" http://192.168.6.10/centos/7/
+    cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
+    cp -a /var/www/html/centos/7/isolinux/* /var/lib/tftpboot/
+
+    mkdir /var/lib/tftpboot/pxelinux.cfg/
+    cp /var/www/html/centos/7/isolinux/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default
+
+
+
+
+

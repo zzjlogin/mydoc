@@ -227,8 +227,8 @@ Cobbler会给镜像指定一个默认的kickstart自动安装文件在/var/lib/c
     #disk partitioning information
     part /boot --fstype xfs --size 200 --ondisk sda
     part swap --size 2048 --ondisk sda
-    part / --fstype=ext4 --asprimary --size=10240 --ondisk sda
-    part /data --fstype=ext4 --grow --size=200 --ondisk sda
+    part / --fstype xfs --asprimary --grow --size=10240 --ondisk sda
+    #part /data --fstype xfs --grow --size=200 --ondisk sda
     #system authorization information
     auth --useshadow --enablemd5
     #network information

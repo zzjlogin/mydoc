@@ -428,7 +428,7 @@ default_password_crypted: "$1$mF86/UHC$WvcIcX2t6crBz2onWxyac."
     :linenos:
 
     [root@centos-cobbler ~]# sed -i 's#subnet 192.168.1.0 netmask 255.255.255.0 {#subnet 192.168.6.0 netmask 255.255.255.0 {#' /etc/cobbler/dhcp.template
-    [root@centos-cobbler ~]# sed -i 's#option routers             192.168.1.5;#option routers             192.168.161.2;#' /etc/cobbler/dhcp.template
+    [root@centos-cobbler ~]# sed -i 's#option routers             192.168.1.5;#option routers             192.168.6.2;#' /etc/cobbler/dhcp.template
     [root@centos-cobbler ~]# sed -i 's/option domain-name-servers 192.168.1.1;/#option domain-name-servers 192.168.1.1;/' /etc/cobbler/dhcp.template
     [root@centos-cobbler ~]# sed -i 's#range dynamic-bootp        192.168.1.100 192.168.1.254;#range dynamic-bootp        192.168.6.100 192.168.6.200;#' /etc/cobbler/dhcp.template
 
@@ -454,7 +454,7 @@ default_password_crypted: "$1$mF86/UHC$WvcIcX2t6crBz2onWxyac."
     option pxe-system-type code 93 = unsigned integer 16;
 
     subnet 192.168.6.0 netmask 255.255.255.0 {
-        option routers             192.168.161.2;
+        option routers             192.168.6.1;
         #option domain-name-servers 192.168.1.1;
         option subnet-mask         255.255.255.0;
         range dynamic-bootp        192.168.6.100 192.168.6.200;
@@ -649,7 +649,7 @@ cobbler配置
     sed -i '6s/yes/no/' /etc/xinetd.d/rsync
 
     sed -i 's#subnet 192.168.1.0 netmask 255.255.255.0 {#subnet 192.168.6.0 netmask 255.255.255.0 {#' /etc/cobbler/dhcp.template
-    sed -i 's#option routers             192.168.1.5;#option routers             192.168.161.2;#' /etc/cobbler/dhcp.template
+    sed -i 's#option routers             192.168.1.5;#option routers             192.168.6.1;#' /etc/cobbler/dhcp.template
     sed -i 's/option domain-name-servers 192.168.1.1;/#option domain-name-servers 192.168.1.1;/' /etc/cobbler/dhcp.template
     sed -i 's#range dynamic-bootp        192.168.1.100 192.168.1.254;#range dynamic-bootp        192.168.6.100 192.168.6.200;#' /etc/cobbler/dhcp.template
 
@@ -705,7 +705,7 @@ cobbler安装配置命令汇总
     sed -i '6s/yes/no/' /etc/xinetd.d/rsync
 
     sed -i 's#subnet 192.168.1.0 netmask 255.255.255.0 {#subnet 192.168.6.0 netmask 255.255.255.0 {#' /etc/cobbler/dhcp.template
-    sed -i 's#option routers             192.168.1.5;#option routers             192.168.161.2;#' /etc/cobbler/dhcp.template
+    sed -i 's#option routers             192.168.1.5;#option routers             192.168.6.1;#' /etc/cobbler/dhcp.template
     sed -i 's/option domain-name-servers 192.168.1.1;/#option domain-name-servers 192.168.1.1;/' /etc/cobbler/dhcp.template
     sed -i 's#range dynamic-bootp        192.168.1.100 192.168.1.254;#range dynamic-bootp        192.168.6.100 192.168.6.200;#' /etc/cobbler/dhcp.template
 
