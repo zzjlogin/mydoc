@@ -1,4 +1,4 @@
-.. zzjlogin-versioncontrol-introduce:
+.. _vc-introduce:
 
 ========================================================
 版本控制器简介

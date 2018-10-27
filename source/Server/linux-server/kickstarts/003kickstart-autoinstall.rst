@@ -23,13 +23,13 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cat /etc/redhat-release
+    [root@cent6_cobbler_01 ~]# cat /etc/redhat-release
     CentOS release 6.6 (Final)
-    [root@centos-node1 ~]# uname -r
+    [root@cent6_cobbler_01 ~]# uname -r
     2.6.32-504.el6.x86_64
-    [root@centos-node1 ~]# cat /etc/sysconfig/network
+    [root@cent6_cobbler_01 ~]# cat /etc/sysconfig/network
     NETWORKING=yes
-    HOSTNAME=centos-node1
+    HOSTNAME=cent6_cobbler_01
 
 网络时间同步
 ----------------------------------------
@@ -43,9 +43,9 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
 
-    [root@zzjlogin ~]# date
+    [root@cent6_cobbler_01 ~]# date
     Thu Sep  6 21:07:25 CST 2018
-    [root@zzjlogin ~]# ntpdate pool.ntp.org
+    [root@cent6_cobbler_01 ~]# ntpdate pool.ntp.org
     28 Sep 00:53:38 ntpdate[1577]: step time server 5.103.139.163 offset 1827966.915121 sec
 
 
@@ -65,8 +65,8 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
 
-    [root@zzjlogin ~]# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
-    [root@zzjlogin ~]# grep SELINUX /etc/selinux/config
+    [root@cent6_cobbler_01 ~]# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    [root@cent6_cobbler_01 ~]# grep SELINUX /etc/selinux/config
     # SELINUX= can take one of these three values:
     SELINUX=disabled
     # SELINUXTYPE= can take one of these two values:
@@ -78,10 +78,10 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
 
-    [root@zzjlogin ~]# getenforce
+    [root@cent6_cobbler_01 ~]# getenforce
     Enforcing
-    [root@zzjlogin ~]# setenforce 0
-    [root@zzjlogin ~]# getenforce
+    [root@cent6_cobbler_01 ~]# setenforce 0
+    [root@cent6_cobbler_01 ~]# getenforce
     Permissive
 
 
@@ -96,7 +96,7 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
 
-    [root@zzjlogin ~]# /etc/init.d/iptables stop 
+    [root@cent6_cobbler_01 ~]# /etc/init.d/iptables stop 
     iptables: Setting chains to policy ACCEPT: filter          [  OK  ]
     iptables: Flushing firewall rules:                         [  OK  ]
     iptables: Unloading modules:                               [  OK  ]
@@ -106,7 +106,7 @@ kickstart+PXE自动安装系统
 .. code-block:: bash
     :linenos:
     
-    [root@zzjlogin ~]# chkconfig iptables off
+    [root@cent6_cobbler_01 ~]# chkconfig iptables off
 
 
 系统准备命令集合
@@ -129,7 +129,7 @@ DHCP安装配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# yum install dhcp -y
+    [root@cent6_cobbler_01 ~]# yum install dhcp -y
 
 
 查看DHCP安装目录：
@@ -137,14 +137,14 @@ DHCP安装配置
 .. code-block:: bash
     :linenos:
     
-    [root@centos-node1 ~]# rpm -ql dhcp
+    [root@cent6_cobbler_01 ~]# rpm -ql dhcp
 
 DHCP配置
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cat >>/etc/dhcp/dhcpd.conf<<EOF
+    [root@cent6_cobbler_01 ~]# cat >>/etc/dhcp/dhcpd.conf<<EOF
     > subnet 192.168.6.0 netmask 255.255.255.0 {
     >         range 192.168.6.100 192.168.6.200;
     >         option subnet-mask 255.255.255.0;
@@ -154,7 +154,7 @@ DHCP配置
     >         filename "/pxelinux.0";
     > }
     > EOF
-    [root@centos-node1 ~]# cat /etc/dhcp/dhcpd.conf
+    [root@cent6_cobbler_01 ~]# cat /etc/dhcp/dhcpd.conf
     #
     # DHCP Server Configuration file.
     #   see /usr/share/doc/dhcp*/dhcpd.conf.sample
@@ -174,7 +174,7 @@ DHCP配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# ifconfig
+    [root@cent6_cobbler_01 ~]# ifconfig
     eth0      Link encap:Ethernet  HWaddr 00:0C:29:B3:93:42  
             inet addr:192.168.161.132  Bcast:192.168.161.255  Mask:255.255.255.0
             inet6 addr: fe80::20c:29ff:feb3:9342/64 Scope:Link
@@ -209,7 +209,7 @@ DHCP配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# route
+    [root@cent6_cobbler_01 ~]# route
     Kernel IP routing table
     Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
     192.168.6.0     *               255.255.255.0   U     0      0        0 eth1
@@ -218,18 +218,18 @@ DHCP配置
     link-local      *               255.255.0.0     U     1003   0        0 eth1
     default         192.168.6.1     0.0.0.0         UG    0      0        0 eth1
 
-    [root@centos-node1 ~]# route del default gw 192.168.6.1
-    [root@centos-node1 ~]# route add default gw 192.168.161.2
+    [root@cent6_cobbler_01 ~]# route del default gw 192.168.6.1
+    [root@cent6_cobbler_01 ~]# route add default gw 192.168.161.2
 
 启动DHCP
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# /etc/init.d/dhcpd start
+    [root@cent6_cobbler_01 ~]# /etc/init.d/dhcpd start
     Starting dhcpd:                                            [  OK  ]
 
-    [root@centos-node1 ~]# lsof -i :67
+    [root@cent6_cobbler_01 ~]# lsof -i :67
     COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
     dhcpd   1866 dhcpd    7u  IPv4  14762      0t0  UDP *:bootps 
 
@@ -243,14 +243,14 @@ tfpt安装：
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# yum install tftp-server -y
+    [root@cent6_cobbler_01 ~]# yum install tftp-server -y
 
 配置tftp：
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp
+    [root@cent6_cobbler_01 ~]# cat -n /etc/xinetd.d/tftp
         1  # default: off
         2  # description: The tftp server serves files using the trivial file transfer \
         3  #       protocol.  The tftp protocol is often used to boot diskless \
@@ -270,9 +270,9 @@ tfpt安装：
         17          flags                   = IPv4
         18  }
 
-    [root@centos-node1 ~]# sed -i '14s/yes/no/' /etc/xinetd.d/tftp
+    [root@cent6_cobbler_01 ~]# sed -i '14s/yes/no/' /etc/xinetd.d/tftp
 
-    [root@centos-node1 ~]# cat -n /etc/xinetd.d/tftp              
+    [root@cent6_cobbler_01 ~]# cat -n /etc/xinetd.d/tftp              
         1  # default: off
         2  # description: The tftp server serves files using the trivial file transfer \
         3  #       protocol.  The tftp protocol is often used to boot diskless \
@@ -297,11 +297,11 @@ tfpt安装：
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# /etc/init.d/xinetd start
+    [root@cent6_cobbler_01 ~]# /etc/init.d/xinetd start
     Starting xinetd:                                           [  OK  ]
 
 
-    [root@centos-node1 ~]# ss -tunlp|grep 69       
+    [root@cent6_cobbler_01 ~]# ss -tunlp|grep 69       
     udp    UNCONN     0      0                      *:68                    *:*      users:(("dhclient",3269,6))
     udp    UNCONN     0      0                      *:69                    *:*      users:(("xinetd",3449,5))
 
@@ -315,21 +315,21 @@ apache安装配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# yum -y install httpd
+    [root@cent6_cobbler_01 ~]# yum -y install httpd
 
 添加ServerName，防止http提示域名和主机名映射的问题：
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
+    [root@cent6_cobbler_01 ~]# sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
 
 启动apache服务：
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# /etc/init.d/httpd start
+    [root@cent6_cobbler_01 ~]# /etc/init.d/httpd start
     Starting httpd:                                            [  OK  ]
 
 查看http服务状态：
@@ -337,7 +337,7 @@ apache安装配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# lsof -i :80
+    [root@cent6_cobbler_01 ~]# lsof -i :80
     COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
     httpd   3553   root    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
     httpd   3554 apache    4u  IPv6  18461      0t0  TCP *:http (LISTEN)
@@ -354,16 +354,16 @@ apache安装配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# mkdir /var/www/html/centos/6.6 -p
+    [root@cent6_cobbler_01 ~]# mkdir /var/www/html/centos/6.6 -p
 
 挂载并检查挂载情况：
 
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# mount /dev/cdrom /var/www/html/centos/6.6
+    [root@cent6_cobbler_01 ~]# mount /dev/cdrom /var/www/html/centos/6.6
     mount: block device /dev/sr0 is write-protected, mounting read-only
-    [root@centos-node1 ~]# ls /var/www/html/centos/6.6/
+    [root@cent6_cobbler_01 ~]# ls /var/www/html/centos/6.6/
     CentOS_BuildTag  GPL                       RPM-GPG-KEY-CentOS-6           RPM-GPG-KEY-CentOS-Testing-6  isolinux
     EFI              Packages                  RPM-GPG-KEY-CentOS-Debug-6     TRANS.TBL                     repodata
     EULA             RELEASE-NOTES-en-US.html  RPM-GPG-KEY-CentOS-Security-6  images
@@ -373,7 +373,7 @@ apache安装配置
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# curl -s -o /dev/null -I -w "%{http_code}\n" http://192.168.6.10/centos/6.6/
+    [root@cent6_cobbler_01 ~]# curl -s -o /dev/null -I -w "%{http_code}\n" http://192.168.6.10/centos/6.6/
     200
 
 
@@ -386,7 +386,7 @@ apache安装配置
 .. code-block:: bash
     :linenos:
     
-    [root@centos-node1 ~]# yum -y install syslinux
+    [root@cent6_cobbler_01 ~]# yum -y install syslinux
 
 syslinux是一个功能强大的引导加载程序，而且兼容各种介质。
 SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装Linux的时间，并建立修护或其它特殊用途的启动盘。
@@ -394,13 +394,13 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
-    [root@centos-node1 ~]# cp -a /var/www/html/centos/6.6/isolinux/* /var/lib/tftpboot/
-    [root@centos-node1 ~]# ls /var/lib/tftpboot/
+    [root@cent6_cobbler_01 ~]# cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/
+    [root@cent6_cobbler_01 ~]# cp -a /var/www/html/centos/6.6/isolinux/* /var/lib/tftpboot/
+    [root@cent6_cobbler_01 ~]# ls /var/lib/tftpboot/
     TRANS.TBL  boot.msg   initrd.img    isolinux.cfg  pxelinux.0  vesamenu.c32
     boot.cat   grub.conf  isolinux.bin  memtest       splash.jpg  vmlinuz
 
-    [root@centos-node1 ~]# cp /var/www/html/centos/6.6/isolinux/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default
+    [root@cent6_cobbler_01 ~]# cp /var/www/html/centos/6.6/isolinux/isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default
 
 
 
@@ -419,7 +419,7 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
     - 方法2：Centos提供了一个图形化的kickstart配置工具。在任何一个安装好的Linux系统上运行该工具，就可以很容易地创建你自己的kickstart配置文件。kickstart配置工具命令为redhat-config-kickstart（RHEL3）或system-config-kickstart（RHEL4，RHEL5）.网上有很多用CentOS桌面版生成ks文件的文章，如果有现成的系统就没什么可说。但没有现成的，也没有必要去用桌面版，命令行也很简单。
     - 方法3：阅读kickstart配置文件的手册。用任何一个文本编辑器都可以创建你自己的kickstart配置文件。
 
-[root@centos-node1 ~]# ll anaconda-ks.cfg
+[root@cent6_cobbler_01 ~]# ll anaconda-ks.cfg
 -rw-------. 1 root root 1040 Mar 30 17:41 anaconda-ks.cfg
 
 官网文档 
@@ -528,7 +528,7 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# grub-crypt
+    [root@cent6_cobbler_01 ~]# grub-crypt
     Password: 
     Retype password: 
     $6$GafRCAkqcz35Y62c$yqmxZeTgOsMWawSyJ/crWjx9N2zBQBUn1A6295uAhRLJqptzvX5pnU.vct6snauchxB8aUF486ojM6aICqemb0
@@ -538,8 +538,8 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cat >>/var/www/html/centos/ks_config/centos-6.6-ks.cfg<<EOF
-    > # Kickstart Configurator for CentOS 6.6 by zzjlogin
+    [root@cent6_cobbler_01 ~]# cat >>/var/www/html/centos/ks_config/centos-6.6-ks.cfg<<EOF
+    > # Kickstart Configurator for CentOS 6.6 by cent6_cobbler_01
     > install
     > url --url="http://192.168.6.10/centos/6.6/"
     > text
@@ -582,9 +582,9 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# vi >>/var/www/html/centos/ks_config/centos6_optimization.sh
+    [root@cent6_cobbler_01 ~]# vi >>/var/www/html/centos/ks_config/centos6_optimization.sh
 
-把 :ref:`zzjlogin-kickstart-sys-optimization:` 内容插入上面的文件中。
+把 :ref:`cent6_cobbler_01-kickstart-sys-optimization:` 内容插入上面的文件中。
 
 
 
@@ -594,7 +594,7 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
 .. code-block:: bash
     :linenos:
 
-    [root@centos-node1 ~]# cat >>/var/lib/tftpboot/pxelinux.cfg/default<<EOF
+    [root@cent6_cobbler_01 ~]# cat >>/var/lib/tftpboot/pxelinux.cfg/default<<EOF
     > default ks
     > prompt 0
     > 
@@ -608,7 +608,7 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
     - 参数 ``ksdevice`` 指定默认网卡，如果不指定，在服务器有多网卡时会弹出页面让选择网卡。一般无论有几个网卡都有eth0，所以选择eth0。
 
 
-.. _zzjlogin-kickstart-sys-optimization:
+.. _cent6_cobbler_01-kickstart-sys-optimization:
 
 开机优化脚本
 ========================================
@@ -622,7 +622,7 @@ reboot	            设定安装完成后重启,此选项必须存在，不然kic
     #=================================================================#
     #   System Required:  CentOS 6+,                                  #
     #   Description: optimization CentOS6.X                           #
-    #   Author: zzjlogin <login_root@163.com>                         #
+    #   Author: cent6_cobbler_01 <login_root@163.com>                         #
     #   Thanks: @XXX <XXX>                                            #
     #   Intro:                                                        #
     #=================================================================#

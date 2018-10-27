@@ -39,6 +39,15 @@ CentOS7
         ``ro rd.live.image rd.luks=0 rd.md=0 rd.dm=0`` 是参考的内容添加后可以正常启动，不添加也可以。
         
 
+cobbler安装CentOS7(1708/1804)
+故障现象：
+
+.. image:: /images/server/linux/kickstart/faq/cobbler-centos7-1708.png
+    :align: center
+    :height: 400 px
+    :width: 800 px
+
+
 
 .. _kickstart-faq-dhcp:
 

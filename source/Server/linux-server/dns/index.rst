@@ -1,4 +1,4 @@
-.. _zzjlogin-linux-dnsindex:
+.. _dns-index:
 
 =========================
 DNS服务器

@@ -1,4 +1,4 @@
-.. _zzjlogin-nginx-config-file:
+.. _nginx-config-file:
 
 ========================================
 nginx配置文件详解

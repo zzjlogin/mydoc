@@ -17,6 +17,10 @@ DNS简述
 参考:
     - `DNS百度百科 <https://baike.baidu.com/item/DNS/427444>`_
     - `DNS维基百科 <https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F>`_
+    - BIND官方网站：https://www.isc.org/downloads/bind/
+    - BIND官方文档：
+    - BIND源码：https://gitlab.isc.org/isc-projects/bind9
+    - BIND官方ftp资料：http://ftp.isc.org/isc/
 
 .. tip::
     基于504个全球范围的“根域名服务器”（分成13组，分别编号为A至M）
