@@ -1,4 +1,4 @@
-.. _zzjlogin-nginx-config-advance:
+.. _nginx-config-advance:
 
 ========================================
 nginx高级配置
@@ -403,7 +403,8 @@ rewrite语法：
     
     rewrite是关键字，regex是正则表达式，replacement是重定向到的目标，flag是标记。
     
-    实例：rewrite ^/(.*) http://192.168.2.104/$1 permanent
+    实例：
+        rewrite ^/(.*) http://192.168.2.104/$1 permanent
 
 regex正则表达式
 
@@ -526,9 +527,12 @@ nginx实现http访问认证
         如果有htpasswd文件以后可以用下面命令增加用户名和密码：
             htpasswd -b /usr/local/nginx/conf/htpasswd abc 123 
         缩小文件权限：
-            chmod 400 /usr/local/nginx/conf/htpasswd
 
-            chown nginx /usr/local/nginx/conf/htpasswd
+.. code-block:: bash
+    :linenos:
+
+    chmod 400 /usr/local/nginx/conf/htpasswd
+    chown nginx /usr/local/nginx/conf/htpasswd
         
     方法2：
         生成密码12345的密文：
@@ -538,13 +542,19 @@ nginx实现http访问认证
             vi /usr/local/nginx/conf/htpasswd
                 zzj:BOStVVca97Ujw
         缩小文件权限：
-            chmod 400 /usr/local/nginx/conf/htpasswd
 
-            chown nginx /usr/local/nginx/conf/htpasswd
+.. code-block:: bash
+    :linenos:
+
+    chmod 400 /usr/local/nginx/conf/htpasswd
+    chown nginx /usr/local/nginx/conf/htpasswd
 
 检查配置文件语法，然后重启：
+
+.. code-block:: bash
+    :linenos:
+
     /usr/local/nginx/sbin/nginx -t
-    
     /usr/local/nginx/sbin/nginx -s reload
 
 nginx站点认证命令集合
@@ -596,32 +606,35 @@ nginx负载均衡功能依赖于 ``ngx_http_upstream_module`` 模块，支持的
 
 代理服务器的nginx配置文件：
 
-cat nginx.conf
+.. code-block:: bash
+    :linenos:
 
-worker_processes  1;
-events {
-    worker_connections  1024;
-}
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-    upstream server_pools {
-        server 192.168.10.220    weight=1;
+    cat nginx.conf
+
+    worker_processes  1;
+    events {
+        worker_connections  1024;
     }
-    server {
-        listen       80;
-        server_name  localhost;
-        location / {
-            proxy_pass http://server_pools;
+    http {
+        include       mime.types;
+        default_type  application/octet-stream;
+        sendfile        on;
+        keepalive_timeout  65;
+        upstream server_pools {
+            server 192.168.10.220    weight=1;
         }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
+        server {
+            listen       80;
+            server_name  localhost;
+            location / {
+                proxy_pass http://server_pools;
+            }
+            error_page   500 502 503 504  /50x.html;
+            location = /50x.html {
+                root   html;
+            }
         }
     }
-}
 
 
 上面upstream定义提供web服务的RIP。然后用户访问这个服务器时会自动调用后端的

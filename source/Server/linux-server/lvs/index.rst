@@ -1,7 +1,7 @@
-.. _linux-rsyncindex:
+.. _lvs-index:
 
 =========================
-rsync/inotify部署
+lvs部署
 =========================
 
 .. toctree::
@@ -9,4 +9,3 @@ rsync/inotify部署
    :glob:
 
    *
-

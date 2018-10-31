@@ -196,6 +196,63 @@ bind主配置文件修改
     > include "/var/named/chroot/etc/view.conf";
     > EOF
 
+上面配置内容：
+
+.. code-block:: txt
+    :linenos:
+
+    options {
+        version "1.1.1";
+        listen-on port 53 {any;};
+        directory "/var/named/chroot/etc/";
+        pid-file "/var/named/chroot/var/run/named/named.pid";
+        allow-query { any; };
+        dump-file "/var/named/chroot/var/log/binddump.db";
+        statistics-file "/var/named/chroot/var/log/named_stats";
+        zone-statistics yes;
+        memstatistics-file "log/mem_stats";
+        empty-zones-enable no;
+        forwarders {
+            219.146.0.130;
+            8.8.8.8;
+        };
+    };
+
+    key "rndc-key" {
+        algorithm hmac-md5;
+        secret "5gMwPoQw6iumSg9pSFOi4w==";
+    };
+
+    controls {
+        inet 127.0.0.1 port 953
+        allow { 127.0.0.1; } keys { "rndc-key"; };
+    };
+
+    logging {
+        channel warning {
+            file "/var/named/chroot/var/log/dns_warning" versions 10 size 10m;
+            severity warning;
+            print-category yes;
+            print-severity yes;
+            print-time yes;
+        };
+        channel general_dns {
+            file "/var/named/chroot/var/log/dns_log" versions 10 size 100m;
+            severity info;
+            print-category yes;
+            print-severity yes;
+            print-time yes;
+        };
+        category default {
+            warning;
+        };
+        category queries {
+            general_dns;
+        };
+    };
+
+    include "/var/named/chroot/etc/view.conf";
+
 
 域名解析文件添加配置
 --------------------------------------------
@@ -236,37 +293,42 @@ bind主配置文件修改
     > };
     > EOF
 
-view "View" {
-    zone "display.tk" {
-        type    master;
-        file    "display.tk.zone";
-        //allow-transfer {
-        //    192.168.161.134;
-        //};
-        //notify  yes;
-        //also-notify {
-        //    192.168.161.134;
-        //};
+上面配置内容：
+
+.. code-block:: txt
+    :linenos:
+
+    view "View" {
+        zone "display.tk" {
+            type    master;
+            file    "display.tk.zone";
+            //allow-transfer {
+            //    192.168.161.134;
+            //};
+            //notify  yes;
+            //also-notify {
+            //    192.168.161.134;
+            //};
+        };
+        zone "192.168.161.in-addr.arpa" {
+            type    master;
+            file    "192.168.161.zone";
+            //allow-transfer {
+            //    192.168.161.134;
+            //};
+            //notify  yes;
+            //also-notify {
+            //    192.168.161.134;
+            //};
+        };
     };
-    zone "192.168.161.in-addr.arpa" {
-        type    master;
-        file    "192.168.161.zone";
-        //allow-transfer {
-        //    192.168.161.134;
-        //};
-        //notify  yes;
-        //also-notify {
-        //    192.168.161.134;
-        //};
-    };
-};
 
 添加一个display域名配置
 
 .. code-block:: bash
     :linenos:
 
-    [root@dns_01 etc]# vi >>/var/named/chroot/etc/display.tk.zone
+    [root@dns_01 etc]# vi /var/named/chroot/etc/display.tk.zone
 
 文件中插入下面内容：
 
@@ -324,6 +386,25 @@ Minimun
                                     )
                             NS      op.display.tk.
     134     IN      PTR     a.display.tk.
+
+检查配置合法性
+--------------------------------------------
+
+1. 检查 /etc/named.conf 语法是否有错误
+
+.. code-block:: bash
+    :linenos:
+
+    [root@dns_01 ~]# named-checkconf
+
+2. 检查zone配置是否有语法错误
+
+.. code-block:: bash
+    :linenos:
+
+    [root@dns_01 ~]# named-checkzone display.tk. /var/named/chroot/etc/display.tk.zone 
+    zone display.tk/IN: loaded serial 2000
+    OK
 
 
 测试上面配置
@@ -712,4 +793,7 @@ named日志
     :linenos:
 
     rndc stats
+
+
+
 

@@ -1,4 +1,4 @@
-.. _zzjlogin-rsync:   
+.. _rsync-introduce:   
 
 ==================================================
 rsync简介及入门
@@ -18,7 +18,32 @@ rsync简介
 参考:
     - `rsync百度百科 <https://baike.baidu.com/item/rsync/8086338?fr=aladdin>`_
     - `rsync维基百科 <https://zh.wikipedia.org/wiki/Rsync>`_
-    - rsync下载:https://rsync.samba.org/
+    - rsync下载： https://rsync.samba.org/
+    - rsync官方文档：http://rsync.samba.org/documentation.html
+    - 官方文档：https://www.samba.org/ftp/rsync/rsync.html
+
+rsync服务使用的原因、场景、方案
+---------------------------------------------------------------------
+
+rsync和nfs比较：
+    nfs：
+        - nfs是网络共享文件系统。把远程的服务器存储文件挂载到本地，当作本地的文件系统使用。用来存储数据
+        - nfs一般都需要做备份。nfs中数据一般越来越多，所以一般增量备份不会很频繁。如果nfs挂了，使用备份数据会有一个时间差中间的数据没有。
+    rsync
+        - 提供时时的增量同步。可以解决增量备份耗费cpu的问题，又解决了增量备份恢复数据有一段时间没有备份数据的问题。
+
+rsync场景：
+    一般rsync用来做数据备份。
+方案：
+    一般rsync不会单独使用一般的使用方法有两种：
+        - rsync结合inotify
+            inotify解决的问题：rsync不能时时同步，而且如果文件数量达到百万千万时，文件比较就比较耗时且消耗资源。
+        - rsync结合sersync
+    原理是用inotify/sersync监控数据变化，如果有变化，用rsync来做数据传输。
+
+增量备份一般方案：
+    定时任务crontab结合rsync
+
 
 rsync服务端口
 ---------------------------------------------------------------------
@@ -31,6 +56,15 @@ rsync历史
 ---------------------------------------------------------------------
 
 rsync首度发布于1996年6月19日。原始作者为安德鲁·垂鸠（Andrew Tridgell）与保罗·麦可拉斯（Paul Mackerras）。
+
+CentOS5一般是rsync2.X版本
+
+CentOS6一般是rsync3.X版本
+
+版本比较：
+    2.X远程同步是比较完以后再传输数据
+    3.X远程同步时比较的同时传输已经比较的数据。
+    
 
 rsync工作原理
 ------------------------------------------------------------------------
@@ -58,6 +92,14 @@ Rsync很容易设置。而不是有一个脚本的FTP会话，或其他形式的
     - 支持匿名或认证的rsync服务器(理想的镜像)
 
 
+rsync工作方式
+------------------------------------------------------------------------
+
+rsync传输数据一般有三种方式：
+    - 单个主机本地多个目录之间使用(功能类似cp)
+    - 借助ssh、rcp等通道来传输数据(功能类似rcp)
+    - 以守护进程(socket)方式传输数据(rsync自身提供的功能，比较重要)
+
 rsync入门
 ==================================================
 
@@ -66,57 +108,86 @@ rsyncd的主要参数设置
 
 我们使用一天服务器指定为rsync的服务器，需要运行rsync指定--daemon以守护进程运行并且需要给它提供一个配置文件，这个配置就是、/etc/rsyncd.conf文件。
 
-主要的全局的参数
+**主要的全局的参数**
 
-.. code-block:: text
-    :linenos:
+motdfile
+    这个是欢迎提示信息，指定的是文件名，把内容写到这个文件里面
+pidfile
+    守护进程的运行pid文件
+port
+    运行端口，默认是873
+address
+    默认是监听在所有ip上的，有时候我们只需要监听在内部ip上就需要改变这个值
 
-    motd file                # 这个是欢迎提示信息，指定的是文件名，把内容写到这个文件里面
-    pid file                 # 守护进程的运行pid文件
-    port                     # 运行端口，默认是873
-    address                  # 默认是监听在所有ip上的，有时候我们只需要监听在内部ip上就需要改变这个值
+**主要的模块参数**
 
-主要的模块参数
-
-.. code-block:: text
-    :linenos:
-
-    comment              # 注释信息
-    path                 # 需要同步的路径，这个参数必须指定的。
-    use chroot           # 如果为true，rsync守护进程将在与客户端开始文件传输的时候切换到指定路径运行，提供更高的安全性。
-    charset              # 存储文件名的字符集
-    max connections      # 指定最大连接数
-    log file             # 日志文件路径
-    syslog facility      # 运行你指定系统日志工具名称的，默认是daemon,你可以设置其他值，比如auth, authpriv, cron, daemon, ftp, 
-                            kern, lpr, mail, news, security, syslog, user, uucp, local0-7.
-    max verbosity        # 这个参数是控制日志级别的，数值范围1-4，默认1，越大日志信息越丰富。同步文件夹大的时候，建议设置默认值1，避免日志文件过大。
-    lock file            # 锁文件，默认是/var/run/rsyncd.lock.
-    read only            # 这个是只读的，默认都是只读的。
-    write only           # 这个参数控制客户端是否可以下载的，默认是可以下载的，不建议修改。
-    list                 # 此参数确定当客户要求提供可用模块列表时，是否列出此模块
-    uid                  # 守护进程以那个用户身份运行
-    gid                  # 守护进程以那个用户组运行
-    exclude              # 该参数采用空格分隔的守护进程排除模式列表
-    include              # 该参数采用空格分隔的守护进程包含模式列表
-    exclude from         # 类似exclude，不过需要写到文件里面，每行一个，这个参数写文件名
-    include from         # 类似include，不过需要写到文件里面，每行一个，这个参数写文件名
-    incoming chmod       # 对进入文件chmod修改权限的
-    outgoing chmod       # 对出去的文件chmod修改权限的。
-    auth users           # 认证的用户
-    secrets file         # 密码文件，配合auth users使用，格式为"username:password" 或者 "@groupname:password"
-    strict modes         # 是否检查密码文件的权限，默认值true,适应windows操作系统运行rsync
-    hosts allow          # 运行的主机，格式直接也是比较多的。常用格式如下
-                            192.168.2.2
-                            192.168.2.2/24
-                            192.168.2.2/255.255.255.0
-                            主机名
-    hosts deny           # 不允许的主机
-    ignore errors        # 忽略i/o错误
-    ignore nonoreadable  # 这告诉rsync守护程序完全忽略用户不可读的文件
-    transfer logging     # 这个参数使得每个文件的日志记录下载和上传的格式有点类似于ftp守护进程所使用的格式
-    log format           # 日志格式的，特别多，参考https://rsync.samba.org/ftp/rsync/rsyncd.conf.html
-    timeout              # 此参数允许您覆盖客户端选择此模块的I / O超时。 使用这个参数你可以确保rsync不会永远等待死客户端，默认600s
-    dont compress        # 不压缩
+comment
+    注释信息
+path
+    需要同步的路径，这个参数必须指定的。
+usechroot
+    如果为true，rsync守护进程将在与客户端开始文件传输的时候切换到指定路径运行，提供更高的安全性。
+charset
+    存储文件名的字符集
+maxconnections
+    指定最大连接数
+logfile
+    日志文件路径
+syslogfacility
+    运行你指定系统日志工具名称的，默认是daemon,你可以设置其他值，比如auth,authpriv,cron,daemon,ftp,
+kern,lpr,mail,news,security,syslog,user,uucp,local0-7.
+maxverbosity
+    这个参数是控制日志级别的，数值范围1-4，默认1，越大日志信息越丰富。同步文件夹大的时候，建议设置默认值1，避免日志文件过大。
+lockfile
+    锁文件，默认是/var/run/rsyncd.lock.
+readonly
+    这个是只读的，默认都是只读的。
+writeonly
+    这个参数控制客户端是否可以下载的，默认是可以下载的，不建议修改。
+list
+    此参数确定当客户要求提供可用模块列表时，是否列出此模块
+uid
+    守护进程以那个用户身份运行
+gid
+    守护进程以那个用户组运行
+exclude
+    该参数采用空格分隔的守护进程排除模式列表
+include
+    该参数采用空格分隔的守护进程包含模式列表
+excludefrom
+    类似exclude，不过需要写到文件里面，每行一个，这个参数写文件名
+includefrom
+    类似include，不过需要写到文件里面，每行一个，这个参数写文件名
+incomingchmod
+    对进入文件chmod修改权限的
+outgoingchmod
+    对出去的文件chmod修改权限的。
+authusers
+    认证的用户
+secretsfile
+    密码文件，配合authusers使用，格式为"username:password"或者"@groupname:password"
+strictmodes
+    是否检查密码文件的权限，默认值true,适应windows操作系统运行rsync
+hostsallow
+    运行的主机，格式直接也是比较多的。常用格式如下
+        -192.168.2.2
+        -192.168.2.2/24
+        -192.168.2.2/255.255.255.0
+        - 主机名
+hostsdeny
+    不允许的主机
+ignoreerrors
+    忽略i/o错误
+ignorenonoreadable
+    这告诉rsync守护程序完全忽略用户不可读的文件
+transferlogging
+    这个参数使得每个文件的日志记录下载和上传的格式有点类似于ftp守护进程所使用的格式
+logformat
+    日志格式的，特别多，参考https://rsync.samba.org/ftp/rsync/rsyncd.conf.html
+timeout
+    此参数允许您覆盖客户端选择此模块的I/O超时。使用这个参数你可以确保rsync不会永远等待死客户端，默认600s
+dontcompress
+    不压缩
     
 
 样例的配置文件

@@ -1,7 +1,7 @@
-.. _linux-rsyncindex:
+.. _keepalive-index:
 
 =========================
-rsync/inotify部署
+keepalive部署
 =========================
 
 .. toctree::
@@ -9,4 +9,3 @@ rsync/inotify部署
    :glob:
 
    *
-

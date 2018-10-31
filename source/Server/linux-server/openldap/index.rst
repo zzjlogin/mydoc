@@ -1,7 +1,7 @@
-.. _linux-rsyncindex:
+.. _openldap-index:
 
 =========================
-rsync/inotify部署
+openldap认证
 =========================
 
 .. toctree::

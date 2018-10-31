@@ -1,5 +1,5 @@
 
-.. _zzjlogin-nginx-sourceinstall:
+.. _nginx-sourceinstall:
 
 ========================================
 nginx源码安装
