@@ -168,6 +168,7 @@ keepalive日志默认写入/var/log/message中
 
     KEEPALIVED_OPTIONS="-D -d -S 0"
 
+
 CentOS5是配置 /etc/syslog.conf
 CentOS6配置 /etc/rsyslog.conf
 
