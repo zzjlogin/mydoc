@@ -42,6 +42,7 @@ keepalive源码包下载：
     :linenos:
 
     [root@lvs_01 tools]# tar zxf keepalived-1.1.19.tar.gz
+    [root@lvs_01 tools]# yum install openssl openssl-devel -y
     [root@lvs_01 tools]# cd keepalived-1.1.19
     [root@lvs_01 keepalived-1.1.19]# ./configure
     [root@lvs_01 keepalived-1.1.19]# make
@@ -49,25 +50,7 @@ keepalive源码包下载：
 
 
 
-上面命令 ``./configure`` 报错：
 
-.. code-block:: txt
-    :linenos:
-
-    checking for sys/time.h... yes
-    checking openssl/ssl.h usability... no
-    checking openssl/ssl.h presence... no
-    checking for openssl/ssl.h... no
-    configure: error:
-    !!! OpenSSL is not properly installed on your system. !!!
-    !!! Can not include OpenSSL headers files.            !!!
-
-解决办法：
-
-.. code-block:: bash
-    :linenos:
-
-    [root@lvs_01 keepalived-1.1.19]# yum install openssl openssl-devel -y
 
 编译安装后的keepalive相关文件目录转移：
 
@@ -75,7 +58,6 @@ keepalive源码包下载：
     :linenos:
 
     [root@lvs_01 keepalived-1.1.19]# cp /usr/local/etc/rc.d/init.d/keepalived /etc/init.d/
-
     [root@lvs_01 keepalived-1.1.19]# cp /usr/local/etc/sysconfig/keepalived /etc/sysconfig/
     [root@lvs_01 keepalived-1.1.19]# mkdir /etc/keepalived -p
     [root@lvs_01 keepalived-1.1.19]# cp /usr/local/etc/keepalived/keepalived.conf /etc/keepalived

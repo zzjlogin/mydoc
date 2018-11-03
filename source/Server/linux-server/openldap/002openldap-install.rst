@@ -194,7 +194,7 @@ openldap的版本区别：
 使用openldap2.3的配置文件方式配置2.4：
 
 
-    [root@ldap_001 openldap]# cp /usr/share/openldap-servers/slapd.conf.obsolete slapd.conf
+    [root@ldap_001 openldap]# cp /usr/share/openldap-servers/slapd.conf.obsolete /etc/openldap/slapd.conf
     [root@ldap_001 openldap]# ls
     certs  check_password.conf  ldap.conf  schema  slapd.conf  slapd.d
 
@@ -233,6 +233,10 @@ cn=schema.ldif  olcDatabase={-1}frontend.ldif  olcDatabase={2}bdb.ldif
     suffix          "dc=display,dc=tk"
     rootdn          "cn=admin,dc=display,dc=tk"
 
+sed -i 's#suffix          "dc=my-domain,dc=com"#suffix          "dc=display,dc=tk"#g' /etc/openldap/slapd.conf
+sed -i 's#rootdn          "cn=Manager,dc=my-domain,dc=com"#rootdn          "cn=admin,dc=display,dc=tk"#g' /etc/openldap/slapd.conf
+
+
 配置文件说名：
     - 配置文件中每个配置项的先后顺序尽量不变，修改后可能导致错误故障；
     - 空行和以 ``#`` 开始的行都会自动忽略
@@ -241,11 +245,15 @@ cn=schema.ldif  olcDatabase={-1}frontend.ldif  olcDatabase={2}bdb.ldif
 追加内容到文件 ``/etc/openldap/slapd.conf``
 
 # add start by zzjlogin 20181029
-loglevel        296
+loglevel        256
 cachesize   1000
 checkpoint  2048    10
 # add end by zzjlogin 20181029
 
+echo "# add start by zzjlogin 20181029">>/etc/openldap/slapd.conf
+echo "cachesize   1000">>/etc/openldap/slapd.conf
+echo "checkpoint  2048    10">>/etc/openldap/slapd.conf
+echo "# add end by zzjlogin 20181029">>/etc/openldap/slapd.conf
 
 
 权限控制配置文件 ``/etc/openldap/slapd.conf``
@@ -424,6 +432,12 @@ types: suffix_host: ou=machines,dc=display,dc=tk
 
 #types: suffix_smbDomain: dc=my-domain,dc=com
 types: suffix_smbDomain: dc=display,dc=tk
+
+sed -i 's#admins: cn=Manager,dc=my-domain,dc=com#admins: cn=admin,dc=display,dc=tk#g' lam.conf
+sed -i 's#types: suffix_user: ou=People,dc=my-domain,dc=com#types: suffix_user: ou=People,dc=display,dc=tk#g' lam.conf
+sed -i 's#types: suffix_group: ou=group,dc=my-domain,dc=com#types: suffix_group: ou=group,dc=display,dc=tk#g' lam.conf
+sed -i 's#types: suffix_host: ou=machines,dc=my-domain,dc=com#types: suffix_host: ou=machines,dc=display,dc=tk#g' lam.conf
+sed -i 's#types: suffix_smbDomain: dc=my-domain,dc=com#types: suffix_smbDomain: dc=display,dc=tk#g' lam.conf
 
 [root@ldap_001 config]# cd ../..
 

@@ -13,6 +13,7 @@ SASL ldap
 ==============================================================
 
 参考：
+    - http://www.openldap.org/doc/admin24/security.html#Configuring%20saslauthd
     - https://www.openldap.org/doc/admin24/sasl.html
     - https://www.openldap.org/doc/admin24/security.html#SASL%20method
     - https://www.openldap.org/doc/admin24/security.html#Configuring%20saslauthd
@@ -80,13 +81,20 @@ Starting saslauthd:                                        [  OK  ]
 
 
 ldap_servers: ldap://192.168.161.137
-ldap_bind_dn: cn=admin,dc=display,dc=tk
-ldap_bind_pw: zzjlogin
 ldap_search_base: ou=People,dc=display,dc=tk
 ldap_filter: uid=%U
+ldap_bind_dn: cn=admin,dc=display,dc=tk
+ldap_bind_pw: zzjlogin
 ldap_password_attr: userPassword
 #ldap_sasl:0
 
+官方文档介绍的配置：
+
+ldap_servers: ldap://display.tk/
+ldap_search_base: ou=People,dc=display,dc=tk
+ldap_filter: uid=%U
+ldap_bind_dn: cn=admin,dc=display,dc=tk
+ldap_password: zzjlogin
 
 
 [root@ldap_001 ~]# /etc/init.d/saslauthd restart

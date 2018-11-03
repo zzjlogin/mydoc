@@ -78,3 +78,24 @@ bind源码包，然后编译安装生成压力测试工具 ``queryperf``
     #. 测试中调整测试的数量。(例如：100、1000、5000、10000)
     #. 测试中把bind的域名要尽量都测试。(单个域名、混合各个域名)
 
+
+nslookup测试
+
+.. code-block:: bash
+    :linenos:
+
+    [root@zzjlogin named]# nslookup                                                # nslookup测试，这个工具和windows环境的使用是一样的。
+    > server localhost
+    Default server: localhost
+    Address: ::1#53
+    Default server: localhost
+    Address: 127.0.0.1#53
+    > www.display.tk
+    Server:		localhost
+    Address:	::1#53
+
+    Name:	www.display.tk
+    Address: 192.168.46.7
+    > exit
+
+    

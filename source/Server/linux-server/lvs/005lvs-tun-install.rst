@@ -1,7 +1,7 @@
-.. _lvs-dr-install:
+.. _lvs-tun-install:
 
 =============================================
-lvs-dr安装配置
+lvs-VS/TUN安装配置
 =============================================
 
 :Date: 2018-10
@@ -20,11 +20,11 @@ lvs-dr安装配置
 =================== ==============================================================
 **主机名**                **IP**
 ------------------- --------------------------------------------------------------
-lvs_vip_01                 192.168.161.140
+lvs_vip_01                 192.168.1.166
 ------------------- --------------------------------------------------------------
-lvs_rip_web01              192.168.161.141
+lvs_rip_web01              192.168.1.187
 ------------------- --------------------------------------------------------------
-lvs_rip_web02              192.168.161.142
+lvs_rip_web02              192.168.1.163
 =================== ==============================================================
 
 
@@ -41,11 +41,11 @@ lvsadm                  ipvsadm-1.26
 安装配置
 =============================================
 
-
 配置说明
 ---------------------------------------------
 
-本lvs实例是基于直接路由(dr)的实例配置。且调度算法使用rr(官方叫做轮叫，本人习惯叫做轮询算法。权重使用默认都是1)
+本lvs实例是基于IP隧道的实例配置。且调度算法使用rr(官方叫做轮叫，本人习惯叫做轮询算法。权重使用默认都是1)
+
 
 
 lvs_vip_01安装配置过程
@@ -230,10 +230,10 @@ lvs_vip_01安装配置过程
     libcrc32c               1246  1 ip_vs
     ipv6                  334932  270 ip_vs,ip6t_REJECT,nf_conntrack_ipv6,nf_defrag_ipv6
     [root@lvs_vip_01 ipvsadm-1.26]# 
-    [root@lvs_vip_01 ipvsadm-1.26]# ifconfig eth0:0 192.168.161.250/24
+    [root@lvs_vip_01 ipvsadm-1.26]# ifconfig eth0:0 192.168.1.250/24
     [root@lvs_vip_01 ipvsadm-1.26]# ifconfig
     eth0      Link encap:Ethernet  HWaddr 00:0C:29:12:76:B6  
-            inet addr:192.168.161.140  Bcast:192.168.161.255  Mask:255.255.255.0
+            inet addr:192.168.1.166  Bcast:192.168.161.255  Mask:255.255.255.0
             inet6 addr: fe80::20c:29ff:fe12:76b6/64 Scope:Link
             UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
             RX packets:14142 errors:0 dropped:0 overruns:0 frame:0
@@ -242,7 +242,7 @@ lvs_vip_01安装配置过程
             RX bytes:19317256 (18.4 MiB)  TX bytes:501456 (489.7 KiB)
 
     eth0:0    Link encap:Ethernet  HWaddr 00:0C:29:12:76:B6  
-            inet addr:192.168.161.250  Bcast:192.168.161.255  Mask:255.255.255.0
+            inet addr:192.168.1.250  Bcast:192.168.161.255  Mask:255.255.255.0
             UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 
     lo        Link encap:Local Loopback  
@@ -254,32 +254,29 @@ lvs_vip_01安装配置过程
             collisions:0 txqueuelen:0 
             RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
 
-    [root@lvs_vip_01 ipvsadm-1.26]# ping 192.168.161.250
-    PING 192.168.161.250 (192.168.161.250) 56(84) bytes of data.
-    64 bytes from 192.168.161.250: icmp_seq=1 ttl=64 time=0.024 ms
+    [root@lvs_vip_01 ipvsadm-1.26]# ping 192.168.1.250
+    PING 192.168.1.250 (192.168.1.250) 56(84) bytes of data.
+    64 bytes from 192.168.1.250: icmp_seq=1 ttl=64 time=0.024 ms
     ^C
-    --- 192.168.161.250 ping statistics ---
+    --- 192.168.1.250 ping statistics ---
     1 packets transmitted, 1 received, 0% packet loss, time 935ms
     rtt min/avg/max/mdev = 0.024/0.024/0.024/0.000 ms
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -L -n
+    
+    [root@lvs_vip_01 ~]# ipvsadm -L -n
     IP Virtual Server version 1.2.1 (size=4096)
     Prot LocalAddress:Port Scheduler Flags
     -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -A -t 192.168.161.250:80 -s rr
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -L -n
+    [root@lvs_vip_01 ~]# ipvsadm -A -t 192.168.1.250:80 -s rr
+    [root@lvs_vip_01 ~]# ipvsadm -a -t 192.168.1.250:80 -r 192.168.1.187 -i
+    [root@lvs_vip_01 ~]# ipvsadm -a -t 192.168.1.250:80 -r 192.168.1.163 -i
+    [root@lvs_vip_01 ~]# ipvsadm -L -n
     IP Virtual Server version 1.2.1 (size=4096)
     Prot LocalAddress:Port Scheduler Flags
     -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
-    TCP  192.168.161.250:80 rr
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -a -t 192.168.161.250:80 -r 192.168.161.141 -g
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -a -t 192.168.161.250:80 -r 192.168.161.142 -g
-    [root@lvs_vip_01 ipvsadm-1.26]# ipvsadm -L -n
-    IP Virtual Server version 1.2.1 (size=4096)
-    Prot LocalAddress:Port Scheduler Flags
-    -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
-    TCP  192.168.161.250:80 rr
-    -> 192.168.161.141:80           Route   1      0          0         
-    -> 192.168.161.142:80           Route   1      0          0         
+    TCP  192.168.1.250:80 rr
+    -> 192.168.1.187:80           Masq    1      0          0         
+    -> 192.168.1.163:80           Masq    1      0          0         
+    
     [root@lvs_vip_01 ipvsadm-1.26]#     ntpdate pool.ntp.org
         sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
         setenforce 0
@@ -298,7 +295,7 @@ lvs_vip_01安装配置过程
 
 .. attention::
     有的资料说要开启路由转发。但是我测试没有开启路由转发也可以成功。如果需要开启路由转发，命令：
-        echo '1'>/proc/sys/net/ipv4/ip_forward
+        
 
 
 
@@ -316,6 +313,13 @@ lvs_rip_web01安装配置过程
     total 4
     drwxr-xr-x. 2 root root 4096 Nov  2 02:51 tools
     [root@lvs_rip_web01 ~]# lsmod|grep ip_vs
+    [root@lvs_rip_web01 ~]# echo '0' > /proc/sys/net/ipv4/ip_forward
+    [root@lvs_rip_web01 ~]# echo '1' > /proc/sys/net/ipv4/conf/tunl0/arp_ignore
+    [root@lvs_rip_web01 ~]# echo '2' > /proc/sys/net/ipv4/conf/tunl0/arp_announce
+    [root@lvs_rip_web01 ~]# echo '1' > /proc/sys/net/ipv4/conf/all/arp_ignore
+    [root@lvs_rip_web01 ~]# echo '2' > /proc/sys/net/ipv4/conf/all/arp_announce
+    [root@lvs_rip_web01 ~]# echo '0' > /proc/sys/net/ipv4/conf/tunl0/rp_filter
+    [root@lvs_rip_web01 ~]# echo '0' > /proc/sys/net/ipv4/conf/all/rp_filter
     [root@lvs_rip_web01 ~]# cd /home/tools
     [root@lvs_rip_web01 tools]# pwd
     /home/tools
@@ -477,8 +481,37 @@ lvs_rip_web01安装配置过程
     [ -d /etc/rc.d/init.d ] || mkdir -p /etc/rc.d/init.d
     install -m 0755 ipvsadm.sh /etc/rc.d/init.d/ipvsadm
     [root@lvs_rip_web01 ipvsadm-1.26]# 
-    [root@lvs_rip_web01 ipvsadm-1.26]# 
     [root@lvs_rip_web01 ipvsadm-1.26]# lsmod|grep ip_vs
+    [root@lvs_rip_web01 ipvsadm-1.26]# lsmod|grep ipip
+    [root@lvs_rip_web01 ipvsadm-1.26]# modprobe ipip
+    [root@lvs_rip_web01 ipvsadm-1.26]# lsmod|grep ipip
+    ipip                    8371  0 
+    tunnel4                 2943  1 ipip
+    [root@lvs_rip_web01 ipvsadm-1.26]# ifconfig -a
+    eth0      Link encap:Ethernet  HWaddr 00:0C:29:6F:BC:1F  
+            inet addr:192.168.1.187  Bcast:192.168.1.255  Mask:255.255.255.0
+            inet6 addr: fe80::20c:29ff:fe6f:bc1f/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:69 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:51 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:8165 (7.9 KiB)  TX bytes:8098 (7.9 KiB)
+
+    lo        Link encap:Local Loopback  
+            inet addr:127.0.0.1  Mask:255.0.0.0
+            inet6 addr: ::1/128 Scope:Host
+            UP LOOPBACK RUNNING  MTU:65536  Metric:1
+            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0 
+            RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+    tunl0     Link encap:IPIP Tunnel  HWaddr   
+            NOARP  MTU:1480  Metric:1
+            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0 
+            RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
     [root@lvs_rip_web01 ipvsadm-1.26]# /sbin/ipvsadm
     IP Virtual Server version 1.2.1 (size=4096)
     Prot LocalAddress:Port Scheduler Flags
@@ -488,16 +521,25 @@ lvs_rip_web01安装配置过程
     ip_vs                 125694  0 
     libcrc32c               1246  1 ip_vs
     ipv6                  334932  270 ip_vs,ip6t_REJECT,nf_conntrack_ipv6,nf_defrag_ipv6
-    [root@lvs_rip_web01 ipvsadm-1.26]# 
+    [root@lvs_rip_web01 ipvsadm-1.26]# route
+    Kernel IP routing table
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+    192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+    link-local      *               255.255.0.0     U     1002   0        0 eth0
+    default         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+    [root@lvs_rip_web01 ipvsadm-1.26]# route add default gw 192.168.1.166   
+    [root@lvs_rip_web01 ipvsadm-1.26]# route del default gw 192.168.1.1
+    [root@lvs_rip_web01 ipvsadm-1.26]# route
+    Kernel IP routing table
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+    192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+    link-local      *               255.255.0.0     U     1002   0        0 eth0
+    default         192.168.1.166   0.0.0.0         UG    0      0        0 eth0
     [root@lvs_rip_web01 ipvsadm-1.26]# ipvsadm -L -n
     IP Virtual Server version 1.2.1 (size=4096)
     Prot LocalAddress:Port Scheduler Flags
     -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
-    [root@lvs_rip_web01 ipvsadm-1.26]# ifconfig lo:0 192.168.161.250/32
-    [root@lvs_rip_web01 ipvsadm-1.26]# echo "1" > /proc/sys/net/ipv4/conf/lo/arp_ignore
-    [root@lvs_rip_web01 ipvsadm-1.26]# echo "2" > /proc/sys/net/ipv4/conf/lo/arp_announce
-    [root@lvs_rip_web01 ipvsadm-1.26]# echo "1" > /proc/sys/net/ipv4/conf/all/arp_announce
-    [root@lvs_rip_web01 ipvsadm-1.26]# echo "2" > /proc/sys/net/ipv4/conf/all/arp_ignore
+    [root@lvs_rip_web01 ipvsadm-1.26]# ifconfig tunl0 192.168.1.250/24
     [root@lvs_rip_web01 ipvsadm-1.26]# 
     [root@lvs_rip_web01 ipvsadm-1.26]# yum install httpd -y
     Loaded plugins: fastestmirror, security
@@ -565,19 +607,19 @@ lvs_rip_web01安装配置过程
         /etc/init.d/iptables stop 
         chkconfig iptables off
     1 Nov 19:18:07 ntpdate[1732]: step time server 87.120.166.8 offset -28800.933704 sec
-    [root@lvs_rip_web01 ipvsadm-1.26]#     sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
-    [root@lvs_rip_web01 ipvsadm-1.26]#     setenforce 0
-    [root@lvs_rip_web01 ipvsadm-1.26]#     /etc/init.d/iptables stop 
+    [root@lvs_rip_web01 ipvsadm-1.26]# sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    [root@lvs_rip_web01 ipvsadm-1.26]# setenforce 0
+    [root@lvs_rip_web01 ipvsadm-1.26]# /etc/init.d/iptables stop 
     iptables: Setting chains to policy ACCEPT: filter          [  OK  ]
     iptables: Flushing firewall rules:                         [  OK  ]
     iptables: Unloading modules:                               [  OK  ]
-    [root@lvs_rip_web01 ipvsadm-1.26]#     chkconfig iptables off
+    [root@lvs_rip_web01 ipvsadm-1.26]# chkconfig iptables off
     [root@lvs_rip_web01 ipvsadm-1.26]# sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
     [root@lvs_rip_web01 ipvsadm-1.26]# /etc/init.d/httpd start
     Starting httpd:                                            [  OK  ]
     [root@lvs_rip_web01 ipvsadm-1.26]# ll /var/www/html/
     total 0
-    [root@lvs_rip_web01 ipvsadm-1.26]# echo '192.168.161.141    this lvs is working'>>/var/www/html/index.html
+    [root@lvs_rip_web01 ipvsadm-1.26]# echo '192.168.1.187    this lvs is working'>>/var/www/html/index.html
 
 
 
@@ -595,6 +637,13 @@ lvs_rip_web02安装配置过程
     total 4
     drwxr-xr-x. 2 root root 4096 Nov  2 02:51 tools
     [root@lvs_rip_web02 ~]# lsmod|grep ip_vs
+    [root@lvs_rip_web02 ~]# echo '0' > /proc/sys/net/ipv4/ip_forward
+    [root@lvs_rip_web02 ~]# echo '1' > /proc/sys/net/ipv4/conf/tunl0/arp_ignore
+    [root@lvs_rip_web02 ~]# echo '2' > /proc/sys/net/ipv4/conf/tunl0/arp_announce
+    [root@lvs_rip_web02 ~]# echo '1' > /proc/sys/net/ipv4/conf/all/arp_ignore
+    [root@lvs_rip_web02 ~]# echo '2' > /proc/sys/net/ipv4/conf/all/arp_announce
+    [root@lvs_rip_web02 ~]# echo '0' > /proc/sys/net/ipv4/conf/tunl0/rp_filter
+    [root@lvs_rip_web02 ~]# echo '0' > /proc/sys/net/ipv4/conf/all/rp_filter
     [root@lvs_rip_web02 ~]# cd /home/tools
     [root@lvs_rip_web02 tools]# pwd
     /home/tools
@@ -760,19 +809,55 @@ lvs_rip_web02安装配置过程
     -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
     [root@lvs_rip_web02 ipvsadm-1.26]# 
     [root@lvs_rip_web02 ipvsadm-1.26]# lsmod|grep ip_vs
-    ip_vs                 125694  0 
-    libcrc32c               1246  1 ip_vs
-    ipv6                  334932  270 ip_vs,ip6t_REJECT,nf_conntrack_ipv6,nf_defrag_ipv6
-    [root@lvs_rip_web02 ipvsadm-1.26]# 
-    [root@lvs_rip_web02 ipvsadm-1.26]# echo "1" > /proc/sys/net/ipv4/conf/lo/arp_ignore
-    [root@lvs_rip_web02 ipvsadm-1.26]# echo "2" > /proc/sys/net/ipv4/conf/lo/arp_announce
-    [root@lvs_rip_web02 ipvsadm-1.26]# echo "1" > /proc/sys/net/ipv4/conf/all/arp_announce
-    [root@lvs_rip_web02 ipvsadm-1.26]# echo "2" > /proc/sys/net/ipv4/conf/all/arp_ignore
+    [root@lvs_rip_web02 ipvsadm-1.26]# lsmod|grep ipip
+    [root@lvs_rip_web02 ipvsadm-1.26]# modprobe ipip
+    [root@lvs_rip_web02 ipvsadm-1.26]# lsmod|grep ipip
+    ipip                    8371  0 
+    tunnel4                 2943  1 ipip
+    [root@lvs_rip_web02 ipvsadm-1.26]# ifconfig -a
+    eth0      Link encap:Ethernet  HWaddr 00:0C:29:A8:D7:AF  
+            inet addr:192.168.1.163  Bcast:192.168.1.255  Mask:255.255.255.0
+            inet6 addr: fe80::20c:29ff:fea8:d7af/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:80 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:55 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000 
+            RX bytes:9107 (8.8 KiB)  TX bytes:8586 (8.3 KiB)
+
+    lo        Link encap:Local Loopback  
+            inet addr:127.0.0.1  Mask:255.0.0.0
+            inet6 addr: ::1/128 Scope:Host
+            UP LOOPBACK RUNNING  MTU:65536  Metric:1
+            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0 
+            RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+    tunl0     Link encap:IPIP Tunnel  HWaddr   
+            NOARP  MTU:1480  Metric:1
+            RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:0 
+            RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+    [root@lvs_rip_web02 ipvsadm-1.26]# route
+    Kernel IP routing table
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+    192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+    link-local      *               255.255.0.0     U     1002   0        0 eth0
+    default         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+    [root@lvs_rip_web02 ipvsadm-1.26]# route add default gw 192.168.1.166    
+    [root@lvs_rip_web02 ipvsadm-1.26]# route del default gw 192.168.1.1
+    [root@lvs_rip_web02 ipvsadm-1.26]# route
+    Kernel IP routing table
+    Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+    192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+    link-local      *               255.255.0.0     U     1002   0        0 eth0
+    default         192.168.1.166   0.0.0.0         UG    0      0        0 eth0
     [root@lvs_rip_web02 ipvsadm-1.26]# ipvsadm -L -n
     IP Virtual Server version 1.2.1 (size=4096)
     Prot LocalAddress:Port Scheduler Flags
     -> RemoteAddress:Port           Forward Weight ActiveConn InActConn
-    [root@lvs_rip_web02 ipvsadm-1.26]# ifconfig lo:0 192.168.161.250/32
+    [root@lvs_rip_web02 ipvsadm-1.26]# ifconfig tunl0 192.168.1.250/24
     [root@lvs_rip_web02 ipvsadm-1.26]# 
     [root@lvs_rip_web02 ipvsadm-1.26]# yum install httpd -y
     Loaded plugins: fastestmirror, security
@@ -850,7 +935,7 @@ lvs_rip_web02安装配置过程
     Starting httpd:                                            [  OK  ]
     [root@lvs_rip_web02 ipvsadm-1.26]# ll /var/www/html/
     total 0
-    [root@lvs_rip_web02 ipvsadm-1.26]# echo '192.168.161.142    this lvs is working'>>/var/www/html/index.html 
+    [root@lvs_rip_web02 ipvsadm-1.26]# echo '192.168.1.163    this lvs is working'>>/var/www/html/index.html 
 
 
 
@@ -865,10 +950,10 @@ lvs_vip_01本地测试
 .. code-block:: bash
     :linenos:
 
-    [root@lvs_vip_01 ipvsadm-1.26]# curl http://192.168.161.142     
-    192.168.161.142    this lvs is working
-    [root@lvs_vip_01 ipvsadm-1.26]# curl http://192.168.161.141
-    192.168.161.141    this lvs is working
+    [root@lvs_vip_01 ipvsadm-1.26]# curl http://192.168.1.163     
+    192.168.1.163    this lvs is working
+    [root@lvs_vip_01 ipvsadm-1.26]# curl http://192.168.1.187
+    192.168.1.187    this lvs is working
 
 
 lvs_rip_web01本地测试
@@ -877,8 +962,8 @@ lvs_rip_web01本地测试
 .. code-block:: bash
     :linenos:
 
-    [root@lvs_rip_web01 ipvsadm-1.26]# curl http://192.168.161.141
-    192.168.161.141    this lvs is working
+    [root@lvs_rip_web01 ipvsadm-1.26]# curl http://192.168.1.187
+    192.168.1.187    this lvs is working
 
 lvs_rip_web02本地测试
 ---------------------------------------------
@@ -886,8 +971,8 @@ lvs_rip_web02本地测试
 .. code-block:: bash
     :linenos:
 
-    [root@lvs_rip_web02 ipvsadm-1.26]# curl http://192.168.161.142
-    192.168.161.142    this lvs is working
+    [root@lvs_rip_web02 ipvsadm-1.26]# curl http://192.168.1.163
+    192.168.1.163    this lvs is working
 
 
 抓包分析
@@ -900,7 +985,7 @@ lvs_rip_web02本地测试
         tcpdump -i eth0 src host 192.168.161.137 or dst host 192.168.161.137
     - lvs_rip_web02
         tcpdump -i eth0 src host 192.168.161.137 or dst host 192.168.161.137
-2. 从本地另一个IP为： ``192.168.161.137`` 访问，即运行命令： ``curl http://192.168.161.250``
+2. 从本地另一个IP为： ``192.168.161.137`` 访问，即运行命令： ``curl http://192.168.1.250``
 
 3. 查看监控的抓包信息：
 
@@ -911,5 +996,25 @@ lvs_rip_web02本地测试
 
 
 需要编写脚本校验然后开启。也可以结合keepalive做。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

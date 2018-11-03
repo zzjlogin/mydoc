@@ -14,7 +14,15 @@ keepalive简述
 =============================================
 
 
+keepalive，利用了VRRP协议实现了双机热备的功能。可以很好的结合lvs。
 
+
+官方资料：
+    - 官网：http://www.keepalived.org
+    - 官方配置详解：http://www.keepalived.org/manpage.html
+    - 官方文档：http://www.keepalived.org/documentation.html
+    - 官方文档：http://www.keepalived.org/doc/
+    - github源码：https://github.com/acassen/keepalived
 
 
 
