@@ -2,7 +2,7 @@
 .. _linux-filesys:
 
 =================================================
-Linux文件系统
+Linux文件系统入门
 =================================================
 
 :Date: 2018-09-02
@@ -14,19 +14,28 @@ Linux文件系统
 =================================================
 
 
-    linux: ext2,ext3,ext4,xfs,btrfs,reiserfs,jfs
-    光盘： iso9660
-    window:fat32,vsfat,ntfs
-    unix : FFS,UFS,JFS2
-    网络文件系统：NFS,CIFS
-    集群文件系统：GFS2,OCFS2
-    分布式文件系统：FASTDFSceph ,glusterfs
-    RAW:裸设备
+linux
+    ext2,ext3,ext4,xfs,btrfs,reiserfs,jfs
+光盘
+    iso9660
+window
+    fat32,vsfat,ntfs
+unix
+    FFS,UFS,JFS2
+网络文件系统
+    NFS,CIFS
+集群文件系统
+    GFS2,OCFS2
+分布式文件系统
+    FASTDFSceph,glusterfs
+RAW
+    裸设备
 
+-------
 
 Windows常用的分区格式有三种，分别是FAT16、FAT32、NTFS格式。 [1]_
 
-在Linux操作系统里有Ext2、Ext3、Linux swap和VFAT四种格式。
+在Linux操作系统里有Ext2、Ext3、Linux swap和VFAT、xfs五种格式。
 
 FAT16:
     作为一种文件名称，FAT(File Allocation Table，文件分配表)自1981年问世以来，已经成为一个计算机术语。
@@ -54,11 +63,13 @@ Ext4 [2]_:
     默认启用 barrier。磁盘 上配有内部缓存，以便重新调整批量数据的写操作顺序，优化写入性能，因此文件系统必须在日志数据写入磁盘之后才能写 commit 记录，
     若commit 记录写入在先，而日志有可能损坏，那么就会影响数据完整性。Ext4 默认启用 barrier，只有当 barrier 之前的数据全部写入磁盘，才能写 barrier 之后的数据。（可通过 "mount -o barrier=0" 命令禁用该特性。）
 
+
+
 Linux swap:
     它是Linux中一种专门用于交换分区的swap文件系统。Linux是使用这一整个分区作为交换空间。一般这个swap格式的交换分区是主内存的2倍。在内存不够时，Linux会将部分数据写到交换分区上。 VFAT： VFAT叫长文件名系统，这是一个与Windows系统兼容的Linux文件系统，支持长文件名，可以作为Windows与Linux交换文件的分区。
 
 xfs
-    适合数据库业务，门户网站使用，例如MySQL数据库使用这种文件系统。
+    CentOS7默认的文件系统。适合数据库业务，门户网站使用，例如MySQL数据库使用这种文件系统。
 
     XFS一种高性能的日志文件系统，XFS 特别擅长处理大文件，同时提供平滑的数据传输。
     
@@ -367,159 +378,7 @@ Linux文件系统目录结构
 
 
 
-Linux文件系统中区块和inode
-=================================================
 
-操作系统在挂载一个硬盘时需要先格式化。
-
-在格式化的过程中，操作系统会把硬盘分为两部分。一部分是inode，一部分是block。
-
-文件存储都是存储在block中。一个block一般默认时4K，这就是为什么创建一个文件即使是空文件也占用4k空间。
-因为一个文件至少占用一个block。而block是linux操作系统识别的最小的存储单元。
-
-
-inode介绍
-----------------------------------------------------
-
-inode包含文件的元信息，具体来说有以下内容：
-　　* 文件的字节数
-　　* 文件拥有者的User ID
-　　* 文件的Group ID
-　　* 文件的读、写、执行权限
-　　* 文件的时间戳，共有三个：ctime指inode上一次变动的时间，mtime指文件内容上一次变动的时间，atime指文件上一次打开的时间。
-　　* 链接数，即有多少文件名指向这个inode
-　　* 文件数据block的位置
-
-查看文件inode信息:
-
-可以用stat命令，查看某个文件的inode信息：
-
-.. code-block:: bash
-
-　　stat example.txt
-
-也可以用命令ls:
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin ~]# ls -i hello.sh
-    25984 hello.sh
-
-查看硬盘/存储的inode数量信息:
-
-.. code-block:: bash
-    
-    df -i
-
-.. attention::
-    每个目录项，由两部分组成：所包含文件的文件名，以及该文件名对应的inode号码。
-
-
-
-
-inode是当存储文件时，一个文件对应一般对应一个inode，正如我们日常常见的场景。很多文件都比4k大(排除特殊的小文件特别多的情况)
-所以inode都比block数量少。而且一个inode的大小默认大小128byte（C58），256byte（C64）。
-
-.. attention:: 如果有硬连接则一个inode可以指向多个文件，创建硬连接的方法参考ln用法。简单举例: ln src.txt dest
-
-查看操作系统inode大小：
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin ~]# dumpe2fs -h /dev/sda3 | grep "Inode size"
-    dumpe2fs 1.41.12 (17-May-2010)
-    Inode size:               256
-    [root@zzjlogin ~]# dumpe2fs -h /dev/sda1 | grep "Inode size"
-    dumpe2fs 1.41.12 (17-May-2010)
-    Inode size:               128
-    [root@zzjlogin ~]# df -h
-    Filesystem      Size  Used Avail Use% Mounted on
-    /dev/sda3       2.5G  1.7G  621M  74% /
-    tmpfs           491M     0  491M   0% /dev/shm
-    /dev/sda1       477M   28M  424M   7% /boot
-
-
-Linux操作系统把文件名和文件分离开，操作系统识别文件是通过inode号来识别文件。
-所以有一些特殊情况:
-
--  有时，文件名包含特殊字符，无法正常删除。这时，直接删除inode节点，就能起到删除文件的作用。
-    删除命令: ``find ./* -inum 1049741 |xargs rm -f`` 或者 ``find ./* -inum 1049741 -delete``
-    或者 ``find ./* -inum 1049741 -exec rm -i {} \;``
-- 移动文件或重命名文件，只是改变文件名，不影响inode号码。
-- 打开一个文件以后，系统就以inode号码来识别这个文件，不再考虑文件名。因此，通常来说，系统无法从inode号码得知文件名。
-
-
-
-block介绍
------------------------------------
-
-
-
-如果/var分区的Superblock损坏了，那么/var分区将无法挂载。在这时候，一般会执行fsck来自动选择一份Superblock备份来替换损坏的Superblock，并尝试修复文件系统。
-主Superblock存储在分区的block0或者block1中，而Superblock的备份则分散存储在文件系统的多组block中。当需要手工恢复时，我们可以使用
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin ~]# dumpe2fs /dev/sda1 | grep -i superblock
-    dumpe2fs 1.41.12 (17-May-2010)
-        主 superblock at 1, Group descriptors at 2-3
-        备份 superblock at 8193, Group descriptors at 8194-8195
-        备份 superblock at 24577, Group descriptors at 24578-24579
-        备份 superblock at 40961, Group descriptors at 40962-40963
-        备份 superblock at 57345, Group descriptors at 57346-57347
-        备份 superblock at 73729, Group descriptors at 73730-73731
-        备份 superblock at 204801, Group descriptors at 204802-204803
-        备份 superblock at 221185, Group descriptors at 221186-221187
-        备份 superblock at 401409, Group descriptors at 401410-401411
-    [root@zzjlogin ~]# dumpe2fs /dev/sda3 | grep -i superblock 
-    dumpe2fs 1.41.12 (17-May-2010)
-        主 superblock at 0, Group descriptors at 1-1
-        备份 superblock at 32768, Group descriptors at 32769-32769
-        备份 superblock at 98304, Group descriptors at 98305-98305
-        备份 superblock at 163840, Group descriptors at 163841-163841
-        备份 superblock at 229376, Group descriptors at 229377-229377
-        备份 superblock at 294912, Group descriptors at 294913-294913
-
-
-
-指定block大小和inode数量
----------------------------------------------------------
-
-可以格式化的时候指定硬盘的block默认大小和inode数量
-
-通过 ``mkfs.ext`` 格式化并指定block和inode信息。
-
-指定block默认大小为8K,每16k创建一个inode:
-
-.. code-block:: bash
-    :linenos:
-    
-    [root@zzjlogin ~]# mkfs.ext4 -b 8192 -i 16384 /dev/sdb
-
-
-mkfs.ext主要参数:
-    b   指定block默认大小
-    f   fragment-size
-    i   bytes-per-inode
-    I   inode-size
-
-
-硬链接
-------------------------------------------------------------------
-
-一般情况下一个文件名和inode号码是一一对应的。多个文件名指向同一个inode就是硬链接。
-
-ln 源文件   目标文件
-
-软连接
----------------------------------------------------------------------
-
-软连接文件和源文件的inode是不同的， 软连接文件存储的是相对应源文件的路径。
-
-ln -s 源文件   目标文件
 
 
 

@@ -1,7 +1,7 @@
-.. _computer-introduction:
+.. _linux_base:
 
 ======================================================
-Linux入门
+Linux入门基础
 ======================================================
 
 :Date: 2018-09-02
@@ -29,6 +29,8 @@ Linux系统安装
 概念： 是一个或者多个设备的组合。
 
 在Linux系统中可以用一句话来说明所有的设备及文件。即 ``一切皆文件`` 。
+
+linux无论是用显示器键盘鼠标登陆系统还是远程通过ssh/svn登陆系统，都可以理解为一个通过一个终端来登陆系统。
 
 终端分类
 ------------------------------------------------------
@@ -70,60 +72,6 @@ Linux系统中所有的设备在Linux系统中都表现为一个文件，一般�
     CLI
         命令行界面
 
-Linux的shell
-------------------------------------------------------
-
-shell的概念可以参考： `shell百度百科 <https://baike.baidu.com/item/shell/99702?fr=aladdin>`_
-
-个人理解，shell就是用户和操作系统内核交互的一个中间件。用户可以通过shell实现控制或调试内核输入输出等操作。
-
-- 查看当前的shell类型
-
-.. attention::
-    Linux的shell有很多种。但是一般linux默认是bash。
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin ~]# echo $SHELL
-    /bin/bash
-
-- 查看系统支持的所有shell类型
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin ~]# cat /etc/shells
-    /bin/sh
-    /bin/bash
-    /sbin/nologin
-    /bin/dash
-    /bin/tcsh
-    /bin/csh
-
-
-shell命令分类
-======================================================
-内建命令
-  由shell自带。
-外部命令
-  某路径下的可执行程序文件。
-
-查看命令类型
-
-.. code-block:: bash
-    :linenos:
-
-    [root@zzjlogin user1]# type cd
-    cd is a shell builtin
-    [root@zzjlogin user1]# type service
-    service is /usr/sbin/service
-
-命令提示符
-======================================================
-
-:#: 系统管理员用户(超级管理/用户ID是0则会提示#)
-:$: 系统普通用户(用户ID不是0的用户)
 
 ``[root@zzjlogin ~]#`` 我们成为PS1,设置我们使用命令的前缀的。
 

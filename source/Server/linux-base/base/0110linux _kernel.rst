@@ -80,6 +80,7 @@ uname的使用
 修改内核参数
 
 1. 方法1
+    临时修改，重启后失效
 
 .. code-block:: bash
     :linenos:
@@ -95,6 +96,7 @@ uname的使用
     net.ipv4.ip_forward = 1
 
 3. 方法3
+    重启依然生效。
 
 .. code-block:: bash
     :linenos:

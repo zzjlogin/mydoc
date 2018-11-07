@@ -10,8 +10,10 @@ linux用户和组管理
 
 用户分类
 
-- 系统用户:1-499(centos6),1-999(centos7)
-- 登陆用户：500+（centos6）,1000+(centos7)
+- 系统用户:
+    1-499(centos6),1-999(centos7)
+- 登陆用户：
+    500+（centos6）,1000+(centos7)
 
 .. hint:: 用户ID为0的账号是系统管理员。默认root的用户ID是0
 
