@@ -39,9 +39,10 @@ IPADDRn=address
     IPv4地址，设置静态IP时使用这个参数。其中n从0开始，例如 ``IPADDR0``
     但是我们日常设置，指设置 ``IPADDR`` 而不带数字。
 IPV6ADDR=address
-    设置IPv6地址，address值是：
+    - 设置IPv6地址，address值是：
         Address/Prefix-length
-    这个参数设置需要先IPV6INIT开启状态。
+    - 这个参数设置需要先IPV6INIT开启状态。
+
 IPV6ADDR_SECONDARIES=address
     设置多个IPv6地址，多个地址中间用空格分割，如果每个地址没有子网掩码，使用默认的64。
     这个参数设置需要先IPV6INIT开启状态。
@@ -53,6 +54,7 @@ IPV6_AUTOCONF=answer
     是否启用IPv6通过邻居发现自动配置。
         - yes(开启)
         - no(关闭)
+    
     如果开启则用Neighbor Discovery (ND)的路由发现配置本地IPv6地址。
 
     参数 **IPV6FORWARDING** 会对本参数设置效果有影响，具体情况如下：
@@ -64,12 +66,15 @@ IPV6_PRIVACY=rfc3041
     默认是禁用RFC 3041支持，这个设置取决于是否启用了IPV6INIT选项
 LINKDELAY=time
     在配置设备之前等待链接协商的秒数。默认值是5秒。
+    
     用途：
         例如，通过增加这个值，可以克服由STP引起的链接协商中的延迟。
+
 MACADDR=MAC-address
     设置网卡物理地址，例如 ``AA:BB:CC:DD:EE:FF``
     作用：
         手动设置物理网卡地址。
+    
     不能和参数 **HWADDR** 一起用
 MASTER=bond-interface
     指定端口绑定时的主设备端口。经常和指定备设备的 ``SLAVE`` 连用
@@ -85,6 +90,7 @@ NM_CONTROLLED=answer
     是否通过 **NetworkManager** 管理网卡设备，具体值是：
         - yes(默认就是允许)
         - no(不允许)
+    
     **NetworkManager** 是图形界面管理网卡的程序。
 ONBOOT=answer
     系统启动时是否激活该设备。
@@ -113,8 +119,9 @@ DHCPV6C=answer
     是否，使用DHCP获取IPv6地址参数：
         - yes(使用dhcp获取IPv6地址)
         - no(默认时no，不使用dhcp获取IPv6地址)
-    .. hint::
-        根据RFC 4862文件，网卡会自动生成一个IPv6 link-local地址。
+    
+.. hint::
+    根据RFC 4862文件，网卡会自动生成一个IPv6 link-local地址。
 
 DHCPV6C_OPTIONS=answer
     启动通过dhcp获取IPv6以后的参数，具体值和含义：

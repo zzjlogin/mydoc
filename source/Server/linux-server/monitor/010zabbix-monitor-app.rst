@@ -14,9 +14,9 @@ zabbix监控web服务
 zabbix默认可以设置监控web，并可以根据web的情况设置触发器和告警动作。
 
 
-zabbix2.x版本的服务器在 ``configuration ``下面有web监控项，可以绑定对应的主机，然后设置即可。
+zabbix2.x版本的服务器在 ``configuration `` 下面有web监控项，可以绑定对应的主机，然后设置即可。
 
-zabbix3.x版本的服务器已经把web监控集成在 ``configuration `` 的hosts 中，Hosts 的监控主机中有一项web，可以设置对应监控主机的web监控。
+zabbix3.x版本的服务器已经把web监控集成在 ``configuration `` 的hosts中，Hosts的监控主机中有一项web，可以设置对应监控主机的web监控。
 
 
 测试被监控服务器：
@@ -92,7 +92,7 @@ zabbix监控MySQL服务
 zabbix客户端配置
 ----------------------------------
 
-.. attentions::
+.. attention::
     如果没有文件 ``/etc/zabbix/zabbix_agentd.d/userparameter_mysql.conf``
     可以在目录/usr/share/doc/zabbix-agent-XXX/目录下查找。
 

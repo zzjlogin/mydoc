@@ -28,14 +28,11 @@ keepalive配置详解
         on|off|true|false|yes|no
 
 keepalive配置一般可以分为三个部分：
-	- GLOBAL CONFIGURATION，全局配置
-	- VRRPD CONFIGURATION，vrrp配置
-	- LVS CONFIGURATION，lvs配置
-    - BFD CONFIGURATION，BFD配置
+	- 全局配置GLOBAL CONFIGURATION
+	- vrrp配置VRRPD CONFIGURATION
+	- lvs配置LVS CONFIGURATION
+    - BFD配置BFD CONFIGURATION
 
-    
-
-    
 全局配置详解(Globals configurations)
 ---------------------------------------------
 
@@ -63,6 +60,7 @@ child_wait_time SECS
     默认5秒，主进程允许子进程结束后几秒退出。当实例特别多时才需要考虑这个参数。
 
 -------
+
 .. tip::
     以上几个配置项可以放在 ``global_defs {}``
     的前面。每行一个配置项。
@@ -102,12 +100,14 @@ default_interface p33p1.3
     指定静态地址的接口，默认 ``eth0``
 lvs_sync_daemon <INTERFACE> <VRRP_INSTANCE> [id <SYNC_ID>] [maxlen <LEN>] \
                            [port <PORT>] [ttl <TTL>] [group <IP ADDR>]
+    
     参数 ``maxlen, port, ttl and group`` 仅在 ``Linux 4.3`` 及以后的版本才可以使用
         - syncid (0 to 255) for lvs syncd
         - maxlen (1..65507) maximum packet length
         - port (1..65535) UDP port number to use
         - ttl (1..255)
         - group - IPv4/IPv6的组播地址，multicast group address (IPv4 or IPv6)
+    
     Sync daemon由IPVS内核代码提供，只支持每次一个守护进程实例来同步连接表。
 lvs_flush
     启动时刷新LVS配置中不存在的配置。
@@ -183,6 +183,7 @@ bfd_rlimit_rtime >=1
 
 snmp_socket udp:1.2.3.4:705
     默认unix:/var/agentx/master，遵循RFC支持使用特定socket连接SNMP的主客户端。
+    
     参考：源码模块 ``keepalived/vrrp/vrrp_snmp.c``
 
 enable_snmp_vrrp
@@ -381,6 +382,9 @@ BFD配置详解(BFD configurations)
 
 BFD配置语法格式：
 
+.. code-block:: bash
+    :linenos:
+
     bfd_instance <STRING> {
         # BFD Neighbor IP (synonym neighbour_ip)
         neighbor_ip <IP ADDRESS>
@@ -577,8 +581,11 @@ preempt_delay 300    # waits 5 minutes
     转向备份的时间间隔
 debug <LEVEL>
     调试级别，0-4
+
 notify_master <STRING>|<QUOTED-STRING> [username [groupname]]
+
 notify_backup <STRING>|<QUOTED-STRING> [username [groupname]]
+
 notify_fault <STRING>|<QUOTED-STRING> [username [groupname]]
     通知脚本
 notify_stop <STRING>|<QUOTED-STRING> [username [groupname]]
@@ -657,8 +664,8 @@ persistence_granularity <NETMASK>
 
 protocol TCP|UDP|SCTP
     选择4层协议
-# If VS IP address is not set,
-# suspend healthchecker's activity
+
+
 ha_suspend
     如果没有设置VIP，则健康检查推迟激活
 
@@ -739,11 +746,17 @@ real_server <IPADDR> <PORT> {}
 
     virtualhost <STRING>
         虚拟主机名称，用来定义HTTP_GET或SSL_GET使用
+
     alpha <BOOL>                    # see above
+    
     retry <INTEGER>                 # see above
+    
     delay_before_retry <INTEGER>    # see above
+    
     warmup <INTEGER>                # see above
+    
     delay_loop <INTEGER>            # see above
+    
     inhibit_on_failure <BOOL>       # see above
 
     CHECKER_TYPE {}
@@ -769,11 +782,17 @@ real_server <IPADDR> <PORT> {}
 
         fwmark <INTEGER>
             防火墙标记
+        
         alpha <BOOL>                    # see above
+        
         retry <INTEGER>                 # see above
+        
         delay_before_retry <INTEGER>    # see above
+        
         warmup <INTEGER>                # see above
+        
         delay_loop <INTEGER>            # see above
+        
         inhibit_on_failure <BOOL>       # see above
 
 

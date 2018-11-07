@@ -17,9 +17,12 @@ zabbix server的模式：
 ========================================
 
 服务器系统环境：
-    **系统：**CentOS6.6 64位
-    **内核：**2.6.32
-    **主机名：**proxy
+    系统：
+        CentOS6.6 64位
+    内核：
+        2.6.32
+    主机名：
+        zzjlogin
 
 
 
@@ -53,6 +56,7 @@ zabbix软件：
 
 代理服务环境：
     和服务器系统以及软件完全一致
+
     软件环境是：
         - zabbix-proxy-mysql-3.4.14-1.el6.x86_64
         - zabbix-release-3.4-1.el6.noarch
@@ -182,6 +186,7 @@ zabbix软件：
 
 .. code-block:: bash
     :linenos:
+    
     [root@proxy ~]# yum install mysql-server
 
     [root@proxy ~]# /etc/init.d/mysqld start

@@ -16,12 +16,12 @@ vlan学习
     `rfc2922`_ :
     `wireshark-vlan`_ :用wireshark分析vlan
 
-.. _wireshark-vlan :https://wiki.wireshark.org/VLAN
+.. _wireshark-vlan: https://wiki.wireshark.org/VLAN
 
-.. _rfc3069 :https://www.rfc-editor.org/rfc/rfc3069.txt
-.. _rfc6329 :https://www.rfc-editor.org/rfc/rfc6329.txt
+.. _rfc3069: https://www.rfc-editor.org/rfc/rfc3069.txt
+.. _rfc6329: https://www.rfc-editor.org/rfc/rfc6329.txt
 
-.. rfc2922 :https://www.rfc-editor.org/rfc/rfc2922.txt
+.. _rfc2922: https://www.rfc-editor.org/rfc/rfc2922.txt
 
 
 802.1Q文档: http://w3.tmit.bme.hu/courses/onlab/library/standards/802-1Q-2003.pdf

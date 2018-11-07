@@ -12,9 +12,12 @@ nginx rpm安装
 服务器系统：
 
 服务器系统环境：
-    **系统：**CentOS6.6 64位
-    **内核：**2.6.32
-    **主机名：**zzjlogin
+    系统：
+        CentOS6.6 64位
+    内核：
+        2.6.32
+    主机名：
+        zzjlogin
 
 
 .. code-block:: bash

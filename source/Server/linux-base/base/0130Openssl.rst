@@ -341,6 +341,7 @@ openssl是ssl的一个开源项目，由三部分组成。
     :linenos:
 
     [root@centos-155 ~]# openssl ca -revoke /etc/pki/CA/cacert.pem 
+
 3. 生成吊销证书编号
 
 .. code-block:: bash

@@ -32,10 +32,6 @@ habor安装
 web访问
 ----------------------------------------------------
 
-.. image:: /images/docker/harbor登陆.png
 
-.. image:: /images/docker/harbor管理主页.png
 
-.. image:: /images/docker/harbor注册账号.png
 
-.. image:: /images/docker/harbor新建项目.png

@@ -22,7 +22,6 @@ Windows Python虚拟环境创建：
 
 文档创建过程：
 -----------
-----
 
 .. code-block:: bash
 
@@ -85,7 +84,7 @@ Windows Python虚拟环境创建：
     n) [n]:
 
     A Makefile and a Windows command file can be generated for you so that you
-    only have to run e.g. `make html' instead of invoking sphinx-build
+    only have to run e.g. `make html' instead of invoking sphinx-build`
     directly.
     > Create Makefile? (y/n) [y]:
     > Create Windows command file? (y/n) [y]:
@@ -115,18 +114,20 @@ Windows Python虚拟环境创建：
 
     原来内容：html_theme = 'alabaster'
     换成新的主题：html_theme = 'sphinx_rtd_theme'
+
 ----
 
 文档创建和生成html文件：
 -------------------
+
 * 创建rst文件
     rst文件即：reStructuredText
 
     在source目录下创建文件后缀为rst的文件。然后按照对应的rst语法填写内容即可。
 
 * 生成html文件：
-    在source的上一级目录打开cmd。然后输入命令：`make html`
-
+    - 在source的上一级目录打开cmd。然后输入命令：``make html``
+    - 建议使用 ``make html 2>err.txt``
 
 
 

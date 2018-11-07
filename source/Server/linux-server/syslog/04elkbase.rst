@@ -662,7 +662,6 @@ logstash写数据到els
 
 .. code-block:: text
     :linenos:
-    :linenos:
 
     output {
         elasticsearch {

@@ -16,15 +16,20 @@ windows系统zabbix agent
 解压： ``zabbix_agents_3.4.6.win.zip``
 
 1. 下载解压
-    解压后有两个文件目录：
-        bin：放置zabbix客户端程序，里面有32位系统程序和64位系统的
-        conf：目录下存放的是配置文件样例
+
+解压后有两个文件目录：
+    bin
+        放置zabbix客户端程序，里面有32位系统程序和64位系统的
+    conf
+        目录下存放的是配置文件样例
+
 2. 解压后创建zabbix程序目录
     在windows系统的C盘创建目录 ``zabbix``
 3. 程序和配置文件目录转移
     把bin目录下的win64目录下的文件复制到上面创建的zabbix文件中(C:\zaabix)
 
     把conf目录下的 ``zabbix_agentd.win.conf`` 文件复制到C盘根目录。
+    
 .. tip::
     这个win64下主要有三个文件：
         - zabbix_agentd.exe

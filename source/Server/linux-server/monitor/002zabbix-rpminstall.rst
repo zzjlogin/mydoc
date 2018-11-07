@@ -9,9 +9,12 @@ zabbix rpm安装
 ========================================
 
 服务器系统环境：
-    **系统：**CentOS6.6 64位
-    **内核：**2.6.32
-    **主机名：**zzjlogin
+    系统：
+        CentOS6.6 64位
+    内核：
+        2.6.32
+    主机名：
+        zzjlogin
 
 
 .. code-block:: bash
@@ -364,8 +367,7 @@ zabbix安装配置
 
 
 .. tip::
-    - mysql数据库授权zabbix用户的时候的访问IP ``localhost`` 是本地主机。此时只能通过localhost
-    来登陆，不能通过127.0.0.1登陆，也不能通过系统IP登陆。
+    - mysql数据库授权zabbix用户的时候的访问IP ``localhost`` 是本地主机。此时只能通过localhost来登陆，不能通过127.0.0.1登陆，也不能通过系统IP登陆。
     - 如果mysql授权访问用户通过IP访问需要授权方式是:grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
 
 .. attention::

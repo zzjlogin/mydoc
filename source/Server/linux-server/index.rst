@@ -12,7 +12,7 @@ Linux 服务器搭建
    kickstarts/index
    nginx/index
    dns/index
-   Rsync/index
+   rsync/index
    ftp/index
    nfs/index
    samba/index
@@ -20,3 +20,8 @@ Linux 服务器搭建
    monitor/index
    docker/index
    vc/index
+   keepalive/index
+   lvs/index
+   openldap/index
+   
+

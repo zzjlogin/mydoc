@@ -446,6 +446,7 @@ profile命令查看cobbler镜像所使用的参数
     导入镜像以后会自动构建一个对应的yum仓库：
         仓库的位置： ``/var/www/cobbler/ks_mirror/CentOS-6.6-x86_64``
         其中 ``CentOS-6.6-x86_64`` 是导入的镜像名。
+    
     可以通过网页访问：http://192.168.6.10/cobbler/ks_mirror/CentOS-6.6-x86_64
 
 cobbler自动化安装的系统会自动有一个 ``cobbler-config.repo`` 文件，这就是以cobbler服务器为yum源对应的yum源配置文件。
@@ -515,6 +516,7 @@ cobbler安装时PXE界面设置
 
 例如 ``/var/lib/tftpboot/pxelinux.cfg/default`` ：
     LABEL CentOS-6.6-x86_64
+
 把 ``/etc/cobbler/pxe/pxedefault.template`` 中 ``$pxe_timeout_profile`` 替换为： ``CentOS-6.6-x86_64``
 
 PXE启动菜单加密码提示

@@ -25,9 +25,9 @@ nss的配置文件是/etc/nsswitch.conf，格式比较简单。
 
 样例： 
     - 密码通过文件去验证
-    passwd: files
+        passwd: files
     - 主机需要去文件找，没有再去dns找
-    hosts: files dns
+        hosts: files dns
 
 解析库：
     - files

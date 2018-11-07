@@ -30,7 +30,8 @@ NFS
     - 客户端获取正确的端口，并与NFS daemon联机存取数据。
     - 存取数据成功后，返回前端访问程序，完成一次存取操作。
     - 所以无论客户端，服务端，需要使用NFS，必须安装RPC服务。
-    NFS的RPC服务，在Centos5下名为portmap,Centos6下名称为rpcbind。
+    - NFS的RPC服务，在Centos5下名为portmap,Centos6下名称为rpcbind。
+
 3. 端口服务
     CentOS5.x动态随机端口都小于1024，CentOS6.x动态随机端口比较大。
     NFS服务器需要开放的端口：mountd,nfs,nlockmgr,portmapper,rquotad这五个服务对应的端口号。
@@ -42,7 +43,7 @@ NFS
    :header-rows: 1
    :align: center
 
-   * - **服务名称 **
+   * - **服务名称**
      - **端口信息**
      - **备注**
    * - portmapper

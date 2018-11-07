@@ -13,10 +13,12 @@ nginx源码安装
 服务器系统：
 
 服务器系统环境：
-    **系统：**CentOS6.6 64位
-    **内核：**2.6.32
-    **主机名：**zzjlogin
-
+    系统：
+        CentOS6.6 64位
+    内核：
+        2.6.32
+    主机名：
+        zzjlogin
 
 .. code-block:: bash
     :linenos:
@@ -420,15 +422,15 @@ nginx编译参数
 --without-http_empty_gif_module    disable ngx_http_empty_gif_module
 --without-http_browser_module      disable ngx_http_browser_module
 --without-http_upstream_hash_module
-                                    disable ngx_http_upstream_hash_module
+                                   disable ngx_http_upstream_hash_module
 --without-http_upstream_ip_hash_module
-                                    disable ngx_http_upstream_ip_hash_module
+                                   disable ngx_http_upstream_ip_hash_module
 --without-http_upstream_least_conn_module
-                                    disable ngx_http_upstream_least_conn_module
+                                   disable ngx_http_upstream_least_conn_module
 --without-http_upstream_keepalive_module
-                                    disable ngx_http_upstream_keepalive_module
+                                   disable ngx_http_upstream_keepalive_module
 --without-http_upstream_zone_module
-                                    disable ngx_http_upstream_zone_module
+                                   disable ngx_http_upstream_zone_module
 
 --with-http_perl_module            enable ngx_http_perl_module
 --with-http_perl_module=dynamic    enable dynamic ngx_http_perl_module
@@ -491,8 +493,8 @@ nginx编译参数
 --with-cc-opt=OPTIONS              set additional C compiler options
 --with-ld-opt=OPTIONS              set additional linker options
 --with-cpu-opt=CPU                 build for the specified CPU, valid values:
-                                    pentium, pentiumpro, pentium3, pentium4,
-                                    athlon, opteron, sparc32, sparc64, ppc64
+                                   pentium, pentiumpro, pentium3, pentium4,
+                                   athlon, opteron, sparc32, sparc64, ppc64
 
 --without-pcre                     disable PCRE library usage
 --with-pcre                        force PCRE library usage
@@ -503,8 +505,8 @@ nginx编译参数
 --with-zlib=DIR                    set path to zlib library sources
 --with-zlib-opt=OPTIONS            set additional build options for zlib
 --with-zlib-asm=CPU                use zlib assembler sources optimized
-                                    for the specified CPU, valid values:
-                                    pentium, pentiumpro
+                                   for the specified CPU, valid values:
+                                   pentium, pentiumpro
 
 --with-libatomic                   force libatomic_ops library usage
 --with-libatomic=DIR               set path to libatomic_ops library sources

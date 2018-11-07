@@ -19,8 +19,9 @@ zabbix服务器配置：
         1. action中 ``Auto registration`` 源事件创建动作。
         #. conditions不用添加。只用添加一个action名称。
         #. 创建的action对应的Operations添加：添加主机动作、添加到主机组、链接模版。
-    .. attention::
-        如果主机组、主机模版想自定义，可以在创建action之前创建主机组和对应的模版。
+
+.. attention::
+    如果主机组、主机模版想自定义，可以在创建action之前创建主机组和对应的模版。
 
 具体过程
 ==================================
