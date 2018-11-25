@@ -1,14 +1,11 @@
-.. _zzjlogin-linux-nfsindex:
+.. _mysql_sql:
 
 =========================
-nfs网络文件系统
+MySQL的SQL语句学习
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   *
-
-
-
+   mysql_sql/*

@@ -1,7 +1,7 @@
-.. _zzjlogin-linux-nfsindex:
+.. _zzjlogin-linux-mysqlindex:
 
 =========================
-nfs网络文件系统
+MySQL数据库
 =========================
 
 .. toctree::
