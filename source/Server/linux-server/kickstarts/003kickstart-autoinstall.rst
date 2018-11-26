@@ -1,7 +1,7 @@
 .. _kickstart-autoinstall:
 
 ================================
-kickstart+PXE自动安装系统
+自动安装系统(kickstart+PXE)
 ================================
 
 :Date: 2018-09
