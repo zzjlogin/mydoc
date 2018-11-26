@@ -1,0 +1,21 @@
+.. _openldap-cmd:
+
+==============================================================
+openldap相关ldap命令
+==============================================================
+
+:Date: 2018-09
+
+.. contents::
+
+
+
+==============================================================
+
+
+http://www.cnblogs.com/jins-note/p/9513284.html
+http://blog.51cto.com/xuqq999/786708
+
+https://blog.csdn.net/reblue520/article/details/51804162
+https://blog.csdn.net/zouahaijun/article/details/4503330
+http://www.cnblogs.com/lfdblog/p/9803276.html

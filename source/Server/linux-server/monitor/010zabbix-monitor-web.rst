@@ -1,4 +1,4 @@
-.. _server-linux-zabbix-monitor-app:
+.. _linux-zabbix-monitor-web:
 
 ==================================
 zabbix监控MySQL服务
@@ -7,7 +7,7 @@ zabbix监控MySQL服务
 
 
 
-
+==================================
 zabbix监控web服务
 ==================================
 
