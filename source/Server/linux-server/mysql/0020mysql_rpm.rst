@@ -1,12 +1,64 @@
 .. _mysql_rpm_install:
 
 ==============================================================
-MySQL安装(rpm)
+MySQL安装(rpm/dpkg)
 ==============================================================
 
 :Date: 2018-11
 
 .. contents::
 
+
+
+MySQL安装(rpm)
+==============================================================
+
+
+在线yum安装
+--------------------------------------------------------------
+
+官方参考
+    - 5.5版本：https://dev.mysql.com/doc/refman/5.5/en/linux-installation-native.html
+    - 5.6版本：
+    - 5.7版本：
+
+.. code-block:: bash
+    :linenos:
+
+    yum install mysql*
+
+
+
+安装离线rpm软件包
+--------------------------------------------------------------
+
+官方参考
+    - 5.5版本：https://dev.mysql.com/doc/refman/5.5/en/linux-installation-rpm.html
+    - 5.6版本：https://dev.mysql.com/doc/refman/5.6/en/linux-installation-rpm.html
+    - 5.7版本：https://dev.mysql.com/doc/refman/5.7/en/linux-installation-rpm.html
+
+
+.. code-block:: bash
+    :linenos:
+
+    wget http://ftp.iij.ad.jp/pub/db/mysql/Downloads/MySQL-5.5/MySQL-server-5.5.61-1.el7.x86_64.rpm
+    rpm -ivh MySQL-server-5.5.61-1.el7.x86_64.rpm
+
+
+MySQL安装(dpkg)
+==============================================================
+
+
+在线apt-get安装
+--------------------------------------------------------------
+
+.. code-block:: bash
+    :linenos:
+
+    apt-get install mysql*
+
+
+安装离线dpkg软件包
+--------------------------------------------------------------
 
 

@@ -21,12 +21,22 @@ MySQL版本号说明
 - 第三个数字(60)发行序列号：主要是小的改动，如bug的修复、函数添加或更改、配置参数的更改等(5.5.60)。
 
 系统安装使用MySQL版本查询方法：
-    登录MySQL方法
+
+1. 登录MySQL方法
+
+.. code-block:: txt
+    :linenos:
+
     mysql> status;
     mysql> select version();
     mysql> select @@version;
     mysql> show variables like "%version%";
-    不登录直接查询方法
+    
+2. 不登录直接查询方法
+
+.. code-block:: txt
+    :linenos:
+
     $ mysql -u root -p             #连接mysql
     $ mysqladmin -uroot -p version;
 
@@ -116,7 +126,11 @@ yum安装
     优点：操作简单易用。不用单独下载，服务器可以联网且yum源没有问题即可(可以选择国内的163/sohu/阿里源)
 
     举例：
-        yum install mysql *
+    
+.. code-block:: bash
+    :linenos:
+
+    yum install mysql *
 
 编译安装
     5.1.X及之前的版本是通过下载tar包以后解压后进入软件包解压路径。然后./configure、make、make install
@@ -126,9 +140,13 @@ yum安装
     优点：可以定制功能特性。
     
     举例：
-        ./configure
-        make
-        make install
+
+.. code-block:: bash
+    :linenos:
+
+    ./configure
+    make
+    make install
 
 二进制程序包
     这种方式解压即可直接使用不用安装。类似windows系统的Portable软件(便携版软件)。
@@ -137,7 +155,11 @@ rpm安装
     这种方式安装需要提前把rpm软件包下载到服务器系统本地。
 
     举例：
-        rpm -ih MySQL-devel-5.5.60-1.el7.x86_64.rpm
+
+.. code-block:: bash
+    :linenos:
+
+    rpm -ih MySQL-devel-5.5.60-1.el7.x86_64.rpm
 
 
 

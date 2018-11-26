@@ -1,0 +1,104 @@
+.. _zzjlogin-mysql-faq:
+
+==============================================================
+MySQL常见问题
+==============================================================
+
+:Date: 2018-11
+
+.. contents::
+
+MySQL安装过程问题
+==============================================================
+
+磁盘空间占满报错
+--------------------------------------------------------------
+
+make install 错误细节
+
+1. 第一种错误情况
+
+.. code-block:: bash
+    :linenos:
+
+    Linking CXX static library libsql.a
+    /usr/bin/ranlib: libsql.a: No space left on device
+    make[2]: *** [sql/libsql.a] Error 1
+    make[1]: *** [sql/CMakeFiles/sql.dir/all] Error 2
+    make: *** [all] Error 2
+
+2. 第二种错误情况
+
+.. code-block:: bash
+    :linenos:
+
+    [ 95%] Building CXX object libmysqld/CMakeFiles/sql_embedded.dir/__/sql/sql_lex.cc.o
+    /data/tools/mysql-5.5.60/sql/sql_lex.cc:3432: fatal error: error writing to /tmp/cc5dzwNw.s: No space left on device
+    compilation terminated.
+    make[2]: *** [libmysqld/CMakeFiles/sql_embedded.dir/__/sql/sql_lex.cc.o] Error 1
+    make[1]: *** [libmysqld/CMakeFiles/sql_embedded.dir/all] Error 2
+    make: *** [all] Error 2
+
+查看系统信息：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@mysql_001 mysql-5.5.60]# df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda3       2.5G  2.4G     0 100% /
+    tmpfs           491M     0  491M   0% /dev/shm
+    /dev/sda1       477M   28M  424M   7% /boot
+
+
+
+MySQL启动过程问题
+==============================================================
+
+
+
+启动报错
+--------------------------------------------------------------
+
+报错详细：
+
+.. code-block:: bash
+    :linenos:
+
+[root@mysql_001 mysql]# /etc/init.d/mysqld start
+Starting MySQL... ERROR! The server quit without updating PID file (/app/mysql-5.5.60/data/mysql_001.pid).
+
+查看日志：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@mysql_001 mysql]# cat data/mysql_001.err     
+    181127  1:33:27 [Note] Plugin 'FEDERATED' is disabled.
+    181127  1:33:27 InnoDB: The InnoDB memory heap is disabled
+    181127  1:33:27 InnoDB: Mutexes and rw_locks use GCC atomic builtins
+    181127  1:33:27 InnoDB: Compressed tables use zlib 1.2.3
+    181127  1:33:27 InnoDB: Using Linux native AIO
+    181127  1:33:27 InnoDB: Initializing buffer pool, size = 128.0M
+    181127  1:33:27 InnoDB: Completed initialization of buffer pool
+    181127  1:33:27 InnoDB: highest supported file format is Barracuda.
+    181127  1:33:27  InnoDB: Waiting for the background threads to start
+    181127  1:33:28 InnoDB: 5.5.60 started; log sequence number 1595675
+    181127  1:33:28 [Note] Server hostname (bind-address): '0.0.0.0'; port: 3306
+    181127  1:33:28 [Note]   - '0.0.0.0' resolves to '0.0.0.0';
+    181127  1:33:28 [Note] Server socket created on IP: '0.0.0.0'.
+    181127  1:33:28 [ERROR] Can't start server : Bind on unix socket: Permission denied
+    181127  1:33:28 [ERROR] Do you already have another mysqld server running on socket: /app/mysql-5.5.60/tmp/mysql.sock ?
+    181127  1:33:28 [ERROR] Aborting
+
+    181127  1:33:28  InnoDB: Starting shutdown...
+    181127  1:33:29  InnoDB: Shutdown completed; log sequence number 1595675
+    181127  1:33:29 [Note] /app/mysql-5.5.60/bin/mysqld: Shutdown complete
+
+从上面报错可以看到是mysql.socket文件权限问题。即`` /app/mysql-5.5.60/tmp/`` 目录权限需要设置，需要设置 ``1777``
+
+.. code-block:: bash
+    :linenos:
+
+    chmod 1777 /app/mysql-5.5.60/tmp/
+

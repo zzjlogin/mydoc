@@ -32,6 +32,28 @@ MySQL命令历史记录优化
 这一点类似修改命令的历史记录的值：
     HISTORY的值
 
+不记录MySQL客户端登陆后操作历史：
+
+
+.. code-block:: bash
+    :linenos:
+
+    vim /etc/profile
+
+最后一行追加：
+.. code-block:: bash
+    :linenos:
+
+    export MYSQL_HISTFILE=/dev/null
+
+配置生效：
+
+.. code-block:: bash
+    :linenos:
+
+    source /etc/profile
+
+
 
 MySQL默认引擎修改
 ==============================================================
