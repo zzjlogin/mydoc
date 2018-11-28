@@ -53,6 +53,9 @@ zabbix软件：
 zabbix安装前准备
 ========================================
 
+官方4.0LST rpm安装方法：
+    https://www.zabbix.com/documentation/4.0/zh/manual/installation/install_from_packages/rhel_centos
+
 zabbix安装参考:
     - zabbix3.4官方文档：https://www.zabbix.com/documentation/3.4/zh/start
     - zabbix官方下载地址：https://www.zabbix.com/download
@@ -140,6 +143,25 @@ zabbix安装参考:
     :linenos:
     
     [root@zzjlogin ~]# chkconfig iptables off
+
+
+系统准备命令集合
+--------------------------------------------------------------
+
+.. code-block:: bash
+    :linenos:
+
+    ntpdate pool.ntp.org
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+    setenforce 0
+    /etc/init.d/iptables stop 
+    chkconfig iptables off
+
+.. attention::
+    时间同步最好加入到定时任务。这样保证以后时间如果有错误的时候会自动更正。
+    	- ``echo "#time sysc by myhome at 2018-03-30" >>/var/spool/cron/root``
+        - ``echo "*/5 * * * * /usr/sbin/ntpdate pool.ntp.org >/dev/null 2&1" >>/var/spool/cron/root``
+
 
 LAMP安装
 ----------------------------------------
@@ -496,6 +518,7 @@ zabbix服务器安装配置命令集合
     setenforce 0
     getenforce
     /etc/init.d/iptables stop
+    chkconfig iptables off
     rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
     yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
     yum install mysql-devel mysql-server -y
@@ -506,7 +529,7 @@ zabbix服务器安装配置命令集合
     sed -i 's#max_input_time = 60#max_input_time = 300#g' /etc/php.ini
     sed -i 's#;always_populate_raw_post_data = -1#always_populate_raw_post_data = -1#g' /etc/php.ini
 
-
+    yum install zabbix-get -y
     rpm -ivh http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/zabbix-release-3.4-1.el6.noarch.rpm
     yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent -y
     cd /usr/share/zabbix
@@ -520,13 +543,14 @@ zabbix服务器安装配置命令集合
     drop user ""@"localhost";
     drop user ""@"zzjlogin";
     drop user "root"@"zzjlogin";
+    use mysql;
     update user set password=password("123") where user="root" and host="127.0.0.1";
     create database zabbix;
     grant all privileges on zabbix.* to zabbix@localhost identified by 'password';
     grant all privileges on zabbix.* to zabbix@192.168.161.132 identified by 'password';
     flush privileges;
     exit
-    cd /usr/share/doc/zabbix-server-mysql-3.4.14/
+    cd /usr/share/doc/zabbix-server-mysql-*
     zcat create.sql.gz | mysql -uroot -p123 zabbix
 
     sed -i 's/# DBHost=localhost/DBHost=192.168.161.132/g' /etc/zabbix/zabbix_server.conf
@@ -534,7 +558,8 @@ zabbix服务器安装配置命令集合
     sed -i 's/# ListenIP=127.0.0.1/# ListenIP=192.168.161.132/g' /etc/zabbix/zabbix_server.conf
     
     
-
+    
+    sed -i "277i ServerName 127.0.0.1:80" /etc/httpd/conf/httpd.conf
 
     /etc/init.d/mysqld start
     /etc/init.d/httpd start
@@ -553,18 +578,18 @@ zabbix服务器安装配置命令集合
 
 .. image:: /images/server/linux/zabbix-install/zabbix001.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-install/zabbix002.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-install/zabbix003.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-install/zabbix004.png
@@ -574,7 +599,7 @@ zabbix服务器安装配置命令集合
 
 .. image:: /images/server/linux/zabbix-install/zabbix005.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
@@ -592,7 +617,7 @@ zabbix服务器安装配置命令集合
 
 .. image:: /images/server/linux/zabbix-install/zabbix008.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 

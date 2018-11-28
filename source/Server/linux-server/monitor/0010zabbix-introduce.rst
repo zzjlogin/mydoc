@@ -31,6 +31,7 @@ zabbix安装参考:
     - http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/
     - http://repo.zabbix.com/zabbix/3.4/rhel/6/x86_64/
     - https://sourceforge.net/projects/zabbix/files/
+    - https://www.zabbix.com/manuals
 
 
 
@@ -41,4 +42,28 @@ zabbix服务端口：
     zabbix server服务端口：10051
     zabbix agent服务端口：10050
 
-    
+
+
+
+zabbix技术阐述
+========================================
+
+zabbix涉及的关键字单词说明：
+    https://www.zabbix.com/documentation/4.0/zh/manual/definitions
+
+zabbix服务器2.2之前的版本分为三种方式：
+    - zabbix server
+    - zabbix inode
+    - zabbix proxy
+
+从zabbix2.2以后取消了inode方式。只有server和proxy方式。
+
+
+zabbix收集agent被监控信息的方式一共有三种：
+    - passive，被动
+    - active，主动
+    - trap，需要客户端zabbix-sender配合使用
+
+
+
+

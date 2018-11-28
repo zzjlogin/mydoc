@@ -1,0 +1,49 @@
+
+.. _zabbix-packages:
+
+========================================
+zabbix相关软件包及版本说明
+========================================
+
+
+
+zabbix相关软件包说明
+========================================
+
+zabbix的rpm软件包分为：
+    - zabbix服务端：
+    - zabbix客户端：
+    - proxy软件：
+    - trap模式需要的客户端：
+
+上面软件包的官方帮助说明：
+    https://www.zabbix.com/documentation/4.0/manpages
+
+
+zabbix对系统的要求：
+    官方说明：https://www.zabbix.com/cn/requirements
+
+
+
+zabbix版本说明
+========================================
+
+官方关于软件周期的规划：
+    发布周期：https://www.zabbix.com/cn/life_cycle_and_release_policy
+    软件版本路线：https://www.zabbix.com/cn/roadmap
+
+zabbix软件分为两种：
+    - 标准版：维护周期短迭代快的版本，一般维护周期6个月；
+    - LST版本：LST维护周期3-5年的长支持版本。
+
+现在的稳定版：
+    2.2、3.0、4.0，2020年发布5.0
+
+常见的标准版：
+    3.4.x
+
+
+
+
+
+

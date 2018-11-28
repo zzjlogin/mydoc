@@ -105,7 +105,7 @@ zabbix客户端和服务器默认可以统计网卡接口的接收和发送数�
     
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network104.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
     
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network105.png
@@ -115,7 +115,7 @@ zabbix客户端和服务器默认可以统计网卡接口的接收和发送数�
     
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network106.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network107.png
@@ -129,10 +129,13 @@ zabbix客户端和服务器默认可以统计网卡接口的接收和发送数�
 
 在zabbix客户端配置文件中添加：
 
-UserParameter=network.statistic.in[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==8) print $$13}'
-UserParameter=network.statistic.out[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==8) print $$19}'
+.. code-block:: bash
+    :linenos:
 
-zabbix服务器创建item并相应的key是network.statistic.out[eth1]和network.statistic.in[eth1]
+    UserParameter=network.statistic.in[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==8) print $$13}'
+    UserParameter=network.statistic.out[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==8) print $$19}'
+
+zabbix服务器创建item并相应的key是 ``network.statistic.out[eth1]`` 和 ``network.statistic.in[eth1]``
 
 然后创建监控的图形展示即可。
 
@@ -140,7 +143,7 @@ zabbix服务器创建item并相应的key是network.statistic.out[eth1]和network
 
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network201.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network202.png
@@ -170,7 +173,7 @@ zabbix服务器创建item并相应的key是network.statistic.out[eth1]和network
     
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network207.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
     
 .. image:: /images/server/linux/zabbix-config/items/network/zabbix-network208.png
@@ -187,7 +190,10 @@ zabbix服务器创建item并相应的key是network.statistic.out[eth1]和network
 
 zabbix-agent客户端配置文件
 
-/etc/zabbix/zabbix_agentd.conf
+.. code-block:: bash
+    :linenos:
+
+    /etc/zabbix/zabbix_agentd.conf
 
 .. code-block:: bash
     :linenos:
@@ -197,8 +203,10 @@ zabbix-agent客户端配置文件
 
 
 295行
+.. code-block:: bash
+    :linenos:
 
-UserParameter=
+    UserParameter=
 
 具体配置方法参考：
 
@@ -214,7 +222,10 @@ UserParameter=
 
 方法1
 
-UserParameter=net.ip[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==2) print $$13}'
+.. code-block:: bash
+    :linenos:
+
+    UserParameter=net.ip[*],/sbin/ifconfig $1 | awk -F '[ :]' '{if(NR==2) print $$13}'
 
 zabbix服务器测试获取客户端数据：
 
@@ -231,7 +242,10 @@ zabbix服务器测试获取客户端数据：
 
 方法2
 
-UserParameter=memory.usage[*],/bin/cat /proc/meminfo | awk '/^$1:/{print $$2}'
+.. code-block:: bash
+    :linenos:
+
+    UserParameter=memory.usage[*],/bin/cat /proc/meminfo | awk '/^$1:/{print $$2}'
 
 .. attention::
     1. 命令路径要用绝对路径；
@@ -298,6 +312,7 @@ UserParameter=memory.usage[*],/bin/cat /proc/meminfo | awk '/^$1:/{print $$2}'
 
 .. attention::
     ``/etc/zabbix/zabbix_agentd.d/`` 目录下的conf配置文件会自动以 ``UserParameter`` 方式包含在主配置文件中。
+
 .. code-block:: bash
     :linenos:
 

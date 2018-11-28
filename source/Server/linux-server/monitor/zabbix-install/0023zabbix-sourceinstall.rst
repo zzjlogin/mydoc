@@ -18,53 +18,34 @@ zabbix 编译安装
 
 
 CentOS6安装配置(编译安装)
------------------------------------------
+========================================
+
+参考4.0LST编译安装：
+    https://www.zabbix.com/documentation/4.0/zh/manual/installation/install
+
 
 1. 安装php/http，并配置
 
-.. code-block:: bash
-    :linenos:
+.. attention::
+    ``http://mirror.webtatic.com/yum/el6/latest.rpm`` 链接也可是 ``https`` ，但是如果rpm安装使用https则会安装失败，因为ca证书问题。
 
-    [root@zzjlogin ~]# yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
-
-
-    CentOS6.6官方源直接安装会包错，具体错误信息如下:
-        Loading mirror speeds from cached hostfile
-        * base: mirrors.huaweicloud.com
-        * extras: ftp.sjtu.edu.cn
-        * updates: mirrors.huaweicloud.com
-        No package php56w available.
-        No package php56w-gd available.
-        No package php56w-mysql available.
-        No package php56w-bcmath available.
-        No package php56w-mbstring available.
-        No package php56w-xml available.
-        No package php56w-ldap available.
-
-有上面报错，所以有下面源的转换:
+安装php环境：
 
 .. code-block:: bash
     :linenos:
 
     [root@zzjlogin ~]# rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
-
-
-.. attention::
-    ``http://mirror.webtatic.com/yum/el6/latest.rpm`` 链接也可是 ``https`` ，但是如果rpm安装使用https则会安装失败，因为ca证书问题。
-
-
-.. code-block:: bash
-    :linenos:
-
     [root@zzjlogin ~]# yum install php56w php56w-gd php56w-mysql php56w-bcmath php56w-bcmath php56w-mbstring php56w-xml php56w-ldap -y
 
 .. attention::
     注意安装php56w-mysql.x86_64 0:5.6.37-1.w6 ，否则会出现php链接mysql时失败。
 
 
-.. tip::
-    yum安装报错可以参考：
-        :ref:`linux-faq-yuminstallerr`
+
+yum安装报错可以参考：
+    :ref:`linux-faq-yuminstallerr`
+
+安装http及依赖(apache)：
 
 .. code-block:: bash
     :linenos:

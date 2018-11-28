@@ -11,7 +11,12 @@
     在zabbix客户端配置文件： ``/etc/zabbix/zabbix_agentd.conf`` 中修改 ``ServerActive=`` 的值等于zabbix服务器IP地址(且客户端和服务器可以正常通信)。
     
     例如：
-        ServerActive=192.168.161.132
+
+.. code-block:: bash
+    :linenos:
+
+    ServerActive=192.168.161.132
+
 zabbix服务器配置：
     zabbix客户端配置了主动向服务器注册以后，如果服务器没有把主动注册的客户端添加到主机列表也看不到被监控的主机。所以zabbix服务器也需要相应配置。
 

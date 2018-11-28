@@ -5,7 +5,6 @@ Linux 服务器搭建
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :glob:
    
    dhcp/index

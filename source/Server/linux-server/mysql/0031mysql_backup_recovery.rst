@@ -9,12 +9,31 @@ MySQL数据备份和恢复
 .. contents::
 
 
-MySQL数据备份
+
+普通安装方式MySQL数据备份和恢复
 ==============================================================
 
-
-MySQL数据恢复
+编译安装单实例MySQL数据备份和恢复
 ==============================================================
+
+多实例MySQL数据备份和恢复
+==============================================================
+
+备份命令：
+    
+    mysql -uroot -p'12345' -S /data/3306/mysql.sock -e "show master status"
+    mysql -uroot -p'12345' -S /data/3306/mysql.sock --events -A -B |gzip >/home/tools/mysql_backup.$(date +%F).sql.gzip
+    
+    mysql -uroot -p'12345' -S /data/3306/mysql.sock -e "show master status"
+
+
+恢复命令：
+    gzip -d mysql_backup.2018-04-20.sql.gz
+    ll
+    mysql -uroot -p'3307' -S /data/3307/mysql.sock < mysql_backup.2018-04-20.sql
+
+
+
 
 
 

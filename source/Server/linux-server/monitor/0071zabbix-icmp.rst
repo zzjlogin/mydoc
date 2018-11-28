@@ -70,7 +70,7 @@
 
 .. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp011.png
     :align: center
-    :height: 200 px
+    :height: 150 px
     :width: 800 px
 
 

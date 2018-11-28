@@ -56,12 +56,12 @@ zabbix监控报警
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-mediatype001.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-mediatype002.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
@@ -70,12 +70,12 @@ zabbix监控报警
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-users001.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-users002.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 
@@ -84,12 +84,12 @@ zabbix监控报警
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger001.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger002.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-trigger003.png
@@ -108,28 +108,28 @@ zabbix监控报警
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action001.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action002.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action003.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action004.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 .. image:: /images/server/linux/zabbix-config/alert/zabbix-alert-action005.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 

@@ -78,19 +78,19 @@
 
 .. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery010.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery011.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery012.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 
@@ -105,13 +105,13 @@
 
 .. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery014.png
     :align: center
-    :height: 450 px
+    :height: 350 px
     :width: 800 px
 
 
 .. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery015.png
     :align: center
-    :height: 450 px
+    :height: 400 px
     :width: 800 px
 
 

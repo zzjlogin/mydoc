@@ -1,0 +1,23 @@
+.. _zabbix-install:
+
+=========================
+zabbix安装
+=========================
+
+官方4.0LST安装：
+    https://www.zabbix.com/documentation/4.0/zh/manual/installation
+
+zabbix服务器支持的安装方式：
+    - 二进制安装(例如rpm)
+    - 源码编译安装
+    - docker安装
+    - 分布式部署(虽然我这样列出来，但是这不算一种单独的安装方式)
+
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   zabbix-install/*
+
+
