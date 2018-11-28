@@ -1,14 +1,13 @@
-.. _linux-mysqlindex:
+.. _lvs-install:
 
 =========================
-MySQL数据库
+lvs安装
 =========================
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
-   *
-
+   lvs-install/*
 
 
