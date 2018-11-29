@@ -444,7 +444,8 @@ url --url=" "	    通过FTP或HTTP从远程服务器上的安装树中安装。
                     url --url ftp://<username>:<password>@<server>/<dir>
 ----------------- -----------------------------------------------------------------------------------------
 nfs	                从指定的NFS服务器安装。
-                    nfs --server=nfsserver.example.com --dir=/tmp/install-tree
+
+                    ``nfs --server=nfsserver.example.com --dir=/tmp/install-tree``
 ----------------- -----------------------------------------------------------------------------------------
 text	            使用文本模式安装。
 ----------------- -----------------------------------------------------------------------------------------
@@ -455,7 +456,8 @@ keyboard	        设置系统键盘类型。keyboard us
 zerombr	            清除mbr引导信息。
 ----------------- -----------------------------------------------------------------------------------------
 bootloader	        系统引导相关配置。
-                    bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"
+
+                    ``bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"``
 
                     --location=,指定引导记录被写入的位置.
                     有效的值如下:mbr(缺省),partition(在包含内核的分区的第一个扇区安装引导装载程序)
@@ -465,13 +467,14 @@ bootloader	        系统引导相关配置。
 ----------------- -----------------------------------------------------------------------------------------
 network	            为通过网络的kickstart安装以及所安装的系统配置联网信息。
 
-                    network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS6
+                    ``network --bootproto=dhcp --device=eth0 --onboot=yes --noipv6 --hostname=CentOS6``
+                    
                     --bootproto=[dhcp/bootp/static]中的一种，缺省值是dhcp。bootp和dhcp被认为是相同的。
                     
                     static方法要求在kickstart文件里输入所有的网络信息。
 
-                    network --bootproto=static --ip=10.0.0.100 --netmask=255.255.255.0 
-                    --gateway=10.0.0.2 --nameserver=10.0.0.2
+                    ``network --bootproto=static --ip=10.0.0.100 --netmask=255.255.255.0 
+                    --gateway=10.0.0.2 --nameserver=10.0.0.2``
 
                     请注意所有配置信息都必须在一行上指定,不能使用反斜线来换行。
                     --ip=,要安装的机器的IP地址.
@@ -495,11 +498,11 @@ clearpart	        清空分区。clearpart --all --initlabel
 ----------------- -----------------------------------------------------------------------------------------
 part	            磁盘分区。
 
-                    part /boot --fstype=ext4 --asprimary --size=200
+                    ``part /boot --fstype=ext4 --asprimary --size=200``
 
-                    part swap --size=1024
+                    ``part swap --size=1024``
                     
-                    part / --fstype=ext4 --grow --asprimary --size=200
+                    ``part / --fstype=ext4 --grow --asprimary --size=200``
                     
                     --fstype=,为分区设置文件系统类型.有效的类型为ext2,ext3,swap和vfat。
                     --asprimary,强迫把分区分配为主分区,否则提示分区失败。
@@ -507,13 +510,13 @@ part	            磁盘分区。
                     --grow,告诉分区使用所有可用空间(若有),或使用设置的最大值。
                         负责协助配置redhat一些重要的信息。
 ----------------- -----------------------------------------------------------------------------------------
-firstboot           firstboot --disable
+firstboot           ``firstboot --disable``
 ----------------- -----------------------------------------------------------------------------------------
-selinux	            关闭selinux。selinux --disabled
+selinux	            关闭selinux。 ``selinux --disabled``
 ----------------- -----------------------------------------------------------------------------------------
-firewall	        关闭防火墙。firewall --disabled
+firewall	        关闭防火墙。 ``firewall --disabled``
 ----------------- -----------------------------------------------------------------------------------------
-logging	            设置日志级别。logging --level=info
+logging	            设置日志级别。 ``logging --level=info``
 ----------------- -----------------------------------------------------------------------------------------
 reboot	            设定安装完成后重启,此选项必须存在，不然kickstart显示一条消息，
                     并等待用户按任意键后才重新引导，也可以选择halt关机。

@@ -13,16 +13,15 @@ rsync命令详解
 rsync命令格式
 ==============================================================
 
-同步本地系统不同目录内容
---------------------------------------------------------------
+1. 同步本地系统不同目录内容
+
 
 .. code-block:: bash
     :linenos:
 
     rsync [OPTION...] SRC... [DEST]
 
-通过shell同步远程目录
---------------------------------------------------------------
+2. 通过shell同步远程目录
 
 Access via remote shell:
 
@@ -32,8 +31,7 @@ Access via remote shell:
     Pull: rsync [OPTION...] [USER@]HOST:SRC... [DEST]
     Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
 
-通过rsync守护进程同步远程目录
---------------------------------------------------------------
+3. 通过rsync守护进程同步远程目录
 
 Access via rsync daemon:
 
@@ -50,23 +48,23 @@ rsync常用参数
 ==============================================================
 
 
-
+.. code-block:: bash
+    :linenos:
 
 -avz
 
-排除指定文件
+
 --exclude
-    排除单个文件
+    - 排除单个文件
         --exclude=a
-    排除多个文件
+    - 排除多个文件
         --exclude=a --exclude=b
         --exclude={a,b}
-    排除多个连续的：
+    - 排除多个连续的：
         --exclude={a..d}
---exclude-from
+\--exclude-from
     --exclude-from=filename
-
-    此时filename中每行一个文件名，会排除这些文件名的文件。
+        此时filename中每行一个文件名，会排除这些文件名的文件。
 
 
 rsync服务端也可以通过配置文件/etc/rsyncd.conf配置排除文件：

@@ -85,7 +85,7 @@ keepalive单实例配置
 
 主lvs：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     ! Configuration File for keepalived
@@ -117,7 +117,7 @@ keepalive单实例配置
 
 备lvs
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     ! Configuration File for keepalived
@@ -163,14 +163,15 @@ keepalive日志默认写入/var/log/message中
 
 最后一行内容替换为：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     KEEPALIVED_OPTIONS="-D -d -S 0"
 
 
-CentOS5是配置 /etc/syslog.conf
-CentOS6配置 /etc/rsyslog.conf
+CentOS5是配置 ``/etc/syslog.conf``
+
+CentOS6配置 ``/etc/rsyslog.conf``
 
 .. code-block:: bash
     :linenos:
@@ -179,7 +180,7 @@ CentOS6配置 /etc/rsyslog.conf
 
 添加下面内容
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     #save keepalived log to keepalive.log

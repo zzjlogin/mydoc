@@ -27,7 +27,7 @@ nginx主配置文件简单说明：
 
 nginx默认配置解释：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     worker_processes  1;                            worker进程的数量

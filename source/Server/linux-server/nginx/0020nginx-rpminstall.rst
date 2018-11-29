@@ -9,8 +9,6 @@ nginx rpm安装
 环境
 ========================================
 
-服务器系统：
-
 服务器系统环境：
     系统：
         CentOS6.6 64位
@@ -18,7 +16,8 @@ nginx rpm安装
         2.6.32
     主机名：
         zzjlogin
-
+nginx软件：
+    nginx-1.12.2
 
 .. code-block:: bash
     :linenos:
@@ -34,11 +33,6 @@ nginx rpm安装
 
     [root@zzjlogin ~]# cat /proc/version
     Linux version 2.6.32-504.el6.x86_64 (mockbuild@c6b9.bsys.dev.centos.org) (gcc version 4.4.7 20120313 (Red Hat 4.4.7-11) (GCC) ) #1 SMP Wed Oct 15 04:27:16 UTC 2014
-
-
-nginx软件：
-    nginx-1.12.2
-
 
 
 nginx安装准备
@@ -92,13 +86,11 @@ nginx默认会自动安装ssl模块，这个模块需要openssl软件支持。
 selinux关闭
 ----------------------------------------
 
-.. attention::
-    如果不关闭selinux也没有配置selinux。则安装以后zabbix会启动失败。会发现zabbix网页可以访问，但是提示zabbix服务没有启动。
 
-**永久关闭:**
+1. 永久关闭:
     下面配置会让selinux的关闭重启系统后还是关闭状态。但是配置不会立即生效。
 
-.. attention::
+.. note::
     通过 ``source /etc/selinux/config`` 也不能让修改的文件立即生效。所以需要下面的临时关闭的方式结合使用。
 
 .. code-block:: bash
@@ -111,7 +103,7 @@ selinux关闭
     # SELINUXTYPE= can take one of these two values:
     SELINUXTYPE=targeted
 
-**临时关闭：**
+2. 临时关闭：
     下面配置是立即生效，但是系统重启后会失效。
 
 .. code-block:: bash

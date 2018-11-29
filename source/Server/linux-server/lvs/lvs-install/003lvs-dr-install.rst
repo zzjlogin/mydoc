@@ -41,6 +41,8 @@ lvsadm                  ipvsadm-1.26
 安装配置
 =============================================
 
+接路由（VS/DR）官方资料
+    http://www.linuxvirtualserver.org/zh/lvs3.html#5
 
 配置说明
 ---------------------------------------------
@@ -53,7 +55,7 @@ lvs_vip_01安装配置过程
 
 安装配置过程：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@lvs_vip_01 ~]# mkdir /home/tools -p
@@ -295,6 +297,7 @@ lvs_vip_01安装配置过程
     iptables: Flushing firewall rules:                         [  OK  ]
     iptables: Unloading modules:                               [  OK  ]
     [root@lvs_vip_01 ipvsadm-1.26]#     chkconfig iptables off
+
 
 .. attention::
     有的资料说要开启路由转发。但是我测试没有开启路由转发也可以成功。如果需要开启路由转发，命令：
@@ -587,7 +590,7 @@ lvs_rip_web02安装配置过程
 
 安装配置过程：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@lvs_rip_web02 ~]# mkdir /home/tools -p

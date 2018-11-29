@@ -17,10 +17,14 @@ cobbler软件包依赖问题
 
 参考上面网址安装对应的依赖包。
 
+
 cobbler-web如有问题参考网址
 ===================================
 
+
 http://rpmfind.net/linux/rpm2html/search.php?query=cobbler-web
+
+
 
 syslinux配置导致的问题
 ===================================
@@ -94,11 +98,12 @@ cobbler依赖包没有安装
 
 CentOS6.6安装会提示错误：
 
-.. attention::
-    错误信息：
-        Package: cobbler-web-2.6.11-7.git95749a6.el6.noarch (epel)
-            Requires: Django >= 1.4
-        You could try using --skip-broken to work around the problem
+.. code-block:: none
+    :linenos:
+
+    Package: cobbler-web-2.6.11-7.git95749a6.el6.noarch (epel)
+        Requires: Django >= 1.4
+    You could try using --skip-broken to work around the problem
 
 解决办法：
 

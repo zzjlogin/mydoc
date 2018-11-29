@@ -48,7 +48,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
 
 **参数及参数作用：**
 
--n requests
+\-n requests
     - 用于指定压力测试总共的执行次数。如果没有指定这个参数默认是请求1次。
     - 示例：
 
@@ -137,7 +137,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     99%    122
     100%    122 (longest request)
 
--c concurrency
+\-c concurrency
     - 用于指定压力测试的并发数。默认并发是1。
     - 示例：
 
@@ -238,7 +238,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
 
 
 
--t timelimit
+\-t timelimit
     - 等待响应的最大时间(单位：秒)。默认情况下没有时间限制
     - 示例：
 
@@ -328,7 +328,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     100%     16 (longest request)
 
 
--b windowsize
+\-b windowsize
     - TCP发送/接收的缓冲大小(单位：字节,bytes)。
     - 示例：
 
@@ -427,7 +427,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     100%   2539 (longest request)
 
 
--p postfile
+\-p postfile
     - 发送POST请求时需要上传的文件，此外还必须设置-T参数。
     - 示例：
 
@@ -435,21 +435,21 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--u putfile
+\-u putfile
     - 发送PUT请求时需要上传的文件，此外还必须设置-T参数。
     - 示例：
 
 .. code-block:: bash
     :linenos:
 
--T content-type
+\-T content-type
     - 用于设置Content-Type请求头信息，例如：application/x-www-form-urlencoded，默认值为text/plain。
     - 示例：
 
 .. code-block:: bash
     :linenos:
 
--v verbosity
+\-v verbosity
     - 指定打印帮助信息的冗余级别。默认是1
     - 4是打印头信息，3是打印相应状态码(例如200、404)，2是打印警告和通知信息
     - 示例：
@@ -472,7 +472,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     省略下面输出内容
 
 
--w
+\-w
     - 以HTML表格形式打印结果。默认表宽两列，背景为白色。
     - 示例：
 
@@ -486,7 +486,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     Licensed to The Apache Software Foundation, http://www.apache.org/<br>
     </p>
 
--i
+\-i
     - 使用HEAD请求代替GET请求。
     - 示例：
 
@@ -528,7 +528,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     Waiting:      234  234   0.0    234     234
     Total:        956  956   0.0    956     956
 
--x <table>-attributes
+\-x <table>-attributes
     - 插入字符串作为table标签的属性。-y插入字符串作为tr标签的属性。
     - 示例：
 
@@ -561,7 +561,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     <table test>
     下面内容略
 
--y attributes
+\-y attributes
     - 插入字符串作为tr标签的属性。
     - 示例：
 
@@ -569,7 +569,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--z attributes
+\-z attributes
     - 插入字符串作为td标签的属性。
     - 示例：
 
@@ -577,7 +577,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--C attributes
+\-C attributes
     - 添加cookie信息，例如："Apache=1234"(可以重复该参数选项以添加多个)。
     - cookie格式：name=value，这种名称和值成对出现。
     - 示例：
@@ -586,7 +586,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--H attributes
+\-H attributes
     - 添加任意的请求头，请求头将会添加在现有的多个请求头之后(可以重复该参数选项以添加多个)。
     - 值时冒号分割的键值对，例如： ``Accept-Encoding: gzip`` 或者 ``Accept-Encoding: zip/zop;8bit`` 
     - 示例：
@@ -595,12 +595,12 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--A auth-username:password
+\-A auth-username:password
     - 添加一个基本的网络认证信息，用户名和密码之间用英文冒号隔开。
     - 示例：
 
 
--P proxy-auth-username:password
+\-P proxy-auth-username:password
     - 添加一个基本的代理认证信息，用户名和密码之间用英文冒号隔开。
     - 示例：
 
@@ -608,7 +608,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--X proxy:port
+\-X proxy:port
     - 指定使用的代理服务器和端口号，例如:"126.10.10.3:88"。
     - 示例：
 
@@ -616,7 +616,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--V
+\-V
     - 打印版本号并退出。
     - 示例：
 
@@ -624,7 +624,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--k
+\-k
     - 使用HTTP的KeepAlive特性。
     - 示例：
 
@@ -632,7 +632,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--d
+\-d
     - 不显示百分比。
     - 示例：
 
@@ -640,7 +640,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--S
+\-S
     - 不显示预估和警告信息。
     - 示例：
 
@@ -648,7 +648,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--g filename
+\-g filename
     - 输出结果信息到gnuplot格式的文件中。
     - 示例：
 
@@ -656,7 +656,7 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--e filename
+\-e filename
     - 输出结果信息到CSV格式的文件中。
     - 示例：
 
@@ -664,16 +664,16 @@ ab命令是软件包 ``httpd-tools`` 提供的工具。
     :linenos:
 
 
--r
+\-r
     - 指定接收到错误信息时不退出程序。
 
--h
+\-h
     - 显示用法信息，其实就是ab -help。
 
--Z ciphersuite
+\-Z ciphersuite
     - 指定加密组件，可以参考openssl
 
--f protocol
+\-f protocol
     - 使用指定的SSL/TLS 协议(SSL2, SSL3, TLS1, or ALL)
 
 

@@ -198,7 +198,7 @@ bind主配置文件修改
 
 上面配置内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     options {
@@ -295,7 +295,7 @@ bind主配置文件修改
 
 上面配置内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     view "View" {
@@ -332,7 +332,7 @@ bind主配置文件修改
 
 文件中插入下面内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ORIGIN .
@@ -373,7 +373,7 @@ Minimun
 
 插入下面内容
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $TTL 3600       ; 1 hour
@@ -467,7 +467,7 @@ DNS做负载均衡
     配置过程：
         在上面配置的文件 ``/var/named/chroot/etc/display.tk.zone`` 追加两行。
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     www                 A       192.168.161.134
@@ -615,7 +615,7 @@ DNS做负载均衡
 
 在主配置文件 ``/var/named/chroot/etc/named.conf`` 最后一行前一行添加下面内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     acl group1 {
@@ -640,7 +640,7 @@ DNS做负载均衡
 
 清空这个文件内容，然后添加下面内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     view "GROUP1" {
@@ -673,7 +673,7 @@ DNS做负载均衡
 
 编辑并加入下面内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ORIGIN .
@@ -695,7 +695,7 @@ DNS做负载均衡
 
 编辑并加入下面内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ORIGIN .

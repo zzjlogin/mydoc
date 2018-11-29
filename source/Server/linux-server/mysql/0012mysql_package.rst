@@ -24,7 +24,7 @@ MySQL版本号说明
 
 1. 登录MySQL方法
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     mysql> status;
@@ -34,7 +34,7 @@ MySQL版本号说明
     
 2. 不登录直接查询方法
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ mysql -u root -p             #连接mysql

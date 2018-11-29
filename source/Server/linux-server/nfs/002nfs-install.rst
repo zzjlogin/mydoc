@@ -589,7 +589,19 @@ nfs客户端安装
 nfs客户端优化配置
 ==============================================================
 
-CentOS5.8 x86_64优化命令：mount -t nfs -o noatime,nodiratime,nosuid,noexec,nodev,rw,bg,soft,rsize=32768,wsize=32768 192.168.1.100:/data/ /mnt
-CentOS6.5 x86_64优化命令：mount -t nfs -o noatime,nodiratime,nosuid,noexec,nodev,rw,bg,hard,intr,rsize=131072,wsize=131072 192.168.1.100:/data/ /mnt
+
+1. CentOS5.8 x86_64优化命令：
+
+.. code-block:: bash
+    :linenos:
+
+    mount -t nfs -o noatime,nodiratime,nosuid,noexec,nodev,rw,bg,soft,rsize=32768,wsize=32768 192.168.1.100:/data/ /mnt
+
+2. CentOS6.5 x86_64优化命令：
+
+.. code-block:: bash
+    :linenos:
+
+    mount -t nfs -o noatime,nodiratime,nosuid,noexec,nodev,rw,bg,hard,intr,rsize=131072,wsize=131072 192.168.1.100:/data/ /mnt
 
 

@@ -35,11 +35,8 @@ openldap软件
 网络时间同步
 --------------------------------------------------------------
 
-.. attention::
-    如果时间没有和网络同步，yum安装会报错。
-    
-    参考:
-        :ref:`linux-yuminstallerr-time`
+如果时间没有和网络同步，yum安装会报错。参考:
+    :ref:`linux-yuminstallerr-time`
 
 .. code-block:: bash
     :linenos:
@@ -142,7 +139,7 @@ openldap安装
 安装openldap依赖包：
 
 .. code-block:: bash
-    :linenos
+    :linenos:
 
     [root@ldap_001 ~]# yum update nss-softokn-freebl -y
 
@@ -361,8 +358,11 @@ openldap日志级别设置选择参考：
 
 测试openldap：
 
-[root@ldap_001 ~]# slaptest -u
-config file testing succeeded
+.. code-block:: bash
+    :linenos:
+
+    [root@ldap_001 ~]# slaptest -u
+    config file testing succeeded
 
 
 配置openldap的日志记录：
@@ -426,14 +426,14 @@ openldap日志查看
 
 数据测试：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@ldap_001 openldap]# ldapsearch -LLL -W -x -H ldap://192.168.161.137 -D "cn=admin, dc=display, dc=tk" -b "dc=display, dc=tk""(uid=*)"
     Enter LDAP Password: 
     No such object (32)
  
- .. code-block:: bash
+.. code-block:: bash
     :linenos:
 
     [root@ldap_001 openldap]# ldapsearch -LLL -W -x -h 192.168.161.137 -D "cn=admin, dc=display, dc=tk" -b "dc=display, dc=tk""(uid=*)"         
@@ -442,7 +442,7 @@ openldap日志查看
 
 下面错误：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@ldap_001 openldap]# ldapsearch -LLL -W -x -H ldap://display.tk -D "cn=admin, dc=display, dc=tk" -b "dc=display, dc=tk""(uid=*)"
@@ -578,6 +578,9 @@ lamp安装以及lamp链接openldap的插件安装：
 openldap服务端安装配置+dap-account-manager安装配置命令汇总(master)
 ============================================================================================================================
 
+.. code-block:: bash
+    :linenos:
+    
     ntpdate pool.ntp.org
     sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
     setenforce 0

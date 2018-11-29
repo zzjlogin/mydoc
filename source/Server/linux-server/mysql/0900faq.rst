@@ -18,7 +18,7 @@ make install 错误细节
 
 1. 第一种错误情况
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     Linking CXX static library libsql.a
@@ -29,7 +29,7 @@ make install 错误细节
 
 2. 第二种错误情况
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [ 95%] Building CXX object libmysqld/CMakeFiles/sql_embedded.dir/__/sql/sql_lex.cc.o
@@ -65,8 +65,8 @@ MySQL启动过程问题
 .. code-block:: bash
     :linenos:
 
-[root@mysql_001 mysql]# /etc/init.d/mysqld start
-Starting MySQL... ERROR! The server quit without updating PID file (/app/mysql-5.5.60/data/mysql_001.pid).
+    [root@mysql_001 mysql]# /etc/init.d/mysqld start
+    Starting MySQL... ERROR! The server quit without updating PID file (/app/mysql-5.5.60/data/mysql_001.pid).
 
 查看日志：
 

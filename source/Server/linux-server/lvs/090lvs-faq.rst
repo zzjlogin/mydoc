@@ -13,15 +13,11 @@ lvs常见问题汇总
 lvs裂脑
 =============================================
 
-(1)、导致裂脑发生的原因
-
-    1、高可用服务器之间心跳链路故障，导致无法相互检查心跳
-
-    2、高可用服务器上开启了防火墙，阻挡了心跳检测
-
-    3、高可用服务器上网卡地址等信息配置不正常，导致发送心跳失败
-
-    4、其他服务配置不当等原因，如心跳方式不同，心跳广播冲突，软件BUG等
+导致裂脑发生的原因
+    1. 高可用服务器之间心跳链路故障，导致无法相互检查心跳
+    #. 高可用服务器上开启了防火墙，阻挡了心跳检测
+    #. 高可用服务器上网卡地址等信息配置不正常，导致发送心跳失败
+    #. 其他服务配置不当等原因，如心跳方式不同，心跳广播冲突，软件BUG等
 
 
 
@@ -34,7 +30,7 @@ lvs裂脑
 
 编译报错：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     libipvs.c:526: note: expected ‘struct nlattr *’ but argument is of type ‘struct nlattr *’
@@ -58,7 +54,7 @@ lvs裂脑
     libipvs.c:1071: error: ‘NLM_F_DUMP’ undeclared (first use in this function)
     libipvs.c:1072: error: too many arguments to function ‘ipvs_nl_send_message’
     make[1]: *** [libipvs.o] Error 1
-    make[1]: Leaving directory ``/home/tools/ipvsadm-1.26/libipvs'
+    make[1]: Leaving directory ``/home/tools/ipvsadm-1.26/libipvs'``
     make: *** [libs] Error 2
 
 
@@ -73,7 +69,7 @@ lvs裂脑
 
 编译发现错误
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     ipvsadm.c:661: error: ‘POPT_BADOPTION_NOALIAS’ undeclared (first use in this function)
@@ -92,8 +88,10 @@ lvs裂脑
 
 
 
-
-yum install libnl* popt* -y
+.. code-block:: bash
+    :linenos:
+    
+    yum install libnl* popt* -y
 
 
 

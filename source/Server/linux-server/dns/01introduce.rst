@@ -53,7 +53,7 @@ DNS详细描述:
 .. _`RFC 1035`: https://www.rfc-editor.org/rfc/rfc1035.txt
 
 DNS服务端口:
-    - DNS使用 ``TCP和UDP`` 端口 ``53``,**这是服务端口**。
+    - DNS使用 ``TCP和UDP`` 端口 ``53``,这是服务端口。
         - tcp 53: 用于区域传输
         - ucp 53: 用于查询
 
@@ -84,8 +84,9 @@ DNS系统中，常见的资源记录类型有：
     - CNAME:        别名
     - MX:           邮件
 
-.. note::
-    DNS所有记录累心可以参考:https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
+.. hint::
+    DNS所有记录类型可以参考：
+        https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
 
 .. _`RFC 3403`: https://www.rfc-editor.org/rfc/rfc3403.txt
 .. _`RFC 2782`: https://www.rfc-editor.org/rfc/rfc2782.txt

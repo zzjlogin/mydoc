@@ -690,7 +690,7 @@ dhcp简单配置
 
 在配置文件 ``/etc/dhcp/dhcpd.conf`` 文件中追加下面内容：
 
-.. code-block:: txt
+.. code-block:: none
     :linenos:
 
     subnet 192.168.6.0 netmask 255.255.255.0 {
@@ -708,7 +708,7 @@ dhcp启动和开机自启动
 dhcp启动
 -------------------------------------------------------------------------------
 
-.. code-block:: txt
+.. code-block:: none
     :linenos:
 
     [root@dhcp_server01 ~]# /etc/init.d/dhcpd start
@@ -724,14 +724,14 @@ dhcp开机自启动
 
 方法1：
 
-.. code-block:: txt
+.. code-block:: none
     :linenos:
 
     [root@dhcp_server01 ~]# chkconfig dhcpd on
 
 方法2：
 
-.. code-block:: txt
+.. code-block:: none
     :linenos:
 
     [root@dhcp_server01 ~]# echo '#dhcp server start by zzjlogin on 20180910'>>/etc/rc.local
@@ -745,8 +745,11 @@ dhcp开机自启动
 -------------------------------------------------------------------------------
 
 
-[root@dhcp_server01 ~]# ss -lntup|grep 67|column -t
-udp  UNCONN  0  0  *:67  *:*  users:(("dhcpd",30599,7))
+.. code-block:: bash
+    :linenos:
+
+    [root@dhcp_server01 ~]# ss -lntup|grep 67|column -t
+    udp  UNCONN  0  0  *:67  *:*  users:(("dhcpd",30599,7))
 
 
 dhcpd的详细参数

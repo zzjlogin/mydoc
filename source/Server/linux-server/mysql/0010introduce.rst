@@ -16,10 +16,11 @@ MySQL相关连接
 --------------------------------------------------------------
 
 
-MySQL官网：https://www.mysql.com/
-MySQL下载：https://dev.mysql.com/downloads/mirrors/
-MySQL文档：https://dev.mysql.com/doc/relnotes/mysql/5.5/en/
-说明：MySQL文档每种版本的mysql都有对应的文档。上面的例子是MySQL5.5的文档。
+- MySQL官网：https://www.mysql.com/
+- MySQL下载：https://dev.mysql.com/downloads/mirrors/
+- MySQL文档：https://dev.mysql.com/doc/relnotes/mysql/5.5/en/
+
+.. tip:: MySQL文档每种版本的mysql都有对应的文档。上面的例子是MySQL5.5的文档。
 
 
 MySQL技术原理

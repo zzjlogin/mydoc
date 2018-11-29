@@ -88,7 +88,7 @@ linux访问windows共享目录
 
 用命令查看共享:
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@zzjlogin ~]# smbclient -L 192.168.1.125 -m SMB2 -U zzjlogin

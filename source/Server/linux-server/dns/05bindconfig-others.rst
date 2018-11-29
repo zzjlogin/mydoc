@@ -84,7 +84,7 @@ nslookup测试
 .. code-block:: bash
     :linenos:
 
-    [root@zzjlogin named]# nslookup                                                # nslookup测试，这个工具和windows环境的使用是一样的。
+    [root@zzjlogin named]# nslookup      # nslookup测试，这个工具和windows环境的使用是一样的。
     > server localhost
     Default server: localhost
     Address: ::1#53

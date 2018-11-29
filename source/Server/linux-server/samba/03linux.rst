@@ -243,7 +243,7 @@ samba多用户挂载
     total 0
     -rw-r--r-- 1 smbuser2 1014 0 Feb  6 15:07 a.txt
 
-.. note:: 上面的实验，能不能访问到samba的关键在于"cifscreds add -u smbuser2 192.168.161.132" 这个命令指定的用户，和当前登陆用户无关
+.. note:: 上面的实验，能不能访问到samba的关键在于 ``cifscreds add -u smbuser2 192.168.161.132`` 这个命令指定的用户，和当前登陆用户无关
 
 
 

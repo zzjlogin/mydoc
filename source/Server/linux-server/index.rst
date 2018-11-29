@@ -8,19 +8,22 @@ Linux 服务器搭建
    :glob:
    
    dhcp/index
-   kickstarts/index
-   nginx/index
    dns/index
-   rsync/index
    ftp/index
    nfs/index
    samba/index
+   nginx/index
+   mysql/index
+   rsync/index
    syslog/index
    monitor/index
    docker/index
-   vc/index
+   kickstarts/index
+   vc/index   
    keepalive/index
    lvs/index
    openldap/index
+   openvpn/index
+
    
 

@@ -186,7 +186,7 @@ rsync数据同步测试
 
 参考命令对比：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     Pull: rsync [OPTION...] [USER@]HOST::SRC... [DEST]

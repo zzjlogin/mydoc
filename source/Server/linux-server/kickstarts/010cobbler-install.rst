@@ -612,6 +612,7 @@ cobbler配置信息同步到运行服务中
 修改初始密码的方法：
     - ``/etc/cobbler/users.conf`` Web服务授权配置文件
     - ``/etc/cobbler/users.digest`` 用于web访问的用户名密码配置文件
+
 查看现在的密码：
 
 .. code-block:: bash

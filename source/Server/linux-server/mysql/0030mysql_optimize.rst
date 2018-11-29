@@ -41,6 +41,7 @@ MySQL命令历史记录优化
     vim /etc/profile
 
 最后一行追加：
+
 .. code-block:: bash
     :linenos:
 

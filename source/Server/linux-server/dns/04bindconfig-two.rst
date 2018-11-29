@@ -133,7 +133,7 @@ bind安装后检查
 
 清空配置文件 ``named.conf`` 然后把下面插入这个配置文件：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     options {
@@ -210,7 +210,7 @@ bind安装后检查
 
 新建配置文件 ``/var/named/chroot/etc/view.conf`` 然后配置内容如下：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     view "GROUP1" {
@@ -242,7 +242,7 @@ bind安装后检查
 [root@dns_02 etc]# vi slave.sd.display.tk.zone
 
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ORIGIN .
@@ -263,7 +263,7 @@ bind安装后检查
 
 [root@dns_02 etc]# vi slave.hb.display.tk.zone
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     $ORIGIN .

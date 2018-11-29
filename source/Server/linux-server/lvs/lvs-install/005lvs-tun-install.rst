@@ -41,6 +41,10 @@ lvsadm                  ipvsadm-1.26
 安装配置
 =============================================
 
+IP隧道模式官方资料
+    http://www.linuxvirtualserver.org/zh/lvs3.html#4
+
+
 配置说明
 ---------------------------------------------
 
@@ -53,7 +57,7 @@ lvs_vip_01安装配置过程
 
 安装配置过程：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@lvs_vip_01 ~]# mkdir /home/tools -p
@@ -629,7 +633,7 @@ lvs_rip_web02安装配置过程
 
 安装配置过程：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@lvs_rip_web02 ~]# mkdir /home/tools -p

@@ -200,6 +200,7 @@ DHCP配置
             RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
 
 修改默认网关：
+
 .. attention::
     这一步根据实际情况。本例子，因为默认网关192.168.6.1不能访问外网，所以修改了默认网关。
 
@@ -426,7 +427,7 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
 文件 ``/var/lib/tftpboot/pxelinux.cfg/default`` 注解
 --------------------------------------------------------
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     default vesamenu.c32  # 默认加载一个菜单
@@ -476,7 +477,7 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
     - 本实例是通过挂载光驱得到的系统文件目录，而且直接挂载到了工作目录。
     - 工作环境先导入镜像到系统，然后通过 ``mount -o loop /data/CentOS-7-x86_64-bin-DVD1.iso /mnt/`` 然后把/mnt目录下的文件复制到工作目录。
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     chkconfig iptables off

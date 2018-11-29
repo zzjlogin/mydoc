@@ -25,7 +25,11 @@ ipvsadm安装准备
 ---------------------------------------------
 
 检查ip_vs模块是否加载(lvs是否启动)
-[root@lvs_01 ~]# lsmod|grep ip_vs
+
+.. code-block:: bash
+    :linenos:
+
+    [root@lvs_01 ~]# lsmod|grep ip_vs
 
 创建软连接 ``/usr/src/linux``
 

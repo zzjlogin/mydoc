@@ -31,7 +31,9 @@ keepalive配置一般可以分为三个部分：
 	- 全局配置GLOBAL CONFIGURATION
 	- vrrp配置VRRPD CONFIGURATION
 	- lvs配置LVS CONFIGURATION
+    
     - BFD配置BFD CONFIGURATION
+
 
 全局配置详解(Globals configurations)
 ---------------------------------------------
@@ -431,10 +433,11 @@ vrrp配置详解(VRRP configurations)
 ---------------------------------------------
 
 vrrp配置部分包括以下三个部分：
-	- VRRP scripts，vrrp脚本
+    - VRRP scripts，vrrp脚本
     - VRRP track files，vrrp文件追踪
-	- VRRP synchronization group，vrrp同步组
-	- VRRP instance，vrrp实例
+    - VRRP synchronization group，vrrp同步组
+    - VRRP instance，vrrp实例
+
 
 **vrrp脚本**
 
@@ -588,7 +591,9 @@ notify_backup <STRING>|<QUOTED-STRING> [username [groupname]]
 
 notify_fault <STRING>|<QUOTED-STRING> [username [groupname]]
     通知脚本
+
 notify_stop <STRING>|<QUOTED-STRING> [username [groupname]]
+
 notify <STRING>|<QUOTED-STRING> [username [groupname]]
     当vrrp停止时执行
 notify_master_rx_lower_pri <STRING>|<QUOTED-STRING> [username [groupname]]
@@ -888,6 +893,7 @@ real_server <IPADDR> <PORT> {}
             脚本使用的用户/组
     BFD_CHECK {}
         bfd健康检查
+        
         name <STRING>
             bfd检测的名称
 

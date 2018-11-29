@@ -53,8 +53,6 @@ OpenVPN软件
 关闭selinux
 --------------------------------------------------------------
 
-.. attention::
-    如果不关闭selinux也没有配置selinux。则安装以后zabbix会启动失败。会发现zabbix网页可以访问，但是提示zabbix服务没有启动。
 
 **永久关闭:**
     下面配置会让selinux的关闭重启系统后还是关闭状态。但是配置不会立即生效。
@@ -452,17 +450,18 @@ ca证书创建
 
 
 
+.. code-block:: bash
+    :linenos:
 
-
-sed -i 's#export KEY_COUNTRY="US"#export KEY_COUNTRY="CN"#g' vars
-sed -i 's#export KEY_PROVINCE="CA"#export KEY_PROVINCE="SD"#g' vars
-sed -i 's#export KEY_CITY="SanFrancisco"#export KEY_CITY="QD"#g' vars
-sed -i 's#export KEY_ORG="Fort-Funston"#export KEY_ORG="zzjlogin"#g' vars
-sed -i 's#export KEY_EMAIL="me@myhost.mydomain"#export KEY_EMAIL="admin@display.tk"#g' vars
-sed -i 's#export KEY_EMAIL=mail@host.domain#export KEY_EMAIL=admin@display.tk#g' vars
-sed -i 's#export KEY_CN=changeme#export KEY_CN=CN#g' vars
-sed -i 's#export KEY_NAME=changeme#export KEY_NAME=zzjlogin#g' vars
-sed -i 's#export KEY_OU=changeme#export KEY_OU=zzjlogin#g' vars
+    sed -i 's#export KEY_COUNTRY="US"#export KEY_COUNTRY="CN"#g' vars
+    sed -i 's#export KEY_PROVINCE="CA"#export KEY_PROVINCE="SD"#g' vars
+    sed -i 's#export KEY_CITY="SanFrancisco"#export KEY_CITY="QD"#g' vars
+    sed -i 's#export KEY_ORG="Fort-Funston"#export KEY_ORG="zzjlogin"#g' vars
+    sed -i 's#export KEY_EMAIL="me@myhost.mydomain"#export KEY_EMAIL="admin@display.tk"#g' vars
+    sed -i 's#export KEY_EMAIL=mail@host.domain#export KEY_EMAIL=admin@display.tk#g' vars
+    sed -i 's#export KEY_CN=changeme#export KEY_CN=CN#g' vars
+    sed -i 's#export KEY_NAME=changeme#export KEY_NAME=zzjlogin#g' vars
+    sed -i 's#export KEY_OU=changeme#export KEY_OU=zzjlogin#g' vars
 
 
 

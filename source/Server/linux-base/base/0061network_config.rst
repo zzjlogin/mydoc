@@ -72,6 +72,7 @@ LINKDELAY=time
 
 MACADDR=MAC-address
     设置网卡物理地址，例如 ``AA:BB:CC:DD:EE:FF``
+    
     作用：
         手动设置物理网卡地址。
     
@@ -138,8 +139,9 @@ ETHTOOL_OPTS=options
     
     例如，如果你想强制100Mb，全双工:
         ETHTOOL_OPTS="autoneg off speed 100 duplex full"
-    .. tip::
-        改变速度或双工设置需要禁用自动协商选项。
+
+.. tip::
+    改变速度或双工设置需要禁用自动协商选项。
 
 HOTPLUG=answer
     在多端口绑定时，这个参数控制是否支持热插拔。

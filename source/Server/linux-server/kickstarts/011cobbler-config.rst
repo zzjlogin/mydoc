@@ -523,7 +523,7 @@ PXE启动菜单加密码提示
 ----------------------------------------
 
 参考文档：
-    https://cobbler.github.io/manuals/2.6.0/4/11_-_PXE-boot_Menu_Passwords.html
+    https://cobbler.github.io/manuals/2.6.0/4/11\_-_PXE-boot_Menu_Passwords.html
 
 可以修改的文件包括两个：
     - 菜单密码：/etc/cobbler/pxe/pxedefault.template
