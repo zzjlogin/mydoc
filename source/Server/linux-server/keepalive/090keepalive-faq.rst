@@ -11,7 +11,7 @@ keepalived常见问题汇总
 
 命令 ``./configure`` 报错：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     checking for sys/time.h... yes

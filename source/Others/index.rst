@@ -8,7 +8,7 @@
    :maxdepth: 1
    :glob:
    
-   security/index
+    
    *
 
    

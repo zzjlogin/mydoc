@@ -5,7 +5,6 @@ window命令
 .. toctree::
    :maxdepth: 1
    :glob:
-   :hidden:
 
    cmd/*
    *

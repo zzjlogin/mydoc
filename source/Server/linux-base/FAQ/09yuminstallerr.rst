@@ -11,7 +11,7 @@ yum安装https的在线软件包报错
 
 **错误现象：**
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@zzjlogin ~]# rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm

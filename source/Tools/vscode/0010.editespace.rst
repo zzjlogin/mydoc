@@ -1,0 +1,30 @@
+
+==============================================================
+Vscode设置显示空格
+==============================================================
+
+
+
+设置步骤：
+    1. 文件————首选项————设置
+    2. 弹窗输入： ``editor.renderWhitespace``
+    3. 选项选择 ``all``
+
+具体过程如下图：
+
+.. image:: /images/tools/vscode/edite-renderWhitespace001.png
+    :align: center
+    :height: 400 px
+    :width: 800 px
+
+.. image:: /images/tools/vscode/edite-renderWhitespace002.png
+    :align: center
+    :height: 400 px
+    :width: 800 px
+
+.. image:: /images/tools/vscode/edite-renderWhitespace003.png
+    :align: center
+    :height: 400 px
+    :width: 800 px
+
+

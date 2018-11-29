@@ -77,7 +77,7 @@ host
     
 参考配置语法：
 
-.. code-block:: txt
+.. code-block:: none
     :linenos:
 
     host 主机名 { 

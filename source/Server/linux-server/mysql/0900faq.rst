@@ -41,7 +41,7 @@ make install 错误细节
 
 查看系统信息：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@mysql_001 mysql-5.5.60]# df -h
@@ -62,7 +62,7 @@ MySQL启动过程问题
 
 报错详细：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@mysql_001 mysql]# /etc/init.d/mysqld start
@@ -70,7 +70,7 @@ MySQL启动过程问题
 
 查看日志：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@mysql_001 mysql]# cat data/mysql_001.err     
@@ -97,7 +97,7 @@ MySQL启动过程问题
 
 从上面报错可以看到是mysql.socket文件权限问题。即`` /app/mysql-5.5.60/tmp/`` 目录权限需要设置，需要设置 ``1777``
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     chmod 1777 /app/mysql-5.5.60/tmp/

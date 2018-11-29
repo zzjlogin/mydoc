@@ -85,13 +85,15 @@ ipvsadm命令参数详解：
     指定LVS 的工作模式为NAT 模式
 \-w --weight weight
     真实服务器的权值
+
 --mcast-interface interface
     指定组播的同步接口
+
 \-c --connection
     显示LVS 目前的连接 如：ipvsadm -L -c
 
 --timeout
-    显示tcp tcpfin udp 的timeout 值 如：ipvsadm -L --timeout
+    显示tcp tcpfin udp的timeout值。如： ``ipvsadm -L --timeout``
 --daemon
     显示同步守护进程状态
 --stats

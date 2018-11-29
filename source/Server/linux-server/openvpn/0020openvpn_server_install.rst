@@ -291,7 +291,7 @@ ca证书创建
 
 创建CA证书：
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@OpenVPN_001 2.0]# ./build-ca

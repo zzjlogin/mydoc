@@ -34,7 +34,7 @@
 .. table:: Truth table for "not"
 
     =====  =====
-        A    not A
+    A      not A
     =====  =====
     False  True
     True   False
@@ -84,12 +84,10 @@ CSV 表格
 ==============================
 
 .. WARNING::
-
-   一个CSV(逗号分隔的值)表格
+    一个CSV(逗号分隔的值)表格
 
 .. WARNING::
-
-   "csv-table"指令的 ":file\:" 和 ":url\:" 选项表示一个潜在的安全漏洞。其可以使用运行时设置禁用。
+    "csv-table"指令的 ":file\:" 和 ":url\:" 选项表示一个潜在的安全漏洞。其可以使用运行时设置禁用。
 
 (Docutils 0.3.4 新增)
 

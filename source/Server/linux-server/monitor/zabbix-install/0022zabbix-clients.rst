@@ -101,7 +101,7 @@ zabbix_agentd.exe命令说明:
 
 脚本内容：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     @echo off

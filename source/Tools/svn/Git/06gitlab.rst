@@ -1,4 +1,4 @@
-.. _zzjlogin-gitlab:
+.. _zzjlogin-gitlab-client:
 
 ======================================
 gitlab使用

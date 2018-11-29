@@ -1,4 +1,4 @@
-.. _lvs-install:
+.. _lvs-install-common:
 
 =============================================
 lvs安装
@@ -100,6 +100,7 @@ CentOS6安装版本：
             UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 
 或者命令：
+
 .. code-block:: bash
     :linenos:
 

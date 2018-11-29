@@ -7,7 +7,7 @@
    :glob:
    :numbered:
    
-   rST/*
+   *
 
 
 

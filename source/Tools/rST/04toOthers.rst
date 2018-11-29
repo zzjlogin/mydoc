@@ -14,8 +14,8 @@ rst转换html
     https://pandoc.org/try/
 
 sphinx创建的rst文件项目转换html：
-    
-    make html
+    - 一般格式： ``make html``
+    - 把html生成过程的错误信息输出到文件中： ``make html 2>err.txt``
 
 
 

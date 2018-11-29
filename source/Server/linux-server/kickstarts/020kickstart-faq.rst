@@ -18,9 +18,10 @@ CentOS7
     - 1804/1708支持PXE安装参考资料：https://www.centos.org/forums/viewtopic.php?f=50&t=64938
     - CentOS7的启动菜单配置参数详解：https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/chap-anaconda-boot-options
     - Hidden feature of Fedora 24: Live PXE boot: https://lukas.zapletalovi.com/2016/08/hidden-feature-of-fedora-24-live-pxe-boot.html
+
 通过PXE网络安装CentOS7(1708/1804)系统时，在配置tftpd传入的系统的default引导菜单时需要参考实例：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     default ks
@@ -36,6 +37,7 @@ CentOS7
     上面实例中的： 
         ``root=live:http://192.168.6.10/centos/7/LiveOS/squashfs.img`` 中的 ``squashfs.img`` 是系统镜像文件中的 ``LiveOS`` 目录下的文件。这个不指定会报错，然后不能安装，提示最后进入：
             dracut:/#
+
         ``ro rd.live.image rd.luks=0 rd.md=0 rd.dm=0`` 是参考的内容添加后可以正常启动，不添加也可以。
         
 

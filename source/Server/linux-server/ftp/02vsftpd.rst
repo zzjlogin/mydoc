@@ -54,7 +54,6 @@ vsftpd用户分类：
     vsftpd默认用户是ftp，所有访问用户会被映射成ftp用户。
 
 
-.. _vsftpd-install:
 
 ================================
 vsftp安装配置

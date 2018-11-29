@@ -10,7 +10,8 @@ reST安装及环境配置
 
     其次，应该已经安装了pip。
     
-    **Pyhon安装可以参考：** :ref:`python-env`
+Pyhon安装可以参考：
+    - :ref:`python-env`
 
 
 .. _rst-env-install:
@@ -69,13 +70,12 @@ reST安装及环境配置
          :linenos:
 
 
-.. attention::
-    **注意上面的选项:**
-
-    - 如果由rst生成html文档挂在github-page上面，就需要勾选第54行。
-    - 如果把文档和其他文件目录分开，第12行就要选 ``y``
-    - 第20\-22行设置文档名称和文档作者以及文档版本信息。
-    - 第30行设置语言。可以参考第29行对应链接文档查看现在支持的语言种类。这是设置简体中文。
+.. note::
+    注意上面的选项:
+        - 如果由rst生成html文档挂在github-page上面，就需要勾选第54行。
+        - 如果把文档和其他文件目录分开，第12行就要选 ``y``
+        - 第20\-22行设置文档名称和文档作者以及文档版本信息。
+        - 第30行设置语言。可以参考第29行对应链接文档查看现在支持的语言种类。这是设置简体中文。
 
 
 5. 查看创建文档结果
@@ -126,9 +126,10 @@ reST安装及环境配置
 配置文件说明
 --------------------------------------
 
-通过上面命令及中间选项配置。最后生成的文档的配置文件在 `G:\test\source` 下，文件名 ``conf.py``
+通过上面命令及中间选项配置。最后生成的文档的配置文件在 ``G:\test\source`` 下，文件名 ``conf.py``
 
-配置文件配置说明：http://www.sphinx-doc.org/en/master/usage/configuration.html
+配置文件配置说明：
+    - http://www.sphinx-doc.org/en/master/usage/configuration.html
 
 
 常用配置说明
@@ -138,62 +139,63 @@ reST安装及环境配置
 
 1. 配置文档主题
 
-    修改之前配置信息：
+修改之前配置信息：
 
-        .. code-block:: python
-            :linenos:
-            
-            html_theme = 'alabaster'
+.. code-block:: python
+    :linenos:
+    
+    html_theme = 'alabaster'
 
-    修改之后的配置信息：
+修改之后的配置信息：
 
-        .. code-block:: python
-            :linenos:
-            
-            #html_theme = 'alabaster'
-            html_theme = 'sphinx_rtd_theme'
+.. code-block:: python
+    :linenos:
+    
+    #html_theme = 'alabaster'
+    html_theme = 'sphinx_rtd_theme'
 
 2. 配置主页右上角显示源码(设置不显示源码)
 
-    修改之前配置文件中没有 ``html_show_sourcelink`` 对应的配置，即默认为True。
+修改之前配置文件中没有 ``html_show_sourcelink`` 对应的配置，即默认为True。
 
-    修改之后的配置信息(即新增一行)：
+修改之后的配置信息(即新增一行)：
 
-        .. code-block:: python
-            :linenos:
-            
-            html_show_sourcelink = False
+.. code-block:: python
+    :linenos:
+    
+    html_show_sourcelink = False
 
 3. 配置显示页脚的sphinx版本等信息
 
-    默认显示页脚信息。配置中默认没有 ``html_show_sphinx`` 对应配置信息，即默认为True。
+默认显示页脚信息。配置中默认没有 ``html_show_sphinx`` 对应配置信息，即默认为True。
 
-    修改之后(增加一行)：
+修改之后(增加一行)：
 
-        .. code-block:: python
-            :linenos:
-            
-            html_show_sphinx = False
+.. code-block:: python
+    :linenos:
+    
+    html_show_sphinx = False
 
 4. 配置显示文档版本信息
 
-    修改之前配置文件中没有 ``html_show_copyright`` 对应的配置，即默认为False。
+修改之前配置文件中没有 ``html_show_copyright`` 对应的配置，即默认为False。
 
-    修改之后的配置信息(即新增一行)：
+修改之后的配置信息(即新增一行)：
 
-        .. code-block:: python
-            :linenos:
-            
-            html_show_copyright = True
+.. code-block:: python
+    :linenos:
+    
+    html_show_copyright = True
 
 5. 配置logo信息
 
-    修改后logo配置：
+修改后logo配置：
 
-        .. code-block:: python
-            :linenos:
-            
-            html_logo = './images/logo-wordmark-light.svg'
+.. code-block:: python
+    :linenos:
+    
+    html_logo = './images/logo-wordmark-light.svg'
+
 
 
 conf.py 配置详解 [1]_
@@ -241,7 +243,6 @@ conf.py 配置详解 [1]_
 
 .. tip::
     一般生成html文件总会提示一些错误。然后还要需要根据这个错误修改对应的文件。
-    
     所以在window系统的命令提示符界面可以输入 `` make html 2>err.txt``
     这样就可以把所有的错误信息都重定向输出到err.txt文件。然后打开err.txt文件根据这个文件的错误提示信息修改对应的文件即可。
     
@@ -249,9 +250,10 @@ conf.py 配置详解 [1]_
 make命令详解
 ======================================
 
-::
+.. code-block:: text
+    :linenos:
 
-    Please use `make target' where target is one of
+    Please use `make target' where target is one of`
     html        to make standalone HTML files，通过源文件生成表中html文件
     dirhtml     to make HTML files named index.html in directories
     singlehtml  to make a single large HTML file，生成一个大的html文件

@@ -169,7 +169,7 @@ MySQL数据库初始化
     chown -R mysql.mysql /app/mysql/data/
     ll /app/mysql/data/
 
-.. code-block:: bash
+.. code-block:: none
     :linenos:
 
     [root@mysql_001 mysql-5.5.60]# pwd

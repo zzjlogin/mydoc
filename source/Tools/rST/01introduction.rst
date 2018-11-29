@@ -40,7 +40,8 @@ reST文档管理工具
     #. sphinx-autobuild
     #. sphinx-rtd-theme
 
-    **上面库的安装参考：** :ref:`zzjlogin-rst-env`
+上面库的安装参考：
+    - :ref:`zzjlogin-rst-env`
 
 
 reST文档编辑工具
@@ -52,7 +53,8 @@ reST文档编辑工具
     这是一款微软推出的开源工具。如果编辑reStructuredText文档。
     可以安装reStructuredText [1]_ 插件。
 
-    **工具的具体使用参见：** :ref:`zzjlogin-rst-tools`
+工具的具体使用参见：
+    - :ref:`zzjlogin-rst-tools`
 
 
 
