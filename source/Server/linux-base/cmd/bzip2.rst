@@ -1,0 +1,133 @@
+.. _bzip2-cmd:
+
+===================
+bzip2
+===================
+
+:Date: 2018-08-29
+
+.. contents::
+
+
+.. _bzip2-format:
+
+命令格式
+===================
+
+命令格式:
+    - bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ...  ]
+    - bunzip2 [ -fkvsVL ] [ filenames ...  ]
+    - bzcat [ -s ] [ filenames ...  ]
+    - bzip2recover filename
+
+.. _bzip2-user:
+
+所属用户
+===================
+
+命令路径:
+    /usr/bin/bzip2
+
+需要权限:
+    普通用户权限即可执行
+
+.. _bzip2-guid:
+
+使用指导
+===================
+
+作用：
+    - **bzip2, bunzip2** ：压缩区块文件
+    - **bzcat** ：解压文件到标准输出。
+    - **bzip2recover** ：从损坏的bzip2文件恢复数据
+
+
+
+.. _bzip2-args:
+
+参数
+===================
+
+**参数及参数作用：**
+
+\-c --stdout
+    - 压缩或解压到标准输出。
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+
+
+\-d --decompress
+    - 解压
+
+\-z --compress
+    - 压缩
+
+
+\-t --test
+    - 检查指定文件的完整性，但不要解压它们。这实际上执行了一次试解压缩并丢弃了结果。
+
+\-f --force
+    - 强制覆盖输出文件。
+
+\-k --keep
+    - 在压缩或解压期间保存(不要删除)输入文件
+
+\-s --small
+    - 减少内存使用，用于压缩、解压缩和测试。
+
+\-q --quiet
+    - 禁止不必要的警告消息
+
+\-v --verbose
+    - 输出详细信息。
+
+
+\-L --license -V --version
+    - 显示软件版本、许可条款和条件。
+
+\-1 (or --fast) to -9 (or --best)
+    - 设置块大小为100k, 200k ..压缩时90k。解压时没有效果。
+
+\--
+    - 将所有后续参数视为文件名，即使它们以破折号开头
+
+\--repetitive-fast --repetitive-best
+    - 在版本0.9.5和更高版本中，这些标志是多余的。
+
+
+
+
+
+.. _bzip2-instance:
+
+参考实例
+===================
+
+.. code-block:: bash
+    :linenos:
+
+
+
+
+.. code-block:: bash
+    :linenos:
+
+
+.. _bzip2-relevant:
+
+相关命令
+===================
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,14 +16,20 @@ echo
 命令格式
 ===================
 
-
-
+命令格式:
+    - echo [SHORT-OPTION]... [STRING]...
+    - echo LONG-OPTION
 
 .. _echo-user:
 
 所属用户
 ===================
 
+命令路径:
+    /bin/echo
+
+需要权限:
+    普通用户权限即可执行
 
 
 
@@ -32,14 +38,76 @@ echo
 使用指导
 ===================
 
+输出指定字符到标准输出
 
+.. code-block:: none
+    :linenos:
 
+    ===================================================================
+
+                        能否引用变量  |     能否引用转移符          |  能否引用文本格式符(如：换行符、制表符)
+
+    单引号  |           否           |             否             |         否
+
+    双引号  |           能           |             能             |         能
+
+    无引号  |           能           |             能             |         否
+    ===================================================================
 
 .. _echo-args:
 
 参数
 ===================
 
+\-n
+    - 输出字符最后不加换行符，默认会自动加换行符。
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 ~]# echo 'test'
+    test
+    [root@centos6 ~]# echo -n 'test'
+    test[root@centos6 ~]# 
+
+
+-e
+    - 用反斜线转移 ``\``
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+    
+    [root@centos6 ~]# echo -e "OK! \c"
+    OK! [root@centos6 ~]# echo OK! \c    
+    OK! c
+    [root@centos6 ~]# echo -E "OK! \c"
+    OK! \c
+    [root@centos6 ~]# echo "OK! \c"   
+    OK! \c
+    [root@centos6 ~]# echo -e "OK! \c"
+    OK! [root@centos6 ~]# 
+
+-E
+    - 禁用反斜线转移 ``\`` ，默认禁用
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+    
+    [root@centos6 ~]# echo -E OK! \c
+    OK! c
+    [root@centos6 ~]# echo "OK! \c"   
+    OK! \c
+    [root@centos6 ~]# echo -e "OK! \c"
+    OK! [root@centos6 ~]# 
+
+--help
+    - 显示帮助并退出
+
+--version
+    - 显示版本信息
 
 
 .. _echo-instance:

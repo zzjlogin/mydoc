@@ -163,23 +163,28 @@ USERCTL=answer
 
 **配置静态IP**
 
-DEVICE=eth0
-TYPE=Ethernet
-ONBOOT=yes
-BOOTPROTO=static
-IPADDR=192.168.161.132
-NETMASK=255.255.255.0
-GATEWAY=192.168.161.2
+.. code-block:: bash
+    :linenos:
+
+    DEVICE=eth0
+    TYPE=Ethernet
+    ONBOOT=yes
+    BOOTPROTO=static
+    IPADDR=192.168.161.132
+    NETMASK=255.255.255.0
+    GATEWAY=192.168.161.2
 
 
 **配置动态获取DHCP**
 
+.. code-block:: bash
+    :linenos:
 
-DEVICE=eth0
-TYPE=Ethernet
-ONBOOT=yes
-NM_CONTROLLED=yes
-BOOTPROTO=dhcp
+    DEVICE=eth0
+    TYPE=Ethernet
+    ONBOOT=yes
+    NM_CONTROLLED=yes
+    BOOTPROTO=dhcp
 
 配置网卡绑定
 -------------------------------------------------------

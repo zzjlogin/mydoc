@@ -16,4 +16,34 @@ MySQL通过备份文件恢复
 MySQL通过日志文件恢复数据
 ==============================================================
 
+步骤：
+    1. 查看MySQL配置文件 ``my.cnf`` 中的日志功能是否开启( ``log-bin=MySQL-bin`` )，开启了才能有二进制日志，才能根据日志恢复数据，否则没有办法恢复；
+    2. 登陆mysql，然后用命令 ``show variables like ‘log_bin’;`` 查看 **binlog** 功能是否开启， **ON** 为开启， **OFF** 为关闭
+    3. 数据库的文件夹中是否存在mysql-bin.000001类似的文件，有则表示binlog日志功能是开启的。然后登陆数据库恢复数据即可
+
+打开MySQL数据库的配置文件(windows系统中的配置文件为my.ini，一般在安装目录的根目录下;Linux系统中配置文件为my.cnf，一般在/usr/local/mysql/etc/目录下)，在配置文件中查看log-bin=MySQL-bin有没有被注释掉(每行第一个字符为#号表示该行被注释)，若没被注释表示开启，若被注释表示没有开启。
+
+.. code-block:: none
+    :linenos:
+
+    mysql> show variables like 'log_bin';
+    +---------------+-------+
+    | Variable_name | Value |
+    +---------------+-------+
+    | log_bin       | ON    |
+    +---------------+-------+
+    1 row in set (0.00 sec)
+
+刷新日志，把日志都写入文件保存：
+
+.. code-block:: none
+    :linenos:
+    
+    FLUSH LOGS;
+
+.. tip::
+    命令 ``REST MASTER;`` 会情况binlog日志，所以慎用。删除日志可以用 PURGE MASTER LOGS
+
+
+mysqlbinlog  --start-date="2012-10-15 16:30:00" --stop-date="2017-6-11 17:16:00" /var/lib/mysql/mysql-bin.000001 |mysql -uroot -p
 

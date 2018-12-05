@@ -16,7 +16,8 @@ cd
 命令格式
 ===================
 
-
+命令格式:
+    cd [-L|-P] [dir]
 
 
 .. _cd-user:
@@ -24,7 +25,7 @@ cd
 所属用户
 ===================
 
-
+bash内置命令
 
 
 .. _cd-guid:
@@ -32,14 +33,57 @@ cd
 使用指导
 ===================
 
+.
+    表示当前目录
+\-
+    切换目录的上次切换的目录
+~
+    当前用户的主目录(家目录),root用户是 ``/root/`` ，其他用户是 ``/home/USER``
+..
+    当前目录的上一级目录
 
-
+.. tip::
+    - 绝对路径：从目录根 ``/`` 开始的路径；
+    - 相对路径：和当前目录相比进入对应目录需要经过的目录的路径(上一级目录用 ``.`` 替换)
 
 .. _cd-args:
 
 参数
 ===================
 
+\-L
+    - 强制软连接为一个目录。
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 cd]# pwd
+    /data/cd
+    [root@centos6 cd]# ln -s /data/app test
+    [root@centos6 cd]# ll
+    total 0
+    lrwxrwxrwx 1 root root 9 Dec  4 22:59 test -> /data/app
+    [root@centos6 cd]# cd -L test/
+    [root@centos6 test]# pwd
+    /data/cd/test
+
+
+\-P
+    - 使用软连接对应的真实目录。
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 cd]# pwd
+    /data/cd
+    [root@centos6 cd]# ll
+    total 0
+    lrwxrwxrwx 1 root root 9 Dec  4 22:59 test -> /data/app
+    [root@centos6 cd]# cd -P test/
+    [root@centos6 app]# pwd
+    /data/app
 
 
 .. _cd-instance:
@@ -47,7 +91,51 @@ cd
 参考实例
 ===================
 
+1. 返回上级目录：
 
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 app]# cd ..
+    [root@centos6 data]# pwd
+    /data
+
+2. 返回上次工作目录：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 app]# pwd
+    /data/app
+    [root@centos6 app]# cd ..
+    [root@centos6 data]# pwd
+    /data
+    [root@centos6 data]# cd -
+    /data/app
+    [root@centos6 app]# pwd
+    /data/app
+
+3. 返回当前用户主目录：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 app]# pwd
+    /data/app
+    [root@centos6 app]# cd ~
+    [root@centos6 ~]# pwd
+    /root
+
+4. 进入指定目录：
+
+.. code-block:: bash
+    :linenos:
+
+    [root@centos6 ~]# pwd
+    /root
+    [root@centos6 ~]# cd /data/app/
+    [root@centos6 app]# pwd
+    /data/app
 
 .. _cd-relevant:
 

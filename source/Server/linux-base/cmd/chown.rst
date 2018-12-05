@@ -16,7 +16,9 @@ chown
 命令格式
 ===================
 
-
+命令格式:
+    - chown [OPTION]... [OWNER][:[GROUP]] FILE...
+    - chown [OPTION]... --reference=RFILE FILE...
 
 
 .. _chown-user:
@@ -24,8 +26,12 @@ chown
 所属用户
 ===================
 
+命令路径:
+    /bin/chown
 
-修改文件所属用户/组信息。
+需要权限:
+    普通用户
+
 
 
 .. _chown-guid:
@@ -33,6 +39,8 @@ chown
 使用指导
 ===================
 
+作用：
+    修改文件所属的用户和组信息。
 
 
 
@@ -40,6 +48,44 @@ chown
 
 参数
 ===================
+
+
+\-c, --changes
+    - 和 ``verbose`` 相同，显示相信信息
+
+\--dereference
+    - 修改链接文件对应的源文件，不修链接文件本身的属性信息。
+
+\-h, --no-dereference
+    - 修改链接文件的属性。
+
+\--from=CURRENT_OWNER:CURRENT_GROUP
+    - 所有文件和符合这个条件才会修改对应的属性。
+
+\--no-preserve-root
+    - 会特殊处理 ``/``
+
+\--preserve-root
+    - 不特殊处理 ``/`` (默认)
+
+\-f, --silent, --quiet
+    - 不显示错误信息
+
+\-v, --verbose
+    - 显示相信信息
+
+\--reference
+    - 修改权限和参考文件相同的权限。
+
+\-R, --recursive
+    - 递归修改目录权限。
+
+\--help
+    - 显示帮助信息。
+
+\--version
+    - 显示版本信息。
+
 
 
 

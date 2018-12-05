@@ -16,8 +16,10 @@ chmod
 命令格式
 ===================
 
-
-
+命令格式:
+    - chmod [OPTION]... MODE[,MODE]... FILE...
+    - chmod [OPTION]... OCTAL-MODE FILE...
+    - chmod [OPTION]... --reference=RFILE FILE...
 
 .. _chmod-user:
 
@@ -25,6 +27,11 @@ chmod
 ===================
 
 
+命令路径:
+    /bin/chmod
+
+需要权限:
+    普通用户
 
 
 .. _chmod-guid:
@@ -32,7 +39,8 @@ chmod
 使用指导
 ===================
 
-修改文件权限。
+作用：
+    修改文件权限。
 
 
 
@@ -40,6 +48,30 @@ chmod
 
 参数
 ===================
+
+\-c, --changes
+    - 和 ``verbose`` 相同，显示相信信息
+
+\--preserve-root
+    - 不特殊处理 ``/`` (默认)
+
+\-f, --silent, --quiet
+    - 递归操作失败 ``/``
+
+\-v, --verbose
+    - 显示相信信息
+
+\--reference=RFILE
+    - 修改权限和参考文件相同的权限。
+
+\-R, --recursive
+    - 递归修改目录权限。
+
+\--help
+    - 显示帮助信息。
+
+\--version
+    - 显示版本信息。
 
 
 

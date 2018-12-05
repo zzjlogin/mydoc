@@ -16,6 +16,9 @@ du
 命令格式
 ===================
 
+命令格式:
+    - du [OPTION]... [FILE]...
+    - du [OPTION]... --files0-from=F
 
 
 
@@ -24,13 +27,20 @@ du
 所属用户
 ===================
 
+命令路径:
+    /usr/bin/du
 
+需要权限:
+    普通用户
 
 
 .. _du-guid:
 
 使用指导
 ===================
+
+作用：
+    计算文件空间使用情况
 
 
 
@@ -39,6 +49,91 @@ du
 
 参数
 ===================
+
+\-a, --all
+    - 不止显示指定目录的目录大小及还显示目录中的文件大小。
+
+\--apparent-size
+    - 显示文件大小
+
+\-B, --block-size=SIZE
+    - 指定区块大小
+
+
+\-b, --bytes
+    - 等价于 ``--apparent-size --block-size=1``
+
+\-c, --total
+    - 显示总的大小
+
+\-D, --dereference-args
+    - 仅取消引用命令行中列出的符号链接
+
+\--files0-from=F
+
+
+\-H
+    - 等价于 ``--dereference-args (-D)``
+
+
+\-h, --human-readable
+    - 用易读的单位显示目录文件大小(例如：1K 234M 2G)
+
+\--si
+    - 等价于 ``-h``
+
+\-k
+    - 作用等同于：--block-size=1K
+
+\-l, --count-links
+    - 如果硬链接，则计算硬连接次数
+
+
+\-m
+    - 作用等同于：--block-size=1M
+
+
+\-L, --dereference
+    - 解除对所有符号链接的引用
+
+
+\-P, --no-dereference
+    - 不要跟随任何符号链接(这是默认的)
+
+\-0, --null
+    - 每个输出行以0字节结束，而不是换行
+\-S, --separate-dirs
+    - 不包括子目录的大小
+\-s, --summarize
+    - 只显示每个参数的总数
+\-x, --one-file-system
+    - 跳过不同文件系统上的目录
+
+\-X, --exclude-from=FILE
+    - 排除与文件中任何模式匹配的文件
+
+\--exclude=PATTERN
+    - 排除文件匹配模式
+
+\--max-depth=N
+    - 打印目录深度不超过N的信息
+
+
+\--time
+    - 显示目录中任何文件或子目录最后一次修改的时间
+
+\--time=WORD
+    - 显示时间设置的值 WORD，而不是atime, access,
+
+\--time-style=STYLE
+    - 用指定类型的时间，例如：full-iso, long-iso,  iso,  +FORMAT
+    - 时间格式参考命令 ``date``
+
+\--help
+    - 显示帮助信息
+
+\--version
+    - 显示版本信息
 
 
 

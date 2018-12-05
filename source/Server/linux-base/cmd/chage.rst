@@ -5,7 +5,6 @@ chage
 ===================
 
 
-
 :Date: 2018-09
 
 .. contents::
@@ -16,7 +15,8 @@ chage
 命令格式
 ===================
 
-
+命令格式:
+    chage [options] [LOGIN]
 
 
 .. _chage-user:
@@ -24,7 +24,11 @@ chage
 所属用户
 ===================
 
+命令路径:
+    /usr/bin/chage
 
+需要权限:
+    普通用户权限即可执行
 
 
 .. _chage-guid:
@@ -32,13 +36,53 @@ chage
 使用指导
 ===================
 
-
+作用：
+    更改用户密码过期信息
 
 
 .. _chage-args:
 
 参数
 ===================
+
+
+
+\-d, --lastday LAST_DAY
+    - 日期格式设置 ``YYYY-MM-DD``
+    - 如果 ``LAST_DAY`` 值设置为 ``0`` 则强制到期后登陆系统强制修改密码。
+    - 示例：
+
+.. code-block:: bash
+    :linenos:
+
+
+
+
+\-E, --expiredate EXPIRE_DATE
+    - 设置用户过期时间，过期后用户就不能登陆。
+    - 日期格式 ``YYYY-MM-DD`` ，如果设置 ``-1`` 那么过期后会删除用户。
+
+
+
+\-I, --inactive INACTIVE
+    - 设置密码失效后多长时间用户不登陆则锁定用户。
+
+\-l, --list
+    - 显示账户的时间信息。
+
+
+\-m, --mindays MIN_DAYS
+    - 设置密码最短的有效期。
+    - 0是随时可以更改密码。
+
+
+\-M, --maxdays MAX_DAYS
+    - 设置密码的最大有效时长。
+
+
+\-W, --warndays WARN_DAYS
+    - 设置用户过期之前几天提示警告信息。
+
 
 
 
