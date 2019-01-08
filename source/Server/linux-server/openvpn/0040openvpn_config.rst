@@ -8,6 +8,10 @@ OpenVPN配置文件详解
 OpenVPN常用配置样例详解
 ========================================
 
+
+配置文件中参数官方详解：
+    https://openvpn.net/community-resources/reference-manual-for-openvpn-2-0/
+
 一般配置注解
 --------------------------------------------------------------
 

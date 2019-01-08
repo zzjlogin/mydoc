@@ -150,13 +150,15 @@ OpenVPN依赖包官方说明：
     - 官方参考：https://openvpn.net/community-resources/how-to/#pki  
 
 下载
-
+    1. 官方下载地址：http://build.openvpn.net/downloads/releases/openvpn-2.2.2.tar.gz
+    2. github源码下载地址：https://github.com/OpenVPN/openvpn/archive/v2.2.2.tar.gz
 .. code-block:: bash
     :linenos:
 
     [root@OpenVPN_001 ~]# mkdir /data/tools -p
     [root@OpenVPN_001 ~]# cd /data/tools/
     [root@OpenVPN_001 tools]# wget http://build.openvpn.net/downloads/releases/openvpn-2.2.2.tar.gz
+
 
 解压并运行 ``configure`` ：
 
@@ -264,7 +266,7 @@ ca证书创建
 .. code-block:: bash
     :linenos:
 
-    [root@OpenVPN_001 2.0]# grep -Ev '^#|^$' vars.ori.2018-11-04 >vars
+    [root@OpenVPN_001 2.0]# grep -Ev '^#|^$' vars.ori.`date +%F`>vars
 
     [root@OpenVPN_001 2.0]# sed -i 's#export KEY_COUNTRY="US"#export KEY_COUNTRY="CN"#g' vars
     [root@OpenVPN_001 2.0]# sed -i 's#export KEY_PROVINCE="CA"#export KEY_PROVINCE="SD"#g' vars
