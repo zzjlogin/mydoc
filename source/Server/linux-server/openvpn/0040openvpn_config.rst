@@ -53,7 +53,9 @@ status openvpn-status.log
     openvpn的客户端链接情况记录日志。会在指定的文件中报错openvpn在线的客户端的账号名以及分配的IP地址信息。
     ``openvpn-status.log`` 这个文件名可以任意指定。默认用相对路径。即这个状态日志和这个配置文件在同一目录。可以用绝对路径指定
 ifconfig-pool-persist ipp.txt
-    openvpn客户端登陆的账号和分配的IP记录在这个文件中。这样客户端再次登陆时可以使用相同的IP地址。
+    - openvpn客户端登陆的账号和分配的IP记录在这个文件中。这样客户端再次登陆时可以使用相同的IP地址。
+    - ipp.txt文件默认10分钟回写一次，如果想要两秒回写，那么在后面加个2：ifconfig-pool-persist ipp.txt 2
+    - ipp.txt记录格式：CN用户名,子网网络地址。这个子网网络地址一般都是30位地址。例如：10.8.0.4，这个网络地址的第一个IP是10.8.0.5，这是这个子网段的dhcp，然后下一个才是客户端的IP，也就是10.8.0.6。
 comp-lzo
     数据传输之前使用lzo压缩数据，这样节约链路带宽，但是会加大服务器的CPU开销。
 persist-key
