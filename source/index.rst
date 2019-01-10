@@ -31,7 +31,7 @@
    
    Others/index
 
-   AboutMe
+   About
    
    
    
