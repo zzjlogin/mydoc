@@ -1,0 +1,24 @@
+.. _pandas-ref:
+
+======================================================================================================================================================
+pandas相关官方参考
+======================================================================================================================================================
+
+
+
+:Date: 2019-3
+
+.. contents::
+
+pandas的DataFrame官方参考
+======================================================================================================================================================
+
+
+- DataFrame所有内置方法/函数详解：http://pandas.pydata.org/pandas-docs/stable/reference/frame.html
+- Series内置方法/函数详解：http://pandas.pydata.org/pandas-docs/stable/reference/series.html
+- pandas读取/写入数据方法详解：http://pandas.pydata.org/pandas-docs/stable/reference/io.html
+- pandas的IO相关方法汇总：http://pandas.pydata.org/pandas-docs/stable/user_guide/io.html
+- 类SQL的多个数据对象的数据结合方法详解：http://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+- 数据选择和索引相关操作：http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
+
+
