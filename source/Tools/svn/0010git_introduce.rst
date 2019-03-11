@@ -11,16 +11,25 @@ Git/github/gitlab简介
 git简介
 ======================================================================================================================================================
 
-参考:
-    `git-百度百科 <https://baike.baidu.com/item/GIT/12647237?fr=aladdin>`_
-
-    `git-wiki百科 <https://zh.wikipedia.org/wiki/Git>`_
-
- `git`_ 是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。
+`git`_
+    是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。
 
 .. _git: https://git-scm.com/
 
-下载地址：https://git-scm.com/downloads
+参考:
+    - `git-官网 <https://git-scm.com/>`_
+    - `git-官网文档 <https://git-scm.com/docs>`_
+    - `git-百度百科 <https://baike.baidu.com/item/GIT/12647237?fr=aladdin>`_
+    - `git-wiki百科 <https://zh.wikipedia.org/wiki/Git>`_
+
+git学习资料：
+    - `git菜鸟教程 <http://www.runoob.com/git/git-tutorial.html>`_
+    - `Git教程 - 廖雪峰的官方网站 <https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000>`_
+    - `git使用简易指南 <http://www.bootcss.com/p/git-guide/>`_
+
+下载地址：
+    - https://git-scm.com/downloads
+
 
 
 
