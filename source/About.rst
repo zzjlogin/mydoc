@@ -19,6 +19,7 @@
 博客生成
     - 博客使用 **python** 的 ``sphinx`` 、 ``sphinx-autobuild`` 、 ``sphinx_rtd_theme`` 三个库。
     - 使用 **reStructuredText** 编写。配置 ``sphinx_rtd_theme`` 主题。
+    - rst学习可以参考： :ref:`rst-index`
 python环境
     - windows10 64位系统
     - anaconda(python2.7版本)，python2.7.15
