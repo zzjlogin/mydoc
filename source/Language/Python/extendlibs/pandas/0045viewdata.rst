@@ -17,6 +17,16 @@ pandas数据对象中存储的数据的查看
     - pandas在命令行界面查看数据，对齐问题是列名或者数据中有中文。
     - 设置pandas的参数即可，代码如下：
 
+
+pandas在使用时，需要在python环境中导入这个库。常用的导入方法：
+
+
+.. ipython:: python
+    :linenos:
+
+    import numpy as np
+    import pandas as pd
+    
 .. code-block:: python
     :linenos:
 

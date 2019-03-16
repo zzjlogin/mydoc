@@ -22,3 +22,5 @@ pandas的DataFrame官方参考
 - 数据选择和索引相关操作：http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html
 
 
+快速使用：
+    http://pandas.pydata.org/pandas-docs/stable/getting_started/index.html
