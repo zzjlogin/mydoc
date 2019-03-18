@@ -103,10 +103,11 @@ pandas写入或读取excel文件
 
 
 
-参数详解
+读取Excel参数详解
 ------------------------------------------------------------------------------------------------------------------------------------------------------
  
-官方参考：http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html
+官方参考：
+    - http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html
 
 io
     - 取值：str,file descriptor, pathlib.Path, ExcelFile or xlrd.Book
@@ -208,6 +209,8 @@ mangle_dupe_cols
 
 
 
-
+ 
+官方参考：
+    - http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_excel.html
 
 
