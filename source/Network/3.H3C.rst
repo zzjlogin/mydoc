@@ -4,7 +4,8 @@ H3C(华三/新华三)
 
 
 .. toctree::
-   :maxdepth: 2
-   :glob:
-   
-   h3c/*
+    :maxdepth: 1
+    :glob:
+    :numbered:
+
+    h3c/*

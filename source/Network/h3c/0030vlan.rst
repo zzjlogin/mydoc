@@ -1,0 +1,237 @@
+.. _h3c_vlan:
+
+======================================================================================================================================================
+H3C设备vlan配置
+======================================================================================================================================================
+
+
+.. contents::
+
+
+vlan涉及基本概念
+======================================================================================================================================================
+
+vlan说明：
+    - vlan百度百科：https://baike.baidu.com/item/VLAN%E6%8A%80%E6%9C%AF/10648597
+    - vlan：虚拟局域网，是二层协议，标准是：802.1Q协议，很多厂商都有自己对应的私有协议。
+
+vlan作用：
+    1. 缩小/控制广播域
+    2. 提供网络灵活划分子网
+    3. 提高设备的利用率
+    4. 提高网络利用率
+    5. 增加网络安全性
+
+
+vlan创建
+======================================================================================================================================================
+
+交换机所有接口默认都属于vlan1。
+
+创建单个vlan，添加vlan描述信息：
+
+.. code-block:: text
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]vlan 10
+    [H3C-vlan10]name testvlan
+    [H3C-vlan10]description test_vlan
+    [H3C-vlan10]quit
+
+
+创建连续的一组vlan
+
+.. code-block:: text
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]vlan 20 to 100
+
+vlan逻辑接口绑定物理接口
+======================================================================================================================================================
+
+
+把设备(一般是交换机/防火墙)物理接口加入到一个vlan：
+
+一般有两种方法：
+    - 在vlan接口添加需要加入这个vlan的物理接口
+    - 在物理接口配置模式，加入到指定vlan接口(新型号的设备软件可以在一组物理接口下配置)
+
+第一种配置方法：
+
+.. code-block:: text
+    :linenos:
+
+    [H3C-vlan10]port GigabitEthernet1/0/4 to GigabitEthernet 1/0/5
+
+第二种配制方法：
+
+.. code-block:: text
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]interface GigabitEthernet1/0/1
+    [H3C-GigabitEthernet1/0/1]display this
+    #
+    interface GigabitEthernet1/0/1
+    port link-mode bridge
+    combo enable fiber
+    #
+    return
+    [H3C-GigabitEthernet1/0/1]port access vlan 10
+    [H3C-GigabitEthernet1/0/1]quit
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]display vlan 10
+    VLAN ID: 10
+    VLAN type: Static
+    Route interface: Not configured
+    Description: test_vlan
+    Name: VLAN 0010
+    Tagged ports:   None
+    Untagged ports:
+        GigabitEthernet1/0/1
+
+
+vlan接口配置IP
+======================================================================================================================================================
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]interface Vlan-interface 10
+    [H3C-Vlan-interface10]ip address 192.168.1.1 24
+    [H3C-Vlan-interface10]quit
+
+    [H3C]display ip interface brief
+    *down: administratively down
+    (s): spoofing  (l): loopback
+    Interface                Physical Protocol IP Address      Description
+    MGE0/0/0                 down     down     --              --
+    Vlan10                   up       up       192.168.1.1     --
+
+
+配置trunk接口
+======================================================================================================================================================
+
+trunk接口作用：
+    trunk即中继，目的是为了使不同交换机中相同vlan中的设备通信，所以不同交换机之间需要配置trunk链路。
+
+trunk配置方法：
+    - 进入到两个交换机链接的物理接口的接口模式
+    - 配置接口的链路链接方式为trunk
+    - 如果cisco交换机需要和H3C交换机同时使用，需要cisco设备配置trunk的封装方式，指定802.1q封装。
+    - 如果需要链路聚合，把多个物理接口加入聚合的虚拟接口，然后在虚拟接口的配置模式下配置即可。
+    - 配置这个trunk接口允许通过的vlan（默认情况只允许vlan1）。
+
+配置trunk
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+把前面配置的接口恢复默认配置：
+
+.. code-block:: none
+    :linenos:
+
+    [H3C-GigabitEthernet1/0/1]default
+    This command will restore the default settings. Continue? [Y/N]:y
+    [H3C-GigabitEthernet1/0/1]display this
+    #
+    interface GigabitEthernet1/0/1
+    port link-mode bridge
+    combo enable fiber
+    #
+    return
+
+配置物理接口为trunk模式，并配置允许所有vlan通过这个接口和另一台交换机相同vlan设备通信：
+
+.. code-block:: none
+    :linenos:
+
+    [H3C-GigabitEthernet1/0/1]port link-type trunk
+    [H3C-GigabitEthernet1/0/1]dis this
+    #
+    interface GigabitEthernet1/0/1
+    port link-mode bridge
+    port link-type trunk
+    port trunk permit vlan 1
+    combo enable fiber
+    #
+    return
+    [H3C-GigabitEthernet1/0/1]port trunk permit vlan all
+
+
+
+查看vlan相关配置
+======================================================================================================================================================
+
+查看创建的vlan信息：
+
+.. code-block:: none
+    :linenos:
+
+    [H3C]display vlan static
+    Static VLANs: 83
+    The static VLANs include:
+    1(default), 10, 20-100
+
+查看现在已经在vlan接口配置信息的vlan信息：
+
+.. code-block:: none
+    :linenos:
+
+    [H3C]display interface Vlan-interface 10 brief
+    Brief information on interfaces in route mode:
+    Link: ADM - administratively down; Stby - standby
+    Protocol: (s) - spoofing
+    Interface            Link Protocol Primary IP      Description
+    Vlan10               UP   UP       192.168.1.1
+
+查看指定vlan的配置信息
+
+.. code-block:: none
+    :linenos:
+
+    [H3C]display vlan 10
+    VLAN ID: 10
+    VLAN type: Static
+    Route interface: Configured
+    IPv4 address: 192.168.1.1
+    IPv4 subnet mask: 255.255.255.0
+    Description: test_vlan
+    Name: testvlan
+    Tagged ports:   None
+    Untagged ports:
+        GigabitEthernet1/0/1          GigabitEthernet1/0/4
+        GigabitEthernet1/0/5
+
+查看vlan接口的的接口下的详细配置信息：
+
+.. code-block:: none
+    :linenos:
+
+    [H3C]display interface Vlan-interface 10
+    Vlan-interface10
+    Current state: UP
+    Line protocol state: UP
+    Description: Vlan-interface10 Interface
+    Bandwidth: 100000 kbps
+    Maximum transmission unit: 1500
+    Internet address: 192.168.1.1/24 (primary)
+    IP packet frame type: Ethernet II, hardware address: 74b3-4e3b-0202
+    IPv6 packet frame type: Ethernet II, hardware address: 74b3-4e3b-0202
+    Last clearing of counters: Never
+    Last 300 seconds input rate: 38 bytes/sec, 304 bits/sec, 0 packets/sec
+    Last 300 seconds output rate: 0 bytes/sec, 0 bits/sec, 0 packets/sec
+    Input: 286 packets, 102102 bytes, 0 drops
+    Output: 4 packets, 184 bytes, 0 drops
+
+
+
+
+
