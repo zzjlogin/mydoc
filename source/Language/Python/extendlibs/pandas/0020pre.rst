@@ -42,7 +42,7 @@ windows的cPython环境pandas安装（python官方发布的python版本）
 
 在windows的cmd命令提示符界面运行下面命令：
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     pip install pandas
@@ -62,7 +62,7 @@ Debian & Ubuntu
 ......................................................................................................................................................
 
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     sudo apt-get install python3-pandas
@@ -74,7 +74,7 @@ ubuntu官方repo：http://packages.ubuntu.com/search?keywords=pandas&searchon=na
 OpenSuse
 ......................................................................................................................................................
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     zypper in python3-pandas
@@ -85,7 +85,7 @@ OpenSuse官方repo：http://software.opensuse.org/package/python-pandas?search_t
 Fedora
 ......................................................................................................................................................
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     dnf install python3-pandas
@@ -95,7 +95,7 @@ Fedora官方repo：https://admin.fedoraproject.org/pkgdb/package/rpms/python-pan
 Centos/RHEL
 ......................................................................................................................................................
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
     
     yum install python3-pandas
@@ -109,7 +109,7 @@ Centos/RHEL官方repo：https://admin.fedoraproject.org/pkgdb/package/rpms/pytho
 windows环境查看pandas版本信息
 ......................................................................................................................................................
 
-.. code-block:: txt
+.. code-block:: text
     :linenos:
 
     pip list|findstr pandas

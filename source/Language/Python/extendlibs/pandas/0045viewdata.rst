@@ -21,7 +21,7 @@ pandas数据对象中存储的数据的查看
 pandas在使用时，需要在python环境中导入这个库。常用的导入方法：
 
 
-.. ipython:: python
+.. code-block:: python
     :linenos:
 
     import numpy as np

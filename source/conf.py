@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'我的技术文档'
-copyright = u'2018, 张志佳'
+copyright = u'2018, zzjlogin'
 author = u'zzjlogin'
 
 # The short X.Y version

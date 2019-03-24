@@ -63,11 +63,11 @@ Python开发工具安装配置
 网上现在也有免费的教育邮箱申请方法。这里就不一一赘述了。
 
 pycharm注意必备功能：
-    - pycharm配置好后，import settings，导出配置，然后保存一份。
-    这样以后无论重装系统还是换电脑，或者重新安装pycharm，都可以导入配置一下搞定。简单省事儿
+    - pycharm配置好后，import settings，导出配置，然后保存一份。这样以后无论重装系统还是换电脑，或者重新安装pycharm，都可以导入配置一下搞定。简单省事儿
 
 也可以使用：
     jupyter notebook
+
 这个工具anaconda默认包含了，如果没有可以通过下面命令安装：
 
 .. code-block:: text
