@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'我的技术文档'
+project = u'mydoc'
 copyright = u'2018, zzjlogin'
 author = u'zzjlogin'
 
@@ -25,7 +25,7 @@ import time
 
 #version = u'2018.8'
 #show the version use now time
-version = time.strftime("%Y-%m")
+version = 'Updating：'+time.strftime("%Y-%m")
 #version = time.strftime("%Y-%m-%d ")
 # %a 星期几的简写
 # %A 星期几的全称
