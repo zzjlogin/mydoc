@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'张志佳的技术文档'
+project = u'我的技术文档'
 copyright = u'2018, 张志佳'
 author = u'zzjlogin'
 

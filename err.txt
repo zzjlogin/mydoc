@@ -1,3 +1,129 @@
+G:\LocalCode\Python\mydoc\source\Language\Python\base\0020env.rst:67: WARNING: Bullet list ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Language\Python\base\0020env.rst:71: WARNING: Definition list ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0030bojectcreate.rst:17: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    import numpy as np
+    import pandas as pd
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0030bojectcreate.rst:37: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+   :linenos:
+
+   s = pd.Series([1, 3, 5, np.nan, 6, 8])
+   s
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0030bojectcreate.rst:55: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+   :linenos:
+
+   dates = pd.date_range('20130101', periods=6)
+   dates
+   df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list('ABCD'))
+   df
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0030bojectcreate.rst:65: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+   :linenos:
+
+   df2 = pd.DataFrame({'A': 1.,
+                       'B': pd.Timestamp('20130102'),
+                       'C': pd.Series(1, index=list(range(4)), dtype='float32'),
+                       'D': np.array([3] * 4, dtype='int32'),
+                       'E': pd.Categorical(["test", "train", "test", "train"]),
+                       'F': 'foo'})
+   df2
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0032dataframe_list.rst:20: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [1]: import pandas as pd
+    In [2]: b = list(range(1,10,2))
+    In [3]: b
+    Out[3]: [1, 3, 5, 7, 9]
+
+    In [4]: data = pd.DataFrame([b])
+    In [5]: data
+    Out[5]:
+       0  1  2  3  4
+    0  1  3  5  7  9
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0032dataframe_list.rst:38: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [3]: b
+    Out[3]: [1, 3, 5, 7, 9]
+    In [6]: c = list('abcde')
+    In [7]: c
+    Out[7]: ['a', 'b', 'c', 'd', 'e']
+
+    In [8]: data = pd.DataFrame([b, c])
+
+    In [9]: data
+    Out[9]:
+       0  1  2  3  4
+    0  1  3  5  7  9
+    1  a  b  c  d  e
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0032dataframe_list.rst:59: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [7]: c
+    Out[7]: ['a', 'b', 'c', 'd', 'e']
+    In [12]: data = pd.DataFrame(c)
+    In [13]: data
+    Out[13]:
+       0
+    0  a
+    1  b
+    2  c
+    3  d
+    4  e
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0032dataframe_list.rst:78: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [14]: data = pd.DataFrame(columns=c)
+
+    In [15]: data
+    Out[15]:
+    Empty DataFrame
+    Columns: [a, b, c, d, e]
+    Index: []
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0032dataframe_list.rst:90: WARNING: Document may not end with a transition.
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0034dataframe_dict.rst:16: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [17]:  d = {'a':123, 'b':321,}
+    In [19]: data = pd.DataFrame([d])
+    In [20]: data
+    Out[20]:
+        a    b
+    0  123  321
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0034dataframe_dict.rst:30: WARNING: Unknown directive type "ipython".
+
+.. ipython:: python
+    :linenos:
+
+    In [29]: d2 = {'a':[123, 234,], 'b':[211, 221],}
+    In [30]: data = pd.DataFrame(d2)
+    In [31]: data
+    Out[31]:
+        a    b
+    0  123  211
+    1  234  221
+G:\LocalCode\Python\mydoc\source\Network\h3c\0070dns_dhcp.rst:68: WARNING: Mismatch: both interpreted text role prefix and reference suffix.
+G:\LocalCode\Python\mydoc\source\Network\h3c\0070dns_dhcp.rst:107: WARNING: Unexpected indentation.
+G:\LocalCode\Python\mydoc\source\Network\h3c\0070dns_dhcp.rst:114: WARNING: Block quote ends without a blank line; unexpected unindent.
+G:\LocalCode\Python\mydoc\source\Network\h3c\0070dns_dhcp.rst:140: WARNING: Enumerated list ends without a blank line; unexpected unindent.
 G:\LocalCode\Python\mydoc\source\Server\linux-server\mysql\0011mysql_sql.rst:7: WARNING: toctree glob pattern 'mysql_sql/*' didn't match any documents
 G:\LocalCode\Python\mydoc\source\Server\linux-server\syslog\03syslog.rst:13: WARNING: image file not readable: images/log/日志分析平台架构图.png
 G:\LocalCode\Python\mydoc\source\Server\linux-server\syslog\03syslog.rst:127: WARNING: image file not readable: images/log/step1.png
@@ -16,4 +142,26 @@ G:\LocalCode\Python\mydoc\source\Tools\rST\index.rst:3: WARNING: Title overline 
 用reStructuredText实践
 ======================================================================================================================================================
 G:\LocalCode\Python\mydoc\source\Tools\svn\0040GitCmd.rst:25: WARNING: Tools/svn/gitcmd/0010bases is already assigned section numbers (nested numbered toctree?)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.read_html (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.html (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.clipboard (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.clipboard (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.hdf5 (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.hdf5 (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.feather (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.feather (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.parquet (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.parquet (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.msgpack (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.msgpack (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.stata_reader (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.stata_writer (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.sas_reader (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.pickle (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.pickle (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.sql (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.sql (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.bigquery (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0090io.rst:9: WARNING: undefined label: io.bigquery (if the link has no caption the label must precede a section header)
+G:\LocalCode\Python\mydoc\source\Language\Python\extendlibs\pandas\0093io_excel.rst:20: WARNING: Pygments lexer name 'txt' is not known
 G:\LocalCode\Python\mydoc\source\Server\linux-server\syslog\04elkbase.rst:54: WARNING: undefined label: topics-time (if the link has no caption the label must precede a section header)
