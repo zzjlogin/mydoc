@@ -10,3 +10,105 @@ OSPF配置
 
 OSPF
 ======================================================================================================================================================
+
+ospf特点：
+    - ospf是基于链路状态的路由协议
+    - ospf是内部网关协议（IGP）
+    - 现在广泛使用的是OSPF version2（RFC2328)
+    - ospf支持数百台路由器规模的网络
+    - ospf设计本身使得路由没有环路
+    - ospf收敛块
+    - ospf把网络划分为不同区域来管理
+    - ospf网络路由分为四类：区域内路由、区域间路由、第一类外部路由、第二类外部路由
+    - ospf支持验证，且是组播发送。
+
+ospf报文有五种：
+    - hello
+    - DD
+    - LSR
+    - LSU
+    - LSAck
+
+
+ospf状态机（共8种）：
+    - donw：邻居失效
+    - attempt：仅在NBMA网络中，deadinterval超时对方没有回复hello报文，此时本路由pollinterval时间向对方发送hello
+    - init：接受到hello后就是这个状态
+    - 2-way：收到的hello报文有自己的router ID，如果不能建立邻居关系就一直停留此状态，如果可以建立邻居，就进入exstart状态
+    - exstart：如果形成邻居关系，这个状态开始协商主从关系，确认DD序列号
+    - exchange：主从关系协商完（exstart状态后）的状态
+    - loading：DD报文交换完状态为loading
+    - full：LSR重传列表为空时，状态为full
+
+
+
+
+OSPF配置
+======================================================================================================================================================
+
+单区域配置
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.. code-block:: text
+    :linenos:
+
+    <H3C>sys
+    System View: return to User View with Ctrl+Z.
+    [H3C]inter LoopBack 0
+    [H3C-LoopBack0]ip address 1.1.1.1 32
+    [H3C-LoopBack0]quit
+    [H3C]router id 1.1.1.1
+    [H3C]ospf 90
+    [H3C-ospf-90]description test
+    [H3C-ospf-90]area 0
+    [H3C-ospf-90-area-0.0.0.0]network 192.168.1.0 0.0.0.255
+    [H3C-ospf-90-area-0.0.0.0]dis this
+    #
+    area 0.0.0.0
+    network 1.1.1.1 0.0.0.0
+    network 192.168.1.0 0.0.0.255
+    #
+    return
+
+
+多区域路由器
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+配置的时候域间路由配置一个 ``area 1`` 或者其他区域名即可，其他宣告接口和单区域相同
+
+
+
+查看ospf信息
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+查看lsdb信息
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]dis ospf lsdb
+
+            OSPF Process 90 with Router ID 1.1.1.1
+                    Link State Database
+
+                            Area: 0.0.0.0
+    Type      LinkState ID    AdvRouter       Age  Len   Sequence  Metric
+    Router    1.1.1.1         1.1.1.1         305  36    80000002  0
+
+
+查看邻居
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]dis ospf peer
+
+
+查看详细ospf信息：
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]dis ospf verbose
+

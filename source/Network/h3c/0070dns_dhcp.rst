@@ -35,14 +35,20 @@ DNS服务模式：
 
 配置域名和IP对应解析（静态域名解析）：
 
-<H3C>system-view
-System View: return to User View with Ctrl+Z.
-[H3C]ip host www.h3c.com 192.168.1.1
+.. code-block:: none
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]ip host www.h3c.com 192.168.1.1
 
 在三层接口配置DNS服务器地址，这个接口需要可以和这个DNS服务器正常通信。这样才能正常解析域名。
 
-[H3C]interface GigabitEthernet0/1
-[H3C-GigabitEthernet0/1]dns server 192.168.1.254
+.. code-block:: none
+    :linenos:
+
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]dns server 192.168.1.254
 
 配置为DNS代理
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,11 +58,14 @@ System View: return to User View with Ctrl+Z.
     - 配置DNS服务器地址
     - 配置允许域名解析
 
-<H3C>system-view
-System View: return to User View with Ctrl+Z.
-[H3C]dns proxy enable
-[H3C]interface GigabitEthernet0/1
-[H3C-GigabitEthernet0/1]dns server 192.168.1.254
+.. code-block:: none
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]dns proxy enable
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]dns server 192.168.1.254
 
 
 
@@ -77,49 +86,58 @@ DHCP静态地址分配配置
     2. 系统视图下配置DHCP地址池
     3. 在对应的接口(vlan/三层物理接口)引用这个地址池
 
-<H3C>system-view
-System View: return to User View with Ctrl+Z.
-[H3C]dhcp enable
-[H3C]dhcp server ip-pool vlan1_pool
-[H3C-dhcp-pool-vlan1_pool]static-bind ip-address 192.168.1.100 24 hardware-address 0000-ffff-0000
-[H3C-dhcp-pool-vlan1_pool]dns-list 192.168.1.1
-[H3C-dhcp-pool-vlan1_pool]gateway-list 192.168.1.1
-[H3C-dhcp-pool-vlan1_pool]inter vlan1
-[H3C-Vlan-interface1]dhcp server apply ip-pool vlan1_pool
+.. code-block:: none
+    :linenos:
+
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]dhcp enable
+    [H3C]dhcp server ip-pool vlan1_pool
+    [H3C-dhcp-pool-vlan1_pool]static-bind ip-address 192.168.1.100 24 hardware-address 0000-ffff-0000
+    [H3C-dhcp-pool-vlan1_pool]dns-list 192.168.1.1
+    [H3C-dhcp-pool-vlan1_pool]gateway-list 192.168.1.1
+    [H3C-dhcp-pool-vlan1_pool]inter vlan1
+    [H3C-Vlan-interface1]dhcp server apply ip-pool vlan1_pool
 
 
 
 DHCP动态地址分配配置
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<H3C>system-view
-System View: return to User View with Ctrl+Z.
-[H3C]dhcp enable
-[H3C]dhcp server ip-pool vlan1_pool
-[H3C-dhcp-pool-vlan1_pool]network 192.168.1.0 mask 255.255.255.0
-[H3C-dhcp-pool-vlan1_pool]dns-list 192.168.1.1
-[H3C-dhcp-pool-vlan1_pool]gateway-list 192.168.1.1
-[H3C-dhcp-pool-vlan1_pool]expired day 14
-[H3C-dhcp-pool-vlan1_pool]forbidden-ip 192.168.1.1 192.168.1.254
-[H3C-dhcp-pool-vlan1_pool]dis this
-#
-dhcp server ip-pool vlan1_pool
- gateway-list 192.168.1.1
- network 192.168.1.0 mask 255.255.255.0
- dns-list 192.168.1.1
- expired day 14
- forbidden-ip 192.168.1.1
- forbidden-ip 192.168.1.254
- static-bind ip-address 192.168.1.100 mask 255.255.255.0 hardware-address 0000-ffff-0000
-#
-return
+.. code-block:: none
+    :linenos:
 
-[H3C-dhcp-pool-vlan1_pool]inter vlan1
-[H3C-Vlan-interface1]dhcp server apply ip-pool vlan1_pool
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]dhcp enable
+    [H3C]dhcp server ip-pool vlan1_pool
+    [H3C-dhcp-pool-vlan1_pool]network 192.168.1.0 mask 255.255.255.0
+    [H3C-dhcp-pool-vlan1_pool]dns-list 192.168.1.1
+    [H3C-dhcp-pool-vlan1_pool]gateway-list 192.168.1.1
+    [H3C-dhcp-pool-vlan1_pool]expired day 14
+    [H3C-dhcp-pool-vlan1_pool]forbidden-ip 192.168.1.1 192.168.1.254
+    [H3C-dhcp-pool-vlan1_pool]dis this
+    #
+    dhcp server ip-pool vlan1_pool
+    gateway-list 192.168.1.1
+    network 192.168.1.0 mask 255.255.255.0
+    dns-list 192.168.1.1
+    expired day 14
+    forbidden-ip 192.168.1.1
+    forbidden-ip 192.168.1.254
+    static-bind ip-address 192.168.1.100 mask 255.255.255.0 hardware-address 0000-ffff-0000
+    #
+    return
+
+    [H3C-dhcp-pool-vlan1_pool]inter vlan1
+    [H3C-Vlan-interface1]dhcp server apply ip-pool vlan1_pool
 
 配置地址池地址范围还可以用：
 
-[H3C-dhcp-pool-vlan1_pool]address range 192.168.1.10 192.168.1.100
+.. code-block:: none
+    :linenos:
+
+    [H3C-dhcp-pool-vlan1_pool]address range 192.168.1.10 192.168.1.100
 
 
 DHCP中继
@@ -140,15 +158,18 @@ DHCP中继配置步骤：
     5. 在三层接口下配置用户下线检测
     5. 在三层接口下配置中继检测
 
-<H3C>system-view
-System View: return to User View with Ctrl+Z.
-[H3C]dhcp enable
-[H3C]dhcp relay client-information record
-[H3C]dhcp relay client-information refresh enable
-[H3C]dhcp relay client-information refresh auto
+.. code-block:: none
+    :linenos:
 
-[H3C]interface g0/1
-[H3C-GigabitEthernet0/1]dhcp relay server-address 192.168.10.1
+    <H3C>system-view
+    System View: return to User View with Ctrl+Z.
+    [H3C]dhcp enable
+    [H3C]dhcp relay client-information record
+    [H3C]dhcp relay client-information refresh enable
+    [H3C]dhcp relay client-information refresh auto
+
+    [H3C]interface g0/1
+    [H3C-GigabitEthernet0/1]dhcp relay server-address 192.168.10.1
 
 
 

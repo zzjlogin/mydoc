@@ -14,7 +14,7 @@ pandas数据对象创建
 pandas在使用时，需要在python环境中导入这个库。常用的导入方法：
 
 
-.. ipython:: python
+.. code-block:: python
     :linenos:
 
     import numpy as np
@@ -34,7 +34,7 @@ pandas在使用时，需要在python环境中导入这个库。常用的导入�
 
 Series可以通过列表来创建。如下实例：
 
-.. ipython:: python
+.. code-block:: python
    :linenos:
 
    s = pd.Series([1, 3, 5, np.nan, 6, 8])
@@ -52,7 +52,7 @@ DataFrame创建常用方法：
 
 通过NumPy数组(array)创建DataFrame，同时指定时间为索引值来标注行号：
 
-.. ipython:: python
+.. code-block:: python
    :linenos:
 
    dates = pd.date_range('20130101', periods=6)
@@ -62,7 +62,7 @@ DataFrame创建常用方法：
 
 通过字典的key做列名，每个key对应的列表是一列的值：
 
-.. ipython:: python
+.. code-block:: python
    :linenos:
 
    df2 = pd.DataFrame({'A': 1.,

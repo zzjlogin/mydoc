@@ -10,3 +10,98 @@ nat配置
 
 nat
 ======================================================================================================================================================
+
+NAT，是网络地址转换，是一对一的地址转换。我们日常说的NAT应该是PAT。
+
+静态NAT
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- 普通nat映射
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]nat static outbound 192.168.1.1 1.1.1.1
+    [H3C]inter g0/1
+    [H3C-GigabitEthernet0/1]nat outbound
+    [H3C-GigabitEthernet0/1]nat static enable
+
+.. note::
+    - 内网访问公网的映射（这个时候默认回数据包是可以回到主机的，且没有入向NAT）
+    - 在nat调用的时候nat outbound这个命令是在连接互联网的端口调用的。
+
+- 配置Easy IP
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]acl basic 2000
+    [H3C-acl-ipv4-basic-2000]des
+    [H3C-acl-ipv4-basic-2000]description nat_Easy_IP
+    [H3C-acl-ipv4-basic-2000]rule permit source 192.168.10.0 0.0.0.255
+    [H3C-acl-ipv4-basic-2000]rule deny
+    [H3C-acl-ipv4-basic-2000]quit
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]nat outbound 2000
+
+- NAT内部服务器：
+
+把内网服务器IP映射为外网，并指定映射端口。
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]nat server protocol icmp global 2.2.2.2 inside 192.168.1
+
+动态NAT
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+动态nat一般可以结合acl配置，控制内网哪个网段或全部网段可以通过nat转换为一组IP中的一个IP访问外网：
+    - 配置acl
+    - 配置nat转换后的地址组
+    - 在公网接口调用地址组和acl，并注意最后有 ``no-pat`` 。
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]acl basic 2000
+    [H3C-acl-ipv4-basic-2000]description nat_out
+    [H3C-acl-ipv4-basic-2000]rule permit source 192.168.10.0 0.0.0.255
+    [H3C-acl-ipv4-basic-2000]rule deny
+    [H3C-acl-ipv4-basic-2000]quit
+    [H3C]nat address-group 1
+    [H3C-address-group-1]address 2.2.2.2 2.2.2.3
+    [H3C-address-group-1]quit
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]nat outbound 2000 address-group 1 no-pat
+
+
+PAT配置
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.. code-block:: text
+    :linenos:
+
+    [H3C]acl basic 2000
+    [H3C-acl-ipv4-basic-2000]des
+    [H3C-acl-ipv4-basic-2000]description nat_napt
+    [H3C-acl-ipv4-basic-2000]rule permit source 192.168.10.0 0.0.0.255
+    [H3C-acl-ipv4-basic-2000]rule deny
+    [H3C-acl-ipv4-basic-2000]quit
+    [H3C]nat address-group 1
+    [H3C-address-group-1]address 2.2.2.2 2.2.2.3
+    [H3C-address-group-1]quit
+    [H3C]interface GigabitEthernet0/1
+    [H3C-GigabitEthernet0/1]nat outbound 2000 address-group 1
+
+
+
+
+
+
+
+
+
+
+
