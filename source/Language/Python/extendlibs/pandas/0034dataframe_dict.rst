@@ -37,3 +37,27 @@ dict字典创建DataFrame数据对象
         a    b
     0  123  211
     1  234  221
+
+
+字典key作为index，value作为具体值
+======================================================================================================================================================
+
+.. code-block:: python
+    :linenos:
+
+    In [1]: import pandas as pd
+    In [2]: s = dict(zip(list('abcdef'),list('12345')))
+    In [3]: pd.DataFrame.from_dict(s,orient='index',columns=['my'])
+    Out[3]:
+    my
+    a  1
+    b  2
+    c  3
+    d  4
+    e  5
+
+    In [4]: s
+    Out[4]: {'a': '1', 'b': '2', 'c': '3', 'd': '4', 'e': '5'}
+
+
+
