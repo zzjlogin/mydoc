@@ -1,13 +1,13 @@
-.. _h3c_telnet:
+.. _network.huawei.telnet:
 
 ======================================================================================================================================================
-H3C设备telnet管理
+华为设备telnet管理
 ======================================================================================================================================================
 
 
 .. contents::
 
-H3C常见telnet
+华为常见telnet
 ======================================================================================================================================================
 
 一般如果是新设备，需要用console线链接，然后配置开启telnet。也有的设备默认有管理端口和默认IP以及默认管理账号及密码。
@@ -20,12 +20,6 @@ H3C常见telnet
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-常见的telnet链接方式有以下几种：
-    1. 直接输入密码，登陆后即为超级用户
-    2. 直接输入密码，登陆后为普通用户权限，需要输入super密码才能获取管理员权限。
-    3. 输入用户名和对应的密码，登陆即为管理员
-    4. 输入用户名和对应密码，登陆为普通用户权限，需要输入super密码才能获取管理员权限。
-    5. 配置结合radius/AAA服务器认证
 
 
 
@@ -36,38 +30,52 @@ telnet配置
 
 
 
-telnet必要的准备配置
+telnet用户+super密码
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-
-全局开启telnet服务。如果不开启，会导致后面配置不生效。
 
 .. code-block:: text
     :linenos:
 
-    <H3C>sys
-    System View: return to User View with Ctrl+Z.
-    [H3C]telnet server enable
+    <R1>sys
+    Enter system view, return user view with Ctrl+Z.
+    [R1]interface Ethernet0/0/0
+    [R1-Ethernet0/0/0]ip address 192.168.1.1 24
+    [R1-Ethernet0/0/0]quit
+    [R1]user-interface vty 0 4
 
-telnet链接需要有处于up状态的接口(物理接口或逻辑接口)
+    [R1-ui-vty0-4]authentication-mode password
+    [R1-ui-vty0-4]set authentication password cipher 123
+
+    [R1-ui-vty0-4]quit
+    [R1]super password cipher 321
+
+    [R1]quit
+    <R1>telnet 192.168.1.1
+    Trying 192.168.1.1 ...
+    Press CTRL+K to abort
+    Connected to 192.168.1.1 ...
+
+
+    Login authentication
+
+
+    Password:
+    Info: The max number of VTY users is 10, and the number
+        of current VTY users on line is 1.
+        The current login time is 2019-03-27 15:10:34.
+    <R1>sys
+        ^
+    Error: Unrecognized command found at '^' position.
+
+
+
+配置AAA认证
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-配置一个交换机的接口为三层接口，并设置IP，为后面的telnet链接测试准备：
 
 .. code-block:: text
     :linenos:
 
-    [H3C]interface GigabitEthernet1/0/1
-    [H3C-GigabitEthernet1/0/1]port link-mode route
-    [H3C-GigabitEthernet1/0/1]ip address 192.168.1.1 24
-    [H3C-GigabitEthernet1/0/1]exit
-
-    [H3C]quit
-    <H3C>dis ip inter brief
-    *down: administratively down
-    (s): spoofing  (l): loopback
-    Interface                Physical Protocol IP Address      Description
-    GE1/0/1                  up       up       192.168.1.1     --
-    MGE0/0/0                 down     down     --              --
 
 
 telnet链接只需密码（管理员权限）
