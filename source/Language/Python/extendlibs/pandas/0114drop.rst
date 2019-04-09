@@ -15,7 +15,10 @@ drop
 
 1. 一列中所有元素都是nan，则删除这一列：
 
-DataFrame.drop(labels=None,axis=0, index=None, columns=None, inplace=False)
+.. code-block:: python
+    :linenos:
+
+    DataFrame.drop(labels=None,axis=0, index=None, columns=None, inplace=False)
 
 
 参数说明：

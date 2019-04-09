@@ -432,19 +432,9 @@
 
 .. function:: help([object])
 
-   Invoke the built-in help system.  (This function is intended for interactive
-   use.)  If no argument is given, the interactive help system starts on the
-   interpreter console.  If the argument is a string, then the string is looked up
-   as the name of a module, function, class, method, keyword, or documentation
-   topic, and a help page is printed on the console.  If the argument is any other
-   kind of object, a help page on the object is generated.
+   显示对象的帮助信息
 
-   Note that if a slash(/) appears in the parameter list of a function, when
-   invoking :func:`help`, it means that the parameters prior to the slash are
-   positional-only. For more info, see
-   :ref:`the FAQ entry on positional-only parameters <faq-positional-only-arguments>`.
-
-   This function is added to the built-in namespace by the :mod:`site` module.
+   这个帮助函数是通过内置模块 **site** 提供.
 
    .. versionchanged:: 3.4
       Changes to :mod:`pydoc` and :mod:`inspect` mean that the reported
@@ -453,17 +443,15 @@
 
 .. function:: hex(x)
 
-   Convert an integer number to a lowercase hexadecimal string prefixed with
-   "0x". If *x* is not a Python :class:`int` object, it has to define an
-   :meth:`__index__` method that returns an integer. Some examples:
+   把数字转换为小写前缀 "0x" 开头的16进制数字。x需要是整型制数字(int)。
+   实例：
 
       >>> hex(255)
       '0xff'
       >>> hex(-42)
       '-0x2a'
 
-   If you want to convert an integer number to an uppercase or lower hexadecimal
-   string with prefix or not, you can use either of the following ways:
+   如果转换大写字母开始的十六进制的16进制数字可以参考下面实例：
 
      >>> '%#x' % 255, '%x' % 255, '%X' % 255
      ('0xff', 'ff', 'FF')
@@ -472,10 +460,9 @@
      >>> f'{255:#x}', f'{255:x}', f'{255:X}'
      ('0xff', 'ff', 'FF')
 
-   See also :func:`format` for more information.
+   可以参考 :func:`format` 查看更多的信息。
 
-   See also :func:`int` for converting a hexadecimal string to an
-   integer using a base of 16.
+   查看 :func:`int` 函数把字符串转换为int，然后再转换位16进制数字
 
    .. note::
 
@@ -485,51 +472,32 @@
 
 .. function:: id(object)
 
-   Return the "identity" of an object.  This is an integer which
-   is guaranteed to be unique and constant for this object during its lifetime.
-   Two objects with non-overlapping lifetimes may have the same :func:`id`
-   value.
+   返回对象的唯一标识（"identity"）。返回的唯一标识是整数。
 
-   .. impl-detail:: This is the address of the object in memory.
+   .. impl-detail:: 这是内存中对象的地址。
 
 
 .. function:: input([prompt])
 
-   If the *prompt* argument is present, it is written to standard output without
-   a trailing newline.  The function then reads a line from input, converts it
-   to a string (stripping a trailing newline), and returns that.  When EOF is
-   read, :exc:`EOFError` is raised.  Example::
+   如果输入参数 *prompt* 设置了。那么在输入的内容直接在这个参数同一行输入，不用在新的一行输入。
+   如果在读入内容读取到 EOF 会触发错误 :exc:`EOFError` 。例如：
 
       >>> s = input('--> ')  # doctest: +SKIP
       --> Monty Python's Flying Circus
       >>> s  # doctest: +SKIP
       "Monty Python's Flying Circus"
 
-   If the :mod:`readline` module was loaded, then :func:`input` will use it
-   to provide elaborate line editing and history features.
-
+   - 这个函数功能等于Python2中的 ``raw_input`` ，Python2中的input已经在python3中取消。
 
 .. class:: int([x])
            int(x, base=10)
 
-   Return an integer object constructed from a number or string *x*, or return
-   ``0`` if no arguments are given.  If *x* defines :meth:`__int__`,
-   ``int(x)`` returns ``x.__int__()``.  If *x* defines :meth:`__trunc__`,
-   it returns ``x.__trunc__()``.
-   For floating point numbers, this truncates towards zero.
+   如果没有传入参数返回0。 如果传入则返回字符串x的整数形式。
+   如果传入浮点数，则返回这个浮点数的下界整数。
 
-   If *x* is not a number or if *base* is given, then *x* must be a string,
-   :class:`bytes`, or :class:`bytearray` instance representing an :ref:`integer
-   literal <integers>` in radix *base*.  Optionally, the literal can be
-   preceded by ``+`` or ``-`` (with no space in between) and surrounded by
-   whitespace.  A base-n literal consists of the digits 0 to n-1, with ``a``
-   to ``z`` (or ``A`` to ``Z``) having
-   values 10 to 35.  The default *base* is 10. The allowed values are 0 and 2--36.
-   Base-2, -8, and -16 literals can be optionally prefixed with ``0b``/``0B``,
-   ``0o``/``0O``, or ``0x``/``0X``, as with integer literals in code.  Base 0
-   means to interpret exactly as a code literal, so that the actual base is 2,
-   8, 10, or 16, and so that ``int('010', 0)`` is not legal, while
-   ``int('010')`` is, as well as ``int('010', 8)``.
+   如果给定参数base，那么x就必须是字符串。这也给参数base的作用是把指定base进制的数字
+   转换位int类型数字。其中base常见的参数是2、8、16。在指定base为2进制8进制16进制时
+   x可以有前缀或者没有前缀0b/0B、0o/0O、0x/0X。
 
    The integer type is described in :ref:`typesnumeric`.
 
@@ -549,108 +517,73 @@
 
 .. function:: isinstance(object, classinfo)
 
-   Return true if the *object* argument is an instance of the *classinfo*
-   argument, or of a (direct, indirect or :term:`virtual <abstract base
-   class>`) subclass thereof.  If *object* is not
-   an object of the given type, the function always returns false.
-   If *classinfo* is a tuple of type objects (or recursively, other such
-   tuples), return true if *object* is an instance of any of the types.
-   If *classinfo* is not a type or tuple of types and such tuples,
-   a :exc:`TypeError` exception is raised.
+   如果返回True，那么参数 *object* 是参数 *classinfo* 类型的一个实例。
+   否则返回False。如果参数 *classinfo* 不是一种类型或者一些类型组成的元组
+   会触发一个错误 :exc:`TypeError` 。
 
 
 .. function:: issubclass(class, classinfo)
 
-   Return true if *class* is a subclass (direct, indirect or :term:`virtual
-   <abstract base class>`) of *classinfo*.  A
-   class is considered a subclass of itself. *classinfo* may be a tuple of class
-   objects, in which case every entry in *classinfo* will be checked. In any other
-   case, a :exc:`TypeError` exception is raised.
+   返回True，则说明class是classinfo的子类(direct, indirect or :term:`virtual
+   <abstract base class>` 也就是直接子类、间接子类、虚拟子类) 。
+   否则返回False。In any other
+   classinfo可以是类名或者类名组成的元组，否则会触发错误 :exc:`TypeError` .
 
 
 .. function:: iter(object[, sentinel])
 
-   Return an :term:`iterator` object.  The first argument is interpreted very
-   differently depending on the presence of the second argument. Without a
-   second argument, *object* must be a collection object which supports the
-   iteration protocol (the :meth:`__iter__` method), or it must support the
-   sequence protocol (the :meth:`__getitem__` method with integer arguments
-   starting at ``0``).  If it does not support either of those protocols,
-   :exc:`TypeError` is raised. If the second argument, *sentinel*, is given,
-   then *object* must be a callable object.  The iterator created in this case
-   will call *object* with no arguments for each call to its
-   :meth:`~iterator.__next__` method; if the value returned is equal to
-   *sentinel*, :exc:`StopIteration` will be raised, otherwise the value will
-   be returned.
+   返回一个迭代器对象。
 
-   See also :ref:`typeiter`.
-
-   One useful application of the second form of :func:`iter` is to build a
-   block-reader. For example, reading fixed-width blocks from a binary
-   database file until the end of file is reached::
-
-      from functools import partial
-      with open('mydata.db', 'rb') as f:
-          for block in iter(partial(f.read, 64), b''):
-              process_block(block)
+   如果只有第一个参数（没有传入第二个参数），那么对象必须是一个支持迭代协议的
+   集合对象( *__iter__()* 方法)，或者它必须支持序列协议( *__getitem__()* 方法，整数参数从0开始)，
+   如果它不支持这两个协议中的任何一个，就会引发类型错误。
+   
+   如果给出第二个参数 *sentinel* ，那么对象必须是一个可调用的对象。
+   在本例中创建的迭代器将调用对象，每次调用其 *__next__()* 方法时不带参数;
+   如果返回的值等于sentinel，则将引发StopIteration，否则将返回该值。
 
 
 .. function:: len(s)
 
-   Return the length (the number of items) of an object.  The argument may be a
-   sequence (such as a string, bytes, tuple, list, or range) or a collection
-   (such as a dictionary, set, or frozen set).
-
+   返回一个整数，这个整数是传入s（可以是字符串/元组/列表/字典/集合）的长度。
 
 .. _func-list:
 .. class:: list([iterable])
    :noindex:
 
-   Rather than being a function, :class:`list` is actually a mutable
-   sequence type, as documented in :ref:`typesseq-list` and :ref:`typesseq`.
-
+   list不是一个函数，而是一个可变序列类型。
 
 .. function:: locals()
 
-   Update and return a dictionary representing the current local symbol table.
-   Free variables are returned by :func:`locals` when it is called in function
-   blocks, but not in class blocks.
+   更新并返回表示当前环境(函数或模块内)符号（变量）表的字典。
+   自由变量在函数块中调用时由局部变量()返回，但在类块中不返回。
 
-   .. note::
-      The contents of this dictionary should not be modified; changes may not
-      affect the values of local and free variables used by the interpreter.
+.. note:: 这个字典不可以被修改。
 
 .. function:: map(function, iterable, ...)
 
-   Return an iterator that applies *function* to every item of *iterable*,
-   yielding the results.  If additional *iterable* arguments are passed,
-   *function* must take that many arguments and is applied to the items from all
-   iterables in parallel.  With multiple iterables, the iterator stops when the
-   shortest iterable is exhausted.  For cases where the function inputs are
-   already arranged into argument tuples, see :func:`itertools.starmap`\.
+   返回一个迭代器。这个迭代器的每个元素，是用函数 *function* 处理传入 *iterable* 的每一项
+   的结果,这个结果是通过 yielding 返回的结果。如果传入多个 *iterable* 参数。那么会必须用
+   *function* 函数取到每个参数的每个项。实例：
 
+.. code-block:: python
+    :linenos:
+
+   In [1]: def jian(x,y):
+   ...:     return x-y
+   ...:
+
+   In [2]: s = [1,2,3,4]
+
+   In [3]: a = [1,1,1,1]
+
+   In [4]: list(map(jian,s,a))
+   Out[4]: [0, 1, 2, 3]
 
 .. function:: max(iterable, *[, key, default])
               max(arg1, arg2, *args[, key])
 
-   Return the largest item in an iterable or the largest of two or more
-   arguments.
-
-   If one positional argument is provided, it should be an :term:`iterable`.
-   The largest item in the iterable is returned.  If two or more positional
-   arguments are provided, the largest of the positional arguments is
-   returned.
-
-   There are two optional keyword-only arguments. The *key* argument specifies
-   a one-argument ordering function like that used for :meth:`list.sort`. The
-   *default* argument specifies an object to return if the provided iterable is
-   empty. If the iterable is empty and *default* is not provided, a
-   :exc:`ValueError` is raised.
-
-   If multiple items are maximal, the function returns the first one
-   encountered.  This is consistent with other sort-stability preserving tools
-   such as ``sorted(iterable, key=keyfunc, reverse=True)[0]`` and
-   ``heapq.nlargest(1, iterable, key=keyfunc)``.
+   返回传入第一个可迭代对象的最大值，或者传入多个参数中的最小值
 
    .. versionadded:: 3.4
       The *default* keyword-only argument.
@@ -660,31 +593,13 @@
 .. function:: memoryview(obj)
    :noindex:
 
-   Return a "memory view" object created from the given argument.  See
-   :ref:`typememoryview` for more information.
+   返回传入参数的内存视图。
 
 
 .. function:: min(iterable, *[, key, default])
               min(arg1, arg2, *args[, key])
 
-   Return the smallest item in an iterable or the smallest of two or more
-   arguments.
-
-   If one positional argument is provided, it should be an :term:`iterable`.
-   The smallest item in the iterable is returned.  If two or more positional
-   arguments are provided, the smallest of the positional arguments is
-   returned.
-
-   There are two optional keyword-only arguments. The *key* argument specifies
-   a one-argument ordering function like that used for :meth:`list.sort`. The
-   *default* argument specifies an object to return if the provided iterable is
-   empty. If the iterable is empty and *default* is not provided, a
-   :exc:`ValueError` is raised.
-
-   If multiple items are minimal, the function returns the first one
-   encountered.  This is consistent with other sort-stability preserving tools
-   such as ``sorted(iterable, key=keyfunc)[0]`` and ``heapq.nsmallest(1,
-   iterable, key=keyfunc)``.
+   返回传入第一个可迭代对象的最小值，或者传入多个参数中的最小值
 
    .. versionadded:: 3.4
       The *default* keyword-only argument.
@@ -692,37 +607,22 @@
 
 .. function:: next(iterator[, default])
 
-   Retrieve the next item from the *iterator* by calling its
-   :meth:`~iterator.__next__` method.  If *default* is given, it is returned
-   if the iterator is exhausted, otherwise :exc:`StopIteration` is raised.
-
-
-.. class:: object()
-
-   Return a new featureless object.  :class:`object` is a base for all classes.
-   It has the methods that are common to all instances of Python classes.  This
-   function does not accept any arguments.
-
-   .. note::
-
-      :class:`object` does *not* have a :attr:`~object.__dict__`, so you can't
-      assign arbitrary attributes to an instance of the :class:`object` class.
+   返回可迭代对象的下一个值。
+   通过调用迭代器的 *__next__()* 方法从迭代器中检索下一项。
+   如果给出了缺省值，则在迭代器耗尽时返回缺省值，否则将引发StopIteration。
 
 
 .. function:: oct(x)
 
-  Convert an integer number to an octal string prefixed with "0o".  The result
-  is a valid Python expression. If *x* is not a Python :class:`int` object, it
-  has to define an :meth:`__index__` method that returns an integer. For
-  example:
+   把整数x转换为八进制数字。
+   例如:
 
       >>> oct(8)
       '0o10'
       >>> oct(-56)
       '-0o70'
 
-  If you want to convert an integer number to octal string either with prefix
-  "0o" or not, you can use either of the following ways.
+   如果想要去掉转换的8进制的"0o" 可以通过下面方法：
 
       >>> '%#o' % 10, '%o' % 10
       ('0o12', '12')
@@ -731,32 +631,17 @@
       >>> f'{10:#o}', f'{10:o}'
       ('0o12', '12')
 
-  See also :func:`format` for more information.
-
-   .. index::
-      single: file object; open() built-in function
 
 .. function:: open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
 
-   Open *file* and return a corresponding :term:`file object`.  If the file
-   cannot be opened, an :exc:`OSError` is raised.
+   打开传入的 *file* 然后返回一个file类型。如果打开失败，则
+   触发一个 :exc:`OSError` 错误。
 
-   *file* is a :term:`path-like object` giving the pathname (absolute or
-   relative to the current working directory) of the file to be opened or an
-   integer file descriptor of the file to be wrapped.  (If a file descriptor is
-   given, it is closed when the returned I/O object is closed, unless *closefd*
-   is set to ``False``.)
+   *file* 是一个绝对路径或相对路径的文件名。
 
-   *mode* is an optional string that specifies the mode in which the file is
-   opened.  It defaults to ``'r'`` which means open for reading in text mode.
-   Other common values are ``'w'`` for writing (truncating the file if it
-   already exists), ``'x'`` for exclusive creation and ``'a'`` for appending
-   (which on *some* Unix systems, means that *all* writes append to the end of
-   the file regardless of the current seek position).  In text mode, if
-   *encoding* is not specified the encoding used is platform dependent:
-   ``locale.getpreferredencoding(False)`` is called to get the current locale
-   encoding. (For reading and writing raw bytes use binary mode and leave
-   *encoding* unspecified.)  The available modes are:
+   *mode* 是打开文件的方式。可以支持 ``'r'`` 读， ``'w'`` 写，
+   ``'x'`` 写模式，新建一个文件，如果该文件已存在则会报错。
+   ``'a'`` 追加方式打开问卷。
 
    .. _filemodes:
 
@@ -766,246 +651,42 @@
    ========= ===============================================================
    Character Meaning
    ========= ===============================================================
-   ``'r'``   open for reading (default)
-   ``'w'``   open for writing, truncating the file first
-   ``'x'``   open for exclusive creation, failing if the file already exists
-   ``'a'``   open for writing, appending to the end of the file if it exists
-   ``'b'``   binary mode
-   ``'t'``   text mode (default)
-   ``'+'``   open a disk file for updating (reading and writing)
+   ``'r'``   读方式打开文件 (默认)
+   ``'w'``   写方式打开文件
+   ``'x'``   独占资源打开，如果没有文件则报错
+   ``'a'``   写方式打开文件，如果没有则创建。写入时会默认在最后追加到文件。
+   ``'b'``   二进制文件打开
+   ``'t'``   文本模式 (default)
+   ``'+'``   打开硬盘文件。(reading and writing)
    ========= ===============================================================
 
-   The default mode is ``'r'`` (open for reading text, synonym of ``'rt'``).
-   For binary read-write access, the mode ``'w+b'`` opens and truncates the file
-   to 0 bytes.  ``'r+b'`` opens the file without truncation.
 
-   As mentioned in the :ref:`io-overview`, Python distinguishes between binary
-   and text I/O.  Files opened in binary mode (including ``'b'`` in the *mode*
-   argument) return contents as :class:`bytes` objects without any decoding.  In
-   text mode (the default, or when ``'t'`` is included in the *mode* argument),
-   the contents of the file are returned as :class:`str`, the bytes having been
-   first decoded using a platform-dependent encoding or using the specified
-   *encoding* if given.
+   * ``'strict'`` 默认的值。可能会触发错误 :exc:`ValueError` 和
+     指定值 ``None`` 作用相同。
 
-   There is an additional mode character permitted, ``'U'``, which no longer
-   has any effect, and is considered deprecated. It previously enabled
-   :term:`universal newlines` in text mode, which became the default behaviour
-   in Python 3.0. Refer to the documentation of the
-   :ref:`newline <open-newline-parameter>` parameter for further details.
-
-   .. note::
-
-      Python doesn't depend on the underlying operating system's notion of text
-      files; all the processing is done by Python itself, and is therefore
-      platform-independent.
-
-   *buffering* is an optional integer used to set the buffering policy.  Pass 0
-   to switch buffering off (only allowed in binary mode), 1 to select line
-   buffering (only usable in text mode), and an integer > 1 to indicate the size
-   in bytes of a fixed-size chunk buffer.  When no *buffering* argument is
-   given, the default buffering policy works as follows:
-
-   * Binary files are buffered in fixed-size chunks; the size of the buffer is
-     chosen using a heuristic trying to determine the underlying device's "block
-     size" and falling back on :attr:`io.DEFAULT_BUFFER_SIZE`.  On many systems,
-     the buffer will typically be 4096 or 8192 bytes long.
-
-   * "Interactive" text files (files for which :meth:`~io.IOBase.isatty`
-     returns ``True``) use line buffering.  Other text files use the policy
-     described above for binary files.
-
-   *encoding* is the name of the encoding used to decode or encode the file.
-   This should only be used in text mode.  The default encoding is platform
-   dependent (whatever :func:`locale.getpreferredencoding` returns), but any
-   :term:`text encoding` supported by Python
-   can be used.  See the :mod:`codecs` module for
-   the list of supported encodings.
-
-   *errors* is an optional string that specifies how encoding and decoding
-   errors are to be handled—this cannot be used in binary mode.
-   A variety of standard error handlers are available
-   (listed under :ref:`error-handlers`), though any
-   error handling name that has been registered with
-   :func:`codecs.register_error` is also valid.  The standard names
-   include:
-
-   * ``'strict'`` to raise a :exc:`ValueError` exception if there is
-     an encoding error.  The default value of ``None`` has the same
-     effect.
-
-   * ``'ignore'`` ignores errors.  Note that ignoring encoding errors
-     can lead to data loss.
+   * ``'ignore'`` 忽略错误，不会因为编码而触发错误。
 
    * ``'replace'`` causes a replacement marker (such as ``'?'``) to be inserted
      where there is malformed data.
 
-   * ``'surrogateescape'`` will represent any incorrect bytes as code
-     points in the Unicode Private Use Area ranging from U+DC80 to
-     U+DCFF.  These private code points will then be turned back into
-     the same bytes when the ``surrogateescape`` error handler is used
-     when writing data.  This is useful for processing files in an
-     unknown encoding.
-
-   * ``'xmlcharrefreplace'`` is only supported when writing to a file.
-     Characters not supported by the encoding are replaced with the
-     appropriate XML character reference ``&#nnn;``.
-
-   * ``'backslashreplace'`` replaces malformed data by Python's backslashed
-     escape sequences.
-
-   * ``'namereplace'`` (also only supported when writing)
-     replaces unsupported characters with ``\N{...}`` escape sequences.
-
-   .. index::
-      single: universal newlines; open() built-in function
-
-   .. _open-newline-parameter:
-
-   *newline* controls how :term:`universal newlines` mode works (it only
-   applies to text mode).  It can be ``None``, ``''``, ``'\n'``, ``'\r'``, and
-   ``'\r\n'``.  It works as follows:
-
-   * When reading input from the stream, if *newline* is ``None``, universal
-     newlines mode is enabled.  Lines in the input can end in ``'\n'``,
-     ``'\r'``, or ``'\r\n'``, and these are translated into ``'\n'`` before
-     being returned to the caller.  If it is ``''``, universal newlines mode is
-     enabled, but line endings are returned to the caller untranslated.  If it
-     has any of the other legal values, input lines are only terminated by the
-     given string, and the line ending is returned to the caller untranslated.
-
-   * When writing output to the stream, if *newline* is ``None``, any ``'\n'``
-     characters written are translated to the system default line separator,
-     :data:`os.linesep`.  If *newline* is ``''`` or ``'\n'``, no translation
-     takes place.  If *newline* is any of the other legal values, any ``'\n'``
-     characters written are translated to the given string.
-
-   If *closefd* is ``False`` and a file descriptor rather than a filename was
-   given, the underlying file descriptor will be kept open when the file is
-   closed.  If a filename is given *closefd* must be ``True`` (the default)
-   otherwise an error will be raised.
-
-   A custom opener can be used by passing a callable as *opener*. The underlying
-   file descriptor for the file object is then obtained by calling *opener* with
-   (*file*, *flags*). *opener* must return an open file descriptor (passing
-   :mod:`os.open` as *opener* results in functionality similar to passing
-   ``None``).
-
-   The newly created file is :ref:`non-inheritable <fd_inheritance>`.
-
-   The following example uses the :ref:`dir_fd <dir_fd>` parameter of the
-   :func:`os.open` function to open a file relative to a given directory::
-
-      >>> import os
-      >>> dir_fd = os.open('somedir', os.O_RDONLY)
-      >>> def opener(path, flags):
-      ...     return os.open(path, flags, dir_fd=dir_fd)
-      ...
-      >>> with open('spamspam.txt', 'w', opener=opener) as f:
-      ...     print('This will be written to somedir/spamspam.txt', file=f)
-      ...
-      >>> os.close(dir_fd)  # don't leak a file descriptor
-
-   The type of :term:`file object` returned by the :func:`open` function
-   depends on the mode.  When :func:`open` is used to open a file in a text
-   mode (``'w'``, ``'r'``, ``'wt'``, ``'rt'``, etc.), it returns a subclass of
-   :class:`io.TextIOBase` (specifically :class:`io.TextIOWrapper`).  When used
-   to open a file in a binary mode with buffering, the returned class is a
-   subclass of :class:`io.BufferedIOBase`.  The exact class varies: in read
-   binary mode, it returns an :class:`io.BufferedReader`; in write binary and
-   append binary modes, it returns an :class:`io.BufferedWriter`, and in
-   read/write mode, it returns an :class:`io.BufferedRandom`.  When buffering is
-   disabled, the raw stream, a subclass of :class:`io.RawIOBase`,
-   :class:`io.FileIO`, is returned.
-
-   .. index::
-      single: line-buffered I/O
-      single: unbuffered I/O
-      single: buffer size, I/O
-      single: I/O control; buffering
-      single: binary mode
-      single: text mode
-      module: sys
-
-   See also the file handling modules, such as, :mod:`fileinput`, :mod:`io`
-   (where :func:`open` is declared), :mod:`os`, :mod:`os.path`, :mod:`tempfile`,
-   and :mod:`shutil`.
-
-   .. versionchanged::
-      3.3
-
-         * The *opener* parameter was added.
-         * The ``'x'`` mode was added.
-         * :exc:`IOError` used to be raised, it is now an alias of :exc:`OSError`.
-         * :exc:`FileExistsError` is now raised if the file opened in exclusive
-           creation mode (``'x'``) already exists.
-
-   .. versionchanged::
-      3.4
-
-         * The file is now non-inheritable.
-
-   .. deprecated-removed:: 3.4 4.0
-
-      The ``'U'`` mode.
-
-   .. versionchanged::
-      3.5
-
-         * If the system call is interrupted and the signal handler does not raise an
-           exception, the function now retries the system call instead of raising an
-           :exc:`InterruptedError` exception (see :pep:`475` for the rationale).
-         * The ``'namereplace'`` error handler was added.
-
-   .. versionchanged::
-      3.6
-
-         * Support added to accept objects implementing :class:`os.PathLike`.
-         * On Windows, opening a console buffer may return a subclass of
-           :class:`io.RawIOBase` other than :class:`io.FileIO`.
 
 .. function:: ord(c)
 
-   Given a string representing one Unicode character, return an integer
-   representing the Unicode code point of that character.  For example,
-   ``ord('a')`` returns the integer ``97`` and ``ord('€')`` (Euro sign)
-   returns ``8364``.  This is the inverse of :func:`chr`.
+   返回传入字符c的整型值。
+   
+   相反功能的参数参考 :func:`chr`.
 
 
 .. function:: pow(x, y[, z])
 
-   Return *x* to the power *y*; if *z* is present, return *x* to the power *y*,
-   modulo *z* (computed more efficiently than ``pow(x, y) % z``). The two-argument
-   form ``pow(x, y)`` is equivalent to using the power operator: ``x**y``.
+   如果只传入参数 **x，y** 则返回x的y次方，即 *x**y*
 
-   The arguments must have numeric types.  With mixed operand types, the
-   coercion rules for binary arithmetic operators apply.  For :class:`int`
-   operands, the result has the same type as the operands (after coercion)
-   unless the second argument is negative; in that case, all arguments are
-   converted to float and a float result is delivered.  For example, ``10**2``
-   returns ``100``, but ``10**-2`` returns ``0.01``.  If the second argument is
-   negative, the third argument must be omitted.  If *z* is present, *x* and *y*
-   must be of integer types, and *y* must be non-negative.
-
+   如果传入三个参数则返回x的y次方对z取模。效率比
+   *pow(x, y) % z)* 高。
 
 .. function:: print(*objects, sep=' ', end='\\n', file=sys.stdout, flush=False)
 
-   Print *objects* to the text stream *file*, separated by *sep* and followed
-   by *end*.  *sep*, *end*, *file* and *flush*, if present, must be given as keyword
-   arguments.
-
-   All non-keyword arguments are converted to strings like :func:`str` does and
-   written to the stream, separated by *sep* and followed by *end*.  Both *sep*
-   and *end* must be strings; they can also be ``None``, which means to use the
-   default values.  If no *objects* are given, :func:`print` will just write
-   *end*.
-
-   The *file* argument must be an object with a ``write(string)`` method; if it
-   is not present or ``None``, :data:`sys.stdout` will be used.  Since printed
-   arguments are converted to text strings, :func:`print` cannot be used with
-   binary mode file objects.  For these, use ``file.write(...)`` instead.
-
-   Whether output is buffered is usually determined by *file*, but if the
-   *flush* keyword argument is true, the stream is forcibly flushed.
+   将 *objects* 输出到标准输出。
 
    .. versionchanged:: 3.3
       Added the *flush* keyword argument.
@@ -1013,11 +694,12 @@
 
 .. class:: property(fget=None, fset=None, fdel=None, doc=None)
 
-   Return a property attribute.
+   在新式类中返回属性值。
 
-   *fget* is a function for getting an attribute value.  *fset* is a function
-   for setting an attribute value. *fdel* is a function for deleting an attribute
-   value.  And *doc* creates a docstring for the attribute.
+   *fget* 获取属性值的函数。
+   *fset* 设置属性值的函数
+   *fdel* 删除属性值函数
+   *doc* 属性描述信息
 
    A typical use is to define a managed attribute ``x``::
 
@@ -1036,13 +718,6 @@
 
           x = property(getx, setx, delx, "I'm the 'x' property.")
 
-   If *c* is an instance of *C*, ``c.x`` will invoke the getter,
-   ``c.x = value`` will invoke the setter and ``del c.x`` the deleter.
-
-   If given, *doc* will be the docstring of the property attribute. Otherwise, the
-   property will copy *fget*'s docstring (if it exists).  This makes it possible to
-   create read-only properties easily using :func:`property` as a :term:`decorator`::
-
       class Parrot:
           def __init__(self):
               self._voltage = 100000
@@ -1051,15 +726,6 @@
           def voltage(self):
               """Get the current voltage."""
               return self._voltage
-
-   The ``@property`` decorator turns the :meth:`voltage` method into a "getter"
-   for a read-only attribute with the same name, and it sets the docstring for
-   *voltage* to "Get the current voltage."
-
-   A property object has :attr:`~property.getter`, :attr:`~property.setter`,
-   and :attr:`~property.deleter` methods usable as decorators that create a
-   copy of the property with the corresponding accessor function set to the
-   decorated function.  This is best explained with an example::
 
       class C:
           def __init__(self):
@@ -1078,164 +744,82 @@
           def x(self):
               del self._x
 
-   This code is exactly equivalent to the first example.  Be sure to give the
-   additional functions the same name as the original property (``x`` in this
-   case.)
-
-   The returned property object also has the attributes ``fget``, ``fset``, and
-   ``fdel`` corresponding to the constructor arguments.
-
-   .. versionchanged:: 3.5
-      The docstrings of property objects are now writeable.
-
 
 .. _func-range:
 .. function:: range(stop)
               range(start, stop[, step])
    :noindex:
 
-   Rather than being a function, :class:`range` is actually an immutable
-   sequence type, as documented in :ref:`typesseq-range` and :ref:`typesseq`.
+   返回一个迭代器。迭代器的元素数值是从start开始以step为步长到stop为截至。
 
+   如果没有传入step，则默认步长为1。
+
+   功能可以看作相当于Python2中的xrange。
 
 .. function:: repr(object)
 
-   Return a string containing a printable representation of an object.  For many
-   types, this function makes an attempt to return a string that would yield an
-   object with the same value when passed to :func:`eval`, otherwise the
-   representation is a string enclosed in angle brackets that contains the name
-   of the type of the object together with additional information often
-   including the name and address of the object.  A class can control what this
-   function returns for its instances by defining a :meth:`__repr__` method.
-
+   返回字对象的字符串形式。
 
 .. function:: reversed(seq)
 
-   Return a reverse :term:`iterator`.  *seq* must be an object which has
-   a :meth:`__reversed__` method or supports the sequence protocol (the
-   :meth:`__len__` method and the :meth:`__getitem__` method with integer
-   arguments starting at ``0``).
+   返回逆序序列的迭代器。逆序序列中的元素是传入序列的值。
 
 
 .. function:: round(number[, ndigits])
 
-   Return *number* rounded to *ndigits* precision after the decimal
-   point.  If *ndigits* is omitted or is ``None``, it returns the
-   nearest integer to its input.
+   返回一个整数。
+   
+   这个小数是传入 *number* 四舍五入到ndigits精度的数字。如果省略了ndigit或为None，则返回其输入的最近整数。
 
-   For the built-in types supporting :func:`round`, values are rounded to the
-   closest multiple of 10 to the power minus *ndigits*; if two multiples are
-   equally close, rounding is done toward the even choice (so, for example,
-   both ``round(0.5)`` and ``round(-0.5)`` are ``0``, and ``round(1.5)`` is
-   ``2``).  Any integer value is valid for *ndigits* (positive, zero, or
-   negative).  The return value is an integer if *ndigits* is omitted or
-   ``None``.
-   Otherwise the return value has the same type as *number*.
+   实例::
 
-   For a general Python object ``number``, ``round`` delegates to
-   ``number.__round__``.
+   In [5]: round(2.15,1)
+   Out[5]: 2.1
 
-   .. note::
-
-      The behavior of :func:`round` for floats can be surprising: for example,
-      ``round(2.675, 2)`` gives ``2.67`` instead of the expected ``2.68``.
-      This is not a bug: it's a result of the fact that most decimal fractions
-      can't be represented exactly as a float.  See :ref:`tut-fp-issues` for
-      more information.
-
+   In [6]: round(2.151,1)
+   Out[6]: 2.2
 
 .. _func-set:
 .. class:: set([iterable])
    :noindex:
 
-   Return a new :class:`set` object, optionally with elements taken from
-   *iterable*.  ``set`` is a built-in class.  See :class:`set` and
-   :ref:`types-set` for documentation about this class.
-
-   For other containers see the built-in :class:`frozenset`, :class:`list`,
-   :class:`tuple`, and :class:`dict` classes, as well as the :mod:`collections`
-   module.
-
+   返回一个集合。
 
 .. function:: setattr(object, name, value)
 
-   This is the counterpart of :func:`getattr`.  The arguments are an object, a
-   string and an arbitrary value.  The string may name an existing attribute or a
-   new attribute.  The function assigns the value to the attribute, provided the
-   object allows it.  For example, ``setattr(x, 'foobar', 123)`` is equivalent to
-   ``x.foobar = 123``.
-
+   这个函数和 :func:`getattr` 很相似。传入的参数是一个对象, 设置这个对象指定字符串名称的属性值。
+   例如, ``setattr(x, 'foobar', 123)`` 作用等效于 ``x.foobar = 123``.
 
 .. class:: slice(stop)
            slice(start, stop[, step])
 
    .. index:: single: Numerical Python
 
-   Return a :term:`slice` object representing the set of indices specified by
-   ``range(start, stop, step)``.  The *start* and *step* arguments default to
-   ``None``.  Slice objects have read-only data attributes :attr:`~slice.start`,
-   :attr:`~slice.stop` and :attr:`~slice.step` which merely return the argument
-   values (or their default).  They have no other explicit functionality;
-   however they are used by Numerical Python and other third party extensions.
-   Slice objects are also generated when extended indexing syntax is used.  For
-   example: ``a[start:stop:step]`` or ``a[start:stop, i]``.  See
-   :func:`itertools.islice` for an alternate version that returns an iterator.
+   返回一个切片对象。
 
 
 .. function:: sorted(iterable, *, key=None, reverse=False)
 
-   Return a new sorted list from the items in *iterable*.
+   返回一个新的排序好的可迭代对象，这个迭代对象的原始是传入 *iterable* 的元素。
 
    Has two optional arguments which must be specified as keyword arguments.
 
-   *key* specifies a function of one argument that is used to extract a comparison
-   key from each element in *iterable* (for example, ``key=str.lower``).  The
-   default value is ``None`` (compare the elements directly).
+   *key* 可以是一个比较 *iterable* 中元素的方法(例如, ``key=str.lower``). 默认
+   是 ``None`` (直接比较里面的元素).
 
-   *reverse* is a boolean value.  If set to ``True``, then the list elements are
-   sorted as if each comparison were reversed.
+   *reverse* 值是布尔型. 如果传入 ``True``, 那么比较的值会被反序排序。
 
-   Use :func:`functools.cmp_to_key` to convert an old-style *cmp* function to a
-   *key* function.
-
-   The built-in :func:`sorted` function is guaranteed to be stable. A sort is
-   stable if it guarantees not to change the relative order of elements that
-   compare equal --- this is helpful for sorting in multiple passes (for
-   example, sort by department, then by salary grade).
-
-   For sorting examples and a brief sorting tutorial, see :ref:`sortinghowto`.
 
 .. decorator:: staticmethod
 
-   Transform a method into a static method.
-
-   A static method does not receive an implicit first argument. To declare a static
-   method, use this idiom::
+   声明静态方法::
 
       class C:
           @staticmethod
           def f(arg1, arg2, ...): ...
 
-   The ``@staticmethod`` form is a function :term:`decorator` -- see
-   :ref:`function` for details.
-
-   A static method can be called either on the class (such as ``C.f()``) or on an instance (such
-   as ``C().f()``).
-
-   Static methods in Python are similar to those found in Java or C++. Also see
-   :func:`classmethod` for a variant that is useful for creating alternate class
-   constructors.
-
-   Like all decorators, it is also possible to call ``staticmethod`` as
-   a regular function and do something with its result.  This is needed
-   in some cases where you need a reference to a function from a class
-   body and you want to avoid the automatic transformation to instance
-   method.  For these cases, use this idiom::
-
       class C:
           builtin_open = staticmethod(open)
-
-   For more information on static methods, see :ref:`types`.
 
 
 .. index::
@@ -1246,147 +830,64 @@
            str(object=b'', encoding='utf-8', errors='strict')
    :noindex:
 
-   Return a :class:`str` version of *object*.  See :func:`str` for details.
-
-   ``str`` is the built-in string :term:`class`.  For general information
-   about strings, see :ref:`textseq`.
+   把传入对象转换位字符串类型返回。
 
 
 .. function:: sum(iterable[, start])
 
-   Sums *start* and the items of an *iterable* from left to right and returns the
-   total.  *start* defaults to ``0``. The *iterable*'s items are normally numbers,
-   and the start value is not allowed to be a string.
+   返回可迭代带对象iterable的和。
 
-   For some use cases, there are good alternatives to :func:`sum`.
-   The preferred, fast way to concatenate a sequence of strings is by calling
-   ``''.join(sequence)``.  To add floating point values with extended precision,
-   see :func:`math.fsum`\.  To concatenate a series of iterables, consider using
-   :func:`itertools.chain`.
+   如果传入start，则计算的和以后再加上start为返回值。
 
 .. function:: super([type[, object-or-type]])
 
-   Return a proxy object that delegates method calls to a parent or sibling
-   class of *type*.  This is useful for accessing inherited methods that have
-   been overridden in a class. The search order is same as that used by
-   :func:`getattr` except that the *type* itself is skipped.
+   这个函数是用于调用父类(超类)的一个方法。
 
-   The :attr:`~class.__mro__` attribute of the *type* lists the method
-   resolution search order used by both :func:`getattr` and :func:`super`.  The
-   attribute is dynamic and can change whenever the inheritance hierarchy is
-   updated.
+   super 是用来解决多重继承问题的，直接用类名调用父类方法在使用单继承的时候没问题，但是如果使用多继承，会涉及到查找顺序（MRO）、重复调用（钻石继承）等种种问题。
 
-   If the second argument is omitted, the super object returned is unbound.  If
-   the second argument is an object, ``isinstance(obj, type)`` must be true.  If
-   the second argument is a type, ``issubclass(type2, type)`` must be true (this
-   is useful for classmethods).
-
-   There are two typical use cases for *super*.  In a class hierarchy with
-   single inheritance, *super* can be used to refer to parent classes without
-   naming them explicitly, thus making the code more maintainable.  This use
-   closely parallels the use of *super* in other programming languages.
-
-   The second use case is to support cooperative multiple inheritance in a
-   dynamic execution environment.  This use case is unique to Python and is
-   not found in statically compiled languages or languages that only support
-   single inheritance.  This makes it possible to implement "diamond diagrams"
-   where multiple base classes implement the same method.  Good design dictates
-   that this method have the same calling signature in every case (because the
-   order of calls is determined at runtime, because that order adapts
-   to changes in the class hierarchy, and because that order can include
-   sibling classes that are unknown prior to runtime).
-
-   For both use cases, a typical superclass call looks like this::
+   MRO 就是类的方法解析顺序表, 其实也就是继承父类方法时的顺序表。
+   
+   例如::
 
       class C(B):
           def method(self, arg):
               super().method(arg)    # This does the same thing as:
                                      # super(C, self).method(arg)
 
-   Note that :func:`super` is implemented as part of the binding process for
-   explicit dotted attribute lookups such as ``super().__getitem__(name)``.
-   It does so by implementing its own :meth:`__getattribute__` method for searching
-   classes in a predictable order that supports cooperative multiple inheritance.
-   Accordingly, :func:`super` is undefined for implicit lookups using statements or
-   operators such as ``super()[name]``.
-
-   Also note that, aside from the zero argument form, :func:`super` is not
-   limited to use inside methods.  The two argument form specifies the
-   arguments exactly and makes the appropriate references.  The zero
-   argument form only works inside a class definition, as the compiler fills
-   in the necessary details to correctly retrieve the class being defined,
-   as well as accessing the current instance for ordinary methods.
-
-   For practical suggestions on how to design cooperative classes using
-   :func:`super`, see `guide to using super()
-   <https://rhettinger.wordpress.com/2011/05/26/super-considered-super/>`_.
-
 
 .. _func-tuple:
 .. function:: tuple([iterable])
    :noindex:
 
-   Rather than being a function, :class:`tuple` is actually an immutable
-   sequence type, as documented in :ref:`typesseq-tuple` and :ref:`typesseq`.
-
+   是元组类型，这不是函数。
 
 .. class:: type(object)
            type(name, bases, dict)
 
    .. index:: object: type
 
-   With one argument, return the type of an *object*.  The return value is a
-   type object and generally the same object as returned by
-   :attr:`object.__class__ <instance.__class__>`.
-
-   The :func:`isinstance` built-in function is recommended for testing the type
-   of an object, because it takes subclasses into account.
-
-
-   With three arguments, return a new type object.  This is essentially a
-   dynamic form of the :keyword:`class` statement. The *name* string is the
-   class name and becomes the :attr:`~definition.__name__` attribute; the *bases*
-   tuple itemizes the base classes and becomes the :attr:`~class.__bases__`
-   attribute; and the *dict* dictionary is the namespace containing definitions
-   for class body and is copied to a standard dictionary to become the
-   :attr:`~object.__dict__` attribute.  For example, the following two
-   statements create identical :class:`type` objects:
+   返回 *object* 的类型。
+   例如::
 
       >>> class X:
       ...     a = 1
       ...
       >>> X = type('X', (object,), dict(a=1))
 
-   See also :ref:`bltin-type-objects`.
-
-   .. versionchanged:: 3.6
-      Subclasses of :class:`type` which don't override ``type.__new__`` may no
-      longer use the one-argument form to get the type of an object.
 
 .. function:: vars([object])
 
-   Return the :attr:`~object.__dict__` attribute for a module, class, instance,
-   or any other object with a :attr:`~object.__dict__` attribute.
+   返回对象object的属性和属性值的字典对象。
 
-   Objects such as modules and instances have an updateable :attr:`~object.__dict__`
-   attribute; however, other objects may have write restrictions on their
-   :attr:`~object.__dict__` attributes (for example, classes use a
-   :class:`types.MappingProxyType` to prevent direct dictionary updates).
-
-   Without an argument, :func:`vars` acts like :func:`locals`.  Note, the
-   locals dictionary is only useful for reads since updates to the locals
-   dictionary are ignored.
+   如果没有传入参数，则这个函数作用和 :func:`locals` 作用相同。
 
 
 .. function:: zip(*iterables)
 
-   Make an iterator that aggregates elements from each of the iterables.
+   创建一个迭代器，它聚合来自每个迭代器的元素。
 
-   Returns an iterator of tuples, where the *i*-th tuple contains
-   the *i*-th element from each of the argument sequences or iterables.  The
-   iterator stops when the shortest input iterable is exhausted. With a single
-   iterable argument, it returns an iterator of 1-tuples.  With no arguments,
-   it returns an empty iterator.  Equivalent to::
+   返回值是一个元组迭代器。会把传入的所有可迭代对象都依次取出，然后构成一个元组。
+   例如::
 
         def zip(*iterables):
             # zip('ABCD', 'xy') --> Ax By
@@ -1401,18 +902,7 @@
                     result.append(elem)
                 yield tuple(result)
 
-   The left-to-right evaluation order of the iterables is guaranteed. This
-   makes possible an idiom for clustering a data series into n-length groups
-   using ``zip(*[iter(s)]*n)``.  This repeats the *same* iterator ``n`` times
-   so that each output tuple has the result of ``n`` calls to the iterator.
-   This has the effect of dividing the input into n-length chunks.
-
-   :func:`zip` should only be used with unequal length inputs when you don't
-   care about trailing, unmatched values from the longer iterables.  If those
-   values are important, use :func:`itertools.zip_longest` instead.
-
-   :func:`zip` in conjunction with the ``*`` operator can be used to unzip a
-   list::
+   参考下面实例::
 
       >>> x = [1, 2, 3]
       >>> y = [4, 5, 6]

@@ -16,7 +16,10 @@ DataFrame行/列重命名
 
 把，tel列名改为tel_backup，把amount改为，tel
 
-d15_1 =d15_1.rename(columns={'tel':'tel_backup', 'amount':'tel'})
+.. code-block:: python
+    :linenos:
+
+    d15_1 =d15_1.rename(columns={'tel':'tel_backup', 'amount':'tel'})
 
 
 

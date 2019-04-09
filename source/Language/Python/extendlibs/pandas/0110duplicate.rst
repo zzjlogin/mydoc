@@ -16,14 +16,25 @@ DataFrame对象去重(行/列)
 
 两行所有元素完全相同时，去掉一行：
 
-df.drop_duplicates()
+.. code-block:: python
+    :linenos:
+
+    df.drop_duplicates()
 
 按照指定字段去重：
 
-df.drop_duplicates(['colA', 'colB'])
+.. code-block:: python
+    :linenos:
+
+    df.drop_duplicates(['colA', 'colB'])
 
 函数用法：
+
+.. code-block:: python
+    :linenos:
+
     DataFrame.drop_duplicates(subset=None, keep='first', inplace=False)
+
 参数详解：
     - 官方参考：http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html
     - subset：即指定按照那些子集（列）去重

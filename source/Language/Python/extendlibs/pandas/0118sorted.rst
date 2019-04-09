@@ -14,5 +14,8 @@ DataFrame按照行排序
 按指定列降序
 ======================================================================================================================================================
 
-df = df.sort_values(by="sales" , ascending=False) by 指定列 ascending
+.. code-block:: python
+    :linenos:
+
+    df = df.sort_values(by="sales" , ascending=False) by 指定列 ascending
 

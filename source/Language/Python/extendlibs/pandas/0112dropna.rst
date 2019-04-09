@@ -15,14 +15,24 @@ DataFrame的nan元素处理(dropna)
 
 1. 一列中所有元素都是nan，则删除这一列：
 
-df.dropna(axis=1,how='all')
+.. code-block:: python
+    :linenos:
+
+    df.dropna(axis=1,how='all')
 
 2. 一行中所有元素都是nan，则删除这一行：
 
-df.dropna(axis=0,how='all')
+.. code-block:: python
+    :linenos:
+
+    df.dropna(axis=0,how='all')
 
 3. 删除表中含有任何NaN的行
-data.dropna(axis=0,how='any')
+
+.. code-block:: python
+    :linenos:
+
+    data.dropna(axis=0,how='any')
 
 
 
