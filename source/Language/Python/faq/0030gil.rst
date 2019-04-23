@@ -1,0 +1,170 @@
+.. _python_gil:
+
+======================================================================================================================================================
+GIL全局解释器锁
+======================================================================================================================================================
+
+.. contents::
+
+
+GIL说明
+======================================================================================================================================================
+
+GIL：global interpreter lock，全局解释器锁。
+
+GIL的必要性
+    CPU多核技术发展。为了更有效的利用多核处理器的性能，就出现了多线程的编程方式，
+    而随之带来的就是线程间数据一致性和状态同步的困难。即使在CPU内部的Cache也不例外，
+    为了有效解决多份缓存之间的数据同步时各厂商花费了不少心思，也不可避免的带来了一定的性能损失。
+
+    Python开始支持多线程，Python的Cpyton解释器为了利用多核，解决多线程之间数据完整性和状态同步的
+    最简单方法自然就是加锁。 于是有了GIL这把超级大锁，而当越来越多的代码库开发者接受了这种设定后，
+    他们开始大量依赖这种特性（即默认python内部对象是thread-safe的，无需在实现时考虑额外的内存锁和同步操作）。
+
+GIL的影响
+    从上文的介绍和官方的定义来看，GIL无疑就是一把全局排他锁。
+    毫无疑问全局锁的存在会对多线程的效率有不小影响。甚至就几乎等于Python是个单线程的程序。
+
+    那么读者就会说了，全局锁只要释放的勤快效率也不会差啊。只要在进行耗时的IO操作的时候，能释放GIL，
+    这样也还是可以提升运行效率的嘛。或者说再差也不会比单线程的效率差吧。理论上是这样，而实际上Python比想的更糟。
+
+    在写爬虫的时候就能感受到多线程和单线程收到GIL影响是比较严重的。
+
+    Python的多线程在多核CPU上，只对于IO密集型计算产生正面效果；而当有至少有一个CPU密集型线程存在，那么多线程效率会由于GIL而大幅下降。
+
+
+
+Python关于GIL的说明：
+    - Python3：https://docs.python.org/3/glossary.html?highlight=gil#term-global-interpreter-lock
+    - Python2：https://docs.python.org/2/glossary.html?highlight=gil#term-global-interpreter-lock
+
+
+GIL影响和解决办法
+======================================================================================================================================================
+
+
+GIL单线程和多线程测试对比
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+threading的顺序启动每个线程，可以理解成单线程执行多任务
+
+.. code-block:: python
+    :linenos:
+
+    #! /usr/bin/python
+
+    from threading import Thread
+    import time
+
+    def my_counter():
+        i = 0
+        for _ in range(100000000):
+            i = i + 1
+        return True
+
+    def main():
+        thread_array = {}
+        start_time = time.time()
+        for tid in range(2):
+            t = Thread(target=my_counter)
+            t.start()
+            thread_array[tid] = t
+        for i in range(2):
+            thread_array[i].join()
+        end_time = time.time()
+        print("Total time: {}".format(end_time - start_time))
+        return True
+
+    if __name__ == '__main__':
+        main()
+
+运行后输出：
+
+::
+
+    Total time: 116.09757232666016
+
+threading的同时启动每个线程，可以理解成多线程并行执行多任务
+
+.. code-block:: python
+    :linenos:
+
+    #! /usr/bin/python
+
+    from threading import Thread
+    import time
+
+    def my_counter():
+        i = 0
+        for _ in range(500000000):
+            i = i + 1
+        return True
+
+    def main():
+        thread_array = {}
+        start_time = time.time()
+        for tid in range(2):
+            t = Thread(target=my_counter)
+            t.start()
+            thread_array[tid] = t
+        for i in range(2):
+            thread_array[i].join()
+        end_time = time.time()
+        print("Total time: {}".format(end_time - start_time))
+
+    if __name__ == '__main__':
+        main()
+
+运行后输出：
+
+::
+
+    Total time: 122.2612133026123
+
+
+从多线程和单线程启动多个相同任务可以发现，多线程耗时122秒，单线程耗时116秒，
+这和我们理解的多线程处理优于单线程相违背，这就是GIL导致的。当然，测试可以
+改小循环次数。会发现当循环次数比较小时多线程还是优于多线程的。所以这也说明
+在Python开发过程中使用多线程时应该根据实际情况使用。
+
+
+解决GIL对性能的影响
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+可以选择的方法：
+    1. 用multiprocess替代Thread
+    #. 用其他解析器（GIL只是CPython的产物）
+    #. 参考社区的一些资料：
+        - http://www.dabeaz.com/python/UnderstandingGIL.pdf
+        - https://mail.python.org/pipermail/python-dev/2009-October/093321.html
+
+multiprocess替代Thread
+    multiprocess库的出现很大程度上是为了弥补thread库因为GIL而低效的缺陷。
+    它完整的复制了一套thread所提供的接口方便迁移。唯一的不同就是它使用了多进程而不是多线程。
+    每个进程有自己的独立的GIL，因此也不会出现进程之间的GIL争抢。
+
+    但是multiprocess也不是万能良药。它的引入会增加程序实现时线程间数据通讯和同步的困难。
+    
+    例如计数器，如果我们要多个线程累加同一个变量，对于thread来说，申明一个global变量，
+    用thread.Lock的context包裹住三行就搞定了。而multiprocess由于进程之间无法看到对方的数据，
+    只能通过在主线程申明一个Queue，put再get或者用share memory的方法。
+    这个额外的实现成本使得本来就非常痛苦的多线程程序编码，变得更加痛苦了。
+    具体困难参考：https://jeffknupp.com/blog/2013/06/30/pythons-hardest-problem-revisited/
+
+用其他解析器
+    像JPython和IronPython这样的解析器由于实现语言的特性，他们不需要GIL的帮助。
+
+GIL影响的看法
+    - 因为GIL的存在，只有IO Bound场景下得多线程会得到较好的性能
+    - 如果对并行计算性能较高的程序可以考虑把核心部分也成C模块，或者索性用其他语言实现
+    - GIL在较长一段时间内将会继续存在，但是会不断对其进行改进
+
+
+
+
+
+
+
+
+
+

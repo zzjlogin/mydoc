@@ -26,4 +26,5 @@ is和==的区别(is和双等号区别)
     - 浅copy，是元素外层的id不同，内层元素id相同，这样用 ``is`` 判断经过浅copy的元素肯定不同。
     - 深copy，是把一个元素的所有层都完全独立的复制一份，所以此时两个元素无论那一层的id都是不同的，所以 ``is`` 判断经过浅copy的元素肯定不同
 
-
+参考：
+    - is的作用说明参考：https://docs.python.org/3/reference/datamodel.html#objects-values-and-types
