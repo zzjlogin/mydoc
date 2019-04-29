@@ -44,6 +44,8 @@ MySQL通过日志文件恢复数据
 .. tip::
     命令 ``REST MASTER;`` 会情况binlog日志，所以慎用。删除日志可以用 PURGE MASTER LOGS
 
+.. code-block:: text
+    :linenos:
 
-mysqlbinlog  --start-date="2012-10-15 16:30:00" --stop-date="2017-6-11 17:16:00" /var/lib/mysql/mysql-bin.000001 |mysql -uroot -p
+    mysqlbinlog  --start-date="2012-10-15 16:30:00" --stop-date="2017-6-11 17:16:00" /var/lib/mysql/mysql-bin.000001 |mysql -uroot -p
 

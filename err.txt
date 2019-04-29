@@ -1,38 +1,10 @@
-D:\LocalCode\python\mydoc\source\Language\Python\base\0032simple_stmts.rst:87: WARNING: Inline literal start-string without end-string.
-D:\LocalCode\python\mydoc\source\Language\Python\base\0034compound_stmts.rst:83: WARNING: Unexpected indentation.
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:62: WARNING: duplicate object description of abs, other instance in D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0010operator.rst, use :noindex: for one of them
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:233: WARNING: Unexpected indentation.
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:338: WARNING: Definition list ends without a blank line; unexpected unindent.
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:477: WARNING: Unknown directive type "impl-detail".
-
-.. impl-detail:: 这是内存中对象的地址。
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:571: WARNING: Error in "code-block" directive:
-maximum 1 argument(s) allowed, 2 supplied.
-
-.. code-block:: python
-    :linenos:
-
-   In [1]: def jian(x,y):
-   ...:     return x-y
-   ...:
-
-   In [2]: s = [1,2,3,4]
-
-   In [3]: a = [1,1,1,1]
-
-   In [4]: list(map(jian,s,a))
-   Out[4]: [0, 1, 2, 3]
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:682: WARNING: duplicate object description of pow, other instance in D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0010operator.rst, use :noindex: for one of them
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:778: WARNING: Literal block expected; none found.
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:990: WARNING: Footnote [#] is not referenced.
+D:\LocalCode\python\mydoc\source\Language\Python\base\0032simple_stmts.rst:83: WARNING: Inline literal start-string without end-string.
 D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0520gui_tkinter.rst:20: WARNING: toctree contains reference to nonexisting document 'Language/Python/baselibs/tkinter/*'
 D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0520gui_tkinter.rst:204: WARNING: Inline emphasis start-string without end-string.
 D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0520gui_tkinter.rst:204: WARNING: Inline emphasis start-string without end-string.
 D:\LocalCode\python\mydoc\source\Language\Python\baselibs\0520gui_tkinter.rst:236: WARNING: Literal block ends without a blank line; unexpected unindent.
-D:\LocalCode\python\mydoc\source\Security\0060googlehacking.rst:29: WARNING: Bullet list ends without a blank line; unexpected unindent.
 D:\LocalCode\python\mydoc\source\Server\index.rst:6: WARNING: toctree contains reference to nonexisting document 'Server/common/index'
 D:\LocalCode\python\mydoc\source\Server\linux-server\index.rst:6: WARNING: toctree contains reference to nonexisting document 'Server/linux-server/rsync/index'
-D:\LocalCode\python\mydoc\source\Server\linux-server\mysql\0011mysql_sql.rst:7: WARNING: toctree glob pattern 'mysql_sql/*' didn't match any documents
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\03syslog.rst:13: WARNING: image file not readable: images/log/日志分析平台架构图.png
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\03syslog.rst:127: WARNING: image file not readable: images/log/step1.png
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\03syslog.rst:128: WARNING: image file not readable: images/log/step2.png
@@ -44,7 +16,7 @@ D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\03syslog.rst:134: WA
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\04elkbase.rst:293: WARNING: image file not readable: images/log/elk-01.png
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\04elkbase.rst:296: WARNING: image file not readable: images/log/elk-02.png
 D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\05syslogplatform.rst:11: WARNING: image file not readable: images/log/elk架构.png
-D:\LocalCode\python\mydoc\source\Tools\svn\index.rst:6: WARNING: Tools/svn/0040GitCmd is already assigned section numbers (nested numbered toctree?)
+D:\LocalCode\python\mydoc\source\Tools\svn\0040GitCmd.rst:25: WARNING: Tools/svn/gitcmd/0010bases is already assigned section numbers (nested numbered toctree?)
 D:\LocalCode\python\mydoc\source\Language\Python\baselibs\tkinter\0010packs.rst: WARNING: document isn't included in any toctree
 D:\LocalCode\python\mydoc\source\Network\huawei\0010introduce.rst: WARNING: document isn't included in any toctree
 D:\LocalCode\python\mydoc\source\Network\huawei\0012updata.rst: WARNING: document isn't included in any toctree
@@ -62,10 +34,3 @@ D:\LocalCode\python\mydoc\source\Network\huawei\0110nat.rst: WARNING: document i
 D:\LocalCode\python\mydoc\source\Server\Common\index.rst: WARNING: document isn't included in any toctree
 D:\LocalCode\python\mydoc\source\Server\linux-server\Rsync\index.rst: WARNING: document isn't included in any toctree
 WARNING: search index couldn't be loaded, but not all documents will be built: the index will be incomplete.
-D:\LocalCode\python\mydoc\source\Language\Python\base\0034compound_stmts.rst:300: WARNING: term not in glossary: asynchronous iterable
-D:\LocalCode\python\mydoc\source\Language\Python\base\0034compound_stmts.rst:300: WARNING: term not in glossary: asynchronous iterator
-D:\LocalCode\python\mydoc\source\Language\Python\base\0034compound_stmts.rst:339: WARNING: term not in glossary: asynchronous context manager
-D:\LocalCode\python\mydoc\source\Language\Python\base\0034compound_stmts.rst:339: WARNING: term not in glossary: context manager
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:502: WARNING: undefined label: typesnumeric (if the link has no caption the label must precede a section header)
-D:\LocalCode\python\mydoc\source\Language\Python\base\044buildin_fun.rst:527: WARNING: term not in glossary: abstract base class
-D:\LocalCode\python\mydoc\source\Server\linux-server\syslog\04elkbase.rst:54: WARNING: undefined label: topics-time (if the link has no caption the label must precede a section header)

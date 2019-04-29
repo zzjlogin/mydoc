@@ -20,7 +20,10 @@ MySQL数据备份和恢复
 ======================================================================================================================================================
 
 备份命令：
-    
+
+.. code-block:: text
+    :linenos:
+
     mysql -uroot -p'12345' -S /data/3306/mysql.sock -e "show master status"
     mysql -uroot -p'12345' -S /data/3306/mysql.sock --events -A -B |gzip >/home/tools/mysql_backup.$(date +%F).sql.gzip
     
@@ -28,6 +31,10 @@ MySQL数据备份和恢复
 
 
 恢复命令：
+
+.. code-block:: text
+    :linenos:
+    
     gzip -d mysql_backup.2018-04-20.sql.gz
     ll
     mysql -uroot -p'3307' -S /data/3307/mysql.sock < mysql_backup.2018-04-20.sql
