@@ -11,3 +11,5 @@ sphinxemoji
 sphinx-rtd-theme
 sphinx-autobuild
 Pygments
+
+myst-parser
