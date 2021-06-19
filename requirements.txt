@@ -13,3 +13,19 @@ sphinx-autobuild
 Pygments
 
 myst-parser
+sphinxcontrib-applehelp
+sphinxcontrib-devhelp
+sphinxcontrib-jsmath
+sphinxcontrib-htmlhelp
+sphinxcontrib-serializinghtml
+sphinxcontrib-qthelp
+Jinja2
+Pygments
+docutils
+snowballstemmer
+babel
+alabaster
+imagesize
+requests
+setuptools
+packaging
