@@ -21,53 +21,63 @@
 
    Work/index
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+   
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
    :hidden:
-   :numbered:
-   :caption: 【编程语言】
+   :caption: 【编程算法】
 
    Language/index
    
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
    :hidden:
-   :numbered:
-   :caption: 【网络通信】
-   Network/index
-   
-.. toctree::
-   :maxdepth: 2
-   :glob:
-   :hidden:
-   :numbered:
    :caption: 【服务部署】
 
-   Server/index
-   
+   Server/index   
    Data/index
-   
    ML/index
-   
 
 
- .. toctree::
-   :maxdepth: 2
+.. toctree::
+   :maxdepth: 3
    :glob:
    :hidden:
-   :numbered:
-   :caption: 【网络安全】
+   :caption: 【网络通信】
+
+   Network/index
+
+.. toctree::
+   :maxdepth: 3
+   :glob:
+   :hidden:
+   :caption: 【网络完全】
 
    Security/index
-   
-   Tools/index
-   
-   Others/index
 
+.. toctree::
+   :maxdepth: 3
+   :glob:
+   :hidden:
+   :caption: 【软件工具】
+
+   Tools/index
+   Others/index
    About
-   
-   
-   
+
+
+
+
+
+
+
+
+
