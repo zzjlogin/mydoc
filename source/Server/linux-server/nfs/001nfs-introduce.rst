@@ -79,7 +79,7 @@ nfs发展历史
 参考下图:
 
 
-.. image:: /images/server/linux/nfs/nfs-history01.svg
+.. image:: /Server/res/images/server/linux/nfs/nfs-history01.svg
     :align: center
     :height: 250 px
     :width: 800 px

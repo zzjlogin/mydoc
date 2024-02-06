@@ -205,7 +205,7 @@ DNS转发服务器
 
 这个实现情况布局比较复杂，需要先构思一个草图，简单如下： 
 
-.. image:: /images/server/linux/dns/dns-internet.bmp
+.. image:: /Server/res/images/server/linux/dns/dns-internet.bmp
     :align: center
     :width: 800 px
 

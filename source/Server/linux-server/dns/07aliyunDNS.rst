@@ -54,14 +54,14 @@
 进入控制台找到域名
 
 
-.. image:: /images/server/linux/dns/aliyundns01.png
+.. image:: /Server/res/images/server/linux/dns/aliyundns01.png
     :align: center
     :width: 800 px
 
 添加解析
 
 
-.. image:: /images/server/linux/dns/aliyundns02.png
+.. image:: /Server/res/images/server/linux/dns/aliyundns02.png
     :align: center
     :width: 800 px
 

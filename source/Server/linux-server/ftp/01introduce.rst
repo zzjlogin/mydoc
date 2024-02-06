@@ -56,7 +56,7 @@ FTP有两种使用模式：
 主动模式：
     要求客户端和服务器端同时打开并且监听一个端口以创建连接。在这种情况下，客户端由于安装了防火墙会产生一些问题。
 
-.. image:: /images/server/linux/ftp/ftp-standard.bmp
+.. image:: /Server/res/images/server/linux/ftp/ftp-standard.bmp
     :align: center
     :height: 500 px
     :width: 800 px
@@ -64,7 +64,7 @@ FTP有两种使用模式：
 被动模式:
     被动模式只要求服务器端产生一个监听相应端口的进程，这样就可以绕过客户端安装了防火墙的问题。
 
-.. image:: /images/server/linux/ftp/ftp-passive.bmp
+.. image:: /Server/res/images/server/linux/ftp/ftp-passive.bmp
     :align: center
     :height: 500 px
     :width: 800 px

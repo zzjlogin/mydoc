@@ -25,56 +25,56 @@ zabbix3\.x版本的服务器已经把web监控集成在 ``configuration `` 的ho
 这些web监控也可以设置在模版中，这样就方便监控使用。
 
 
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web002.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web003.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web002.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
 
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web003.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web006.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web007.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web008.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web004.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
 
-.. image:: /images/server/linux/zabbix-config/app/web/zabbix-monitor-web009.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web005.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web006.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web007.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web008.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/web/zabbix-monitor-web009.png
     :align: center
     :height: 450 px
     :width: 800 px

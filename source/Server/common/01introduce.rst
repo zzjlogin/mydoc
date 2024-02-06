@@ -51,28 +51,28 @@
 
 1. 塔式服务器
 
-.. image:: /images/server/common/tower-server.jpg
+.. image:: /Server/res/images/server/common/tower-server.jpg
     :align: center
     :height: 500 px
     :width: 800 px
 
 2. 机架服务器
 
-.. image:: /images/server/common/rack-server.jpg
+.. image:: /Server/res/images/server/common/rack-server.jpg
     :align: center
     :height: 500 px
     :width: 800 px
 
 3. 刀片服务器
 
-.. image:: /images/server/common/blade-server.jpg
+.. image:: /Server/res/images/server/common/blade-server.jpg
     :align: center
     :height: 500 px
     :width: 800 px
 
 4. 机柜式服务器
 
-.. image:: /images/server/common/cabinet-server.jpg
+.. image:: /Server/res/images/server/common/cabinet-server.jpg
     :align: center
     :height: 500 px
     :width: 800 px

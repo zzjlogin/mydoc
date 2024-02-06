@@ -17,13 +17,13 @@ windows设置文件共享
 
 windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件夹，进入下图界面: 
 
-.. image:: /images/server/linux/samba/windows-share01.png
+.. image:: /Server/res/images/server/linux/samba/windows-share01.png
     :align: center
     :height: 550 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/samba/windows-share02.png
+.. image:: /Server/res/images/server/linux/samba/windows-share02.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -32,7 +32,7 @@ windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件�
     上面是任意用户都有全部权限。但是可以通过设置用户来控制哪些用户可以访问这个共享目录。参考下面图片
 
 
-.. image:: /images/server/linux/samba/windows-share03.png
+.. image:: /Server/res/images/server/linux/samba/windows-share03.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -45,13 +45,13 @@ windows点击进入 ``E盘`` 的 ``app`` 目录，然后 ``右击`` share文件�
 
 在本地用快捷键 ``ctrl+r`` 然后在运行的窗口输入: ``\\192.168.1.125`` ,如下图:
 
-.. image:: /images/server/linux/samba/windows-share-localtest01.png
+.. image:: /Server/res/images/server/linux/samba/windows-share-localtest01.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/samba/windows-share-localtest02.png
+.. image:: /Server/res/images/server/linux/samba/windows-share-localtest02.png
     :align: center
     :height: 400 px
     :width: 800 px

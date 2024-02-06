@@ -324,7 +324,7 @@ docker加速器配置
 .. hint::
     创建仓库需要先有命名空间。
 
-.. image:: /images/server/linux/docker/docker-aliyun-create-repo.png
+.. image:: /Server/res/images/server/linux/docker/docker-aliyun-create-repo.png
     :align: center
     :height: 500 px
     :width: 800 px
@@ -333,14 +333,14 @@ docker加速器配置
 
 首先:
 
-.. image:: /images/server/linux/docker/docker-aliyun-bind-codeaccount01.png
+.. image:: /Server/res/images/server/linux/docker/docker-aliyun-bind-codeaccount01.png
     :align: center
     :height: 500 px
     :width: 800 px
 
 然后绑定对应的账号:
 
-.. image:: /images/server/linux/docker/docker-aliyun-bind-codeaccount02.png
+.. image:: /Server/res/images/server/linux/docker/docker-aliyun-bind-codeaccount02.png
     :align: center
     :height: 500 px
     :width: 800 px
@@ -348,14 +348,14 @@ docker加速器配置
 
 - 根据绑定代码平台账号创建仓库镜像
 
-.. image:: /images/server/linux/docker/docker-aliyun-github-createrep.png
+.. image:: /Server/res/images/server/linux/docker/docker-aliyun-github-createrep.png
     :align: center
     :height: 500 px
     :width: 800 px
 
 - 创建空的仓库，然后推送本地镜像到仓库。
 
-.. image:: /images/server/linux/docker/docker-aliyun-create-localrepo.png
+.. image:: /Server/res/images/server/linux/docker/docker-aliyun-create-localrepo.png
     :align: center
     :height: 500 px
     :width: 800 px

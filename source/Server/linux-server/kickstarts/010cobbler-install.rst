@@ -632,7 +632,7 @@ cobbler配置信息同步到运行服务中
     Re-type new password:123456
 
 
-.. image:: /images/server/linux/kickstart/cobbler/cobbler-install001.png
+.. image:: /Server/res/images/server/linux/kickstart/cobbler/cobbler-install001.png
     :align: center
     :height: 400 px
     :width: 800 px

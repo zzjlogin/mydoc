@@ -128,18 +128,18 @@ vsftpd-ssl
 
 .. _filezilla: https://filezilla-project.org/
 
-.. image:: /images/server/linux/ftp/ftp-ssl-client01.png
+.. image:: /Server/res/images/server/linux/ftp/ftp-ssl-client01.png
     :align: center
     :height: 500 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/ftp/ftp-ssl-client02.png
+.. image:: /Server/res/images/server/linux/ftp/ftp-ssl-client02.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/ftp/ftp-ssl-client03.png
+.. image:: /Server/res/images/server/linux/ftp/ftp-ssl-client03.png
     :align: center
     :height: 500 px
     :width: 800 px

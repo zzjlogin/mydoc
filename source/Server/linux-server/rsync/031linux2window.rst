@@ -35,57 +35,57 @@ windows下是没有rync的， 需要安装软件来提供rsync功能的。
 
 安装步骤截图： 
 
-.. image:: /images/server/linux/rsync/rsync-install01.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install01.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install02.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install02.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install03.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install03.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install04.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install04.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install05.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install05.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install06.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install06.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install07.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install07.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install08.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install08.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install09.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install09.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install10.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install10.png
     :align: center
     :height: 500 px
     :width: 800 px
 
-.. image:: /images/server/linux/rsync/rsync-install11.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install11.png
     :align: center
     :height: 500 px
     :width: 800 px
@@ -138,7 +138,7 @@ rsyncd的配置文件在“C:\cygwin64\etc\rsyncd.conf”(需要自己创建conf
 
 使用cygwin64Terminal修改这个密码文件的权限为600。
 
-.. image:: /images/server/linux/rsync/rsync-install12.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install12.png
     :align: center
     :height: 150 px
     :width: 800 px
@@ -168,7 +168,7 @@ rsyncd的配置文件在“C:\cygwin64\etc\rsyncd.conf”(需要自己创建conf
 
 window的权限和我们安装的cygwin有点不同的，需要在window上给我们的用户权限，我的是test用户。
 
-.. image:: /images/server/linux/rsync/rsync-install13.png
+.. image:: /Server/res/images/server/linux/rsync/rsync-install13.png
     :align: center
     :height: 400 px
     :width: 800 px

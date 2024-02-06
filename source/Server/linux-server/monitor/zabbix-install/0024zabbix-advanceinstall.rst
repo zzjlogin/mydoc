@@ -411,22 +411,22 @@ zabbix添加proxy
 
 
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance001.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance001.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance002.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance002.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance003.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance003.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance004.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance004.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -436,27 +436,27 @@ zabbix添加使用proxy监控的host
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance101.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance101.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance102.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance102.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance103.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance103.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance104.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance104.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/advance/zabbix-advance105.png
+.. image:: /Server/res/images/server/linux/zabbix-install/advance/zabbix-advance105.png
     :align: center
     :height: 400 px
     :width: 800 px

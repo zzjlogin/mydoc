@@ -134,7 +134,7 @@ samba主要配置项
 windows挂载
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/samba/linuxsamba-windows-access01.png
+.. image:: /Server/res/images/server/linux/samba/linuxsamba-windows-access01.png
     :align: center
     :height: 500 px
     :width: 800 px

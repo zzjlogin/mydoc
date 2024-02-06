@@ -1,0 +1,118 @@
+.. _pandas-preparations:
+
+======================================================================================================================================================
+pandas准备工作
+======================================================================================================================================================
+
+
+
+:Date: 2019-3
+
+.. contents::
+
+pandas安装
+======================================================================================================================================================
+
+pandas官方安装：
+    http://pandas.pydata.org/pandas-docs/stable/install.html
+
+pandas支持的python版本有：
+    2.7, 3.5, 3.6, 3.7
+
+pandas依赖包：
+    - setuptools: 24.2.0 or higher
+    - NumPy: 1.12.0 or higher
+    - python-dateutil: 2.5.0 or higher
+    - pytz
+
+一般windows的python环境可以用 ``pip install pandas`` 安装。
+
+windows环境pandas安装
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+windows的anaconda环境pandas安装
+......................................................................................................................................................
+
+**anaconda** 。则默认已经集成了pandas。
+
+windows的cPython环境pandas安装（python官方发布的python版本）
+......................................................................................................................................................
+
+一般安装pandas都需要先安装pandas依赖的库。但是pip会自动解决这些依赖问题。所以可以直接安装pandas。
+
+在windows的cmd命令提示符界面运行下面命令：
+
+.. code-block:: text
+    :linenos:
+
+    pip install pandas
+
+
+
+linux环境pandas安装
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+linux不同发行版不同的安装方式。
+
+以下是官方给出的常用发行版linux在 **python3** 的安装pandas方法：
+
+如果安装 **python2** 环境下的pandas库。则把下面对应命令的软件包名改成 ``python-pandas``
+
+Debian & Ubuntu	
+......................................................................................................................................................
+
+
+.. code-block:: text
+    :linenos:
+
+    sudo apt-get install python3-pandas
+
+Debian官方repo：https://packages.debian.org/search?keywords=pandas&searchon=names&suite=all&section=all
+NeuroDebian版：http://neuro.debian.net/index.html#how-to-use-this-repository
+ubuntu官方repo：http://packages.ubuntu.com/search?keywords=pandas&searchon=names&suite=all&section=all
+
+OpenSuse
+......................................................................................................................................................
+
+.. code-block:: text
+    :linenos:
+
+    zypper in python3-pandas
+
+
+OpenSuse官方repo：http://software.opensuse.org/package/python-pandas?search_term=pandas
+
+Fedora
+......................................................................................................................................................
+
+.. code-block:: text
+    :linenos:
+
+    dnf install python3-pandas
+
+Fedora官方repo：https://admin.fedoraproject.org/pkgdb/package/rpms/python-pandas/
+
+Centos/RHEL
+......................................................................................................................................................
+
+.. code-block:: text
+    :linenos:
+    
+    yum install python3-pandas
+
+Centos/RHEL官方repo：https://admin.fedoraproject.org/pkgdb/package/rpms/python-pandas/
+
+
+查看当前pandas版本
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+windows环境查看pandas版本信息
+......................................................................................................................................................
+
+.. code-block:: text
+    :linenos:
+
+    pip list|findstr pandas
+
+
+

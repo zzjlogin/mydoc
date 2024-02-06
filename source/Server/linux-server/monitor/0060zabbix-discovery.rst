@@ -21,54 +21,54 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery002.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery002.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery003.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery003.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery004.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery006.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery005.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery007.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery006.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery008.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery007.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery009.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery008.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery009.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -76,19 +76,19 @@
 设置发现规则
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery010.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery010.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery011.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery011.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery012.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery012.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -97,25 +97,25 @@
 设置添加被发现设备到监控列表
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery013.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery013.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery014.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery014.png
     :align: center
     :height: 350 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery015.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery015.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery016.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery016.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -124,25 +124,25 @@
 结果验证
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery017.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery017.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery018.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery018.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery019.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery019.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/discovery/zabbix-discovery020.png
+.. image:: /Server/res/images/server/linux/zabbix-config/discovery/zabbix-discovery020.png
     :align: center
     :height: 450 px
     :width: 800 px

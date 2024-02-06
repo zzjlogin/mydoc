@@ -145,7 +145,7 @@ grub.conf文件
 CentOS系统启动图解
 ======================================================================================================================================================
 
-.. image:: /images/server/linux/linuxstart.svg
+.. image:: /Server/res/images/server/linux/linuxstart.svg
     :width: 600px
     :align: center
 

@@ -1,0 +1,420 @@
+
+
+======================================================================================================================================================
+排序算法
+======================================================================================================================================================
+
+主要总结几种排序算法：
+
+
+
+
+排序算法分析
+======================================================================================================================================================
+
+以交换相邻元素的算法的时间复杂度的时间复杂度最优也是 :math:`n^2` 级别。具体原因是相邻元素交换的算法。
+每次交换只能消减原来排序的一个逆序对。而平均一个序列的逆序对是 :math:`n(n-1)/4`
+
+但是每次交换不是相邻元素。则可能稳定性不是特别好。
+
+
+
+ 
+
+冒泡排序(Bubble Sort)
+======================================================================================================================================================
+
+冒泡排序是我们一般很容易想到的排序算法。
+
+**以下都是假设排序成从小到达的排序**
+
+特点:
+    如果排序操作一遍(即把n个元素都循环一遍)，则最大元素肯定在最后。算法稳定。
+
+简单理解:
+    我们想到排序首先想到的是一个序列。如果序列的元素个数是n，每次比较都比较两个相邻元素，然后让相邻两个元素的顺序保证是正确的。
+    这样做的好处是总能保证当前处理的位置的元素顺序是正确的。这样做一次循环就能确认两个元素的顺序正确。
+
+
+
+冒泡排序需要的额外空间就是一个元素的存储空间。
+
+冒泡排序需要排序所用的时间:
+    - 如果正好是从大到小的排序。则需要每次比较都需要更换元素位置。所以需要的时间是 :math:`n^2`
+    - 如果元素正好是从小到大，那么排序也需要运行n次才能确定最后的顺序。所以需要时间是n
+
+
+
+以下是理解冒泡排序过程的动态图片:
+
+
+.. image:: /images/language/sort/bubble-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+以下时冒泡排序python实现样例demo:
+
+把数字列表 ``31524`` 用冒泡排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/bubble-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是冒泡排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def bubble_sort(mylist):
+        mylist_len = len(mylist)
+        for n in range(mylist_len):
+            for i in range(mylist_len):
+                if i == mylist_len-1:
+                    pass
+                else:
+                    if mylist[i] > mylist[i+1]:
+                        mylist[i+1], mylist[i] = mylist[i], mylist[i+1]
+                    else:
+                        pass
+        return mylist
+
+    print(bubble_sort(list('31524')))
+
+
+选择排序(Selection Sort)
+======================================================================================================================================================
+
+特点:
+    排序一次就能找到最大/最小的元素。第二次排序完成就可以找到次大/次小元素。
+
+简单理解:
+    如果序列的元素个数是n。首先扫描这个序列，然后找到最大(小)的元素。
+    然后把最大的值放在序列的最后位置。然后再扫描一遍。
+    把剩下的n-1个元素中最大(小)的放在n-1的位置。一直扫描n-1遍即可。
+
+    因为每次交换顺序是常数的时间复杂度。但是每次找最大元素时间复杂度是n^2，所以选择排序时间复杂度是 :math:`n^2`
+
+瓶颈：
+    由上面可以看出选择排序的瓶颈就是扫描列表找到最大元素。这个操作的时间复杂度决定了选择排序的时间复杂度。
+
+    这个过程可以结合最大堆/最小堆，所以就可以参看堆排序。
+
+
+以下是理解选择排序过程的动态图片:
+
+
+.. image:: /images/language/sort/selection-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+以下时选择排序python实现样例demo:
+
+把数字列表 ``31524`` 用选择排序进行排序( **降序** ),具体过程如下图
+
+
+.. image:: /images/language/sort/selection-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+.. code-block:: python
+    :linenos:
+
+    def find_min(part_list):
+        count = len(part_list)
+        temp_min = part_list[0]
+        temp_index = 0
+        for i in range(count-1):
+            if temp_min > part_list[i+1]:
+                temp_min = part_list[i+1]
+                temp_index = i+1
+        return temp_index
+
+    def selection_sort(mylist):
+        mylist_len = len(mylist)
+        for i in range(mylist_len-1):
+            index_min = find_min(mylist[i:])
+            mylist[i], mylist[i+index_min] = mylist[i+index_min], mylist[i]
+        return mylist
+
+    print(selection_sort(list('31524')))
+
+
+堆排序(Heap Sort)
+======================================================================================================================================================
+
+堆排序是对堆排序的改进排序算法。
+
+特点:
+    需要额外空间是n级别的。时间复杂度是nlog(n)，需要用一倍的额外空间构建一个最大/最小堆。
+
+
+简单理解:
+    通过构造最大堆/最小堆，然后把堆顶元素和堆的最后一个元素调换(相当于把对顶的元素删除了)，
+    然后把剩余的前n-1个元素看成一个新的堆，调整成最大堆，然后再继续前面的操作。直到结束。
+
+    时间复杂度是 2nlog(n)-O(nlog(n)),即nlog(n),但是实际情况如果元素个数不是很多(100以内)，堆排序的排序效果并没有
+    那么理想。比希尔排序差。
+
+以下是理解堆排序过程的动态图片:
+
+.. image:: /images/language/sort/heap-sort.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+
+以下时堆排序python实现样例demo:
+
+把数字列表 ``31524`` 用堆排序进行排序( **升序** ),具体过程如下图
+
+.. tip::
+    升序或者降序都可以用最大堆来创建。只不过一个是从源列表偷开始替换，一个是从源列表尾开始替换。
+
+
+.. image:: /images/language/sort/heap-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是冒泡排序的代码:
+
+
+.. code-block:: python
+    :linenos:
+
+    def build_maxheap(my_list):
+        mylist = my_list.copy()
+        mylist_len = len(mylist)
+        for n in range(mylist_len//2):
+            for i in range(mylist_len-1, 0, -1):
+                while i > 0:
+                    if mylist[i] > mylist[(i-1)//2]:
+                        mylist[(i-1)//2], mylist[i] = mylist[i], mylist[(i-1)//2]
+                    else:
+                        pass
+                    i = (i-1)//2
+        return mylist
+
+    def delmax_from_maxheap(my_maxheap):
+        my_maxheap_len = len(my_maxheap)
+        if my_maxheap_len == 0:
+            return False
+        parent = 0
+        temp = my_maxheap[0]
+        if my_maxheap_len == 1:
+            return my_maxheap.pop()
+        while parent < my_maxheap_len - 1:
+            child = parent * 2 + 1
+            if child > my_maxheap_len-1:
+                break
+            if child < my_maxheap_len-1 and my_maxheap[child] < my_maxheap[child + 1]:
+                child += 1
+            if my_maxheap[-1] >= my_maxheap[child]:
+                break
+            else:
+                my_maxheap[parent] = my_maxheap[child]
+            parent = child
+        my_maxheap[parent] = my_maxheap.pop()
+        return temp
+
+    def heap_sort(mylist):
+        max_heap = build_maxheap(mylist)
+
+        mylist_len = len(mylist)
+        for i in range(mylist_len-1, -1, -1):
+            now_max = delmax_from_maxheap(max_heap)
+            mylist[i] = now_max
+        return mylist
+
+    s = build_maxheap(list('31524'))
+    print(heap_sort(s))
+
+
+插入排序(Insertion Sort)
+======================================================================================================================================================
+
+特点:
+    排序排序也是相邻元素交换，所以排序速度和逆序对个数有关。
+
+简单理解:
+    插入排序就是简单理解从第一个元素开始排序，首先认为第一个元素是有序的。
+    然后把第二个元素插入到第一个元素的序列中，并保证这个新的序列有序。依次循环，直至元素结束。
+
+
+
+以下是理解插入排序过程的动态图片:
+
+.. image:: /images/language/sort/insertion-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+以下时插入排序python实现样例demo:
+
+把数字列表 ``31524`` 用插入排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/insertion-sort-demo.gif
+    :align: center
+    :height: 200 px
+    :width: 800 px
+
+以下是插入排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def insertion_sort(mylist):
+        
+        mylist_len = len(mylist)
+        
+        for now_index in range(mylist_len):
+            if now_index == 0:
+                pass
+            else:
+                #temp = mylist[now_index]
+                while now_index > 0:
+                    if mylist[now_index] < mylist[now_index-1]:
+                        mylist[now_index], mylist[now_index-1] = \
+                            mylist[now_index-1], mylist[now_index]
+                        now_index -= 1
+                    else:
+                        break
+        return mylist
+
+    print(insertion_sort(list('31524')))
+
+
+
+二分插入排序
+======================================================================================================================================================
+
+
+
+
+
+
+
+希尔排序(Shell Sort)
+======================================================================================================================================================
+
+
+以下是理解希尔排序过程的动态图片:
+
+
+.. image:: /images/language/sort/shell-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+以下时希尔排序python实现样例demo:
+
+把数字列表 ``31524`` 用希尔排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/shell-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是希尔排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def shell_sort(arr):
+        n = len(arr)
+        h = 1
+        while h < n/3:
+            h = 3*h+1
+        while h >= 1:
+            for i in range(h,n):
+                j = i
+                while j>=h and arr[j]<arr[j-h]:
+                    arr[j], arr[j-h] = arr[j-h], arr[j]
+                    j -= h
+            h = h//3
+        return arr
+
+    print(shell_sort(list('31524')))
+
+
+
+
+
+归并排序(Merge Sort)
+======================================================================================================================================================
+
+
+以下是理解归并排序过程的动态图片:
+
+
+.. image:: /images/language/sort/merge-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+
+
+
+快速排序(Quick Sort)
+======================================================================================================================================================
+
+
+
+以下是理解快速排序过程的动态图片:
+
+
+.. image:: /images/language/sort/quick-sort.gif
+    :align: center
+    :height: 500 px
+    :width: 800 px
+
+
+以下时快速排序python实现样例demo:
+
+把数字列表 ``31524`` 用快速排序进行排序( **升序** ),具体过程如下图
+
+.. image:: /images/language/sort/quick-sort-demo1.gif
+    :align: center
+    :height: 550 px
+    :width: 800 px
+
+以下是快速排序的代码:
+
+.. code-block:: python
+    :linenos:
+
+    def quick_sort(mylist):
+        
+        mylist_len = len(mylist)
+        
+        if mylist_len <= 1:
+            return mylist
+        else:
+            temp = mylist.pop()
+            separation = [temp]
+            left = []
+            right = []
+            for i in range(mylist_len-1):
+                now_pint = mylist.pop()
+                if now_pint > temp:
+                    right.append(now_pint)
+                elif now_pint < temp:
+                    left.append(now_pint)
+                else:
+                    separation.append(now_pint)
+            mylist = quick_sort(left) + separation + quick_sort(right)
+            return mylist
+
+    print(quick_sort(list('31524')))
+
+
+
+
+
+

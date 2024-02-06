@@ -72,7 +72,7 @@ alias是bash的内置命令。
 
 查看当前系统所有别名命令：
 
-.. literalinclude:: /demo/server/linux/cmd/alias.txt
+.. literalinclude:: /Server/res/demo/server/linux/cmd/alias.txt
     :language: bash
     :encoding: utf-8
     :linenos:
@@ -80,7 +80,7 @@ alias是bash的内置命令。
 
 查看指定命令别名信息：
 
-.. literalinclude:: /demo/server/linux/cmd/alias.txt
+.. literalinclude:: /Server/res/demo/server/linux/cmd/alias.txt
     :language: bash
     :encoding: utf-8
     :linenos:
@@ -97,7 +97,7 @@ alias是bash的内置命令。
 
 为 ``echo`` 命令增加命令别名 ``nihao`` 。
 
-.. literalinclude:: /demo/server/linux/cmd/alias.txt
+.. literalinclude:: /Server/res/demo/server/linux/cmd/alias.txt
     :language: bash
     :encoding: utf-8
     :linenos:
@@ -108,7 +108,7 @@ alias是bash的内置命令。
 新增命令别名 ``chakan`` ，这个命令名称作用和 ``ls -l`` 相同。
 
 
-.. literalinclude:: /demo/server/linux/cmd/alias.txt
+.. literalinclude:: /Server/res/demo/server/linux/cmd/alias.txt
     :language: bash
     :encoding: utf-8
     :linenos:

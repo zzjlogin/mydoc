@@ -8,7 +8,7 @@
 
 七层模型、五层模型、四层模型对比图
 
-.. image:: /images/network/theory/layers/osi-7-5-4.svg
+.. image:: /Network/res/images/network/theory/layers/osi-7-5-4.svg
     :align: center
     :height: 550 px
     :width: 800 px

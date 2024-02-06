@@ -85,7 +85,7 @@ html_theme = 'sphinx_rtd_theme'
 
 #setting the homepage logo
 #html_logo = './logo.png'
-html_logo = './images/logo-wordmark-light.svg'
+html_logo = './logo/logo-wordmark-light.svg'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.

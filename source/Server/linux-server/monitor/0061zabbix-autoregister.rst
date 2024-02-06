@@ -62,28 +62,28 @@ zabbix 3.4以后版本有自带模版linux系统模版。此处不再设置模�
 
 
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration002.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration002.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration003.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration003.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration004.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration005.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -102,13 +102,13 @@ zabbix 3.4以后版本有自带模版linux系统模版。此处不再设置模�
 
 
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration006.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration006.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration007.png
+.. image:: /Server/res/images/server/linux/zabbix-config/auto-registration/zabbix-auto-registration007.png
     :align: center
     :height: 450 px
     :width: 800 px

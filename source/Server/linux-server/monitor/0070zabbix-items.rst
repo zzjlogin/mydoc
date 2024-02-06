@@ -12,47 +12,47 @@ zabbix监控项(items)
 网速监控
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network002.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network002.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network003.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network003.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network004.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network005.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network006.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network006.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network007.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network007.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network008.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network008.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network009.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network009.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -88,37 +88,37 @@ zabbix客户端和服务器默认可以统计网卡接口的接收和发送数�
 
 
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network101.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network101.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network102.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network102.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network103.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network103.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network104.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network104.png
     :align: center
     :height: 350 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network105.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network105.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network106.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network106.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network107.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network107.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -141,42 +141,42 @@ zabbix服务器创建item并相应的key是 ``network.statistic.out[eth1]`` 和 
 
 
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network201.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network201.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network202.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network202.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network203.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network203.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network204.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network204.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network205.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network205.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network206.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network206.png
     :align: center
     :height: 450 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network207.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network207.png
     :align: center
     :height: 350 px
     :width: 800 px
     
-.. image:: /images/server/linux/zabbix-config/items/network/zabbix-network208.png
+.. image:: /Server/res/images/server/linux/zabbix-config/items/network/zabbix-network208.png
     :align: center
     :height: 450 px
     :width: 800 px

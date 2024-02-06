@@ -39,13 +39,13 @@ Linux文件权限说明
 
 通过 ``ls -l`` 查看的结果说明：
 
-.. image:: /images/server/linux/linuxfilels.png
+.. image:: /Server/res/images/server/linux/linuxfilels.png
     :align: center
     :alt: zzjlogin's image loss
 
 文件权限说明：
 
-.. image:: /images/server/linux/linuxfileprivilege.png
+.. image:: /Server/res/images/server/linux/linuxfileprivilege.png
     :align: center
     :alt: zzjlogin's image loss
 

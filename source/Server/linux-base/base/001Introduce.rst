@@ -46,9 +46,9 @@ Linux 时间线
 Linux发展时间线：
 
 
-.. image:: /images/server/linux/LinuxTimeLine.svg
-    :width: 600px
-    :align: center
+.. image:: /Server/res/images/server/linux/LinuxTimeLine.svg
+   :width: 600px
+   :align: center
 
 
 

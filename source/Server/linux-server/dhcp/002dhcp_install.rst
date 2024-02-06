@@ -177,14 +177,14 @@ dhcp安装系统及软件信息
 
 关闭vmwaredhcp功能具体步骤: 【菜单栏】->【编辑】->【虚拟网络编辑器】->【更改设置】,如下图：
 
-.. image:: /images/tools/vmware/network/hostonly.png
+.. image::/Server/res/images/tools/vmware/network/hostonly.png
     :align: center
     :height: 500 px
     :width: 800 px
 
 设置虚拟机的网络方式具体步骤： 【虚拟机右键】->【虚拟机设置】->【网络适配器】，如下图： 
 
-.. image:: /images/tools/vmware/network/dhcp-option.jpg
+.. image::/Server/res/images/tools/vmware/network/dhcp-option.jpg
     :align: center
     :height: 500 px
     :width: 800 px
@@ -368,7 +368,7 @@ vim安装
 dhcp的安装
 ======================================================================================================================================================
 
-.. literalinclude:: /demo/server/linux/dhcp/dhcp-install.sh
+.. literalinclude:: /Server/res/demo/server/linux/dhcp/dhcp-install.sh
    :language: bash
    :linenos:
 

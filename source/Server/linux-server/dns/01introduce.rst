@@ -1,14 +1,16 @@
-.. _dns-introduce:
+.. _server-dns-introduce:
 
 ======================================================================================================================================================
 DNS介绍
 ======================================================================================================================================================
 
+
 :Date: 2018-09
 
 .. contents::
 
-.. _dns-abstract:
+
+.. _server-dns-abstract:
 
 DNS简述
 ======================================================================================================================================================
@@ -35,6 +37,7 @@ DNS:
 
 DNS主要用途：
     - 能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。
+
 DNS发展历史:
     DNS最早于1983年由保罗·莫卡派乔斯（Paul Mockapetris）发明；
     原始的技术规范在882号因特网标准草案（RFC 882）中发布。
@@ -84,9 +87,11 @@ DNS系统中，常见的资源记录类型有：
     - CNAME:        别名
     - MX:           邮件
 
+
 .. hint::
     DNS所有记录类型可以参考：
         https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
+
 
 .. _`RFC 3403`: https://www.rfc-editor.org/rfc/rfc3403.txt
 .. _`RFC 2782`: https://www.rfc-editor.org/rfc/rfc2782.txt
@@ -120,14 +125,14 @@ DNS查询类型:
 
 **递归查询过程：**
 
-.. image:: /images/server/linux/dns/recursion-query.jpg
+.. image:: /Server/res/images/server/linux/dns/recursion-query.jpg
     :align: center
     :height: 400 px
     :width: 800 px
 
 **迭代查询过程：**
 
-.. image:: /images/server/linux/dns/iteration-query.jpg
+.. image:: /Server/res/images/server/linux/dns/iteration-query.jpg
     :align: center
     :height: 400 px
     :width: 800 px

@@ -576,46 +576,46 @@ zabbix服务器安装配置命令集合
 ======================================================================================================================================================
 
 
-.. image:: /images/server/linux/zabbix-install/zabbix001.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix001.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-install/zabbix002.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix002.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/zabbix003.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix003.png
     :align: center
     :height: 400 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/zabbix004.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix004.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-install/zabbix005.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix005.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-install/zabbix006.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-.. image:: /images/server/linux/zabbix-install/zabbix007.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix006.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-install/zabbix008.png
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix007.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+.. image:: /Server/res/images/server/linux/zabbix-install/zabbix008.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -626,7 +626,7 @@ zabbix服务器安装配置命令集合
 ======================================================================================================================================================
 
 
-.. image:: /images/server/linux/zabbix-config/zabbix-config001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/zabbix-config001.png
     :align: center
     :height: 450 px
     :width: 800 px

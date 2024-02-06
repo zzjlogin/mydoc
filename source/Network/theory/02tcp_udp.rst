@@ -31,7 +31,7 @@ TCP有重传机制。所以实时通信一般都不用TCP协议实现。
 三次链接的建立参考下图:
 
 
-.. image:: /images/network/theory/tcp/tcp_three_handshakes.gif
+.. image:: /Network/res/images/network/theory/tcp/tcp_three_handshakes.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -73,7 +73,7 @@ TCP报头：
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-.. image:: /images/network/theory/tcp/tcp_fin_ack.gif
+.. image:: /Network/res/images/network/theory/tcp/tcp_fin_ack.gif
     :align: center
     :height: 550 px
     :width: 800 px

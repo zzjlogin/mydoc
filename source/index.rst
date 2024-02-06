@@ -33,7 +33,7 @@
    :hidden:
    :caption: 【编程算法】
 
-   Language/index
+   Program/*
    
 
 .. toctree::
@@ -42,9 +42,9 @@
    :hidden:
    :caption: 【服务部署】
 
-   Server/index   
-   Data/index
-   ML/index
+   Server/*   
+   Data/*
+   ML/*
 
 
 .. toctree::
@@ -53,7 +53,7 @@
    :hidden:
    :caption: 【网络通信】
 
-   Network/index
+   Network/*
 
 .. toctree::
    :maxdepth: 3
@@ -61,7 +61,7 @@
    :hidden:
    :caption: 【网络完全】
 
-   Security/index
+   Security/*
 
 .. toctree::
    :maxdepth: 3
@@ -69,8 +69,8 @@
    :hidden:
    :caption: 【软件工具】
 
-   Tools/index
-   Others/index
+   Tools/*
+   Others/*
    About
 
 

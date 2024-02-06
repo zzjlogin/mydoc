@@ -580,7 +580,7 @@ PXE启动菜单加密码提示
 配置后新机器通过PXE安装系统时进入下界面，然后通过方向键/tab键选择要安装的系统会提示输入密码(这个密码就是上面生成的密码123)：
 
 
-.. image:: /images/server/linux/kickstart/cobbler/cobbler-pxe-install001.png
+.. image:: /Server/res/images/server/linux/kickstart/cobbler/cobbler-pxe-install001.png
     :align: center
     :height: 400 px
     :width: 800 px

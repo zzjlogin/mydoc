@@ -407,7 +407,7 @@ bashrc：
     - [ expr ]
     - [[ expr ]]
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Server/res/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 135-208
     :language: bash

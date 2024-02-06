@@ -64,7 +64,7 @@ DHCP报文
 
 2. DHCP报文交互过程如图:
 
-.. image:: /images/server/linux/dhcp/dhcp-exchange.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-exchange.png
     :align: center
     :height: 350 px
     :width: 800 px
@@ -82,7 +82,7 @@ windows系统用 ``wireshark`` 抓包分析时，可以通过释放IP重新获�
 
 样例：
 
-.. image:: /images/server/linux/dhcp/dhcp-data01.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data01.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -93,7 +93,7 @@ DHCP Discover数据包:
 
 参考下面DHCP Discover抓包数据:
 
-.. image:: /images/server/linux/dhcp/dhcp-data02.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data02.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -105,14 +105,14 @@ DHCP Offer包:
     2. DHCP服务器提供了一个可用的IP,在数据包的Your (client) IP Address字段可以看到DHCP服务器提供的可用IP。
     3. 除此之外，如图中红色矩形框的内容所示，服务器还发送了子网掩码，路由器，DNS，域名，IP地址租用期等信息。
 
-.. image:: /images/server/linux/dhcp/dhcp-data03.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data03.png
     :align: center
     :height: 400 px
     :width: 800 px
 
 具体信息参考:
 
-.. image:: /images/server/linux/dhcp/dhcp-data03-1.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data03-1.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -121,7 +121,7 @@ DHCP Request包:
     当Client收到了DHCP Offer包以后（如果有多个可用的DHCP服务器，那么可能会收到多个DHCP Offer包），确认有可以和它交互的DHCP服务器存在，于是Client发送Request数据包，请求分配IP。 
     此时的源IP和目的IP依然是0.0.0.0和255.255.255.255。
 
-.. image:: /images/server/linux/dhcp/dhcp-data04.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data04.png
     :align: center
     :height: 400 px
     :width: 800 px
@@ -140,7 +140,7 @@ DHCP ACK包:
     :Domain Name:               域名 
     :IP Address Lease Time:     IP租用期。
 
-.. image:: /images/server/linux/dhcp/dhcp-data05.png
+.. image:: /Server/res/images/server/linux/dhcp/dhcp-data05.png
     :align: center
     :height: 350 px
     :width: 800 px

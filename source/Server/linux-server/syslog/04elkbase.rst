@@ -51,7 +51,6 @@ hosts文件解析配置
 
 关闭防火墙和selinux
 
-:ref:`topics-time` 
 
 
 安装jdk环境
@@ -289,9 +288,8 @@ elasticsearch-head插件配置测试
 
 浏览器输入 http://192.168.46.151:9100/
 
-.. image:: /images/log/elk-01.png
 
-.. image:: /images/log/elk-02.png
+
 
 
 logstash配置

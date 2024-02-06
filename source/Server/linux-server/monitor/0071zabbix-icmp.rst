@@ -11,81 +11,81 @@
     - 添加被监控项的图形展示
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp002.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp002.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp003.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp004.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp005.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp006.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp003.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp007.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp004.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp005.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp006.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp008.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp009.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp010.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp007.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp008.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp011.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp009.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp010.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp011.png
     :align: center
     :height: 150 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp012.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp012.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp013.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp013.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/icmp/zabbix-icmp014.png
+.. image:: /Server/res/images/server/linux/zabbix-config/icmp/zabbix-icmp014.png
     :align: center
     :height: 450 px
     :width: 800 px

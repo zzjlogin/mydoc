@@ -91,31 +91,31 @@ zabbix服务器测试获取MySQL监控数据：
     zabbix监控服务器默认的MySQL监控项的更新周期是1小时，所以被监控服务器和MySQL模版关联以后需要等待一个小时后所有数据才可以完全同步。
 
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql002.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-
-
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql003.png
-    :align: center
-    :height: 450 px
-    :width: 800 px
-
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql002.png
     :align: center
     :height: 450 px
     :width: 800 px
 
 
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql003.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql004.png
+    :align: center
+    :height: 450 px
+    :width: 800 px
+
+
+
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-monitor-mysql005.png
     :align: center
     :height: 450 px
     :width: 800 px
@@ -278,78 +278,78 @@ zabbix服务器低级自动发现模版配置
 
 
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery001.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery001.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery002.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery002.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery003.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery003.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery004.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery004.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery005.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery005.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery006.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery006.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery007.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery007.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery008.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery008.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery009.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery009.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery010.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery010.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery011.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery011.png
     :align: center
     :height: 350 px
     :width: 800 px
 
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery012.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery012.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery013.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery013.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery014.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery014.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery015.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery015.png
     :align: center
     :height: 350 px
     :width: 800 px
@@ -358,37 +358,37 @@ zabbix服务器低级自动发现模版配置
 添加被监控多实例MySQL测试
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery016.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery016.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery017.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery017.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery018.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery018.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery019.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery019.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery020.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery020.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery021.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery021.png
     :align: center
     :height: 350 px
     :width: 800 px
 
-.. image:: /images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery022.png
+.. image:: /Server/res/images/server/linux/zabbix-config/app/mysql/zabbix-lowlevel-decovery022.png
     :align: center
     :height: 350 px
     :width: 800 px

@@ -411,12 +411,12 @@ SYSLINUX是一个小型的Linux操作系统，它的目的是简化首次安装L
     - 图形界面如下下面两个图，第二个图形开始就是正常安装。后序安装步骤省略。可以用鼠标/键盘然后控制继续点击选择然后继续下一步一直到安装完成即可。
     - 注意安装过程，选择URL方式安装，然后具体的URL输入：http://192.168.6.10/centos/6.6/
 
-.. image:: /images/server/linux/kickstart/pxe001.png
+.. image:: /Server/res/images/server/linux/kickstart/pxe001.png
     :align: center
     :height: 450 px
     :width: 800 px
 
-.. image:: /images/server/linux/kickstart/linux-install001.png
+.. image:: /Server/res/images/server/linux/kickstart/linux-install001.png
     :align: center
     :height: 450 px
     :width: 800 px
