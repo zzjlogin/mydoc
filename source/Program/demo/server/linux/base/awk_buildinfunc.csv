@@ -1,0 +1,53 @@
+﻿函数名,功能作用
+"atan2（y,x）",返回y/x弧的反正切
+cos(x),返回x的余弦
+exp(x),返回x的指数
+int(x),返回最靠近的整数，风向标指向0
+log(x),返回x的自然对数
+rand(),返回随机数
+sin(x),返回x的正弦
+sqrt(x),返回x的正平方根
+srand([x]),生成随机数，可以设置起点
+,
+字符串操作函数（String-Manipulation Functions）,
+"asort(source [, dest [, how ] ])",返回数组元素数（内容较多），gawk特有，awk没有此函数功能。
+"asorti(source [, dest [, how ] ])","同asort,（有细微差别），gawk特有，awk没有此函数功能。"
+"gensub(regexp, replacement, how [, target])",搜索正则表达式RegExp匹配的regexp，gawk特有，awk没有此函数功能。
+"gsub(regexp, replacement [, target])",将正则表达式匹配的第一处内容替换成replacement_str
+"index(in, find)",返回find在字符串in中出现的位置
+length([string]),string 中的字符数
+"match(string, regexp [, array])",检查正则表达式能否匹配字符串
+"patsplit(string, array [, fieldpat [, seps ] ])",划分件到由fieldpat定义的字符串，并存储在array里，分隔字符串存在在seps数组，gawk特有，awk没有此函数功能。
+"split(string, array [, fieldsep [, seps ] ])",用定界符生成一个字符串列表，并将该列表存入数组
+"sprintf(format, expression1, ...)",打印
+strtonum(str),字符转转换成数字
+"sub(regexp, replacement [, target])",将正则表达式匹配到的第一处内容替换成replacement
+"substr(string, start [, length])",分割字符串，根据其实位置和长度
+tolower(string),转换成小写
+toupper(string),转换成大写
+,
+输入输出函数（Input/Output Functions）,
+"close(filename [, how])",关闭文件输入输出流
+fflush([filename]),刷新与文件名相关的任何缓冲输出
+system(command),执行操作系统命令，返回值给awk程序时间函数（Time Functions）
+,
+时间函数（Time Functions）,
+mktime(datespec),datespec为时间戳格式，与systime()格式一样
+"strftime([format [, timestamp [, utc-flag]]])",格式化timestamp的内容，返回日期格式
+systime(),返回系统时间，精确到秒
+,
+位操作函数（Bit-Manipulation Functions）,
+"and(v1, v2)","v1,v2的与操作结果"
+compl(val),val的反码
+"lshift(val, count)",返回val左移count位的值
+"or(v1, v2)","v1,v2的或操作"
+"rshift(val, count)",返回val右移count位的值
+"xor(v1, v2)","返回v1,v2的异或的值"
+,
+获取类型信息（Getting Type Information）,
+isarray(x),如果x是数组，返回true.否则false
+,
+字符串转换函数（String-Translation Functions）,
+"bindtextdomain(directory [, domain])",设置awk要搜寻信息的目录和域
+"dcgettext(string [, domain [, category]])",返回的字符串string 翻译文本域domain 的语言环境类别category
+"dcngettext(string1, string2, number [, domain [, category]])","返回string1和string2的翻译数量的复数形式，string1,string2在语言环境类别的文本域里"
