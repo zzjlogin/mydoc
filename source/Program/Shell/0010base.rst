@@ -41,10 +41,30 @@ shell编程可以使得命令执行的逻辑更加清晰。而且通过shell程�
 入门样例
 ======================================================================================================================================================
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 4-11
     :language: bash
+
+
+
+.. code-block:: v
+   :caption: verilog test
+   :emphasize-lines: 4,5
+   :linenos:
+
+   module  key_filter
+   #(
+      parameter CNT_MAX = 20'd999_999 //计数器计数最大值
+   )
+   (
+      input   wire    sys_clk     ,   //系统时钟50Mhz
+      input   wire    sys_rst_n   ,   //全局复位
+      input   wire    key_in      ,   //按键输入信号
+
+      output  reg     key_flag        //key_flag为1时表示消抖后检测到按键被按下
+                                       //key_flag为0时表示没有检测到按键被按下
+   );
 
 
 
@@ -74,7 +94,7 @@ Shell规范样例
 个人觉得我们参考规范。应该参考一些现在实际应用的规范脚本。
 然后参考这些规范的脚本学习他们然后总结模仿。(最后能不能超越就看个人能力了。)
 
-:download:`规范样例crond </demo/program/shell/crond.sh>` :
+:download:`规范样例crond </Program/demo/program/shell/crond.sh>` :
 
 .. tip::
 
@@ -134,21 +154,21 @@ stderr
 
 重定向输出到文件
 
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 15-27
         :language: bash
 
 重定向输出到空
 
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 31-32
         :language: bash
 
 2. 重定向输入
 
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 34-35
         :language: bash
@@ -166,7 +186,7 @@ stderr
 
 - 样例
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 37-38
     :language: bash
@@ -197,7 +217,7 @@ stderr
 
 - 样例
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 40-46
     :language: bash
@@ -224,7 +244,7 @@ stderr
 
 - 样例
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 48-55
     :language: bash
@@ -262,7 +282,7 @@ stderr
 
 - 样例
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 57-74
     :language: bash
@@ -288,21 +308,21 @@ stderr
 
     1. 备份源文件
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 77-78
         :language: bash
 
     2. 修改字符集定义文件
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 81-82
         :language: bash
 
     3. 使定义文件立即生效
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 85
         :language: bash
@@ -336,21 +356,21 @@ stderr
 
     1. 备份源文件
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 88
         :language: bash
 
     2. 修改字符集定义文件
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 91-104
         :language: bash
 
     3. 使定义文件立即生效
     
-    .. literalinclude:: /demo/program/shell/shell-demo.sh
+    .. literalinclude:: /Program/demo/program/shell/shell-demo.sh
         :linenos:
         :lines: 107
         :language: bash
@@ -364,7 +384,7 @@ stderr
 
 參考比較時使用比較方法: :ref:`cmd-compare`
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 110-131
 
@@ -375,7 +395,7 @@ stderr
 
 - 样例
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 212-250
     :language: bash
@@ -385,7 +405,7 @@ stderr
 參考比较方法
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.. literalinclude:: /demo/program/shell/shell-demo.sh
+.. literalinclude:: /Program/demo/program/shell/shell-demo.sh
     :linenos:
     :lines: 135-208
     :language: bash

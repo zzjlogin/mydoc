@@ -1,4 +1,3 @@
-.. _lang-sort:
 
 ======================================================================================================================================================
 计算机语言排名 [1]_
@@ -7,7 +6,7 @@
 计算机类语言排名
 
 
-.. image:: /images/language/others/lang-rank.png
+.. image:: /Program/images/language/others/lang-rank.png
     :align: center
     :scale: 50 %
 
