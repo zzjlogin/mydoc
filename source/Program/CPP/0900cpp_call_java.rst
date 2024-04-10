@@ -13,6 +13,18 @@ JNI
 java:
     - https://jdk.java.net/archive/
     - https://docs.oracle.com/en/java/javase/
+	- https://docs.oracle.com/en/java/javase/index.html
+	- https://docs.oracle.com/en/java/javase/18/docs/specs/jni/index.html
+	- https://docs.oracle.com/en/java/javase/18/docs/specs/jni/types.html
+	
+
+java数据类型及整数值关系
+	
+	- https://docs.oracle.com/javase/8/docs/api/constant-values.html#java.sql.Types.ARRAY
+
+参考：
+	-https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/invocation.html
+
 
 JNI（Java Native Interface，Java本地接口），是Java平台中的一个强大特性。应用程序可以通过JNI把C/C++代码集成进Java程序中。
 
