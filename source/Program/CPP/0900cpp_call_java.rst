@@ -227,7 +227,406 @@ Test.java 文件
 
 
 
+JVM内存问题排查
+======================================================================
 
+
+jcmd
+----------------------------------------------------------------------
+
+1. 查看哪些java程序在运行
+
+::
+
+	jcmd
+
+	18240 
+	22896 sun.tools.jstat.Jstat -gc 18240 3000
+	21494 org.apache.zookeeper.server.quorum.QuorumPeerMain /usr/local/zookeeper/bin/../conf/zoo.cfg
+	24088 sun.tools.jcmd.JCmd
+	21614 kafka.Kafka /usr/local/kafka/config/server.properties
+
+
+
+查看指定进程
+
+::
+
+	jcmd 18240 help
+	
+	18240:
+	The following commands are available:
+	JFR.stop
+	JFR.start
+	JFR.dump
+	JFR.check
+	VM.native_memory
+	VM.check_commercial_features
+	VM.unlock_commercial_features
+	ManagementAgent.stop
+	ManagementAgent.start_local
+	ManagementAgent.start
+	VM.classloader_stats
+	GC.rotate_log
+	Thread.print
+	GC.class_stats
+	GC.class_histogram
+	GC.heap_dump
+	GC.finalizer_info
+	GC.heap_info
+	GC.run_finalization
+	GC.run
+	VM.uptime
+	VM.dynlibs
+	VM.flags
+	VM.system_properties
+	VM.command_line
+	VM.version
+	help
+
+	For more information about a specific command use 'help <command>'.
+
+
+查看进程统计信息
+
+
+::
+
+	jcmd 21614 PerfCounter.print
+
+
+
+统计结果信息
+
+::
+
+	21614:
+	java.ci.totalTime=56072159711
+	java.cls.loadedClasses=5868
+	java.cls.sharedLoadedClasses=0
+	java.cls.sharedUnloadedClasses=0
+	java.cls.unloadedClasses=46
+	java.property.java.class.path=".:/usr/local/jdk1.8_32bit/jdk1.8.0_202/lib/dt.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/lib/tools.jar:/usr/local/kafka/bin/../libs/activation-1.1.1.jar:/usr/local/kafka/bin/../libs/aopalliance-repackaged-2.5.0.jar:/usr/local/kafka/bin/../libs/argparse4j-0.7.0.jar:/usr/local/kafka/bin/../libs/audience-annotations-0.5.0.jar:/usr/local/kafka/bin/../libs/commons-cli-1.4.jar:/usr/local/kafka/bin/../libs/commons-lang3-3.8.1.jar:/usr/local/kafka/bin/../libs/connect-api-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-basic-auth-extension-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-file-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-json-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-mirror-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-mirror-client-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-runtime-2.6.0.jar:/usr/local/kafka/bin/../libs/connect-transforms-2.6.0.jar:/usr/local/kafka/bin/../libs/hk2-api-2.5.0.jar:/usr/local/kafka/bin/../libs/hk2-locator-2.5.0.jar:/usr/local/kafka/bin/../libs/hk2-utils-2.5.0.jar:/"
+	java.property.java.endorsed.dirs="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/endorsed"
+	java.property.java.ext.dirs="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/ext:/usr/java/packages/lib/ext"
+	java.property.java.home="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre"
+	java.property.java.library.path="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/i386/server:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/i386:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/../lib/i386::/usr/local/lib:/usr/dt/lib:/usr/sfw/lib:/usr/Charging_Pile_Platform/prog:/usr/local/mysql/lib:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/i386/server:/usr/local/Qt5.10/5.10.1/gcc_64/lib:/usr/local/corba/omniORB-4.1.3/lib:/usr/local/corba/Python-2.7.2/Lib:/usr/local/ekho/ekho-5.2/lib:/usr/local/xerces/xerces-c-redhat_AS4-gcc_343/lib:/usr/local/Qscintilla/QScintilla-2.7.2/Qt4Qt5::/usr/java/packages/lib/i386:/lib:/usr/lib"
+	java.property.java.version="1.8.0_202"
+	java.property.java.vm.info="mixed mode"
+	java.property.java.vm.name="Java HotSpot(TM) Server VM"
+	java.property.java.vm.specification.name="Java Virtual Machine Specification"
+	java.property.java.vm.specification.vendor="Oracle Corporation"
+	java.property.java.vm.specification.version="1.8"
+	java.property.java.vm.vendor="Oracle Corporation"
+	java.property.java.vm.version="25.202-b08"
+	java.rt.vmArgs="-Xmx1G -Xms1G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:+ExplicitGCInvokesConcurrent -XX:MaxInlineLevel=15 -Djava.awt.headless=true -Xloggc:/usr/local/kafka/bin/../logs/kafkaServer-gc.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dkafka.logs.dir=/usr/local/kafka/bin/../logs -Dlog4j.configuration=file:/usr/local/kafka/bin/../config/log4j.properties"
+	java.rt.vmFlags=""
+	java.threads.daemon=31
+	java.threads.live=54
+	java.threads.livePeak=54
+	java.threads.started=55
+	sun.ci.compilerThread.0.compiles=571
+	sun.ci.compilerThread.0.method=""
+	sun.ci.compilerThread.0.time=9561011
+	sun.ci.compilerThread.0.type=1
+	sun.ci.compilerThread.1.compiles=574
+	sun.ci.compilerThread.1.method=""
+	sun.ci.compilerThread.1.time=7887322
+	sun.ci.compilerThread.1.type=1
+	sun.ci.compilerThread.2.compiles=592
+	sun.ci.compilerThread.2.method=""
+	sun.ci.compilerThread.2.time=8238506
+	sun.ci.compilerThread.2.type=1
+	sun.ci.compilerThread.3.compiles=6282
+	sun.ci.compilerThread.3.method=""
+	sun.ci.compilerThread.3.time=28779645
+	sun.ci.compilerThread.3.type=1
+	sun.ci.lastFailedMethod=""
+	sun.ci.lastFailedType=0
+	sun.ci.lastInvalidatedMethod=""
+	sun.ci.lastInvalidatedType=0
+	sun.ci.lastMethod="java/text/SimpleDateFormat subFormat"
+	sun.ci.lastSize=6492
+	sun.ci.lastType=1
+	sun.ci.nmethodCodeSize=11017184
+	sun.ci.nmethodSize=20019156
+	sun.ci.osrBytes=28119
+	sun.ci.osrCompiles=49
+	sun.ci.osrTime=1565032206
+	sun.ci.standardBytes=1313445
+	sun.ci.standardCompiles=7970
+	sun.ci.standardTime=54507127505
+	sun.ci.threads=4
+	sun.ci.totalBailouts=0
+	sun.ci.totalCompiles=8019
+	sun.ci.totalInvalidates=0
+	sun.classloader.findClassTime=3713736996
+	sun.classloader.findClasses=2805
+	sun.classloader.parentDelegationTime=243617217
+	sun.cls.appClassBytes=19646441
+	sun.cls.appClassLoadCount=3156
+	sun.cls.appClassLoadTime=3121065712
+	sun.cls.appClassLoadTime.self=1232572225
+	sun.cls.classInitTime=22642544161
+	sun.cls.classInitTime.self=20695084798
+	sun.cls.classLinkedTime=2420114364
+	sun.cls.classLinkedTime.self=310820253
+	sun.cls.classVerifyTime=2088522084
+	sun.cls.classVerifyTime.self=842566430
+	sun.cls.defineAppClassTime=1642404469
+	sun.cls.defineAppClassTime.self=75419003
+	sun.cls.defineAppClasses=2813
+	sun.cls.initializedClasses=4835
+	sun.cls.isUnsyncloadClassSet=0
+	sun.cls.jniDefineClassNoLockCalls=2
+	sun.cls.jvmDefineClassNoLockCalls=2808
+	sun.cls.jvmFindLoadedClassNoLockCalls=6544
+	sun.cls.linkedClasses=5214
+	sun.cls.loadInstanceClassFailRate=0
+	sun.cls.loadedBytes=7089644
+	sun.cls.lookupSysClassTime=175264584
+	sun.cls.methodBytes=4347430
+	sun.cls.nonSystemLoaderLockContentionRate=0
+	sun.cls.parseClassTime=1960658927
+	sun.cls.parseClassTime.self=1701052192
+	sun.cls.sharedClassLoadTime=11171082
+	sun.cls.sharedLoadedBytes=0
+	sun.cls.sharedUnloadedBytes=0
+	sun.cls.sysClassBytes=6200373
+	sun.cls.sysClassLoadTime=536282380
+	sun.cls.systemLoaderLockContentionRate=0
+	sun.cls.time=25387638662
+	sun.cls.unloadedBytes=29944
+	sun.cls.unsafeDefineClassCalls=1298
+	sun.cls.verifiedClasses=5211
+	sun.gc.cause="No GC"
+	sun.gc.collector.0.invocations=504
+	sun.gc.collector.0.lastEntryTime=2588281369299757
+	sun.gc.collector.0.lastExitTime=2588281391391803
+	sun.gc.collector.0.name="G1 incremental collections"
+	sun.gc.collector.0.time=14252005515
+	sun.gc.collector.1.invocations=0
+	sun.gc.collector.1.lastEntryTime=0
+	sun.gc.collector.1.lastExitTime=0
+	sun.gc.collector.1.name="G1 stop-the-world full collections"
+	sun.gc.collector.1.time=0
+	sun.gc.compressedclassspace.capacity=0
+	sun.gc.compressedclassspace.maxCapacity=0
+	sun.gc.compressedclassspace.minCapacity=0
+	sun.gc.compressedclassspace.used=0
+	sun.gc.generation.0.agetable.bytes.00=0
+	sun.gc.generation.0.agetable.bytes.01=98056
+	sun.gc.generation.0.agetable.bytes.02=536
+	sun.gc.generation.0.agetable.bytes.03=288
+	sun.gc.generation.0.agetable.bytes.04=472
+	sun.gc.generation.0.agetable.bytes.05=416
+	sun.gc.generation.0.agetable.bytes.06=448
+	sun.gc.generation.0.agetable.bytes.07=288
+	sun.gc.generation.0.agetable.bytes.08=0
+	sun.gc.generation.0.agetable.bytes.09=0
+	sun.gc.generation.0.agetable.bytes.10=0
+	sun.gc.generation.0.agetable.bytes.11=0
+	sun.gc.generation.0.agetable.bytes.12=0
+	sun.gc.generation.0.agetable.bytes.13=0
+	sun.gc.generation.0.agetable.bytes.14=0
+	sun.gc.generation.0.agetable.bytes.15=0
+	sun.gc.generation.0.agetable.size=16
+	sun.gc.generation.0.capacity=468713496
+	sun.gc.generation.0.maxCapacity=1073741848
+	sun.gc.generation.0.minCapacity=24
+	sun.gc.generation.0.name="young"
+	sun.gc.generation.0.space.0.capacity=467664904
+	sun.gc.generation.0.space.0.initCapacity=56623112
+	sun.gc.generation.0.space.0.maxCapacity=1073741832
+	sun.gc.generation.0.space.0.name="eden"
+	sun.gc.generation.0.space.0.used=161480704
+	sun.gc.generation.0.space.1.capacity=8
+	sun.gc.generation.0.space.1.initCapacity=8
+	sun.gc.generation.0.space.1.maxCapacity=8
+	sun.gc.generation.0.space.1.name="s0"
+	sun.gc.generation.0.space.1.used=0
+	sun.gc.generation.0.space.2.capacity=1048584
+	sun.gc.generation.0.space.2.initCapacity=8
+	sun.gc.generation.0.space.2.maxCapacity=1073741832
+	sun.gc.generation.0.space.2.name="s1"
+	sun.gc.generation.0.space.2.used=1048576
+	sun.gc.generation.0.spaces=3
+	sun.gc.generation.1.capacity=605028360
+	sun.gc.generation.1.maxCapacity=1073741832
+	sun.gc.generation.1.minCapacity=8
+	sun.gc.generation.1.name="old"
+	sun.gc.generation.1.space.0.capacity=605028360
+	sun.gc.generation.1.space.0.initCapacity=1017118728
+	sun.gc.generation.1.space.0.maxCapacity=1073741832
+	sun.gc.generation.1.space.0.name="space"
+	sun.gc.generation.1.space.0.used=292805968
+	sun.gc.generation.1.spaces=1
+	sun.gc.lastCause="G1 Evacuation Pause"
+	sun.gc.metaspace.capacity=30064640
+	sun.gc.metaspace.maxCapacity=30720000
+	sun.gc.metaspace.minCapacity=0
+	sun.gc.metaspace.used=28507304
+	sun.gc.policy.collectors=1
+	sun.gc.policy.desiredSurvivorSize=21495808
+	sun.gc.policy.generations=3
+	sun.gc.policy.maxTenuringThreshold=15
+	sun.gc.policy.name="GarbageFirst"
+	sun.gc.policy.tenuringThreshold=15
+	sun.gc.tlab.alloc=119052340
+	sun.gc.tlab.allocThreads=42
+	sun.gc.tlab.fastWaste=0
+	sun.gc.tlab.fills=2582
+	sun.gc.tlab.gcWaste=498542
+	sun.gc.tlab.maxFastWaste=0
+	sun.gc.tlab.maxFills=268
+	sun.gc.tlab.maxGcWaste=79730
+	sun.gc.tlab.maxSlowAlloc=16
+	sun.gc.tlab.maxSlowWaste=29030
+	sun.gc.tlab.slowAlloc=125
+	sun.gc.tlab.slowWaste=110160
+	sun.management.JMXConnectorServer.address="service:jmx:rmi://127.0.0.1/stub/rO0ABXN9AAAAAQAlamF2YXgubWFuYWdlbWVudC5yZW1vdGUucm1pLlJNSVNlcnZlcnhyABdqYXZhLmxhbmcucmVmbGVjdC5Qcm94eeEn2iDMEEPLAgABTAABaHQAJUxqYXZhL2xhbmcvcmVmbGVjdC9JbnZvY2F0aW9uSGFuZGxlcjt4cHNyAC1qYXZhLnJtaS5zZXJ2ZXIuUmVtb3RlT2JqZWN0SW52b2NhdGlvbkhhbmRsZXIAAAAAAAAAAgIAAHhyABxqYXZhLnJtaS5zZXJ2ZXIuUmVtb3RlT2JqZWN002G0kQxhMx4DAAB4cHcrAAtVbmljYXN0UmVmMgAAAAAAoGkMT1YrJvViS1KOIdgAAAGOV18Um4ABAHg="
+	sun.os.hrt.frequency=1000000000
+	sun.os.hrt.ticks=2592508579796130
+	sun.perfdata.majorVersion=2
+	sun.perfdata.minorVersion=0
+	sun.perfdata.overflow=0
+	sun.perfdata.size=32768
+	sun.perfdata.timestamp=11222073486
+	sun.perfdata.used=18312
+	sun.property.sun.boot.class.path="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/resources.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/rt.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/sunrsasign.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/jsse.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/jce.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/charsets.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/jfr.jar:/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/classes"
+	sun.property.sun.boot.library.path="/usr/local/jdk1.8_32bit/jdk1.8.0_202/jre/lib/i386"
+	sun.rt._sync_ContendedLockAttempts=66525
+	sun.rt._sync_Deflations=115
+	sun.rt._sync_EmptyNotifications=0
+	sun.rt._sync_FailedSpins=0
+	sun.rt._sync_FutileWakeups=50093
+	sun.rt._sync_Inflations=117
+	sun.rt._sync_MonExtant=256
+	sun.rt._sync_MonInCirculation=0
+	sun.rt._sync_MonScavenged=0
+	sun.rt._sync_Notifications=1141
+	sun.rt._sync_Parks=56387
+	sun.rt._sync_PrivateA=0
+	sun.rt._sync_PrivateB=0
+	sun.rt._sync_SlowEnter=0
+	sun.rt._sync_SlowExit=0
+	sun.rt._sync_SlowNotify=0
+	sun.rt._sync_SlowNotifyAll=0
+	sun.rt._sync_SuccessfulSpins=0
+	sun.rt.applicationTime=2591870925662723
+	sun.rt.createVmBeginTime=1710862831804
+	sun.rt.createVmEndTime=1710862843026
+	sun.rt.internalVersion="Java HotSpot(TM) Server VM (25.202-b08) for linux-x86 JRE (1.8.0_202-b08), built on Dec 15 2018 11:54:58 by "java_re" with gcc 7.3.0"
+	sun.rt.interruptedBeforeIO=0
+	sun.rt.interruptedDuringIO=0
+	sun.rt.javaCommand="kafka.Kafka /usr/local/kafka/config/server.properties"
+	sun.rt.jvmCapabilities="1100000000000000000000000000000000000000000000000000000000000000"
+	sun.rt.jvmVersion=432668680
+	sun.rt.safepointSyncTime=769541440
+	sun.rt.safepointTime=18866743841
+	sun.rt.safepoints=1484
+	sun.rt.threadInterruptSignaled=0
+	sun.rt.vmInitDoneTime=1710862831953
+	sun.threads.vmOperationTime=17428424664
+	sun.urlClassLoader.readClassBytesTime=752487355
+	sun.zip.zipFile.openTime=523711627
+sun.zip.zipFiles=97
+
+
+
+jmap
+----------------------------------------------------------------------
+
+
+打印java堆对象统计信息
+
+::
+
+	jmap -histo  18240
+
+
+查看堆简述信息
+
+::
+
+	jmap -heap  21614
+	
+	Attaching to process ID 21614, please wait...
+	Debugger attached successfully.
+	Server compiler detected.
+	JVM version is 25.202-b08
+
+	using thread-local object allocation.
+	Garbage-First (G1) GC with 8 thread(s)
+
+	Heap Configuration:
+	   MinHeapFreeRatio         = 40
+	   MaxHeapFreeRatio         = 70
+	   MaxHeapSize              = 1073741824 (1024.0MB)
+	   NewSize                  = 1048576 (1.0MB)
+	   MaxNewSize               = 643825664 (614.0MB)
+	   OldSize                  = 4194304 (4.0MB)
+	   NewRatio                 = 2
+	   SurvivorRatio            = 8
+	   MetaspaceSize            = 16777216 (16.0MB)
+	   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+	   MaxMetaspaceSize         = 4294963200 (4095.99609375MB)
+	   G1HeapRegionSize         = 1048576 (1.0MB)
+
+	Heap Usage:
+	G1 Heap:
+	   regions  = 1024
+	   capacity = 1073741824 (1024.0MB)
+	   used     = 458480976 (437.2415313720703MB)
+	   free     = 615260848 (586.7584686279297MB)
+	   42.69936829805374% used
+	G1 Young Generation:
+	Eden Space:
+	   regions  = 157
+	   capacity = 467664896 (446.0MB)
+	   used     = 164626432 (157.0MB)
+	   free     = 303038464 (289.0MB)
+	   35.2017937219731% used
+	Survivor Space:
+	   regions  = 1
+	   capacity = 1048576 (1.0MB)
+	   used     = 1048576 (1.0MB)
+	   free     = 0 (0.0MB)
+	   100.0% used
+	G1 Old Generation:
+	   regions  = 281
+	   capacity = 605028352 (577.0MB)
+	   used     = 292805968 (279.2415313720703MB)
+	   free     = 312222384 (297.7584686279297MB)
+	   48.39541271613004% used
+
+	12461 interned Strings occupying 1217608 bytes.
+
+
+jstat
+----------------------------------------------------------------------
+
+监控Java虚拟机JVM统计信息
+
+查看堆垃圾回收(gc)统计信息
+
+::
+
+	jstat -gc 21614 3000
+
+查看垃圾回收统计
+
+-gcutil
+
+
+查看新生代统计信息
+
+-gccause
+
+
+查看引起gc的原因：
+
+-gccause
 
 
 
