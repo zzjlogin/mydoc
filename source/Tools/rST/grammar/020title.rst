@@ -37,7 +37,7 @@
 标题显示结果：
 
 
-.. image:: /images/tools/reST/test_titel.png
+.. image:: /Tools/res/images/tools/reST/test_titel.png
     :align: center
 
 

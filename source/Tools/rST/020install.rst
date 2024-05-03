@@ -10,11 +10,11 @@ reST安装及环境配置
 
     其次，应该已经安装了pip。
     
+    
 Pyhon安装可以参考：
-    - :ref:`python-env`
 
 
-.. _rst-env-install:
+
 
 安装第三方库
 ======================================================================================================================================================
@@ -64,7 +64,7 @@ Pyhon安装可以参考：
     C:\Users\Administrator>g:
     G:\>cd test
 4. 然后输入下面命令：
-    .. literalinclude:: /demo/tools/rst/sphinx-quickstart.txt
+    .. literalinclude:: /Tools/res//demo/tools/rst/sphinx-quickstart.txt
          :language: text
          :emphasize-lines: 1,12,20-22,30,54
          :linenos:

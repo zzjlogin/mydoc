@@ -44,7 +44,7 @@
 
    Server/*   
    Data/*
-   ML/*
+   ML/index
 
 
 .. toctree::

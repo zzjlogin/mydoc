@@ -7,7 +7,7 @@ sqlmap参数详解
 
 :Date: 2019-3
 
-.. contents::
+
 
 
 sqlmap参数详解
@@ -17,16 +17,18 @@ sqlmap参数详解
 
 
 
-
-
 \-u
     注入点
+
 \-f
     指纹判别数据库类型
+
 \-b
     获取数据库版本信息
+
 \-p
     指定可测试的参数(?page=1&id=2 -p “page,id”)
+
 \-D “”
     指定数据库名
 \-T “”
@@ -122,30 +124,51 @@ sqlmap参数详解
     执行系统命令
 \–os-shell
     系统交互shell
+    
 \–os-pwn
     反弹shell(–os-pwn –msf-path=/opt/framework/msf3/)
+
+
 \–msf-path=
     matesploit绝对路径(–msf-path=/opt/framework/msf3/)
+
+
 \–os-smbrelay
 
 \–os-bof
 
+
 \–reg-read
     读取win系统注册表
+
+
 \–priv-esc
 
 \–time-sec=
     延迟设置 默认–time-sec=5 为5秒
+
+
 \-p “user-agent” –user-agent “sqlmap/0.7rc1 (http://sqlmap.sourceforge.net)”
     指定user-agent注入
+
+
 \–eta
     盲注
+
+
 - /pentest/database/sqlmap/txt/
+
+
 - common-columns.txt
     字段字典
+
+
 - common-outputs.txt
+
+
 common-tables.txt
     表字典
+
 - keywords.txt
 - oracle-default-passwords.txt
 - user-agents.txt

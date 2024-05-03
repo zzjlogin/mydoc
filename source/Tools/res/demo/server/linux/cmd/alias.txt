@@ -1,0 +1,44 @@
+[root@zzjlogin ~]# alias
+alias cp='cp -i'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias mv='mv -i'
+alias rm='rm -i'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias zzjlogin='ls -l'
+
+[root@zzjlogin ~]# alias mv
+alias mv='mv -i'
+[root@zzjlogin ~]# alias cd
+-bash: alias: cd: not found
+
+
+[root@zzjlogin ~]# alias nihao
+-bash: alias: nihao: not found
+[root@zzjlogin ~]# nihao
+-bash: nihao: command not found
+[root@zzjlogin ~]# alias nihao=echo
+[root@zzjlogin ~]# alias nihao
+alias nihao='echo'
+[root@zzjlogin ~]# nihao "hello"
+hello
+
+[root@zzjlogin ~]# chakan
+-bash: chakan: command not found
+[root@zzjlogin ~]# alias chakan
+-bash: alias: chakan: not found
+[root@zzjlogin ~]# alias chakan='ls -l'
+[root@zzjlogin ~]# alias chakan
+alias chakan='ls -l'
+[root@zzjlogin ~]# chakan
+总用量 48
+-rw-------. 1 root root  1040 3月  30 17:41 anaconda-ks.cfg
+-rwxr-xr-x. 1 root root   120 8月   6 14:11 hello.sh
+-rwxr-xr-x. 1 root root    31 8月   5 21:04 helloworld.sh
+-rw-r--r--. 1 root root 21684 8月   3 22:03 install.log
+-rw-r--r--. 1 root root   557 8月   5 22:07 ls-redirect.txt
+-rw-r--r--. 1 root root   239 8月   3 22:11 snapshot
+-rw-r--r--. 1 root root    12 8月   5 22:17 test-in.txt
+[root@zzjlogin ~]# chakan /home
+总用量 0

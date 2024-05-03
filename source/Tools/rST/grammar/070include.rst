@@ -83,7 +83,7 @@
 
 :样例:
 
-.. literalinclude:: /demo/test.py
+.. literalinclude:: /Tools/res//demo/test.py
     :linenos:
     :language: python
     :emphasize-lines: 1-2,5
@@ -92,7 +92,7 @@
 
 ::
 
-    .. literalinclude:: /demo/test.py
+    .. literalinclude:: /Tools/res//demo/test.py
         :linenos:
         :language: python
         :emphasize-lines: 1-2,3

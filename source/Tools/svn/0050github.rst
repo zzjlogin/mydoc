@@ -27,21 +27,21 @@ github客户端配置
 
 1. 登陆用户参考:
 
-    .. image:: /images/tools/svn/github-desktop01.png
+    .. image:: /Tools/res/images/tools/svn/github-desktop01.png
         :align: center
         :height: 500px
         :width: 800 px
 
 2. 提交更新参考:
 
-    .. image:: /images/tools/svn/github-desktop02.png
+    .. image:: /Tools/res/images/tools/svn/github-desktop02.png
         :align: center
         :height: 500px
         :width: 800 px
 
 #. 从远程更新到本地仓库，或者删除本地代码仓库:
 
-    .. image:: /images/tools/svn/github-desktop03.png
+    .. image:: /Tools/res/images/tools/svn/github-desktop03.png
         :align: center
         :height: 500px
         :width: 800 px
@@ -52,13 +52,13 @@ github客户端配置
 
 参考下面两个图片:
 
-    .. image:: /images/tools/svn/github-desktop04.png
+    .. image:: /Tools/res/images/tools/svn/github-desktop04.png
         :align: center
         :height: 500px
         :width: 800 px
 
 
-    .. image:: /images/tools/svn/github-desktop05.png
+    .. image:: /Tools/res/images/tools/svn/github-desktop05.png
         :align: center
         :height: 500px
         :width: 800 px

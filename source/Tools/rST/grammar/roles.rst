@@ -87,9 +87,9 @@ ref建议使用标准reStructuredText链接到部分（例如），因为它跨�
 
 **实例:**
 
-:download:`myfile </demo/test.py>`
+:download:`myfile </Tools/res//demo/test.py>`
 
-:download:`/demo/test.py` 
+:download:`/Tools/res//demo/test.py` 
 
 \:numref:
 ------------------------------------------------------------------------------------------------------------------------------------------------------

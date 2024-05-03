@@ -35,60 +35,60 @@ TortoiseGi下载:https://download.tortoisegit.org/tgit/
 **下面是TortoiseGi安装**
 
 
-.. image:: /images/tools/svn/gitlab/gitlab01.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab01.png
     :align: center
     :height: 500px
     :width: 800 px
 
 
-.. image:: /images/tools/svn/gitlab/gitlab02.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab02.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab03.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab03.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab04.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab04.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab05.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab05.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab06.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab06.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab07.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab07.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab08.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab08.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/gitlab/gitlab09.png
-    :align: center
-    :height: 500px
-    :width: 800 px
-
-
-.. image:: /images/tools/svn/gitlab/gitlab10.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab09.png
     :align: center
     :height: 500px
     :width: 800 px
 
 
-.. image:: /images/tools/svn/gitlab/gitlab11.png
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab10.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+
+.. image:: /Tools/res/images/tools/svn/gitlab/gitlab11.png
     :align: center
     :height: 500px
     :width: 800 px

@@ -14,6 +14,7 @@ git安装
 git下载安装
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
 下载地址：https://git-scm.com/downloads
 
 .. attention::
@@ -27,61 +28,61 @@ git下载安装
 具体安装过程如下图:
 
 
-.. image:: /images/tools/svn/git/git01.png
+.. image:: /Tools/res/images/tools/svn/git/git01.png
     :align: center
     :height: 500px
     :width: 800 px
 
 
-.. image:: /images/tools/svn/git/git02.png
+.. image:: /Tools/res/images/tools/svn/git/git02.png
     :align: center
     :height: 500px
     :width: 800 px
 
 
-.. image:: /images/tools/svn/git/git03.png
+.. image:: /Tools/res/images/tools/svn/git/git03.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/git/git04.png
-    :align: center
-    :height: 500px
-    :width: 800 px
-
-
-.. image:: /images/tools/svn/git/git05.png
-    :align: center
-    :height: 500px
-    :width: 800 px
-
-.. image:: /images/tools/svn/git/git06.png
-    :align: center
-    :height: 500px
-    :width: 800 px
-
-.. image:: /images/tools/svn/git/git07.png
+.. image:: /Tools/res/images/tools/svn/git/git04.png
     :align: center
     :height: 500px
     :width: 800 px
 
 
-.. image:: /images/tools/svn/git/git08.png
+.. image:: /Tools/res/images/tools/svn/git/git05.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/git/git09.png
+.. image:: /Tools/res/images/tools/svn/git/git06.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/git/git10.png
+.. image:: /Tools/res/images/tools/svn/git/git07.png
     :align: center
     :height: 500px
     :width: 800 px
 
-.. image:: /images/tools/svn/git/git11.png
+
+.. image:: /Tools/res/images/tools/svn/git/git08.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /Tools/res/images/tools/svn/git/git09.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /Tools/res/images/tools/svn/git/git10.png
+    :align: center
+    :height: 500px
+    :width: 800 px
+
+.. image:: /Tools/res/images/tools/svn/git/git11.png
     :align: center
     :height: 500px
     :width: 800 px

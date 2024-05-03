@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 nfs-history01.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="6.88837in" height="2.79388in"
+		viewBox="0 0 495.963 201.159" xml:space="preserve" color-interpolation-filters="sRGB" class="st15">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+		.st3 {marker-end:url(#mrkr5-11);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st4 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.48076923076923}
+		.st5 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st6 {fill:#000000;font-family:宋体;font-size:1.00001em}
+		.st7 {fill:none;stroke:#000000;stroke-dasharray:3.5,2.5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st8 {fill:#000000;font-family:宋体;font-size:0.499992em}
+		.st9 {font-size:1em}
+		.st10 {fill:#ff0000;font-family:宋体;font-size:0.499992em;font-weight:bold}
+		.st11 {fill:#000000;font-family:Microsoft Sans Serif;font-size:1em;font-weight:normal}
+		.st12 {fill:#000000;font-family:微软雅黑;font-size:1em;font-weight:normal}
+		.st13 {fill:#ffffff;stroke:#000000;stroke-dasharray:3.5,2.5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st14 {fill:#ff0000;font-family:宋体;font-size:1.00001em;font-weight:bold}
+		.st15 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364514 1.67301 0.372642 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-11" class="st4" v:arrowType="5" v:arrowSize="3" v:setback="3.64" refX="-3.64" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-2.08,-2.08) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape18-1" v:mID="18" v:groupContext="shape" transform="translate(18.375,-18.375)">
+			<title>工作表.18</title>
+			<rect x="0" y="36.75" width="459.213" height="164.409" rx="5.66929" ry="5.66929" class="st1"/>
+		</g>
+		<g id="shape1-3" v:mID="1" v:groupContext="shape" v:layerMember="0" transform="translate(150.186,-120.422)">
+			<title>动态连接线</title>
+			<path d="M0 201.16 L311.81 158.64" class="st2"/>
+		</g>
+		<g id="shape2-6" v:mID="2" v:groupContext="shape" v:layerMember="0" transform="translate(86.4065,-70.8159)">
+			<title>动态连接线.2</title>
+			<path d="M0 208.25 L357.58 208.25" class="st3"/>
+		</g>
+		<g id="shape3-12" v:mID="3" v:groupContext="shape" transform="translate(73.3041,-39.5561)">
+			<title>工作表.3</title>
+			<desc>1976</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.1811" cy="191.159" width="34.37" height="20"/>
+			<rect x="0" y="181.159" width="34.3622" height="20" class="st5"/>
+			<text x="5.18" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1976</text>		</g>
+		<g id="shape4-15" v:mID="4" v:groupContext="shape" transform="translate(151.257,-39.5561)">
+			<title>工作表.4</title>
+			<desc>1980</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.1811" cy="191.159" width="34.37" height="20"/>
+			<rect x="0" y="181.159" width="34.3622" height="20" class="st5"/>
+			<text x="5.18" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1980</text>		</g>
+		<g id="shape5-18" v:mID="5" v:groupContext="shape" transform="translate(240.375,-39.5561)">
+			<title>工作表.5</title>
+			<desc>1990</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.1811" cy="191.159" width="34.37" height="20"/>
+			<rect x="0" y="181.159" width="34.3622" height="20" class="st5"/>
+			<text x="5.18" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>1990</text>		</g>
+		<g id="shape6-21" v:mID="6" v:groupContext="shape" transform="translate(321.336,-39.5561)">
+			<title>工作表.6</title>
+			<desc>2000</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.1811" cy="191.159" width="34.37" height="20"/>
+			<rect x="0" y="181.159" width="34.3622" height="20" class="st5"/>
+			<text x="5.18" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2000</text>		</g>
+		<g id="shape7-24" v:mID="7" v:groupContext="shape" transform="translate(402.296,-39.5561)">
+			<title>工作表.7</title>
+			<desc>2010</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="17.1811" cy="191.159" width="34.37" height="20"/>
+			<rect x="0" y="181.159" width="34.3622" height="20" class="st5"/>
+			<text x="5.18" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>2010</text>		</g>
+		<g id="shape8-27" v:mID="8" v:groupContext="shape" transform="translate(31.1309,-64.9892)">
+			<title>工作表.8</title>
+			<desc>Digital Equipment CorporationDEC开发File Access Listener FAL被称为...</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.6535" cy="184.073" width="109.31" height="34.1732"/>
+			<rect x="0" y="166.986" width="109.307" height="34.1732" rx="5.66929" ry="5.66929" class="st7"/>
+			<text x="11.15" y="178.67" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Digital Equipment Corporation<tspan
+						x="5.15" dy="1.2em" class="st9">（</tspan>DEC）开发：File Access Listener<v:newlineChar/><tspan x="14.15"
+						dy="1.2em" class="st9">FAL</tspan>被称为第一个网络文件系统</text>		</g>
+		<g id="shape9-32" v:mID="9" v:groupContext="shape" transform="translate(143.099,-64.9892)">
+			<title>工作表.9</title>
+			<desc>Sun Microsystems内部开发</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.3465" cy="184.073" width="56.7" height="34.1732"/>
+			<rect x="0" y="166.986" width="56.6929" height="34.1732" rx="8.50394" ry="8.50394" class="st7"/>
+			<text x="4.35" y="182.27" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Sun Microsystems<tspan
+						x="16.35" dy="1.2em" class="st9">内部开发</tspan></text>		</g>
+		<g id="shape10-36" v:mID="10" v:groupContext="shape" transform="translate(150.186,-120.422)">
+			<title>工作表.10</title>
+			<desc>NFSv1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.2598" cy="191.159" width="42.52" height="20"/>
+			<rect x="0" y="181.159" width="42.5197" height="20" class="st5"/>
+			<text x="6.26" y="194.76" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFSv1</text>		</g>
+		<g id="shape11-39" v:mID="11" v:groupContext="shape" transform="translate(178.532,-117.509)">
+			<title>工作表.11</title>
+			<desc>NFSv2 RFC:1094</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.8898" cy="191.159" width="63.78" height="20"/>
+			<rect x="0" y="181.159" width="63.7795" height="20" class="st5"/>
+			<text x="16.89" y="187.56" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFSv2<v:newlineChar/><tspan
+						x="7.89" dy="1.2em" class="st9">RFC</tspan>:1094</text>		</g>
+		<g id="shape12-43" v:mID="12" v:groupContext="shape" transform="translate(256.485,-128.769)">
+			<title>工作表.12</title>
+			<desc>NFSv3 RFC:1813</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.8898" cy="191.159" width="63.78" height="20"/>
+			<rect x="0" y="181.159" width="63.7795" height="20" class="st5"/>
+			<text x="16.89" y="187.56" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFSv3<v:newlineChar/><tspan
+						x="7.89" dy="1.2em" class="st9">RFC</tspan>:1813</text>		</g>
+		<g id="shape13-47" v:mID="13" v:groupContext="shape" transform="translate(309.635,-134.595)">
+			<title>工作表.13</title>
+			<desc>NFSv4 RFC:3010</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.8898" cy="191.159" width="63.78" height="20"/>
+			<rect x="0" y="181.159" width="63.7795" height="20" class="st5"/>
+			<text x="16.89" y="187.56" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFSv4<v:newlineChar/><tspan
+						x="7.89" dy="1.2em" class="st9">RFC</tspan>:3010</text>		</g>
+		<g id="shape14-51" v:mID="14" v:groupContext="shape" transform="translate(394.674,-148.769)">
+			<title>工作表.14</title>
+			<desc>NFSv4.1 RFC:5661</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="31.8898" cy="191.159" width="63.78" height="20"/>
+			<rect x="0" y="181.159" width="63.7795" height="20" class="st5"/>
+			<text x="10.89" y="187.56" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFSv4.1<v:newlineChar/><tspan
+						x="7.89" dy="1.2em" class="st9">RFC</tspan>:5661</text>		</g>
+		<g id="shape15-55" v:mID="15" v:groupContext="shape" transform="translate(313.178,-64.9892)">
+			<title>工作表.15</title>
+			<desc>新特性 提高安全性NFSv4是带状态的</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.3465" cy="184.073" width="56.7" height="34.1732"/>
+			<rect x="0" y="166.986" width="56.6929" height="34.1732" rx="5.66929" ry="5.66929" class="st7"/>
+			<text x="16.35" y="178.67" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>新特性：<v:newlineChar/><tspan
+						x="10.35" dy="1.2em" class="st9">提高安全性</tspan>；<tspan x="5.85" dy="1.2em" class="st9">NFSv</tspan>4是带状态的</text>		</g>
+		<g id="shape16-60" v:mID="16" v:groupContext="shape" transform="translate(255.351,-64.9892)">
+			<title>工作表.16</title>
+			<desc>新特性 支持超过2G大文件 用TCP传输 异步写入</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.3465" cy="184.073" width="56.7" height="34.1732"/>
+			<rect x="0" y="166.986" width="56.6929" height="34.1732" rx="5.66929" ry="5.66929" class="st7"/>
+			<text x="16.35" y="175.07" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>新特性：<v:newlineChar/><tspan
+						x="4.35" dy="1.2em" class="st9">支持超过</tspan>2G大文件<v:newlineChar/><tspan x="14.85" dy="1.2em" class="st9">用</tspan>TCP传输<v:newlineChar/><tspan
+						x="16.35" dy="1.2em" class="st9">异步写入</tspan></text>		</g>
+		<g id="shape17-66" v:mID="17" v:groupContext="shape" transform="translate(394.103,-64.9892)">
+			<title>工作表.17</title>
+			<desc>新特性 支持跨越分布式服务器并行访问(PNFS extension)</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="28.3465" cy="184.073" width="56.7" height="34.1732"/>
+			<rect x="0" y="166.986" width="56.6929" height="34.1732" rx="5.66929" ry="5.66929" class="st7"/>
+			<text x="16.35" y="175.07" class="st8" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>新特性：<v:newlineChar/><tspan
+						x="4.35" dy="1.2em" class="st9">支持跨越分布式服</tspan><tspan x="10.35" dy="1.2em" class="st9">务器并行访问</tspan><tspan
+						x="4.35" dy="1.2em" class="st9">(</tspan>PNFS extension)</text>		</g>
+		<g id="shape19-72" v:mID="19" v:groupContext="shape" transform="translate(31.1309,-155.698)">
+			<title>工作表.19</title>
+			<desc>NFS发展历史 NFS:Network File System网络文件系统</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="60.2362" cy="191.159" width="120.48" height="20"/>
+			<rect x="0" y="181.159" width="120.472" height="20" rx="5.66929" ry="5.66929" class="st7"/>
+			<text x="43.65" y="189.31" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>NFS发展历史<v:newlineChar/><tspan
+						x="4.94" dy="1.212em" class="st11">NFS</tspan><tspan class="st11">:</tspan><tspan class="st11">Network File System</tspan><tspan
+						class="st12">，</tspan><tspan class="st12">网络文件系统</tspan></text>		</g>
+		<g id="shape20-80" v:mID="20" v:groupContext="shape" transform="translate(38.2175,-107.666)">
+			<title>工作表.20</title>
+			<desc>zzjlogin制作</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="45.9213" cy="183.159" width="91.85" height="36"/>
+			<rect x="0" y="165.159" width="91.8425" height="36" rx="8.50394" ry="8.50394" class="st13"/>
+			<text x="9.69" y="186.76" class="st14" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>zzjlogin制作</text>		</g>
+	</g>
+</svg>
