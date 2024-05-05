@@ -1,7 +1,5 @@
-.. _zzjlogin-rst-env:
-
 ======================================================================================================================================================
-reST安装及环境配置
+reST环境安装及配置
 ======================================================================================================================================================
 
 
@@ -46,6 +44,61 @@ Pyhon安装可以参考：
 
     C:\Users\Administrator>pip list | grep Sphinx*
     Sphinx                             1.7.9
+
+
+3. 安装sphinx所有依赖包
+
+    安装指定requirements.txt，其中文件内容：
+
+.. code-block:: python
+    :linenos:
+
+    # markdown suport
+    recommonmark
+    # markdown table suport
+    sphinx-markdown-tables
+    #emoji
+    sphinxemoji
+
+    # theme default rtd
+
+    # crate-docs-theme
+    sphinx-rtd-theme
+    sphinx-autobuild
+    Pygments
+
+    myst-parser
+    sphinxcontrib-applehelp
+    sphinxcontrib-devhelp
+    sphinxcontrib-jsmath
+    sphinxcontrib-htmlhelp
+    sphinxcontrib-serializinghtml
+    sphinxcontrib-qthelp
+    Jinja2
+    docutils
+    snowballstemmer
+    babel
+    alabaster
+    imagesize
+    requests
+    setuptools
+    packaging
+
+
+安装命令：
+
+.. code-block:: python
+    :linenos:
+
+    pip install -r requirements.txt
+
+
+指定国内源：
+
+.. code-block:: python
+    :linenos:
+
+    pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 
 
