@@ -48,7 +48,7 @@
 以下是理解冒泡排序过程的动态图片:
 
 
-.. image:: /Program/images/language/sort/bubble-sort.gif
+.. image:: /Program/res/images/language/sort/bubble-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -57,7 +57,7 @@
 
 把数字列表 ``31524`` 用冒泡排序进行排序( **升序** ),具体过程如下图
 
-.. image:: /Program/images/language/sort/bubble-sort-demo1.gif
+.. image:: /Program/res/images/language/sort/bubble-sort-demo1.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -105,7 +105,7 @@
 以下是理解选择排序过程的动态图片:
 
 
-.. image:: /Program/images/language/sort/selection-sort.gif
+.. image:: /Program/res/images/language/sort/selection-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -116,7 +116,7 @@
 把数字列表 ``31524`` 用选择排序进行排序( **降序** ),具体过程如下图
 
 
-.. image:: /Program/images/language/sort/selection-sort-demo1.gif
+.. image:: /Program/res/images/language/sort/selection-sort-demo1.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -162,7 +162,7 @@
 
 以下是理解堆排序过程的动态图片:
 
-.. image:: /Program/images/language/sort/heap-sort.gif
+.. image:: /Program/res/images/language/sort/heap-sort.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -176,7 +176,7 @@
     升序或者降序都可以用最大堆来创建。只不过一个是从源列表偷开始替换，一个是从源列表尾开始替换。
 
 
-.. image:: /Program/images/language/sort/heap-sort-demo1.gif
+.. image:: /Program/res/images/language/sort/heap-sort-demo1.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -249,7 +249,7 @@
 
 以下是理解插入排序过程的动态图片:
 
-.. image:: /Program/images/language/sort/insertion-sort.gif
+.. image:: /Program/res/images/language/sort/insertion-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -258,7 +258,7 @@
 
 把数字列表 ``31524`` 用插入排序进行排序( **升序** ),具体过程如下图
 
-.. image:: /Program/images/language/sort/insertion-sort-demo.gif
+.. image:: /Program/res/images/language/sort/insertion-sort-demo.gif
     :align: center
     :height: 200 px
     :width: 800 px
@@ -306,7 +306,7 @@
 以下是理解希尔排序过程的动态图片:
 
 
-.. image:: /Program/images/language/sort/shell-sort.gif
+.. image:: /Program/res/images/language/sort/shell-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -315,7 +315,7 @@
 
 把数字列表 ``31524`` 用希尔排序进行排序( **升序** ),具体过程如下图
 
-.. image:: /Program/images/language/sort/shell-sort-demo1.gif
+.. image:: /Program/res/images/language/sort/shell-sort-demo1.gif
     :align: center
     :height: 550 px
     :width: 800 px
@@ -352,7 +352,7 @@
 以下是理解归并排序过程的动态图片:
 
 
-.. image:: /Program/images/language/sort/merge-sort.gif
+.. image:: /Program/res/images/language/sort/merge-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -369,7 +369,7 @@
 以下是理解快速排序过程的动态图片:
 
 
-.. image:: /Program/images/language/sort/quick-sort.gif
+.. image:: /Program/res/images/language/sort/quick-sort.gif
     :align: center
     :height: 500 px
     :width: 800 px
@@ -379,7 +379,7 @@
 
 把数字列表 ``31524`` 用快速排序进行排序( **升序** ),具体过程如下图
 
-.. image:: /Program/images/language/sort/quick-sort-demo1.gif
+.. image:: /Program/res/images/language/sort/quick-sort-demo1.gif
     :align: center
     :height: 550 px
     :width: 800 px

@@ -6,7 +6,7 @@
 计算机类语言排名
 
 
-.. image:: /Program/images/language/others/lang-rank.png
+.. image:: /Program/res/images/language/others/lang-rank.png
     :align: center
     :scale: 50 %
 

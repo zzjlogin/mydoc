@@ -86,7 +86,7 @@ Python和Java编译过程比较
 
 Pyton和Java的执行过程如下图所示：
 
-    .. image:: /Program/images/language/others/compare-python-java.jpg
+    .. image:: /Program/res/images/language/others/compare-python-java.jpg
         :width: 400px
         :align: center
 
