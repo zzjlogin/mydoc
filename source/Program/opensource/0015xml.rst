@@ -1,0 +1,127 @@
+
+
+======================================================================================================================================================
+XML开源库
+======================================================================================================================================================
+
+
+libxml2
+======================================================================================================================================================
+
+
+1. libxml2 下载路径：https://gitlab.gnome.org/GNOME/libxml2/
+
+2. 开始菜单运行cmd
+
+3. 找到当前vs2017环境的 ``vcvars32.bat`` ,一般目录：C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build
+
+4. 切换目录,执行脚本
+
+::
+
+    cd /d C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build
+    
+    vcvars32.bat
+
+
+5.返回代码路径执行(默认D盘根目录解压)
+
+6.编译，编译release版，如果编译debug版修改命令中 ``debug=no`` 改成 ``debug=yes``
+
+::
+
+    cscript configure.js compiler=msvc iconv=no prefix=D:\libxml2 include=D:\libxml2\include lib=D:\libxml2\lib debug=no
+
+    nmake /f Makefile.msvc install
+
+libxml++
+======================================================================================================================================================
+
+这个库依赖 **libxml2**
+
+1. libxml2目录的include目录内的文件复制到当前工程的 **libxml++** 目录下
+
+
+2. 复制生成的libxml2.lib库文件。注意：这里是动态库的lib文件，需要注意debug/release不同的lib
+
+3. 开始菜单运行cmd
+
+4. 找到当前vs2017环境的 ``vcvars32.bat`` ,一般目录：C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build
+
+5. 切换目录,执行脚本
+
+::
+
+    cd /d C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Auxiliary\Build
+    
+    vcvars32.bat
+
+6. 切换目录到libxml++工程下 **MSVC_NMake**
+
+7. 运行编译命令
+
+
+:: 
+
+    nmake -f Makefile.vc CFG=release PREFIX=D:\code\Project\OpenSourceProject\libxml++-5.2.0\bin INCLUDEDIR=D:\code\Project\OpenSourceProject\libxml++-5.2.0\libxml++ LIBDIR=D:\code\Project\OpenSourceProject\libxml++-5.2.0\lib
+
+
+
+TinyXml2
+======================================================================================================================================================
+
+
+TinyXml2:
+	- https://github.com/leethomason/tinyxml2
+	- TinyXML2是一个简单、小型、高效的 C++ XML 解析器，可以 轻松集成到其他程序中。
+	- TinyXML2不解析或使用 DTD（文档类型定义）或 XSL
+	- TinyXML2长期以来一直是所有开发的重点。它经过了很好的测试 并且应该代替 TinyXML-1 使用。
+	- TinyXML2在解释 XML 时只使用 UTF-8。假定所有 XML 都为 是 UTF-8。
+
+
+CMake工具生成VS项目后可以编译静态库:xx.lib
+
+编译动态库步骤：
+	1. 项目属性-配置属性-常规-配置类型-动态库
+	2. 项目属性-配置属性-常规-目标文件扩展名-.dll
+	3. 项目属性-C/C++ -预处理器-预处理器定义-添加"TINYXML2_EXPORT"
+
+TinyXml
+======================================================================================================================================================
+
+TinyXml:
+	- https://sourceforge.net/projects/tinyxml/
+	
+默认为vs项目，打开后默认编译是静态库：xx.lib
+
+编译动态库需要修改：
+
+	1. 项目属性-配置属性-常规-配置类型-动态库
+	2. 项目属性-配置属性-常规-目标文件扩展名-.dll
+	3. 项目属性-C/C++ -预处理器-预处理器定义-添加"TINYXMLLIB_EXPORTS"
+	4. tinystr.h文件添加下面宏定义信息，然后tinystr.h和tinyxml.h两个头文件类名前面加TINYXMLDLL
+
+::
+
+	#ifdef WIN32
+	#ifdef TINYXMLLIB_EXPORTS
+	#define TINYXMLDLL		__declspec(dllexport)
+	#else
+	#define TINYXMLDLL		__declspec(dllimport)
+	#endif
+	#else
+	#define TINYXMLDLL
+	#endif
+
+Xerces-C++
+======================================================================================================================================================
+
+Xerces-C++：
+	-https://xerces.apache.org/mirrors.cgi
+	- https://xerces.apache.org/xerces-c/download.cgi
+	
+- Xerces-C++提供了 DOM（Document Object Model）和 SAX（Simple API for XML）两种解析器。
+- DOM 解析器将整个 XML 文档加载到内存中，并允许你以对象模型的方式操作文档。SAX 解析器则是一种基于事件的解析器，它边解析边触发事件，通常用于处理大型 XML 文档，因为它不需要将整个文档加载到内存中。
+- 验证：Xerces-C++ 支持 XML Schema 验证，允许你定义 XML 文档的结构和约束，并在解析时验证文档是否符合这些约束。
+
+
